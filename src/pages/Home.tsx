@@ -6,12 +6,13 @@ import { languages, getHowCanIHelpText, getInformationHoverText, getCategoryLabe
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { HoverCard, HoverCardTrigger, HoverCardContent } from '../components/ui/hover-card';
-import { Search, Info, BookOpen, Users, HelpCircle } from 'lucide-react';
+import { Search, Info, BookOpen, Users, HelpCircle, Home as HomeIcon, Sound, SoundOff, PlaySquare } from 'lucide-react';
 
 const Home: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const navigate = useNavigate();
   const [searchInput, setSearchInput] = React.useState('');
+  const [soundEnabled, setSoundEnabled] = React.useState(true);
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1]; // Default to English
 
@@ -20,7 +21,6 @@ const Home: React.FC = () => {
     if (searchInput.trim()) {
       console.log('Search query:', searchInput);
       // Navigate to search results page or handle search
-      // navigate(`/search?q=${encodeURIComponent(searchInput)}`);
     }
   };
 
@@ -28,11 +28,41 @@ const Home: React.FC = () => {
     navigate(`/${category}`);
   };
 
+  const toggleSound = () => {
+    setSoundEnabled(!soundEnabled);
+    // Sound toggle logic would be implemented here
+  };
+
   return (
     <div 
       className="min-h-screen flex flex-col items-center p-4 md:p-8 text-center"
       dir={language.rtl ? 'rtl' : 'ltr'}
     >
+      <div className="w-full flex justify-between mb-4">
+        <Button
+          variant="ghost"
+          className="p-2"
+          onClick={() => navigate('/home')}
+        >
+          <HomeIcon className="h-6 w-6" />
+        </Button>
+        <div className="flex gap-2">
+          <Button
+            variant="ghost"
+            className="p-2"
+            onClick={toggleSound}
+          >
+            {soundEnabled ? <Sound className="h-6 w-6" /> : <SoundOff className="h-6 w-6" />}
+          </Button>
+          <Button
+            variant="ghost"
+            className="p-2"
+          >
+            <HelpCircle className="h-6 w-6" />
+          </Button>
+        </div>
+      </div>
+      
       <header className="mb-8 w-full max-w-4xl">
         <h1 className="text-3xl md:text-4xl font-bold mb-8">{getHowCanIHelpText(language.code)}</h1>
         
@@ -120,16 +150,18 @@ const Home: React.FC = () => {
           </HoverCardContent>
         </HoverCard>
         
-        {/* Help Card */}
+        {/* Videos Card (replacing Help) */}
         <HoverCard openDelay={300}>
           <HoverCardTrigger asChild>
             <Button
               variant="outline"
               className="h-auto aspect-square bg-white border-2 flex flex-col gap-4 p-6 hover:bg-gray-50 hover:shadow-md transition-all"
-              onClick={() => handleCategoryClick('help')}
+              onClick={() => handleCategoryClick('videos')}
             >
-              <HelpCircle className="h-12 w-12 text-red-600" />
-              <span className="text-xl">{getCategoryLabel(language.code, 'help')}</span>
+              <PlaySquare className="h-12 w-12 text-red-600" />
+              <span className="text-xl">
+                {language.code === 'de' ? 'Videos' : 'Videos'}
+              </span>
             </Button>
           </HoverCardTrigger>
           <HoverCardContent 

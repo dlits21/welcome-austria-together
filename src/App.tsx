@@ -10,7 +10,7 @@ import Home from "./pages/Home";
 import Information from "./pages/Information";
 import Courses from "./pages/Courses";
 import Community from "./pages/Community";
-import Help from "./pages/Help";
+import Videos from "./pages/Help"; // We're keeping the file name but changing the component name
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,7 +28,7 @@ const App = () => (
             <Route path="/information" element={<Information />} />
             <Route path="/courses" element={<Courses />} />
             <Route path="/community" element={<Community />} />
-            <Route path="/help" element={<Help />} />
+            <Route path="/videos" element={<Videos />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </TooltipProvider>
