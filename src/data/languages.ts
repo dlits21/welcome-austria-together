@@ -114,3 +114,155 @@ export const getWelcomeText = (code: string): string => {
       return "Welcome at UND";
   }
 };
+
+export const getHowCanIHelpText = (code: string): string => {
+  switch (code) {
+    case 'de':
+      return "Wie kann ich dir helfen?";
+    case 'en':
+      return "How can I help you?";
+    case 'ru':
+      return "Как я могу вам помочь?";
+    case 'ce':
+      return "Со муха гIо дийр ду хьуна?";
+    case 'prs':
+      return "چگونه می‌توانم به شما کمک کنم؟";
+    case 'ps':
+      return "زه څنګه تاسو سره مرسته کولی شم؟";
+    case 'fa':
+      return "چطور می‌توانم به شما کمک کنم؟";
+    case 'ar':
+      return "كيف يمكنني مساعدتك؟";
+    case 'ku':
+      return "چۆن دەتوانم یارمەتیت بدەم؟";
+    case 'so':
+      return "Sideen kuu caawin karaa?";
+    case 'ka':
+      return "როგორ შემიძლია დაგეხმაროთ?";
+    case 'sq':
+      return "Si mund t'ju ndihmoj?";
+    default:
+      return "How can I help you?";
+  }
+};
+
+export const getInformationHoverText = (code: string): string => {
+  switch (code) {
+    case 'de':
+      return "Möchten Sie mehr über UND erfahren?";
+    case 'en':
+      return "Do you want to learn more about UND?";
+    case 'ru':
+      return "Хотите узнать больше о UND?";
+    case 'ce':
+      return "Лаьий хьуна UND лаьцна дукха хIума хаа?";
+    case 'prs':
+      return "آیا می‌خواهید درباره UND بیشتر بدانید؟";
+    case 'ps':
+      return "ایا غواړئ د UND په اړه نور معلومات ترلاسه کړئ؟";
+    case 'fa':
+      return "آیا می‌خواهید درباره UND بیشتر بدانید؟";
+    case 'ar':
+      return "هل تريد معرفة المزيد عن UND؟";
+    case 'ku':
+      return "ئایا دەتەوێت زیاتر دەربارەی UND بزانیت؟";
+    case 'so':
+      return "Ma rabtaa inaad wax badan ka ogaato UND?";
+    case 'ka':
+      return "გსურთ მეტი შეიტყოთ UND-ის შესახებ?";
+    case 'sq':
+      return "A dëshironi të mësoni më shumë për UND?";
+    default:
+      return "Do you want to learn more about UND?";
+  }
+};
+
+export const getCategoryLabel = (code: string, category: string): string => {
+  if (category === 'information') {
+    switch (code) {
+      case 'de': return "Information";
+      case 'en': return "Information";
+      case 'ru': return "Информация";
+      case 'ce': return "Хаам";
+      case 'prs': return "معلومات";
+      case 'ps': return "معلومات";
+      case 'fa': return "اطلاعات";
+      case 'ar': return "معلومات";
+      case 'ku': return "زانیاری";
+      case 'so': return "Macluumaad";
+      case 'ka': return "ინფორმაცია";
+      case 'sq': return "Informacion";
+      default: return "Information";
+    }
+  }
+  else if (category === 'courses') {
+    switch (code) {
+      case 'de': return "Kurse";
+      case 'en': return "Courses";
+      case 'ru': return "Курсы";
+      case 'ce': return "Курсаш";
+      case 'prs': return "دوره‌ها";
+      case 'ps': return "کورسونه";
+      case 'fa': return "دوره‌ها";
+      case 'ar': return "الدورات";
+      case 'ku': return "خولەکان";
+      case 'so': return "Koorsooyinka";
+      case 'ka': return "კურსები";
+      case 'sq': return "Kurse";
+      default: return "Courses";
+    }
+  }
+  else if (category === 'community') {
+    switch (code) {
+      case 'de': return "Gemeinschaft";
+      case 'en': return "Community";
+      case 'ru': return "Сообщество";
+      case 'ce': return "Жамагlат";
+      case 'prs': return "انجمن";
+      case 'ps': return "ټولنه";
+      case 'fa': return "جامعه";
+      case 'ar': return "المجتمع";
+      case 'ku': return "کۆمەڵگە";
+      case 'so': return "Bulshada";
+      case 'ka': return "საზოგადოება";
+      case 'sq': return "Komuniteti";
+      default: return "Community";
+    }
+  }
+  else if (category === 'help') {
+    switch (code) {
+      case 'de': return "Hilfe";
+      case 'en': return "Help";
+      case 'ru': return "Помощь";
+      case 'ce': return "ГIо";
+      case 'prs': return "کمک";
+      case 'ps': return "مرسته";
+      case 'fa': return "کمک";
+      case 'ar': return "مساعدة";
+      case 'ku': return "یارمەتی";
+      case 'so': return "Caawimaad";
+      case 'ka': return "დახმარება";
+      case 'sq': return "Ndihmë";
+      default: return "Help";
+    }
+  }
+  return "";
+};
+
+export const getSearchPlaceholder = (code: string): string => {
+  switch (code) {
+    case 'de': return "Suchen...";
+    case 'en': return "Search...";
+    case 'ru': return "Поиск...";
+    case 'ce': return "Лаха...";
+    case 'prs': return "جستجو...";
+    case 'ps': return "لټون...";
+    case 'fa': return "جستجو...";
+    case 'ar': return "بحث...";
+    case 'ku': return "گەڕان...";
+    case 'so': return "Raadi...";
+    case 'ka': return "ძებნა...";
+    case 'sq': return "Kërko...";
+    default: return "Search...";
+  }
+};

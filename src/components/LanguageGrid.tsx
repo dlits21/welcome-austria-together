@@ -7,7 +7,7 @@ import { Button } from '../components/ui/button';
 import { Progress } from '../components/ui/progress';
 import { HoverCard, HoverCardTrigger, HoverCardContent } from '../components/ui/hover-card';
 import { Popover, PopoverTrigger, PopoverContent } from '../components/ui/popover';
-import { X, Volume, VolumeX, HelpCircle } from 'lucide-react';
+import { X, Volume, VolumeX, HelpCircle, Check } from 'lucide-react';
 
 const LanguageGrid: React.FC = () => {
   const [selectedLanguage, setSelectedLanguage] = useState<Language | null>(null);
@@ -149,7 +149,7 @@ const LanguageGrid: React.FC = () => {
         ))}
       </div>
 
-      {/* Language selection overlay with zoom animation */}
+      {/* Language selection overlay with zoom animation - now bigger with Yes/No buttons */}
       {selectedLanguage && (
         <div 
           className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 animate-fade-in"
@@ -166,25 +166,45 @@ const LanguageGrid: React.FC = () => {
             </Button>
           </div>
           
-          <div className="bg-white rounded-2xl p-6 max-w-md w-full mx-4 flex flex-col items-center">
-            <div className="text-7xl md:text-8xl mb-6 animate-zoom-in">
+          <div className="bg-white rounded-2xl p-8 max-w-lg w-full mx-4 flex flex-col items-center shadow-xl animate-zoom-in">
+            <div className="text-7xl md:text-9xl mb-8">
               {selectedLanguage.flag}
             </div>
             
-            <p 
-              className={`text-center mb-8 text-lg ${selectedLanguage.rtl ? 'text-right' : 'text-left'}`}
+            <div 
+              className={`text-center mb-8 space-y-4 w-full ${selectedLanguage.rtl ? 'text-right' : 'text-left'}`}
               dir={selectedLanguage.rtl ? 'rtl' : 'ltr'}
             >
-              {getConfirmationText(selectedLanguage.code)}
-            </p>
+              <h2 className="text-xl font-semibold">
+                {selectedLanguage.rtl ? `هل ${selectedLanguage.nativeName} لغتك الأم؟` : `Is ${selectedLanguage.nativeName} your native tongue?`}
+              </h2>
+              
+              <p className="text-base">
+                {selectedLanguage.rtl ? `ستكون الموقع باللغة ${selectedLanguage.nativeName} من الآن فصاعداً.` : `The website will be in ${selectedLanguage.nativeName} from now on.`}
+              </p>
+              
+              <p className="text-base">
+                {selectedLanguage.rtl ? `يمكنك تغيير هذا لاحقاً!` : `You can change this later!`}
+              </p>
+            </div>
             
-            <Button 
-              onClick={handleConfirm}
-              className="px-8 py-6 text-lg w-full mb-4"
-              dir={selectedLanguage.rtl ? 'rtl' : 'ltr'}
-            >
-              {selectedLanguage.rtl ? '✓ تأكيد' : '✓ Confirm'}
-            </Button>
+            <div className="flex w-full gap-4 mb-6">
+              <Button 
+                onClick={handleCancel}
+                variant="outline"
+                className="flex-1 py-6 text-lg border-red-500 text-red-500 hover:bg-red-50"
+              >
+                {selectedLanguage.rtl ? 'لا' : 'No'}
+              </Button>
+              
+              <Button 
+                onClick={handleConfirm}
+                className="flex-1 py-6 text-lg bg-green-500 hover:bg-green-600"
+              >
+                <Check className="mr-2" />
+                {selectedLanguage.rtl ? 'نعم' : 'Yes'}
+              </Button>
+            </div>
             
             <Progress value={progressValue} className="w-full h-2" />
           </div>
