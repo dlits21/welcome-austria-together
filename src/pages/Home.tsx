@@ -6,7 +6,7 @@ import { languages, getHowCanIHelpText, getInformationHoverText, getCategoryLabe
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { HoverCard, HoverCardTrigger, HoverCardContent } from '../components/ui/hover-card';
-import { Search, Info, BookOpen, Users, HelpCircle, Home as HomeIcon, Sound, SoundOff, PlaySquare } from 'lucide-react';
+import { Search, Info, BookOpen, Users, HelpCircle, Home as HomeIcon, Volume, VolumeX, PlaySquare } from 'lucide-react';
 
 const Home: React.FC = () => {
   const { currentLanguage } = useLanguage();
@@ -52,7 +52,7 @@ const Home: React.FC = () => {
             className="p-2"
             onClick={toggleSound}
           >
-            {soundEnabled ? <Sound className="h-6 w-6" /> : <SoundOff className="h-6 w-6" />}
+            {soundEnabled ? <Volume className="h-6 w-6" /> : <VolumeX className="h-6 w-6" />}
           </Button>
           <Button
             variant="ghost"

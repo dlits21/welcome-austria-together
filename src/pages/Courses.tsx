@@ -1,11 +1,10 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { languages, getCategoryLabel } from '../data/languages';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
-import { ArrowLeft, Sound, SoundOff, HelpCircle, Languages, Search, BookOpen, Briefcase } from 'lucide-react';
+import { ArrowLeft, Volume, VolumeX, HelpCircle, Languages, Search, BookOpen, Briefcase } from 'lucide-react';
 
 const courseCategories = [
   { id: 'take-course', icon: <BookOpen className="h-12 w-12 text-blue-600" />, name: { en: 'Take a Course', de: 'Einen Kurs besuchen' } },
@@ -55,7 +54,7 @@ const Courses: React.FC = () => {
             className="p-2"
             onClick={toggleSound}
           >
-            {soundEnabled ? <Sound className="h-6 w-6" /> : <SoundOff className="h-6 w-6" />}
+            {soundEnabled ? <Volume className="h-6 w-6" /> : <VolumeX className="h-6 w-6" />}
           </Button>
           <Button
             variant="ghost"

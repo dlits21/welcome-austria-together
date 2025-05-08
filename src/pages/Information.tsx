@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -6,7 +5,7 @@ import { languages, getCategoryLabel, getSearchPlaceholder } from '../data/langu
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { ScrollArea } from '../components/ui/scroll-area';
-import { ArrowLeft, Sound, SoundOff, HelpCircle, Languages, Search } from 'lucide-react';
+import { ArrowLeft, Volume, VolumeX, HelpCircle, Languages, Search } from 'lucide-react';
 
 const informationCategories = [
   { id: 'political-education', icon: '📚', name: { en: 'Political Education', de: 'Politische Bildung' } },
@@ -66,7 +65,7 @@ const Information: React.FC = () => {
             className="p-2"
             onClick={toggleSound}
           >
-            {soundEnabled ? <Sound className="h-6 w-6" /> : <SoundOff className="h-6 w-6" />}
+            {soundEnabled ? <Volume className="h-6 w-6" /> : <VolumeX className="h-6 w-6" />}
           </Button>
           <Button
             variant="ghost"
