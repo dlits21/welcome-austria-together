@@ -130,7 +130,7 @@ const germanLearningData = [
   },
   {
     id: 12,
-    title: 'Children's German Storybooks',
+    title: "Children's German Storybooks",
     state: 'Burgenland',
     cost: '€12',
     type: 'resource',
