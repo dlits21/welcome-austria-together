@@ -1,10 +1,11 @@
+
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { languages, getCategoryLabel } from '../data/languages';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
-import { ArrowLeft, Volume, VolumeX, HelpCircle, Languages, Search, BookOpen, Briefcase } from 'lucide-react';
+import { Search, BookOpen, Briefcase } from 'lucide-react';
+import PageNavigation from '../components/PageNavigation';
 
 const courseCategories = [
   { id: 'take-course', icon: <BookOpen className="h-12 w-12 text-blue-600" />, name: { en: 'Take a Course', de: 'Einen Kurs besuchen' } },
@@ -15,7 +16,6 @@ const courseCategories = [
 
 const Courses: React.FC = () => {
   const { currentLanguage } = useLanguage();
-  const navigate = useNavigate();
   const [searchInput, setSearchInput] = useState('');
   const [soundEnabled, setSoundEnabled] = useState(true);
   
@@ -34,42 +34,24 @@ const Courses: React.FC = () => {
     // Sound toggle logic would be implemented here
   };
 
+  const helpContent = (
+    <div>
+      {language.code === 'de' 
+        ? 'Diese Seite bietet Zugang zu Kursen und Bildungsangeboten, die Ihnen helfen, neue Fähigkeiten zu erwerben und Ihre Karriere zu fördern.' 
+        : 'This page provides access to courses and educational offerings that help you acquire new skills and advance your career.'}
+    </div>
+  );
+
   return (
     <div 
       className="min-h-screen p-4 md:p-8"
       dir={language.rtl ? 'rtl' : 'ltr'}
     >
-      <div className="flex justify-between mb-6">
-        <Button 
-          variant="outline" 
-          onClick={() => navigate('/home')}
-        >
-          <ArrowLeft className="mr-2 h-4 w-4" />
-          {language.rtl ? 'رجوع' : 'Back'}
-        </Button>
-        
-        <div className="flex gap-2">
-          <Button
-            variant="ghost"
-            className="p-2"
-            onClick={toggleSound}
-          >
-            {soundEnabled ? <Volume className="h-6 w-6" /> : <VolumeX className="h-6 w-6" />}
-          </Button>
-          <Button
-            variant="ghost"
-            className="p-2"
-          >
-            <HelpCircle className="h-6 w-6" />
-          </Button>
-          <Button
-            variant="ghost"
-            className="p-2"
-          >
-            <Languages className="h-6 w-6" />
-          </Button>
-        </div>
-      </div>
+      <PageNavigation 
+        toggleSound={toggleSound} 
+        soundEnabled={soundEnabled}
+        helpContent={helpContent}
+      />
       
       <h1 className="text-3xl font-bold mb-6">
         {getCategoryLabel(language.code, 'courses')}

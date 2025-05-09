@@ -9,27 +9,33 @@ import { HoverCard, HoverCardTrigger, HoverCardContent } from '../components/ui/
 import { Popover, PopoverTrigger, PopoverContent } from '../components/ui/popover';
 import { X, Volume, VolumeX, HelpCircle, Check } from 'lucide-react';
 
-const LanguageGrid: React.FC = () => {
+interface LanguageGridProps {
+  inDialog?: boolean;
+}
+
+const LanguageGrid: React.FC<LanguageGridProps> = ({ inDialog = false }) => {
   const [selectedLanguage, setSelectedLanguage] = useState<Language | null>(null);
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [timer, setTimer] = useState<number | null>(null);
   const [progressValue, setProgressValue] = useState(100);
   const [currentTitleLanguage, setCurrentTitleLanguage] = useState(0);
   const [soundEnabled, setSoundEnabled] = useState(true);
-  const { setLanguage } = useLanguage();
+  const { setLanguage, currentLanguage } = useLanguage();
   const navigate = useNavigate();
   const timerInterval = useRef<number | null>(null);
 
   // Rotate welcome title every 5 seconds
   useEffect(() => {
-    const titleInterval = window.setInterval(() => {
-      setCurrentTitleLanguage((prev) => (prev + 1) % languages.length);
-    }, 5000);
-
-    return () => {
-      clearInterval(titleInterval);
-    };
-  }, []);
+    if (!inDialog) {
+      const titleInterval = window.setInterval(() => {
+        setCurrentTitleLanguage((prev) => (prev + 1) % languages.length);
+      }, 5000);
+  
+      return () => {
+        clearInterval(titleInterval);
+      };
+    }
+  }, [inDialog]);
 
   useEffect(() => {
     return () => {
@@ -66,7 +72,15 @@ const LanguageGrid: React.FC = () => {
       setLanguage(selectedLanguage.code);
       if (timer) clearTimeout(timer);
       if (timerInterval.current) clearInterval(timerInterval.current);
-      navigate('/home');
+      
+      if (inDialog) {
+        // Just close confirmation and stay on the same page
+        setSelectedLanguage(null);
+        setShowConfirmation(false);
+      } else {
+        // Navigate to home for first-time language selection
+        navigate('/home');
+      }
     }
   };
 
@@ -88,41 +102,51 @@ const LanguageGrid: React.FC = () => {
   };
 
   return (
-    <div className="h-screen w-full bg-background p-4 md:p-8 overflow-hidden relative">
-      <h1 className="text-2xl md:text-3xl text-center font-bold mb-8">
-        {getWelcomeText(languages[currentTitleLanguage].code)}
-      </h1>
+    <div className={`${inDialog ? '' : 'h-screen'} w-full bg-background ${inDialog ? 'p-0' : 'p-4 md:p-8'} overflow-hidden relative`}>
+      {!inDialog && (
+        <h1 className="text-2xl md:text-3xl text-center font-bold mb-8">
+          {getWelcomeText(languages[currentTitleLanguage].code)}
+        </h1>
+      )}
       
-      {/* Sound and Help buttons */}
-      <div className="absolute top-4 right-4 flex space-x-2">
-        <Button 
-          variant="outline" 
-          size="icon"
-          onClick={toggleSound}
-          className="rounded-full"
-        >
-          {soundEnabled ? <Volume className="h-5 w-5" /> : <VolumeX className="h-5 w-5" />}
-        </Button>
-        
-        <Popover>
-          <PopoverTrigger asChild>
-            <Button 
-              variant="outline" 
-              size="icon"
-              className="rounded-full"
-            >
-              <HelpCircle className="h-5 w-5" />
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent className="w-80">
-            <div className="space-y-2">
-              <h3 className="font-medium text-lg">Language Selection</h3>
-              <p>Please select your mother tongue to continue. This will set the language for the entire platform.</p>
-              <p>You can change the language later if needed.</p>
-            </div>
-          </PopoverContent>
-        </Popover>
-      </div>
+      {inDialog && (
+        <h2 className="text-xl md:text-2xl text-center font-semibold mb-6">
+          {currentLanguage === 'de' ? 'Sprache auswählen' : 'Select Language'}
+        </h2>
+      )}
+      
+      {/* Sound and Help buttons - only show on main page, not in dialog */}
+      {!inDialog && (
+        <div className="absolute top-4 right-4 flex space-x-2">
+          <Button 
+            variant="outline" 
+            size="icon"
+            onClick={toggleSound}
+            className="rounded-full"
+          >
+            {soundEnabled ? <Volume className="h-5 w-5" /> : <VolumeX className="h-5 w-5" />}
+          </Button>
+          
+          <Popover>
+            <PopoverTrigger asChild>
+              <Button 
+                variant="outline" 
+                size="icon"
+                className="rounded-full"
+              >
+                <HelpCircle className="h-5 w-5" />
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="w-80">
+              <div className="space-y-2">
+                <h3 className="font-medium text-lg">Language Selection</h3>
+                <p>Please select your mother tongue to continue. This will set the language for the entire platform.</p>
+                <p>You can change the language later if needed.</p>
+              </div>
+            </PopoverContent>
+          </Popover>
+        </div>
+      )}
       
       <div className="grid grid-cols-3 md:grid-cols-4 gap-3 md:gap-4 max-w-4xl mx-auto">
         {languages.slice(0, 12).map((language, index) => (
@@ -152,7 +176,7 @@ const LanguageGrid: React.FC = () => {
       {/* Language selection overlay with zoom animation - now bigger with Yes/No buttons */}
       {selectedLanguage && (
         <div 
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 animate-fade-in"
+          className={`${inDialog ? 'fixed' : 'fixed'} inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 animate-fade-in`}
           onClick={handleOverlayClick}
         >
           <div className="absolute top-4 left-4">

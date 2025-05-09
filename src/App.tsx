@@ -10,7 +10,7 @@ import Home from "./pages/Home";
 import Information from "./pages/Information";
 import Courses from "./pages/Courses";
 import Community from "./pages/Community";
-import Videos from "./pages/Help"; // We're keeping the file name but changing the component name
+import Videos from "./pages/Videos"; // Changed from Help to Videos
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
