@@ -87,11 +87,11 @@ const Information: React.FC = () => {
             <Button
               key={category.id}
               variant="outline"
-              className="h-auto aspect-square flex flex-col gap-2 p-4 items-center justify-center"
+              className="h-auto aspect-square flex flex-col gap-2 p-4 items-center justify-center text-center"
               onClick={() => console.log(`Selected: ${category.id}`)}
             >
               <span className="text-4xl">{category.icon}</span>
-              <span className="text-center">
+              <span className="text-center text-sm line-clamp-3">
                 {language.code === 'de' ? category.name.de : category.name.en}
               </span>
             </Button>

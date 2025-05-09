@@ -6,7 +6,10 @@ import { languages, getHowCanIHelpText, getInformationHoverText, getCategoryLabe
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { HoverCard, HoverCardTrigger, HoverCardContent } from '../components/ui/hover-card';
-import { Search, Info, BookOpen, Users, HelpCircle, Home as HomeIcon, Volume, VolumeX, PlaySquare } from 'lucide-react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../components/ui/dialog';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../components/ui/tooltip';
+import { Search, Info, BookOpen, Users, HelpCircle, Home as HomeIcon, Volume, VolumeX, PlaySquare, Languages } from 'lucide-react';
+import LanguageGrid from '../components/LanguageGrid';
 
 const Home: React.FC = () => {
   const { currentLanguage } = useLanguage();
@@ -33,33 +36,128 @@ const Home: React.FC = () => {
     // Sound toggle logic would be implemented here
   };
 
+  const getTooltipText = (iconName: string): string => {
+    if (language.code === 'de') {
+      switch (iconName) {
+        case 'home': return 'Zur Startseite';
+        case 'sound': return soundEnabled ? 'Ton ausschalten' : 'Ton einschalten';
+        case 'help': return 'Hilfe anzeigen';
+        case 'language': return 'Sprache ändern';
+        default: return '';
+      }
+    } else {
+      switch (iconName) {
+        case 'home': return 'Go to home page';
+        case 'sound': return soundEnabled ? 'Turn sound off' : 'Turn sound on';
+        case 'help': return 'Show help';
+        case 'language': return 'Change language';
+        default: return '';
+      }
+    }
+  };
+
   return (
     <div 
       className="min-h-screen flex flex-col items-center p-4 md:p-8 text-center"
       dir={language.rtl ? 'rtl' : 'ltr'}
     >
       <div className="w-full flex justify-between mb-4">
-        <Button
-          variant="ghost"
-          className="p-2"
-          onClick={() => navigate('/home')}
-        >
-          <HomeIcon className="h-6 w-6" />
-        </Button>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant="ghost"
+                className="p-2"
+                onClick={() => navigate('/home')}
+              >
+                <HomeIcon className="h-6 w-6" />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{getTooltipText('home')}</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+        
         <div className="flex gap-2">
-          <Button
-            variant="ghost"
-            className="p-2"
-            onClick={toggleSound}
-          >
-            {soundEnabled ? <Volume className="h-6 w-6" /> : <VolumeX className="h-6 w-6" />}
-          </Button>
-          <Button
-            variant="ghost"
-            className="p-2"
-          >
-            <HelpCircle className="h-6 w-6" />
-          </Button>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button
+                  variant="ghost"
+                  className="p-2"
+                  onClick={toggleSound}
+                >
+                  {soundEnabled ? <Volume className="h-6 w-6" /> : <VolumeX className="h-6 w-6" />}
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{getTooltipText('sound')}</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      className="p-2"
+                    >
+                      <Languages className="h-6 w-6" />
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-4xl max-h-[90vh] overflow-auto p-0">
+                    <DialogHeader className="p-4 border-b">
+                      <DialogTitle>
+                        {language.code === 'de' ? 'Sprache ändern' : 'Change Language'}
+                      </DialogTitle>
+                    </DialogHeader>
+                    <div className="p-4">
+                      <LanguageGrid inDialog={true} />
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{getTooltipText('language')}</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+          
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      className="p-2"
+                    >
+                      <HelpCircle className="h-6 w-6" />
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent>
+                    <DialogHeader>
+                      <DialogTitle>
+                        {language.code === 'de' ? 'Hilfe' : 'Help'}
+                      </DialogTitle>
+                    </DialogHeader>
+                    <div>
+                      {language.code === 'de' 
+                        ? 'Hier finden Sie hilfreiche Informationen über die Startseite.' 
+                        : 'Here you will find helpful information about the home page.'}
+                    </div>
+                  </DialogContent>
+                </Dialog>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{getTooltipText('help')}</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         </div>
       </div>
       
