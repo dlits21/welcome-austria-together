@@ -10,8 +10,9 @@ import Home from "./pages/Home";
 import Information from "./pages/Information";
 import Courses from "./pages/Courses";
 import Community from "./pages/Community";
-import Videos from "./pages/Videos"; // Changed from Help to Videos
+import Videos from "./pages/Videos"; 
 import NotFound from "./pages/NotFound";
+import GermanLearning from "./pages/GermanLearning";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => (
             <Route path="/courses" element={<Courses />} />
             <Route path="/community" element={<Community />} />
             <Route path="/videos" element={<Videos />} />
+            <Route path="/german-learning" element={<GermanLearning />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </TooltipProvider>

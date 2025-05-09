@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { languages, getCategoryLabel } from '../data/languages';
@@ -7,6 +6,7 @@ import { Input } from '../components/ui/input';
 import { ScrollArea } from '../components/ui/scroll-area';
 import { Search } from 'lucide-react';
 import PageNavigation from '../components/PageNavigation';
+import { useNavigate } from 'react-router-dom';
 
 const informationCategories = [
   { id: 'political-education', icon: '📚', name: { en: 'Political Education', de: 'Politische Bildung' } },
@@ -29,6 +29,7 @@ const Information: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [searchInput, setSearchInput] = useState('');
   const [soundEnabled, setSoundEnabled] = useState(true);
+  const navigate = useNavigate();
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
@@ -43,6 +44,15 @@ const Information: React.FC = () => {
   const toggleSound = () => {
     setSoundEnabled(!soundEnabled);
     // Sound toggle logic would be implemented here
+  };
+
+  const handleCategoryClick = (categoryId: string) => {
+    console.log(`Selected: ${categoryId}`);
+    
+    if (categoryId === 'german-learning') {
+      navigate('/german-learning');
+    }
+    // Other category navigations can be added similarly
   };
 
   const helpContent = (
@@ -88,7 +98,7 @@ const Information: React.FC = () => {
               key={category.id}
               variant="outline"
               className="h-auto aspect-square flex flex-col gap-2 p-4 items-center justify-center text-center"
-              onClick={() => console.log(`Selected: ${category.id}`)}
+              onClick={() => handleCategoryClick(category.id)}
             >
               <span className="text-4xl">{category.icon}</span>
               <span className="text-center text-sm line-clamp-3">
