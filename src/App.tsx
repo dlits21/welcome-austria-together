@@ -1,42 +1,33 @@
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { LanguageProvider } from './src/contexts/LanguageContext';
+import LanguageGrid from './src/components/LanguageGrid';
+import Home from './src/screens/Home';
+import Information from './src/screens/Information';
+import Courses from './src/screens/Courses';
+import Community from './src/screens/Community';
+import Videos from './src/screens/Videos';
+import GermanLearning from './src/screens/GermanLearning';
+import NotFound from './src/screens/NotFound';
 
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { LanguageProvider } from "./contexts/LanguageContext";
-import LanguageGrid from "./components/LanguageGrid";
-import Home from "./pages/Home";
-import Information from "./pages/Information";
-import Courses from "./pages/Courses";
-import Community from "./pages/Community";
-import Videos from "./pages/Videos"; 
-import NotFound from "./pages/NotFound";
-import GermanLearning from "./pages/GermanLearning";
+const Stack = createNativeStackNavigator();
 
-const queryClient = new QueryClient();
-
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <BrowserRouter>
+export default function App() {
+  return (
+    <NavigationContainer>
       <LanguageProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <Routes>
-            <Route path="/" element={<LanguageGrid />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/information" element={<Information />} />
-            <Route path="/courses" element={<Courses />} />
-            <Route path="/community" element={<Community />} />
-            <Route path="/videos" element={<Videos />} />
-            <Route path="/german-learning" element={<GermanLearning />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </TooltipProvider>
+        <Stack.Navigator initialRouteName="LanguageGrid">
+          <Stack.Screen name="LanguageGrid" component={LanguageGrid} options={{ headerShown: false }} />
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Information" component={Information} />
+          <Stack.Screen name="Courses" component={Courses} />
+          <Stack.Screen name="Community" component={Community} />
+          <Stack.Screen name="Videos" component={Videos} />
+          <Stack.Screen name="GermanLearning" component={GermanLearning} />
+          <Stack.Screen name="NotFound" component={NotFound} />
+        </Stack.Navigator>
       </LanguageProvider>
-    </BrowserRouter>
-  </QueryClientProvider>
-);
-
-export default App;
+    </NavigationContainer>
+  );
+}
