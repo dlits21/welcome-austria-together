@@ -18,7 +18,11 @@ export default function App() {
   return (
     <NavigationContainer>
       <LanguageProvider>
-        <Stack.Navigator initialRouteName="LanguageSelection" screenOptions={{ headerShown: false }}>
+        <Stack.Navigator
+          id="main"
+          initialRouteName="LanguageSelection"
+          screenOptions={{ headerShown: false }}
+        >
           <Stack.Screen name="LanguageSelection" component={LanguageGrid} />
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Information" component={Information} />

@@ -6,6 +6,20 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { languages } from '../data/languages';
 import { Feather } from '@expo/vector-icons';
 import LanguageGrid from './LanguageGrid';
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+type RootStackParamList = {
+  Home: undefined;
+  LanguageSelection: undefined;
+  Information: undefined;
+  Courses: undefined;
+  Community: undefined;
+  Videos: undefined;
+  GermanLearning: undefined;
+  NotFound: undefined;
+};
+
+type NavigationProp = NativeStackNavigationProp<RootStackParamList>;
 
 interface PageNavigationProps {
   toggleSound: () => void;
@@ -15,7 +29,7 @@ interface PageNavigationProps {
 
 const PageNavigation: React.FC<PageNavigationProps> = ({ toggleSound, soundEnabled, helpContent }) => {
   const { currentLanguage } = useLanguage();
-  const navigation = useNavigation();
+  const navigation = useNavigation<NavigationProp>();
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
   const [isLanguageModalVisible, setIsLanguageModalVisible] = React.useState(false);
   const [isHelpModalVisible, setIsHelpModalVisible] = React.useState(false);
@@ -44,8 +58,7 @@ const PageNavigation: React.FC<PageNavigationProps> = ({ toggleSound, soundEnabl
     <View style={styles.container}>
       <TouchableOpacity 
         style={styles.backButton}
-        // @ts-ignore - Navigation prop type needs to be fixed
-        onPress={() => navigation.navigate('Home')}
+        onPress={() => navigation.navigate("Home")}
       >
         <Feather name="home" size={16} color="#000" style={styles.buttonIcon} />
         <Text style={styles.buttonText}>

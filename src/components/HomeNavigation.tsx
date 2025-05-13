@@ -5,6 +5,20 @@ import { Feather } from '@expo/vector-icons';
 import { useLanguage } from '../contexts/LanguageContext';
 import { languages } from '../data/languages';
 import { useNavigation } from '@react-navigation/native';
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+type RootStackParamList = {
+  Home: undefined;
+  LanguageSelection: undefined;
+  Information: undefined;
+  Courses: undefined;
+  Community: undefined;
+  Videos: undefined;
+  GermanLearning: undefined;
+  NotFound: undefined;
+};
+
+type NavigationProp = NativeStackNavigationProp<RootStackParamList>;
 
 interface HomeNavigationProps {
   toggleSound: () => void;
@@ -20,7 +34,7 @@ const HomeNavigation = ({
   openHelpModal
 }: HomeNavigationProps) => {
   const { currentLanguage } = useLanguage();
-  const navigation = useNavigation();
+  const navigation = useNavigation<NavigationProp>();
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
   
   const getTooltipText = (iconName: string): string => {
@@ -47,7 +61,7 @@ const HomeNavigation = ({
     <View style={styles.container}>
       <TouchableOpacity
         style={styles.iconButton}
-        onPress={() => navigation.navigate('Home')}
+        onPress={() => navigation.navigate("Home")}
       >
         <Feather name="home" size={24} color="#000" />
       </TouchableOpacity>
