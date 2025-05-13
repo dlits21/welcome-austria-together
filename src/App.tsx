@@ -1,6 +1,7 @@
 
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { LanguageProvider } from './contexts/LanguageContext';
 import LanguageGrid from './components/LanguageGrid';
 import Home from './pages/Home';
@@ -11,21 +12,23 @@ import Videos from './pages/Videos';
 import GermanLearning from './pages/GermanLearning';
 import NotFound from './pages/NotFound';
 
+const Stack = createNativeStackNavigator();
+
 export default function App() {
   return (
-    <Router>
+    <NavigationContainer>
       <LanguageProvider>
-        <Routes>
-          <Route path="/" element={<LanguageGrid />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/information" element={<Information />} />
-          <Route path="/courses" element={<Courses />} />
-          <Route path="/community" element={<Community />} />
-          <Route path="/videos" element={<Videos />} />
-          <Route path="/german-learning" element={<GermanLearning />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Stack.Navigator initialRouteName="LanguageSelection" screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="LanguageSelection" component={LanguageGrid} />
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Information" component={Information} />
+          <Stack.Screen name="Courses" component={Courses} />
+          <Stack.Screen name="Community" component={Community} />
+          <Stack.Screen name="Videos" component={Videos} />
+          <Stack.Screen name="GermanLearning" component={GermanLearning} />
+          <Stack.Screen name="NotFound" component={NotFound} />
+        </Stack.Navigator>
       </LanguageProvider>
-    </Router>
+    </NavigationContainer>
   );
 }
