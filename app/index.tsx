@@ -19,18 +19,18 @@ import { MaterialIcons } from "@expo/vector-icons";
 
 // Language data with correct flags and languages
 const languages = [
-  { code: "de", name: "Deutsch", flag: require("../assets/images/icon.png") }, // German
-  { code: "en", name: "English", flag: require("../assets/images/icon.png") }, // English
-  { code: "ru", name: "Русский", flag: require("../assets/images/icon.png") }, // Russian
-  { code: "ce", name: "Нохчийн", flag: require("../assets/images/icon.png") }, // Chechen
-  { code: "prs", name: "دری", flag: require("../assets/images/icon.png") }, // Dari
-  { code: "ps", name: "پښتو", flag: require("../assets/images/icon.png") }, // Pashto
-  { code: "fa", name: "فارسی", flag: require("../assets/images/icon.png") }, // Persian
-  { code: "ar", name: "العربية", flag: require("../assets/images/icon.png") }, // Arabic
-  { code: "ku", name: "Kurdî", flag: require("../assets/images/icon.png") }, // Kurdish
-  { code: "so", name: "Soomaali", flag: require("../assets/images/icon.png") }, // Somali
-  { code: "ka", name: "ქართული", flag: require("../assets/images/icon.png") }, // Georgian
-  { code: "sq", name: "Shqip", flag: require("../assets/images/icon.png") }, // Albanian
+  { code: "de", name: "Deutsch", flag: require("../assets/images/flags/de.svg") }, // German
+  { code: "en", name: "English", flag: require("../assets/images/flags/gb.svg") }, // English
+  { code: "ru", name: "Русский", flag: require("../assets/images/flags/ru.svg") }, // Russian
+  { code: "ce", name: "Нохчийн", flag: require("../assets/images/flags/ru.svg") }, // Chechen
+  { code: "prs", name: "دری", flag: require("../assets/images/flags/af.svg") }, // Dari
+  { code: "ps", name: "پښتو", flag: require("../assets/images/flags/af.svg") }, // Pashto
+  { code: "fa", name: "فارسی", flag: require("../assets/images/flags/ir.svg") }, // Persian
+  { code: "ar", name: "العربية", flag: require("../assets/images/flags/sy.svg") }, // Arabic
+  { code: "ku", name: "Kurdî", flag: require("../assets/images/flags/sy.svg") }, // Kurdish
+  { code: "so", name: "Soomaali", flag: require("../assets/images/flags/so.svg") }, // Somali
+  { code: "ka", name: "ქართული", flag: require("../assets/images/flags/ge.svg") }, // Georgian
+  { code: "sq", name: "Shqip", flag: require("../assets/images/flags/al.svg") }, // Albanian
 ];
 
 // Welcome messages in each language
@@ -51,18 +51,18 @@ const welcomeMessages = {
 
 // Confirmation messages in each language
 const confirmationMessages = {
-  de: "Verstehst du Deutsch? Diese App wird ab jetzt auf Deutsch sein. Du kannst das später ändern.",
-  en: "Do you understand English? This app will be in English from now on. You can change this later.",
-  ru: "Вы понимаете русский? Это приложение теперь будет на русском языке. Вы можете изменить это позже.",
-  ce: "Хьуна нохчийн мотт хаъий? Хӏара приложение хӏинца дуьйна нохчийн маттахь хир ю. Хьо и тӏаьхьо хийца йиш ю.",
+  de: "Verstehst du Deutsch?\nDiese App wird ab jetzt auf Deutsch sein.\n Du kannst das später ändern.",
+  en: "Do you understand English?\n This app will be in English from now on.\n You can change this later.",
+  ru: "Вы понимаете русский?\n Это приложение теперь будет на русском языке.\n Вы можете изменить это позже.",
+  ce: "Хьуна нохчийн мотт хаъий?\n Хӏара приложение хӏинца дуьйна нохчийн маттахь хир ю.\n Хьо и тӏаьхьо хийца йиш ю.",
   prs: "آیا دری را میفهمید؟ این برنامه از این به بعد به زبان دری خواهد بود. شما می‌توانید بعداً این را تغییر دهید.",
   ps: "ایا تاسو پښتو پوهیږئ؟ دا اپلیکیشن به له دې وروسته په پښتو وي. تاسو کولی شئ دا وروسته بدل کړئ.",
   fa: "آیا فارسی را میفهمید؟ این برنامه از این به بعد به زبان فارسی خواهد بود. شما می‌توانید بعداً این را تغییر دهید.",
   ar: "هل تفهم العربية؟ سيكون هذا التطبيق باللغة العربية من الآن فصاعدًا. يمكنك تغيير ذلك لاحقًا.",
-  ku: "Tu Kurdî fêm dikî? Ev sepan ji niha û pê ve bi Kurdî be. Tu dikarî vê paşê biguherînî.",
-  so: "Ma fahmaysaa Soomaali? Abkan wuxuu noqon doonaa Soomaali hadda. Waxaad bedeli kartaa mar dambe.",
-  ka: "გესმით ქართული? ეს აპლიკაცია ამიერიდან ქართულ ენაზე იქნება. შეგიძლიათ ეს შეცვალოთ მოგვიანებით.",
-  sq: "A e kuptoni shqip? Ky aplikacion do të jetë në shqip nga tani e tutje. Mund ta ndryshoni këtë më vonë.",
+  ku: "Tu Kurdî fêm dikî?\n Ev sepan ji niha û pê ve bi Kurdî be.\n Tu dikarî vê paşê biguherînî.",
+  so: "Ma fahmaysaa Soomaali?\n Abkan wuxuu noqon doonaa Soomaali hadda.\n Waxaad bedeli kartaa mar dambe.",
+  ka: "გესმით ქართული?\n ეს აპლიკაცია ამიერიდან ქართულ ენაზე იქნება.\n შეგიძლიათ ეს შეცვალოთ მოგვიანებით.",
+  sq: "A e kuptoni shqip?\n Ky aplikacion do të jetë në shqip nga tani e tutje.\n Mund ta ndryshoni këtë më vonë.",
 };
 
 // Hover messages in each language
@@ -351,7 +351,7 @@ const styles = StyleSheet.create({
     position: "relative",
   },
   title: {
-    fontSize: 24,
+    fontSize: 34,
     fontWeight: "bold",
     marginBottom: 10,
     textAlign: "center",
@@ -393,13 +393,13 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   languageFlag: {
-    width: 60,
-    height: 60,
+    width: "50%",
+    height: "50%",
     marginBottom: 10,
     borderRadius: 30,
   },
   languageName: {
-    fontSize: 14,
+    fontSize: Dimensions.get('window').width / 25,
     textAlign: "center",
   },
   hoverTooltip: {
