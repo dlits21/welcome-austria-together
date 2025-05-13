@@ -19,7 +19,7 @@ export default function App() {
     <NavigationContainer>
       <LanguageProvider>
         <Stack.Navigator
-          id="main"
+          id={undefined}
           initialRouteName="LanguageSelection"
           screenOptions={{ headerShown: false }}
         >
