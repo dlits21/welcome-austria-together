@@ -1,25 +1,13 @@
 
 import React from 'react';
-import { View, TouchableOpacity, Text, StyleSheet, Modal } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { languages } from '../data/languages';
-import { Feather } from '@expo/vector-icons';
+import { Button } from './ui/button';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
+import { Volume, VolumeX, HelpCircle, Languages, Home as HomeIcon } from 'lucide-react';
 import LanguageGrid from './LanguageGrid';
-import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
-
-type RootStackParamList = {
-  Home: undefined;
-  LanguageSelection: undefined;
-  Information: undefined;
-  Courses: undefined;
-  Community: undefined;
-  Videos: undefined;
-  GermanLearning: undefined;
-  NotFound: undefined;
-};
-
-type NavigationProp = NativeStackNavigationProp<RootStackParamList>;
 
 interface PageNavigationProps {
   toggleSound: () => void;
@@ -29,10 +17,8 @@ interface PageNavigationProps {
 
 const PageNavigation: React.FC<PageNavigationProps> = ({ toggleSound, soundEnabled, helpContent }) => {
   const { currentLanguage } = useLanguage();
-  const navigation = useNavigation<NavigationProp>();
+  const navigate = useNavigate();
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
-  const [isLanguageModalVisible, setIsLanguageModalVisible] = React.useState(false);
-  const [isHelpModalVisible, setIsHelpModalVisible] = React.useState(false);
 
   const getTooltipText = (iconName: string): string => {
     if (language.code === 'de') {
@@ -55,139 +41,108 @@ const PageNavigation: React.FC<PageNavigationProps> = ({ toggleSound, soundEnabl
   };
 
   return (
-    <View style={styles.container}>
-      <TouchableOpacity 
-        style={styles.backButton}
-        onPress={() => navigation.navigate("Home")}
-      >
-        <Feather name="home" size={16} color="#000" style={styles.buttonIcon} />
-        <Text style={styles.buttonText}>
-          {language.rtl ? 'رجوع' : 'Back'}
-        </Text>
-      </TouchableOpacity>
+    <div className="flex justify-between mb-6">
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button 
+              variant="outline" 
+              onClick={() => navigate('/home')}
+            >
+              <HomeIcon className="mr-2 h-4 w-4" />
+              {language.rtl ? 'رجوع' : 'Back'}
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>{getTooltipText('home')}</p>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
       
-      <View style={styles.rightButtons}>
-        <TouchableOpacity
-          style={styles.iconButton}
-          onPress={toggleSound}
-        >
-          <Feather name={soundEnabled ? "volume-2" : "volume-x"} size={24} color="#000" />
-        </TouchableOpacity>
+      <div className="flex gap-2">
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant="ghost"
+                className="p-2"
+                onClick={toggleSound}
+              >
+                {soundEnabled ? <Volume className="h-6 w-6" /> : <VolumeX className="h-6 w-6" />}
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{getTooltipText('sound')}</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
         
-        <TouchableOpacity
-          style={styles.iconButton}
-          onPress={() => setIsLanguageModalVisible(true)}
-        >
-          <Feather name="globe" size={24} color="#000" />
-        </TouchableOpacity>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    className="p-2"
+                  >
+                    <Languages className="h-6 w-6" />
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-4xl max-h-[90vh] overflow-auto p-0">
+                  <DialogHeader className="p-4 border-b">
+                    <DialogTitle>
+                      {language.code === 'de' ? 'Sprache ändern' : 'Change Language'}
+                    </DialogTitle>
+                  </DialogHeader>
+                  <div className="p-4">
+                    <LanguageGrid inDialog={true} />
+                  </div>
+                </DialogContent>
+              </Dialog>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{getTooltipText('language')}</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
         
-        <TouchableOpacity
-          style={styles.iconButton}
-          onPress={() => setIsHelpModalVisible(true)}
-        >
-          <Feather name="help-circle" size={24} color="#000" />
-        </TouchableOpacity>
-      </View>
-
-      {/* Language Modal */}
-      <Modal
-        visible={isLanguageModalVisible}
-        animationType="slide"
-        transparent={true}
-        onRequestClose={() => setIsLanguageModalVisible(false)}
-      >
-        <View style={styles.modalContainer}>
-          <View style={styles.modalContent}>
-            <Text style={styles.modalTitle}>
-              {language.code === 'de' ? 'Sprache ändern' : 'Change Language'}
-            </Text>
-            <LanguageGrid inDialog={true} />
-          </View>
-        </View>
-      </Modal>
-      
-      {/* Help Modal */}
-      <Modal
-        visible={isHelpModalVisible}
-        animationType="slide"
-        transparent={true}
-        onRequestClose={() => setIsHelpModalVisible(false)}
-      >
-        <View style={styles.modalContainer}>
-          <View style={styles.modalContent}>
-            <Text style={styles.modalTitle}>
-              {language.code === 'de' ? 'Hilfe' : 'Help'}
-            </Text>
-            {helpContent || (
-              <Text style={styles.modalText}>
-                {language.code === 'de' 
-                  ? 'Hier finden Sie hilfreiche Informationen.' 
-                  : 'Here you will find helpful information.'}
-              </Text>
-            )}
-          </View>
-        </View>
-      </Modal>
-    </View>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    className="p-2"
+                  >
+                    <HelpCircle className="h-6 w-6" />
+                  </Button>
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogHeader>
+                    <DialogTitle>
+                      {language.code === 'de' ? 'Hilfe' : 'Help'}
+                    </DialogTitle>
+                  </DialogHeader>
+                  {helpContent || (
+                    <div>
+                      {language.code === 'de' 
+                        ? 'Hier finden Sie hilfreiche Informationen.' 
+                        : 'Here you will find helpful information.'}
+                    </div>
+                  )}
+                </DialogContent>
+              </Dialog>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{getTooltipText('help')}</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      </div>
+    </div>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 24,
-    width: '100%'
-  },
-  backButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: 8,
-    borderWidth: 1,
-    borderColor: '#e0e0e0',
-    borderRadius: 4,
-  },
-  buttonIcon: {
-    marginRight: 8,
-  },
-  buttonText: {
-    fontSize: 14,
-  },
-  rightButtons: {
-    flexDirection: 'row',
-    gap: 8,
-  },
-  iconButton: {
-    padding: 8,
-  },
-  modalContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-  },
-  modalContent: {
-    width: '80%',
-    maxHeight: '80%',
-    backgroundColor: 'white',
-    borderRadius: 8,
-    padding: 16,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-  },
-  modalTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 16,
-    textAlign: 'center',
-  },
-  modalText: {
-    fontSize: 16,
-    marginBottom: 16,
-  }
-});
 
 export default PageNavigation;
