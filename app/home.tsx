@@ -14,11 +14,11 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { languages, getHowCanIHelpText, getSearchPlaceholder } from '../data/languages';
 
 // Import refactored components
-import Header from './components/Header';
-import SearchBar from './components/SearchBar';
-import CategoryGrid from './components/CategoryGrid';
-import HelpModal from './components/HelpModal';
-import LanguageModal from './components/LanguageModal';
+import Header from '../components/Header';
+import SearchBar from '../components/SearchBar';
+import CategoryGrid from '../components/CategoryGrid';
+import HelpModal from '../components/HelpModal';
+import LanguageModal from '../components/LanguageModal';
 
 const Home: React.FC = () => {
   const { currentLanguage } = useLanguage();

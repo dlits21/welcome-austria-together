@@ -1,6 +1,6 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'expo-router';
 
 interface LanguageContextType {
   currentLanguage: string;
@@ -18,7 +18,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const [currentLanguage, setCurrentLanguage] = useState<string>(() => {
     return localStorage.getItem('selectedLanguage') || 'en';
   });
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const setLanguage = (language: string) => {
     setCurrentLanguage(language);
