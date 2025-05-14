@@ -1,20 +1,20 @@
 
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from "expo-router";
 import { useLanguage } from '../contexts/LanguageContext';
 import { languages, getHowCanIHelpText, getCategoryLabel, getSearchPlaceholder } from '../data/languages';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../components/ui/dialog';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../components/ui/card';
-import { Search, HelpCircle, Volume, VolumeX, Languages, MessageSquare, Info, BookOpen, Users } from 'lucide-react';
+import { Search, HelpCircle, Volume, VolumeX, Languages, MessageSquare, Info, BookOpen, Users } from 'lucide-react-native';
 import LanguageGrid from '../components/LanguageGrid';
 import { toast } from '../components/ui/use-toast';
 import { AspectRatio } from '../components/ui/aspect-ratio';
 
 const Home: React.FC = () => {
   const { currentLanguage } = useLanguage();
-  const navigate = useNavigate();
+  const router = useRouter();
   const [searchInput, setSearchInput] = useState('');
   const [soundEnabled, setSoundEnabled] = useState(true);
   
@@ -23,7 +23,7 @@ const Home: React.FC = () => {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchInput.trim()) {
-      navigate('/search', { state: { query: searchInput } });
+      router.push('/search', { state: { query: searchInput } });
     } else {
       toast({
         title: language.code === 'de' ? 'Bitte geben Sie einen Suchbegriff ein' : 'Please enter a search term',
@@ -34,7 +34,7 @@ const Home: React.FC = () => {
   };
 
   const handleCategoryClick = (category: string) => {
-    navigate(`/${category}`);
+    router.push(`/${category}`);
   };
 
   const toggleSound = () => {
