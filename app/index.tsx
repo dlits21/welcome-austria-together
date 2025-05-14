@@ -201,7 +201,7 @@ export default function LanguageSelectionScreen() {
             style={styles.iconButton} 
             onPress={() => setShowInfo(true)}
           >
-            <MaterialIcons name="help" size={24} color="#333" />
+            <MaterialIcons name="help" size={Dimensions.get('window').width / 25} color="#333" />
           </TouchableOpacity>
           
           <TouchableOpacity 
@@ -210,7 +210,7 @@ export default function LanguageSelectionScreen() {
           >
             <MaterialIcons 
               name={soundEnabled ? "volume-up" : "volume-off"} 
-              size={24} 
+              size={Dimensions.get('window').width / 25}
               color="#333" 
             />
           </TouchableOpacity>
@@ -355,6 +355,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 10,
     textAlign: "center",
+    width: "60%"
   },
   subtitle: {
     fontSize: 16,
@@ -427,7 +428,7 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0,0,0,0.5)",
   },
   modalView: {
-    width: '80%',
+    height: '60%',
     backgroundColor: "#fff",
     borderRadius: 20,
     padding: 35,
@@ -456,15 +457,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   detailFlag: {
-    width: 100,
-    height: 100,
-    marginBottom: 20,
+    width: Dimensions.get('window').height * .1,
+    height: Dimensions.get('window').height * .1,
+    marginTop: -10,
+    marginBottom: 10,
     borderRadius: 50,
   },
   detailText: {
-    fontSize: 16,
+    fontSize: 12,
     textAlign: "center",
-    marginBottom: 20,
+    marginBottom: 10,
     lineHeight: 24,
   },
   confirmButton: {
@@ -484,7 +486,7 @@ const styles = StyleSheet.create({
     height: 6,
     backgroundColor: "#e0e0e0",
     borderRadius: 3,
-    marginTop: 30,
+    marginTop: 20,
     overflow: "hidden",
   },
   countdownBar: {
