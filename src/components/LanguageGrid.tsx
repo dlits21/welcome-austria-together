@@ -173,7 +173,7 @@ const LanguageGrid: React.FC<LanguageGridProps> = ({ inDialog = false }) => {
         ))}
       </div>
 
-      {/* Language selection overlay with zoom animation - now bigger with Yes/No buttons */}
+      {/* Language selection overlay with zoom animation - now with Yes/No buttons */}
       {selectedLanguage && (
         <div 
           className={`${inDialog ? 'fixed' : 'fixed'} inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 animate-fade-in`}
@@ -190,47 +190,47 @@ const LanguageGrid: React.FC<LanguageGridProps> = ({ inDialog = false }) => {
             </Button>
           </div>
           
-          <div className="bg-white rounded-2xl p-8 max-w-lg w-full mx-4 flex flex-col items-center shadow-xl animate-zoom-in">
-            <div className="text-7xl md:text-9xl mb-8">
+          <div className="bg-white rounded-2xl p-6 w-[85%] max-w-md mx-auto flex flex-col items-center animate-zoom-in">
+            <div className="text-5xl md:text-7xl mb-4 md:mb-6">
               {selectedLanguage.flag}
             </div>
             
             <div 
-              className={`text-center mb-8 space-y-4 w-full ${selectedLanguage.rtl ? 'text-right' : 'text-left'}`}
+              className={`text-center mb-6 space-y-3 w-full ${selectedLanguage.rtl ? 'text-right' : 'text-left'}`}
               dir={selectedLanguage.rtl ? 'rtl' : 'ltr'}
             >
-              <h2 className="text-xl font-semibold">
+              <h2 className="text-lg md:text-xl font-semibold">
                 {selectedLanguage.rtl ? `هل ${selectedLanguage.nativeName} لغتك الأم؟` : `Is ${selectedLanguage.nativeName} your native tongue?`}
               </h2>
               
-              <p className="text-base">
+              <p className="text-sm md:text-base">
                 {selectedLanguage.rtl ? `ستكون الموقع باللغة ${selectedLanguage.nativeName} من الآن فصاعداً.` : `The website will be in ${selectedLanguage.nativeName} from now on.`}
               </p>
               
-              <p className="text-base">
+              <p className="text-sm md:text-base">
                 {selectedLanguage.rtl ? `يمكنك تغيير هذا لاحقاً!` : `You can change this later!`}
               </p>
             </div>
             
-            <div className="flex w-full gap-4 mb-6">
+            <div className="flex w-full gap-4 mb-4">
               <Button 
                 onClick={handleCancel}
                 variant="outline"
-                className="flex-1 py-6 text-lg border-red-500 text-red-500 hover:bg-red-50"
+                className="flex-1 py-2 md:py-4 border-red-500 text-red-500 hover:bg-red-50"
               >
                 {selectedLanguage.rtl ? 'لا' : 'No'}
               </Button>
               
               <Button 
                 onClick={handleConfirm}
-                className="flex-1 py-6 text-lg bg-green-500 hover:bg-green-600"
+                className="flex-1 py-2 md:py-4 bg-green-500 hover:bg-green-600"
               >
-                <Check className="mr-2" />
+                <Check className="mr-2 h-4 w-4" />
                 {selectedLanguage.rtl ? 'نعم' : 'Yes'}
               </Button>
             </div>
             
-            <Progress value={progressValue} className="w-full h-2" />
+            <Progress value={progressValue} className="w-full h-1.5" />
           </div>
         </div>
       )}

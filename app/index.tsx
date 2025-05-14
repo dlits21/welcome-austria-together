@@ -33,8 +33,15 @@ const languages = [
   { code: "sq", name: "Shqip", flag: require("../assets/images/flags/al.svg") }, // Albanian
 ];
 
+// Type definition for language
+interface Language {
+  code: string;
+  name: string;
+  flag: any; // Using 'any' for simplicity with require()
+}
+
 // Welcome messages in each language
-const welcomeMessages = {
+const welcomeMessages: Record<string, string> = {
   de: "Willkommen! Schön dass du da bist",
   en: "Welcome! Nice to have you here",
   ru: "Добро пожаловать! Приятно видеть вас здесь",
@@ -50,7 +57,7 @@ const welcomeMessages = {
 };
 
 // Confirmation messages in each language
-const confirmationMessages = {
+const confirmationMessages: Record<string, string> = {
   de: "Verstehst du Deutsch?\nDiese App wird ab jetzt auf Deutsch sein.\n Du kannst das später ändern.",
   en: "Do you understand English?\n This app will be in English from now on.\n You can change this later.",
   ru: "Вы понимаете русский?\n Это приложение теперь будет на русском языке.\n Вы можете изменить это позже.",
@@ -66,7 +73,7 @@ const confirmationMessages = {
 };
 
 // Hover messages in each language
-const hoverMessages = {
+const hoverMessages: Record<string, string> = {
   de: "Bitte wählen Sie, wenn Deutsch Ihre Muttersprache ist",
   en: "Please select if English is your mother tongue",
   ru: "Пожалуйста, выберите, если русский - ваш родной язык",
@@ -86,14 +93,14 @@ export default function LanguageSelectionScreen() {
   const [currentWelcomeIndex, setCurrentWelcomeIndex] = useState(0);
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showInfo, setShowInfo] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState(null);
-  const [hoverLanguage, setHoverLanguage] = useState(null);
+  const [selectedLanguage, setSelectedLanguage] = useState<Language | null>(null);
+  const [hoverLanguage, setHoverLanguage] = useState<Language | null>(null);
   const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
   
   const animatedScale = useRef(new Animated.Value(1)).current;
   const animatedOpacity = useRef(new Animated.Value(0)).current;
   const countdownProgress = useRef(new Animated.Value(1)).current;
-  const countdownTimer = useRef(null);
+  const countdownTimer = useRef<NodeJS.Timeout | null>(null);
   const windowWidth = Dimensions.get('window').width;
   const windowHeight = Dimensions.get('window').height;
 
@@ -106,7 +113,7 @@ export default function LanguageSelectionScreen() {
   }, []);
 
   // Handle language selection
-  const handleLanguageSelect = (language) => {
+  const handleLanguageSelect = (language: Language) => {
     setSelectedLanguage(language);
     
     // Animate scaling
@@ -159,17 +166,17 @@ export default function LanguageSelectionScreen() {
   };
 
   // Confirm language selection
-  const confirmLanguage = (code) => {
+  const confirmLanguage = (code: string) => {
     console.log(`Confirmed language: ${code}`);
     if (countdownTimer.current) {
       clearTimeout(countdownTimer.current);
     }
     // Navigate to homepage
-    router.push("/home");
+    router.push('/home');
   };
 
   // Handle hover effect (simulated for touch devices)
-  const handlePressIn = (language, event) => {
+  const handlePressIn = (language: Language, event: any) => {
     setHoverLanguage(language);
     // Get touch position
     setHoverPosition({
@@ -184,7 +191,7 @@ export default function LanguageSelectionScreen() {
 
   // Get current welcome message based on index
   const currentWelcomeCode = languages[currentWelcomeIndex]?.code;
-  const currentWelcomeMessage = welcomeMessages[currentWelcomeCode] || welcomeMessages.en;
+  const currentWelcomeMessage = currentWelcomeCode ? welcomeMessages[currentWelcomeCode] : welcomeMessages.en;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -281,15 +288,26 @@ export default function LanguageSelectionScreen() {
                     {confirmationMessages[selectedLanguage.code] || confirmationMessages.en}
                   </Text>
                   
-                  {/* Confirmation button */}
-                  <TouchableOpacity
-                    style={styles.confirmButton}
-                    onPress={() => confirmLanguage(selectedLanguage.code)}
-                  >
-                    <Text style={styles.confirmButtonText}>
-                      {selectedLanguage.code === "en" ? "Confirm" : "OK"}
-                    </Text>
-                  </TouchableOpacity>
+                  {/* Yes/No Buttons */}
+                  <View style={styles.buttonContainer}>
+                    <TouchableOpacity
+                      style={styles.noButton}
+                      onPress={closeLanguageDetail}
+                    >
+                      <Text style={styles.noButtonText}>
+                        {selectedLanguage.code === "en" ? "No" : "Nein"}
+                      </Text>
+                    </TouchableOpacity>
+                    
+                    <TouchableOpacity
+                      style={styles.yesButton}
+                      onPress={() => confirmLanguage(selectedLanguage.code)}
+                    >
+                      <Text style={styles.yesButtonText}>
+                        {selectedLanguage.code === "en" ? "Yes" : "Ja"}
+                      </Text>
+                    </TouchableOpacity>
+                  </View>
                   
                   {/* Countdown bar */}
                   <View style={styles.countdownContainer}>
@@ -428,20 +446,12 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0,0,0,0.5)",
   },
   modalView: {
-    height: '60%',
+    width: '80%',
+    maxHeight: '60%',
     backgroundColor: "#fff",
     borderRadius: 20,
-    padding: 35,
+    padding: 25,
     alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
-    position: "relative",
   },
   backButton: {
     position: "absolute",
@@ -459,24 +469,45 @@ const styles = StyleSheet.create({
   detailFlag: {
     width: Dimensions.get('window').height * .1,
     height: Dimensions.get('window').height * .1,
-    marginTop: -10,
-    marginBottom: 10,
+    marginBottom: 20,
     borderRadius: 50,
   },
   detailText: {
-    fontSize: 12,
+    fontSize: 16,
     textAlign: "center",
-    marginBottom: 10,
+    marginBottom: 20,
     lineHeight: 24,
   },
-  confirmButton: {
-    backgroundColor: "#4CAF50",
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderRadius: 8,
+  buttonContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "100%",
     marginTop: 10,
   },
-  confirmButtonText: {
+  yesButton: {
+    backgroundColor: "#4CAF50",
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    borderRadius: 8,
+    flex: 1,
+    marginLeft: 5,
+    alignItems: "center",
+  },
+  yesButtonText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "600",
+  },
+  noButton: {
+    backgroundColor: "#f44336",
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    borderRadius: 8,
+    flex: 1,
+    marginRight: 5,
+    alignItems: "center",
+  },
+  noButtonText: {
     color: "#fff",
     fontSize: 16,
     fontWeight: "600",

@@ -1,29 +1,35 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
-import { languages, getHowCanIHelpText, getInformationHoverText, getCategoryLabel, getSearchPlaceholder } from '../data/languages';
+import { languages, getHowCanIHelpText, getCategoryLabel, getSearchPlaceholder } from '../data/languages';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
-import { HoverCard, HoverCardTrigger, HoverCardContent } from '../components/ui/hover-card';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../components/ui/dialog';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../components/ui/tooltip';
-import { Search, Info, BookOpen, Users, HelpCircle, Home as HomeIcon, Volume, VolumeX, PlaySquare, Languages } from 'lucide-react';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../components/ui/card';
+import { Search, HelpCircle, Volume, VolumeX, Languages, MessageSquare, Info, BookOpen, Users } from 'lucide-react';
 import LanguageGrid from '../components/LanguageGrid';
+import { toast } from '../components/ui/use-toast';
+import { AspectRatio } from '../components/ui/aspect-ratio';
 
 const Home: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const navigate = useNavigate();
-  const [searchInput, setSearchInput] = React.useState('');
-  const [soundEnabled, setSoundEnabled] = React.useState(true);
+  const [searchInput, setSearchInput] = useState('');
+  const [soundEnabled, setSoundEnabled] = useState(true);
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1]; // Default to English
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchInput.trim()) {
-      console.log('Search query:', searchInput);
-      // Navigate to search results page or handle search
+      navigate('/search', { state: { query: searchInput } });
+    } else {
+      toast({
+        title: language.code === 'de' ? 'Bitte geben Sie einen Suchbegriff ein' : 'Please enter a search term',
+        description: language.code === 'de' ? 'Das Suchfeld kann nicht leer sein' : 'The search field cannot be empty',
+        variant: "destructive",
+      });
     }
   };
 
@@ -34,137 +40,135 @@ const Home: React.FC = () => {
   const toggleSound = () => {
     setSoundEnabled(!soundEnabled);
     // Sound toggle logic would be implemented here
+    
+    toast({
+      title: soundEnabled 
+        ? (language.code === 'de' ? 'Ton ausgeschaltet' : 'Sound disabled') 
+        : (language.code === 'de' ? 'Ton eingeschaltet' : 'Sound enabled'),
+      description: soundEnabled
+        ? (language.code === 'de' ? 'Die Audio-Funktionen wurden deaktiviert' : 'Audio features have been disabled')
+        : (language.code === 'de' ? 'Die Audio-Funktionen wurden aktiviert' : 'Audio features have been enabled'),
+    });
   };
 
-  const getTooltipText = (iconName: string): string => {
-    if (language.code === 'de') {
-      switch (iconName) {
-        case 'home': return 'Zur Startseite';
-        case 'sound': return soundEnabled ? 'Ton ausschalten' : 'Ton einschalten';
-        case 'help': return 'Hilfe anzeigen';
-        case 'language': return 'Sprache ändern';
-        default: return '';
-      }
-    } else {
-      switch (iconName) {
-        case 'home': return 'Go to home page';
-        case 'sound': return soundEnabled ? 'Turn sound off' : 'Turn sound on';
-        case 'help': return 'Show help';
-        case 'language': return 'Change language';
-        default: return '';
-      }
-    }
-  };
+  // Prepare translations and text content
+  const askTitle = language.code === 'de' ? 'Fragen' : 'Ask';
+  const askSubtitle = language.code === 'de' 
+    ? 'Haben Sie eine Frage? Kontaktieren Sie uns!' 
+    : 'Do you have a question? Get in touch with us!';
+    
+  const infoTitle = language.code === 'de' ? 'Informationen' : 'Information';
+  const infoSubtitle = language.code === 'de'
+    ? 'Hier bieten wir spezifische Informationen zu verschiedenen Themen'
+    : 'Here we offer specific information to various topics';
+    
+  const learnTitle = language.code === 'de' ? 'Lernen' : 'Learn';
+  const learnSubtitle = language.code === 'de'
+    ? 'Klicken Sie hier für Kurse, Ressourcen oder Klassen'
+    : 'Click here for courses, resources or classes';
+    
+  const communityTitle = language.code === 'de' ? 'Gemeinschaft' : 'Community';
+  const communitySubtitle = language.code === 'de'
+    ? 'Brauchen Sie Hilfe oder möchten Sie anderen helfen? Klicken Sie hier'
+    : 'Do you need help or do you want to help others? Click here';
 
   return (
     <div 
-      className="min-h-screen flex flex-col items-center p-4 md:p-8 text-center"
+      className="min-h-screen flex flex-col bg-background p-4 md:p-6"
       dir={language.rtl ? 'rtl' : 'ltr'}
     >
-      <div className="w-full flex justify-between mb-4">
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button
-                variant="ghost"
-                className="p-2"
-                onClick={() => navigate('/home')}
-              >
-                <HomeIcon className="h-6 w-6" />
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>{getTooltipText('home')}</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
+      {/* Header with Logo and Icons */}
+      <header className="w-full flex justify-between items-center mb-8">
+        <div className="flex items-center">
+          <img 
+            src="/assets/images/icon.png"
+            alt="UND Logo"
+            className="h-10 md:h-12"
+          />
+        </div>
         
         <div className="flex gap-2">
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Button
-                  variant="ghost"
-                  className="p-2"
-                  onClick={toggleSound}
-                >
-                  {soundEnabled ? <Volume className="h-6 w-6" /> : <VolumeX className="h-6 w-6" />}
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>{getTooltipText('sound')}</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button
-                      variant="ghost"
-                      className="p-2"
-                    >
-                      <Languages className="h-6 w-6" />
-                    </Button>
-                  </DialogTrigger>
-                  <DialogContent className="max-w-4xl max-h-[90vh] overflow-auto p-0">
-                    <DialogHeader className="p-4 border-b">
-                      <DialogTitle>
-                        {language.code === 'de' ? 'Sprache ändern' : 'Change Language'}
-                      </DialogTitle>
-                    </DialogHeader>
-                    <div className="p-4">
-                      <LanguageGrid inDialog={true} />
-                    </div>
-                  </DialogContent>
-                </Dialog>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>{getTooltipText('language')}</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
+          {/* Sound Toggle */}
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggleSound}
+            className="rounded-full"
+          >
+            {soundEnabled ? <Volume className="h-5 w-5" /> : <VolumeX className="h-5 w-5" />}
+          </Button>
           
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button
-                      variant="ghost"
-                      className="p-2"
-                    >
-                      <HelpCircle className="h-6 w-6" />
-                    </Button>
-                  </DialogTrigger>
-                  <DialogContent>
-                    <DialogHeader>
-                      <DialogTitle>
-                        {language.code === 'de' ? 'Hilfe' : 'Help'}
-                      </DialogTitle>
-                    </DialogHeader>
-                    <div>
-                      {language.code === 'de' 
-                        ? 'Hier finden Sie hilfreiche Informationen über die Startseite.' 
-                        : 'Here you will find helpful information about the home page.'}
-                    </div>
-                  </DialogContent>
-                </Dialog>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>{getTooltipText('help')}</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
+          {/* Language Dialog */}
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full"
+              >
+                <Languages className="h-5 w-5" />
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="max-w-4xl max-h-[90vh] overflow-auto p-0">
+              <DialogHeader className="p-4 border-b">
+                <DialogTitle>
+                  {language.code === 'de' ? 'Sprache ändern' : 'Change Language'}
+                </DialogTitle>
+              </DialogHeader>
+              <div className="p-4">
+                <LanguageGrid inDialog={true} />
+              </div>
+            </DialogContent>
+          </Dialog>
+          
+          {/* Help Dialog */}
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full"
+              >
+                <HelpCircle className="h-5 w-5" />
+              </Button>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>
+                  {language.code === 'de' ? 'Hilfe' : 'Help'}
+                </DialogTitle>
+              </DialogHeader>
+              <div className="space-y-4 py-4">
+                <p>
+                  {language.code === 'de' 
+                    ? 'Diese Seite bietet Zugang zu Informationen, Lernmaterialien und Community-Ressourcen.' 
+                    : 'This page provides access to information, learning materials, and community resources.'}
+                </p>
+                <p>
+                  {language.code === 'de'
+                    ? 'Sie können die Suchleiste verwenden, um spezifische Informationen zu finden.'
+                    : 'You can use the search bar to find specific information.'}
+                </p>
+                <p>
+                  {language.code === 'de'
+                    ? 'Die vier Kacheln unten bieten direkten Zugang zu wichtigen Bereichen der Website.'
+                    : 'The four tiles below provide direct access to important areas of the website.'}
+                </p>
+              </div>
+            </DialogContent>
+          </Dialog>
         </div>
-      </div>
+      </header>
       
-      <header className="mb-8 w-full max-w-4xl">
-        <h1 className="text-3xl md:text-4xl font-bold mb-8">{getHowCanIHelpText(language.code)}</h1>
+      {/* Main Content */}
+      <main className="flex-1 w-full max-w-5xl mx-auto">
+        {/* Title */}
+        <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">
+          {getHowCanIHelpText(language.code)}
+        </h1>
         
-        <form onSubmit={handleSearch} className="flex w-full gap-2">
+        {/* Search Bar */}
+        <form onSubmit={handleSearch} className="flex w-full gap-2 mb-10">
           <Input
             type="text"
             placeholder={getSearchPlaceholder(language.code)}
@@ -176,105 +180,66 @@ const Home: React.FC = () => {
             <Search className="h-5 w-5" />
           </Button>
         </form>
-      </header>
-      
-      <div className="grid grid-cols-2 gap-4 md:gap-6 w-full max-w-3xl">
-        {/* Information Card */}
-        <HoverCard openDelay={300}>
-          <HoverCardTrigger asChild>
-            <Button
-              variant="outline"
-              className="h-auto aspect-square bg-white border-2 flex flex-col gap-4 p-6 hover:bg-gray-50 hover:shadow-md transition-all"
-              onClick={() => handleCategoryClick('information')}
-            >
-              <Info className="h-12 w-12 text-blue-600" />
-              <span className="text-xl">{getCategoryLabel(language.code, 'information')}</span>
-            </Button>
-          </HoverCardTrigger>
-          <HoverCardContent 
-            className="w-80 p-4" 
-            side="right"
-            dir={language.rtl ? 'rtl' : 'ltr'}
-          >
-            <p>{getInformationHoverText(language.code)}</p>
-          </HoverCardContent>
-        </HoverCard>
         
-        {/* Courses Card */}
-        <HoverCard openDelay={300}>
-          <HoverCardTrigger asChild>
-            <Button
-              variant="outline"
-              className="h-auto aspect-square bg-white border-2 flex flex-col gap-4 p-6 hover:bg-gray-50 hover:shadow-md transition-all"
-              onClick={() => handleCategoryClick('courses')}
-            >
-              <BookOpen className="h-12 w-12 text-green-600" />
-              <span className="text-xl">{getCategoryLabel(language.code, 'courses')}</span>
-            </Button>
-          </HoverCardTrigger>
-          <HoverCardContent 
-            className="w-80 p-4" 
-            side="right"
-            dir={language.rtl ? 'rtl' : 'ltr'}
+        {/* Category Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full overflow-y-auto pb-6">
+          {/* Ask Card */}
+          <Card 
+            className="border-2 hover:border-blue-300 hover:shadow-sm cursor-pointer transition-all"
+            onClick={() => handleCategoryClick('ask')}
           >
-            <div className="space-y-2">
-              <p>Lorem ipsum text 1</p>
-              <p>Additional information can go here. This content supports multiple lines.</p>
-            </div>
-          </HoverCardContent>
-        </HoverCard>
-        
-        {/* Community Card */}
-        <HoverCard openDelay={300}>
-          <HoverCardTrigger asChild>
-            <Button
-              variant="outline"
-              className="h-auto aspect-square bg-white border-2 flex flex-col gap-4 p-6 hover:bg-gray-50 hover:shadow-md transition-all"
-              onClick={() => handleCategoryClick('community')}
-            >
-              <Users className="h-12 w-12 text-purple-600" />
-              <span className="text-xl">{getCategoryLabel(language.code, 'community')}</span>
-            </Button>
-          </HoverCardTrigger>
-          <HoverCardContent 
-            className="w-80 p-4" 
-            side="right"
-            dir={language.rtl ? 'rtl' : 'ltr'}
+            <CardHeader className="pb-2">
+              <AspectRatio ratio={4/3} className="flex items-center justify-center bg-blue-50 rounded-t-lg">
+                <MessageSquare className="h-16 w-16 text-blue-500" />
+              </AspectRatio>
+              <CardTitle className="mt-4">{askTitle}</CardTitle>
+              <CardDescription>{askSubtitle}</CardDescription>
+            </CardHeader>
+          </Card>
+          
+          {/* Information Card */}
+          <Card 
+            className="border-2 hover:border-green-300 hover:shadow-sm cursor-pointer transition-all"
+            onClick={() => handleCategoryClick('information')}
           >
-            <div className="space-y-2">
-              <p>Lorem ipsum text 2</p>
-              <p>Community information with multiple lines of text to demonstrate multiline content in the hover card.</p>
-            </div>
-          </HoverCardContent>
-        </HoverCard>
-        
-        {/* Videos Card (replacing Help) */}
-        <HoverCard openDelay={300}>
-          <HoverCardTrigger asChild>
-            <Button
-              variant="outline"
-              className="h-auto aspect-square bg-white border-2 flex flex-col gap-4 p-6 hover:bg-gray-50 hover:shadow-md transition-all"
-              onClick={() => handleCategoryClick('videos')}
-            >
-              <PlaySquare className="h-12 w-12 text-red-600" />
-              <span className="text-xl">
-                {language.code === 'de' ? 'Videos' : 'Videos'}
-              </span>
-            </Button>
-          </HoverCardTrigger>
-          <HoverCardContent 
-            className="w-80 p-4" 
-            side="right"
-            dir={language.rtl ? 'rtl' : 'ltr'}
+            <CardHeader className="pb-2">
+              <AspectRatio ratio={4/3} className="flex items-center justify-center bg-green-50 rounded-t-lg">
+                <Info className="h-16 w-16 text-green-500" />
+              </AspectRatio>
+              <CardTitle className="mt-4">{infoTitle}</CardTitle>
+              <CardDescription>{infoSubtitle}</CardDescription>
+            </CardHeader>
+          </Card>
+          
+          {/* Learn Card */}
+          <Card 
+            className="border-2 hover:border-purple-300 hover:shadow-sm cursor-pointer transition-all"
+            onClick={() => handleCategoryClick('learn')}
           >
-            <div className="space-y-2">
-              <p>Lorem ipsum text 3</p>
-              <p>Help and support information can span multiple lines.</p>
-              <p>The hover card will adjust its size to fit the content.</p>
-            </div>
-          </HoverCardContent>
-        </HoverCard>
-      </div>
+            <CardHeader className="pb-2">
+              <AspectRatio ratio={4/3} className="flex items-center justify-center bg-purple-50 rounded-t-lg">
+                <BookOpen className="h-16 w-16 text-purple-500" />
+              </AspectRatio>
+              <CardTitle className="mt-4">{learnTitle}</CardTitle>
+              <CardDescription>{learnSubtitle}</CardDescription>
+            </CardHeader>
+          </Card>
+          
+          {/* Community Card */}
+          <Card 
+            className="border-2 hover:border-orange-300 hover:shadow-sm cursor-pointer transition-all"
+            onClick={() => handleCategoryClick('community')}
+          >
+            <CardHeader className="pb-2">
+              <AspectRatio ratio={4/3} className="flex items-center justify-center bg-orange-50 rounded-t-lg">
+                <Users className="h-16 w-16 text-orange-500" />
+              </AspectRatio>
+              <CardTitle className="mt-4">{communityTitle}</CardTitle>
+              <CardDescription>{communitySubtitle}</CardDescription>
+            </CardHeader>
+          </Card>
+        </div>
+      </main>
     </div>
   );
 };

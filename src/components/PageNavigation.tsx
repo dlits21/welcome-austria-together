@@ -6,7 +6,7 @@ import { languages } from '../data/languages';
 import { Button } from './ui/button';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
-import { Volume, VolumeX, HelpCircle, Languages, Home as HomeIcon } from 'lucide-react';
+import { Volume, VolumeX, HelpCircle, Languages, ArrowLeft } from 'lucide-react';
 import LanguageGrid from './LanguageGrid';
 
 interface PageNavigationProps {
@@ -23,7 +23,7 @@ const PageNavigation: React.FC<PageNavigationProps> = ({ toggleSound, soundEnabl
   const getTooltipText = (iconName: string): string => {
     if (language.code === 'de') {
       switch (iconName) {
-        case 'home': return 'Zur Startseite';
+        case 'back': return 'Zurück zur Startseite';
         case 'sound': return soundEnabled ? 'Ton ausschalten' : 'Ton einschalten';
         case 'help': return 'Hilfe anzeigen';
         case 'language': return 'Sprache ändern';
@@ -31,7 +31,7 @@ const PageNavigation: React.FC<PageNavigationProps> = ({ toggleSound, soundEnabl
       }
     } else {
       switch (iconName) {
-        case 'home': return 'Go to home page';
+        case 'back': return 'Back to home page';
         case 'sound': return soundEnabled ? 'Turn sound off' : 'Turn sound on';
         case 'help': return 'Show help';
         case 'language': return 'Change language';
@@ -42,33 +42,38 @@ const PageNavigation: React.FC<PageNavigationProps> = ({ toggleSound, soundEnabl
 
   return (
     <div className="flex justify-between mb-6">
+      {/* Back button */}
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger asChild>
             <Button 
               variant="outline" 
               onClick={() => navigate('/home')}
+              className="flex items-center gap-2"
             >
-              <HomeIcon className="mr-2 h-4 w-4" />
-              {language.rtl ? 'رجوع' : 'Back'}
+              <ArrowLeft className="h-4 w-4" />
+              {language.rtl ? 'رجوع' : (language.code === 'de' ? 'Zurück' : 'Back')}
             </Button>
           </TooltipTrigger>
           <TooltipContent>
-            <p>{getTooltipText('home')}</p>
+            <p>{getTooltipText('back')}</p>
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
       
+      {/* Right side buttons */}
       <div className="flex gap-2">
+        {/* Sound Toggle */}
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
                 variant="ghost"
-                className="p-2"
+                size="icon"
+                className="rounded-full"
                 onClick={toggleSound}
               >
-                {soundEnabled ? <Volume className="h-6 w-6" /> : <VolumeX className="h-6 w-6" />}
+                {soundEnabled ? <Volume className="h-5 w-5" /> : <VolumeX className="h-5 w-5" />}
               </Button>
             </TooltipTrigger>
             <TooltipContent>
@@ -77,6 +82,7 @@ const PageNavigation: React.FC<PageNavigationProps> = ({ toggleSound, soundEnabl
           </Tooltip>
         </TooltipProvider>
         
+        {/* Language Dialog */}
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
@@ -84,9 +90,10 @@ const PageNavigation: React.FC<PageNavigationProps> = ({ toggleSound, soundEnabl
                 <DialogTrigger asChild>
                   <Button
                     variant="ghost"
-                    className="p-2"
+                    size="icon"
+                    className="rounded-full"
                   >
-                    <Languages className="h-6 w-6" />
+                    <Languages className="h-5 w-5" />
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="max-w-4xl max-h-[90vh] overflow-auto p-0">
@@ -107,6 +114,7 @@ const PageNavigation: React.FC<PageNavigationProps> = ({ toggleSound, soundEnabl
           </Tooltip>
         </TooltipProvider>
         
+        {/* Help Dialog */}
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
@@ -114,9 +122,10 @@ const PageNavigation: React.FC<PageNavigationProps> = ({ toggleSound, soundEnabl
                 <DialogTrigger asChild>
                   <Button
                     variant="ghost"
-                    className="p-2"
+                    size="icon"
+                    className="rounded-full"
                   >
-                    <HelpCircle className="h-6 w-6" />
+                    <HelpCircle className="h-5 w-5" />
                   </Button>
                 </DialogTrigger>
                 <DialogContent>
