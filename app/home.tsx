@@ -1,35 +1,74 @@
 
 import React, { useState } from 'react';
-import { useRouter } from "expo-router";
+import { 
+  StyleSheet, 
+  Text, 
+  View, 
+  TouchableOpacity, 
+  ScrollView, 
+  Image,
+  SafeAreaView,
+  StatusBar, 
+  TextInput,
+  Dimensions,
+  Pressable,
+  Modal
+} from 'react-native';
+import { useRouter } from 'expo-router';
 import { useLanguage } from '../contexts/LanguageContext';
-import { languages, getHowCanIHelpText, getCategoryLabel, getSearchPlaceholder } from '../data/languages';
-import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../components/ui/dialog';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../components/ui/card';
-import { Search, HelpCircle, Volume, VolumeX, Languages, MessageSquare, Info, BookOpen, Users } from 'lucide-react-native';
-import LanguageGrid from '../components/LanguageGrid';
-import { toast } from '../components/ui/use-toast';
-import { AspectRatio } from '../components/ui/aspect-ratio';
+import { languages, getHowCanIHelpText, getSearchPlaceholder } from '../data/languages';
+import { MaterialIcons } from '@expo/vector-icons';
+
+// Card component for category tiles
+const CategoryCard = ({ 
+  title, 
+  subtitle, 
+  icon, 
+  color, 
+  onPress 
+}: { 
+  title: string;
+  subtitle: string;
+  icon: string;
+  color: string;
+  onPress: () => void;
+}) => {
+  return (
+    <TouchableOpacity 
+      style={[styles.categoryCard, { borderColor: color + '40' }]} 
+      onPress={onPress}
+    >
+      <View style={[styles.iconContainer, { backgroundColor: color + '20' }]}>
+        <MaterialIcons name={icon} size={36} color={color} />
+      </View>
+      <Text style={styles.cardTitle}>{title}</Text>
+      <Text style={styles.cardSubtitle} numberOfLines={2}>{subtitle}</Text>
+    </TouchableOpacity>
+  );
+};
 
 const Home: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const router = useRouter();
   const [searchInput, setSearchInput] = useState('');
   const [soundEnabled, setSoundEnabled] = useState(true);
+  const [showLanguageModal, setShowLanguageModal] = useState(false);
+  const [showHelpModal, setShowHelpModal] = useState(false);
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1]; // Default to English
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSearch = () => {
     if (searchInput.trim()) {
-      router.push('/search', { state: { query: searchInput } });
-    } else {
-      toast({
-        title: language.code === 'de' ? 'Bitte geben Sie einen Suchbegriff ein' : 'Please enter a search term',
-        description: language.code === 'de' ? 'Das Suchfeld kann nicht leer sein' : 'The search field cannot be empty',
-        variant: "destructive",
+      router.push({
+        pathname: '/search',
+        params: { query: searchInput }
       });
+    } else {
+      // Toast would go here with a native implementation
+      alert(language.code === 'de' 
+        ? 'Bitte geben Sie einen Suchbegriff ein' 
+        : 'Please enter a search term'
+      );
     }
   };
 
@@ -41,14 +80,11 @@ const Home: React.FC = () => {
     setSoundEnabled(!soundEnabled);
     // Sound toggle logic would be implemented here
     
-    toast({
-      title: soundEnabled 
-        ? (language.code === 'de' ? 'Ton ausgeschaltet' : 'Sound disabled') 
-        : (language.code === 'de' ? 'Ton eingeschaltet' : 'Sound enabled'),
-      description: soundEnabled
-        ? (language.code === 'de' ? 'Die Audio-Funktionen wurden deaktiviert' : 'Audio features have been disabled')
-        : (language.code === 'de' ? 'Die Audio-Funktionen wurden aktiviert' : 'Audio features have been enabled'),
-    });
+    // Toast message would go here with a native implementation
+    alert(soundEnabled 
+      ? (language.code === 'de' ? 'Ton ausgeschaltet' : 'Sound disabled') 
+      : (language.code === 'de' ? 'Ton eingeschaltet' : 'Sound enabled')
+    );
   };
 
   // Prepare translations and text content
@@ -73,175 +109,303 @@ const Home: React.FC = () => {
     : 'Do you need help or do you want to help others? Click here';
 
   return (
-    <div 
-      className="min-h-screen flex flex-col bg-background p-4 md:p-6"
-      dir={language.rtl ? 'rtl' : 'ltr'}
-    >
+    <SafeAreaView style={styles.container}>
+      <StatusBar barStyle="dark-content" />
+      
       {/* Header with Logo and Icons */}
-      <header className="w-full flex justify-between items-center mb-8">
-        <div className="flex items-center">
-          <img 
-            src="/assets/images/icon.png"
-            alt="UND Logo"
-            className="h-10 md:h-12"
-          />
-        </div>
+      <View style={styles.header}>
+        <Image 
+          source={require('../assets/images/icon.png')}
+          style={styles.logo}
+          resizeMode="contain"
+        />
         
-        <div className="flex gap-2">
+        <View style={styles.headerButtons}>
           {/* Sound Toggle */}
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={toggleSound}
-            className="rounded-full"
+          <TouchableOpacity 
+            style={styles.iconButton} 
+            onPress={toggleSound}
           >
-            {soundEnabled ? <Volume className="h-5 w-5" /> : <VolumeX className="h-5 w-5" />}
-          </Button>
+            <MaterialIcons 
+              name={soundEnabled ? "volume-up" : "volume-off"} 
+              size={24} 
+              color="#333" 
+            />
+          </TouchableOpacity>
           
-          {/* Language Dialog */}
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-full"
-              >
-                <Languages className="h-5 w-5" />
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="max-w-4xl max-h-[90vh] overflow-auto p-0">
-              <DialogHeader className="p-4 border-b">
-                <DialogTitle>
-                  {language.code === 'de' ? 'Sprache ändern' : 'Change Language'}
-                </DialogTitle>
-              </DialogHeader>
-              <div className="p-4">
-                <LanguageGrid inDialog={true} />
-              </div>
-            </DialogContent>
-          </Dialog>
+          {/* Language Button */}
+          <TouchableOpacity 
+            style={styles.iconButton} 
+            onPress={() => setShowLanguageModal(true)}
+          >
+            <MaterialIcons name="language" size={24} color="#333" />
+          </TouchableOpacity>
           
-          {/* Help Dialog */}
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="rounded-full"
-              >
-                <HelpCircle className="h-5 w-5" />
-              </Button>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <DialogTitle>
-                  {language.code === 'de' ? 'Hilfe' : 'Help'}
-                </DialogTitle>
-              </DialogHeader>
-              <div className="space-y-4 py-4">
-                <p>
-                  {language.code === 'de' 
-                    ? 'Diese Seite bietet Zugang zu Informationen, Lernmaterialien und Community-Ressourcen.' 
-                    : 'This page provides access to information, learning materials, and community resources.'}
-                </p>
-                <p>
-                  {language.code === 'de'
-                    ? 'Sie können die Suchleiste verwenden, um spezifische Informationen zu finden.'
-                    : 'You can use the search bar to find specific information.'}
-                </p>
-                <p>
-                  {language.code === 'de'
-                    ? 'Die vier Kacheln unten bieten direkten Zugang zu wichtigen Bereichen der Website.'
-                    : 'The four tiles below provide direct access to important areas of the website.'}
-                </p>
-              </div>
-            </DialogContent>
-          </Dialog>
-        </div>
-      </header>
+          {/* Help Button */}
+          <TouchableOpacity 
+            style={styles.iconButton} 
+            onPress={() => setShowHelpModal(true)}
+          >
+            <MaterialIcons name="help" size={24} color="#333" />
+          </TouchableOpacity>
+        </View>
+      </View>
       
       {/* Main Content */}
-      <main className="flex-1 w-full max-w-5xl mx-auto">
+      <ScrollView 
+        contentContainerStyle={styles.contentContainer}
+        showsVerticalScrollIndicator={false}
+      >
         {/* Title */}
-        <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-          {getHowCanIHelpText(language.code)}
-        </h1>
+        <Text style={styles.title}>{getHowCanIHelpText(language.code)}</Text>
         
         {/* Search Bar */}
-        <form onSubmit={handleSearch} className="flex w-full gap-2 mb-10">
-          <Input
-            type="text"
+        <View style={styles.searchContainer}>
+          <TextInput
+            style={styles.searchInput}
             placeholder={getSearchPlaceholder(language.code)}
             value={searchInput}
-            onChange={(e) => setSearchInput(e.target.value)}
-            className="flex-1 text-lg py-6"
+            onChangeText={setSearchInput}
           />
-          <Button type="submit" size="icon" className="h-auto w-12">
-            <Search className="h-5 w-5" />
-          </Button>
-        </form>
+          <TouchableOpacity 
+            style={styles.searchButton} 
+            onPress={handleSearch}
+          >
+            <MaterialIcons name="search" size={24} color="#fff" />
+          </TouchableOpacity>
+        </View>
         
         {/* Category Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full overflow-y-auto pb-6">
-          {/* Ask Card */}
-          <Card 
-            className="border-2 hover:border-blue-300 hover:shadow-sm cursor-pointer transition-all"
-            onClick={() => handleCategoryClick('ask')}
-          >
-            <CardHeader className="pb-2">
-              <AspectRatio ratio={4/3} className="flex items-center justify-center bg-blue-50 rounded-t-lg">
-                <MessageSquare className="h-16 w-16 text-blue-500" />
-              </AspectRatio>
-              <CardTitle className="mt-4">{askTitle}</CardTitle>
-              <CardDescription>{askSubtitle}</CardDescription>
-            </CardHeader>
-          </Card>
+        <View style={styles.categoryGrid}>
+          <CategoryCard 
+            title={askTitle}
+            subtitle={askSubtitle}
+            icon="question-answer"
+            color="#3B82F6" // blue
+            onPress={() => handleCategoryClick('ask')}
+          />
           
-          {/* Information Card */}
-          <Card 
-            className="border-2 hover:border-green-300 hover:shadow-sm cursor-pointer transition-all"
-            onClick={() => handleCategoryClick('information')}
-          >
-            <CardHeader className="pb-2">
-              <AspectRatio ratio={4/3} className="flex items-center justify-center bg-green-50 rounded-t-lg">
-                <Info className="h-16 w-16 text-green-500" />
-              </AspectRatio>
-              <CardTitle className="mt-4">{infoTitle}</CardTitle>
-              <CardDescription>{infoSubtitle}</CardDescription>
-            </CardHeader>
-          </Card>
+          <CategoryCard 
+            title={infoTitle}
+            subtitle={infoSubtitle}
+            icon="info"
+            color="#10B981" // green
+            onPress={() => handleCategoryClick('information')}
+          />
           
-          {/* Learn Card */}
-          <Card 
-            className="border-2 hover:border-purple-300 hover:shadow-sm cursor-pointer transition-all"
-            onClick={() => handleCategoryClick('learn')}
-          >
-            <CardHeader className="pb-2">
-              <AspectRatio ratio={4/3} className="flex items-center justify-center bg-purple-50 rounded-t-lg">
-                <BookOpen className="h-16 w-16 text-purple-500" />
-              </AspectRatio>
-              <CardTitle className="mt-4">{learnTitle}</CardTitle>
-              <CardDescription>{learnSubtitle}</CardDescription>
-            </CardHeader>
-          </Card>
+          <CategoryCard 
+            title={learnTitle}
+            subtitle={learnSubtitle}
+            icon="menu-book"
+            color="#8B5CF6" // purple
+            onPress={() => handleCategoryClick('learn')}
+          />
           
-          {/* Community Card */}
-          <Card 
-            className="border-2 hover:border-orange-300 hover:shadow-sm cursor-pointer transition-all"
-            onClick={() => handleCategoryClick('community')}
-          >
-            <CardHeader className="pb-2">
-              <AspectRatio ratio={4/3} className="flex items-center justify-center bg-orange-50 rounded-t-lg">
-                <Users className="h-16 w-16 text-orange-500" />
-              </AspectRatio>
-              <CardTitle className="mt-4">{communityTitle}</CardTitle>
-              <CardDescription>{communitySubtitle}</CardDescription>
-            </CardHeader>
-          </Card>
-        </div>
-      </main>
-    </div>
+          <CategoryCard 
+            title={communityTitle}
+            subtitle={communitySubtitle}
+            icon="people"
+            color="#F97316" // orange
+            onPress={() => handleCategoryClick('community')}
+          />
+        </View>
+      </ScrollView>
+      
+      {/* Language Modal */}
+      <Modal
+        visible={showLanguageModal}
+        transparent={true}
+        animationType="slide"
+        onRequestClose={() => setShowLanguageModal(false)}
+      >
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalContent}>
+            <View style={styles.modalHeader}>
+              <Text style={styles.modalTitle}>
+                {language.code === 'de' ? 'Sprache ändern' : 'Change Language'}
+              </Text>
+              <TouchableOpacity onPress={() => setShowLanguageModal(false)}>
+                <MaterialIcons name="close" size={24} color="#333" />
+              </TouchableOpacity>
+            </View>
+            
+            <ScrollView>
+              {/* Language selection would go here */}
+              <Text style={styles.modalText}>Language selection goes here</Text>
+            </ScrollView>
+          </View>
+        </View>
+      </Modal>
+      
+      {/* Help Modal */}
+      <Modal
+        visible={showHelpModal}
+        transparent={true}
+        animationType="slide"
+        onRequestClose={() => setShowHelpModal(false)}
+      >
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalContent}>
+            <View style={styles.modalHeader}>
+              <Text style={styles.modalTitle}>
+                {language.code === 'de' ? 'Hilfe' : 'Help'}
+              </Text>
+              <TouchableOpacity onPress={() => setShowHelpModal(false)}>
+                <MaterialIcons name="close" size={24} color="#333" />
+              </TouchableOpacity>
+            </View>
+            
+            <ScrollView contentContainerStyle={styles.helpContent}>
+              <Text style={styles.helpText}>
+                {language.code === 'de' 
+                  ? 'Diese Seite bietet Zugang zu Informationen, Lernmaterialien und Community-Ressourcen.' 
+                  : 'This page provides access to information, learning materials, and community resources.'}
+              </Text>
+              <Text style={styles.helpText}>
+                {language.code === 'de'
+                  ? 'Sie können die Suchleiste verwenden, um spezifische Informationen zu finden.'
+                  : 'You can use the search bar to find specific information.'}
+              </Text>
+              <Text style={styles.helpText}>
+                {language.code === 'de'
+                  ? 'Die vier Kacheln unten bieten direkten Zugang zu wichtigen Bereichen der Website.'
+                  : 'The four tiles below provide direct access to important areas of the website.'}
+              </Text>
+            </ScrollView>
+          </View>
+        </View>
+      </Modal>
+      
+    </SafeAreaView>
   );
 };
+
+const windowWidth = Dimensions.get('window').width;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+  },
+  logo: {
+    width: 80,
+    height: 40,
+  },
+  headerButtons: {
+    flexDirection: 'row',
+  },
+  iconButton: {
+    padding: 8,
+    marginLeft: 8,
+    borderRadius: 20,
+  },
+  contentContainer: {
+    paddingHorizontal: 16,
+    paddingBottom: 32,
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginVertical: 24,
+  },
+  searchContainer: {
+    flexDirection: 'row',
+    marginBottom: 24,
+  },
+  searchInput: {
+    flex: 1,
+    height: 50,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    borderRadius: 8,
+    paddingHorizontal: 16,
+    fontSize: 16,
+  },
+  searchButton: {
+    width: 50,
+    height: 50,
+    backgroundColor: '#3B82F6',
+    borderRadius: 8,
+    marginLeft: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  categoryGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+  },
+  categoryCard: {
+    width: windowWidth > 600 ? 
+      (windowWidth - 48) / 2 - 8 : 
+      windowWidth - 32,
+    marginBottom: 16,
+    borderWidth: 2,
+    borderRadius: 12,
+    padding: 16,
+    backgroundColor: '#fff',
+  },
+  iconContainer: {
+    width: '100%',
+    aspectRatio: 4/3,
+    borderRadius: 8,
+    marginBottom: 12,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  cardTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 4,
+  },
+  cardSubtitle: {
+    fontSize: 14,
+    color: '#666',
+  },
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modalContent: {
+    width: '90%',
+    maxHeight: '80%',
+    backgroundColor: '#fff',
+    borderRadius: 12,
+    overflow: 'hidden',
+  },
+  modalHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: '#eee',
+  },
+  modalTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  modalText: {
+    padding: 16,
+  },
+  helpContent: {
+    padding: 16,
+  },
+  helpText: {
+    fontSize: 16,
+    marginBottom: 12,
+    lineHeight: 22,
+  },
+});
 
 export default Home;
