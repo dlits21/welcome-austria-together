@@ -161,7 +161,7 @@ const Home: React.FC = () => {
       </header>
       
       {/* Main Content */}
-      <main className="flex-1 w-full max-w-5xl mx-auto">
+      <main className="flex-1 w-full max-w-7xl mx-auto">
         {/* Title */}
         <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">
           {getHowCanIHelpText(language.code)}
@@ -181,8 +181,8 @@ const Home: React.FC = () => {
           </Button>
         </form>
         
-        {/* Category Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full overflow-y-auto pb-6">
+        {/* Category Cards - Responsive Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 w-full overflow-y-auto pb-6">
           {/* Ask Card */}
           <Card 
             className="border-2 hover:border-blue-300 hover:shadow-sm cursor-pointer transition-all"
@@ -192,8 +192,8 @@ const Home: React.FC = () => {
               <AspectRatio ratio={4/3} className="flex items-center justify-center bg-blue-50 rounded-t-lg">
                 <MessageSquare className="h-16 w-16 text-blue-500" />
               </AspectRatio>
-              <CardTitle className="mt-4">{askTitle}</CardTitle>
-              <CardDescription>{askSubtitle}</CardDescription>
+              <CardTitle className="mt-4 text-center">{askTitle}</CardTitle>
+              <CardDescription className="text-center">{askSubtitle}</CardDescription>
             </CardHeader>
           </Card>
           
@@ -206,8 +206,8 @@ const Home: React.FC = () => {
               <AspectRatio ratio={4/3} className="flex items-center justify-center bg-green-50 rounded-t-lg">
                 <Info className="h-16 w-16 text-green-500" />
               </AspectRatio>
-              <CardTitle className="mt-4">{infoTitle}</CardTitle>
-              <CardDescription>{infoSubtitle}</CardDescription>
+              <CardTitle className="mt-4 text-center">{infoTitle}</CardTitle>
+              <CardDescription className="text-center">{infoSubtitle}</CardDescription>
             </CardHeader>
           </Card>
           
@@ -220,8 +220,8 @@ const Home: React.FC = () => {
               <AspectRatio ratio={4/3} className="flex items-center justify-center bg-purple-50 rounded-t-lg">
                 <BookOpen className="h-16 w-16 text-purple-500" />
               </AspectRatio>
-              <CardTitle className="mt-4">{learnTitle}</CardTitle>
-              <CardDescription>{learnSubtitle}</CardDescription>
+              <CardTitle className="mt-4 text-center">{learnTitle}</CardTitle>
+              <CardDescription className="text-center">{infoSubtitle}</CardDescription>
             </CardHeader>
           </Card>
           
@@ -234,8 +234,8 @@ const Home: React.FC = () => {
               <AspectRatio ratio={4/3} className="flex items-center justify-center bg-orange-50 rounded-t-lg">
                 <Users className="h-16 w-16 text-orange-500" />
               </AspectRatio>
-              <CardTitle className="mt-4">{communityTitle}</CardTitle>
-              <CardDescription>{communitySubtitle}</CardDescription>
+              <CardTitle className="mt-4 text-center">{communityTitle}</CardTitle>
+              <CardDescription className="text-center">{communitySubtitle}</CardDescription>
             </CardHeader>
           </Card>
         </div>

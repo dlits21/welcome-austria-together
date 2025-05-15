@@ -6,8 +6,7 @@ import {
   View, 
   ScrollView, 
   SafeAreaView,
-  StatusBar, 
-  Dimensions
+  StatusBar
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useLanguage } from '../contexts/LanguageContext';

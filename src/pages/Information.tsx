@@ -1,4 +1,6 @@
+
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { languages, getCategoryLabel } from '../data/languages';
 import { Button } from '../components/ui/button';
@@ -6,7 +8,6 @@ import { Input } from '../components/ui/input';
 import { ScrollArea } from '../components/ui/scroll-area';
 import { Search } from 'lucide-react';
 import PageNavigation from '../components/PageNavigation';
-import { useNavigate } from 'react-router-dom';
 
 const informationCategories = [
   { id: 'political-education', icon: '📚', name: { en: 'Political Education', de: 'Politische Bildung' } },
@@ -51,8 +52,10 @@ const Information: React.FC = () => {
     
     if (categoryId === 'german-learning') {
       navigate('/german-learning');
+    } else {
+      // For other categories, navigate to a new empty page with the category ID
+      navigate(`/${categoryId}`);
     }
-    // Other category navigations can be added similarly
   };
 
   const helpContent = (
@@ -91,17 +94,17 @@ const Information: React.FC = () => {
         </Button>
       </form>
       
-      <ScrollArea className="h-[60vh] max-w-3xl">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <ScrollArea className="h-[60vh] max-w-7xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {informationCategories.map((category) => (
             <Button
               key={category.id}
               variant="outline"
-              className="h-auto aspect-square flex flex-col gap-2 p-4 items-center justify-center text-center"
+              className="h-auto aspect-square flex flex-col gap-2 p-4 items-center justify-center text-center border-2 hover:shadow-md transition-all"
               onClick={() => handleCategoryClick(category.id)}
             >
               <span className="text-4xl">{category.icon}</span>
-              <span className="text-center text-sm line-clamp-3">
+              <span className="text-center font-medium text-base">
                 {language.code === 'de' ? category.name.de : category.name.en}
               </span>
             </Button>

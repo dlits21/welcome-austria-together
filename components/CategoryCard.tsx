@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, useWindowDimensions } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 interface CategoryCardProps {
@@ -18,9 +18,25 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
   color, 
   onPress 
 }) => {
+  const { width } = useWindowDimensions();
+  
+  // Calculate card width based on screen width
+  let cardWidth = width - 32; // Default: full width for narrow screens
+  
+  if (width > 1100) {
+    cardWidth = (width - 80) / 4; // 4 cards per row with spacing
+  } else if (width > 800) {
+    cardWidth = (width - 64) / 3; // 3 cards per row with spacing
+  } else if (width > 500) {
+    cardWidth = (width - 48) / 2; // 2 cards per row with spacing
+  }
+
   return (
     <TouchableOpacity 
-      style={[styles.categoryCard, { borderColor: color + '40' }]} 
+      style={[
+        styles.categoryCard, 
+        { borderColor: color + '40', width: cardWidth }
+      ]} 
       onPress={onPress}
     >
       <View style={[styles.iconContainer, { backgroundColor: color + '20' }]}>
@@ -32,13 +48,8 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
   );
 };
 
-const windowWidth = Dimensions.get('window').width;
-
 const styles = StyleSheet.create({
   categoryCard: {
-    width: windowWidth > 600 ? 
-      (windowWidth - 48) / 2 - 8 : 
-      windowWidth - 32,
     marginBottom: 16,
     borderWidth: 2,
     borderRadius: 12,
@@ -57,10 +68,12 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 4,
+    textAlign: 'center', // Center title text
   },
   cardSubtitle: {
     fontSize: 14,
     color: '#666',
+    textAlign: 'center', // Center subtitle text
   },
 });
 

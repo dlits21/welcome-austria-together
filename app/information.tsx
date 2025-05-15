@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { 
   StyleSheet, 
@@ -7,7 +8,8 @@ import {
   SafeAreaView, 
   TextInput,
   TouchableOpacity, 
-  FlatList 
+  FlatList,
+  useWindowDimensions
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
@@ -29,6 +31,7 @@ const Information: React.FC = () => {
   const [searchInput, setSearchInput] = useState('');
   const [soundEnabled, setSoundEnabled] = useState(true);
   const router = useRouter();
+  const { width } = useWindowDimensions();
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
@@ -48,8 +51,10 @@ const Information: React.FC = () => {
     
     if (categoryId === 'german-learning') {
       router.push('/german-learning');
+    } else {
+      // For other categories, navigate to a new empty page with the category ID
+      router.push(`/${categoryId}`);
     }
-    // Other category navigations can be added similarly
   };
   
   const informationCategories: CategoryItem[] = [
@@ -69,17 +74,32 @@ const Information: React.FC = () => {
     { id: 'translation', icon: '🔄', name: { en: 'Translation', de: 'Übersetzen' } },
   ];
   
-  const renderCategoryItem = ({ item }: { item: CategoryItem }) => (
-    <TouchableOpacity 
-      style={styles.categoryItem}
-      onPress={() => handleCategoryPress(item.id)}
-    >
-      <Text style={styles.categoryIcon}>{item.icon}</Text>
-      <Text style={styles.categoryName} numberOfLines={3}>
-        {language.code === 'de' ? item.name.de : item.name.en}
-      </Text>
-    </TouchableOpacity>
-  );
+  // Calculate how many columns based on screen width
+  const getNumColumns = () => {
+    if (width > 1100) return 4;
+    if (width > 800) return 3;
+    if (width > 500) return 2;
+    return 1;
+  };
+  
+  const numColumns = getNumColumns();
+  
+  const renderCategoryItem = ({ item }: { item: CategoryItem }) => {
+    // Calculate item width based on number of columns
+    const itemWidth = (width - ((numColumns + 1) * 16)) / numColumns;
+    
+    return (
+      <TouchableOpacity 
+        style={[styles.categoryItem, { width: itemWidth }]}
+        onPress={() => handleCategoryPress(item.id)}
+      >
+        <Text style={styles.categoryIcon}>{item.icon}</Text>
+        <Text style={styles.categoryTitle}>
+          {language.code === 'de' ? item.name.de : item.name.en}
+        </Text>
+      </TouchableOpacity>
+    );
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -111,7 +131,8 @@ const Information: React.FC = () => {
           data={informationCategories}
           renderItem={renderCategoryItem}
           keyExtractor={(item) => item.id}
-          numColumns={2}
+          numColumns={numColumns}
+          key={numColumns.toString()} // Force re-render when columns change
           contentContainerStyle={styles.categoriesContainer}
           showsVerticalScrollIndicator={false}
         />
@@ -161,24 +182,33 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
   },
   categoryItem: {
-    flex: 1,
+    margin: 8,
     aspectRatio: 1,
-    margin: 6,
-    padding: 12,
-    borderRadius: 8,
+    borderRadius: 12,
+    padding: 16,
     backgroundColor: '#f9f9f9',
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
     borderColor: '#eee',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 2,
+    elevation: 2,
   },
   categoryIcon: {
     fontSize: 36,
-    marginBottom: 8,
+    marginBottom: 12,
   },
-  categoryName: {
-    fontSize: 14,
+  categoryTitle: {
+    fontSize: 16,
+    fontWeight: '500',
     textAlign: 'center',
+    marginBottom: 4,
   },
 });
 

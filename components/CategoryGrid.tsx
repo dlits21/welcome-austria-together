@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, useWindowDimensions } from 'react-native';
 import CategoryCard from './CategoryCard';
 
 interface CategoryGridProps {
@@ -26,8 +26,21 @@ const CategoryGrid: React.FC<CategoryGridProps> = ({
   communitySubtitle,
   onCategoryClick
 }) => {
+  const { width } = useWindowDimensions();
+  
+  // Determine how many cards per row based on screen width
+  let containerStyle = styles.oneColumnGrid; // default for very narrow screens
+  
+  if (width > 1100) {
+    containerStyle = styles.fourColumnGrid; // 4 cards per row for very wide screens
+  } else if (width > 800) {
+    containerStyle = styles.threeColumnGrid; // 3 cards per row for wide screens
+  } else if (width > 500) {
+    containerStyle = styles.twoColumnGrid; // 2 cards per row for medium screens
+  }
+  
   return (
-    <View style={styles.categoryGrid}>
+    <View style={[styles.categoryGrid, containerStyle]}>
       <CategoryCard 
         title={askTitle}
         subtitle={askSubtitle}
@@ -69,6 +82,18 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'space-between',
   },
+  fourColumnGrid: {
+    // No additional styling needed as cards will use their normal width
+  },
+  threeColumnGrid: {
+    // 3 cards per row
+  },
+  twoColumnGrid: {
+    // 2 cards per row
+  },
+  oneColumnGrid: {
+    // 1 card per row
+  }
 });
 
 export default CategoryGrid;
