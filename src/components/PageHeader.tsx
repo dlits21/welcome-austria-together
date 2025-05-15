@@ -1,29 +1,27 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { languages } from '../data/languages';
 import { Button } from './ui/button';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
-import { Volume, VolumeX, HelpCircle, Languages, ArrowLeft } from 'lucide-react';
+import { Volume, VolumeX, HelpCircle, Languages } from 'lucide-react';
 import LanguageGrid from './LanguageGrid';
 
-interface PageNavigationProps {
+interface PageHeaderProps {
   toggleSound: () => void;
   soundEnabled: boolean;
   helpContent?: React.ReactNode;
 }
 
-const PageNavigation: React.FC<PageNavigationProps> = ({ toggleSound, soundEnabled, helpContent }) => {
+const PageHeader: React.FC<PageHeaderProps> = ({ toggleSound, soundEnabled, helpContent }) => {
   const { currentLanguage } = useLanguage();
-  const navigate = useNavigate();
   const language = languages.find(lang => lang.code === currentLanguage) || languages[0];
 
   const getTooltipText = (iconName: string): string => {
     if (language.code === 'de') {
       switch (iconName) {
-        case 'back': return 'Zurück zur Startseite';
         case 'sound': return soundEnabled ? 'Ton ausschalten' : 'Ton einschalten';
         case 'help': return 'Hilfe anzeigen';
         case 'language': return 'Sprache ändern';
@@ -31,7 +29,6 @@ const PageNavigation: React.FC<PageNavigationProps> = ({ toggleSound, soundEnabl
       }
     } else {
       switch (iconName) {
-        case 'back': return 'Back to home page';
         case 'sound': return soundEnabled ? 'Turn sound off' : 'Turn sound on';
         case 'help': return 'Show help';
         case 'language': return 'Change language';
@@ -41,27 +38,15 @@ const PageNavigation: React.FC<PageNavigationProps> = ({ toggleSound, soundEnabl
   };
 
   return (
-    <div className="flex justify-between mb-6">
-      {/* Back button */}
-      <TooltipProvider>
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <Button 
-              variant="outline" 
-              onClick={() => navigate('/home')}
-              className="flex items-center gap-2"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              {language.rtl ? 'رجوع' : (language.code === 'de' ? 'Zurück' : 'Back')}
-            </Button>
-          </TooltipTrigger>
-          <TooltipContent>
-            <p>{getTooltipText('back')}</p>
-          </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
+    <header className="w-full flex justify-between items-center mb-6">
+      <div className="flex items-center">
+        <img 
+          src="/assets/images/icon.png"
+          alt="App Logo"
+          className="h-10 md:h-12"
+        />
+      </div>
       
-      {/* Right side buttons */}
       <div className="flex gap-2">
         {/* Sound Toggle */}
         <TooltipProvider>
@@ -150,8 +135,8 @@ const PageNavigation: React.FC<PageNavigationProps> = ({ toggleSound, soundEnabl
           </Tooltip>
         </TooltipProvider>
       </div>
-    </div>
+    </header>
   );
 };
 
-export default PageNavigation;
+export default PageHeader;
