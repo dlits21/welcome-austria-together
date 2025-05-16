@@ -1,5 +1,6 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useRouter } from 'expo-router';
 
 interface LanguageContextType {
@@ -15,33 +16,34 @@ const LanguageContext = createContext<LanguageContextType>({
 export const useLanguage = () => useContext(LanguageContext);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [currentLanguage, setCurrentLanguage] = useState<string>(() => {
-    return localStorage.getItem('selectedLanguage') || 'en';
-  });
+  const [currentLanguage, setCurrentLanguage] = useState<string>('en');
   const router = useRouter();
 
-  const setLanguage = (language: string) => {
-    setCurrentLanguage(language);
-    localStorage.setItem('selectedLanguage', language);
-    
-    // Set the html lang attribute
-    document.documentElement.lang = language;
-    
-    // Set direction for RTL languages
-    const rtlLanguages = ['ar', 'fa', 'ur', 'ps', 'ku'];
-    document.documentElement.dir = rtlLanguages.includes(language) ? 'rtl' : 'ltr';
-  };
-
+  // Load the saved language on initial render
   useEffect(() => {
-    // Set initial language attributes when component mounts
-    const savedLanguage = localStorage.getItem('selectedLanguage');
-    if (savedLanguage) {
-      document.documentElement.lang = savedLanguage;
-      
-      const rtlLanguages = ['ar', 'fa', 'ur', 'ps', 'ku'];
-      document.documentElement.dir = rtlLanguages.includes(savedLanguage) ? 'rtl' : 'ltr';
+    async function loadSavedLanguage() {
+      try {
+        const savedLanguage = await AsyncStorage.getItem('selectedLanguage');
+        if (savedLanguage) {
+          setCurrentLanguage(savedLanguage);
+        }
+      } catch (error) {
+        console.error('Error loading language from AsyncStorage:', error);
+      }
     }
+    
+    loadSavedLanguage();
   }, []);
+
+  const setLanguage = async (language: string) => {
+    setCurrentLanguage(language);
+    
+    try {
+      await AsyncStorage.setItem('selectedLanguage', language);
+    } catch (error) {
+      console.error('Error saving language to AsyncStorage:', error);
+    }
+  };
 
   return (
     <LanguageContext.Provider value={{ currentLanguage, setLanguage }}>

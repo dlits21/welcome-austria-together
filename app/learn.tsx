@@ -5,15 +5,20 @@ import {
   Text, 
   View, 
   SafeAreaView, 
-  ScrollView 
+  ScrollView,
+  Modal
 } from 'react-native';
 import { useLanguage } from '../contexts/LanguageContext';
 import { languages } from '../data/languages';
 import PageNavigation from '../components/PageNavigation';
+import LanguageModal from '../components/LanguageModal';
+import HelpModal from '../components/HelpModal';
 
 const Learn: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
+  const [showLanguageModal, setShowLanguageModal] = useState(false);
+  const [showHelpModal, setShowHelpModal] = useState(false);
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1]; // Default to English
 
@@ -31,6 +36,8 @@ const Learn: React.FC = () => {
       <PageNavigation 
         toggleSound={toggleSound}
         soundEnabled={soundEnabled}
+        showLanguageModal={() => setShowLanguageModal(true)}
+        showHelpModal={() => setShowHelpModal(true)}
       />
       
       <ScrollView contentContainerStyle={styles.contentContainer}>
@@ -47,6 +54,20 @@ const Learn: React.FC = () => {
           </Text>
         </View>
       </ScrollView>
+      
+      {/* Language Modal */}
+      <LanguageModal 
+        visible={showLanguageModal} 
+        onClose={() => setShowLanguageModal(false)} 
+        languageCode={language.code}
+      />
+      
+      {/* Help Modal */}
+      <HelpModal
+        visible={showHelpModal}
+        onClose={() => setShowHelpModal(false)}
+        languageCode={language.code}
+      />
     </SafeAreaView>
   );
 };

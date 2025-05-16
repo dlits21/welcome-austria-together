@@ -7,17 +7,22 @@ import {
   SafeAreaView, 
   TextInput,
   TouchableOpacity,
-  ScrollView
+  ScrollView,
+  Modal
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useLanguage } from '../contexts/LanguageContext';
 import { languages, getCategoryLabel } from '../data/languages';
 import PageNavigation from '../components/PageNavigation';
+import LanguageModal from '../components/LanguageModal';
+import HelpModal from '../components/HelpModal';
 
 const Community: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [searchInput, setSearchInput] = useState('');
   const [soundEnabled, setSoundEnabled] = useState(true);
+  const [showLanguageModal, setShowLanguageModal] = useState(false);
+  const [showHelpModal, setShowHelpModal] = useState(false);
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
@@ -37,6 +42,8 @@ const Community: React.FC = () => {
       <PageNavigation 
         toggleSound={toggleSound}
         soundEnabled={soundEnabled}
+        showLanguageModal={() => setShowLanguageModal(true)}
+        showHelpModal={() => setShowHelpModal(true)}
       />
       
       <ScrollView contentContainerStyle={styles.contentContainer}>
@@ -80,6 +87,20 @@ const Community: React.FC = () => {
           </TouchableOpacity>
         </View>
       </ScrollView>
+      
+      {/* Language Modal */}
+      <LanguageModal 
+        visible={showLanguageModal} 
+        onClose={() => setShowLanguageModal(false)} 
+        languageCode={language.code}
+      />
+      
+      {/* Help Modal */}
+      <HelpModal
+        visible={showHelpModal}
+        onClose={() => setShowHelpModal(false)}
+        languageCode={language.code}
+      />
     </SafeAreaView>
   );
 };

@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from "react";
 import {
   StyleSheet,
@@ -75,7 +74,7 @@ const confirmationMessages: Record<string, string> = {
   ce: "Хьуна нохчийн мотт хаъий?\n Хӏара приложение хӏинца дуьйна нохчийн маттахь хир ю.\n Хьо и тӏаьхьо хийца йиш ю.",
   prs: "آیا دری را میفهمید؟ این برنامه از این به بعد به زبان دری خواهد بود. شما می‌توانید بعداً این را تغییر دهید.",
   ps: "ایا تاسو پښتو پوهیږئ؟ دا اپلیکیشن به له دې وروسته په پښتو وي. تاسو کولی شئ دا وروسته بدل کړئ.",
-  fa: "آیا فارسی را میفهمید؟ این برنامه از این به بعد به زبان فارسی خواهد بود. شما می‌توانید بعداً این را تغییر دهید.",
+  fa: "آیا فارسی را میفهمید؟ این برنامه از این به بعد به زبان فارسی خواهد بود. شما می‌توانید بعداً ا��ن را تغییر دهید.",
   ar: "هل تفهم العربية؟ سيكون هذا التطبيق باللغة العربية من الآن فصاعدًا. يمكنك تغيير ذلك لاحقًا.",
   ku: "Tu Kurdî fêm dikî?\n Ev sepan ji niha û pê ve bi Kurdî be.\n Tu dikarî vê paşê biguherînî.",
   so: "Ma fahmaysaa Soomaali?\n Abkan wuxuu noqon doonaa Soomaali hadda.\n Waxaad bedeli kartaa mar dambe.",
@@ -127,9 +126,9 @@ export default function LanguageSelectionScreen() {
   const handleLanguageSelect = (language: Language) => {
     setSelectedLanguage(language);
     
-    // Animate scaling
+    // Animate scaling - reduced scale value from 1.5 to 1.2 for smaller dialog
     Animated.timing(animatedScale, {
-      toValue: 1.5,
+      toValue: 1.2,
       duration: 300,
       useNativeDriver: true,
     }).start();
@@ -296,8 +295,8 @@ export default function LanguageSelectionScreen() {
               
               {selectedLanguage && (
                 <View style={styles.languageDetail}>
-                <View style={{ width: '30%', aspectRatio:1,  marginTop: -20}}>
-                  <selectedLanguage.flag props={styles.languageFlag}/>
+                  <View style={{ width: '30%', aspectRatio:1, marginBottom: 10 }}>
+                    <selectedLanguage.flag props={styles.languageFlag}/>
                   </View>
                   <Text style={styles.detailText}>
                     {confirmationMessages[selectedLanguage.code] || confirmationMessages.en}
@@ -420,11 +419,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#f5f5f5",
     borderRadius: 12,
     padding: 10,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 2,
+    // Removed shadow properties
   },
   languageFlag: {
     width: "10%",
@@ -461,12 +456,13 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0,0,0,0.5)",
   },
   modalView: {
-    width: '80%',
-    maxHeight: '60%',
+    width: '70%', // Reduced from 80% to make it smaller
+    maxHeight: '50%', // Reduced from 60% to make it smaller
     backgroundColor: "#fff",
     borderRadius: 20,
-    padding: 25,
+    padding: 20,
     alignItems: "center",
+    // Removed shadow properties
   },
   backButton: {
     position: "absolute",
@@ -488,16 +484,16 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
   detailText: {
-    fontSize: 12,
+    fontSize: 14, // Reduced from 16 to accommodate smaller modal
     textAlign: "center",
-    marginBottom: 5,
-    lineHeight: 24,
+    marginBottom: 15,
+    lineHeight: 22,
   },
   buttonContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
     width: "100%",
-    marginTop: 10,
+    marginVertical: 15,
   },
   yesButton: {
     backgroundColor: "#4CAF50",
@@ -532,7 +528,7 @@ const styles = StyleSheet.create({
     height: 6,
     backgroundColor: "#e0e0e0",
     borderRadius: 3,
-    marginTop: 20,
+    marginTop: 10,
     overflow: "hidden",
   },
   countdownBar: {
