@@ -245,8 +245,10 @@ export default function LanguageSelectionScreen() {
             onPressIn={(e) => handlePressIn(language, e)}
             onPressOut={handlePressOut}
           >
-            <language.flag props={styles.languageFlag} />
-            <Text style={styles.languageName}>{language.name}</Text>
+          <View style={{ width: '60%', aspectRatio:1 }}>
+            <language.flag style={styles.languageFlag}></language.flag>
+           </View>
+           <Text style={styles.languageName}>{language.name}</Text>
           </TouchableOpacity>
         ))}
       </ScrollView>
@@ -294,7 +296,9 @@ export default function LanguageSelectionScreen() {
               
               {selectedLanguage && (
                 <View style={styles.languageDetail}>
-                  <selectedLanguage.flag props={styles.languageFlag} />
+                <View style={{ width: '30%', aspectRatio:1,  marginTop: -20}}>
+                  <selectedLanguage.flag props={styles.languageFlag}/>
+                  </View>
                   <Text style={styles.detailText}>
                     {confirmationMessages[selectedLanguage.code] || confirmationMessages.en}
                   </Text>
@@ -423,8 +427,8 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   languageFlag: {
-    width: "50%",
-    height: "50%",
+    width: "10%",
+    height: "10%",
     marginBottom: 10,
     borderRadius: 30,
   },
@@ -484,9 +488,9 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
   detailText: {
-    fontSize: 16,
+    fontSize: 12,
     textAlign: "center",
-    marginBottom: 20,
+    marginBottom: 5,
     lineHeight: 24,
   },
   buttonContainer: {

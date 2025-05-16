@@ -13,7 +13,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useLanguage } from '../contexts/LanguageContext';
 import { languages } from '../data/languages';
-import PageNavigation from './components/PageNavigation';
+import PageNavigation from '../components/PageNavigation';
 
 // Accordion item component
 interface AccordionItemProps {

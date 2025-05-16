@@ -1,11 +1,13 @@
 import * as React from "react"
-import Svg, { SvgProps, Circle, Path, Use, G, Defs, ClipPath,} from "react-native-svg"
+import Svg, { SvgProps, Circle, Path, Use, G, Defs, ClipPath} from "react-native-svg"
+import { View } from 'react-native'
+
 const GermanFlag = (props: SvgProps) => (
-  <Svg {...props}
+  <Svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 640 480"
-      width={"60%"}
-      height={"60%"}
+      width={"100%"}
+      height={"100%"}
     >
 
     <Path fill="#fc0" d="M0 320h640v160H0z"/>
@@ -16,12 +18,11 @@ const GermanFlag = (props: SvgProps) => (
 
 const AlbanianFlag = (props: SvgProps, ref: Ref<SVGSVGElement>) => (
   <Svg
-    {...props}
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 640 480"
-    width={"60%"}
-    height={"60%"}
+    width={"100%"}
+    height={"100%"}
     ref={ref}
   >
     <Path fill="red" d="M0 0h640v480H0z" />
@@ -41,12 +42,11 @@ const AlbanianFlag = (props: SvgProps, ref: Ref<SVGSVGElement>) => (
 
 const AfghaniFlag = (props: SvgProps) => (
   <Svg
-    {...props}
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 640 480"
-    width={"60%"}
-    height={"60%"}
+    width={"100%"}
+    height={"100%"}
   >
 
     <G fillRule="evenodd" strokeWidth="1pt">
@@ -186,11 +186,11 @@ const AfghaniFlag = (props: SvgProps) => (
 
 const GBFlag = (props: SvgProps) => (
   <Svg
-    {...props}
+    
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 640 480"
-    width={"60%"}
-    height={"60%"}
+    width={"100%"}
+    height={"100%"}
   >
 
     <Path fill="#012169" d="M0 0h640v480H0z" />
@@ -209,11 +209,11 @@ const GBFlag = (props: SvgProps) => (
 
 const GeorgianFlag = (props: SvgProps) => (
   <Svg
-    {...props}
+    
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 640 480"
-    width={"60%"}
-    height={"60%"}
+    width={"100%"}
+    height={"100%"}
   >
     <Path fill="#fff" d="M0 0h640v480H0z" />
     <Path fill="red" d="M272 0h96v480h-96z" />
@@ -228,11 +228,11 @@ const GeorgianFlag = (props: SvgProps) => (
 
 const IranianFlag = (props: SvgProps) => (
   <Svg
-    {...props}
+    
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 640 480"
-    width={"60%"}
-    height={"60%"}
+    width={"100%"}
+    height={"100%"}
   >
     <Defs>
       <ClipPath id="a">
@@ -468,11 +468,11 @@ const IranianFlag = (props: SvgProps) => (
 
 const RussianFlag = (props: SvgProps) => (
   <Svg
-    {...props}
+    
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 640 480"
-    width={"60%"}
-    height={"60%"}
+    width={"100%"}
+    height={"100%"}
   >
     <Path fill="#fff" d="M0 0h640v160H0z" />
     <Path fill="#0039a6" d="M0 160h640v160H0z" />
@@ -482,11 +482,11 @@ const RussianFlag = (props: SvgProps) => (
 
 const SomaliFlag = (props: SvgProps) => (
   <Svg
-    {...props}
+    
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 640 480"
-    width={"60%"}
-    height={"60%"}
+    width={"100%"}
+    height={"100%"}
   >
     <Defs>
       <ClipPath id="a">
@@ -510,12 +510,12 @@ const SomaliFlag = (props: SvgProps) => (
 
 const SyrianFlag = (props: SvgProps) => (
   <Svg
-    {...props}
+    
     xmlns="http://www.w3.org/2000/svg"
     xmlSpace="preserve"
     viewBox="0 0 640 480"
-    width={"60%"}
-    height={"60%"}
+    width={"100%"}
+    height={"100%"}
   >
     <Path d="M0 0h640v480H0Z" />
     <Path fill="#fff" d="M0 0h640v320H0Z" />

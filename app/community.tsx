@@ -12,7 +12,7 @@ import {
 import { MaterialIcons } from '@expo/vector-icons';
 import { useLanguage } from '../contexts/LanguageContext';
 import { languages, getCategoryLabel } from '../data/languages';
-import PageNavigation from './components/PageNavigation';
+import PageNavigation from '../components/PageNavigation';
 
 const Community: React.FC = () => {
   const { currentLanguage } = useLanguage();

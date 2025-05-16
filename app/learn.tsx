@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import { useLanguage } from '../contexts/LanguageContext';
 import { languages } from '../data/languages';
-import PageNavigation from './components/PageNavigation';
+import PageNavigation from '../components/PageNavigation';
 
 const Learn: React.FC = () => {
   const { currentLanguage } = useLanguage();

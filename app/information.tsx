@@ -15,7 +15,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useLanguage } from '../contexts/LanguageContext';
 import { languages, getCategoryLabel } from '../data/languages';
-import PageNavigation from './components/PageNavigation';
+import PageNavigation from '../components/PageNavigation';
 
 interface CategoryItem {
   id: string;
