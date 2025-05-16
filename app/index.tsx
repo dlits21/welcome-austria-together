@@ -1,31 +1,34 @@
+
 import React, { useState, useEffect, useRef } from "react";
 import {
   StyleSheet,
-  Text,
   View,
-  TouchableOpacity,
-  ScrollView,
-  Image,
+  Pressable,
   SafeAreaView,
   StatusBar,
   Modal,
   Animated,
   Dimensions,
-  Pressable,
 } from "react-native";
 import { useRouter } from "expo-router";
-import { MaterialIcons } from "@expo/vector-icons";
 import {
-    GermanFlag,
-    GBFlag,
-    RussianFlag,
-    AfghaniFlag,
-    IranianFlag,
-    SyrianFlag,
-    SomaliFlag,
-    GeorgianFlag,
-    AlbanianFlag
-    } from "../components/Flags"
+  GermanFlag,
+  GBFlag,
+  RussianFlag,
+  AfghaniFlag,
+  IranianFlag,
+  SyrianFlag,
+  SomaliFlag,
+  GeorgianFlag,
+  AlbanianFlag
+} from "../components/Flags";
+
+// Import our new components
+import LanguageSelectionHeader from "../components/LanguageSelectionHeader";
+import LanguageSelectionGrid from "../components/LanguageSelectionGrid";
+import HoverTooltip from "../components/HoverTooltip";
+import LanguageConfirmation from "../components/LanguageConfirmation";
+import InfoModal from "../components/InfoModal";
 
 // Language data with correct flags and languages
 const languages = [
@@ -111,8 +114,6 @@ export default function LanguageSelectionScreen() {
   const animatedOpacity = useRef(new Animated.Value(0)).current;
   const countdownProgress = useRef(new Animated.Value(1)).current;
   const countdownTimer = useRef<NodeJS.Timeout | null>(null);
-  const windowWidth = Dimensions.get('window').width;
-  const windowHeight = Dimensions.get('window').height;
 
   // Rotate through welcome messages
   useEffect(() => {
@@ -126,7 +127,7 @@ export default function LanguageSelectionScreen() {
   const handleLanguageSelect = (language: Language) => {
     setSelectedLanguage(language);
     
-    // Animate scaling - reduced scale value from 1.5 to 1.2 for smaller dialog
+    // Animate scaling
     Animated.timing(animatedScale, {
       toValue: 1.2,
       duration: 300,
@@ -208,66 +209,27 @@ export default function LanguageSelectionScreen() {
       <StatusBar barStyle="dark-content" />
       
       {/* Header */}
-      <View style={styles.header}>
-        <Text style={styles.title}>{currentWelcomeMessage}</Text>
-        <Text style={styles.subtitle}>Please choose your preferred language</Text>
-        
-        {/* Top right buttons */}
-        <View style={styles.topRightButtons}>
-          <TouchableOpacity 
-            style={styles.iconButton} 
-            onPress={() => setShowInfo(true)}
-          >
-            <MaterialIcons name="help" size={Dimensions.get('window').width / 25} color="#333" />
-          </TouchableOpacity>
-          
-          <TouchableOpacity 
-            style={styles.iconButton} 
-            onPress={() => setSoundEnabled(!soundEnabled)}
-          >
-            <MaterialIcons 
-              name={soundEnabled ? "volume-up" : "volume-off"} 
-              size={Dimensions.get('window').width / 25}
-              color="#333" 
-            />
-          </TouchableOpacity>
-        </View>
-      </View>
+      <LanguageSelectionHeader
+        currentWelcomeMessage={currentWelcomeMessage}
+        setShowInfo={setShowInfo}
+        soundEnabled={soundEnabled}
+        setSoundEnabled={setSoundEnabled}
+      />
       
       {/* Language Grid */}
-      <ScrollView contentContainerStyle={styles.languageGrid}>
-        {languages.map((language) => (
-          <TouchableOpacity
-            key={language.code}
-            style={styles.languageItem}
-            onPress={() => handleLanguageSelect(language)}
-            onPressIn={(e) => handlePressIn(language, e)}
-            onPressOut={handlePressOut}
-          >
-          <View style={{ width: '60%', aspectRatio:1 }}>
-            <language.flag style={styles.languageFlag}></language.flag>
-           </View>
-           <Text style={styles.languageName}>{language.name}</Text>
-          </TouchableOpacity>
-        ))}
-      </ScrollView>
+      <LanguageSelectionGrid
+        languages={languages}
+        handleLanguageSelect={handleLanguageSelect}
+        handlePressIn={handlePressIn}
+        handlePressOut={handlePressOut}
+      />
       
-      {/* Hover tooltip (simulated) */}
-      {hoverLanguage && (
-        <View 
-          style={[
-            styles.hoverTooltip,
-            {
-              left: hoverPosition.x,
-              top: hoverPosition.y,
-            }
-          ]}
-        >
-          <Text style={styles.hoverText}>
-            {hoverMessages[hoverLanguage.code] || hoverMessages.en}
-          </Text>
-        </View>
-      )}
+      {/* Hover tooltip */}
+      <HoverTooltip 
+        hoverLanguage={hoverLanguage}
+        hoverPosition={hoverPosition}
+        hoverMessages={hoverMessages}
+      />
       
       {/* Language Detail Modal */}
       <Modal
@@ -278,96 +240,23 @@ export default function LanguageSelectionScreen() {
       >
         <Pressable style={styles.modalOverlay} onPress={closeLanguageDetail}>
           <View style={styles.centeredView}>
-            <Animated.View 
-              style={[
-                styles.modalView,
-                {
-                  transform: [{ scale: animatedScale }],
-                }
-              ]}
-            >
-              <TouchableOpacity 
-                style={styles.backButton}
-                onPress={closeLanguageDetail}
-              >
-                <MaterialIcons name="arrow-back" size={24} color="#fff" />
-              </TouchableOpacity>
-              
-              {selectedLanguage && (
-                <View style={styles.languageDetail}>
-                  <View style={{ width: '30%', aspectRatio:1, marginBottom: 10 }}>
-                    <selectedLanguage.flag props={styles.languageFlag}/>
-                  </View>
-                  <Text style={styles.detailText}>
-                    {confirmationMessages[selectedLanguage.code] || confirmationMessages.en}
-                  </Text>
-                  
-                  {/* Yes/No Buttons */}
-                  <View style={styles.buttonContainer}>
-                    <TouchableOpacity
-                      style={styles.noButton}
-                      onPress={closeLanguageDetail}
-                    >
-                      <Text style={styles.noButtonText}>
-                        {selectedLanguage.code === "en" ? "No" : "Nein"}
-                      </Text>
-                    </TouchableOpacity>
-                    
-                    <TouchableOpacity
-                      style={styles.yesButton}
-                      onPress={() => confirmLanguage(selectedLanguage.code)}
-                    >
-                      <Text style={styles.yesButtonText}>
-                        {selectedLanguage.code === "en" ? "Yes" : "Ja"}
-                      </Text>
-                    </TouchableOpacity>
-                  </View>
-                  
-                  {/* Countdown bar */}
-                  <View style={styles.countdownContainer}>
-                    <Animated.View 
-                      style={[
-                        styles.countdownBar,
-                        {
-                          width: countdownProgress.interpolate({
-                            inputRange: [0, 1],
-                            outputRange: ['0%', '100%'],
-                          }),
-                        }
-                      ]}
-                    />
-                  </View>
-                </View>
-              )}
-            </Animated.View>
+            <LanguageConfirmation
+              selectedLanguage={selectedLanguage}
+              closeLanguageDetail={closeLanguageDetail}
+              confirmLanguage={confirmLanguage}
+              animatedScale={animatedScale}
+              countdownProgress={countdownProgress}
+              confirmationMessages={confirmationMessages}
+            />
           </View>
         </Pressable>
       </Modal>
       
       {/* Info Modal */}
-      <Modal
+      <InfoModal 
         visible={showInfo}
-        transparent={true}
-        animationType="fade"
-        onRequestClose={() => setShowInfo(false)}
-      >
-        <View style={styles.centeredView}>
-          <View style={styles.infoModalView}>
-            <Text style={styles.infoTitle}>Language Selection</Text>
-            <Text style={styles.infoText}>
-              Please select your preferred language. This app supports 12 languages
-              to help you navigate easily in your native language. You can always
-              change the language later from the settings menu.
-            </Text>
-            <TouchableOpacity
-              style={styles.closeButton}
-              onPress={() => setShowInfo(false)}
-            >
-              <Text style={styles.closeButtonText}>Close</Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </Modal>
+        onClose={() => setShowInfo(false)}
+      />
     </SafeAreaView>
   );
 }
@@ -376,72 +265,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-  },
-  header: {
-    padding: 20,
-    alignItems: "center",
-    position: "relative",
-  },
-  title: {
-    fontSize: 34,
-    fontWeight: "bold",
-    marginBottom: 10,
-    textAlign: "center",
-    width: "60%"
-  },
-  subtitle: {
-    fontSize: 16,
-    color: "#666",
-    textAlign: "center",
-  },
-  topRightButtons: {
-    position: "absolute",
-    top: 20,
-    right: 20,
-    flexDirection: "row",
-  },
-  iconButton: {
-    padding: 10,
-    marginLeft: 10,
-  },
-  languageGrid: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "center",
-    padding: 10,
-  },
-  languageItem: {
-    width: "30%",
-    aspectRatio: 1,
-    margin: "1.5%",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#f5f5f5",
-    borderRadius: 12,
-    padding: 10,
-    // Removed shadow properties
-  },
-  languageFlag: {
-    width: "10%",
-    height: "10%",
-    marginBottom: 10,
-    borderRadius: 30,
-  },
-  languageName: {
-    fontSize: Dimensions.get('window').width / 25,
-    textAlign: "center",
-  },
-  hoverTooltip: {
-    position: "absolute",
-    backgroundColor: "rgba(0,0,0,0.7)",
-    padding: 10,
-    borderRadius: 5,
-    maxWidth: 200,
-    zIndex: 1000,
-  },
-  hoverText: {
-    color: "#fff",
-    fontSize: 12,
   },
   modalOverlay: {
     flex: 1,
@@ -454,123 +277,5 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "rgba(0,0,0,0.5)",
-  },
-  modalView: {
-    width: '70%', // Reduced from 80% to make it smaller
-    maxHeight: '50%', // Reduced from 60% to make it smaller
-    backgroundColor: "#fff",
-    borderRadius: 20,
-    padding: 20,
-    alignItems: "center",
-    // Removed shadow properties
-  },
-  backButton: {
-    position: "absolute",
-    top: 10,
-    left: 10,
-    backgroundColor: "#333",
-    padding: 8,
-    borderRadius: 20,
-    zIndex: 10,
-  },
-  languageDetail: {
-    width: "100%",
-    alignItems: "center",
-  },
-  detailFlag: {
-    width: Dimensions.get('window').height * .1,
-    height: Dimensions.get('window').height * .1,
-    marginBottom: 20,
-    borderRadius: 50,
-  },
-  detailText: {
-    fontSize: 14, // Reduced from 16 to accommodate smaller modal
-    textAlign: "center",
-    marginBottom: 15,
-    lineHeight: 22,
-  },
-  buttonContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    width: "100%",
-    marginVertical: 15,
-  },
-  yesButton: {
-    backgroundColor: "#4CAF50",
-    paddingHorizontal: 20,
-    paddingVertical: 12,
-    borderRadius: 8,
-    flex: 1,
-    marginLeft: 5,
-    alignItems: "center",
-  },
-  yesButtonText: {
-    color: "#fff",
-    fontSize: 16,
-    fontWeight: "600",
-  },
-  noButton: {
-    backgroundColor: "#f44336",
-    paddingHorizontal: 20,
-    paddingVertical: 12,
-    borderRadius: 8,
-    flex: 1,
-    marginRight: 5,
-    alignItems: "center",
-  },
-  noButtonText: {
-    color: "#fff",
-    fontSize: 16,
-    fontWeight: "600",
-  },
-  countdownContainer: {
-    width: "100%",
-    height: 6,
-    backgroundColor: "#e0e0e0",
-    borderRadius: 3,
-    marginTop: 10,
-    overflow: "hidden",
-  },
-  countdownBar: {
-    height: "100%",
-    backgroundColor: "#4CAF50",
-  },
-  infoModalView: {
-    margin: 20,
-    backgroundColor: "white",
-    borderRadius: 20,
-    padding: 35,
-    alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
-    maxWidth: "80%",
-  },
-  infoTitle: {
-    fontSize: 20,
-    fontWeight: "bold",
-    marginBottom: 15,
-  },
-  infoText: {
-    marginBottom: 15,
-    textAlign: "center",
-    lineHeight: 22,
-  },
-  closeButton: {
-    backgroundColor: "#2196F3",
-    borderRadius: 10,
-    padding: 10,
-    elevation: 2,
-    marginTop: 10,
-  },
-  closeButtonText: {
-    color: "white",
-    fontWeight: "bold",
-    textAlign: "center",
   },
 });
