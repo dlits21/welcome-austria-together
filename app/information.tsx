@@ -57,8 +57,8 @@ const Information: React.FC = () => {
 
   const handleCategoryPress = (categoryId: string) => {
     console.log(`Selected: ${categoryId}`);
-    // Navigate to a new empty page with the category ID
-    router.push(`/${categoryId}`);
+    // Navigate to the specific information subpage
+    router.push(`/information/${categoryId}`);
   };
   
   const informationCategories: CategoryItem[] = [

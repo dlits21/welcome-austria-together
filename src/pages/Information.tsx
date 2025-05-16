@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -191,13 +190,7 @@ const Information: React.FC = () => {
 
   const handleCategoryClick = (categoryId: string) => {
     console.log(`Selected: ${categoryId}`);
-    
-    if (categoryId === 'german-learning') {
-      navigate('/german-learning');
-    } else {
-      // For other categories, navigate to a new empty page with the category ID
-      navigate(`/${categoryId}`);
-    }
+    navigate(`/information/${categoryId}`);
   };
 
   const helpContent = (
@@ -243,7 +236,7 @@ const Information: React.FC = () => {
               <HoverCardTrigger asChild>
                 <Button
                   variant="outline"
-                  className={`h-auto flex flex-col gap-2 p-4 items-center justify-center text-center border-2 hover:shadow-md transition-all ${category.color}`}
+                  className={`h-auto flex flex-col gap-2 p-4 items-center justify-center text-center border-2 hover:shadow-md transition-all ${category.color} sm:w-full`}
                   onClick={() => handleCategoryClick(category.id)}
                 >
                   <span className="text-4xl mb-2">{category.icon}</span>
@@ -252,7 +245,7 @@ const Information: React.FC = () => {
                   </span>
                   <span className="text-sm text-muted-foreground">
                     {language.code === 'de' 
-                      ? 'Klicken für Details' 
+                      ? 'Klicken f��r Details' 
                       : 'Click for details'}
                   </span>
                 </Button>
