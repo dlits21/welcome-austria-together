@@ -16,21 +16,32 @@ import {
 } from "react-native";
 import { useRouter } from "expo-router";
 import { MaterialIcons } from "@expo/vector-icons";
+import {
+    GermanFlag,
+    GBFlag,
+    RussianFlag,
+    AfghaniFlag,
+    IranianFlag,
+    SyrianFlag,
+    SomaliFlag,
+    GeorgianFlag,
+    AlbanianFlag
+    } from "../components/Flags"
 
 // Language data with correct flags and languages
 const languages = [
-  { code: "de", name: "Deutsch", flag: require("../assets/images/flags/de.svg") }, // German
-  { code: "en", name: "English", flag: require("../assets/images/flags/gb.svg") }, // English
-  { code: "ru", name: "Русский", flag: require("../assets/images/flags/ru.svg") }, // Russian
-  { code: "ce", name: "Нохчийн", flag: require("../assets/images/flags/ru.svg") }, // Chechen
-  { code: "prs", name: "دری", flag: require("../assets/images/flags/af.svg") }, // Dari
-  { code: "ps", name: "پښتو", flag: require("../assets/images/flags/af.svg") }, // Pashto
-  { code: "fa", name: "فارسی", flag: require("../assets/images/flags/ir.svg") }, // Persian
-  { code: "ar", name: "العربية", flag: require("../assets/images/flags/sy.svg") }, // Arabic
-  { code: "ku", name: "Kurdî", flag: require("../assets/images/flags/sy.svg") }, // Kurdish
-  { code: "so", name: "Soomaali", flag: require("../assets/images/flags/so.svg") }, // Somali
-  { code: "ka", name: "ქართული", flag: require("../assets/images/flags/ge.svg") }, // Georgian
-  { code: "sq", name: "Shqip", flag: require("../assets/images/flags/al.svg") }, // Albanian
+  { code: "de", name: "Deutsch", flag: GermanFlag }, // German
+  { code: "en", name: "English", flag: GBFlag }, // English
+  { code: "ru", name: "Русский", flag: RussianFlag }, // Russian
+  { code: "ce", name: "Нохчийн", flag: RussianFlag }, // Chechen
+  { code: "prs", name: "دری", flag: AfghaniFlag }, // Dari
+  { code: "ps", name: "پښتو", flag: AfghaniFlag }, // Pashto
+  { code: "fa", name: "فارسی", flag: IranianFlag }, // Persian
+  { code: "ar", name: "العربية", flag: SyrianFlag }, // Arabic
+  { code: "ku", name: "Kurdî", flag: SyrianFlag }, // Kurdish
+  { code: "so", name: "Soomaali", flag: SomaliFlag }, // Somali
+  { code: "ka", name: "ქართული", flag: GeorgianFlag }, // Georgian
+  { code: "sq", name: "Shqip", flag: AlbanianFlag }, // Albanian
 ];
 
 // Type definition for language
@@ -234,7 +245,7 @@ export default function LanguageSelectionScreen() {
             onPressIn={(e) => handlePressIn(language, e)}
             onPressOut={handlePressOut}
           >
-            <Image source={language.flag} style={styles.languageFlag} />
+            <language.flag props={styles.languageFlag} />
             <Text style={styles.languageName}>{language.name}</Text>
           </TouchableOpacity>
         ))}
@@ -283,7 +294,7 @@ export default function LanguageSelectionScreen() {
               
               {selectedLanguage && (
                 <View style={styles.languageDetail}>
-                  <Image source={selectedLanguage.flag} style={styles.detailFlag} />
+                  <selectedLanguage.flag props={styles.languageFlag} />
                   <Text style={styles.detailText}>
                     {confirmationMessages[selectedLanguage.code] || confirmationMessages.en}
                   </Text>
