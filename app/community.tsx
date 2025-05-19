@@ -8,9 +8,10 @@ import {
   TextInput,
   TouchableOpacity,
   ScrollView,
-  Modal
+  Platform
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 import { useLanguage } from '../contexts/LanguageContext';
 import { languages, getCategoryLabel } from '../data/languages';
 import PageNavigation from '../components/PageNavigation';
@@ -18,6 +19,7 @@ import LanguageModal from '../components/LanguageModal';
 import HelpModal from '../components/HelpModal';
 
 const Community: React.FC = () => {
+  const router = useRouter();
   const { currentLanguage } = useLanguage();
   const [searchInput, setSearchInput] = useState('');
   const [soundEnabled, setSoundEnabled] = useState(true);
@@ -68,7 +70,7 @@ const Community: React.FC = () => {
         <View style={styles.optionsContainer}>
           <TouchableOpacity 
             style={[styles.optionButton, styles.needHelpButton]}
-            onPress={() => console.log('I need help')}
+            onPress={() => router.push('/community/need-help')}
           >
             <MaterialIcons name="people" size={48} color="#3B82F6" />
             <Text style={styles.optionButtonText}>
@@ -78,11 +80,21 @@ const Community: React.FC = () => {
           
           <TouchableOpacity 
             style={[styles.optionButton, styles.canHelpButton]}
-            onPress={() => console.log('I can help')}
+            onPress={() => router.push('/community/can-help')}
           >
             <MaterialIcons name="volunteer-activism" size={48} color="#10B981" />
             <Text style={styles.optionButtonText}>
               {language.code === 'de' ? 'Ich kann helfen mit...' : 'I can help with...'}
+            </Text>
+          </TouchableOpacity>
+          
+          <TouchableOpacity 
+            style={[styles.optionButton, styles.mapButton]}
+            onPress={() => router.push('/community/map')}
+          >
+            <MaterialIcons name="map" size={48} color="#7E69AB" />
+            <Text style={styles.optionButtonText}>
+              {language.code === 'de' ? 'Karte' : 'Map'}
             </Text>
           </TouchableOpacity>
         </View>
@@ -144,6 +156,9 @@ const styles = StyleSheet.create({
   },
   optionsContainer: {
     marginTop: 20,
+    flexDirection: Platform.OS === 'web' ? 'row' : 'column',
+    flexWrap: Platform.OS === 'web' ? 'wrap' : 'nowrap',
+    justifyContent: 'space-between',
   },
   optionButton: {
     aspectRatio: 16/9,
@@ -154,12 +169,16 @@ const styles = StyleSheet.create({
     padding: 20,
     borderWidth: 2,
     backgroundColor: '#fff',
+    width: Platform.OS === 'web' ? '31%' : '100%',
   },
   needHelpButton: {
     borderColor: '#3B82F6',
   },
   canHelpButton: {
     borderColor: '#10B981',
+  },
+  mapButton: {
+    borderColor: '#7E69AB',
   },
   optionButtonText: {
     fontSize: 18,

@@ -2,6 +2,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Modal, ScrollView, FlatList } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { languages } from '../data/languages';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface LanguageModalProps {
   visible: boolean;
@@ -10,6 +12,13 @@ interface LanguageModalProps {
 }
 
 const LanguageModal: React.FC<LanguageModalProps> = ({ visible, onClose, languageCode }) => {
+  const { setLanguage } = useLanguage();
+
+  const handleLanguageSelect = (code: string) => {
+    setLanguage(code);
+    onClose();
+  };
+
   return (
     <Modal
       visible={visible}
@@ -29,8 +38,26 @@ const LanguageModal: React.FC<LanguageModalProps> = ({ visible, onClose, languag
           </View>
           
           <ScrollView>
-            {/* Language selection would go here */}
-            <Text style={styles.modalText}>Language selection goes here</Text>
+            <View style={styles.languageGrid}>
+              {languages.map((language) => (
+                <TouchableOpacity
+                  key={language.code}
+                  style={[
+                    styles.languageItem,
+                    language.code === languageCode && styles.selectedLanguageItem
+                  ]}
+                  onPress={() => handleLanguageSelect(language.code)}
+                >
+                  <Text style={styles.languageEmoji}>{language.flag}</Text>
+                  <Text style={[
+                    styles.languageName,
+                    language.code === languageCode && styles.selectedLanguageText
+                  ]}>
+                    {language.nativeName}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
           </ScrollView>
         </View>
       </View>
@@ -64,8 +91,34 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
   },
-  modalText: {
+  languageGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
     padding: 16,
+  },
+  languageItem: {
+    width: '30%',
+    padding: 12,
+    marginBottom: 16,
+    alignItems: 'center',
+    backgroundColor: '#f5f5f5',
+    borderRadius: 8,
+  },
+  selectedLanguageItem: {
+    backgroundColor: '#9b87f5',
+  },
+  languageEmoji: {
+    fontSize: 24,
+    marginBottom: 8,
+  },
+  languageName: {
+    fontSize: 14,
+    textAlign: 'center',
+  },
+  selectedLanguageText: {
+    color: '#fff',
+    fontWeight: 'bold',
   },
 });
 
