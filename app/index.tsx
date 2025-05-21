@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from "react";
 import {
   StyleSheet,
@@ -22,6 +21,9 @@ import {
   GeorgianFlag,
   AlbanianFlag
 } from "../components/Flags";
+import {
+    getWelcomeText } from '../data/languages/common';
+import { useLanguage } from '../contexts/LanguageContext';
 
 // Import our new components
 import LanguageSelectionHeader from "../components/LanguageSelectionHeader";
@@ -53,22 +55,6 @@ interface Language {
   flag: any; // Using 'any' for simplicity with require()
 }
 
-// Welcome messages in each language
-const welcomeMessages: Record<string, string> = {
-  de: "Willkommen! Schön dass du da bist",
-  en: "Welcome! Nice to have you here",
-  ru: "Добро пожаловать! Приятно видеть вас здесь",
-  ce: "Марша вогӏийла! Хьо кхуза веана хазахета",
-  prs: "خوش آمدید! خوشحالیم که اینجا هستید",
-  ps: "ښه راغلاست! ستاسو دلته شتون مو خوښ دی",
-  fa: "خوش آمدید! خوشحالیم که اینجا هستید",
-  ar: "مرحبًا! سعيد بوجودك هنا",
-  ku: "Bi xêr hatî! Keyfxweş im ku hûn li vir in",
-  so: "Soo dhawow! Ku faraxsan inaad halkan joogto",
-  ka: "კეთილი იყოს თქვენი მობრძანება! კარგია რომ აქა ხართ",
-  sq: "Mirësevini! Është kënaqësi t'ju kemi këtu",
-};
-
 // Confirmation messages in each language
 const confirmationMessages: Record<string, string> = {
   de: "Verstehst du Deutsch?\nDiese App wird ab jetzt auf Deutsch sein.\n Du kannst das später ändern.",
@@ -77,11 +63,11 @@ const confirmationMessages: Record<string, string> = {
   ce: "Хьуна нохчийн мотт хаъий?\n Хӏара приложение хӏинца дуьйна нохчийн маттахь хир ю.\n Хьо и тӏаьхьо хийца йиш ю.",
   prs: "آیا دری را میفهمید؟ این برنامه از این به بعد به زبان دری خواهد بود. شما می‌توانید بعداً این را تغییر دهید.",
   ps: "ایا تاسو پښتو پوهیږئ؟ دا اپلیکیشن به له دې وروسته په پښتو وي. تاسو کولی شئ دا وروسته بدل کړئ.",
-  fa: "آیا فارسی را میفهمید؟ این برنامه از این به بعد به زبان فارسی خواهد بود. شما می‌توانید بعداً ا��ن را تغییر دهید.",
+  fa: "آیا فارسی را میفهمید؟ این برنامه از این به بعد به زبان فارسی خواهد بود. شما می‌توانید بعداً ان را تغییر دهید.",
   ar: "هل تفهم العربية؟ سيكون هذا التطبيق باللغة العربية من الآن فصاعدًا. يمكنك تغيير ذلك لاحقًا.",
   ku: "Tu Kurdî fêm dikî?\n Ev sepan ji niha û pê ve bi Kurdî be.\n Tu dikarî vê paşê biguherînî.",
   so: "Ma fahmaysaa Soomaali?\n Abkan wuxuu noqon doonaa Soomaali hadda.\n Waxaad bedeli kartaa mar dambe.",
-  ka: "გესმით ქართული?\n ეს აპლიკაცია ამიერიდან ქართულ ენაზე იქნება.\n შეგიძლიათ ეს შეცვალოთ მოგვიანებით.",
+  ka: "გესმით ქართული? ეს აპლიკაცია ამიერიდან ქართულ ენაზე იქნება.\n შეგიძლიათ ეს შეცვალოთ მოგვიანებით.",
   sq: "A e kuptoni shqip?\n Ky aplikacion do të jetë në shqip nga tani e tutje.\n Mund ta ndryshoni këtë më vonë.",
 };
 
@@ -103,13 +89,15 @@ const hoverMessages: Record<string, string> = {
 
 export default function LanguageSelectionScreen() {
   const router = useRouter();
+  const { setSelectedLanguage, currentLanguage } = useLanguage();
+  console.log('Current language in selection screen:', currentLanguage);
   const [currentWelcomeIndex, setCurrentWelcomeIndex] = useState(0);
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showInfo, setShowInfo] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState<Language | null>(null);
+  const [selectedLanguageState, setSelectedLanguageState] = useState<Language | null>(null);
   const [hoverLanguage, setHoverLanguage] = useState<Language | null>(null);
   const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
-  
+
   const animatedScale = useRef(new Animated.Value(1)).current;
   const animatedOpacity = useRef(new Animated.Value(0)).current;
   const countdownProgress = useRef(new Animated.Value(1)).current;
@@ -125,29 +113,29 @@ export default function LanguageSelectionScreen() {
 
   // Handle language selection
   const handleLanguageSelect = (language: Language) => {
-    setSelectedLanguage(language);
-    
+    setSelectedLanguageState(language);
+
     // Animate scaling
     Animated.timing(animatedScale, {
       toValue: 1.2,
       duration: 300,
       useNativeDriver: true,
     }).start();
-    
+
     // Animate opacity
     Animated.timing(animatedOpacity, {
       toValue: 1,
       duration: 300,
       useNativeDriver: true,
     }).start();
-    
+
     // Start countdown
     Animated.timing(countdownProgress, {
       toValue: 0,
       duration: 20000, // 20 seconds
       useNativeDriver: false,
     }).start();
-    
+
     // Set timeout to close after 20s
     countdownTimer.current = setTimeout(() => {
       closeLanguageDetail();
@@ -168,7 +156,7 @@ export default function LanguageSelectionScreen() {
         useNativeDriver: true,
       }),
     ]).start(() => {
-      setSelectedLanguage(null);
+      setSelectedLanguageState(null);
       countdownProgress.setValue(1);
       if (countdownTimer.current) {
         clearTimeout(countdownTimer.current);
@@ -178,10 +166,16 @@ export default function LanguageSelectionScreen() {
 
   // Confirm language selection
   const confirmLanguage = (code: string) => {
-    console.log(`Confirmed language: ${code}`);
+    console.log(`Confirming language selection: ${code}`);
     if (countdownTimer.current) {
       clearTimeout(countdownTimer.current);
     }
+
+    // Set the global language
+    setSelectedLanguage(code);  // This will trigger the updateLanguage function
+    console.log('Language set to:', code);
+
+    closeLanguageDetail();
     // Navigate to homepage
     router.push('/home');
   };
@@ -202,12 +196,12 @@ export default function LanguageSelectionScreen() {
 
   // Get current welcome message based on index
   const currentWelcomeCode = languages[currentWelcomeIndex]?.code;
-  const currentWelcomeMessage = currentWelcomeCode ? welcomeMessages[currentWelcomeCode] : welcomeMessages.en;
+  const currentWelcomeMessage = getWelcomeText(currentWelcomeCode)
 
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" />
-      
+
       {/* Header */}
       <LanguageSelectionHeader
         currentWelcomeMessage={currentWelcomeMessage}
@@ -215,7 +209,7 @@ export default function LanguageSelectionScreen() {
         soundEnabled={soundEnabled}
         setSoundEnabled={setSoundEnabled}
       />
-      
+
       {/* Language Grid */}
       <LanguageSelectionGrid
         languages={languages}
@@ -223,17 +217,17 @@ export default function LanguageSelectionScreen() {
         handlePressIn={handlePressIn}
         handlePressOut={handlePressOut}
       />
-      
+
       {/* Hover tooltip */}
-      <HoverTooltip 
+      <HoverTooltip
         hoverLanguage={hoverLanguage}
         hoverPosition={hoverPosition}
         hoverMessages={hoverMessages}
       />
-      
+
       {/* Language Detail Modal */}
       <Modal
-        visible={selectedLanguage !== null}
+        visible={selectedLanguageState !== null}
         transparent={true}
         animationType="fade"
         onRequestClose={closeLanguageDetail}
@@ -241,7 +235,7 @@ export default function LanguageSelectionScreen() {
         <Pressable style={styles.modalOverlay} onPress={closeLanguageDetail}>
           <View style={styles.centeredView}>
             <LanguageConfirmation
-              selectedLanguage={selectedLanguage}
+              selectedLanguage={selectedLanguageState}
               closeLanguageDetail={closeLanguageDetail}
               confirmLanguage={confirmLanguage}
               animatedScale={animatedScale}
@@ -251,9 +245,9 @@ export default function LanguageSelectionScreen() {
           </View>
         </Pressable>
       </Modal>
-      
+
       {/* Info Modal */}
-      <InfoModal 
+      <InfoModal
         visible={showInfo}
         onClose={() => setShowInfo(false)}
       />
@@ -275,7 +269,6 @@ const styles = StyleSheet.create({
   centeredView: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "rgba(0,0,0,0.5)",
+    alignItems: "center"
   },
 });

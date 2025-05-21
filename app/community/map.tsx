@@ -12,7 +12,7 @@ import {
 import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useLanguage } from '../../contexts/LanguageContext';
-import { languages, getCategoryLabel } from '../../data/languages';
+import { languages, getCategoryLabel } from '../../data/languages/common';
 import PageNavigation from '../../components/PageNavigation';
 import LanguageModal from '../../components/LanguageModal';
 import HelpModal from '../../components/HelpModal';

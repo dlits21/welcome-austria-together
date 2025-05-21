@@ -2,7 +2,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Modal, ScrollView, FlatList } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import { languages } from '../data/languages';
+import { languages } from '../data/languages/common';
 import { useLanguage } from '../contexts/LanguageContext';
 
 interface LanguageModalProps {
@@ -12,10 +12,10 @@ interface LanguageModalProps {
 }
 
 const LanguageModal: React.FC<LanguageModalProps> = ({ visible, onClose, languageCode }) => {
-  const { setLanguage } = useLanguage();
+  const { setSelectedLanguage } = useLanguage();
 
   const handleLanguageSelect = (code: string) => {
-    setLanguage(code);
+    setSelectedLanguage(code);
     onClose();
   };
 

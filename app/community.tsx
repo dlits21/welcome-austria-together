@@ -13,7 +13,7 @@ import {
 import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useLanguage } from '../contexts/LanguageContext';
-import { languages, getCategoryLabel } from '../data/languages';
+import { languages, getMainCategories } from '../data/languages/common';
 import PageNavigation from '../components/PageNavigation';
 import LanguageModal from '../components/LanguageModal';
 import HelpModal from '../components/HelpModal';
@@ -49,7 +49,7 @@ const Community: React.FC = () => {
       />
       
       <ScrollView contentContainerStyle={styles.contentContainer}>
-        <Text style={styles.title}>{getCategoryLabel(language.code, 'community')}</Text>
+        <Text style={styles.title}>{getMainCategories(language.code, 'community')}</Text>
         
         {/* Search Bar */}
         <View style={styles.searchContainer}>

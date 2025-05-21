@@ -14,141 +14,23 @@ import {
 import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useLanguage } from '../contexts/LanguageContext';
-import { languages, getCategoryLabel } from '../data/languages';
+import { languages,
+    getMainCategories,
+    getFormat,
+    getLocation,
+    getNiveau,
+    getFilter,
+    getOnlineOnly,
+    getPrice,
+    getFreeOnly,
+    getClearFilters,
+    getApply } from '../data/languages/common';
+import { getNiveaus, getTab } from '../data/languages/learn';
+import { Course, courseData} from '../data/courses'
 import PageNavigation from '../components/PageNavigation';
 import LanguageModal from '../components/LanguageModal';
 import HelpModal from '../components/HelpModal';
 
-interface Course {
-  id: string;
-  title: {
-    en: string;
-    de: string;
-  };
-  type: 'course' | 'resource' | 'exam';
-  level?: 'beginner' | 'intermediate' | 'advanced';
-  location?: string;
-  price?: number;
-  online: boolean;
-  duration?: string;
-  description: {
-    en: string;
-    de: string;
-  };
-  tags: string[];
-  provider: string;
-}
-
-const courseData: Course[] = [
-  {
-    id: 'german-a1',
-    title: {
-      en: 'German A1 Course',
-      de: 'Deutschkurs A1'
-    },
-    type: 'course',
-    level: 'beginner',
-    location: 'Vienna',
-    price: 200,
-    online: false,
-    duration: '8 weeks',
-    description: {
-      en: 'Foundation German language course for beginners',
-      de: 'Grundlegender Deutschkurs für Anfänger'
-    },
-    tags: ['language', 'german', 'beginner'],
-    provider: 'VHS Vienna'
-  },
-  {
-    id: 'german-b1',
-    title: {
-      en: 'German B1 Course',
-      de: 'Deutschkurs B1'
-    },
-    type: 'course',
-    level: 'intermediate',
-    location: 'Vienna',
-    price: 250,
-    online: false,
-    duration: '10 weeks',
-    description: {
-      en: 'Intermediate German language course',
-      de: 'Mittlerer Deutschkurs'
-    },
-    tags: ['language', 'german', 'intermediate'],
-    provider: 'VHS Vienna'
-  },
-  {
-    id: 'job-search',
-    title: {
-      en: 'Job Search Workshop',
-      de: 'Workshop zur Arbeitssuche'
-    },
-    type: 'course',
-    location: 'Graz',
-    price: 0,
-    online: false,
-    duration: '2 days',
-    description: {
-      en: 'Learn how to search and apply for jobs in Austria',
-      de: 'Erfahren Sie, wie Sie in Österreich nach Jobs suchen und sich bewerben können'
-    },
-    tags: ['employment', 'career', 'workshop'],
-    provider: 'AMS Austria'
-  },
-  {
-    id: 'german-practice',
-    title: {
-      en: 'German Practice Resources',
-      de: 'Deutsche Übungsmaterialien'
-    },
-    type: 'resource',
-    level: 'beginner',
-    online: true,
-    description: {
-      en: 'Online resources to practice your German language skills',
-      de: 'Online-Ressourcen zum Üben Ihrer Deutschkenntnisse'
-    },
-    tags: ['language', 'german', 'self-study', 'online'],
-    provider: 'Integration Fund'
-  },
-  {
-    id: 'integration-exam',
-    title: {
-      en: 'Integration Exam',
-      de: 'Integrationsprüfung'
-    },
-    type: 'exam',
-    location: 'Multiple Locations',
-    price: 150,
-    online: false,
-    description: {
-      en: 'Official integration exam required for residency',
-      de: 'Offizielle Integrationsprüfung, die für den Aufenthalt erforderlich ist'
-    },
-    tags: ['exam', 'official', 'integration'],
-    provider: 'ÖIF'
-  },
-  {
-    id: 'computer-skills',
-    title: {
-      en: 'Basic Computer Skills',
-      de: 'Grundlegende Computerkenntnisse'
-    },
-    type: 'course',
-    level: 'beginner',
-    location: 'Salzburg',
-    price: 100,
-    online: false,
-    duration: '4 weeks',
-    description: {
-      en: 'Learn essential computer skills for the workplace',
-      de: 'Erlernen Sie wichtige Computerkenntnisse für den Arbeitsplatz'
-    },
-    tags: ['technology', 'skills', 'computer'],
-    provider: 'Digital Campus'
-  },
-];
 
 const Courses: React.FC = () => {
   const { currentLanguage } = useLanguage();
@@ -259,10 +141,10 @@ const Courses: React.FC = () => {
   // Tab buttons for filtering by course type
   const renderTabButtons = () => {
     const tabs = [
-      { id: 'all', en: 'All', de: 'Alle' },
-      { id: 'courses', en: 'Courses', de: 'Kurse' },
-      { id: 'resources', en: 'Resources', de: 'Ressourcen' },
-      { id: 'exams', en: 'Exams', de: 'Prüfungen' }
+      { id: 'all'},
+      { id: 'courses'},
+      { id: 'resources'},
+      { id: 'exams'}
     ];
 
     return (
@@ -280,7 +162,7 @@ const Courses: React.FC = () => {
               styles.tabButtonText,
               activeTab === tab.id && styles.activeTabText
             ]}>
-              {language.code === 'de' ? tab.de : tab.en}
+              {getTab(tab.id, language.code)}
             </Text>
           </TouchableOpacity>
         ))}
@@ -301,7 +183,7 @@ const Courses: React.FC = () => {
           <View style={styles.modalContent}>
             <View style={styles.modalHeader}>
               <Text style={styles.modalTitle}>
-                {language.code === 'de' ? 'Filter' : 'Filters'}
+                {getFilter(language.code)}
               </Text>
               <TouchableOpacity onPress={() => setShowFilterModal(false)}>
                 <MaterialIcons name="close" size={24} color="#333" />
@@ -311,7 +193,7 @@ const Courses: React.FC = () => {
             <ScrollView style={styles.filterScrollView}>
               {/* Level filters */}
               <Text style={styles.filterSectionTitle}>
-                {language.code === 'de' ? 'Niveau' : 'Level'}
+                {getNiveau(language.code)}
               </Text>
               {['beginner', 'intermediate', 'advanced'].map(level => (
                 <TouchableOpacity
@@ -328,16 +210,16 @@ const Courses: React.FC = () => {
                     )}
                   </View>
                   <Text style={styles.checkboxLabel}>
-                    {level === 'beginner' && (language.code === 'de' ? 'Anfänger' : 'Beginner')}
-                    {level === 'intermediate' && (language.code === 'de' ? 'Mittelstufe' : 'Intermediate')}
-                    {level === 'advanced' && (language.code === 'de' ? 'Fortgeschritten' : 'Advanced')}
+                    {level === 'beginner' && (getNiveaus('beginner', language.code))}
+                    {level === 'intermediate' && (getNiveaus('intermediate', language.code))}
+                    {level === 'advanced' && (getNiveaus('advanced', language.code))}
                   </Text>
                 </TouchableOpacity>
               ))}
 
               {/* Location filters */}
               <Text style={styles.filterSectionTitle}>
-                {language.code === 'de' ? 'Standort' : 'Location'}
+                {getLocation(language.code)}
               </Text>
               {locations.map(location => (
                 <TouchableOpacity
@@ -359,7 +241,7 @@ const Courses: React.FC = () => {
 
               {/* Format filter */}
               <Text style={styles.filterSectionTitle}>
-                {language.code === 'de' ? 'Format' : 'Format'}
+                {getFormat(language.code)}
               </Text>
               <TouchableOpacity
                 style={styles.checkboxRow}
@@ -374,13 +256,13 @@ const Courses: React.FC = () => {
                   )}
                 </View>
                 <Text style={styles.checkboxLabel}>
-                  {language.code === 'de' ? 'Nur online' : 'Online only'}
+                  {getOnlineOnly(language.code)}
                 </Text>
               </TouchableOpacity>
 
               {/* Price filter */}
               <Text style={styles.filterSectionTitle}>
-                {language.code === 'de' ? 'Preis' : 'Price'}
+                {getPrice(language.code)}
               </Text>
               <TouchableOpacity
                 style={styles.checkboxRow}
@@ -395,7 +277,7 @@ const Courses: React.FC = () => {
                   )}
                 </View>
                 <Text style={styles.checkboxLabel}>
-                  {language.code === 'de' ? 'Nur kostenlos' : 'Free only'}
+                  {getFreeOnly(language.code)}
                 </Text>
               </TouchableOpacity>
             </ScrollView>
@@ -406,7 +288,7 @@ const Courses: React.FC = () => {
                 onPress={clearFilters}
               >
                 <Text style={styles.clearButtonText}>
-                  {language.code === 'de' ? 'Filter zurücksetzen' : 'Clear Filters'}
+                  {getClearFilters(language.code)}
                 </Text>
               </TouchableOpacity>
 
@@ -415,7 +297,7 @@ const Courses: React.FC = () => {
                 onPress={() => setShowFilterModal(false)}
               >
                 <Text style={styles.applyButtonText}>
-                  {language.code === 'de' ? 'Anwenden' : 'Apply'}
+                  {getApply(language.code)}
                 </Text>
               </TouchableOpacity>
             </View>
@@ -453,9 +335,9 @@ const Courses: React.FC = () => {
             { backgroundColor: getBadgeColor(item.type) }
           ]}>
             <Text style={styles.typeBadgeText}>
-              {item.type === 'course' && (language.code === 'de' ? 'Kurs' : 'Course')}
-              {item.type === 'resource' && (language.code === 'de' ? 'Ressource' : 'Resource')}
-              {item.type === 'exam' && (language.code === 'de' ? 'Prüfung' : 'Exam')}
+              {item.type === 'course' && (getTab(item.type, language.code))}
+              {item.type === 'resource' && (getTab(item.type, language.code))}
+              {item.type === 'exam' && (getTab(item.type, language.code))}
             </Text>
           </View>
         </View>
@@ -468,9 +350,9 @@ const Courses: React.FC = () => {
           {item.level && (
             <View style={styles.tag}>
               <Text style={styles.tagText}>
-                {item.level === 'beginner' && (language.code === 'de' ? 'Anfänger' : 'Beginner')}
-                {item.level === 'intermediate' && (language.code === 'de' ? 'Mittelstufe' : 'Intermediate')}
-                {item.level === 'advanced' && (language.code === 'de' ? 'Fortgeschritten' : 'Advanced')}
+                {item.level === 'beginner' && (getNiveaus(item.level, language.code))}
+                {item.level === 'intermediate' && (getNiveaus(item.level, language.code))}
+                {item.level === 'advanced' && (getNiveaus(item.level, language.code))}
               </Text>
             </View>
           )}
@@ -525,7 +407,7 @@ const Courses: React.FC = () => {
       />
 
       <View style={styles.content}>
-        <Text style={styles.title}>{getCategoryLabel(language.code, 'courses')}</Text>
+        <Text style={styles.title}>{getMainCategories(language.code, 'learn')}</Text>
 
         {/* Search and Filter Bar */}
         <View style={styles.searchFilterContainer}>

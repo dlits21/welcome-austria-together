@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { 
   StyleSheet, 
@@ -10,7 +9,14 @@ import {
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useLanguage } from '../contexts/LanguageContext';
-import { languages, getHowCanIHelpText, getSearchPlaceholder } from '../data/languages';
+import {
+    languages,
+    getHowCanIHelpText,
+    getSearchPlaceholder,
+    getSoundEnabled,
+    getSearchTerm,
+    getMainCategories,
+    getMainCategoriesSubtitles } from '../data/languages/common';
 
 // Import refactored components
 import Header from '../components/Header';
@@ -20,14 +26,21 @@ import HelpModal from '../components/HelpModal';
 import LanguageModal from '../components/LanguageModal';
 
 const Home: React.FC = () => {
-  const { currentLanguage } = useLanguage();
+  const { currentLanguage, selectedLanguage } = useLanguage();
   const router = useRouter();
   const [searchInput, setSearchInput] = useState('');
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
   
-  const language = languages.find(lang => lang.code === currentLanguage) || languages[1]; // Default to English
+  // Find the current language object, but don't default to English
+  const language = languages.find(lang => lang.code === currentLanguage);
+  
+  // If no language is found, something is wrong with the language context
+  if (!language) {
+    console.error('No language found for code:', currentLanguage);
+  }
+  else {console.log('Language:', language, "found for code", currentLanguage, selectedLanguage);}
 
   const handleSearch = () => {
     if (searchInput.trim()) {
@@ -37,10 +50,7 @@ const Home: React.FC = () => {
       });
     } else {
       // Toast would go here with a native implementation
-      alert(language.code === 'de' 
-        ? 'Bitte geben Sie einen Suchbegriff ein' 
-        : 'Please enter a search term'
-      );
+      alert(getSearchTerm(currentLanguage));
     }
   };
 
@@ -54,31 +64,23 @@ const Home: React.FC = () => {
     
     // Toast message would go here with a native implementation
     alert(soundEnabled 
-      ? (language.code === 'de' ? 'Ton ausgeschaltet' : 'Sound disabled') 
-      : (language.code === 'de' ? 'Ton eingeschaltet' : 'Sound enabled')
+      ? getSoundEnabled(currentLanguage, 'disabled') 
+      : getSoundEnabled(currentLanguage, 'enabled')
     );
   };
 
   // Prepare translations and text content
-  const askTitle = language.code === 'de' ? 'Fragen' : 'Ask';
-  const askSubtitle = language.code === 'de' 
-    ? 'Haben Sie eine Frage? Kontaktieren Sie uns!' 
-    : 'Do you have a question? Get in touch with us!';
+  const askTitle = getMainCategories(currentLanguage, 'ask');
+  const askSubtitle = getMainCategoriesSubtitles(currentLanguage, 'ask');
     
-  const infoTitle = language.code === 'de' ? 'Informationen' : 'Information';
-  const infoSubtitle = language.code === 'de'
-    ? 'Hier bieten wir spezifische Informationen zu verschiedenen Themen'
-    : 'Here we offer specific information to various topics';
+  const infoTitle = getMainCategories(currentLanguage, 'information');
+  const infoSubtitle = getMainCategoriesSubtitles(currentLanguage, 'information');
     
-  const learnTitle = language.code === 'de' ? 'Lernen' : 'Learn';
-  const learnSubtitle = language.code === 'de'
-    ? 'Klicken Sie hier für Kurse, Ressourcen oder Klassen'
-    : 'Click here for courses, resources or classes';
+  const learnTitle = getMainCategories(currentLanguage, 'learn');
+  const learnSubtitle = getMainCategoriesSubtitles(currentLanguage, 'learn');
     
-  const communityTitle = language.code === 'de' ? 'Gemeinschaft' : 'Community';
-  const communitySubtitle = language.code === 'de'
-    ? 'Brauchen Sie Hilfe oder möchten Sie anderen helfen? Klicken Sie hier'
-    : 'Do you need help or do you want to help others? Click here';
+  const communityTitle = getMainCategories(currentLanguage, 'community');
+  const communitySubtitle = getMainCategoriesSubtitles(currentLanguage, 'community');
 
   return (
     <SafeAreaView style={styles.container}>
@@ -98,14 +100,14 @@ const Home: React.FC = () => {
         showsVerticalScrollIndicator={false}
       >
         {/* Title */}
-        <Text style={styles.title}>{getHowCanIHelpText(language.code)}</Text>
+        <Text style={styles.title}>{getHowCanIHelpText(currentLanguage)}</Text>
         
         {/* Search Bar */}
         <SearchBar 
           searchInput={searchInput}
           setSearchInput={setSearchInput}
           handleSearch={handleSearch}
-          placeholder={getSearchPlaceholder(language.code)}
+          placeholder={getSearchPlaceholder(currentLanguage)}
         />
         
         {/* Category Cards */}
@@ -126,14 +128,14 @@ const Home: React.FC = () => {
       <LanguageModal 
         visible={showLanguageModal}
         onClose={() => setShowLanguageModal(false)}
-        languageCode={language.code}
+        languageCode={currentLanguage}
       />
       
       {/* Help Modal */}
       <HelpModal 
         visible={showHelpModal}
         onClose={() => setShowHelpModal(false)}
-        languageCode={language.code}
+        languageCode={currentLanguage}
       />
     </SafeAreaView>
   );

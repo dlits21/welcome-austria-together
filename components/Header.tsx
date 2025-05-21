@@ -19,7 +19,7 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <View style={styles.header}>
       <Image 
-        source={require('../assets/images/icon.png')}
+        source={require('../assets/images/icon simple.png')}
         style={styles.logo}
         resizeMode="contain"
       />

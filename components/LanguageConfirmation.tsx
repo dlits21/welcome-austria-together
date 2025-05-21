@@ -9,6 +9,7 @@ import {
   Dimensions 
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { getYes, getNo } from '../data/languages/common'
 
 interface LanguageConfirmationProps {
   selectedLanguage: any;
@@ -60,7 +61,7 @@ const LanguageConfirmation: React.FC<LanguageConfirmationProps> = ({
             onPress={closeLanguageDetail}
           >
             <Text style={styles.noButtonText}>
-              {selectedLanguage.code === "en" ? "No" : "Nein"}
+              {getNo(selectedLanguage.code)}
             </Text>
           </TouchableOpacity>
           
@@ -69,7 +70,7 @@ const LanguageConfirmation: React.FC<LanguageConfirmationProps> = ({
             onPress={() => confirmLanguage(selectedLanguage.code)}
           >
             <Text style={styles.yesButtonText}>
-              {selectedLanguage.code === "en" ? "Yes" : "Ja"}
+              {getYes(selectedLanguage.code)}
             </Text>
           </TouchableOpacity>
         </View>
@@ -96,7 +97,7 @@ const LanguageConfirmation: React.FC<LanguageConfirmationProps> = ({
 const styles = StyleSheet.create({
   modalView: {
     width: '70%',
-    maxHeight: '50%',
+    maxHeight: '70%',
     backgroundColor: "#fff",
     borderRadius: 20,
     padding: 20,
