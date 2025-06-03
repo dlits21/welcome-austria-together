@@ -36,6 +36,12 @@ export default function RootLayout() {
         <Stack.Screen name="information/political-education/human-rights" options={{ headerShown: false }} />
         <Stack.Screen name="information/political-education/womens-rights" options={{ headerShown: false }} />
         <Stack.Screen name="information/political-education/children-rights" options={{ headerShown: false }} />
+        <Stack.Screen name="information/political-education/online-workshops" options={{ headerShown: false }} />
+        <Stack.Screen name="information/political-education/voting-system" options={{ headerShown: false }} />
+        <Stack.Screen name="information/political-education/constitution" options={{ headerShown: false }} />
+        <Stack.Screen name="information/political-education/civic-duties" options={{ headerShown: false }} />
+        <Stack.Screen name="information/political-education/integration-process" options={{ headerShown: false }} />
+        <Stack.Screen name="information/political-education/legal-system" options={{ headerShown: false }} />
         <Stack.Screen name="information/german-learning/german-a1-vienna" options={{ headerShown: false }} />
         {/* Add other screens as needed */}
       </Stack>
