@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { 
   StyleSheet, 
@@ -52,16 +53,21 @@ const Information: React.FC = () => {
     router.push(`/information/${categoryId}`);
   };
 
-
-  // Calculate how many columns based on screen width - always 2 columns for mobile
-  const numColumns = 2;
+  // Calculate columns based on screen width - more columns for larger screens
+  let numColumns = 2; // default for mobile
+  if (width > 1100) {
+    numColumns = 4; // 4 columns for very wide screens
+  } else if (width > 800) {
+    numColumns = 3; // 3 columns for wide screens
+  }
   
   const renderCategoryItem = ({ item }: { item: CategoryItem }) => {
     return (
       <TouchableOpacity 
         style={[
           styles.categoryItem,
-          { borderColor: item.color + '40' }
+          { borderColor: item.color + '40' },
+          numColumns > 2 && styles.smallerTile
         ]}
         onPress={() => handleCategoryPress(item.id)}
       >
@@ -176,32 +182,37 @@ const styles = StyleSheet.create({
   },
   categoryItem: {
     flex: 1,
-    margin: 8,
+    margin: 6,
     borderRadius: 12,
     borderWidth: 2,
     padding: 12,
     backgroundColor: '#fff',
     alignItems: 'center',
+    minHeight: 140,
+  },
+  smallerTile: {
+    minHeight: 120,
+    padding: 10,
   },
   iconContainer: {
     width: '100%',
     aspectRatio: 4/3,
     borderRadius: 8,
-    marginBottom: 12,
+    marginBottom: 8,
     justifyContent: 'center',
     alignItems: 'center',
   },
   categoryIcon: {
-    fontSize: 36,
+    fontSize: 30,
   },
   categoryTitle: {
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: '500',
     textAlign: 'center',
     marginBottom: 4,
   },
   categorySubtitle: {
-    fontSize: 14,
+    fontSize: 12,
     color: '#666',
     textAlign: 'center',
   },
