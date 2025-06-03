@@ -9,7 +9,7 @@ import PageNavigation from '../../components/PageNavigation';
 import LanguageModal from '../../components/LanguageModal';
 import HelpModal from '../../components/HelpModal';
 
-interface FinanceTile {
+interface SecurityTile {
   id: string;
   title: {
     en: string;
@@ -19,7 +19,7 @@ interface FinanceTile {
   icon: string;
 }
 
-const financeTiles: FinanceTile[] = [
+const securityTiles: SecurityTile[] = [
   {
     id: 'general-information',
     title: { en: 'General Information', de: 'Allgemeine Informationen' },
@@ -27,50 +27,50 @@ const financeTiles: FinanceTile[] = [
     icon: 'ℹ️'
   },
   {
-    id: 'financial-support',
-    title: { en: 'Financial Support', de: 'Finanzielle Unterstützung' },
+    id: 'police',
+    title: { en: 'Police', de: 'Polizei' },
     color: '#10B981',
-    icon: '💰'
+    icon: '👮'
   },
   {
-    id: 'banking-in-austria',
-    title: { en: 'Banking in Austria', de: 'Bankwesen in Österreich' },
+    id: 'safety',
+    title: { en: 'Safety', de: 'Sicherheit' },
     color: '#F59E0B',
-    icon: '🏦'
-  },
-  {
-    id: 'resources',
-    title: { en: 'Resources', de: 'Ressourcen' },
-    color: '#EF4444',
-    icon: '📚'
-  },
-  {
-    id: 'budgeting',
-    title: { en: 'Budgeting', de: 'Budgetplanung' },
-    color: '#8B5CF6',
-    icon: '📊'
-  },
-  {
-    id: 'insurance',
-    title: { en: 'Insurance', de: 'Versicherung' },
-    color: '#F97316',
     icon: '🛡️'
   },
   {
-    id: 'taxes',
-    title: { en: 'Taxes', de: 'Steuern' },
-    color: '#06B6D4',
-    icon: '📋'
+    id: 'privacy',
+    title: { en: 'Privacy', de: 'Datenschutz' },
+    color: '#EF4444',
+    icon: '🔒'
   },
   {
-    id: 'investments',
-    title: { en: 'Investments', de: 'Investitionen' },
+    id: 'online-protection',
+    title: { en: 'How to protect myself online', de: 'Online-Schutz' },
+    color: '#8B5CF6',
+    icon: '💻'
+  },
+  {
+    id: 'emergency-services',
+    title: { en: 'Emergency Services', de: 'Notdienste' },
+    color: '#F97316',
+    icon: '🚨'
+  },
+  {
+    id: 'legal-protection',
+    title: { en: 'Legal Protection', de: 'Rechtsschutz' },
+    color: '#06B6D4',
+    icon: '⚖️'
+  },
+  {
+    id: 'cybersecurity',
+    title: { en: 'Cybersecurity', de: 'Cybersicherheit' },
     color: '#84CC16',
-    icon: '📈'
+    icon: '🔐'
   }
 ];
 
-const FinancePage: React.FC = () => {
+const SecurityPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
@@ -92,15 +92,15 @@ const FinancePage: React.FC = () => {
 
   const handleTilePress = (tileId: string) => {
     console.log(`Selected tile: ${tileId}`);
-    router.push(`/information/finance/${tileId}`);
+    router.push(`/information/security/${tileId}`);
   };
 
-  const pageTitle = language.code === 'de' ? 'Finanzen' : 'Finance';
+  const pageTitle = language.code === 'de' ? 'Sicherheit' : 'Security';
   const pageDescription = language.code === 'de' 
-    ? 'Bankwesen, Steuern, finanzielle Unterstützung und Umgang mit Ihrem Geld.'
-    : 'Banking, taxes, financial assistance, and managing your money.';
+    ? 'Informationen zu Sicherheit, Polizei, Datenschutz und Online-Schutz.'
+    : 'Information about security, police, privacy, and online protection.';
 
-  const renderTile = ({ item }: { item: FinanceTile }) => (
+  const renderTile = ({ item }: { item: SecurityTile }) => (
     <TouchableOpacity 
       style={[styles.tile, { borderColor: item.color + '40' }]}
       onPress={() => handleTilePress(item.id)}
@@ -144,7 +144,7 @@ const FinancePage: React.FC = () => {
 
         {/* Tiles Grid */}
         <FlatList
-          data={financeTiles}
+          data={securityTiles}
           renderItem={renderTile}
           keyExtractor={(item) => item.id}
           numColumns={2}
@@ -244,4 +244,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default FinancePage;
+export default SecurityPage;

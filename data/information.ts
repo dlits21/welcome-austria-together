@@ -1,3 +1,4 @@
+
 export interface CategoryItem {
   id: string;
   icon: string;
@@ -44,12 +45,12 @@ export const informationCategories: CategoryItem[] = [
       color: '#F59E0B'
     },
     {
-      id: 'ask-me',
-      icon: '❓',
-      name: { en: 'Just Ask Me', de: 'Frag mich einfach' },
+      id: 'security',
+      icon: '🛡️',
+      name: { en: 'Security', de: 'Sicherheit' },
       description: {
-        en: 'Have a question? Get personalized answers and guidance here.',
-        de: 'Haben Sie eine Frage? Erhalten Sie hier personalisierte Antworten und Anleitungen.'
+        en: 'Information about security, police, privacy, and online protection.',
+        de: 'Informationen zu Sicherheit, Polizei, Datenschutz und Online-Schutz.'
       },
       color: '#8B5CF6'
     },

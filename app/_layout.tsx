@@ -16,7 +16,7 @@ export default function RootLayout() {
         <Stack.Screen name="community/map" options={{ headerShown: false }} />
         <Stack.Screen name="community/can-help" options={{ headerShown: false }} />
         <Stack.Screen name="community/need-help" options={{ headerShown: false }} />
-        <Stack.Screen name="information/ask-me" options={{ headerShown: false }} />
+        <Stack.Screen name="information/security" options={{ headerShown: false }} />
         <Stack.Screen name="information/contacts" options={{ headerShown: false }} />
         <Stack.Screen name="information/culture" options={{ headerShown: false }} />
         <Stack.Screen name="information/education" options={{ headerShown: false }} />
