@@ -1,3 +1,4 @@
+
 // app/_layout.tsx
 import { LanguageProvider } from '../contexts/LanguageContext';
 import { Stack } from 'expo-router';
@@ -29,6 +30,13 @@ export default function RootLayout() {
         <Stack.Screen name="information/translation" options={{ headerShown: false }} />
         <Stack.Screen name="information/volunteering" options={{ headerShown: false }} />
         <Stack.Screen name="information/work" options={{ headerShown: false }} />
+        <Stack.Screen name="information/political-education/101-political-education" options={{ headerShown: false }} />
+        <Stack.Screen name="information/political-education/democracy" options={{ headerShown: false }} />
+        <Stack.Screen name="information/political-education/politics-in-austria" options={{ headerShown: false }} />
+        <Stack.Screen name="information/political-education/human-rights" options={{ headerShown: false }} />
+        <Stack.Screen name="information/political-education/womens-rights" options={{ headerShown: false }} />
+        <Stack.Screen name="information/political-education/children-rights" options={{ headerShown: false }} />
+        <Stack.Screen name="information/german-learning/german-a1-vienna" options={{ headerShown: false }} />
         {/* Add other screens as needed */}
       </Stack>
     </LanguageProvider>
