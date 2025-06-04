@@ -301,6 +301,17 @@ const GermanLearningPage: React.FC = () => {
       [questionKey]: answerValue
     }));
 
+    // Sync quiz answers with filter states
+    if (questionKey === 'level' && typeof answer === 'string') {
+      setSelectedLevels([answer]);
+    } else if (questionKey === 'format') {
+      if (answerValue === 'online-only') {
+        setOnlineOnly(true);
+      } else if (answerValue === 'in-person') {
+        setOnlineOnly(false);
+      }
+    }
+
     if (currentQuestion < quizQuestions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
@@ -309,7 +320,11 @@ const GermanLearningPage: React.FC = () => {
   };
 
   const handleSkipQuiz = () => {
-    setShowQuiz(false);
+    if (currentQuestion < quizQuestions.length - 1) {
+      setCurrentQuestion(currentQuestion + 1);
+    } else {
+      setShowQuiz(false);
+    }
   };
 
   const handleCloseQuiz = () => {
