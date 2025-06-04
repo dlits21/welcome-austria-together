@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { 
   StyleSheet, 
@@ -6,7 +5,6 @@ import {
   View, 
   SafeAreaView, 
   ScrollView,
-  TextInput,
   TouchableOpacity,
   FlatList,
   Modal
@@ -158,13 +156,20 @@ const germanCourses: GermanCourse[] = [
 
 const GermanLearningPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
-  const [searchInput, setSearchInput] = useState('');
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
   const [showFilterModal, setShowFilterModal] = useState(false);
   const [filteredCourses, setFilteredCourses] = useState<GermanCourse[]>(germanCourses);
   const [activeTab, setActiveTab] = useState<string>('all');
+  
+  // Quiz states
+  const [showQuiz, setShowQuiz] = useState(true);
+  const [quizAnswers, setQuizAnswers] = useState({
+    level: '',
+    format: '',
+    type: ''
+  });
   
   // Filter states
   const [selectedLevels, setSelectedLevels] = useState<string[]>([]);
@@ -180,20 +185,39 @@ const GermanLearningPage: React.FC = () => {
     .filter(course => course.location)
     .map(course => course.location as string)));
 
-  // Apply filters
+  // Apply filters including quiz answers
   useEffect(() => {
     let results = germanCourses;
     
-    // Search filter
-    if (searchInput.trim()) {
-      const searchTerm = searchInput.toLowerCase();
-      results = results.filter(course => 
-        course.title[language.code === 'de' ? 'de' : 'en'].toLowerCase().includes(searchTerm) ||
-        course.description[language.code === 'de' ? 'de' : 'en'].toLowerCase().includes(searchTerm)
-      );
+    // Apply quiz filters
+    if (quizAnswers.level) {
+      const levelMapping: { [key: string]: string } = {
+        'A1': 'beginner',
+        'A2': 'beginner', 
+        'B1': 'intermediate',
+        'B2': 'intermediate',
+        'C1': 'advanced'
+      };
+      const mappedLevel = levelMapping[quizAnswers.level];
+      if (mappedLevel) {
+        results = results.filter(course => course.level === mappedLevel);
+      }
     }
     
-    // Tab filter
+    if (quizAnswers.format) {
+      if (quizAnswers.format === 'online-only') {
+        results = results.filter(course => course.online);
+      } else if (quizAnswers.format === 'in-person') {
+        results = results.filter(course => !course.online);
+      }
+      // hybrid shows both online and in-person, so no filter needed
+    }
+    
+    if (quizAnswers.type && quizAnswers.type !== 'all') {
+      results = results.filter(course => course.type === quizAnswers.type);
+    }
+    
+    // Apply tab filter
     if (activeTab !== 'all') {
       results = results.filter(course => {
         if (activeTab === 'courses') return course.type === 'course';
@@ -203,35 +227,48 @@ const GermanLearningPage: React.FC = () => {
       });
     }
     
-    // Level filter
+    // Apply manual filter states
     if (selectedLevels.length > 0) {
       results = results.filter(course => 
         course.level ? selectedLevels.includes(course.level) : false
       );
     }
     
-    // Location filter
     if (selectedLocations.length > 0) {
       results = results.filter(course => 
         course.location ? selectedLocations.includes(course.location) : false
       );
     }
     
-    // Online filter
     if (onlineOnly) {
       results = results.filter(course => course.online);
     }
     
-    // Price filter
     if (freeOnly) {
       results = results.filter(course => course.price === 0);
     }
     
     setFilteredCourses(results);
-  }, [searchInput, activeTab, selectedLevels, selectedLocations, onlineOnly, freeOnly, language.code]);
+  }, [quizAnswers, activeTab, selectedLevels, selectedLocations, onlineOnly, freeOnly]);
 
   const toggleSound = () => {
     setSoundEnabled(!soundEnabled);
+  };
+
+  const handleQuizAnswer = (question: string, answer: string) => {
+    setQuizAnswers(prev => ({
+      ...prev,
+      [question]: answer
+    }));
+  };
+
+  const completeQuiz = () => {
+    setShowQuiz(false);
+  };
+
+  const resetQuiz = () => {
+    setQuizAnswers({ level: '', format: '', type: '' });
+    setShowQuiz(true);
   };
 
   const toggleLevel = (level: string) => {
@@ -257,10 +294,6 @@ const GermanLearningPage: React.FC = () => {
     setFreeOnly(false);
   };
 
-  const handleSearch = () => {
-    // Search is handled by useEffect
-  };
-
   const handleCoursePress = (courseId: string) => {
     router.push(`/information/german-learning/${courseId}`);
   };
@@ -269,6 +302,121 @@ const GermanLearningPage: React.FC = () => {
   const pageDescription = language.code === 'de' 
     ? 'Finden Sie Deutschkurse, Übungsmaterialien und Lernressourcen.'
     : 'Find German language courses, practice materials, and learning resources.';
+
+  const renderQuizWindow = () => {
+    if (!showQuiz) return null;
+
+    return (
+      <View style={styles.quizContainer}>
+        <View style={styles.quizHeader}>
+          <Text style={styles.quizTitle}>
+            {language.code === 'de' ? 'Finden Sie das Richtige für sich' : 'Find What\'s Right for You'}
+          </Text>
+          <Text style={styles.quizSubtitle}>
+            {language.code === 'de' 
+              ? 'Beantworten Sie ein paar kurze Fragen, um personalisierte Empfehlungen zu erhalten.'
+              : 'Answer a few quick questions to get personalized recommendations.'}
+          </Text>
+        </View>
+
+        {/* Question 1: Level */}
+        <View style={styles.questionContainer}>
+          <Text style={styles.questionText}>
+            {language.code === 'de' ? 'Wie ist Ihr Niveau?' : 'What\'s your level?'}
+          </Text>
+          <View style={styles.answersRow}>
+            {['A1', 'A2', 'B1', 'B2', 'C1'].map(level => (
+              <TouchableOpacity
+                key={level}
+                style={[
+                  styles.answerButton,
+                  quizAnswers.level === level && styles.answerButtonSelected
+                ]}
+                onPress={() => handleQuizAnswer('level', level)}
+              >
+                <Text style={[
+                  styles.answerText,
+                  quizAnswers.level === level && styles.answerTextSelected
+                ]}>
+                  {level}
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        </View>
+
+        {/* Question 2: Format */}
+        <View style={styles.questionContainer}>
+          <Text style={styles.questionText}>
+            {language.code === 'de' 
+              ? 'Brauchen Sie es online oder persönlich?' 
+              : 'Do you need it online or in-person?'}
+          </Text>
+          <View style={styles.answersColumn}>
+            {[
+              { key: 'online-only', en: 'Online only', de: 'Nur online' },
+              { key: 'hybrid', en: 'Hybrid', de: 'Hybrid' },
+              { key: 'in-person', en: 'In-person', de: 'Persönlich' }
+            ].map(format => (
+              <TouchableOpacity
+                key={format.key}
+                style={[
+                  styles.answerButton,
+                  quizAnswers.format === format.key && styles.answerButtonSelected
+                ]}
+                onPress={() => handleQuizAnswer('format', format.key)}
+              >
+                <Text style={[
+                  styles.answerText,
+                  quizAnswers.format === format.key && styles.answerTextSelected
+                ]}>
+                  {language.code === 'de' ? format.de : format.en}
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        </View>
+
+        {/* Question 3: Type */}
+        <View style={styles.questionContainer}>
+          <Text style={styles.questionText}>
+            {language.code === 'de' 
+              ? 'Suchen Sie nach einem Kurs, einer Prüfung oder Ressourcen?' 
+              : 'Are you looking for a course, an exam or resources?'}
+          </Text>
+          <View style={styles.answersColumn}>
+            {[
+              { key: 'course', en: 'Course', de: 'Kurs' },
+              { key: 'exam', en: 'Exam', de: 'Prüfung' },
+              { key: 'resource', en: 'Resources', de: 'Ressourcen' }
+            ].map(type => (
+              <TouchableOpacity
+                key={type.key}
+                style={[
+                  styles.answerButton,
+                  quizAnswers.type === type.key && styles.answerButtonSelected
+                ]}
+                onPress={() => handleQuizAnswer('type', type.key)}
+              >
+                <Text style={[
+                  styles.answerText,
+                  quizAnswers.type === type.key && styles.answerTextSelected
+                ]}>
+                  {language.code === 'de' ? type.de : type.en}
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        </View>
+
+        <TouchableOpacity style={styles.completeQuizButton} onPress={completeQuiz}>
+          <Text style={styles.completeQuizText}>
+            {language.code === 'de' ? 'Ergebnisse anzeigen' : 'Show Results'}
+          </Text>
+        </TouchableOpacity>
+      </View>
+    );
+  };
 
   const renderTabButtons = () => {
     const tabs = [
@@ -481,49 +629,49 @@ const GermanLearningPage: React.FC = () => {
         <Text style={styles.title}>{pageTitle}</Text>
         <Text style={styles.description}>{pageDescription}</Text>
         
-        {/* Search and Filter Bar */}
-        <View style={styles.searchFilterContainer}>
-          <View style={styles.searchContainer}>
-            <TextInput
-              style={styles.searchInput}
-              placeholder={language.code === 'de' ? 'Was möchtest du lernen?' : 'What would you like to learn?'}
-              placeholderTextColor="#999"
-              value={searchInput}
-              onChangeText={setSearchInput}
-              onSubmitEditing={handleSearch}
-            />
-            <TouchableOpacity style={styles.searchButton} onPress={handleSearch}>
-              <MaterialIcons name="search" size={24} color="#fff" />
+        {/* Quiz Window */}
+        {renderQuizWindow()}
+        
+        {/* Show reset quiz button when quiz is completed */}
+        {!showQuiz && (
+          <View style={styles.resetQuizContainer}>
+            <TouchableOpacity style={styles.resetQuizButton} onPress={resetQuiz}>
+              <MaterialIcons name="refresh" size={20} color="#3B82F6" />
+              <Text style={styles.resetQuizText}>
+                {language.code === 'de' ? 'Quiz zurücksetzen' : 'Reset Quiz'}
+              </Text>
+            </TouchableOpacity>
+            
+            <TouchableOpacity 
+              style={styles.filterButton}
+              onPress={() => setShowFilterModal(true)}
+            >
+              <MaterialIcons name="filter-list" size={24} color="#333" />
             </TouchableOpacity>
           </View>
-          
-          <TouchableOpacity 
-            style={styles.filterButton}
-            onPress={() => setShowFilterModal(true)}
-          >
-            <MaterialIcons name="filter-list" size={24} color="#333" />
-          </TouchableOpacity>
-        </View>
+        )}
         
         {/* Tab Buttons */}
-        {renderTabButtons()}
+        {!showQuiz && renderTabButtons()}
         
         {/* Course List */}
-        {filteredCourses.length > 0 ? (
-          <FlatList
-            data={filteredCourses}
-            renderItem={renderCourseItem}
-            keyExtractor={(item) => item.id}
-            contentContainerStyle={styles.courseList}
-          />
-        ) : (
-          <View style={styles.noResults}>
-            <Text style={styles.noResultsText}>
-              {language.code === 'de' 
-                ? 'Keine Ergebnisse gefunden.' 
-                : 'No results found.'}
-            </Text>
-          </View>
+        {!showQuiz && (
+          filteredCourses.length > 0 ? (
+            <FlatList
+              data={filteredCourses}
+              renderItem={renderCourseItem}
+              keyExtractor={(item) => item.id}
+              contentContainerStyle={styles.courseList}
+            />
+          ) : (
+            <View style={styles.noResults}>
+              <Text style={styles.noResultsText}>
+                {language.code === 'de' 
+                  ? 'Keine Ergebnisse gefunden.' 
+                  : 'No results found.'}
+              </Text>
+            </View>
+          )
         )}
       </View>
       
@@ -566,33 +714,101 @@ const styles = StyleSheet.create({
     color: '#666',
     marginBottom: 24,
   },
-  searchFilterContainer: {
+  quizContainer: {
+    backgroundColor: '#f8fafc',
+    borderRadius: 16,
+    padding: 20,
+    marginBottom: 24,
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
+  },
+  quizHeader: {
+    marginBottom: 20,
+  },
+  quizTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#1f2937',
+    marginBottom: 8,
+  },
+  quizSubtitle: {
+    fontSize: 14,
+    color: '#6b7280',
+    lineHeight: 20,
+  },
+  questionContainer: {
+    marginBottom: 20,
+  },
+  questionText: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#374151',
+    marginBottom: 12,
+  },
+  answersRow: {
     flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+  },
+  answersColumn: {
+    gap: 8,
+  },
+  answerButton: {
+    backgroundColor: '#fff',
+    borderWidth: 2,
+    borderColor: '#e5e7eb',
+    borderRadius: 8,
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    minWidth: 60,
+    alignItems: 'center',
+  },
+  answerButtonSelected: {
+    borderColor: '#3B82F6',
+    backgroundColor: '#eff6ff',
+  },
+  answerText: {
+    fontSize: 14,
+    color: '#6b7280',
+    fontWeight: '500',
+  },
+  answerTextSelected: {
+    color: '#3B82F6',
+    fontWeight: '600',
+  },
+  completeQuizButton: {
+    backgroundColor: '#3B82F6',
+    borderRadius: 8,
+    paddingVertical: 14,
+    alignItems: 'center',
+    marginTop: 8,
+  },
+  completeQuizText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  resetQuizContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     marginBottom: 16,
   },
-  searchContainer: {
+  resetQuizButton: {
     flexDirection: 'row',
-    flex: 1,
-    marginRight: 8,
-  },
-  searchInput: {
-    flex: 1,
-    height: 48,
-    borderWidth: 1,
-    borderColor: '#ddd',
-    borderRadius: 8,
-    paddingHorizontal: 16,
-    fontSize: 16,
-    backgroundColor: '#f9f9f9',
-  },
-  searchButton: {
-    width: 48,
-    height: 48,
-    backgroundColor: '#3B82F6',
-    justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#f1f5f9',
+    paddingVertical: 10,
+    paddingHorizontal: 16,
     borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
+  },
+  resetQuizText: {
+    color: '#3B82F6',
+    fontWeight: '600',
     marginLeft: 8,
+    fontSize: 14,
   },
   filterButton: {
     width: 48,
