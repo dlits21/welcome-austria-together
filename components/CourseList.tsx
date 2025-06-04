@@ -1,0 +1,210 @@
+
+import React from 'react';
+import { FlatList, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { useRouter } from 'expo-router';
+import { getTab, getNiveaus } from '../data/languages/learn';
+
+interface GermanCourse {
+  id: string;
+  title: { en: string; de: string };
+  type: 'course' | 'resource' | 'exam';
+  level?: 'beginner' | 'intermediate' | 'advanced';
+  location?: string;
+  price?: number;
+  online: boolean;
+  duration?: string;
+  description: { en: string; de: string };
+  provider: string;
+}
+
+interface CourseListProps {
+  courses: GermanCourse[];
+  languageCode: string;
+}
+
+const CourseList: React.FC<CourseListProps> = ({ courses, languageCode }) => {
+  const router = useRouter();
+
+  const handleCoursePress = (courseId: string) => {
+    router.push(`/information/german-learning/${courseId}`);
+  };
+
+  const getBadgeColor = (type: string) => {
+    switch(type) {
+      case 'course': return '#3B82F6';
+      case 'resource': return '#10B981';
+      case 'exam': return '#F97316';
+      default: return '#6B7280';
+    }
+  };
+
+  const renderCourseItem = ({ item }: { item: GermanCourse }) => (
+    <TouchableOpacity 
+      style={styles.courseCard}
+      onPress={() => handleCoursePress(item.id)}
+    >
+      <View style={styles.courseHeader}>
+        <View style={styles.courseInfo}>
+          <Text style={styles.courseTitle}>
+            {languageCode === 'de' ? item.title.de : item.title.en}
+          </Text>
+          <Text style={styles.courseProvider}>{item.provider}</Text>
+        </View>
+        
+        <View style={[styles.typeBadge, { backgroundColor: getBadgeColor(item.type) }]}>
+          <Text style={styles.typeBadgeText}>
+            {getTab(item.type === 'course' ? 'courses' : item.type === 'resource' ? 'resources' : 'exams', languageCode)}
+          </Text>
+        </View>
+      </View>
+      
+      <Text style={styles.courseDescription}>
+        {languageCode === 'de' ? item.description.de : item.description.en}
+      </Text>
+      
+      <View style={styles.tagsContainer}>
+        {item.level && (
+          <View style={styles.tag}>
+            <Text style={styles.tagText}>{getNiveaus(item.level, languageCode)}</Text>
+          </View>
+        )}
+        
+        {item.location && (
+          <View style={styles.tag}>
+            <Text style={styles.tagText}>{item.location}</Text>
+          </View>
+        )}
+        
+        {item.online && (
+          <View style={styles.tag}>
+            <Text style={styles.tagText}>Online</Text>
+          </View>
+        )}
+        
+        {item.price !== undefined && (
+          <View style={styles.tag}>
+            <Text style={styles.tagText}>
+              {item.price === 0 
+                ? (languageCode === 'de' ? 'Kostenlos' : 'Free') 
+                : `€${item.price}`}
+            </Text>
+          </View>
+        )}
+        
+        {item.duration && (
+          <View style={styles.tag}>
+            <Text style={styles.tagText}>{item.duration}</Text>
+          </View>
+        )}
+      </View>
+    </TouchableOpacity>
+  );
+
+  if (courses.length === 0) {
+    return (
+      <View style={styles.noResults}>
+        <Text style={styles.noResultsText}>
+          {languageCode === 'de' 
+            ? 'Keine Ergebnisse gefunden.' 
+            : 'No results found.'}
+        </Text>
+      </View>
+    );
+  }
+
+  return (
+    <FlatList
+      data={courses}
+      renderItem={renderCourseItem}
+      keyExtractor={(item) => item.id}
+      contentContainerStyle={styles.courseList}
+    />
+  );
+};
+
+const styles = StyleSheet.create({
+  courseList: {
+    paddingBottom: 20,
+  },
+  courseCard: {
+    backgroundColor: '#fff',
+    borderRadius: 12,
+    padding: 16,
+    marginBottom: 16,
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.05,
+    shadowRadius: 1,
+    elevation: 1,
+  },
+  courseHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    marginBottom: 8,
+  },
+  courseInfo: {
+    flex: 1,
+    marginRight: 12,
+  },
+  courseTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  courseProvider: {
+    fontSize: 14,
+    color: '#64748b',
+    marginTop: 2,
+  },
+  typeBadge: {
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 4,
+    minWidth: 70,
+    alignItems: 'center',
+  },
+  typeBadgeText: {
+    color: '#fff',
+    fontSize: 12,
+    fontWeight: '600',
+  },
+  courseDescription: {
+    fontSize: 14,
+    color: '#334155',
+    marginBottom: 12,
+    lineHeight: 20,
+  },
+  tagsContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+  tag: {
+    backgroundColor: '#f1f5f9',
+    borderRadius: 4,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    marginRight: 8,
+    marginBottom: 8,
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
+  },
+  tagText: {
+    fontSize: 12,
+    color: '#64748b',
+  },
+  noResults: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  noResultsText: {
+    fontSize: 16,
+    color: '#64748b',
+    textAlign: 'center',
+  },
+});
+
+export default CourseList;
