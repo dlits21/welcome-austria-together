@@ -165,13 +165,14 @@ const GermanLearningPage: React.FC = () => {
   
   // Quiz states
   const [showQuiz, setShowQuiz] = useState(true);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
   const [quizAnswers, setQuizAnswers] = useState({
     level: '',
     format: '',
     type: ''
   });
   
-  // Filter states
+  // Filter states - updated to use A0-C1 levels
   const [selectedLevels, setSelectedLevels] = useState<string[]>([]);
   const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
   const [onlineOnly, setOnlineOnly] = useState<boolean>(false);
@@ -185,6 +186,37 @@ const GermanLearningPage: React.FC = () => {
     .filter(course => course.location)
     .map(course => course.location as string)));
 
+  // Quiz questions
+  const quizQuestions = [
+    {
+      question: language.code === 'de' ? 'Wie ist Ihr Niveau?' : 'What\'s your level?',
+      answers: ['A0', 'A1', 'A2', 'B1', 'B2', 'C1'],
+      key: 'level' as keyof typeof quizAnswers
+    },
+    {
+      question: language.code === 'de' 
+        ? 'Brauchen Sie es online oder persönlich?' 
+        : 'Do you need it online or in-person?',
+      answers: [
+        { key: 'online-only', en: 'Online only', de: 'Nur online' },
+        { key: 'hybrid', en: 'Hybrid', de: 'Hybrid' },
+        { key: 'in-person', en: 'In-person', de: 'Persönlich' }
+      ],
+      key: 'format' as keyof typeof quizAnswers
+    },
+    {
+      question: language.code === 'de' 
+        ? 'Suchen Sie nach einem Kurs, einer Prüfung oder Ressourcen?' 
+        : 'Are you looking for a course, an exam or resources?',
+      answers: [
+        { key: 'course', en: 'Course', de: 'Kurs' },
+        { key: 'exam', en: 'Exam', de: 'Prüfung' },
+        { key: 'resource', en: 'Resources', de: 'Ressourcen' }
+      ],
+      key: 'type' as keyof typeof quizAnswers
+    }
+  ];
+
   // Apply filters including quiz answers
   useEffect(() => {
     let results = germanCourses;
@@ -192,6 +224,7 @@ const GermanLearningPage: React.FC = () => {
     // Apply quiz filters
     if (quizAnswers.level) {
       const levelMapping: { [key: string]: string } = {
+        'A0': 'beginner',
         'A1': 'beginner',
         'A2': 'beginner', 
         'B1': 'intermediate',
@@ -227,11 +260,18 @@ const GermanLearningPage: React.FC = () => {
       });
     }
     
-    // Apply manual filter states
+    // Apply manual filter states - updated for A0-C1 levels
     if (selectedLevels.length > 0) {
-      results = results.filter(course => 
-        course.level ? selectedLevels.includes(course.level) : false
-      );
+      results = results.filter(course => {
+        if (!course.level) return false;
+        const levelMapping: { [key: string]: string[] } = {
+          'beginner': ['A0', 'A1', 'A2'],
+          'intermediate': ['B1', 'B2'],
+          'advanced': ['C1']
+        };
+        const courseLevels = levelMapping[course.level] || [];
+        return selectedLevels.some(level => courseLevels.includes(level));
+      });
     }
     
     if (selectedLocations.length > 0) {
@@ -255,19 +295,26 @@ const GermanLearningPage: React.FC = () => {
     setSoundEnabled(!soundEnabled);
   };
 
-  const handleQuizAnswer = (question: string, answer: string) => {
+  const handleQuizAnswer = (answer: string | { key: string, en: string, de: string }) => {
+    const answerValue = typeof answer === 'string' ? answer : answer.key;
+    const questionKey = quizQuestions[currentQuestion].key;
+    
     setQuizAnswers(prev => ({
       ...prev,
-      [question]: answer
+      [questionKey]: answerValue
     }));
-  };
 
-  const completeQuiz = () => {
-    setShowQuiz(false);
+    if (currentQuestion < quizQuestions.length - 1) {
+      setCurrentQuestion(currentQuestion + 1);
+    } else {
+      // Quiz completed
+      setShowQuiz(false);
+    }
   };
 
   const resetQuiz = () => {
     setQuizAnswers({ level: '', format: '', type: '' });
+    setCurrentQuestion(0);
     setShowQuiz(true);
   };
 
@@ -303,118 +350,58 @@ const GermanLearningPage: React.FC = () => {
     ? 'Finden Sie Deutschkurse, Übungsmaterialien und Lernressourcen.'
     : 'Find German language courses, practice materials, and learning resources.';
 
-  const renderQuizWindow = () => {
+  const renderQuizModal = () => {
     if (!showQuiz) return null;
 
+    const currentQ = quizQuestions[currentQuestion];
+    
     return (
-      <View style={styles.quizContainer}>
-        <View style={styles.quizHeader}>
-          <Text style={styles.quizTitle}>
-            {language.code === 'de' ? 'Finden Sie das Richtige für sich' : 'Find What\'s Right for You'}
-          </Text>
-          <Text style={styles.quizSubtitle}>
-            {language.code === 'de' 
-              ? 'Beantworten Sie ein paar kurze Fragen, um personalisierte Empfehlungen zu erhalten.'
-              : 'Answer a few quick questions to get personalized recommendations.'}
-          </Text>
-        </View>
+      <Modal
+        visible={showQuiz}
+        transparent={true}
+        animationType="fade"
+      >
+        <View style={styles.quizModalOverlay}>
+          <View style={styles.quizModalContent}>
+            <Text style={styles.quizModalTitle}>
+              {language.code === 'de' ? 'Finden Sie das Richtige für sich' : 'Find What\'s Right for You'}
+            </Text>
+            
+            <Text style={styles.quizModalSubtitle}>
+              {language.code === 'de' 
+                ? 'Beantworten Sie ein paar kurze Fragen, um personalisierte Empfehlungen zu erhalten.'
+                : 'Answer a few quick questions to get personalized recommendations.'}
+            </Text>
 
-        {/* Question 1: Level */}
-        <View style={styles.questionContainer}>
-          <Text style={styles.questionText}>
-            {language.code === 'de' ? 'Wie ist Ihr Niveau?' : 'What\'s your level?'}
-          </Text>
-          <View style={styles.answersRow}>
-            {['A1', 'A2', 'B1', 'B2', 'C1'].map(level => (
-              <TouchableOpacity
-                key={level}
-                style={[
-                  styles.answerButton,
-                  quizAnswers.level === level && styles.answerButtonSelected
-                ]}
-                onPress={() => handleQuizAnswer('level', level)}
-              >
-                <Text style={[
-                  styles.answerText,
-                  quizAnswers.level === level && styles.answerTextSelected
-                ]}>
-                  {level}
-                </Text>
-              </TouchableOpacity>
-            ))}
+            <View style={styles.questionContainer}>
+              <Text style={styles.questionText}>{currentQ.question}</Text>
+              
+              <View style={styles.answersContainer}>
+                {currentQ.answers.map((answer, index) => {
+                  const isStringAnswer = typeof answer === 'string';
+                  const displayText = isStringAnswer ? answer : (language.code === 'de' ? answer.de : answer.en);
+                  
+                  return (
+                    <TouchableOpacity
+                      key={index}
+                      style={styles.answerButton}
+                      onPress={() => handleQuizAnswer(answer)}
+                    >
+                      <Text style={styles.answerText}>{displayText}</Text>
+                    </TouchableOpacity>
+                  );
+                })}
+              </View>
+            </View>
+
+            <View style={styles.progressContainer}>
+              <Text style={styles.progressText}>
+                {currentQuestion + 1} / {quizQuestions.length}
+              </Text>
+            </View>
           </View>
         </View>
-
-        {/* Question 2: Format */}
-        <View style={styles.questionContainer}>
-          <Text style={styles.questionText}>
-            {language.code === 'de' 
-              ? 'Brauchen Sie es online oder persönlich?' 
-              : 'Do you need it online or in-person?'}
-          </Text>
-          <View style={styles.answersColumn}>
-            {[
-              { key: 'online-only', en: 'Online only', de: 'Nur online' },
-              { key: 'hybrid', en: 'Hybrid', de: 'Hybrid' },
-              { key: 'in-person', en: 'In-person', de: 'Persönlich' }
-            ].map(format => (
-              <TouchableOpacity
-                key={format.key}
-                style={[
-                  styles.answerButton,
-                  quizAnswers.format === format.key && styles.answerButtonSelected
-                ]}
-                onPress={() => handleQuizAnswer('format', format.key)}
-              >
-                <Text style={[
-                  styles.answerText,
-                  quizAnswers.format === format.key && styles.answerTextSelected
-                ]}>
-                  {language.code === 'de' ? format.de : format.en}
-                </Text>
-              </TouchableOpacity>
-            ))}
-          </View>
-        </View>
-
-        {/* Question 3: Type */}
-        <View style={styles.questionContainer}>
-          <Text style={styles.questionText}>
-            {language.code === 'de' 
-              ? 'Suchen Sie nach einem Kurs, einer Prüfung oder Ressourcen?' 
-              : 'Are you looking for a course, an exam or resources?'}
-          </Text>
-          <View style={styles.answersColumn}>
-            {[
-              { key: 'course', en: 'Course', de: 'Kurs' },
-              { key: 'exam', en: 'Exam', de: 'Prüfung' },
-              { key: 'resource', en: 'Resources', de: 'Ressourcen' }
-            ].map(type => (
-              <TouchableOpacity
-                key={type.key}
-                style={[
-                  styles.answerButton,
-                  quizAnswers.type === type.key && styles.answerButtonSelected
-                ]}
-                onPress={() => handleQuizAnswer('type', type.key)}
-              >
-                <Text style={[
-                  styles.answerText,
-                  quizAnswers.type === type.key && styles.answerTextSelected
-                ]}>
-                  {language.code === 'de' ? type.de : type.en}
-                </Text>
-              </TouchableOpacity>
-            ))}
-          </View>
-        </View>
-
-        <TouchableOpacity style={styles.completeQuizButton} onPress={completeQuiz}>
-          <Text style={styles.completeQuizText}>
-            {language.code === 'de' ? 'Ergebnisse anzeigen' : 'Show Results'}
-          </Text>
-        </TouchableOpacity>
-      </View>
+      </Modal>
     );
   };
 
@@ -462,11 +449,11 @@ const GermanLearningPage: React.FC = () => {
           </View>
           
           <ScrollView style={styles.filterScrollView}>
-            {/* Level filters */}
+            {/* Level filters - updated to A0-C1 */}
             <Text style={styles.filterSectionTitle}>
               {language.code === 'de' ? 'Niveau' : 'Level'}
             </Text>
-            {['beginner', 'intermediate', 'advanced'].map(level => (
+            {['A0', 'A1', 'A2', 'B1', 'B2', 'C1'].map(level => (
               <TouchableOpacity 
                 key={level}
                 style={styles.checkboxRow} 
@@ -477,9 +464,7 @@ const GermanLearningPage: React.FC = () => {
                     <MaterialIcons name="check" size={16} color="#fff" />
                   )}
                 </View>
-                <Text style={styles.checkboxLabel}>
-                  {getNiveaus(level, language.code)}
-                </Text>
+                <Text style={styles.checkboxLabel}>{level}</Text>
               </TouchableOpacity>
             ))}
 
@@ -629,8 +614,8 @@ const GermanLearningPage: React.FC = () => {
         <Text style={styles.title}>{pageTitle}</Text>
         <Text style={styles.description}>{pageDescription}</Text>
         
-        {/* Quiz Window */}
-        {renderQuizWindow()}
+        {/* Quiz Modal */}
+        {renderQuizModal()}
         
         {/* Show reset quiz button when quiz is completed */}
         {!showQuiz && (
@@ -714,79 +699,71 @@ const styles = StyleSheet.create({
     color: '#666',
     marginBottom: 24,
   },
-  quizContainer: {
-    backgroundColor: '#f8fafc',
-    borderRadius: 16,
+  quizModalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
     padding: 20,
-    marginBottom: 24,
-    borderWidth: 1,
-    borderColor: '#e2e8f0',
   },
-  quizHeader: {
-    marginBottom: 20,
+  quizModalContent: {
+    backgroundColor: '#fff',
+    borderRadius: 20,
+    padding: 24,
+    width: '100%',
+    maxWidth: 400,
+    alignItems: 'center',
   },
-  quizTitle: {
-    fontSize: 20,
+  quizModalTitle: {
+    fontSize: 22,
     fontWeight: 'bold',
     color: '#1f2937',
     marginBottom: 8,
+    textAlign: 'center',
   },
-  quizSubtitle: {
+  quizModalSubtitle: {
     fontSize: 14,
     color: '#6b7280',
     lineHeight: 20,
+    textAlign: 'center',
+    marginBottom: 24,
   },
   questionContainer: {
-    marginBottom: 20,
+    width: '100%',
+    alignItems: 'center',
+    marginBottom: 24,
   },
   questionText: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: '600',
     color: '#374151',
-    marginBottom: 12,
+    marginBottom: 20,
+    textAlign: 'center',
   },
-  answersRow: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 8,
-  },
-  answersColumn: {
-    gap: 8,
+  answersContainer: {
+    width: '100%',
+    gap: 12,
   },
   answerButton: {
-    backgroundColor: '#fff',
+    backgroundColor: '#f8fafc',
     borderWidth: 2,
     borderColor: '#e5e7eb',
-    borderRadius: 8,
-    paddingVertical: 10,
-    paddingHorizontal: 16,
-    minWidth: 60,
+    borderRadius: 12,
+    paddingVertical: 16,
+    paddingHorizontal: 20,
     alignItems: 'center',
-  },
-  answerButtonSelected: {
-    borderColor: '#3B82F6',
-    backgroundColor: '#eff6ff',
   },
   answerText: {
-    fontSize: 14,
-    color: '#6b7280',
+    fontSize: 16,
+    color: '#374151',
     fontWeight: '500',
   },
-  answerTextSelected: {
-    color: '#3B82F6',
-    fontWeight: '600',
+  progressContainer: {
+    alignSelf: 'flex-end',
   },
-  completeQuizButton: {
-    backgroundColor: '#3B82F6',
-    borderRadius: 8,
-    paddingVertical: 14,
-    alignItems: 'center',
-    marginTop: 8,
-  },
-  completeQuizText: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: '600',
+  progressText: {
+    fontSize: 14,
+    color: '#6b7280',
   },
   resetQuizContainer: {
     flexDirection: 'row',

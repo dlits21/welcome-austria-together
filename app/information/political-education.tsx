@@ -91,6 +91,18 @@ const politicalTiles: PoliticalTile[] = [
     title: { en: 'Legal System', de: 'Rechtssystem' },
     color: '#0891B2',
     icon: '⚖️'
+  },
+  {
+    id: 'anti-discrimination',
+    title: { en: 'Anti-Discrimination', de: 'Antidiskriminierung' },
+    color: '#EC4899',
+    icon: '🛡️'
+  },
+  {
+    id: 'report-abuses',
+    title: { en: 'How to report Abuses', de: 'Wie man Missbrauch meldet' },
+    color: '#F43F5E',
+    icon: '📢'
   }
 ];
 

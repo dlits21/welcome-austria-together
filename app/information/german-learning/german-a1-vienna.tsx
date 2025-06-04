@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, TouchableOpacity, Linking } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -132,6 +131,22 @@ Am Ende dieses Kurses können Sie sich vorstellen, nach grundlegenden Informatio
             <Text style={[styles.contactText, styles.linkText]}>{content.contact.website}</Text>
             <MaterialIcons name="open-in-new" size={16} color="#666" />
           </TouchableOpacity>
+        </View>
+
+        {/* Location Map */}
+        <View style={styles.mapSection}>
+          <Text style={styles.sectionTitle}>
+            {language.code === 'de' ? 'Standort' : 'Location'}
+          </Text>
+          <View style={styles.mapContainer}>
+            <View style={styles.mapPlaceholder}>
+              <MaterialIcons name="location-on" size={48} color="#3B82F6" />
+              <Text style={styles.mapPlaceholderText}>
+                {language.code === 'de' ? 'Karte wird geladen...' : 'Map loading...'}
+              </Text>
+              <Text style={styles.mapLocationText}>VHS Vienna, Urania Building</Text>
+            </View>
+          </View>
         </View>
         
         {/* Tags */}
@@ -294,6 +309,34 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '600',
     marginRight: 8,
+  },
+  mapSection: {
+    marginBottom: 32,
+  },
+  mapContainer: {
+    borderRadius: 12,
+    overflow: 'hidden',
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
+  },
+  mapPlaceholder: {
+    height: 200,
+    backgroundColor: '#f8fafc',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  mapPlaceholderText: {
+    fontSize: 16,
+    color: '#6b7280',
+    marginTop: 8,
+    fontWeight: '500',
+  },
+  mapLocationText: {
+    fontSize: 14,
+    color: '#374151',
+    marginTop: 4,
+    textAlign: 'center',
   },
 });
 
