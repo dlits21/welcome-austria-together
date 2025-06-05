@@ -1,17 +1,16 @@
-
 import React, { useState, useEffect } from 'react';
 import { 
   StyleSheet, 
   Text, 
   View, 
   SafeAreaView, 
-  TouchableOpacity,
 } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { languages } from '../../data/languages/common';
 import PageNavigation from '../../components/PageNavigation';
-import LegalSupportQuizModal from '../../components/LegalSupportQuizModal';
+import BaseQuizModal from '../../components/BaseQuizModal';
+import FilterSection from '../../components/FilterSection';
+import QuizControls from '../../components/QuizControls';
 import LegalSupportList from '../../components/LegalSupportList';
 
 interface LegalSupportEntity {
@@ -320,6 +319,26 @@ const LegalSupportPage: React.FC = () => {
     ? 'Finden Sie Rechtsberatung und Unterstützung in Ihrer Nähe.'
     : 'Find legal counseling and support in your area.';
 
+  // Filter groups for FilterSection
+  const filterGroups = [
+    {
+      title: language.code === 'de' ? 'Unterstützungstyp' : 'Support Type',
+      items: supportTypes,
+      selectedItems: selectedSupportTypes,
+      onToggle: toggleSupportType,
+      displayLabels: supportTypes.reduce((acc, type) => ({
+        ...acc,
+        [type]: type.replace('-', ' ')
+      }), {})
+    },
+    {
+      title: language.code === 'de' ? 'Standort' : 'Location',
+      items: locations,
+      selectedItems: selectedLocations,
+      onToggle: toggleLocation
+    }
+  ];
+
   return (
     <SafeAreaView style={styles.container}>
       <PageNavigation 
@@ -331,100 +350,36 @@ const LegalSupportPage: React.FC = () => {
         <Text style={styles.title}>{pageTitle}</Text>
         <Text style={styles.description}>{pageDescription}</Text>
         
-        {/* Quiz Modal */}
-        <LegalSupportQuizModal
+        <BaseQuizModal
           visible={showQuiz}
           currentQuestion={currentQuestion}
           questions={quizQuestions}
           languageCode={language.code}
+          title={language.code === 'de' ? 'Rechtshilfe-Assistent' : 'Legal Support Assistant'}
+          subtitle={language.code === 'de' 
+            ? 'Beantworten Sie ein paar Fragen, um passende Rechtsberatung zu finden.'
+            : 'Answer a few questions to find suitable legal counseling.'}
           onAnswer={handleQuizAnswer}
           onSkip={handleSkipQuiz}
           onClose={handleCloseQuiz}
         />
         
-        {/* Show reset quiz button and filters when quiz is completed */}
         {!showQuiz && (
-          <View style={styles.controlsContainer}>
-            <TouchableOpacity style={styles.resetQuizButton} onPress={resetQuiz}>
-              <MaterialIcons name="refresh" size={20} color="#3B82F6" />
-              <Text style={styles.resetQuizText}>
-                {language.code === 'de' ? 'Quiz zurücksetzen' : 'Reset Quiz'}
-              </Text>
-            </TouchableOpacity>
-            
-            <TouchableOpacity 
-              style={styles.filterButton}
-              onPress={() => setShowFilters(!showFilters)}
-            >
-              <MaterialIcons name="filter-list" size={24} color="#333" />
-            </TouchableOpacity>
-          </View>
+          <QuizControls
+            languageCode={language.code}
+            onResetQuiz={resetQuiz}
+            onToggleFilters={() => setShowFilters(!showFilters)}
+          />
         )}
 
-        {/* Filter Section */}
-        {!showQuiz && showFilters && (
-          <View style={styles.filterSection}>
-            <Text style={styles.filterSectionTitle}>
-              {language.code === 'de' ? 'Filter' : 'Filters'}
-            </Text>
-            
-            {/* Support Type Filters */}
-            <Text style={styles.filterGroupTitle}>
-              {language.code === 'de' ? 'Unterstützungstyp' : 'Support Type'}
-            </Text>
-            <View style={styles.filterChips}>
-              {supportTypes.map(type => (
-                <TouchableOpacity
-                  key={type}
-                  style={[
-                    styles.filterChip,
-                    selectedSupportTypes.includes(type) && styles.activeFilterChip
-                  ]}
-                  onPress={() => toggleSupportType(type)}
-                >
-                  <Text style={[
-                    styles.filterChipText,
-                    selectedSupportTypes.includes(type) && styles.activeFilterChipText
-                  ]}>
-                    {type.replace('-', ' ')}
-                  </Text>
-                </TouchableOpacity>
-              ))}
-            </View>
-
-            {/* Location Filters */}
-            <Text style={styles.filterGroupTitle}>
-              {language.code === 'de' ? 'Standort' : 'Location'}
-            </Text>
-            <View style={styles.filterChips}>
-              {locations.map(location => (
-                <TouchableOpacity
-                  key={location}
-                  style={[
-                    styles.filterChip,
-                    selectedLocations.includes(location) && styles.activeFilterChip
-                  ]}
-                  onPress={() => toggleLocation(location)}
-                >
-                  <Text style={[
-                    styles.filterChipText,
-                    selectedLocations.includes(location) && styles.activeFilterChipText
-                  ]}>
-                    {location}
-                  </Text>
-                </TouchableOpacity>
-              ))}
-            </View>
-
-            <TouchableOpacity style={styles.clearFiltersButton} onPress={clearFilters}>
-              <Text style={styles.clearFiltersText}>
-                {language.code === 'de' ? 'Filter löschen' : 'Clear Filters'}
-              </Text>
-            </TouchableOpacity>
-          </View>
-        )}
+        <FilterSection
+          visible={!showQuiz && showFilters}
+          title={language.code === 'de' ? 'Filter' : 'Filters'}
+          languageCode={language.code}
+          filterGroups={filterGroups}
+          onClearFilters={clearFilters}
+        />
         
-        {/* Legal Support List */}
         {!showQuiz && (
           <LegalSupportList 
             entities={filteredEntities}
