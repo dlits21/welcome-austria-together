@@ -8,9 +8,9 @@ interface GermanCourse {
   id: string;
   title: { en: string; de: string };
   type: 'course' | 'resource' | 'exam';
-  level?: 'beginner' | 'intermediate' | 'advanced';
+  level: string[];
   location?: string;
-  price?: number;
+  price: string | number;
   online: boolean;
   duration?: string;
   description: { en: string; de: string };
@@ -63,34 +63,36 @@ const CourseList: React.FC<CourseListProps> = ({ courses, languageCode }) => {
       </Text>
       
       <View style={styles.tagsContainer}>
-        {item.level && (
-          <View style={styles.tag}>
-            <Text style={styles.tagText}>{getNiveaus(item.level, languageCode)}</Text>
+        {/* Level tags - show individual boxes for each level */}
+        {item.level && item.level.length > 0 && (
+          <View style={styles.levelContainer}>
+            {item.level.map((level, index) => (
+              <View key={index} style={styles.levelTag}>
+                <Text style={styles.levelTagText}>{level}</Text>
+              </View>
+            ))}
           </View>
         )}
         
-        {item.location && (
-          <View style={styles.tag}>
-            <Text style={styles.tagText}>{item.location}</Text>
-          </View>
-        )}
-        
-        {item.online && (
-          <View style={styles.tag}>
-            <Text style={styles.tagText}>Online</Text>
-          </View>
-        )}
-        
-        {item.price !== undefined && (
+        {/* Location tag - show "Online" if online is true, otherwise show actual location */}
+        {(item.online || item.location) && (
           <View style={styles.tag}>
             <Text style={styles.tagText}>
-              {item.price === 0 
-                ? (languageCode === 'de' ? 'Kostenlos' : 'Free') 
-                : `€${item.price}`}
+              {item.online ? 'Online' : item.location}
             </Text>
           </View>
         )}
         
+        {/* Price tag */}
+        <View style={styles.tag}>
+          <Text style={styles.tagText}>
+            {typeof item.price === 'string' 
+              ? item.price 
+              : `€${item.price}`}
+          </Text>
+        </View>
+        
+        {/* Duration tag */}
         {item.duration && (
           <View style={styles.tag}>
             <Text style={styles.tagText}>{item.duration}</Text>
@@ -179,6 +181,26 @@ const styles = StyleSheet.create({
   tagsContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
+    alignItems: 'center',
+  },
+  levelContainer: {
+    flexDirection: 'row',
+    marginRight: 8,
+    marginBottom: 8,
+  },
+  levelTag: {
+    backgroundColor: '#e0f2fe',
+    borderRadius: 4,
+    paddingHorizontal: 6,
+    paddingVertical: 3,
+    marginRight: 4,
+    borderWidth: 1,
+    borderColor: '#0284c7',
+  },
+  levelTagText: {
+    fontSize: 11,
+    color: '#0284c7',
+    fontWeight: '600',
   },
   tag: {
     backgroundColor: '#f1f5f9',

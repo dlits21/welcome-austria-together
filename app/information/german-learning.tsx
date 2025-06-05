@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { 
   StyleSheet, 
@@ -15,7 +16,6 @@ import LanguageModal from '../../components/LanguageModal';
 import HelpModal from '../../components/HelpModal';
 import QuizModal from '../../components/QuizModal';
 import CourseList from '../../components/CourseList';
-import FilterModal from '../../components/FilterModal';
 
 interface GermanCourse {
   id: string;
@@ -363,7 +363,6 @@ const GermanLearningPage: React.FC = () => {
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
-  const [showFilterModal, setShowFilterModal] = useState(false);
   const [filteredCourses, setFilteredCourses] = useState<GermanCourse[]>(germanCourses);
   const [activeTab, setActiveTab] = useState<string>('all');
   
@@ -379,8 +378,11 @@ const GermanLearningPage: React.FC = () => {
   // Filter states
   const [selectedLevels, setSelectedLevels] = useState<string[]>([]);
   const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
+  const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
+  const [selectedFormats, setSelectedFormats] = useState<string[]>([]);
   const [onlineOnly, setOnlineOnly] = useState<boolean>(false);
   const [freeOnly, setFreeOnly] = useState<boolean>(false);
+  const [showFilters, setShowFilters] = useState(false);
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
@@ -389,7 +391,11 @@ const GermanLearningPage: React.FC = () => {
     .filter(course => course.location)
     .map(course => course.location as string)));
 
-  // Quiz questions - fixed to avoid duplication
+  // Available types and formats
+  const courseTypes = ['course', 'resource', 'exam'];
+  const formatTypes = ['online-only', 'hybrid', 'in-person'];
+
+  // Quiz questions
   const quizQuestions = [
     {
       question: language.code === 'de' ? 'Wie ist Ihr Niveau?' : 'What\'s your level?',
@@ -426,7 +432,7 @@ const GermanLearningPage: React.FC = () => {
     
     // Apply quiz filters
     if (quizAnswers.level) {
-      const levelCode = quizAnswers.level.split(' ')[0]; // Extract A0, A1, etc.
+      const levelCode = quizAnswers.level.split(' ')[0];
       results = results.filter(course => course.level.includes(levelCode));
     }
     
@@ -464,6 +470,18 @@ const GermanLearningPage: React.FC = () => {
         course.location ? selectedLocations.includes(course.location) : false
       );
     }
+
+    if (selectedTypes.length > 0) {
+      results = results.filter(course => selectedTypes.includes(course.type));
+    }
+
+    if (selectedFormats.length > 0) {
+      if (selectedFormats.includes('online-only')) {
+        results = results.filter(course => course.online);
+      } else if (selectedFormats.includes('in-person')) {
+        results = results.filter(course => !course.online);
+      }
+    }
     
     if (onlineOnly) {
       results = results.filter(course => course.online);
@@ -476,7 +494,7 @@ const GermanLearningPage: React.FC = () => {
     }
     
     setFilteredCourses(results);
-  }, [quizAnswers, activeTab, selectedLevels, selectedLocations, onlineOnly, freeOnly]);
+  }, [quizAnswers, activeTab, selectedLevels, selectedLocations, selectedTypes, selectedFormats, onlineOnly, freeOnly]);
 
   const toggleSound = () => {
     setSoundEnabled(!soundEnabled);
@@ -496,11 +514,14 @@ const GermanLearningPage: React.FC = () => {
       const levelCode = typeof answer === 'string' ? answer.split(' ')[0] : answer.key;
       setSelectedLevels([levelCode]);
     } else if (questionKey === 'format') {
+      setSelectedFormats([answerValue]);
       if (answerValue === 'online-only') {
         setOnlineOnly(true);
       } else if (answerValue === 'in-person') {
         setOnlineOnly(false);
       }
+    } else if (questionKey === 'type') {
+      setSelectedTypes([answerValue]);
     }
 
     if (currentQuestion < quizQuestions.length - 1) {
@@ -525,6 +546,8 @@ const GermanLearningPage: React.FC = () => {
   const resetQuiz = () => {
     setQuizAnswers({ level: '', format: '', type: '' });
     setSelectedLevels([]);
+    setSelectedTypes([]);
+    setSelectedFormats([]);
     setOnlineOnly(false);
     setCurrentQuestion(0);
     setShowQuiz(true);
@@ -536,7 +559,6 @@ const GermanLearningPage: React.FC = () => {
         ? prev.filter(l => l !== level)
         : [...prev, level];
       
-      // Update quiz answer if only one level is selected
       if (newLevels.length === 1) {
         setQuizAnswers(prev => ({ ...prev, level: newLevels[0] }));
       } else if (newLevels.length === 0) {
@@ -555,9 +577,27 @@ const GermanLearningPage: React.FC = () => {
     );
   };
 
+  const toggleType = (type: string) => {
+    setSelectedTypes(prev => 
+      prev.includes(type) 
+        ? prev.filter(t => t !== type)
+        : [...prev, type]
+    );
+  };
+
+  const toggleFormat = (format: string) => {
+    setSelectedFormats(prev => 
+      prev.includes(format) 
+        ? prev.filter(f => f !== format)
+        : [...prev, format]
+    );
+  };
+
   const clearFilters = () => {
     setSelectedLevels([]);
     setSelectedLocations([]);
+    setSelectedTypes([]);
+    setSelectedFormats([]);
     setOnlineOnly(false);
     setFreeOnly(false);
     setQuizAnswers({ level: '', format: '', type: '' });
@@ -617,9 +657,9 @@ const GermanLearningPage: React.FC = () => {
           onClose={handleCloseQuiz}
         />
         
-        {/* Show reset quiz button when quiz is completed */}
+        {/* Show controls when quiz is completed */}
         {!showQuiz && (
-          <View style={styles.resetQuizContainer}>
+          <View style={styles.controlsContainer}>
             <TouchableOpacity style={styles.resetQuizButton} onPress={resetQuiz}>
               <MaterialIcons name="refresh" size={20} color="#3B82F6" />
               <Text style={styles.resetQuizText}>
@@ -629,9 +669,142 @@ const GermanLearningPage: React.FC = () => {
             
             <TouchableOpacity 
               style={styles.filterButton}
-              onPress={() => setShowFilterModal(true)}
+              onPress={() => setShowFilters(!showFilters)}
             >
               <MaterialIcons name="filter-list" size={24} color="#333" />
+            </TouchableOpacity>
+          </View>
+        )}
+
+        {/* Filter Section */}
+        {!showQuiz && showFilters && (
+          <View style={styles.filterSection}>
+            <Text style={styles.filterSectionTitle}>
+              {language.code === 'de' ? 'Filter' : 'Filters'}
+            </Text>
+            
+            {/* Level Filters */}
+            <Text style={styles.filterGroupTitle}>
+              {language.code === 'de' ? 'Niveau' : 'Level'}
+            </Text>
+            <View style={styles.filterChips}>
+              {['A0', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'].map(level => (
+                <TouchableOpacity
+                  key={level}
+                  style={[
+                    styles.filterChip,
+                    selectedLevels.includes(level) && styles.activeFilterChip
+                  ]}
+                  onPress={() => toggleLevel(level)}
+                >
+                  <Text style={[
+                    styles.filterChipText,
+                    selectedLevels.includes(level) && styles.activeFilterChipText
+                  ]}>
+                    {level}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+
+            {/* Type Filters */}
+            <Text style={styles.filterGroupTitle}>
+              {language.code === 'de' ? 'Typ' : 'Type'}
+            </Text>
+            <View style={styles.filterChips}>
+              {courseTypes.map(type => (
+                <TouchableOpacity
+                  key={type}
+                  style={[
+                    styles.filterChip,
+                    selectedTypes.includes(type) && styles.activeFilterChip
+                  ]}
+                  onPress={() => toggleType(type)}
+                >
+                  <Text style={[
+                    styles.filterChipText,
+                    selectedTypes.includes(type) && styles.activeFilterChipText
+                  ]}>
+                    {getTab(type === 'course' ? 'courses' : type === 'resource' ? 'resources' : 'exams', language.code)}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+
+            {/* Format Filters */}
+            <Text style={styles.filterGroupTitle}>
+              {language.code === 'de' ? 'Format' : 'Format'}
+            </Text>
+            <View style={styles.filterChips}>
+              {formatTypes.map(format => (
+                <TouchableOpacity
+                  key={format}
+                  style={[
+                    styles.filterChip,
+                    selectedFormats.includes(format) && styles.activeFilterChip
+                  ]}
+                  onPress={() => toggleFormat(format)}
+                >
+                  <Text style={[
+                    styles.filterChipText,
+                    selectedFormats.includes(format) && styles.activeFilterChipText
+                  ]}>
+                    {format === 'online-only' ? (language.code === 'de' ? 'Nur online' : 'Online only') :
+                     format === 'in-person' ? (language.code === 'de' ? 'Persönlich' : 'In-person') :
+                     'Hybrid'}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+
+            {/* Location Filters */}
+            <Text style={styles.filterGroupTitle}>
+              {language.code === 'de' ? 'Standort' : 'Location'}
+            </Text>
+            <View style={styles.filterChips}>
+              {locations.map(location => (
+                <TouchableOpacity
+                  key={location}
+                  style={[
+                    styles.filterChip,
+                    selectedLocations.includes(location) && styles.activeFilterChip
+                  ]}
+                  onPress={() => toggleLocation(location)}
+                >
+                  <Text style={[
+                    styles.filterChipText,
+                    selectedLocations.includes(location) && styles.activeFilterChipText
+                  ]}>
+                    {location}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+
+            {/* Additional Filters */}
+            <Text style={styles.filterGroupTitle}>
+              {language.code === 'de' ? 'Weitere Filter' : 'Additional Filters'}
+            </Text>
+            
+            <TouchableOpacity
+              style={[
+                styles.filterChip,
+                freeOnly && styles.activeFilterChip
+              ]}
+              onPress={() => setFreeOnly(!freeOnly)}
+            >
+              <Text style={[
+                styles.filterChipText,
+                freeOnly && styles.activeFilterChipText
+              ]}>
+                {language.code === 'de' ? 'Nur kostenlos' : 'Free only'}
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.clearFiltersButton} onPress={clearFilters}>
+              <Text style={styles.clearFiltersText}>
+                {language.code === 'de' ? 'Filter löschen' : 'Clear Filters'}
+              </Text>
             </TouchableOpacity>
           </View>
         )}
@@ -647,23 +820,6 @@ const GermanLearningPage: React.FC = () => {
           />
         )}
       </View>
-      
-      {/* Filter Modal */}
-      <FilterModal
-        visible={showFilterModal}
-        onClose={() => setShowFilterModal(false)}
-        languageCode={language.code}
-        selectedLevels={selectedLevels}
-        selectedLocations={selectedLocations}
-        onlineOnly={onlineOnly}
-        freeOnly={freeOnly}
-        locations={locations}
-        onToggleLevel={toggleLevel}
-        onToggleLocation={toggleLocation}
-        onToggleOnlineOnly={() => setOnlineOnly(!onlineOnly)}
-        onToggleFreeOnly={() => setFreeOnly(!freeOnly)}
-        onClearFilters={clearFilters}
-      />
       
       {/* Language Modal */}
       <LanguageModal 
@@ -701,7 +857,7 @@ const styles = StyleSheet.create({
     color: '#666',
     marginBottom: 24,
   },
-  resetQuizContainer: {
+  controlsContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -732,6 +888,63 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderWidth: 1,
     borderColor: '#ddd',
+  },
+  filterSection: {
+    backgroundColor: '#f8fafc',
+    padding: 16,
+    borderRadius: 12,
+    marginBottom: 16,
+  },
+  filterSectionTitle: {
+    fontSize: 18,
+    fontWeight: '600',
+    marginBottom: 16,
+  },
+  filterGroupTitle: {
+    fontSize: 16,
+    fontWeight: '500',
+    marginBottom: 8,
+    marginTop: 12,
+  },
+  filterChips: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginBottom: 8,
+  },
+  filterChip: {
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
+    borderRadius: 16,
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    marginRight: 8,
+    marginBottom: 8,
+  },
+  activeFilterChip: {
+    backgroundColor: '#3B82F6',
+    borderColor: '#3B82F6',
+  },
+  filterChipText: {
+    fontSize: 12,
+    color: '#64748b',
+  },
+  activeFilterChipText: {
+    color: '#fff',
+  },
+  clearFiltersButton: {
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
+    borderRadius: 8,
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    alignSelf: 'flex-start',
+    marginTop: 8,
+  },
+  clearFiltersText: {
+    color: '#64748b',
+    fontSize: 14,
   },
   tabContainer: {
     flexDirection: 'row',
