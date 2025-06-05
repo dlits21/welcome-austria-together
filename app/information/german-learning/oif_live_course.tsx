@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, TouchableOpacity, Linking } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -26,11 +27,31 @@ const GermanA1ViennaPage: React.FC = () => {
   const content = {
     title: {
       en: 'ÖIF Live Online German Courses',
-      de: 'ÖIF Live Online Deutsch Kurse'
+      de: 'ÖIF Live Online Deutsch Kurse',
+      fa: 'Lorem Ipsum',
+      ar: 'Lorem Ipsum',
+      uk: 'Lorem Ipsum',
+      ru: 'Lorem Ipsum',
+      tr: 'Lorem Ipsum',
+      so: 'Lorem Ipsum',
+      fr: 'Lorem Ipsum',
+      es: 'Lorem Ipsum',
+      pl: 'Lorem Ipsum',
+      sr: 'Lorem Ipsum'
     },
     subtitle: {
       en: 'Free German courses for beginners and advanced learners (A1-B2) - Daily from Monday to Saturday with qualified trainers',
-      de: 'Kostenlose Deutschkurse für Anfänger und Fortgeschrittene (A1-B2) – Täglich von Montag bis Samstag mit qualifizierten Trainerinnen und Trainern'
+      de: 'Kostenlose Deutschkurse für Anfänger und Fortgeschrittene (A1-B2) – Täglich von Montag bis Samstag mit qualifizierten Trainerinnen und Trainern',
+      fa: 'Lorem Ipsum',
+      ar: 'Lorem Ipsum',
+      uk: 'Lorem Ipsum',
+      ru: 'Lorem Ipsum',
+      tr: 'Lorem Ipsum',
+      so: 'Lorem Ipsum',
+      fr: 'Lorem Ipsum',
+      es: 'Lorem Ipsum',
+      pl: 'Lorem Ipsum',
+      sr: 'Lorem Ipsum'
     },
     description: {
       en: `The ÖIF online courses offer an excellent opportunity for German learners to improve their language skills to A1 level. With daily live sessions and a variety of learning materials, the course supports the introduction to the German language and promotes integration in Austria.
@@ -94,14 +115,70 @@ Am Ende dieses Kurses können Sie:
 • Einfache schriftliche Mitteilungen verfassen
 • Sich auf Integrations- und Sprachprüfungen vorbereiten.
 
-Für weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website des Sprachportals.`
+Für weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website des Sprachportals.`,
+      fa: 'Lorem Ipsum',
+      ar: 'Lorem Ipsum',
+      uk: 'Lorem Ipsum',
+      ru: 'Lorem Ipsum',
+      tr: 'Lorem Ipsum',
+      so: 'Lorem Ipsum',
+      fr: 'Lorem Ipsum',
+      es: 'Lorem Ipsum',
+      pl: 'Lorem Ipsum',
+      sr: 'Lorem Ipsum'
     },
     provider: 'Österreichischer Integrations Fond (ÖIF)',
     contact: {
       phone: '+43 5 0468-0',
       email: 'info@integrationsfonds.at',
       website: 'https://sprachportal.at/kurse-und-pruefungen/kursangebote/online-kurse/'
+    },
+    contactInfo: {
+      en: 'Contact Information',
+      de: 'Kontaktinformationen',
+      fa: 'Lorem Ipsum',
+      ar: 'Lorem Ipsum',
+      uk: 'Lorem Ipsum',
+      ru: 'Lorem Ipsum',
+      tr: 'Lorem Ipsum',
+      so: 'Lorem Ipsum',
+      fr: 'Lorem Ipsum',
+      es: 'Lorem Ipsum',
+      pl: 'Lorem Ipsum',
+      sr: 'Lorem Ipsum'
+    },
+    location: {
+      en: 'Location',
+      de: 'Standort',
+      fa: 'Lorem Ipsum',
+      ar: 'Lorem Ipsum',
+      uk: 'Lorem Ipsum',
+      ru: 'Lorem Ipsum',
+      tr: 'Lorem Ipsum',
+      so: 'Lorem Ipsum',
+      fr: 'Lorem Ipsum',
+      es: 'Lorem Ipsum',
+      pl: 'Lorem Ipsum',
+      sr: 'Lorem Ipsum'
+    },
+    enrollNow: {
+      en: 'Enroll Now',
+      de: 'Jetzt anmelden',
+      fa: 'Lorem Ipsum',
+      ar: 'Lorem Ipsum',
+      uk: 'Lorem Ipsum',
+      ru: 'Lorem Ipsum',
+      tr: 'Lorem Ipsum',
+      so: 'Lorem Ipsum',
+      fr: 'Lorem Ipsum',
+      es: 'Lorem Ipsum',
+      pl: 'Lorem Ipsum',
+      sr: 'Lorem Ipsum'
     }
+  };
+
+  const getCurrentContent = (contentObj: any) => {
+    return contentObj[currentLanguage] || contentObj.en;
   };
 
   return (
@@ -115,28 +192,28 @@ Für weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle W
       
       <ScrollView style={styles.content}>
         <Text style={styles.title}>
-          {language.code === 'de' ? content.title.de : content.title.en}
+          {getCurrentContent(content.title)}
         </Text>
         
         <Text style={styles.subtitle}>
-          {language.code === 'de' ? content.subtitle.de : content.subtitle.en}
+          {getCurrentContent(content.subtitle)}
         </Text>
         
         <View style={styles.providerSection}>
           <Text style={styles.providerLabel}>
-            {language.code === 'de' ? 'Anbieter:' : 'Provider:'}
+            {currentLanguage === 'de' ? 'Anbieter:' : 'Provider:'}
           </Text>
           <Text style={styles.providerName}>{content.provider}</Text>
         </View>
         
         <Text style={styles.description}>
-          {language.code === 'de' ? content.description.de : content.description.en}
+          {getCurrentContent(content.description)}
         </Text>
         
         {/* Contact Information */}
         <View style={styles.contactSection}>
           <Text style={styles.sectionTitle}>
-            {language.code === 'de' ? 'Kontaktinformationen' : 'Contact Information'}
+            {getCurrentContent(content.contactInfo)}
           </Text>
           
           <View style={styles.contactItem}>
@@ -162,13 +239,13 @@ Für weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle W
         {/* Location Map */}
         <View style={styles.mapSection}>
           <Text style={styles.sectionTitle}>
-            {language.code === 'de' ? 'Standort' : 'Location'}
+            {getCurrentContent(content.location)}
           </Text>
           <View style={styles.mapContainer}>
             <View style={styles.mapPlaceholder}>
               <MaterialIcons name="location-on" size={48} color="#3B82F6" />
               <Text style={styles.mapPlaceholderText}>
-                {language.code === 'de' ? 'Karte wird geladen...' : 'Map loading...'}
+                {currentLanguage === 'de' ? 'Karte wird geladen...' : 'Map loading...'}
               </Text>
               <Text style={styles.mapLocationText}>VHS Vienna, Urania Building</Text>
             </View>
@@ -182,14 +259,14 @@ Für weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle W
           </View>
           <View style={styles.tag}>
             <Text style={styles.tagText}>
-              {language.code === 'de' ? 'Anfänger' : 'Beginner'}
+              {currentLanguage === 'de' ? 'Anfänger' : 'Beginner'}
             </Text>
           </View>
           <View style={styles.tag}>
             <Text style={styles.tagText}>Vienna</Text>
           </View>
           <View style={styles.tag}>
-            <Text style={styles.tagText}>8 {language.code === 'de' ? 'Wochen' : 'weeks'}</Text>
+            <Text style={styles.tagText}>8 {currentLanguage === 'de' ? 'Wochen' : 'weeks'}</Text>
           </View>
           <View style={styles.tag}>
             <Text style={styles.tagText}>€200</Text>
@@ -199,7 +276,7 @@ Für weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle W
         {/* Enroll Button */}
         <TouchableOpacity style={styles.enrollButton} onPress={handleEnrollPress}>
           <Text style={styles.enrollButtonText}>
-            {language.code === 'de' ? 'Jetzt anmelden' : 'Enroll Now'}
+            {getCurrentContent(content.enrollNow)}
           </Text>
           <MaterialIcons name="arrow-forward" size={20} color="#fff" />
         </TouchableOpacity>

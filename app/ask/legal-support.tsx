@@ -26,6 +26,7 @@ interface LegalSupportEntity {
   };
   location: string;
   supportTypes: string[];
+  specializations: string[];
   description: {
     en: string;
     de: string;
@@ -51,6 +52,7 @@ const legalSupportEntities: LegalSupportEntity[] = [
     },
     location: 'Nationwide',
     supportTypes: ['asylum-procedures', 'appeals', 'detention'],
+    specializations: ['Asylum Law', 'Appeals Process', 'Detention Rights'],
     description: {
       en: 'BBU provides comprehensive legal support for asylum seekers throughout Austria.',
       de: 'BBU bietet umfassende Rechtsunterstützung für Asylsuchende in ganz Österreich.'
@@ -73,6 +75,7 @@ const legalSupportEntities: LegalSupportEntity[] = [
     },
     location: 'Vienna',
     supportTypes: ['residence-permits', 'family-reunification', 'general'],
+    specializations: ['Immigration Law', 'Family Law', 'Residence Permits'],
     description: {
       en: 'Providing expert legal guidance for immigration matters in Vienna.',
       de: 'Expertenberatung für Einwanderungsangelegenheiten in Wien.'
@@ -95,6 +98,7 @@ const legalSupportEntities: LegalSupportEntity[] = [
     },
     location: 'Graz',
     supportTypes: ['citizenship', 'general'],
+    specializations: ['Citizenship Law', 'Naturalization Process'],
     description: {
       en: 'Specialized support for citizenship applications in Styria.',
       de: 'Spezialisierte Unterstützung für Staatsbürgerschaftsanträge in der Steiermark.'
@@ -116,6 +120,7 @@ const legalSupportEntities: LegalSupportEntity[] = [
     },
     location: 'Linz',
     supportTypes: ['work-rights', 'general'],
+    specializations: ['Employment Law', 'Work Permits', 'Labor Rights'],
     description: {
       en: 'Expert advice on work permits and employment law for migrants.',
       de: 'Expertenberatung zu Arbeitserlaubnissen und Arbeitsrecht für Migranten.'
@@ -137,6 +142,7 @@ const legalSupportEntities: LegalSupportEntity[] = [
     },
     location: 'Vienna',
     supportTypes: ['discrimination', 'legal-representation'],
+    specializations: ['Anti-Discrimination Law', 'Equal Rights', 'Legal Representation'],
     description: {
       en: 'Specialized legal service for cases of discrimination and equal rights.',
       de: 'Spezialisierter Rechtsdienst für Diskriminierungsfälle und Gleichberechtigung.'
@@ -161,10 +167,16 @@ const LegalSupportPage: React.FC = () => {
     location: ''
   });
   
+  // Filter states
+  const [selectedSupportTypes, setSelectedSupportTypes] = useState<string[]>([]);
+  const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
+  const [showFilters, setShowFilters] = useState(false);
+  
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
-  // Extract unique locations
+  // Extract unique locations and support types
   const locations = Array.from(new Set(legalSupportEntities.map(entity => entity.location)));
+  const supportTypes = Array.from(new Set(legalSupportEntities.flatMap(entity => entity.supportTypes)));
 
   // Quiz questions
   const quizQuestions = [
@@ -196,10 +208,11 @@ const LegalSupportPage: React.FC = () => {
     }
   ];
 
-  // Apply filters based on quiz answers
+  // Apply filters based on quiz answers and manual filters
   useEffect(() => {
     let results = legalSupportEntities;
     
+    // Apply quiz filters
     if (quizAnswers.supportType) {
       results = results.filter(entity => 
         entity.supportTypes.includes(quizAnswers.supportType)
@@ -217,8 +230,21 @@ const LegalSupportPage: React.FC = () => {
       }
     }
     
+    // Apply manual filters
+    if (selectedSupportTypes.length > 0) {
+      results = results.filter(entity => 
+        entity.supportTypes.some(type => selectedSupportTypes.includes(type))
+      );
+    }
+    
+    if (selectedLocations.length > 0) {
+      results = results.filter(entity => 
+        selectedLocations.includes(entity.location) || entity.location === 'Nationwide'
+      );
+    }
+    
     setFilteredEntities(results);
-  }, [quizAnswers]);
+  }, [quizAnswers, selectedSupportTypes, selectedLocations]);
 
   const toggleSound = () => {
     setSoundEnabled(!soundEnabled);
@@ -232,6 +258,16 @@ const LegalSupportPage: React.FC = () => {
       ...prev,
       [questionKey]: answerValue
     }));
+
+    // Sync quiz answers with filter states
+    if (questionKey === 'supportType') {
+      setSelectedSupportTypes([answerValue]);
+    } else if (questionKey === 'location') {
+      const locationName = locations.find(loc => loc.toLowerCase() === answerValue);
+      if (locationName) {
+        setSelectedLocations([locationName]);
+      }
+    }
 
     if (currentQuestion < quizQuestions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
@@ -256,6 +292,27 @@ const LegalSupportPage: React.FC = () => {
     setQuizAnswers({ supportType: '', location: '' });
     setCurrentQuestion(0);
     setShowQuiz(true);
+  };
+
+  const toggleSupportType = (type: string) => {
+    setSelectedSupportTypes(prev => 
+      prev.includes(type) 
+        ? prev.filter(t => t !== type)
+        : [...prev, type]
+    );
+  };
+
+  const toggleLocation = (location: string) => {
+    setSelectedLocations(prev => 
+      prev.includes(location) 
+        ? prev.filter(l => l !== location)
+        : [...prev, location]
+    );
+  };
+
+  const clearFilters = () => {
+    setSelectedSupportTypes([]);
+    setSelectedLocations([]);
   };
 
   const pageTitle = language.code === 'de' ? 'Rechtsunterstützung' : 'Legal Support';
@@ -285,13 +342,83 @@ const LegalSupportPage: React.FC = () => {
           onClose={handleCloseQuiz}
         />
         
-        {/* Show reset quiz button when quiz is completed */}
+        {/* Show reset quiz button and filters when quiz is completed */}
         {!showQuiz && (
-          <View style={styles.resetQuizContainer}>
+          <View style={styles.controlsContainer}>
             <TouchableOpacity style={styles.resetQuizButton} onPress={resetQuiz}>
               <MaterialIcons name="refresh" size={20} color="#3B82F6" />
               <Text style={styles.resetQuizText}>
                 {language.code === 'de' ? 'Quiz zurücksetzen' : 'Reset Quiz'}
+              </Text>
+            </TouchableOpacity>
+            
+            <TouchableOpacity 
+              style={styles.filterButton}
+              onPress={() => setShowFilters(!showFilters)}
+            >
+              <MaterialIcons name="filter-list" size={24} color="#333" />
+            </TouchableOpacity>
+          </View>
+        )}
+
+        {/* Filter Section */}
+        {!showQuiz && showFilters && (
+          <View style={styles.filterSection}>
+            <Text style={styles.filterSectionTitle}>
+              {language.code === 'de' ? 'Filter' : 'Filters'}
+            </Text>
+            
+            {/* Support Type Filters */}
+            <Text style={styles.filterGroupTitle}>
+              {language.code === 'de' ? 'Unterstützungstyp' : 'Support Type'}
+            </Text>
+            <View style={styles.filterChips}>
+              {supportTypes.map(type => (
+                <TouchableOpacity
+                  key={type}
+                  style={[
+                    styles.filterChip,
+                    selectedSupportTypes.includes(type) && styles.activeFilterChip
+                  ]}
+                  onPress={() => toggleSupportType(type)}
+                >
+                  <Text style={[
+                    styles.filterChipText,
+                    selectedSupportTypes.includes(type) && styles.activeFilterChipText
+                  ]}>
+                    {type.replace('-', ' ')}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+
+            {/* Location Filters */}
+            <Text style={styles.filterGroupTitle}>
+              {language.code === 'de' ? 'Standort' : 'Location'}
+            </Text>
+            <View style={styles.filterChips}>
+              {locations.map(location => (
+                <TouchableOpacity
+                  key={location}
+                  style={[
+                    styles.filterChip,
+                    selectedLocations.includes(location) && styles.activeFilterChip
+                  ]}
+                  onPress={() => toggleLocation(location)}
+                >
+                  <Text style={[
+                    styles.filterChipText,
+                    selectedLocations.includes(location) && styles.activeFilterChipText
+                  ]}>
+                    {location}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
+
+            <TouchableOpacity style={styles.clearFiltersButton} onPress={clearFilters}>
+              <Text style={styles.clearFiltersText}>
+                {language.code === 'de' ? 'Filter löschen' : 'Clear Filters'}
               </Text>
             </TouchableOpacity>
           </View>
@@ -328,9 +455,9 @@ const styles = StyleSheet.create({
     color: '#666',
     marginBottom: 24,
   },
-  resetQuizContainer: {
+  controlsContainer: {
     flexDirection: 'row',
-    justifyContent: 'flex-start',
+    justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: 16,
   },
@@ -348,6 +475,74 @@ const styles = StyleSheet.create({
     color: '#3B82F6',
     fontWeight: '600',
     marginLeft: 8,
+    fontSize: 14,
+  },
+  filterButton: {
+    width: 48,
+    height: 48,
+    backgroundColor: '#f9f9f9',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: '#ddd',
+  },
+  filterSection: {
+    backgroundColor: '#f8fafc',
+    padding: 16,
+    borderRadius: 12,
+    marginBottom: 16,
+  },
+  filterSectionTitle: {
+    fontSize: 18,
+    fontWeight: '600',
+    marginBottom: 16,
+  },
+  filterGroupTitle: {
+    fontSize: 16,
+    fontWeight: '500',
+    marginBottom: 8,
+    marginTop: 12,
+  },
+  filterChips: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginBottom: 8,
+  },
+  filterChip: {
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
+    borderRadius: 16,
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    marginRight: 8,
+    marginBottom: 8,
+  },
+  activeFilterChip: {
+    backgroundColor: '#3B82F6',
+    borderColor: '#3B82F6',
+  },
+  filterChipText: {
+    fontSize: 12,
+    color: '#64748b',
+    textTransform: 'capitalize',
+  },
+  activeFilterChipText: {
+    color: '#fff',
+  },
+  clearFiltersButton: {
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
+    borderRadius: 8,
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    alignSelf: 'flex-start',
+    marginTop: 8,
+  },
+  clearFiltersText: {
+    color: '#64748b',
     fontSize: 14,
   },
 });

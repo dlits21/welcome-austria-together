@@ -9,6 +9,7 @@ interface LegalSupportEntity {
   subtitle: { en: string; de: string };
   location: string;
   supportTypes: string[];
+  specializations?: string[];
   description: { en: string; de: string };
   contact: {
     phone?: string;
@@ -50,6 +51,27 @@ const LegalSupportList: React.FC<LegalSupportListProps> = ({ entities, languageC
         <View style={styles.locationTag}>
           <Text style={styles.locationTagText}>{item.location}</Text>
         </View>
+        
+        {/* Show specializations */}
+        {item.specializations && item.specializations.length > 0 && (
+          <View style={styles.specializationsContainer}>
+            <Text style={styles.specializationsTitle}>
+              {languageCode === 'de' ? 'Spezialisierungen:' : 'Specializations:'}
+            </Text>
+            <View style={styles.specializationTags}>
+              {item.specializations.slice(0, 3).map((spec, index) => (
+                <View key={index} style={styles.specializationTag}>
+                  <Text style={styles.specializationTagText}>{spec}</Text>
+                </View>
+              ))}
+              {item.specializations.length > 3 && (
+                <Text style={styles.moreSpecializations}>
+                  +{item.specializations.length - 3} {languageCode === 'de' ? 'mehr' : 'more'}
+                </Text>
+              )}
+            </View>
+          </View>
+        )}
       </View>
     </TouchableOpacity>
   );
@@ -113,15 +135,14 @@ const styles = StyleSheet.create({
     lineHeight: 20,
   },
   tagsContainer: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
+    marginTop: 8,
   },
   locationTag: {
     backgroundColor: '#f1f5f9',
     borderRadius: 4,
     paddingHorizontal: 8,
     paddingVertical: 4,
-    marginRight: 8,
+    alignSelf: 'flex-start',
     marginBottom: 8,
     borderWidth: 1,
     borderColor: '#e2e8f0',
@@ -130,6 +151,40 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: '#64748b',
     fontWeight: '500',
+  },
+  specializationsContainer: {
+    marginTop: 8,
+  },
+  specializationsTitle: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: '#374151',
+    marginBottom: 4,
+  },
+  specializationTags: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+  },
+  specializationTag: {
+    backgroundColor: '#e0f2fe',
+    borderRadius: 4,
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+    marginRight: 6,
+    marginBottom: 4,
+    borderWidth: 1,
+    borderColor: '#0284c7',
+  },
+  specializationTagText: {
+    fontSize: 10,
+    color: '#0284c7',
+    fontWeight: '500',
+  },
+  moreSpecializations: {
+    fontSize: 10,
+    color: '#64748b',
+    fontStyle: 'italic',
   },
   noResults: {
     flex: 1,

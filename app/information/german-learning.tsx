@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { 
   StyleSheet, 
@@ -22,16 +23,36 @@ interface GermanCourse {
   title: {
     en: string;
     de: string;
+    fa: string;
+    ar: string;
+    uk: string;
+    ru: string;
+    tr: string;
+    so: string;
+    fr: string;
+    es: string;
+    pl: string;
+    sr: string;
   };
   type: 'course' | 'resource' | 'exam';
-  level?: 'beginner' | 'intermediate' | 'advanced';
+  level: string[];
   location?: string;
-  price?: number;
+  price: string | number;
   online: boolean;
   duration?: string;
   description: {
     en: string;
     de: string;
+    fa: string;
+    ar: string;
+    uk: string;
+    ru: string;
+    tr: string;
+    so: string;
+    fr: string;
+    es: string;
+    pl: string;
+    sr: string;
   };
   provider: string;
 }
@@ -39,115 +60,300 @@ interface GermanCourse {
 const germanCourses: GermanCourse[] = [
   {
     id: 'oif_live_course',
-    title: { en: 'ÖIF Live Online German Courses', de: 'ÖIF Live Online Deutsch Kurse' },
+    title: { 
+      en: 'ÖIF Live Online German Courses', 
+      de: 'ÖIF Live Online Deutsch Kurse',
+      fa: 'Lorem Ipsum',
+      ar: 'Lorem Ipsum',
+      uk: 'Lorem Ipsum',
+      ru: 'Lorem Ipsum',
+      tr: 'Lorem Ipsum',
+      so: 'Lorem Ipsum',
+      fr: 'Lorem Ipsum',
+      es: 'Lorem Ipsum',
+      pl: 'Lorem Ipsum',
+      sr: 'Lorem Ipsum'
+    },
     type: 'course',
-    level: 'beginner',
+    level: ['A1', 'A2', 'B1', 'B2'],
     location: 'Online',
-    price: 0,
+    price: 'Free',
     online: true,
     duration: '8 weeks',
     description: {
       en: 'Free German courses for beginners and advanced learners (A1-B2)',
-      de: 'Kostenlose Deutschkurse für Anfänger und Fortgeschrittene (A1-B2)'
+      de: 'Kostenlose Deutschkurse für Anfänger und Fortgeschrittene (A1-B2)',
+      fa: 'Lorem Ipsum',
+      ar: 'Lorem Ipsum',
+      uk: 'Lorem Ipsum',
+      ru: 'Lorem Ipsum',
+      tr: 'Lorem Ipsum',
+      so: 'Lorem Ipsum',
+      fr: 'Lorem Ipsum',
+      es: 'Lorem Ipsum',
+      pl: 'Lorem Ipsum',
+      sr: 'Lorem Ipsum'
     },
     provider: 'Österreichsicher Integrations Fond (ÖIF)'
   },
   {
     id: 'german-a2-graz',
-    title: { en: 'German A2 Course - Graz', de: 'Deutschkurs A2 - Graz' },
+    title: { 
+      en: 'German A2 Course - Graz', 
+      de: 'Deutschkurs A2 - Graz',
+      fa: 'Lorem Ipsum',
+      ar: 'Lorem Ipsum',
+      uk: 'Lorem Ipsum',
+      ru: 'Lorem Ipsum',
+      tr: 'Lorem Ipsum',
+      so: 'Lorem Ipsum',
+      fr: 'Lorem Ipsum',
+      es: 'Lorem Ipsum',
+      pl: 'Lorem Ipsum',
+      sr: 'Lorem Ipsum'
+    },
     type: 'course',
-    level: 'beginner',
+    level: ['A2'],
     location: 'Graz',
-    price: 2,
+    price: 250,
     online: false,
     duration: '10 weeks',
     description: {
       en: 'Elementary German language course',
-      de: 'Elementarer Deutschkurs'
+      de: 'Elementarer Deutschkurs',
+      fa: 'Lorem Ipsum',
+      ar: 'Lorem Ipsum',
+      uk: 'Lorem Ipsum',
+      ru: 'Lorem Ipsum',
+      tr: 'Lorem Ipsum',
+      so: 'Lorem Ipsum',
+      fr: 'Lorem Ipsum',
+      es: 'Lorem Ipsum',
+      pl: 'Lorem Ipsum',
+      sr: 'Lorem Ipsum'
     },
     provider: 'VHS Graz'
   },
   {
     id: 'german-b1-online',
-    title: { en: 'German B1 Online Course', de: 'Deutschkurs B1 Online' },
+    title: { 
+      en: 'German B1 Online Course', 
+      de: 'Deutschkurs B1 Online',
+      fa: 'Lorem Ipsum',
+      ar: 'Lorem Ipsum',
+      uk: 'Lorem Ipsum',
+      ru: 'Lorem Ipsum',
+      tr: 'Lorem Ipsum',
+      so: 'Lorem Ipsum',
+      fr: 'Lorem Ipsum',
+      es: 'Lorem Ipsum',
+      pl: 'Lorem Ipsum',
+      sr: 'Lorem Ipsum'
+    },
     type: 'course',
-    level: 'intermediate',
-    price: 0,
+    level: ['B1'],
+    price: 'Free',
     online: true,
     duration: '12 weeks',
     description: {
       en: 'Intermediate German course available online',
-      de: 'Mittlerer Deutschkurs online verfügbar'
+      de: 'Mittlerer Deutschkurs online verfügbar',
+      fa: 'Lorem Ipsum',
+      ar: 'Lorem Ipsum',
+      uk: 'Lorem Ipsum',
+      ru: 'Lorem Ipsum',
+      tr: 'Lorem Ipsum',
+      so: 'Lorem Ipsum',
+      fr: 'Lorem Ipsum',
+      es: 'Lorem Ipsum',
+      pl: 'Lorem Ipsum',
+      sr: 'Lorem Ipsum'
     },
     provider: 'Deutsch Akademie'
   },
   {
     id: 'german-b2-salzburg',
-    title: { en: 'German B2 Course - Salzburg', de: 'Deutschkurs B2 - Salzburg' },
+    title: { 
+      en: 'German B2 Course - Salzburg', 
+      de: 'Deutschkurs B2 - Salzburg',
+      fa: 'Lorem Ipsum',
+      ar: 'Lorem Ipsum',
+      uk: 'Lorem Ipsum',
+      ru: 'Lorem Ipsum',
+      tr: 'Lorem Ipsum',
+      so: 'Lorem Ipsum',
+      fr: 'Lorem Ipsum',
+      es: 'Lorem Ipsum',
+      pl: 'Lorem Ipsum',
+      sr: 'Lorem Ipsum'
+    },
     type: 'course',
-    level: 'intermediate',
+    level: ['B2'],
     location: 'Salzburg',
-    price: 2,
+    price: 300,
     online: false,
     duration: '14 weeks',
     description: {
       en: 'Upper intermediate German language course',
-      de: 'Oberer mittlerer Deutschkurs'
+      de: 'Oberer mittlerer Deutschkurs',
+      fa: 'Lorem Ipsum',
+      ar: 'Lorem Ipsum',
+      uk: 'Lorem Ipsum',
+      ru: 'Lorem Ipsum',
+      tr: 'Lorem Ipsum',
+      so: 'Lorem Ipsum',
+      fr: 'Lorem Ipsum',
+      es: 'Lorem Ipsum',
+      pl: 'Lorem Ipsum',
+      sr: 'Lorem Ipsum'
     },
     provider: 'VHS Salzburg'
   },
   {
     id: 'german-practice-app',
-    title: { en: 'German Practice App', de: 'Deutsche Übungs-App' },
+    title: { 
+      en: 'German Practice App', 
+      de: 'Deutsche Übungs-App',
+      fa: 'Lorem Ipsum',
+      ar: 'Lorem Ipsum',
+      uk: 'Lorem Ipsum',
+      ru: 'Lorem Ipsum',
+      tr: 'Lorem Ipsum',
+      so: 'Lorem Ipsum',
+      fr: 'Lorem Ipsum',
+      es: 'Lorem Ipsum',
+      pl: 'Lorem Ipsum',
+      sr: 'Lorem Ipsum'
+    },
     type: 'resource',
-    level: 'beginner',
-    price: 2,
+    level: ['A0', 'A1', 'A2'],
+    price: 15,
     online: true,
     description: {
       en: 'Mobile app for practicing German vocabulary and grammar',
-      de: 'Mobile App zum Üben von deutschem Wortschatz und Grammatik'
+      de: 'Mobile App zum Üben von deutschem Wortschatz und Grammatik',
+      fa: 'Lorem Ipsum',
+      ar: 'Lorem Ipsum',
+      uk: 'Lorem Ipsum',
+      ru: 'Lorem Ipsum',
+      tr: 'Lorem Ipsum',
+      so: 'Lorem Ipsum',
+      fr: 'Lorem Ipsum',
+      es: 'Lorem Ipsum',
+      pl: 'Lorem Ipsum',
+      sr: 'Lorem Ipsum'
     },
     provider: 'Language Learning Hub'
   },
   {
     id: 'oeif-exam',
-    title: { en: 'ÖIF Integration Exam', de: 'ÖIF Integrationsprüfung' },
+    title: { 
+      en: 'ÖIF Integration Exam', 
+      de: 'ÖIF Integrationsprüfung',
+      fa: 'Lorem Ipsum',
+      ar: 'Lorem Ipsum',
+      uk: 'Lorem Ipsum',
+      ru: 'Lorem Ipsum',
+      tr: 'Lorem Ipsum',
+      so: 'Lorem Ipsum',
+      fr: 'Lorem Ipsum',
+      es: 'Lorem Ipsum',
+      pl: 'Lorem Ipsum',
+      sr: 'Lorem Ipsum'
+    },
     type: 'exam',
+    level: ['A2', 'B1'],
     location: 'Multiple Locations',
-    price: 2,
+    price: 150,
     online: false,
     description: {
       en: 'Official Austrian integration exam',
-      de: 'Offizielle österreichische Integrationsprüfung'
+      de: 'Offizielle österreichische Integrationsprüfung',
+      fa: 'Lorem Ipsum',
+      ar: 'Lorem Ipsum',
+      uk: 'Lorem Ipsum',
+      ru: 'Lorem Ipsum',
+      tr: 'Lorem Ipsum',
+      so: 'Lorem Ipsum',
+      fr: 'Lorem Ipsum',
+      es: 'Lorem Ipsum',
+      pl: 'Lorem Ipsum',
+      sr: 'Lorem Ipsum'
     },
     provider: 'ÖIF'
   },
   {
     id: 'german-conversation',
-    title: { en: 'German Conversation Club', de: 'Deutscher Konversationsclub' },
+    title: { 
+      en: 'German Conversation Club', 
+      de: 'Deutscher Konversationsclub',
+      fa: 'Lorem Ipsum',
+      ar: 'Lorem Ipsum',
+      uk: 'Lorem Ipsum',
+      ru: 'Lorem Ipsum',
+      tr: 'Lorem Ipsum',
+      so: 'Lorem Ipsum',
+      fr: 'Lorem Ipsum',
+      es: 'Lorem Ipsum',
+      pl: 'Lorem Ipsum',
+      sr: 'Lorem Ipsum'
+    },
     type: 'resource',
-    level: 'intermediate',
+    level: ['B1', 'B2', 'C1'],
     location: 'Vienna',
-    price: 2,
+    price: 'Free',
     online: false,
     description: {
       en: 'Weekly meetup to practice German conversation',
-      de: 'Wöchentliches Treffen zum Üben der deutschen Konversation'
+      de: 'Wöchentliches Treffen zum Üben der deutschen Konversation',
+      fa: 'Lorem Ipsum',
+      ar: 'Lorem Ipsum',
+      uk: 'Lorem Ipsum',
+      ru: 'Lorem Ipsum',
+      tr: 'Lorem Ipsum',
+      so: 'Lorem Ipsum',
+      fr: 'Lorem Ipsum',
+      es: 'Lorem Ipsum',
+      pl: 'Lorem Ipsum',
+      sr: 'Lorem Ipsum'
     },
     provider: 'Language Exchange Vienna'
   },
   {
     id: 'german-c1-innsbruck',
-    title: { en: 'German C1 Course - Innsbruck', de: 'Deutschkurs C1 - Innsbruck' },
+    title: { 
+      en: 'German C1 Course - Innsbruck', 
+      de: 'Deutschkurs C1 - Innsbruck',
+      fa: 'Lorem Ipsum',
+      ar: 'Lorem Ipsum',
+      uk: 'Lorem Ipsum',
+      ru: 'Lorem Ipsum',
+      tr: 'Lorem Ipsum',
+      so: 'Lorem Ipsum',
+      fr: 'Lorem Ipsum',
+      es: 'Lorem Ipsum',
+      pl: 'Lorem Ipsum',
+      sr: 'Lorem Ipsum'
+    },
     type: 'course',
-    level: 'advanced',
+    level: ['C1'],
     location: 'Innsbruck',
-    price: 2,
+    price: 400,
     online: false,
     duration: '16 weeks',
     description: {
       en: 'Advanced German language course for proficient speakers',
-      de: 'Fortgeschrittener Deutschkurs für erfahrene Sprecher'
+      de: 'Fortgeschrittener Deutschkurs für erfahrene Sprecher',
+      fa: 'Lorem Ipsum',
+      ar: 'Lorem Ipsum',
+      uk: 'Lorem Ipsum',
+      ru: 'Lorem Ipsum',
+      tr: 'Lorem Ipsum',
+      so: 'Lorem Ipsum',
+      fr: 'Lorem Ipsum',
+      es: 'Lorem Ipsum',
+      pl: 'Lorem Ipsum',
+      sr: 'Lorem Ipsum'
     },
     provider: 'VHS Innsbruck'
   }
@@ -188,7 +394,14 @@ const GermanLearningPage: React.FC = () => {
   const quizQuestions = [
     {
       question: language.code === 'de' ? 'Wie ist Ihr Niveau?' : 'What\'s your level?',
-      answers: ['A0', 'A1', 'A2', 'B1', 'B2', 'C1'],
+      answers: [
+        'A0 - Complete beginner', 
+        'A1 - Basic', 
+        'A2 - Elementary', 
+        'B1 - Intermediate', 
+        'B2 - Upper intermediate', 
+        'C1 - Advanced'
+      ],
       key: 'level' as keyof typeof quizAnswers
     },
     {
@@ -221,18 +434,8 @@ const GermanLearningPage: React.FC = () => {
     
     // Apply quiz filters
     if (quizAnswers.level) {
-      const levelMapping: { [key: string]: string } = {
-        'A0': 'beginner',
-        'A1': 'beginner',
-        'A2': 'beginner', 
-        'B1': 'intermediate',
-        'B2': 'intermediate',
-        'C1': 'advanced'
-      };
-      const mappedLevel = levelMapping[quizAnswers.level];
-      if (mappedLevel) {
-        results = results.filter(course => course.level === mappedLevel);
-      }
+      const levelCode = quizAnswers.level.split(' ')[0]; // Extract A0, A1, etc.
+      results = results.filter(course => course.level.includes(levelCode));
     }
     
     if (quizAnswers.format) {
@@ -259,16 +462,9 @@ const GermanLearningPage: React.FC = () => {
     
     // Apply manual filter states
     if (selectedLevels.length > 0) {
-      results = results.filter(course => {
-        if (!course.level) return false;
-        const levelMapping: { [key: string]: string[] } = {
-          'beginner': ['A0', 'A1', 'A2'],
-          'intermediate': ['B1', 'B2'],
-          'advanced': ['C1']
-        };
-        const courseLevels = levelMapping[course.level] || [];
-        return selectedLevels.some(level => courseLevels.includes(level));
-      });
+      results = results.filter(course => 
+        course.level.some(level => selectedLevels.includes(level))
+      );
     }
     
     if (selectedLocations.length > 0) {
@@ -282,7 +478,9 @@ const GermanLearningPage: React.FC = () => {
     }
     
     if (freeOnly) {
-      results = results.filter(course => course.price === 0);
+      results = results.filter(course => 
+        course.price === 'Free' || course.price === 'Kostenlos'
+      );
     }
     
     setFilteredCourses(results);
