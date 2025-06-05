@@ -38,19 +38,19 @@ interface GermanCourse {
 
 const germanCourses: GermanCourse[] = [
   {
-    id: 'german-a1-vienna',
-    title: { en: 'German A1 Course - Vienna', de: 'Deutschkurs A1 - Wien' },
+    id: 'oif_live_course',
+    title: { en: 'ÖIF Live Online German Courses', de: 'ÖIF Live Online Deutsch Kurse' },
     type: 'course',
     level: 'beginner',
-    location: 'Vienna',
-    price: 200,
-    online: false,
+    location: 'Online',
+    price: 0,
+    online: true,
     duration: '8 weeks',
     description: {
-      en: 'Foundation German language course for complete beginners',
-      de: 'Grundlegender Deutschkurs für absolute Anfänger'
+      en: 'Free German courses for beginners and advanced learners (A1-B2)',
+      de: 'Kostenlose Deutschkurse für Anfänger und Fortgeschrittene (A1-B2)'
     },
-    provider: 'VHS Vienna'
+    provider: 'Österreichsicher Integrations Fond (ÖIF)'
   },
   {
     id: 'german-a2-graz',
@@ -58,7 +58,7 @@ const germanCourses: GermanCourse[] = [
     type: 'course',
     level: 'beginner',
     location: 'Graz',
-    price: 220,
+    price: 2,
     online: false,
     duration: '10 weeks',
     description: {
@@ -72,7 +72,7 @@ const germanCourses: GermanCourse[] = [
     title: { en: 'German B1 Online Course', de: 'Deutschkurs B1 Online' },
     type: 'course',
     level: 'intermediate',
-    price: 150,
+    price: 0,
     online: true,
     duration: '12 weeks',
     description: {
@@ -87,7 +87,7 @@ const germanCourses: GermanCourse[] = [
     type: 'course',
     level: 'intermediate',
     location: 'Salzburg',
-    price: 280,
+    price: 2,
     online: false,
     duration: '14 weeks',
     description: {
@@ -101,7 +101,7 @@ const germanCourses: GermanCourse[] = [
     title: { en: 'German Practice App', de: 'Deutsche Übungs-App' },
     type: 'resource',
     level: 'beginner',
-    price: 0,
+    price: 2,
     online: true,
     description: {
       en: 'Mobile app for practicing German vocabulary and grammar',
@@ -114,7 +114,7 @@ const germanCourses: GermanCourse[] = [
     title: { en: 'ÖIF Integration Exam', de: 'ÖIF Integrationsprüfung' },
     type: 'exam',
     location: 'Multiple Locations',
-    price: 150,
+    price: 2,
     online: false,
     description: {
       en: 'Official Austrian integration exam',
@@ -128,7 +128,7 @@ const germanCourses: GermanCourse[] = [
     type: 'resource',
     level: 'intermediate',
     location: 'Vienna',
-    price: 0,
+    price: 2,
     online: false,
     description: {
       en: 'Weekly meetup to practice German conversation',
@@ -142,7 +142,7 @@ const germanCourses: GermanCourse[] = [
     type: 'course',
     level: 'advanced',
     location: 'Innsbruck',
-    price: 320,
+    price: 2,
     online: false,
     duration: '16 weeks',
     description: {

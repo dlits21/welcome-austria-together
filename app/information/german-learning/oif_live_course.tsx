@@ -20,61 +20,87 @@ const GermanA1ViennaPage: React.FC = () => {
   };
 
   const handleEnrollPress = () => {
-    Linking.openURL('https://google.com');
+    Linking.openURL('https://sprachportal.at/kurse-und-pruefungen/kursangebote/online-kurse/');
   };
 
   const content = {
     title: {
-      en: 'German A1 Course - Vienna',
-      de: 'Deutschkurs A1 - Wien'
+      en: 'ÖIF Live Online German Courses',
+      de: 'ÖIF Live Online Deutsch Kurse'
     },
     subtitle: {
-      en: 'Foundation German Language Course',
-      de: 'Grundlegender Deutschkurs'
+      en: 'Free German courses for beginners and advanced learners (A1-B2) - Daily from Monday to Saturday with qualified trainers',
+      de: 'Kostenlose Deutschkurse für Anfänger und Fortgeschrittene (A1-B2) – Täglich von Montag bis Samstag mit qualifizierten Trainerinnen und Trainern'
     },
     description: {
-      en: `This comprehensive A1 German course is designed for complete beginners who want to start learning German from scratch. The course covers all essential aspects of the German language including speaking, listening, reading, and writing.
+      en: `The ÖIF online courses offer an excellent opportunity for German learners to improve their language skills to A1 level. With daily live sessions and a variety of learning materials, the course supports the introduction to the German language and promotes integration in Austria.
 
-Course Details:
-• Duration: 8 weeks (48 hours total)
-• Schedule: Monday & Wednesday, 6:00 PM - 8:30 PM
-• Location: VHS Vienna, Urania Building
-• Class size: Maximum 12 students
-• Price: €200 (materials included)
+           Course details:
+           • Level: A1-B2
+           • Duration: Flexible, depending on individual learning progress
+           • Schedule: Monday to Saturday, different times depending on the course room
+           • Location: Online (Zoom platform)
+           • Class size: Varies, usually small groups for individual attention
+           • Childcare: N/A
+           • Price: Free of charge
+           • Provider: Public (state funded)
+           • Language support: Dari/Farsi, Arabic, English, Ukrainian
+           • Relevant: for integration agreements and language support
+           • Certificate: Yes - confirmation of participation for regular attendance
 
-What you'll learn:
-• Basic vocabulary for everyday situations
-• Essential grammar structures
-• Pronunciation and listening skills
-• Simple conversations and introductions
-• Numbers, dates, and time expressions
-• Shopping, dining, and travel phrases
 
-By the end of this course, you'll be able to introduce yourself, ask for basic information, and handle simple everyday conversations in German.`,
-      de: `Dieser umfassende A1-Deutschkurs ist für absolute Anfänger konzipiert, die Deutsch von Grund auf lernen möchten. Der Kurs deckt alle wesentlichen Aspekte der deutschen Sprache ab, einschließlich Sprechen, Hören, Lesen und Schreiben.
+           What you will learn:
+           • Basic German language skills for everyday life
+           • Communication in simple everyday situations
+           • Pronunciation and listening comprehension
+           • Simple grammar and vocabulary
+           • Preparation for integration exams
+
+           At the end of this course you will be able to
+           • Communicate in basic everyday situations in German
+           • Hold simple conversations and exchange information
+           • Understand German texts at a basic level
+           • Compose simple written messages
+           • Prepare for integration and language exams.
+
+           For more information and to register, please visit the official website of the language portal.`,
+      de: `Die ÖIF-Online-Kurse bieten eine ausgezeichnete Gelegenheit für Deutschlernende, ihre Sprachkenntnisse auf A1-Niveau zu verbessern. Mit täglichen Live-Sitzungen und vielfältigen Lernmaterialien unterstützt der Kurs den Einstieg in die deutsche Sprache und fördert die Integration in Österreich.
 
 Kursdetails:
-• Dauer: 8 Wochen (48 Stunden insgesamt)
-• Zeitplan: Montag & Mittwoch, 18:00 - 20:30 Uhr
-• Ort: VHS Wien, Urania-Gebäude
-• Klassengröße: Maximal 12 Studenten
-• Preis: €200 (Materialien inklusive)
+• Level: A1-B2
+• Flexibel, je nach individuellem Lernfortschritt
+• Zeitplan: Montag bis Samstag, verschiedene Zeiten je nach Kursraum
+• Ort: Online (Zoom-Plattform)
+• Klassengröße: Variiert, in der Regel kleine Gruppen für individuelle Betreuung
+• Kinderbetreuung: N/A
+• Preis: Kostenlos
+• Anbieter: Öffentlich (staatlich gefördert)
+• Sprachliche Unterstützung: Dari/Farsi, Arabisch, Englisch, Ukrainisch
+• Relevant: für Integrationsvereinbarungen und Sprachförderung
+• Zertifikat: Ja – Teilnahmebestätigung bei regelmäßiger Teilnahme
+
 
 Was Sie lernen werden:
-• Grundwortschatz für Alltagssituationen
-• Wesentliche Grammatikstrukturen
+• Grundlegende Deutschkenntnisse für den Alltag
+• Kommunikation in einfachen Alltagssituationen
 • Aussprache und Hörverständnis
-• Einfache Gespräche und Vorstellungen
-• Zahlen, Daten und Zeitausdrücke
-• Einkaufs-, Ess- und Reisephrasen
+• Einfache Grammatik und Wortschatz
+• Vorbereitung auf Integrationsprüfungen
 
-Am Ende dieses Kurses können Sie sich vorstellen, nach grundlegenden Informationen fragen und einfache Alltagsgespräche auf Deutsch führen.`
+Am Ende dieses Kurses können Sie:
+• Sich in grundlegenden Alltagssituationen auf Deutsch verständigen
+• Einfache Gespräche führen und Informationen austauschen
+• Deutsche Texte auf einfachem Niveau verstehen
+• Einfache schriftliche Mitteilungen verfassen
+• Sich auf Integrations- und Sprachprüfungen vorbereiten.
+
+Für weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website des Sprachportals.`
     },
-    provider: 'VHS Vienna',
+    provider: 'Österreichischer Integrations Fond (ÖIF)',
     contact: {
-      phone: '+43 1 893 00 83',
-      email: 'info@vhs.at',
-      website: 'https://www.vhs.at'
+      phone: '+43 5 0468-0',
+      email: 'info@integrationsfonds.at',
+      website: 'https://sprachportal.at/kurse-und-pruefungen/kursangebote/online-kurse/'
     }
   };
 

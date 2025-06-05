@@ -11,6 +11,8 @@ export default function RootLayout() {
         <Stack.Screen name="home" options={{ headerShown: false }} />
         <Stack.Screen name="learn" options={{ headerShown: false }} />
         <Stack.Screen name="ask" options={{ headerShown: false }} />
+        <Stack.Screen name="ask/general" options={{ headerShown: false }} />
+        <Stack.Screen name="ask/legal-support" options={{ headerShown: false }} />
         <Stack.Screen name="community" options={{ headerShown: false }} />
         <Stack.Screen name="information" options={{ headerShown: false }} />
         <Stack.Screen name="community/map" options={{ headerShown: false }} />
