@@ -44,7 +44,7 @@ export default function RootLayout() {
         <Stack.Screen name="information/political-education/civic-duties" options={{ headerShown: false }} />
         <Stack.Screen name="information/political-education/integration-process" options={{ headerShown: false }} />
         <Stack.Screen name="information/political-education/legal-system" options={{ headerShown: false }} />
-        <Stack.Screen name="information/german-learning/german-a1-vienna" options={{ headerShown: false }} />
+        <Stack.Screen name="information/german-learning/oif_live_course" options={{ headerShown: false }} />
         {/* Add other screens as needed */}
       </Stack>
     </LanguageProvider>

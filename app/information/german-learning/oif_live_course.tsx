@@ -8,7 +8,7 @@ import PageNavigation from '../../../components/PageNavigation';
 import LanguageModal from '../../../components/LanguageModal';
 import HelpModal from '../../../components/HelpModal';
 
-const GermanA1ViennaPage: React.FC = () => {
+const OIFLiveCourse: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
@@ -27,31 +27,31 @@ const GermanA1ViennaPage: React.FC = () => {
   const content = {
     title: {
       en: 'ÖIF Live Online German Courses',
-      de: 'ÖIF Live Online Deutsch Kurse',
-      fa: 'Lorem Ipsum',
-      ar: 'Lorem Ipsum',
-      uk: 'Lorem Ipsum',
+      de: 'ÖIF Live Online Deutschkurse',
       ru: 'Lorem Ipsum',
-      tr: 'Lorem Ipsum',
+      ce: 'Lorem Ipsum',
+      pr: 'Lorem Ipsum',
+      ps: 'Lorem Ipsum',
+      fa: 'Lorem Ipsum',
+      ar: 'دورات اللغة الألمانية المباشرة عبر الإنترنت ÖIF',
+      ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
-      fr: 'Lorem Ipsum',
-      es: 'Lorem Ipsum',
-      pl: 'Lorem Ipsum',
-      sr: 'Lorem Ipsum'
+      ka: 'Lorem Ipsum',
+      sq: 'Lorem Ipsum'
     },
     subtitle: {
       en: 'Free German courses for beginners and advanced learners (A1-B2) - Daily from Monday to Saturday with qualified trainers',
       de: 'Kostenlose Deutschkurse für Anfänger und Fortgeschrittene (A1-B2) – Täglich von Montag bis Samstag mit qualifizierten Trainerinnen und Trainern',
-      fa: 'Lorem Ipsum',
-      ar: 'Lorem Ipsum',
-      uk: 'Lorem Ipsum',
       ru: 'Lorem Ipsum',
-      tr: 'Lorem Ipsum',
+      ce: 'Lorem Ipsum',
+      pr: 'Lorem Ipsum',
+      ps: 'Lorem Ipsum',
+      fa: 'Lorem Ipsum',
+      ar: 'دورات اللغة الألمانية المجانية للمتعلمين المبتدئين والمتقدمين (A1-B2) - يومياً من الاثنين إلى السبت مع مدربين مؤهلين',
+      ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
-      fr: 'Lorem Ipsum',
-      es: 'Lorem Ipsum',
-      pl: 'Lorem Ipsum',
-      sr: 'Lorem Ipsum'
+      ka: 'Lorem Ipsum',
+      sq: 'Lorem Ipsum'
     },
     description: {
       en: `The ÖIF online courses offer an excellent opportunity for German learners to improve their language skills to A1 level. With daily live sessions and a variety of learning materials, the course supports the introduction to the German language and promotes integration in Austria.
@@ -116,16 +116,46 @@ Am Ende dieses Kurses können Sie:
 • Sich auf Integrations- und Sprachprüfungen vorbereiten.
 
 Für weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website des Sprachportals.`,
-      fa: 'Lorem Ipsum',
-      ar: 'Lorem Ipsum',
-      uk: 'Lorem Ipsum',
       ru: 'Lorem Ipsum',
-      tr: 'Lorem Ipsum',
+      ce: 'Lorem Ipsum',
+      pr: 'Lorem Ipsum',
+      ps: 'Lorem Ipsum',
+      fa: 'Lorem Ipsum',
+      ar: `تقدم دورات ÖIF عبر الإنترنت فرصة ممتازة لدارسي اللغة الألمانية لتحسين مهاراتهم اللغوية إلى المستوى A1. من خلال جلسات يومية مباشرة ومجموعة متنوعة من المواد التعليمية، تدعم الدورة التدريبية مقدمة اللغة الألمانية وتعزز الاندماج في النمسا.
+
+                      تفاصيل الدورة:
+                      • المستوى: A1-B2
+                      • المدة: مرنة، حسب تقدم التعلم الفردي
+                      • الجدول الزمني: من الاثنين إلى السبت، أوقات مختلفة حسب قاعة الدورة التدريبية
+                      • الموقع: عبر الإنترنت (منصة زووم)
+                      • حجم الفصل: يختلف، عادةً ما تكون مجموعات صغيرة للاهتمام الفردي
+                      • رعاية الأطفال: غير متاح
+                      • السعر: مجاناً
+                      • مقدم الخدمة: عام (ممول من الدولة)
+                      • دعم اللغات: الداري/الفارسية، العربية، العربية، الإنجليزية، الأوكرانية
+                      • ذات صلة: لاتفاقيات الاندماج والدعم اللغوي
+                      • الشهادة: نعم - تأكيد المشاركة للحضور المنتظم
+
+
+                      ما ستتعلمه:
+                      • مهارات اللغة الألمانية الأساسية للحياة اليومية
+                      • التواصل في المواقف اليومية البسيطة
+                      • النطق والاستماع والاستيعاب اللغوي
+                      • قواعد اللغة والمفردات البسيطة
+                      • التحضير لامتحانات الاندماج
+
+في نهاية هذه الدورة سوف تكون قادراً على
+           • التواصل في المواقف اليومية الأساسية باللغة الألمانية
+           • إجراء محادثات بسيطة وتبادل المعلومات
+           • فهم النصوص الألمانية بمستوى أساسي
+           • تأليف رسائل مكتوبة بسيطة
+           • الاستعداد لامتحانات الاندماج واللغة.
+
+           لمزيد من المعلومات وللتسجيل، يرجى زيارة الموقع الرسمي لبوابة اللغة.`,
+      ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
-      fr: 'Lorem Ipsum',
-      es: 'Lorem Ipsum',
-      pl: 'Lorem Ipsum',
-      sr: 'Lorem Ipsum'
+      ka: 'Lorem Ipsum',
+      sq: 'Lorem Ipsum'
     },
     provider: 'Österreichischer Integrations Fond (ÖIF)',
     contact: {
@@ -136,44 +166,44 @@ Für weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle W
     contactInfo: {
       en: 'Contact Information',
       de: 'Kontaktinformationen',
-      fa: 'Lorem Ipsum',
-      ar: 'Lorem Ipsum',
-      uk: 'Lorem Ipsum',
       ru: 'Lorem Ipsum',
-      tr: 'Lorem Ipsum',
+      ce: 'Lorem Ipsum',
+      pr: 'Lorem Ipsum',
+      ps: 'Lorem Ipsum',
+      fa: 'Lorem Ipsum',
+      ar: 'معلومات الاتصال',
+      ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
-      fr: 'Lorem Ipsum',
-      es: 'Lorem Ipsum',
-      pl: 'Lorem Ipsum',
-      sr: 'Lorem Ipsum'
+      ka: 'Lorem Ipsum',
+      sq: 'Lorem Ipsum'
     },
     location: {
       en: 'Location',
       de: 'Standort',
-      fa: 'Lorem Ipsum',
-      ar: 'Lorem Ipsum',
-      uk: 'Lorem Ipsum',
       ru: 'Lorem Ipsum',
-      tr: 'Lorem Ipsum',
+      ce: 'Lorem Ipsum',
+      pr: 'Lorem Ipsum',
+      ps: 'Lorem Ipsum',
+      fa: 'Lorem Ipsum',
+      ar: 'الموقع',
+      ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
-      fr: 'Lorem Ipsum',
-      es: 'Lorem Ipsum',
-      pl: 'Lorem Ipsum',
-      sr: 'Lorem Ipsum'
+      ka: 'Lorem Ipsum',
+      sq: 'Lorem Ipsum'
     },
     enrollNow: {
       en: 'Enroll Now',
       de: 'Jetzt anmelden',
-      fa: 'Lorem Ipsum',
-      ar: 'Lorem Ipsum',
-      uk: 'Lorem Ipsum',
       ru: 'Lorem Ipsum',
-      tr: 'Lorem Ipsum',
+      ce: 'Lorem Ipsum',
+      pr: 'Lorem Ipsum',
+      ps: 'Lorem Ipsum',
+      fa: 'Lorem Ipsum',
+      ar: 'سجّل الآن',
+      ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
-      fr: 'Lorem Ipsum',
-      es: 'Lorem Ipsum',
-      pl: 'Lorem Ipsum',
-      sr: 'Lorem Ipsum'
+      ka: 'Lorem Ipsum',
+      sq: 'Lorem Ipsum'
     }
   };
 
@@ -443,4 +473,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default GermanA1ViennaPage;
+export default OIFLiveCourse;
