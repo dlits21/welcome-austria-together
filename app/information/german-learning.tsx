@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { 
   StyleSheet, 
@@ -390,18 +389,11 @@ const GermanLearningPage: React.FC = () => {
     .filter(course => course.location)
     .map(course => course.location as string)));
 
-  // Quiz questions
+  // Quiz questions - fixed to avoid duplication
   const quizQuestions = [
     {
       question: language.code === 'de' ? 'Wie ist Ihr Niveau?' : 'What\'s your level?',
-      answers: [
-        'A0 - Complete beginner', 
-        'A1 - Basic', 
-        'A2 - Elementary', 
-        'B1 - Intermediate', 
-        'B2 - Upper intermediate', 
-        'C1 - Advanced'
-      ],
+      answers: ['A0', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'],
       key: 'level' as keyof typeof quizAnswers
     },
     {
@@ -500,8 +492,9 @@ const GermanLearningPage: React.FC = () => {
     }));
 
     // Sync quiz answers with filter states
-    if (questionKey === 'level' && typeof answer === 'string') {
-      setSelectedLevels([answer]);
+    if (questionKey === 'level') {
+      const levelCode = typeof answer === 'string' ? answer.split(' ')[0] : answer.key;
+      setSelectedLevels([levelCode]);
     } else if (questionKey === 'format') {
       if (answerValue === 'online-only') {
         setOnlineOnly(true);
@@ -531,16 +524,27 @@ const GermanLearningPage: React.FC = () => {
 
   const resetQuiz = () => {
     setQuizAnswers({ level: '', format: '', type: '' });
+    setSelectedLevels([]);
+    setOnlineOnly(false);
     setCurrentQuestion(0);
     setShowQuiz(true);
   };
 
   const toggleLevel = (level: string) => {
-    setSelectedLevels(prev => 
-      prev.includes(level) 
+    setSelectedLevels(prev => {
+      const newLevels = prev.includes(level) 
         ? prev.filter(l => l !== level)
-        : [...prev, level]
-    );
+        : [...prev, level];
+      
+      // Update quiz answer if only one level is selected
+      if (newLevels.length === 1) {
+        setQuizAnswers(prev => ({ ...prev, level: newLevels[0] }));
+      } else if (newLevels.length === 0) {
+        setQuizAnswers(prev => ({ ...prev, level: '' }));
+      }
+      
+      return newLevels;
+    });
   };
 
   const toggleLocation = (location: string) => {
@@ -556,6 +560,7 @@ const GermanLearningPage: React.FC = () => {
     setSelectedLocations([]);
     setOnlineOnly(false);
     setFreeOnly(false);
+    setQuizAnswers({ level: '', format: '', type: '' });
   };
 
   const pageTitle = language.code === 'de' ? 'Deutsch Lernen' : 'Learn German';

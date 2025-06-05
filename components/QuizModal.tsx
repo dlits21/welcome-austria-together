@@ -39,7 +39,8 @@ const QuizModal: React.FC<QuizModalProps> = ({
       'A2': { en: 'Elementary', de: 'Grundkenntnisse' },
       'B1': { en: 'Intermediate', de: 'Mittelstufe' },
       'B2': { en: 'Upper intermediate', de: 'Obere Mittelstufe' },
-      'C1': { en: 'Advanced', de: 'Fortgeschritten' }
+      'C1': { en: 'Advanced', de: 'Fortgeschritten' },
+      'C2': { en: 'Proficient', de: 'Sehr fortgeschritten' }
     };
     return descriptions[level] ? descriptions[level][languageCode as 'en' | 'de'] : level;
   };
@@ -74,10 +75,11 @@ const QuizModal: React.FC<QuizModalProps> = ({
                 const isStringAnswer = typeof answer === 'string';
                 let displayText = isStringAnswer ? answer : (languageCode === 'de' ? answer.de : answer.en);
                 
-                // Add description for level answers
+                // Add description for level answers without duplication
                 if (currentQ.key === 'level' && isStringAnswer) {
-                  const description = getLevelDescription(answer);
-                  displayText = `${answer} - ${description}`;
+                  const levelCode = answer.split(' ')[0]; // Extract A0, A1, etc.
+                  const description = getLevelDescription(levelCode);
+                  displayText = `${levelCode} - ${description}`;
                 }
                 
                 return (
