@@ -101,7 +101,7 @@ const germanCourses: GermanCourse[] = [
     forWomen: false,
     forYoungMigrants: false,
     childcare: false,
-    integrationRequirement: true
+    integrationRequirement: false
   },
   {
       id: 'oif_offline_course',
@@ -268,7 +268,7 @@ const germanCourses: GermanCourse[] = [
     provider: 'VHS Wien',
     forWomen: false,
     forYoungMigrants: false,
-    childcare: false,
+    childcare: true,
     integrationRequirement: false
 },
 {
@@ -744,13 +744,13 @@ description: {
      sr: 'Lorem Ipsum'
    },
    type: 'course',
-   level: ['A1', 'A2', 'B1', 'B2'],
+   level: ['A0', 'A1', 'A2', 'B1', 'B2'],
    location: 'Vienna',
    price: 'Free',
    online: false,
    description: {
-     en: 'Supportive German courses for asylum seekers and migrants',
-     de: 'Unterstützende Deutschkurse für Asylsuchende und Migrant:innen',
+     en: 'Free German courses from literacy to B2 – low-threshold and individual',
+     de: 'Kostenlose Deutschkurse von Alphabetisierung bis B2 – Niedrigschwellig und individuell',
      fa: 'Lorem Ipsum',
      ar: 'Lorem Ipsum',
      uk: 'Lorem Ipsum',
@@ -970,7 +970,7 @@ integrationRequirement: true
    provider: 'Diakonie',
    forWomen: false,
    forYoungMigrants: false,
-   childcare: false,
+   childcare: true,
    integrationRequirement: false
 },
 {
@@ -1132,7 +1132,7 @@ integrationRequirement: true
      sr: 'Lorem Ipsum'
    },
    provider: 'Miteinander Lernen',
-   forWomen: false,
+   forWomen: true,
    forYoungMigrants: false,
    childcare: true,
    integrationRequirement: false
@@ -1216,7 +1216,7 @@ integrationRequirement: true
    provider: 'BAJU',
    forWomen: false,
    forYoungMigrants: true,
-   childcare: false,
+   childcare: true,
    integrationRequirement: false
 },
 {
@@ -1257,7 +1257,7 @@ integrationRequirement: true
    provider: 'Peregrina',
    forWomen: true,
    forYoungMigrants: false,
-   childcare: false,
+   childcare: true,
    integrationRequirement: false
 },
 {
@@ -1339,7 +1339,7 @@ integrationRequirement: true
    provider: 'Orient Express',
    forWomen: true,
    forYoungMigrants: false,
-   childcare: false,
+   childcare: true,
    integrationRequirement: false
 },
 ];

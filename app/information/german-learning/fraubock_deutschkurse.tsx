@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, TouchableOpacity, Linking } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -6,17 +7,19 @@ import { languages } from '../../../data/languages/common';
 import PageNavigation from '../../../components/PageNavigation';
 import LanguageModal from '../../../components/LanguageModal';
 import HelpModal from '../../../components/HelpModal';
-import { getLocation, getEnrollNow, getContactInformation } from '../../../data/languages/common';
+import {getLocation, getEnrollNow, getContactInformation} from '../../../data/languages/common';
 
-const FrauBockDeutschkurse: React.FC = () => {
+const OIFOfflineCourse: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
-
+  
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
-  const toggleSound = () => setSoundEnabled(!soundEnabled);
+  const toggleSound = () => {
+    setSoundEnabled(!soundEnabled);
+  };
 
   const handleEnrollPress = () => {
     Linking.openURL('https://www.fraubock.at/de/so-helfen-wir/bildung/deutschkurse');
@@ -26,76 +29,161 @@ const FrauBockDeutschkurse: React.FC = () => {
     title: {
       en: 'Frau Bock - German Courses',
       de: 'Frau Bock - Deutschkurse',
+      ru: 'Lorem Ipsum',
+      ce: 'Lorem Ipsum',
+      pr: 'Lorem Ipsum',
+      ps: 'Lorem Ipsum',
+      fa: 'Lorem Ipsum',
+      ar: 'Lorem Ipsum',
+      ku: 'Lorem Ipsum',
+      so: 'Lorem Ipsum',
+      ka: 'Lorem Ipsum',
+      sq: 'Lorem Ipsum'
     },
     subtitle: {
-      en: 'Supportive German courses for asylum seekers and migrants',
-      de: 'Unterstützende Deutschkurse für Asylsuchende und Migrant:innen',
+      en: 'Free German courses from literacy to B2 – low-threshold and individual',
+      de: 'Kostenlose Deutschkurse von Alphabetisierung bis B2 – Niedrigschwellig und individuell',
+      ru: 'Lorem Ipsum',
+      ce: 'Lorem Ipsum',
+      pr: 'Lorem Ipsum',
+      ps: 'Lorem Ipsum',
+      fa: 'Lorem Ipsum',
+      ar: 'Lorem Ipsum',
+      ku: 'Lorem Ipsum',
+      so: 'Lorem Ipsum',
+      ka: 'Lorem Ipsum',
+      sq: 'Lorem Ipsum'
     },
     description: {
-      en: `Frau Bock offers free German courses and learning support for people who are excluded from the regular education system. These courses are aimed particularly at asylum seekers and undocumented individuals who want to improve their language skills in a safe and respectful environment.
+      en: `The Ute Bock Education Center has been offering free German courses for refugees since 2003. The courses begin with literacy and extend up to language level B2. They are specifically designed for a low-threshold entry, allowing everyone to learn at their own pace. The course schedule allows for individualized support to meet diverse needs. Registration takes place in person, and there is a waiting period of approximately one month before the placement interview. Students at the Education Center have the opportunity to take ÖSD exams at reduced rates. They can also take the ÖIF exam at A2 or B2 levels, provided they are not permitted to take an exam at a subsidized institution.
 
-Course details:
-• Level: A1 and up
-• Duration: Varies
-• Schedule: Flexible; mornings and afternoons
-• Location: Vienna
+Course Details:
+• Level: A0–B2
+• Duration: Course blocks with 2 units per week
+• Schedule: Ongoing, join at any time
+• Location: Inzersdorfer Straße 64, 1100 Vienna
+• Class Size: Small Groups
+• Childcare: N/A
 • Price: Free
-• Target group: Asylum seekers and people without access to public courses
-• Language support: Available
-• Certificate: Participation confirmation
+• Provider: NGO (Ute Bock Association)
+• Language Support: German, English, Arabic, Farsi, Russian
+• Relevance: Yes – relevant for integration requirements in Austria
+• Certificate: Yes – confirmation of participation; Preparation for ÖSD and ÖIF exams
 
-The courses not only teach the German language, but also provide information about everyday life in Austria and empower participants in their daily interactions.
+What you will learn:
+• Basic German language skills (literacy up to B2)
+• Reading and writing
+• Learning strategies and techniques
+• Everyday mathematics (e.g., handling money, time, measurements)
+• Digital skills (e.g., using a smartphone and PC)
 
-Visit the website of Frau Bock for more information and registration.`,
-      de: `Frau Bock bietet kostenlose Deutschkurse und Lernhilfe für Menschen an, die vom regulären Bildungssystem ausgeschlossen sind. Die Kurse richten sich besonders an Asylsuchende und undokumentierte Personen, die in einem sicheren und respektvollen Rahmen ihre Sprachkenntnisse verbessern möchten.
+By the end of this course, you will be able to:
+• Communicate effectively in everyday German situations
+• Understand and compose simple reading and writing texts
+• Apply basic mathematical skills in everyday life
+• Use digital devices safely
+• Learn independently and organize your learning processes
+
+Further information and registration options can be found on the official website.`,
+      de: `Das Bildungszentrum Ute Bock bietet seit 2003 kostenlose Deutschkurse für geflüchtete Menschen an. Die Kurse beginnen bei der Alphabetisierung und reichen bis zum Sprachniveau B2. Sie sind speziell auf einen niedrigschwelligen Einstieg ausgelegt, sodass jede*r in seinem oder ihrem eigenen Tempo lernen kann. Der Kursplan ermöglicht eine individuelle Betreuung, um den unterschiedlichen Bedürfnissen gerecht zu werden. Die Anmeldung erfolgt persönlich vor Ort, und es gibt eine Wartezeit von etwa einem Monat bis zum Einstufungsgespräch. Für Schüler*innen des Bildungszentrums besteht die Möglichkeit, ÖSD-Prüfungen zu vergünstigten Konditionen abzulegen. Außerdem können sie die ÖIF-Prüfung auf A2- oder B2-Niveau ablegen, sofern sie bei keiner geförderten Stelle eine Prüfung ablegen dürfen.
 
 Kursdetails:
-• Level: A1 und höher
-• Dauer: Variiert
-• Zeitplan: Flexibel, vormittags und nachmittags
-• Ort: Wien
+• Niveau: A0–B2
+• Dauer: Kursblöcke mit je 2 Einheiten pro Woche
+• Zeitplan: Fortlaufend, Einstieg jederzeit möglich
+• Ort: Inzersdorfer Straße 64, 1100 Wien
+• Kursgröße: Kleine Gruppen
+• Kinderbetreuung: N/A
 • Preis: Kostenlos
-• Zielgruppe: Asylsuchende und Personen ohne Zugang zu öffentlichen Kursen
-• Sprachunterstützung: Verfügbar
-• Zertifikat: Teilnahmebestätigung
+• Anbieter: NGO (Verein Ute Bock)
+• Sprachunterstützung: Deutsch, Englisch, Arabisch, Farsi, Russisch
+• Relevanz: Ja – relevant für Integrationsanforderungen in Österreich
+• Zertifikat: Ja – Teilnahmebestätigung; Vorbereitung auf ÖSD- und ÖIF-Prüfungen
 
-Neben der Sprache vermittelt der Kurs auch Wissen über den Alltag in Österreich und stärkt die Teilnehmenden in ihrer Selbstbestimmung.
+Was Sie lernen:
+• Grundlegende Deutschkenntnisse (Alphabetisierung bis B2)
+• Lesen und Schreiben
+• Lernstrategien und Lerntechniken
+• Alltagsmathematik (z.B. Umgang mit Geld, Zeit, Maße)
+• Digitale Kompetenzen (z. B. Nutzung von Smartphone und PC)
 
-Besuchen Sie die Website von Frau Bock für weitere Informationen und zur Anmeldung.`,
+Am Ende dieses Kurses können Sie:
+• Effektiv in Alltagssituationen auf Deutsch kommunizieren
+• Lesen und Schreiben von einfachen Texten zu verstehen und zu verfassen
+• Mathematische Grundkenntnisse im Alltag anzuwenden
+• Digitale Geräte sicher zu nutzen
+• Selbstständig zu lernen und Ihre Lernprozesse zu organisieren
+
+Weitere Informationen und die Möglichkeit zur Anmeldung finden Sie auf der offiziellen Website.`,
+      ru: 'Lorem Ipsum',
+      ce: 'Lorem Ipsum',
+      pr: 'Lorem Ipsum',
+      ps: 'Lorem Ipsum',
+      fa: 'Lorem Ipsum',
+      ar: 'Lorem Ipsum',
+      ku: 'Lorem Ipsum',
+      so: 'Lorem Ipsum',
+      ka: 'Lorem Ipsum',
+      sq: 'Lorem Ipsum'
     },
     provider: 'Verein Ute Bock',
     contact: {
       phone: '+43 1 929 24 24 - 0',
       email: 'info@fraubock.at',
-      website: 'https://www.fraubock.at/de/so-helfen-wir/bildung/deutschkurse',
+      website: 'https://www.fraubock.at/de/so-helfen-wir/bildung/deutschkurse'
     },
   };
 
-  const getCurrentContent = (obj: any) => obj[currentLanguage] || obj.en;
+  const getCurrentContent = (contentObj: any) => {
+    return contentObj[currentLanguage] || contentObj.en;
+  };
 
   return (
     <SafeAreaView style={styles.container}>
-      <PageNavigation
+      <PageNavigation 
         toggleSound={toggleSound}
         soundEnabled={soundEnabled}
         showLanguageModal={() => setShowLanguageModal(true)}
         showHelpModal={() => setShowHelpModal(true)}
       />
-
+      
       <ScrollView style={styles.content}>
-        <Text style={styles.title}>{getCurrentContent(content.title)}</Text>
-        <Text style={styles.subtitle}>{getCurrentContent(content.subtitle)}</Text>
-
+        <Text style={styles.title}>
+          {getCurrentContent(content.title)}
+        </Text>
+        
+        <Text style={styles.subtitle}>
+          {getCurrentContent(content.subtitle)}
+        </Text>
+        
         <View style={styles.providerSection}>
-          <Text style={styles.providerLabel}>{currentLanguage === 'de' ? 'Anbieter:' : 'Provider:'}</Text>
+          <Text style={styles.providerLabel}>
+            {currentLanguage === 'de' ? 'Anbieter:' : 'Provider:'}
+          </Text>
           <Text style={styles.providerName}>{content.provider}</Text>
         </View>
-
-        <Text style={styles.description}>{getCurrentContent(content.description)}</Text>
-
+        
+        <Text style={styles.description}>
+          {getCurrentContent(content.description)}
+        </Text>
+        
+        {/* Contact Information */}
         <View style={styles.contactSection}>
-          <Text style={styles.sectionTitle}>{getContactInformation(currentLanguage)}</Text>
-          <TouchableOpacity
+          <Text style={styles.sectionTitle}>
+            {getContactInformation(currentLanguage)}
+          </Text>
+          
+          <View style={styles.contactItem}>
+            <MaterialIcons name="phone" size={20} color="#3B82F6" />
+            <Text style={styles.contactText}>{content.contact.phone}</Text>
+          </View>
+          
+          <View style={styles.contactItem}>
+            <MaterialIcons name="email" size={20} color="#3B82F6" />
+            <Text style={styles.contactText}>{content.contact.email}</Text>
+          </View>
+          
+          <TouchableOpacity 
             style={styles.contactItem}
             onPress={() => Linking.openURL(content.contact.website)}
           >
@@ -105,36 +193,211 @@ Besuchen Sie die Website von Frau Bock für weitere Informationen und zur Anmeld
           </TouchableOpacity>
         </View>
 
+        {/* Location Map */}
         <View style={styles.mapSection}>
-          <Text style={styles.sectionTitle}>{getLocation(currentLanguage)}</Text>
+          <Text style={styles.sectionTitle}>
+            {getLocation(currentLanguage)}
+          </Text>
           <View style={styles.mapContainer}>
             <View style={styles.mapPlaceholder}>
               <MaterialIcons name="location-on" size={48} color="#3B82F6" />
               <Text style={styles.mapPlaceholderText}>
                 {currentLanguage === 'de' ? 'Karte wird geladen...' : 'Map loading...'}
               </Text>
-              <Text style={styles.mapLocationText}>Frau Bock, Vienna</Text>
+              <Text style={styles.mapLocationText}>VHS Vienna, Urania Building</Text>
             </View>
           </View>
         </View>
-
+        
+        {/* Tags */}
         <View style={styles.tagsSection}>
-          <View style={styles.tag}><Text style={styles.tagText}>A1</Text></View>
-          <View style={styles.tag}><Text style={styles.tagText}>{currentLanguage === 'de' ? 'kostenlos' : 'free'}</Text></View>
-          <View style={styles.tag}><Text style={styles.tagText}>Vienna</Text></View>
+          <View style={styles.tag}>
+            <Text style={styles.tagText}>A1</Text>
+          </View>
+          <View style={styles.tag}>
+            <Text style={styles.tagText}>
+              {currentLanguage === 'de' ? 'Anfänger' : 'Beginner'}
+            </Text>
+          </View>
+          <View style={styles.tag}>
+            <Text style={styles.tagText}>Vienna</Text>
+          </View>
+          <View style={styles.tag}>
+            <Text style={styles.tagText}>8 {currentLanguage === 'de' ? 'Wochen' : 'weeks'}</Text>
+          </View>
+          <View style={styles.tag}>
+            <Text style={styles.tagText}>€200</Text>
+          </View>
         </View>
-
+        
+        {/* Enroll Button */}
         <TouchableOpacity style={styles.enrollButton} onPress={handleEnrollPress}>
-          <Text style={styles.enrollButtonText}>{getEnrollNow(currentLanguage)}</Text>
+          <Text style={styles.enrollButtonText}>
+            {getEnrollNow(currentLanguage)}
+          </Text>
           <MaterialIcons name="arrow-forward" size={20} color="#fff" />
         </TouchableOpacity>
       </ScrollView>
-
-      <LanguageModal visible={showLanguageModal} onClose={() => setShowLanguageModal(false)} languageCode={language.code} />
-      <HelpModal visible={showHelpModal} onClose={() => setShowHelpModal(false)} languageCode={language.code} />
+      
+      <LanguageModal 
+        visible={showLanguageModal} 
+        onClose={() => setShowLanguageModal(false)} 
+        languageCode={language.code}
+      />
+      
+      <HelpModal
+        visible={showHelpModal}
+        onClose={() => setShowHelpModal(false)}
+        languageCode={language.code}
+      />
     </SafeAreaView>
   );
 };
 
-const styles = StyleSheet.create({});
-export default FrauBockDeutschkurse;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  content: {
+    flex: 1,
+    padding: 16,
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    marginBottom: 8,
+    color: '#1f2937',
+  },
+  subtitle: {
+    fontSize: 18,
+    fontWeight: '600',
+    color: '#4b5563',
+    marginBottom: 16,
+  },
+  providerSection: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 20,
+    backgroundColor: '#f8fafc',
+    padding: 12,
+    borderRadius: 8,
+  },
+  providerLabel: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#374151',
+    marginRight: 8,
+  },
+  providerName: {
+    fontSize: 16,
+    color: '#3B82F6',
+    fontWeight: '600',
+  },
+  description: {
+    fontSize: 16,
+    lineHeight: 24,
+    color: '#374151',
+    marginBottom: 32,
+  },
+  contactSection: {
+    marginBottom: 32,
+    backgroundColor: '#f8fafc',
+    padding: 16,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
+  },
+  sectionTitle: {
+    fontSize: 20,
+    fontWeight: '600',
+    color: '#1f2937',
+    marginBottom: 16,
+  },
+  contactItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 12,
+  },
+  contactText: {
+    fontSize: 16,
+    color: '#374151',
+    marginLeft: 12,
+    flex: 1,
+  },
+  linkText: {
+    color: '#3B82F6',
+    textDecorationLine: 'underline',
+  },
+  tagsSection: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginBottom: 32,
+  },
+  tag: {
+    backgroundColor: '#e0f2fe',
+    borderRadius: 16,
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    marginRight: 8,
+    marginBottom: 8,
+    borderWidth: 1,
+    borderColor: '#0284c7',
+  },
+  tagText: {
+    fontSize: 14,
+    color: '#0284c7',
+    fontWeight: '500',
+  },
+  enrollButton: {
+    backgroundColor: '#3B82F6',
+    borderRadius: 12,
+    paddingVertical: 16,
+    paddingHorizontal: 24,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 32,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  enrollButtonText: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: '600',
+    marginRight: 8,
+  },
+  mapSection: {
+    marginBottom: 32,
+  },
+  mapContainer: {
+    borderRadius: 12,
+    overflow: 'hidden',
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
+  },
+  mapPlaceholder: {
+    height: 200,
+    backgroundColor: '#f8fafc',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+  },
+  mapPlaceholderText: {
+    fontSize: 16,
+    color: '#6b7280',
+    marginTop: 8,
+    fontWeight: '500',
+  },
+  mapLocationText: {
+    fontSize: 14,
+    color: '#374151',
+    marginTop: 4,
+    textAlign: 'center',
+  },
+});
+
+export default OIFOfflineCourse;
