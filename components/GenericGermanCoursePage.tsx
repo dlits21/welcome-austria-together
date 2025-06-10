@@ -7,7 +7,8 @@ import { languages } from '../data/languages/common';
 import PageNavigation from './PageNavigation';
 import LanguageModal from './LanguageModal';
 import HelpModal from './HelpModal';
-import { getEnrollNow, getContactInformation } from '../data/languages/common';
+import MapView from './MapView';
+import { getEnrollNow, getContactInformation, getLocation } from '../data/languages/common';
 
 interface CourseData {
   id: string;
@@ -22,7 +23,7 @@ interface CourseData {
   };
   courseDetails: {
     level: string;
-    duration: string;
+    duration?: string;
     price: string;
     location: string;
     certificate: string;
@@ -31,6 +32,11 @@ interface CourseData {
   tags: string[];
   hasMap: boolean;
   isResource: boolean;
+  address?: string;
+  coordinates?: {
+    lat: number;
+    lng: number;
+  };
 }
 
 interface GenericGermanCoursePageProps {
@@ -143,6 +149,20 @@ const GenericGermanCoursePage: React.FC<GenericGermanCoursePageProps> = ({ cours
             </TouchableOpacity>
           </View>
         </View>
+
+        {/* Map Section - Only for courses with hasMap: true */}
+        {courseData.hasMap && (courseData.address || courseData.coordinates) && (
+          <View style={styles.mapSection}>
+            <Text style={styles.sectionTitle}>
+              {getLocation(currentLanguage)}
+            </Text>
+            <MapView 
+              address={courseData.address}
+              coordinates={courseData.coordinates}
+              providerName={courseData.provider}
+            />
+          </View>
+        )}
 
         {/* Tags */}
         <View style={styles.tagsSection}>

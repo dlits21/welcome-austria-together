@@ -1,3 +1,4 @@
+
 {
   "ams_integration": {
     "id": "ams_integration",
@@ -15,7 +16,7 @@
       "de": "Das Integrationsjahr ist ein Programm des Arbeitsmarktservice Österreich (AMS), das darauf abzielt, Asylberechtigten, subsidiär Schutzberechtigten und bestimmten Asylwerber*innen mit hoher Anerkennungswahrscheinlichkeit eine strukturierte Unterstützung bei der Integration in den österreichischen Arbeitsmarkt zu bieten. Das Programm kombiniert Sprachförderung, berufliche Orientierung und praktische Erfahrungen, um die Chancen auf eine nachhaltige Erwerbstätigkeit zu erhöhen.\n\nKursdetails:\n• Level: A1-C1\n• Dauer: Maximal 12 Monate; bereits begonnene Maßnahmen können über das Jahr hinaus abgeschlossen werden\n• Zeitplan: Verschiedene Module, angepasst an individuelle Bedürfnisse\n• Ort: AMS Geschäftsstellen in ganz Österreich\n• Klassengröße: Kleine Gruppen für individuelle Betreuung\n• Kinderbetreuung: N/A\n• Preis: Kostenlos für Teilnehmer*innen\n• Anbieter: Öffentlich (staatlich gefördert)\n• Sprachliche Unterstützung: Deutsch, Englisch, Arabisch, Farsi, Französisch\n• Relevant: für Integrationsvereinbarungen und Sprachförderung\n• Zertifikat: Ja – Teilnahmebestätigung mit Integrationskarte\n\n\nWas Sie lernen werden:\n•  Deutschkenntnisse auf A2 bis C1 Niveau\n•  Berufliche Orientierung und Bewerbungstraining\n•  Erkennen und Nutzen individueller Kompetenzen\n•  Praktische Erfahrungen in verschiedenen Berufsfeldern\n•  Integration in den österreichischen Arbeitsmarkt\n\nAm Ende dieses Kurses können Sie:\n• Sich sicher in der deutschen Sprache verständigen\n• Eine klare berufliche Orientierung und Perspektive entwickeln\n• Erfolgreich Bewerbungen verfassen und Vorstellungsgespräche führen\n• Praktische Erfahrungen in einem Berufsfeld sammeln\n• Eine nachhaltige Integration in den Arbeitsmarkt erreichen\n\nFür weitere Informationen und zur Anmeldung wenden Sie sich bitte an Ihre zuständige AMS Beraterin oder Ihren zuständigen AMS Berater. Gemeinsam werden die Voraussetzungen geprüft und ein individueller Ablaufplan für Ihr Integrationsjahr erstellt."
     },
     "contact": {
-      "phone": "+43 50 904 222 (AMS Serviceline)",
+      "phone": "+43 50 904 222",
       "email": "service@ams.at",
       "website": "https://www.ams.at/arbeitsuchende/arbeiten-in-oesterreich-und-der-eu/das-integrationsjahr"
     },
@@ -28,7 +29,12 @@
     },
     "tags": ["A1-C1", "Free", "Online", "Public", "With Certificate"],
     "hasMap": true,
-    "isResource": false
+    "isResource": false,
+    "address": "Treustraße 35-43, 1200 Vienna, Austria",
+    "coordinates": {
+      "lat": 48.2364,
+      "lng": 16.3831
+    }
   },
   "duolingo": {
     "id": "duolingo",

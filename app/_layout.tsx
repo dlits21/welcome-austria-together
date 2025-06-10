@@ -46,6 +46,12 @@ export default function RootLayout() {
         <Stack.Screen name="information/political-education/civic-duties" options={{ headerShown: false }} />
         <Stack.Screen name="information/political-education/integration-process" options={{ headerShown: false }} />
         <Stack.Screen name="information/political-education/legal-system" options={{ headerShown: false }} />
+        <Stack.Screen name="information/german-learning/ams_integration" options={{ headerShown: false }} />
+        <Stack.Screen name="information/german-learning/duolingo" options={{ headerShown: false }} />
+        <Stack.Screen name="information/german-learning/babbel" options={{ headerShown: false }} />
+        <Stack.Screen name="information/german-learning/deutschlernerblog_course" options={{ headerShown: false }} />
+        <Stack.Screen name="information/german-learning/don_bosco" options={{ headerShown: false }} />
+        <Stack.Screen name="information/german-learning/caritas_vienna" options={{ headerShown: false }} />
         {/* Add other screens as needed */}
       </Stack>
     </LanguageProvider>
