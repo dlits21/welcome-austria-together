@@ -460,10 +460,57 @@ export const getLocation = (code: string): string => {
     switch (code) {
         case 'de': return 'Standort';
         case 'en': return 'Location';
-        // ...other languages
+        case 'ru': return 'Расположение';
+        case 'ce': return 'Жоьа';
+        case 'pr': return 'محل'; 
+        case 'ps': return 'ځای';
+        case 'fa': return 'مکان';
+        case 'ar': return 'الموقع';
+        case 'ku': return 'Cîh';
+        case 'so': return 'Goobta';
+        case 'ka': return 'მდებარეობა';
+        case 'sq': return 'Vendndodhja';
         default: return 'Location';
     }
 };
+
+export const getContactInformation = (code: string): string => {
+    switch (code) {
+        case 'de': return 'Konaktinformationen';
+        case 'en': return 'Contact Information';
+        case 'ru': return 'Контактная информация';
+        case 'ce': return 'Хьоьжа кхети';
+        case 'pr': return 'معلومات تماس';
+        case 'ps': return 'د اړیکې معلومات';
+        case 'fa': return 'اطلاعات تماس';
+        case 'ar': return 'معلومات الاتصال';
+        case 'ku': return 'Agahiyên Têkiliyê';
+        case 'so': return 'Macluumaadka Xiriirka';
+        case 'ka': return 'საკონტაქტო ინფორმაცია';
+        case 'sq': return 'Informacione Kontakti';
+        default: return 'Contact Information';
+    }
+};
+
+
+export const getEnrollNow = (code: string): string => {
+    switch (code) {
+        case 'de': return 'Jetzt anmelden';
+        case 'en': return 'Enroll Now';
+        case 'ru': return 'Записаться сейчас';
+        case 'ce': return 'Дайм лоьлахь';
+        case 'pr': return 'همین حالا ثبت نام کنید';
+        case 'ps': return 'اوس ثبت کړئ';
+        case 'fa': return 'همین حالا ثبت نام کنید';
+        case 'ar': return 'سجّل الآن';
+        case 'ku': return 'Niha Qeyd Bike';
+        case 'so': return 'Hadda isdiiwaangeli';
+        case 'ka': return 'დარეგისტრირდით ახლავე';
+        case 'sq': return 'Regjistrohu Tani';
+        default: return 'Enroll Now';
+    }
+};
+
 
 export const getFormat = (code: string): string => {
     switch (code) {

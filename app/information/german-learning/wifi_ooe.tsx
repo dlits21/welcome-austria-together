@@ -9,7 +9,7 @@ import LanguageModal from '../../../components/LanguageModal';
 import HelpModal from '../../../components/HelpModal';
 import {getLocation, getEnrollNow, getContactInformation} from '../../../data/languages/common';
 
-const OIFLiveCourse: React.FC = () => {
+const OIFOfflineCourse: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
@@ -22,147 +22,115 @@ const OIFLiveCourse: React.FC = () => {
   };
 
   const handleEnrollPress = () => {
-    Linking.openURL('https://sprachportal.at/kurse-und-pruefungen/kursangebote/online-kurse/');
+    Linking.openURL('https://www.wifi-ooe.at/k/deutsch-integrationskurse');
   };
 
   const content = {
     title: {
-      en: 'ÖIF Live Online German Courses',
-      de: 'ÖIF Live Online Deutschkurse',
+      en: 'WIFI Upper Austria - German integration courses',
+      de: 'WIFI Oberösterreich - Deutsch Integrationskurse',
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',
       ps: 'Lorem Ipsum',
       fa: 'Lorem Ipsum',
-      ar: 'دورات اللغة الألمانية المباشرة عبر الإنترنت ÖIF',
+      ar: 'Lorem Ipsum',
       ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
       ka: 'Lorem Ipsum',
       sq: 'Lorem Ipsum'
     },
     subtitle: {
-      en: 'Free German courses for beginners and advanced learners (A1-B2) - Daily from Monday to Saturday with qualified trainers',
-      de: 'Kostenlose Deutschkurse für Anfänger und Fortgeschrittene (A1-B2) – Täglich von Montag bis Samstag mit qualifizierten Trainerinnen und Trainern',
+      en: 'Learning German for integration, residence permits and citizenship',
+      de: 'Deutsch lernen für Integration, Aufenthaltstitel und Staatsbürgerschaft',
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',
       ps: 'Lorem Ipsum',
       fa: 'Lorem Ipsum',
-      ar: 'دورات اللغة الألمانية المجانية للمتعلمين المبتدئين والمتقدمين (A1-B2) - يومياً من الاثنين إلى السبت مع مدربين مؤهلين',
+      ar: 'Lorem Ipsum',
       ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
       ka: 'Lorem Ipsum',
       sq: 'Lorem Ipsum'
     },
     description: {
-      en: `The ÖIF online courses offer an excellent opportunity for German learners to improve their language skills to A1 level. With daily live sessions and a variety of learning materials, the course supports the introduction to the German language and promotes integration in Austria.
+      en: `The German integration courses at WIFI Upper Austria are aimed at people who want to improve their German language skills as part of the integration agreement. The courses cover levels A1 to B2 and include language lessons as well as content on Austrian society and the legal system. Upon successful completion, participants can take the ÖIF integration exam. The courses are offered in various cities in Upper Austria, including Linz, Wels, Steyr and Gmunden.
 
 Course details:
 • Level: A1-B2
-• Duration: Flexible, depending on individual learning progress
-• Schedule: Monday to Saturday, different times depending on the course room
-• Location: Online (Zoom platform)
-• Class size: Varies, usually small groups for individual attention
+• Duration: Varies depending on the course level; e.g. A1 course: 52 teaching units
+• Schedule: Mon-Thu, 8:00-12:15 (depending on course)
+• Location: WIFI Linz, Wiener Straße 150, 4021 Linz (other locations: Wels, Steyr, Gmunden)
+• Class size: Small groups for individual support
 • Childcare: N/A
-• Price: Free of charge
-• Provider: Public (state funded)
-• Language support: Dari/Farsi, Arabic, English, Ukrainian
-• Relevant: for integration agreements and language support
-• Certificate: Yes - confirmation of participation for regular attendance
+• Price: € 490.00 incl. documents; deductible between € 121.00 and € 290.00 (if you meet the eligibility requirements)
+• Provider: Public (state-funded by the Austrian Integration Fund)
+• Language support: Serbian, Croatian, Turkish, English
+• Relevant: Preparation for integration exams
+• Certificate: Yes - confirmation of participation with ÖIF certificate
 
 
 What you will learn:
-• Basic German language skills for everyday life
-• Communication in simple everyday situations
+• Basic to advanced German language skills
+• Communication in everyday situations
 • Pronunciation and listening comprehension
-• Simple grammar and vocabulary
-• Preparation for integration exams
+• Simple to complex grammar and vocabulary
+• Preparation for the ÖIF integration exam
 
-At the end of this course you will be able to
-• Communicate in basic everyday situations in German
-• Hold simple conversations and exchange information
-• Understand German texts at a basic level
-• Compose simple written messages
-• Prepare for integration and language exams.
 
-For more information and to register, please visit the official website of the language portal.`,
-      de: `Die ÖIF-Online-Kurse bieten eine ausgezeichnete Gelegenheit für Deutschlernende, ihre Sprachkenntnisse auf A1-Niveau zu verbessern. Mit täglichen Live-Sitzungen und vielfältigen Lernmaterialien unterstützt der Kurs den Einstieg in die deutsche Sprache und fördert die Integration in Österreich.
+
+At the end of this course you will be able to:
+• Communicate confidently in the German language
+• Understand and apply the principles of the Austrian legal and social order
+• Successfully pass the integration exam
+
+For more information and to register, please visit the official website of WIFI Upper Austria.`,
+      de: `Die Deutsch Integrationskurse am WIFI Oberösterreich richten sich an Personen, die ihre Deutschkenntnisse im Rahmen der Integrationsvereinbarung verbessern möchten. Die Kurse decken die Niveaus A1 bis B2 ab und beinhalten sowohl Sprachunterricht als auch Inhalte zur österreichischen Gesellschaft und Rechtsordnung. Mit erfolgreichem Abschluss können Teilnehmer*innen die ÖIF-Integrationsprüfung ablegen. Die Kurse werden in verschiedenen Städten Oberösterreichs angeboten, darunter Linz, Wels, Steyr und Gmunden.
 
 Kursdetails:
 • Level: A1-B2
-• Dauer: Flexibel, je nach individuellem Lernfortschritt
-• Zeitplan: Montag bis Samstag, verschiedene Zeiten je nach Kursraum
-• Ort: Online (Zoom-Plattform)
-• Klassengröße: Variiert, in der Regel kleine Gruppen für individuelle Betreuung
+• Dauer: Variiert je nach Kursniveau; z.B. A1-Kurs: 52 Unterrichtseinheiten
+• Zeitplan: Mo–Do, 8:00–12:15 Uhr (je nach Kurs)
+• Ort: WIFI Linz, Wiener Straße 150, 4021 Linz (weitere Standorte: Wels, Steyr, Gmunden)
+• Klassengröße: Kleine Gruppen für individuelle Betreuung
 • Kinderbetreuung: N/A
-• Preis: Kostenlos
-• Anbieter: Öffentlich (staatlich gefördert)
-• Sprachliche Unterstützung: Dari/Farsi, Arabisch, Englisch, Ukrainisch
-• Relevant: für Integrationsvereinbarungen und Sprachförderung
-• Zertifikat: Ja – Teilnahmebestätigung bei regelmäßiger Teilnahme
+• Preis: 490,00 € inkl. Unterlagen; Selbstbehalt zwischen 121,00 € und 290,00 € (bei Erfüllung der Fördervoraussetzungen)
+• Anbieter: Öffentlich (staatlich gefördert durch den Österreichischen Integrationsfonds)
+• Sprachliche Unterstützung: Serbisch, Kroatisch, Türkisch, Englisch
+• Relevant: Vorbereitung für Integrationsprüfungen
+• Zertifikat: Ja – Teilnahmebestätigung mit ÖIF-Zertifikat
 
 
 Was Sie lernen werden:
-• Grundlegende Deutschkenntnisse für den Alltag
-• Kommunikation in einfachen Alltagssituationen
-• Aussprache und Hörverständnis
-• Einfache Grammatik und Wortschatz
-• Vorbereitung auf Integrationsprüfungen
+•  Grundlegende bis fortgeschrittene Deutschkenntnisse
+•  Kommunikation in Alltagssituationen
+•  Aussprache und Hörverständnis
+•  Einfache bis komplexe Grammatik und Wortschatz
+•  Vorbereitung auf die ÖIF-Integrationsprüfung
 
 Am Ende dieses Kurses können Sie:
-• Sich in grundlegenden Alltagssituationen auf Deutsch verständigen
-• Einfache Gespräche führen und Informationen austauschen
-• Deutsche Texte auf einfachem Niveau verstehen
-• Einfache schriftliche Mitteilungen verfassen
-• Sich auf Integrations- und Sprachprüfungen vorbereiten.
+• Sich sicher in der deutschen Sprache verständigen
+• Die Prinzipien der österreichischen Rechts- und Gesellschaftsordnung verstehen und anwenden
+• Die Integrationsprüfung erfolgreich ablegen
 
-Für weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website des Sprachportals.`,
+Für weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website des WIFI Oberösterreich.`,
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',
       ps: 'Lorem Ipsum',
       fa: 'Lorem Ipsum',
-      ar: `تقدم دورات ÖIF عبر الإنترنت فرصة ممتازة لدارسي اللغة الألمانية لتحسين مهاراتهم اللغوية إلى المستوى A1. من خلال جلسات يومية مباشرة ومجموعة متنوعة من المواد التعليمية، تدعم الدورة التدريبية مقدمة اللغة الألمانية وتعزز الاندماج في النمسا.
-
-                      تفاصيل الدورة:
-                      • المستوى: A1-B2
-                      • المدة: مرنة، حسب تقدم التعلم الفردي
-                      • الجدول الزمني: من الاثنين إلى السبت، أوقات مختلفة حسب قاعة الدورة التدريبية
-                      • الموقع: عبر الإنترنت (منصة زووم)
-                      • حجم الفصل: يختلف، عادةً ما تكون مجموعات صغيرة للاهتمام الفردي
-                      • رعاية الأطفال: غير متاح
-                      • السعر: مجاناً
-                      • مقدم الخدمة: عام (ممول من الدولة)
-                      • دعم اللغات: الداري/الفارسية، العربية، العربية، الإنجليزية، الأوكرانية
-                      • ذات صلة: لاتفاقيات الاندماج والدعم اللغوي
-                      • الشهادة: نعم - تأكيد المشاركة للحضور المنتظم
-
-
-                      ما ستتعلمه:
-                      • مهارات اللغة الألمانية الأساسية للحياة اليومية
-                      • التواصل في المواقف اليومية البسيطة
-                      • النطق والاستماع والاستيعاب اللغوي
-                      • قواعد اللغة والمفردات البسيطة
-                      • التحضير لامتحانات الاندماج
-
-في نهاية هذه الدورة سوف تكون قادراً على
-           • التواصل في المواقف اليومية الأساسية باللغة الألمانية
-           • إجراء محادثات بسيطة وتبادل المعلومات
-           • فهم النصوص الألمانية بمستوى أساسي
-           • تأليف رسائل مكتوبة بسيطة
-           • الاستعداد لامتحانات الاندماج واللغة.
-
-           لمزيد من المعلومات وللتسجيل، يرجى زيارة الموقع الرسمي لبوابة اللغة.`,
+      ar: 'Lorem Ipsum',
       ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
       ka: 'Lorem Ipsum',
       sq: 'Lorem Ipsum'
     },
-    provider: 'Österreichischer Integrations Fond (ÖIF)',
+    provider: 'WIFI Oberösterreich',
     contact: {
-      phone: '+43 5 0468-0',
-      email: 'info@integrationsfonds.at',
-      website: 'https://sprachportal.at/kurse-und-pruefungen/kursangebote/online-kurse/'
+      phone: '+43 5 7000 7553',
+      email: 'Elif.Cevik-Coban@wifi-ooe.at',
+      website: 'https://www.wifi-ooe.at/k/deutsch-integrationskurse'
     },
   };
 
@@ -432,4 +400,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default OIFLiveCourse;
+export default OIFOfflineCourse;

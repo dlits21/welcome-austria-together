@@ -9,7 +9,7 @@ import LanguageModal from '../../../components/LanguageModal';
 import HelpModal from '../../../components/HelpModal';
 import {getLocation, getEnrollNow, getContactInformation} from '../../../data/languages/common';
 
-const OIFLiveCourse: React.FC = () => {
+const OIFOfflineCourse: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
@@ -22,147 +22,118 @@ const OIFLiveCourse: React.FC = () => {
   };
 
   const handleEnrollPress = () => {
-    Linking.openURL('https://sprachportal.at/kurse-und-pruefungen/kursangebote/online-kurse/');
+    Linking.openURL('https://www.ams.at/arbeitsuchende/arbeiten-in-oesterreich-und-der-eu/das-integrationsjahr');
   };
 
   const content = {
     title: {
-      en: 'ÖIF Live Online German Courses',
-      de: 'ÖIF Live Online Deutschkurse',
+      en: 'AMS - Year of Integration',
+      de: 'AMS - Integrationsjahr',
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',
       ps: 'Lorem Ipsum',
       fa: 'Lorem Ipsum',
-      ar: 'دورات اللغة الألمانية المباشرة عبر الإنترنت ÖIF',
+      ar: 'Lorem Ipsum',
       ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
       ka: 'Lorem Ipsum',
       sq: 'Lorem Ipsum'
     },
     subtitle: {
-      en: 'Free German courses for beginners and advanced learners (A1-B2) - Daily from Monday to Saturday with qualified trainers',
-      de: 'Kostenlose Deutschkurse für Anfänger und Fortgeschrittene (A1-B2) – Täglich von Montag bis Samstag mit qualifizierten Trainerinnen und Trainern',
+      en: 'Learning German, professional orientation and integration into the Austrian labor market',
+      de: 'Deutsch lernen, berufliche Orientierung und Integration in den österreichischen Arbeitsmarkt',
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',
       ps: 'Lorem Ipsum',
       fa: 'Lorem Ipsum',
-      ar: 'دورات اللغة الألمانية المجانية للمتعلمين المبتدئين والمتقدمين (A1-B2) - يومياً من الاثنين إلى السبت مع مدربين مؤهلين',
+      ar: 'Lorem Ipsum',
       ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
       ka: 'Lorem Ipsum',
       sq: 'Lorem Ipsum'
     },
     description: {
-      en: `The ÖIF online courses offer an excellent opportunity for German learners to improve their language skills to A1 level. With daily live sessions and a variety of learning materials, the course supports the introduction to the German language and promotes integration in Austria.
+      en: `The Integration Year is a program of the Public Employment Service Austria (AMS) that aims to offer structured support to persons entitled to asylum, subsidiary protection and certain asylum seekers with a high probability of recognition for integration into the Austrian labour market. The program combines language support, professional orientation and practical experience to increase the chances of sustainable employment.
 
 Course details:
-• Level: A1-B2
-• Duration: Flexible, depending on individual learning progress
-• Schedule: Monday to Saturday, different times depending on the course room
-• Location: Online (Zoom platform)
-• Class size: Varies, usually small groups for individual attention
+• Level: A1-C1
+• Duration: Maximum 12 months; measures already started can be completed beyond the year
+• Timetable: Various modules, adapted to individual needs
+• Location: AMS offices throughout Austria
+• Class size: Small groups for individual support
 • Childcare: N/A
-• Price: Free of charge
-• Provider: Public (state funded)
-• Language support: Dari/Farsi, Arabic, English, Ukrainian
+• Price: Free of charge for participants
+• Provider: Public (state-funded)
+• Language support: German, English, Arabic, Farsi, French
 • Relevant: for integration agreements and language support
-• Certificate: Yes - confirmation of participation for regular attendance
+• Certificate: Yes - confirmation of participation with integration card
 
 
 What you will learn:
-• Basic German language skills for everyday life
-• Communication in simple everyday situations
-• Pronunciation and listening comprehension
-• Simple grammar and vocabulary
-• Preparation for integration exams
+• German language skills at A2 to C1 level
+• Professional orientation and job application training
+• Recognizing and using individual skills
+• Practical experience in various professional fields
+• Integration into the Austrian labor market
+
 
 At the end of this course you will be able to
-• Communicate in basic everyday situations in German
-• Hold simple conversations and exchange information
-• Understand German texts at a basic level
-• Compose simple written messages
-• Prepare for integration and language exams.
+• Communicate confidently in the German language
+• Develop a clear professional orientation and perspective
+• Successfully write job applications and conduct job interviews
+• Gain practical experience in a professional field
+• Achieve sustainable integration into the labor market
 
-For more information and to register, please visit the official website of the language portal.`,
-      de: `Die ÖIF-Online-Kurse bieten eine ausgezeichnete Gelegenheit für Deutschlernende, ihre Sprachkenntnisse auf A1-Niveau zu verbessern. Mit täglichen Live-Sitzungen und vielfältigen Lernmaterialien unterstützt der Kurs den Einstieg in die deutsche Sprache und fördert die Integration in Österreich.
+For further information and to register, please contact your responsible AMS advisor. Together we will check the requirements and draw up an individual schedule for your integration year.`,
+      de: `Das Integrationsjahr ist ein Programm des Arbeitsmarktservice Österreich (AMS), das darauf abzielt, Asylberechtigten, subsidiär Schutzberechtigten und bestimmten Asylwerber*innen mit hoher Anerkennungswahrscheinlichkeit eine strukturierte Unterstützung bei der Integration in den österreichischen Arbeitsmarkt zu bieten. Das Programm kombiniert Sprachförderung, berufliche Orientierung und praktische Erfahrungen, um die Chancen auf eine nachhaltige Erwerbstätigkeit zu erhöhen.
 
 Kursdetails:
-• Level: A1-B2
-• Dauer: Flexibel, je nach individuellem Lernfortschritt
-• Zeitplan: Montag bis Samstag, verschiedene Zeiten je nach Kursraum
-• Ort: Online (Zoom-Plattform)
-• Klassengröße: Variiert, in der Regel kleine Gruppen für individuelle Betreuung
+• Level: A1-C1
+• Dauer: Maximal 12 Monate; bereits begonnene Maßnahmen können über das Jahr hinaus abgeschlossen werden
+• Zeitplan: Verschiedene Module, angepasst an individuelle Bedürfnisse
+• Ort: AMS Geschäftsstellen in ganz Österreich
+• Klassengröße: Kleine Gruppen für individuelle Betreuung
 • Kinderbetreuung: N/A
-• Preis: Kostenlos
+• Preis: Kostenlos für Teilnehmer*innen
 • Anbieter: Öffentlich (staatlich gefördert)
-• Sprachliche Unterstützung: Dari/Farsi, Arabisch, Englisch, Ukrainisch
+• Sprachliche Unterstützung: Deutsch, Englisch, Arabisch, Farsi, Französisch
 • Relevant: für Integrationsvereinbarungen und Sprachförderung
-• Zertifikat: Ja – Teilnahmebestätigung bei regelmäßiger Teilnahme
+• Zertifikat: Ja – Teilnahmebestätigung mit Integrationskarte
 
 
 Was Sie lernen werden:
-• Grundlegende Deutschkenntnisse für den Alltag
-• Kommunikation in einfachen Alltagssituationen
-• Aussprache und Hörverständnis
-• Einfache Grammatik und Wortschatz
-• Vorbereitung auf Integrationsprüfungen
+•  Deutschkenntnisse auf A2 bis C1 Niveau
+•  Berufliche Orientierung und Bewerbungstraining
+•  Erkennen und Nutzen individueller Kompetenzen
+•  Praktische Erfahrungen in verschiedenen Berufsfeldern
+•  Integration in den österreichischen Arbeitsmarkt
 
 Am Ende dieses Kurses können Sie:
-• Sich in grundlegenden Alltagssituationen auf Deutsch verständigen
-• Einfache Gespräche führen und Informationen austauschen
-• Deutsche Texte auf einfachem Niveau verstehen
-• Einfache schriftliche Mitteilungen verfassen
-• Sich auf Integrations- und Sprachprüfungen vorbereiten.
+• Sich sicher in der deutschen Sprache verständigen
+• Eine klare berufliche Orientierung und Perspektive entwickeln
+• Erfolgreich Bewerbungen verfassen und Vorstellungsgespräche führen
+• Praktische Erfahrungen in einem Berufsfeld sammeln
+• Eine nachhaltige Integration in den Arbeitsmarkt erreichen
 
-Für weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website des Sprachportals.`,
+Für weitere Informationen und zur Anmeldung wenden Sie sich bitte an Ihre zuständige AMS Beraterin oder Ihren zuständigen AMS Berater. Gemeinsam werden die Voraussetzungen geprüft und ein individueller Ablaufplan für Ihr Integrationsjahr erstellt.`,
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',
       ps: 'Lorem Ipsum',
       fa: 'Lorem Ipsum',
-      ar: `تقدم دورات ÖIF عبر الإنترنت فرصة ممتازة لدارسي اللغة الألمانية لتحسين مهاراتهم اللغوية إلى المستوى A1. من خلال جلسات يومية مباشرة ومجموعة متنوعة من المواد التعليمية، تدعم الدورة التدريبية مقدمة اللغة الألمانية وتعزز الاندماج في النمسا.
-
-                      تفاصيل الدورة:
-                      • المستوى: A1-B2
-                      • المدة: مرنة، حسب تقدم التعلم الفردي
-                      • الجدول الزمني: من الاثنين إلى السبت، أوقات مختلفة حسب قاعة الدورة التدريبية
-                      • الموقع: عبر الإنترنت (منصة زووم)
-                      • حجم الفصل: يختلف، عادةً ما تكون مجموعات صغيرة للاهتمام الفردي
-                      • رعاية الأطفال: غير متاح
-                      • السعر: مجاناً
-                      • مقدم الخدمة: عام (ممول من الدولة)
-                      • دعم اللغات: الداري/الفارسية، العربية، العربية، الإنجليزية، الأوكرانية
-                      • ذات صلة: لاتفاقيات الاندماج والدعم اللغوي
-                      • الشهادة: نعم - تأكيد المشاركة للحضور المنتظم
-
-
-                      ما ستتعلمه:
-                      • مهارات اللغة الألمانية الأساسية للحياة اليومية
-                      • التواصل في المواقف اليومية البسيطة
-                      • النطق والاستماع والاستيعاب اللغوي
-                      • قواعد اللغة والمفردات البسيطة
-                      • التحضير لامتحانات الاندماج
-
-في نهاية هذه الدورة سوف تكون قادراً على
-           • التواصل في المواقف اليومية الأساسية باللغة الألمانية
-           • إجراء محادثات بسيطة وتبادل المعلومات
-           • فهم النصوص الألمانية بمستوى أساسي
-           • تأليف رسائل مكتوبة بسيطة
-           • الاستعداد لامتحانات الاندماج واللغة.
-
-           لمزيد من المعلومات وللتسجيل، يرجى زيارة الموقع الرسمي لبوابة اللغة.`,
+      ar: 'Lorem Ipsum',
       ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
       ka: 'Lorem Ipsum',
       sq: 'Lorem Ipsum'
     },
-    provider: 'Österreichischer Integrations Fond (ÖIF)',
+    provider: 'Arbeitsmarktservice (AMS)',
     contact: {
-      phone: '+43 5 0468-0',
-      email: 'info@integrationsfonds.at',
-      website: 'https://sprachportal.at/kurse-und-pruefungen/kursangebote/online-kurse/'
+      phone: '+43 50 904 222 (AMS Serviceline)',
+      email: 'service@ams.at',
+      website: 'https://www.ams.at/arbeitsuchende/arbeiten-in-oesterreich-und-der-eu/das-integrationsjahr'
     },
   };
 
@@ -432,4 +403,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default OIFLiveCourse;
+export default OIFOfflineCourse;

@@ -9,7 +9,7 @@ import LanguageModal from '../../../components/LanguageModal';
 import HelpModal from '../../../components/HelpModal';
 import {getLocation, getEnrollNow, getContactInformation} from '../../../data/languages/common';
 
-const OIFLiveCourse: React.FC = () => {
+const OIFOfflineCourse: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
@@ -22,147 +22,117 @@ const OIFLiveCourse: React.FC = () => {
   };
 
   const handleEnrollPress = () => {
-    Linking.openURL('https://sprachportal.at/kurse-und-pruefungen/kursangebote/online-kurse/');
+    Linking.openURL('https://www.vhs.at/de/deutschimpark');
   };
 
   const content = {
     title: {
-      en: 'ÖIF Live Online German Courses',
-      de: 'ÖIF Live Online Deutschkurse',
+      en: 'VHS Vienna - German in a Park',
+      de: 'VHS Wien - Deutsch im Park',
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',
       ps: 'Lorem Ipsum',
       fa: 'Lorem Ipsum',
-      ar: 'دورات اللغة الألمانية المباشرة عبر الإنترنت ÖIF',
+      ar: 'Lorem Ipsum',
       ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
       ka: 'Lorem Ipsum',
       sq: 'Lorem Ipsum'
     },
     subtitle: {
-      en: 'Free German courses for beginners and advanced learners (A1-B2) - Daily from Monday to Saturday with qualified trainers',
-      de: 'Kostenlose Deutschkurse für Anfänger und Fortgeschrittene (A1-B2) – Täglich von Montag bis Samstag mit qualifizierten Trainerinnen und Trainern',
+      en: 'Free German courses for adults in Viennese parks',
+      de: 'Kostenlose Deutschkurse für Erwachsene in Wiener Parks',
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',
       ps: 'Lorem Ipsum',
       fa: 'Lorem Ipsum',
-      ar: 'دورات اللغة الألمانية المجانية للمتعلمين المبتدئين والمتقدمين (A1-B2) - يومياً من الاثنين إلى السبت مع مدربين مؤهلين',
+      ar: 'Lorem Ipsum',
       ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
       ka: 'Lorem Ipsum',
       sq: 'Lorem Ipsum'
     },
     description: {
-      en: `The ÖIF online courses offer an excellent opportunity for German learners to improve their language skills to A1 level. With daily live sessions and a variety of learning materials, the course supports the introduction to the German language and promotes integration in Austria.
+      en: `“Deutsch im Park” is a summer project of the Vienna Adult Education Centers that has been offering free outdoor German lessons since 2008. Qualified DaZ trainers teach German for adults in various Viennese parks. The courses are open to anyone who wants to improve their German language skills for everyday life. Writing and reading courses for beginners are also offered at the Schwendergasse, Wasserpark, Goethehof and Wiener Flur locations in particular. Registration is not required; anyone interested can simply drop by and join in.
 
 Course details:
 • Level: A1-B2
-• Duration: Flexible, depending on individual learning progress
-• Schedule: Monday to Saturday, different times depending on the course room
-• Location: Online (Zoom platform)
-• Class size: Varies, usually small groups for individual attention
+• Duration: 4 weeks (depending on location)
+• Schedule: Various dates, e.g. Mon-Thu, 09:00-12:00 or 14:30-17:30
+• Location: Various Viennese parks, e.g. Schwendergasse, Wasserpark, Goethehof, Wiener Flur
+• Class size: Varies depending on location
 • Childcare: N/A
 • Price: Free of charge
-• Provider: Public (state funded)
-• Language support: Dari/Farsi, Arabic, English, Ukrainian
+• Provider: Public (state-funded)
+• Language support: Dari/Farsi, Arabic, English (depending on the teacher)
 • Relevant: for integration agreements and language support
-• Certificate: Yes - confirmation of participation for regular attendance
+• Certificate: No
 
 
 What you will learn:
 • Basic German language skills for everyday life
-• Communication in simple everyday situations
+• Communication in various everyday situations
 • Pronunciation and listening comprehension
-• Simple grammar and vocabulary
-• Preparation for integration exams
+• Basic grammar and vocabulary
+• Reading and writing for beginners
 
-At the end of this course you will be able to
+
+At the end of this course you will be able to:
 • Communicate in basic everyday situations in German
 • Hold simple conversations and exchange information
 • Understand German texts at a basic level
 • Compose simple written messages
-• Prepare for integration and language exams.
 
-For more information and to register, please visit the official website of the language portal.`,
-      de: `Die ÖIF-Online-Kurse bieten eine ausgezeichnete Gelegenheit für Deutschlernende, ihre Sprachkenntnisse auf A1-Niveau zu verbessern. Mit täglichen Live-Sitzungen und vielfältigen Lernmaterialien unterstützt der Kurs den Einstieg in die deutsche Sprache und fördert die Integration in Österreich.
+
+For more information and to find specific dates and locations, please visit the official website of the Wiener Volkshochschulen.`,
+      de: `„Deutsch im Park“ ist ein Sommerprojekt der Wiener Volkshochschulen, das seit 2008 kostenloses Deutschlernen im Freien anbietet. In verschiedenen Wiener Parks unterrichten qualifizierte DaZ-Trainer*innen Deutsch für Erwachsene. Die Kurse sind offen für alle, die ihre Deutschkenntnisse für den Alltag verbessern möchten. Besonders an den Standorten Schwendergasse, Wasserpark, Goethehof und Wiener Flur werden zusätzlich Schreib- und Lesekurse für Anfänger*innen angeboten. Eine Anmeldung ist nicht erforderlich; Interessierte können einfach vorbeikommen und mitmachen.
 
 Kursdetails:
 • Level: A1-B2
-• Dauer: Flexibel, je nach individuellem Lernfortschritt
-• Zeitplan: Montag bis Samstag, verschiedene Zeiten je nach Kursraum
-• Ort: Online (Zoom-Plattform)
-• Klassengröße: Variiert, in der Regel kleine Gruppen für individuelle Betreuung
+• Dauer: 4 Wochen (je nach Standort)
+• Zeitplan: Verschiedene Termine, z.B. Mo–Do, 09:00–12:00 Uhr oder 14:30–17:30 Uhr
+• Ort: Verschiedene Wiener Parks, z.B. Schwendergasse, Wasserpark, Goethehof, Wiener Flur
+• Klassengröße: Variiert je nach Standort
 • Kinderbetreuung: N/A
 • Preis: Kostenlos
 • Anbieter: Öffentlich (staatlich gefördert)
-• Sprachliche Unterstützung: Dari/Farsi, Arabisch, Englisch, Ukrainisch
+• Sprachliche Unterstützung: Dari/Farsi, Arabisch, Englisch (abhängig vom Kursleiter*in)
 • Relevant: für Integrationsvereinbarungen und Sprachförderung
-• Zertifikat: Ja – Teilnahmebestätigung bei regelmäßiger Teilnahme
+• Zertifikat: Nein
 
 
 Was Sie lernen werden:
-• Grundlegende Deutschkenntnisse für den Alltag
-• Kommunikation in einfachen Alltagssituationen
-• Aussprache und Hörverständnis
-• Einfache Grammatik und Wortschatz
-• Vorbereitung auf Integrationsprüfungen
+•  Grundlegende Deutschkenntnisse für den Alltag
+•  Kommunikation in verschiedenen Alltagssituationen
+•  Aussprache und Hörverständnis
+•  Einfache Grammatik und Wortschatz
+•  Lesen und Schreiben für Anfänger*innen
 
 Am Ende dieses Kurses können Sie:
 • Sich in grundlegenden Alltagssituationen auf Deutsch verständigen
 • Einfache Gespräche führen und Informationen austauschen
 • Deutsche Texte auf einfachem Niveau verstehen
 • Einfache schriftliche Mitteilungen verfassen
-• Sich auf Integrations- und Sprachprüfungen vorbereiten.
 
-Für weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website des Sprachportals.`,
+Weitere Informationen sowie die genauen Termine und Orte finden Sie auf der offiziellen Website der Wiener Volkshochschulen.`,
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',
       ps: 'Lorem Ipsum',
       fa: 'Lorem Ipsum',
-      ar: `تقدم دورات ÖIF عبر الإنترنت فرصة ممتازة لدارسي اللغة الألمانية لتحسين مهاراتهم اللغوية إلى المستوى A1. من خلال جلسات يومية مباشرة ومجموعة متنوعة من المواد التعليمية، تدعم الدورة التدريبية مقدمة اللغة الألمانية وتعزز الاندماج في النمسا.
-
-                      تفاصيل الدورة:
-                      • المستوى: A1-B2
-                      • المدة: مرنة، حسب تقدم التعلم الفردي
-                      • الجدول الزمني: من الاثنين إلى السبت، أوقات مختلفة حسب قاعة الدورة التدريبية
-                      • الموقع: عبر الإنترنت (منصة زووم)
-                      • حجم الفصل: يختلف، عادةً ما تكون مجموعات صغيرة للاهتمام الفردي
-                      • رعاية الأطفال: غير متاح
-                      • السعر: مجاناً
-                      • مقدم الخدمة: عام (ممول من الدولة)
-                      • دعم اللغات: الداري/الفارسية، العربية، العربية، الإنجليزية، الأوكرانية
-                      • ذات صلة: لاتفاقيات الاندماج والدعم اللغوي
-                      • الشهادة: نعم - تأكيد المشاركة للحضور المنتظم
-
-
-                      ما ستتعلمه:
-                      • مهارات اللغة الألمانية الأساسية للحياة اليومية
-                      • التواصل في المواقف اليومية البسيطة
-                      • النطق والاستماع والاستيعاب اللغوي
-                      • قواعد اللغة والمفردات البسيطة
-                      • التحضير لامتحانات الاندماج
-
-في نهاية هذه الدورة سوف تكون قادراً على
-           • التواصل في المواقف اليومية الأساسية باللغة الألمانية
-           • إجراء محادثات بسيطة وتبادل المعلومات
-           • فهم النصوص الألمانية بمستوى أساسي
-           • تأليف رسائل مكتوبة بسيطة
-           • الاستعداد لامتحانات الاندماج واللغة.
-
-           لمزيد من المعلومات وللتسجيل، يرجى زيارة الموقع الرسمي لبوابة اللغة.`,
+      ar: 'Lorem Ipsum',
       ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
       ka: 'Lorem Ipsum',
       sq: 'Lorem Ipsum'
     },
-    provider: 'Österreichischer Integrations Fond (ÖIF)',
+    provider: 'Wiener Volkshochschulen (VHS)',
     contact: {
-      phone: '+43 5 0468-0',
-      email: 'info@integrationsfonds.at',
-      website: 'https://sprachportal.at/kurse-und-pruefungen/kursangebote/online-kurse/'
+      phone: '+43 1 893 00 83 (VHS Bildungstelefon)',
+      email: 'info@vhs.at',
+      website: 'https://www.vhs.at/de/deutschimpark'
     },
   };
 
@@ -432,4 +402,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default OIFLiveCourse;
+export default OIFOfflineCourse;

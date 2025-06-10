@@ -9,7 +9,7 @@ import LanguageModal from '../../../components/LanguageModal';
 import HelpModal from '../../../components/HelpModal';
 import {getLocation, getEnrollNow, getContactInformation} from '../../../data/languages/common';
 
-const OIFLiveCourse: React.FC = () => {
+const OIFOfflineCourse: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
@@ -22,147 +22,109 @@ const OIFLiveCourse: React.FC = () => {
   };
 
   const handleEnrollPress = () => {
-    Linking.openURL('https://sprachportal.at/kurse-und-pruefungen/kursangebote/online-kurse/');
+    Linking.openURL('https://learngerman.dw.com/en/nicos-weg/c-36519789');
   };
 
   const content = {
     title: {
-      en: 'ÖIF Live Online German Courses',
-      de: 'ÖIF Live Online Deutschkurse',
+      en: 'Nicos Weg – Learn German with DW',
+      de: 'Nicos Weg – Deutsch Lernen mit DW',
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',
       ps: 'Lorem Ipsum',
       fa: 'Lorem Ipsum',
-      ar: 'دورات اللغة الألمانية المباشرة عبر الإنترنت ÖIF',
+      ar: 'Lorem Ipsum',
       ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
       ka: 'Lorem Ipsum',
       sq: 'Lorem Ipsum'
     },
     subtitle: {
-      en: 'Free German courses for beginners and advanced learners (A1-B2) - Daily from Monday to Saturday with qualified trainers',
-      de: 'Kostenlose Deutschkurse für Anfänger und Fortgeschrittene (A1-B2) – Täglich von Montag bis Samstag mit qualifizierten Trainerinnen und Trainern',
+      en: 'Interactive German Language Course for Beginners to Intermediate Learners',
+      de: 'Interaktiver Deutschkurs für Anfänger und Fortgeschrittene',
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',
       ps: 'Lorem Ipsum',
       fa: 'Lorem Ipsum',
-      ar: 'دورات اللغة الألمانية المجانية للمتعلمين المبتدئين والمتقدمين (A1-B2) - يومياً من الاثنين إلى السبت مع مدربين مؤهلين',
+      ar: 'Lorem Ipsum',
       ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
       ka: 'Lorem Ipsum',
       sq: 'Lorem Ipsum'
     },
     description: {
-      en: `The ÖIF online courses offer an excellent opportunity for German learners to improve their language skills to A1 level. With daily live sessions and a variety of learning materials, the course supports the introduction to the German language and promotes integration in Austria.
+      en: `Nicos Weg is a free, interactive German language course developed by Deutsche Welle (DW) aimed at learners from A1 to B1 proficiency levels. The course follows the journey of Nico, a young man from Spain who arrives in Germany and navigates various everyday situations. Through engaging videos, exercises, and quizzes, learners can improve their listening, reading, and speaking skills in German. The course is designed to be flexible, allowing learners to progress at their own pace.
 
-Course details:
-• Level: A1-B2
-• Duration: Flexible, depending on individual learning progress
-• Schedule: Monday to Saturday, different times depending on the course room
-• Location: Online (Zoom platform)
-• Class size: Varies, usually small groups for individual attention
-• Childcare: N/A
+Resource Details:
+• Level: A1-B1
+• Online/Offline: Online
 • Price: Free of charge
-• Provider: Public (state funded)
-• Language support: Dari/Farsi, Arabic, English, Ukrainian
-• Relevant: for integration agreements and language support
-• Certificate: Yes - confirmation of participation for regular attendance
-
+• Provider: Public (funded by the German government)
+• Language support: English, Spanish, Arabic, and more
 
 What you will learn:
-• Basic German language skills for everyday life
-• Communication in simple everyday situations
-• Pronunciation and listening comprehension
-• Simple grammar and vocabulary
-• Preparation for integration exams
+• Basic to intermediate German language skills
+• Vocabulary and grammar for everyday situations
+• Cultural insights into life in Germany
+• Listening and reading comprehension
 
-At the end of this course you will be able to
-• Communicate in basic everyday situations in German
-• Hold simple conversations and exchange information
-• Understand German texts at a basic level
-• Compose simple written messages
-• Prepare for integration and language exams.
+Type of Materials:
+• Video episodes
+• Interactive exercises and quizzes
+• Downloadable PDFs
+• Audio recordings
 
-For more information and to register, please visit the official website of the language portal.`,
-      de: `Die ÖIF-Online-Kurse bieten eine ausgezeichnete Gelegenheit für Deutschlernende, ihre Sprachkenntnisse auf A1-Niveau zu verbessern. Mit täglichen Live-Sitzungen und vielfältigen Lernmaterialien unterstützt der Kurs den Einstieg in die deutsche Sprache und fördert die Integration in Österreich.
+At the end of this course you will be able to:
+• Communicate effectively in everyday situations in German
+• Understand and use German vocabulary and grammar appropriate for your proficiency level
+• Navigate daily life in Germany with greater ease
+• Prepare for German language proficiency tests
 
-Kursdetails:
-• Level: A1-B2
-• Dauer: Flexibel, je nach individuellem Lernfortschritt
-• Zeitplan: Montag bis Samstag, verschiedene Zeiten je nach Kursraum
-• Ort: Online (Zoom-Plattform)
-• Klassengröße: Variiert, in der Regel kleine Gruppen für individuelle Betreuung
-• Kinderbetreuung: N/A
+For more information and to access the resources, please visit the official website.`,
+      de: `Nicos Weg ist ein kostenloser, interaktiver Deutschkurs der Deutschen Welle (DW) für Lernende der Niveaustufen A1 bis B1. Der Kurs begleitet Nico, einen jungen Mann aus Spanien, der nach Deutschland kommt und dort verschiedene Alltagssituationen meistert. Anhand spannender Videos, Übungen und Quizzes können Lernende ihre Hör-, Lese- und Sprechfähigkeiten in Deutsch verbessern. Der Kurs ist flexibel gestaltet und ermöglicht es Lernenden, in ihrem eigenen Tempo voranzukommen.
+
+Ressourcendetails:
+• Niveau: A1–B1
+• Online/Offline: Online
 • Preis: Kostenlos
-• Anbieter: Öffentlich (staatlich gefördert)
-• Sprachliche Unterstützung: Dari/Farsi, Arabisch, Englisch, Ukrainisch
-• Relevant: für Integrationsvereinbarungen und Sprachförderung
-• Zertifikat: Ja – Teilnahmebestätigung bei regelmäßiger Teilnahme
-
+• Anbieter: Öffentlich (finanziert vom Bund)
+• Sprachunterstützung: Englisch, Spanisch, Arabisch und mehr
 
 Was Sie lernen werden:
-• Grundlegende Deutschkenntnisse für den Alltag
-• Kommunikation in einfachen Alltagssituationen
-• Aussprache und Hörverständnis
-• Einfache Grammatik und Wortschatz
-• Vorbereitung auf Integrationsprüfungen
+• Grundkenntnisse der deutschen Sprache
+• Wortschatz und Grammatik für Alltagssituationen
+• Kulturelle Einblicke in das Leben in Deutschland
+• Hör- und Leseverstehen
+
+Materialien:
+• Videosequenzen
+• Interaktive Übungen und Quizze
+• Herunterladbare PDFs
+• Audioaufnahmen
 
 Am Ende dieses Kurses können Sie:
-• Sich in grundlegenden Alltagssituationen auf Deutsch verständigen
-• Einfache Gespräche führen und Informationen austauschen
-• Deutsche Texte auf einfachem Niveau verstehen
-• Einfache schriftliche Mitteilungen verfassen
-• Sich auf Integrations- und Sprachprüfungen vorbereiten.
+• Effektiv in Alltagssituationen auf Deutsch kommunizieren
+• Deutschen Wortschatz und Grammatik entsprechend Ihrem Sprachniveau verstehen und anwenden
+• Sich leichter im deutschen Alltag zurechtfinden
+• Sich auf Deutschprüfungen vorbereiten
 
-Für weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website des Sprachportals.`,
+Weitere Informationen und Zugriff auf die Ressourcen finden Sie auf der offiziellen Website.`,
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',
       ps: 'Lorem Ipsum',
       fa: 'Lorem Ipsum',
-      ar: `تقدم دورات ÖIF عبر الإنترنت فرصة ممتازة لدارسي اللغة الألمانية لتحسين مهاراتهم اللغوية إلى المستوى A1. من خلال جلسات يومية مباشرة ومجموعة متنوعة من المواد التعليمية، تدعم الدورة التدريبية مقدمة اللغة الألمانية وتعزز الاندماج في النمسا.
-
-                      تفاصيل الدورة:
-                      • المستوى: A1-B2
-                      • المدة: مرنة، حسب تقدم التعلم الفردي
-                      • الجدول الزمني: من الاثنين إلى السبت، أوقات مختلفة حسب قاعة الدورة التدريبية
-                      • الموقع: عبر الإنترنت (منصة زووم)
-                      • حجم الفصل: يختلف، عادةً ما تكون مجموعات صغيرة للاهتمام الفردي
-                      • رعاية الأطفال: غير متاح
-                      • السعر: مجاناً
-                      • مقدم الخدمة: عام (ممول من الدولة)
-                      • دعم اللغات: الداري/الفارسية، العربية، العربية، الإنجليزية، الأوكرانية
-                      • ذات صلة: لاتفاقيات الاندماج والدعم اللغوي
-                      • الشهادة: نعم - تأكيد المشاركة للحضور المنتظم
-
-
-                      ما ستتعلمه:
-                      • مهارات اللغة الألمانية الأساسية للحياة اليومية
-                      • التواصل في المواقف اليومية البسيطة
-                      • النطق والاستماع والاستيعاب اللغوي
-                      • قواعد اللغة والمفردات البسيطة
-                      • التحضير لامتحانات الاندماج
-
-في نهاية هذه الدورة سوف تكون قادراً على
-           • التواصل في المواقف اليومية الأساسية باللغة الألمانية
-           • إجراء محادثات بسيطة وتبادل المعلومات
-           • فهم النصوص الألمانية بمستوى أساسي
-           • تأليف رسائل مكتوبة بسيطة
-           • الاستعداد لامتحانات الاندماج واللغة.
-
-           لمزيد من المعلومات وللتسجيل، يرجى زيارة الموقع الرسمي لبوابة اللغة.`,
+      ar: 'Lorem Ipsum',
       ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
       ka: 'Lorem Ipsum',
       sq: 'Lorem Ipsum'
     },
-    provider: 'Österreichischer Integrations Fond (ÖIF)',
+    provider: 'Deutsche Welle (DW)',
     contact: {
-      phone: '+43 5 0468-0',
-      email: 'info@integrationsfonds.at',
-      website: 'https://sprachportal.at/kurse-und-pruefungen/kursangebote/online-kurse/'
+      website: 'https://learngerman.dw.com/en/nicos-weg/c-36519789'
     },
   };
 
@@ -432,4 +394,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default OIFLiveCourse;
+export default OIFOfflineCourse;

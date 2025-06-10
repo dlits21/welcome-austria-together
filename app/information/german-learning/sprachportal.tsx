@@ -9,7 +9,7 @@ import LanguageModal from '../../../components/LanguageModal';
 import HelpModal from '../../../components/HelpModal';
 import {getLocation, getEnrollNow, getContactInformation} from '../../../data/languages/common';
 
-const OIFLiveCourse: React.FC = () => {
+const OIFOfflineCourse: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
@@ -22,137 +22,117 @@ const OIFLiveCourse: React.FC = () => {
   };
 
   const handleEnrollPress = () => {
-    Linking.openURL('https://sprachportal.at/kurse-und-pruefungen/kursangebote/online-kurse/');
+    Linking.openURL('https://sprachportal.at/en/mein-sprachportal-at-a-glance/');
   };
 
   const content = {
     title: {
-      en: 'ÖIF Live Online German Courses',
-      de: 'ÖIF Live Online Deutschkurse',
+      en: 'Sprachportal - Your Gateway to Learning German and Integrating into Austria',
+      de: 'Sprachportal - Ihr Tor zum Deutschlernen und zur Integration in Österreich',
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',
       ps: 'Lorem Ipsum',
       fa: 'Lorem Ipsum',
-      ar: 'دورات اللغة الألمانية المباشرة عبر الإنترنت ÖIF',
+      ar: 'Lorem Ipsum',
       ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
       ka: 'Lorem Ipsum',
       sq: 'Lorem Ipsum'
     },
     subtitle: {
-      en: 'Free German courses for beginners and advanced learners (A1-B2) - Daily from Monday to Saturday with qualified trainers',
-      de: 'Kostenlose Deutschkurse für Anfänger und Fortgeschrittene (A1-B2) – Täglich von Montag bis Samstag mit qualifizierten Trainerinnen und Trainern',
+      en: 'Free Online Courses, Exercises, and Resources for German Learners',
+      de: 'Kostenlose Online-Kurse, Übungen und Ressourcen für Deutschlernende',
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',
       ps: 'Lorem Ipsum',
       fa: 'Lorem Ipsum',
-      ar: 'دورات اللغة الألمانية المجانية للمتعلمين المبتدئين والمتقدمين (A1-B2) - يومياً من الاثنين إلى السبت مع مدربين مؤهلين',
+      ar: 'Lorem Ipsum',
       ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
       ka: 'Lorem Ipsum',
       sq: 'Lorem Ipsum'
     },
     description: {
-      en: `The ÖIF online courses offer an excellent opportunity for German learners to improve their language skills to A1 level. With daily live sessions and a variety of learning materials, the course supports the introduction to the German language and promotes integration in Austria.
+      en: `The Sprachportal is a comprehensive online platform developed by the Austrian Integration Fund (ÖIF) to support individuals in learning German and integrating into Austrian society. It offers a wide range of free resources, including live online courses, interactive exercises, and cultural materials, catering to various proficiency levels from A1 to B2. The platform is designed to assist learners in improving their language skills while gaining insights into everyday life in Austria.
 
-Course details:
+Resource Details:
 • Level: A1-B2
-• Duration: Flexible, depending on individual learning progress
-• Schedule: Monday to Saturday, different times depending on the course room
-• Location: Online (Zoom platform)
-• Class size: Varies, usually small groups for individual attention
-• Childcare: N/A
+• Online/Offline: Online
 • Price: Free of charge
-• Provider: Public (state funded)
-• Language support: Dari/Farsi, Arabic, English, Ukrainian
-• Relevant: for integration agreements and language support
-• Certificate: Yes - confirmation of participation for regular attendance
+• Provider: Public (state-funded)
+• Language support: Arabic, Dari/Farsi, English, French, Turkish, and more
 
 
 What you will learn:
-• Basic German language skills for everyday life
-• Communication in simple everyday situations
-• Pronunciation and listening comprehension
-• Simple grammar and vocabulary
-• Preparation for integration exams
+• Basic to intermediate German language skills
+• Vocabulary and grammar for everyday situations
+• Cultural norms and values in Austria
+• Knowledge of Austrian institutions and services
 
-At the end of this course you will be able to
-• Communicate in basic everyday situations in German
-• Hold simple conversations and exchange information
-• Understand German texts at a basic level
-• Compose simple written messages
-• Prepare for integration and language exams.
+Type of Materials:
+• Live online courses with certified instructors
+• Interactive vocabulary trainers
+• 360° panoramic picture exercises
+• Doodle clips (animated learning stories)
+• Learning podcasts
+• Videos on everyday life and values in Austria
+• Interactive learning videos with exercises
+• Learning magazine "Deutsch lernen"
+• Materials focusing on Austria
+• Sample tests and materials for test preparation
 
-For more information and to register, please visit the official website of the language portal.`,
-      de: `Die ÖIF-Online-Kurse bieten eine ausgezeichnete Gelegenheit für Deutschlernende, ihre Sprachkenntnisse auf A1-Niveau zu verbessern. Mit täglichen Live-Sitzungen und vielfältigen Lernmaterialien unterstützt der Kurs den Einstieg in die deutsche Sprache und fördert die Integration in Österreich.
+At the end of this course you will be able to:
+• Communicate effectively in everyday situations in Austria
+• Understand and use German vocabulary and grammar appropriate for your proficiency level
+• Navigate Austrian institutions and services with greater ease
+• Demonstrate knowledge of Austrian cultural norms and values
+• Prepare for German language proficiency tests
 
-Kursdetails:
-• Level: A1-B2
-• Dauer: Flexibel, je nach individuellem Lernfortschritt
-• Zeitplan: Montag bis Samstag, verschiedene Zeiten je nach Kursraum
-• Ort: Online (Zoom-Plattform)
-• Klassengröße: Variiert, in der Regel kleine Gruppen für individuelle Betreuung
-• Kinderbetreuung: N/A
-• Preis: Kostenlos
-• Anbieter: Öffentlich (staatlich gefördert)
-• Sprachliche Unterstützung: Dari/Farsi, Arabisch, Englisch, Ukrainisch
-• Relevant: für Integrationsvereinbarungen und Sprachförderung
-• Zertifikat: Ja – Teilnahmebestätigung bei regelmäßiger Teilnahme
+For more information and to access the resources, please visit the official website.`,
+      de: `Das Sprachportal ist eine umfassende Online-Plattform, die vom Österreichischen Integrationsfonds (ÖIF) entwickelt wurde, um Menschen beim Erlernen der deutschen Sprache und bei der Integration in die österreichische Gesellschaft zu unterstützen. Es bietet eine breite Palette an kostenlosen Ressourcen, darunter Live-Online-Kurse, interaktive Übungen und kulturelle Materialien, die für verschiedene Sprachniveaus von A1 bis B2 geeignet sind. Die Plattform soll Lernenden helfen, ihre Sprachkenntnisse zu verbessern und gleichzeitig Einblicke in das Alltagsleben in Österreich zu gewinnen.
+
+Details zur Ressource:
+• Niveau: A1-B2
+• Online/Offline: Online
+• Preis: Kostenfrei
+• Anbieter: Öffentlich (staatlich finanziert)
+• Unterstützte Sprachen: Arabisch, Dari/Farsi, Englisch, Französisch, Türkisch, und mehr
 
 
 Was Sie lernen werden:
-• Grundlegende Deutschkenntnisse für den Alltag
-• Kommunikation in einfachen Alltagssituationen
-• Aussprache und Hörverständnis
-• Einfache Grammatik und Wortschatz
-• Vorbereitung auf Integrationsprüfungen
+• Grund- bis Mittelstufenkenntnisse der deutschen Sprache
+• Wortschatz und Grammatik für Alltagssituationen
+• Kulturelle Normen und Werte in Österreich
+• Kenntnisse über österreichische Institutionen und Dienstleistungen
 
-Am Ende dieses Kurses können Sie:
-• Sich in grundlegenden Alltagssituationen auf Deutsch verständigen
-• Einfache Gespräche führen und Informationen austauschen
-• Deutsche Texte auf einfachem Niveau verstehen
-• Einfache schriftliche Mitteilungen verfassen
-• Sich auf Integrations- und Sprachprüfungen vorbereiten.
+Art der Materialien:
+• Live-Online-Kurse mit zertifizierten Lehrkräften
+• Interaktive Vokabeltrainer
+• 360°-Panoramabilder-Übungen
+• Doodle-Clips (animierte Lerngeschichten)
+• Lern-Podcasts
+• Videos zu Alltag und Werten in Österreich
+• Interaktive Lernvideos mit Übungen
+• Lernmagazin „Deutsch lernen“
+• Materialien zum Thema Österreich
+• Beispieltests und Materialien zur Testvorbereitung
 
-Für weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website des Sprachportals.`,
+Nach Abschluss dieses Kurses können Sie:
+• effektiv in Alltagssituationen in Österreich kommunizieren
+• deutschen Wortschatz und Grammatik entsprechend Ihrem Sprachniveau verstehen und anwenden
+• sich leichter in österreichischen Institutionen und Dienstleistungen zurechtfinden
+• Kenntnisse der österreichischen kulturellen Normen und Werte nachweisen
+• sich auf Deutschprüfungen vorbereiten
+
+Weitere Informationen und Ressourcen finden Sie auf der offiziellen Website.`,
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',
       ps: 'Lorem Ipsum',
       fa: 'Lorem Ipsum',
-      ar: `تقدم دورات ÖIF عبر الإنترنت فرصة ممتازة لدارسي اللغة الألمانية لتحسين مهاراتهم اللغوية إلى المستوى A1. من خلال جلسات يومية مباشرة ومجموعة متنوعة من المواد التعليمية، تدعم الدورة التدريبية مقدمة اللغة الألمانية وتعزز الاندماج في النمسا.
-
-                      تفاصيل الدورة:
-                      • المستوى: A1-B2
-                      • المدة: مرنة، حسب تقدم التعلم الفردي
-                      • الجدول الزمني: من الاثنين إلى السبت، أوقات مختلفة حسب قاعة الدورة التدريبية
-                      • الموقع: عبر الإنترنت (منصة زووم)
-                      • حجم الفصل: يختلف، عادةً ما تكون مجموعات صغيرة للاهتمام الفردي
-                      • رعاية الأطفال: غير متاح
-                      • السعر: مجاناً
-                      • مقدم الخدمة: عام (ممول من الدولة)
-                      • دعم اللغات: الداري/الفارسية، العربية، العربية، الإنجليزية، الأوكرانية
-                      • ذات صلة: لاتفاقيات الاندماج والدعم اللغوي
-                      • الشهادة: نعم - تأكيد المشاركة للحضور المنتظم
-
-
-                      ما ستتعلمه:
-                      • مهارات اللغة الألمانية الأساسية للحياة اليومية
-                      • التواصل في المواقف اليومية البسيطة
-                      • النطق والاستماع والاستيعاب اللغوي
-                      • قواعد اللغة والمفردات البسيطة
-                      • التحضير لامتحانات الاندماج
-
-في نهاية هذه الدورة سوف تكون قادراً على
-           • التواصل في المواقف اليومية الأساسية باللغة الألمانية
-           • إجراء محادثات بسيطة وتبادل المعلومات
-           • فهم النصوص الألمانية بمستوى أساسي
-           • تأليف رسائل مكتوبة بسيطة
-           • الاستعداد لامتحانات الاندماج واللغة.
-
-           لمزيد من المعلومات وللتسجيل، يرجى زيارة الموقع الرسمي لبوابة اللغة.`,
+      ar: 'Lorem Ipsum',
       ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
       ka: 'Lorem Ipsum',
@@ -160,9 +140,9 @@ Für weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle W
     },
     provider: 'Österreichischer Integrations Fond (ÖIF)',
     contact: {
-      phone: '+43 5 0468-0',
+      phone: '+43 1 715 13 13',
       email: 'info@integrationsfonds.at',
-      website: 'https://sprachportal.at/kurse-und-pruefungen/kursangebote/online-kurse/'
+      website: 'https://sprachportal.at/en/mein-sprachportal-at-a-glance/'
     },
   };
 
@@ -432,4 +412,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default OIFLiveCourse;
+export default OIFOfflineCourse;

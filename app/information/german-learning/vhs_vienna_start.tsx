@@ -9,7 +9,7 @@ import LanguageModal from '../../../components/LanguageModal';
 import HelpModal from '../../../components/HelpModal';
 import {getLocation, getEnrollNow, getContactInformation} from '../../../data/languages/common';
 
-const OIFLiveCourse: React.FC = () => {
+const OIFOfflineCourse: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
@@ -22,53 +22,53 @@ const OIFLiveCourse: React.FC = () => {
   };
 
   const handleEnrollPress = () => {
-    Linking.openURL('https://sprachportal.at/kurse-und-pruefungen/kursangebote/online-kurse/');
+    Linking.openURL('https://sprachportal.at/kurse-und-pruefungen/kursangebote/startpaket-deutsch-und-integration');
   };
 
   const content = {
     title: {
-      en: 'ÖIF Live Online German Courses',
-      de: 'ÖIF Live Online Deutschkurse',
+      en: 'VHS Vienna - StartWien - Integration from Day 1',
+      de: 'VHS Wien - StartWien - Integration ab Tag 1',
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',
       ps: 'Lorem Ipsum',
       fa: 'Lorem Ipsum',
-      ar: 'دورات اللغة الألمانية المباشرة عبر الإنترنت ÖIF',
+      ar: 'Lorem Ipsum',
       ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
       ka: 'Lorem Ipsum',
       sq: 'Lorem Ipsum'
     },
     subtitle: {
-      en: 'Free German courses for beginners and advanced learners (A1-B2) - Daily from Monday to Saturday with qualified trainers',
-      de: 'Kostenlose Deutschkurse für Anfänger und Fortgeschrittene (A1-B2) – Täglich von Montag bis Samstag mit qualifizierten Trainerinnen und Trainern',
+      en: 'Free German courses for asylum seekers in basic care with childcare',
+      de: 'Kostenlose Deutschkurse für Asylwerber*innen in der Grundversorgung mit Kinderbetreuung',
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',
       ps: 'Lorem Ipsum',
       fa: 'Lorem Ipsum',
-      ar: 'دورات اللغة الألمانية المجانية للمتعلمين المبتدئين والمتقدمين (A1-B2) - يومياً من الاثنين إلى السبت مع مدربين مؤهلين',
+      ar: 'Lorem Ipsum',
       ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
       ka: 'Lorem Ipsum',
       sq: 'Lorem Ipsum'
     },
     description: {
-      en: `The ÖIF online courses offer an excellent opportunity for German learners to improve their language skills to A1 level. With daily live sessions and a variety of learning materials, the course supports the introduction to the German language and promotes integration in Austria.
+      en: `The “StartWien - Integration from Day 1” project of the Vienna Adult Education Centers offers free German courses for asylum seekers in basic care. The courses cover levels from literacy to C1 and include accompanying childcare to make it easier for people with caring responsibilities to take part. With the appropriate qualifications, the course ends with an ÖIF integration exam. The courses are held at the VHS locations Favoriten, Ottakring, Gatterburggasse and Brigittenau.
 
 Course details:
-• Level: A1-B2
-• Duration: Flexible, depending on individual learning progress
-• Schedule: Monday to Saturday, different times depending on the course room
-• Location: Online (Zoom platform)
-• Class size: Varies, usually small groups for individual attention
-• Childcare: N/A
+• Level: A0-C1
+• Duration: Varies depending on course level and individual learning progress
+• Schedule: Monday to Friday, exact times depending on location
+• Location: VHS Favoriten, VHS Ottakring, VHS Gatterburggasse, VHS Brigittenau
+• Class size: Small groups for individual attention
+• Childcare: Yes
 • Price: Free of charge
-• Provider: Public (state funded)
-• Language support: Dari/Farsi, Arabic, English, Ukrainian
-• Relevant: for integration agreements and language support
-• Certificate: Yes - confirmation of participation for regular attendance
+• Provider: Public (state-funded by the Vienna Social Fund)
+• Language support: Dari/Farsi, Arabic, English (depending on the course provider)
+• Relevant: Support for integration agreements and language support
+• Certificate: Yes - confirmation of participation with ÖIF certificate
 
 
 What you will learn:
@@ -78,91 +78,59 @@ What you will learn:
 • Simple grammar and vocabulary
 • Preparation for integration exams
 
-At the end of this course you will be able to
-• Communicate in basic everyday situations in German
-• Hold simple conversations and exchange information
-• Understand German texts at a basic level
-• Compose simple written messages
-• Prepare for integration and language exams.
 
-For more information and to register, please visit the official website of the language portal.`,
-      de: `Die ÖIF-Online-Kurse bieten eine ausgezeichnete Gelegenheit für Deutschlernende, ihre Sprachkenntnisse auf A1-Niveau zu verbessern. Mit täglichen Live-Sitzungen und vielfältigen Lernmaterialien unterstützt der Kurs den Einstieg in die deutsche Sprache und fördert die Integration in Österreich.
+At the end of this course you will be able to:
+• Communicate confidently in the German language
+• Understand and apply the principles of the Austrian legal and social order
+• Successfully pass the integration exam
+
+For more information and to register, please visit the official website of the project.
+`,
+      de: `Das Projekt „StartWien – Integration ab Tag 1“ der Wiener Volkshochschulen bietet kostenlose Deutschkurse für Asylwerber*innen in der Grundversorgung an. Die Kurse decken die Niveaustufen von der Alphabetisierung bis C1 ab und beinhalten eine begleitende Kinderbetreuung, um die Teilnahme für Menschen mit Betreuungspflichten zu erleichtern. Bei entsprechender Qualifikation endet der Kurs mit einer ÖIF-Integrationsprüfung. Die Kurse werden an den VHS-Standorten Favoriten, Ottakring, Gatterburggasse und Brigittenau durchgeführt.
 
 Kursdetails:
-• Level: A1-B2
-• Dauer: Flexibel, je nach individuellem Lernfortschritt
-• Zeitplan: Montag bis Samstag, verschiedene Zeiten je nach Kursraum
-• Ort: Online (Zoom-Plattform)
-• Klassengröße: Variiert, in der Regel kleine Gruppen für individuelle Betreuung
-• Kinderbetreuung: N/A
+• Level: A0-C1
+• Dauer: Variiert je nach Kursniveau und individuellem Lernfortschritt
+• Zeitplan: Montag bis Freitag, genaue Zeiten je nach Standort
+• Ort: VHS Favoriten, VHS Ottakring, VHS Gatterburggasse, VHS Brigittenau
+• Klassengröße: Kleine Gruppen für individuelle Betreuung
+• Kinderbetreuung: Ja
 • Preis: Kostenlos
-• Anbieter: Öffentlich (staatlich gefördert)
-• Sprachliche Unterstützung: Dari/Farsi, Arabisch, Englisch, Ukrainisch
-• Relevant: für Integrationsvereinbarungen und Sprachförderung
-• Zertifikat: Ja – Teilnahmebestätigung bei regelmäßiger Teilnahme
+• Anbieter: Öffentlich (staatlich gefördert durch den Fonds Soziales Wien)
+• Sprachliche Unterstützung: Dari/Farsi, Arabisch, Englisch (abhängig vom Kursanbieter)
+• Relevant: Unterstützung für Integrationsvereinbarungen und Sprachförderung
+• Zertifikat: Ja – Teilnahmebestätigung mit ÖIF-Zertifikat
 
 
 Was Sie lernen werden:
 • Grundlegende Deutschkenntnisse für den Alltag
-• Kommunikation in einfachen Alltagssituationen
-• Aussprache und Hörverständnis
-• Einfache Grammatik und Wortschatz
-• Vorbereitung auf Integrationsprüfungen
+•  Kommunikation in einfachen Alltagssituationen
+•  Aussprache und Hörverständnis
+•  Einfache Grammatik und Wortschatz
+•  Vorbereitung auf Integrationsprüfungen
 
 Am Ende dieses Kurses können Sie:
-• Sich in grundlegenden Alltagssituationen auf Deutsch verständigen
-• Einfache Gespräche führen und Informationen austauschen
-• Deutsche Texte auf einfachem Niveau verstehen
-• Einfache schriftliche Mitteilungen verfassen
-• Sich auf Integrations- und Sprachprüfungen vorbereiten.
+• Sich sicher in der deutschen Sprache verständigen
+• Die Prinzipien der österreichischen Rechts- und Gesellschaftsordnung verstehen und anwenden
+• Die Integrationsprüfung erfolgreich ablegen
 
-Für weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website des Sprachportals.`,
+Für weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website des Projekts.`,
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',
       ps: 'Lorem Ipsum',
       fa: 'Lorem Ipsum',
-      ar: `تقدم دورات ÖIF عبر الإنترنت فرصة ممتازة لدارسي اللغة الألمانية لتحسين مهاراتهم اللغوية إلى المستوى A1. من خلال جلسات يومية مباشرة ومجموعة متنوعة من المواد التعليمية، تدعم الدورة التدريبية مقدمة اللغة الألمانية وتعزز الاندماج في النمسا.
-
-                      تفاصيل الدورة:
-                      • المستوى: A1-B2
-                      • المدة: مرنة، حسب تقدم التعلم الفردي
-                      • الجدول الزمني: من الاثنين إلى السبت، أوقات مختلفة حسب قاعة الدورة التدريبية
-                      • الموقع: عبر الإنترنت (منصة زووم)
-                      • حجم الفصل: يختلف، عادةً ما تكون مجموعات صغيرة للاهتمام الفردي
-                      • رعاية الأطفال: غير متاح
-                      • السعر: مجاناً
-                      • مقدم الخدمة: عام (ممول من الدولة)
-                      • دعم اللغات: الداري/الفارسية، العربية، العربية، الإنجليزية، الأوكرانية
-                      • ذات صلة: لاتفاقيات الاندماج والدعم اللغوي
-                      • الشهادة: نعم - تأكيد المشاركة للحضور المنتظم
-
-
-                      ما ستتعلمه:
-                      • مهارات اللغة الألمانية الأساسية للحياة اليومية
-                      • التواصل في المواقف اليومية البسيطة
-                      • النطق والاستماع والاستيعاب اللغوي
-                      • قواعد اللغة والمفردات البسيطة
-                      • التحضير لامتحانات الاندماج
-
-في نهاية هذه الدورة سوف تكون قادراً على
-           • التواصل في المواقف اليومية الأساسية باللغة الألمانية
-           • إجراء محادثات بسيطة وتبادل المعلومات
-           • فهم النصوص الألمانية بمستوى أساسي
-           • تأليف رسائل مكتوبة بسيطة
-           • الاستعداد لامتحانات الاندماج واللغة.
-
-           لمزيد من المعلومات وللتسجيل، يرجى زيارة الموقع الرسمي لبوابة اللغة.`,
+      ar: 'Lorem Ipsum',
       ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
       ka: 'Lorem Ipsum',
       sq: 'Lorem Ipsum'
     },
-    provider: 'Österreichischer Integrations Fond (ÖIF)',
+    provider: 'Wiener Volkshochschulen (VHS)',
     contact: {
-      phone: '+43 5 0468-0',
-      email: 'info@integrationsfonds.at',
-      website: 'https://sprachportal.at/kurse-und-pruefungen/kursangebote/online-kurse/'
+      phone: '+43 1 893 00 83 (VHS Bildungstelefon)',
+      email: 'info@vhs.at',
+      website: 'https://www.vhs.at/de/projekte/startwien-integration-ab-tag-1'
     },
   };
 
@@ -432,4 +400,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default OIFLiveCourse;
+export default OIFOfflineCourse;

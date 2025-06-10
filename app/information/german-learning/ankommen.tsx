@@ -9,7 +9,7 @@ import LanguageModal from '../../../components/LanguageModal';
 import HelpModal from '../../../components/HelpModal';
 import {getLocation, getEnrollNow, getContactInformation} from '../../../data/languages/common';
 
-const OIFLiveCourse: React.FC = () => {
+const OIFOfflineCourse: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
@@ -22,137 +22,104 @@ const OIFLiveCourse: React.FC = () => {
   };
 
   const handleEnrollPress = () => {
-    Linking.openURL('https://sprachportal.at/kurse-und-pruefungen/kursangebote/online-kurse/');
+    Linking.openURL('https://www.ankommenapp.de/APP/DE/Startseite/startseite-node.html');
   };
 
   const content = {
     title: {
-      en: 'ÖIF Live Online German Courses',
-      de: 'ÖIF Live Online Deutschkurse',
+      en: '"Ankommen" App',
+      de: '"Ankommen" App',
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',
       ps: 'Lorem Ipsum',
       fa: 'Lorem Ipsum',
-      ar: 'دورات اللغة الألمانية المباشرة عبر الإنترنت ÖIF',
+      ar: 'Lorem Ipsum',
       ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
       ka: 'Lorem Ipsum',
       sq: 'Lorem Ipsum'
     },
     subtitle: {
-      en: 'Free German courses for beginners and advanced learners (A1-B2) - Daily from Monday to Saturday with qualified trainers',
-      de: 'Kostenlose Deutschkurse für Anfänger und Fortgeschrittene (A1-B2) – Täglich von Montag bis Samstag mit qualifizierten Trainerinnen und Trainern',
+      en: 'Free Mobile App Offering Information on Life in Germany, Asylum Procedures, and a German Language Course',
+      de: 'Kostenlose mobile App mit Informationen zum Leben in Deutschland, Asylverfahren und einem Deutschkurs',
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',
       ps: 'Lorem Ipsum',
       fa: 'Lorem Ipsum',
-      ar: 'دورات اللغة الألمانية المجانية للمتعلمين المبتدئين والمتقدمين (A1-B2) - يومياً من الاثنين إلى السبت مع مدربين مؤهلين',
+      ar: 'Lorem Ipsum',
       ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
       ka: 'Lorem Ipsum',
       sq: 'Lorem Ipsum'
     },
     description: {
-      en: `The ÖIF online courses offer an excellent opportunity for German learners to improve their language skills to A1 level. With daily live sessions and a variety of learning materials, the course supports the introduction to the German language and promotes integration in Austria.
+      en: `The App "Ankommen" is a free mobile application developed by the Federal Office for Migration and Refugees (BAMF) in collaboration with the Goethe-Institut, the Federal Employment Agency, and the Bavarian Broadcasting Corporation (BR). Designed as a practical companion, the app provides essential information to help individuals integrate into life in Germany. It includes details about everyday life, the asylum process, access to the labor market, and a free, multimedia German language course. The app is available in multiple languages and can be used offline after downloading.
 
-Course details:
-• Level: A1-B2
-• Duration: Flexible, depending on individual learning progress
-• Schedule: Monday to Saturday, different times depending on the course room
-• Location: Online (Zoom platform)
-• Class size: Varies, usually small groups for individual attention
-• Childcare: N/A
-• Price: Free of charge
-• Provider: Public (state funded)
-• Language support: Dari/Farsi, Arabic, English, Ukrainian
-• Relevant: for integration agreements and language support
-• Certificate: Yes - confirmation of participation for regular attendance
+Resource Details:
+• Level: A1-B1
+• Online/Offline: Both (downloadable for offline use)
+• Price: Free
+• Provider: Public (funded by the German government)
+• Language support: Arabic, English, Farsi, French, German
 
 
 What you will learn:
-• Basic German language skills for everyday life
-• Communication in simple everyday situations
-• Pronunciation and listening comprehension
-• Simple grammar and vocabulary
-• Preparation for integration exams
+• Basic to intermediate German language skills
+• Everyday vocabulary and phrases
+• Understanding of the asylum process in Germany
+• Information on accessing the labor market
+• Insights into German culture and society
 
-At the end of this course you will be able to
-• Communicate in basic everyday situations in German
-• Hold simple conversations and exchange information
-• Understand German texts at a basic level
-• Compose simple written messages
-• Prepare for integration and language exams.
+Type of Materials:
+• Interactive language exercises
+• Audio and video content
+• Text-based information
+• Quizzes and assessments
 
-For more information and to register, please visit the official website of the language portal.`,
-      de: `Die ÖIF-Online-Kurse bieten eine ausgezeichnete Gelegenheit für Deutschlernende, ihre Sprachkenntnisse auf A1-Niveau zu verbessern. Mit täglichen Live-Sitzungen und vielfältigen Lernmaterialien unterstützt der Kurs den Einstieg in die deutsche Sprache und fördert die Integration in Österreich.
+At the end of this course you will be able to:
+• Communicate effectively in basic German
+• Navigate the asylum process in Germany
+• Access information about work and training opportunities
+• Understand key aspects of daily life in Germany
 
-Kursdetails:
-• Level: A1-B2
-• Dauer: Flexibel, je nach individuellem Lernfortschritt
-• Zeitplan: Montag bis Samstag, verschiedene Zeiten je nach Kursraum
-• Ort: Online (Zoom-Plattform)
-• Klassengröße: Variiert, in der Regel kleine Gruppen für individuelle Betreuung
-• Kinderbetreuung: N/A
+For more information and to access the resources, please visit the official website.`,
+      de: `Die App „Ankommen“ ist eine kostenlose mobile Anwendung, die vom Bundesamt für Migration und Flüchtlinge (BAMF) in Zusammenarbeit mit dem Goethe-Institut, der Bundesagentur für Arbeit und dem Bayerischen Rundfunk (BR) entwickelt wurde. Als praktischer Begleiter bietet die App wichtige Informationen für die Integration in Deutschland. Sie umfasst Informationen zum Alltag, zum Asylverfahren, zum Zugang zum Arbeitsmarkt sowie einen kostenlosen, multimedialen Deutschkurs. Die App ist mehrsprachig verfügbar und kann nach dem Download auch offline genutzt werden.
+
+Ressourcendetails:
+• Niveau: A1–B1
+• Online/Offline: Beides
 • Preis: Kostenlos
-• Anbieter: Öffentlich (staatlich gefördert)
-• Sprachliche Unterstützung: Dari/Farsi, Arabisch, Englisch, Ukrainisch
-• Relevant: für Integrationsvereinbarungen und Sprachförderung
-• Zertifikat: Ja – Teilnahmebestätigung bei regelmäßiger Teilnahme
+• Anbieter: Öffentlich (finanziert vom Bund)
+• Sprachunterstützung: Arabisch, Englisch, Farsi, Französisch, Deutsch
 
+Was Sie lernen:
+• Grundkenntnisse bis Mittelstufe Deutsch
+• Alltagsvokabular und -phrasen
+• Verständnis des Asylverfahrens in Deutschland
+• Informationen zum Zugang zum Arbeitsmarkt
+• Einblicke in die deutsche Kultur und Gesellschaft
 
-Was Sie lernen werden:
-• Grundlegende Deutschkenntnisse für den Alltag
-• Kommunikation in einfachen Alltagssituationen
-• Aussprache und Hörverständnis
-• Einfache Grammatik und Wortschatz
-• Vorbereitung auf Integrationsprüfungen
+Materialarten:
+• Interaktive Sprachübungen
+• Audio- und Videoinhalte
+• Textbasierte Informationen
+• Quizze und Bewertungen
 
 Am Ende dieses Kurses können Sie:
-• Sich in grundlegenden Alltagssituationen auf Deutsch verständigen
-• Einfache Gespräche führen und Informationen austauschen
-• Deutsche Texte auf einfachem Niveau verstehen
-• Einfache schriftliche Mitteilungen verfassen
-• Sich auf Integrations- und Sprachprüfungen vorbereiten.
+• Effektiv auf Grundkenntnissen Deutsch kommunizieren
+• Das Asylverfahren in Deutschland bewältigen
+• Informationen über Arbeits- und Ausbildungsmöglichkeiten abrufen
+• Wichtige Aspekte des täglichen Lebens in Deutschland verstehen
 
-Für weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website des Sprachportals.`,
+Weitere Informationen und Ressourcen finden Sie auf der offiziellen Website.`,
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',
       ps: 'Lorem Ipsum',
       fa: 'Lorem Ipsum',
-      ar: `تقدم دورات ÖIF عبر الإنترنت فرصة ممتازة لدارسي اللغة الألمانية لتحسين مهاراتهم اللغوية إلى المستوى A1. من خلال جلسات يومية مباشرة ومجموعة متنوعة من المواد التعليمية، تدعم الدورة التدريبية مقدمة اللغة الألمانية وتعزز الاندماج في النمسا.
-
-                      تفاصيل الدورة:
-                      • المستوى: A1-B2
-                      • المدة: مرنة، حسب تقدم التعلم الفردي
-                      • الجدول الزمني: من الاثنين إلى السبت، أوقات مختلفة حسب قاعة الدورة التدريبية
-                      • الموقع: عبر الإنترنت (منصة زووم)
-                      • حجم الفصل: يختلف، عادةً ما تكون مجموعات صغيرة للاهتمام الفردي
-                      • رعاية الأطفال: غير متاح
-                      • السعر: مجاناً
-                      • مقدم الخدمة: عام (ممول من الدولة)
-                      • دعم اللغات: الداري/الفارسية، العربية، العربية، الإنجليزية، الأوكرانية
-                      • ذات صلة: لاتفاقيات الاندماج والدعم اللغوي
-                      • الشهادة: نعم - تأكيد المشاركة للحضور المنتظم
-
-
-                      ما ستتعلمه:
-                      • مهارات اللغة الألمانية الأساسية للحياة اليومية
-                      • التواصل في المواقف اليومية البسيطة
-                      • النطق والاستماع والاستيعاب اللغوي
-                      • قواعد اللغة والمفردات البسيطة
-                      • التحضير لامتحانات الاندماج
-
-في نهاية هذه الدورة سوف تكون قادراً على
-           • التواصل في المواقف اليومية الأساسية باللغة الألمانية
-           • إجراء محادثات بسيطة وتبادل المعلومات
-           • فهم النصوص الألمانية بمستوى أساسي
-           • تأليف رسائل مكتوبة بسيطة
-           • الاستعداد لامتحانات الاندماج واللغة.
-
-           لمزيد من المعلومات وللتسجيل، يرجى زيارة الموقع الرسمي لبوابة اللغة.`,
+      ar: 'Lorem Ipsum',
       ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
       ka: 'Lorem Ipsum',
@@ -160,9 +127,9 @@ Für weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle W
     },
     provider: 'Österreichischer Integrations Fond (ÖIF)',
     contact: {
-      phone: '+43 5 0468-0',
-      email: 'info@integrationsfonds.at',
-      website: 'https://sprachportal.at/kurse-und-pruefungen/kursangebote/online-kurse/'
+      phone: '+49 30 1815-1111 (ALiD Hotline – Working and Living in Germany)',
+      email: 'service@ams.de',
+      website: 'https://www.ankommenapp.de/APP/DE/Startseite/startseite-node.html'
     },
   };
 
@@ -432,4 +399,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default OIFLiveCourse;
+export default OIFOfflineCourse;

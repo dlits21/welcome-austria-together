@@ -9,7 +9,7 @@ import LanguageModal from '../../../components/LanguageModal';
 import HelpModal from '../../../components/HelpModal';
 import {getLocation, getEnrollNow, getContactInformation} from '../../../data/languages/common';
 
-const OIFLiveCourse: React.FC = () => {
+const OIFOfflineCourse: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
@@ -22,147 +22,117 @@ const OIFLiveCourse: React.FC = () => {
   };
 
   const handleEnrollPress = () => {
-    Linking.openURL('https://sprachportal.at/kurse-und-pruefungen/kursangebote/online-kurse/');
+    Linking.openURL('https://www.diakonie.at/unsere-themen/flucht-und-integration/ausbildung-und-bildungsangebote-fuer-fluechtlinge');
   };
 
   const content = {
     title: {
-      en: 'ÖIF Live Online German Courses',
-      de: 'ÖIF Live Online Deutschkurse',
+      en: 'Diakonie Austria - Training and educational opportunities for refugees',
+      de: 'Diakonie Österreich - Ausbildung und Bildungsangebote für Flüchtlinge',
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',
       ps: 'Lorem Ipsum',
       fa: 'Lorem Ipsum',
-      ar: 'دورات اللغة الألمانية المباشرة عبر الإنترنت ÖIF',
+      ar: 'Lorem Ipsum',
       ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
       ka: 'Lorem Ipsum',
       sq: 'Lorem Ipsum'
     },
     subtitle: {
-      en: 'Free German courses for beginners and advanced learners (A1-B2) - Daily from Monday to Saturday with qualified trainers',
-      de: 'Kostenlose Deutschkurse für Anfänger und Fortgeschrittene (A1-B2) – Täglich von Montag bis Samstag mit qualifizierten Trainerinnen und Trainern',
+      en: 'Free German courses, basic education and career advice for refugees',
+      de: 'Kostenlose Deutschkurse, Basisbildung und Berufsberatung für geflüchtete Menschen',
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',
       ps: 'Lorem Ipsum',
       fa: 'Lorem Ipsum',
-      ar: 'دورات اللغة الألمانية المجانية للمتعلمين المبتدئين والمتقدمين (A1-B2) - يومياً من الاثنين إلى السبت مع مدربين مؤهلين',
+      ar: 'Lorem Ipsum',
       ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
       ka: 'Lorem Ipsum',
       sq: 'Lorem Ipsum'
     },
     description: {
-      en: `The ÖIF online courses offer an excellent opportunity for German learners to improve their language skills to A1 level. With daily live sessions and a variety of learning materials, the course supports the introduction to the German language and promotes integration in Austria.
+      en: `Diakonie Austria offers a comprehensive range of educational programs for refugees to facilitate their access to the Austrian education and vocational system. The program includes free literacy and German language courses up to level B2, basic education courses in German, English, and mathematics, as well as the opportunity to complete compulsory schooling. Educational and career counseling and advanced training programs are also offered. The courses are tailored to the needs of adults, single parents, slow learners, and women. Childcare is also offered during course hours at some locations. All programs are free of charge for participants.
 
-Course details:
-• Level: A1-B2
-• Duration: Flexible, depending on individual learning progress
-• Schedule: Monday to Saturday, different times depending on the course room
-• Location: Online (Zoom platform)
-• Class size: Varies, usually small groups for individual attention
-• Childcare: N/A
-• Price: Free of charge
-• Provider: Public (state funded)
-• Language support: Dari/Farsi, Arabic, English, Ukrainian
-• Relevant: for integration agreements and language support
-• Certificate: Yes - confirmation of participation for regular attendance
-
+Course Details:
+• Level: A1–B2
+• Duration: Various programs, e.g., completing compulsory school in 10 months
+• Schedule: Various time models
+• Location: Multiple locations throughout Austria
+• Course Size: Small groups
+• Childcare: Yes (at some locations)
+• Price: Free
+• Provider: NGO (Diakonie Austria)
+• Language support: German, English, Arabic, Farsi, French, Kurdish, Pashto, Tigrinya, Turkish, Urdu
+• Relevance: Yes – relevant for integration requirements in Austria
+• Certificate: Completion of compulsory school or certificate of participation
 
 What you will learn:
-• Basic German language skills for everyday life
-• Communication in simple everyday situations
-• Pronunciation and listening comprehension
-• Simple grammar and vocabulary
-• Preparation for integration exams
+• Basic German language skills (A1–B2)
+• Reading and writing (literacy)
+• English language skills at A1–B1 level
+• Basic mathematical skills
+• Use of digital media and computer basics
+• Career orientation and application training
 
-At the end of this course you will be able to
-• Communicate in basic everyday situations in German
-• Hold simple conversations and exchange information
-• Understand German texts at a basic level
-• Compose simple written messages
-• Prepare for integration and language exams.
+By the end of this course, you will be able to:
+• Communicate effectively in everyday German situations
+• Read and write at a basic level
+• Apply basic mathematical skills
+• Obtain a compulsory school leaving certificate
+• Develop career prospects and write applications
 
-For more information and to register, please visit the official website of the language portal.`,
-      de: `Die ÖIF-Online-Kurse bieten eine ausgezeichnete Gelegenheit für Deutschlernende, ihre Sprachkenntnisse auf A1-Niveau zu verbessern. Mit täglichen Live-Sitzungen und vielfältigen Lernmaterialien unterstützt der Kurs den Einstieg in die deutsche Sprache und fördert die Integration in Österreich.
+For further information and to register, please visit the official Diakonie Austria website.`,
+      de: `Diakonie Österreich bietet ein umfassendes Bildungsangebot für geflüchtete Menschen, um ihnen den Zugang zum österreichischen Bildungs- und Berufssystem zu erleichtern. Das Programm umfasst kostenlose Alphabetisierungs- und Deutschkurse bis zum Niveau B2, Basisbildungskurse in Deutsch, Englisch und Mathematik, sowie die Möglichkeit, den Pflichtschulabschluss nachzuholen. Zusätzlich werden Bildungs- und Berufsberatung sowie Maßnahmen zur Höherqualifizierung angeboten. Die Kurse sind auf die Bedürfnisse von Erwachsenen, Alleinerziehenden, Menschen mit langsamem Lerntempo und Frauen abgestimmt. An einigen Standorten wird auch Kinderbetreuung während der Kurszeiten angeboten. Alle Angebote sind für die Teilnehmer:innen kostenlos.
 
 Kursdetails:
-• Level: A1-B2
-• Dauer: Flexibel, je nach individuellem Lernfortschritt
-• Zeitplan: Montag bis Samstag, verschiedene Zeiten je nach Kursraum
-• Ort: Online (Zoom-Plattform)
-• Klassengröße: Variiert, in der Regel kleine Gruppen für individuelle Betreuung
-• Kinderbetreuung: N/A
+• Niveau: A1–B2
+• Dauer: Verschiedene Programme, z.B. Pflichtschulabschluss in 10 Monaten
+• Zeitplan: Verschiedene Zeitmodelle
+• Ort: Mehrere Standorte in ganz Österreich
+• Kursgröße: Kleine Gruppen
+• Kinderbetreuung: Ja (an einigen Standorten)
 • Preis: Kostenlos
-• Anbieter: Öffentlich (staatlich gefördert)
-• Sprachliche Unterstützung: Dari/Farsi, Arabisch, Englisch, Ukrainisch
-• Relevant: für Integrationsvereinbarungen und Sprachförderung
-• Zertifikat: Ja – Teilnahmebestätigung bei regelmäßiger Teilnahme
-
+• Anbieter: NGO (Diakonie Österreich)
+• Sprachförderung: Deutsch, Englisch, Arabisch, Farsi, Französisch, Kurdisch, Paschtu, Tigrinya, Türkisch, Urdu
+• Relevanz: Ja – relevant für Integrationsanforderungen in Österreich
+• Zertifikat: Pflichtschulabschluss oder Teilnahmebestätigungen
 
 Was Sie lernen werden:
-• Grundlegende Deutschkenntnisse für den Alltag
-• Kommunikation in einfachen Alltagssituationen
-• Aussprache und Hörverständnis
-• Einfache Grammatik und Wortschatz
-• Vorbereitung auf Integrationsprüfungen
+• Grundlegende Deutschkenntnisse (A1–B2)
+• Lesen und Schreiben (Alphabetisierung)
+• Englischkenntnisse auf A1–B1 Niveau
+• Mathematische Grundkompetenzen
+• Umgang mit digitalen Medien und Computergrundlagen
+• Berufsorientierung und Bewerbungstraining
 
 Am Ende dieses Kurses können Sie:
-• Sich in grundlegenden Alltagssituationen auf Deutsch verständigen
-• Einfache Gespräche führen und Informationen austauschen
-• Deutsche Texte auf einfachem Niveau verstehen
-• Einfache schriftliche Mitteilungen verfassen
-• Sich auf Integrations- und Sprachprüfungen vorbereiten.
+• Effektiv in Alltagssituationen auf Deutsch kommunizieren
+• Lesen und Schreiben auf einem grundlegenden Niveau
+• Mathematische Grundkenntnisse anwenden
+• Einen Pflichtschulabschluss erwerben
+• Berufliche Perspektiven entwickeln und Bewerbungen verfassen
 
-Für weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website des Sprachportals.`,
+Für weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website der Diakonie Österreich.`,
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',
       ps: 'Lorem Ipsum',
       fa: 'Lorem Ipsum',
-      ar: `تقدم دورات ÖIF عبر الإنترنت فرصة ممتازة لدارسي اللغة الألمانية لتحسين مهاراتهم اللغوية إلى المستوى A1. من خلال جلسات يومية مباشرة ومجموعة متنوعة من المواد التعليمية، تدعم الدورة التدريبية مقدمة اللغة الألمانية وتعزز الاندماج في النمسا.
-
-                      تفاصيل الدورة:
-                      • المستوى: A1-B2
-                      • المدة: مرنة، حسب تقدم التعلم الفردي
-                      • الجدول الزمني: من الاثنين إلى السبت، أوقات مختلفة حسب قاعة الدورة التدريبية
-                      • الموقع: عبر الإنترنت (منصة زووم)
-                      • حجم الفصل: يختلف، عادةً ما تكون مجموعات صغيرة للاهتمام الفردي
-                      • رعاية الأطفال: غير متاح
-                      • السعر: مجاناً
-                      • مقدم الخدمة: عام (ممول من الدولة)
-                      • دعم اللغات: الداري/الفارسية، العربية، العربية، الإنجليزية، الأوكرانية
-                      • ذات صلة: لاتفاقيات الاندماج والدعم اللغوي
-                      • الشهادة: نعم - تأكيد المشاركة للحضور المنتظم
-
-
-                      ما ستتعلمه:
-                      • مهارات اللغة الألمانية الأساسية للحياة اليومية
-                      • التواصل في المواقف اليومية البسيطة
-                      • النطق والاستماع والاستيعاب اللغوي
-                      • قواعد اللغة والمفردات البسيطة
-                      • التحضير لامتحانات الاندماج
-
-في نهاية هذه الدورة سوف تكون قادراً على
-           • التواصل في المواقف اليومية الأساسية باللغة الألمانية
-           • إجراء محادثات بسيطة وتبادل المعلومات
-           • فهم النصوص الألمانية بمستوى أساسي
-           • تأليف رسائل مكتوبة بسيطة
-           • الاستعداد لامتحانات الاندماج واللغة.
-
-           لمزيد من المعلومات وللتسجيل، يرجى زيارة الموقع الرسمي لبوابة اللغة.`,
+      ar: 'Lorem Ipsum',
       ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
       ka: 'Lorem Ipsum',
       sq: 'Lorem Ipsum'
     },
-    provider: 'Österreichischer Integrations Fond (ÖIF)',
+    provider: 'Diakonie Österreich',
     contact: {
-      phone: '+43 5 0468-0',
-      email: 'info@integrationsfonds.at',
-      website: 'https://sprachportal.at/kurse-und-pruefungen/kursangebote/online-kurse/'
+      phone: '+43 2236 8686 801',
+      email: ' bach@diakonie.at',
+      website: 'https://www.diakonie.at/unsere-themen/flucht-und-integration/ausbildung-und-bildungsangebote-fuer-fluechtlinge'
     },
   };
 
@@ -236,7 +206,7 @@ Für weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle W
               <Text style={styles.mapPlaceholderText}>
                 {currentLanguage === 'de' ? 'Karte wird geladen...' : 'Map loading...'}
               </Text>
-              <Text style={styles.mapLocationText}>VHS Vienna, Urania Building</Text>
+              <Text style={styles.mapLocationText}>CarBiz – Caritas Bildungszentrum, Nobilegasse 23–25 / 2. Stock, 1150 Wien</Text>
             </View>
           </View>
         </View>
@@ -432,4 +402,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default OIFLiveCourse;
+export default OIFOfflineCourse;

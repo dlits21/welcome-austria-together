@@ -9,7 +9,7 @@ import LanguageModal from '../../../components/LanguageModal';
 import HelpModal from '../../../components/HelpModal';
 import {getLocation, getEnrollNow, getContactInformation} from '../../../data/languages/common';
 
-const OIFLiveCourse: React.FC = () => {
+const OIFOfflineCourse: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
@@ -22,147 +22,129 @@ const OIFLiveCourse: React.FC = () => {
   };
 
   const handleEnrollPress = () => {
-    Linking.openURL('https://sprachportal.at/kurse-und-pruefungen/kursangebote/online-kurse/');
+    Linking.openURL('https://www.stationwien.org/projekte/mama-lernt-deutsch.html');
   };
 
   const content = {
     title: {
-      en: 'ÖIF Live Online German Courses',
-      de: 'ÖIF Live Online Deutschkurse',
+      en: 'Mama lernt Deutsch – German Language Courses for Women',
+      de: 'Mama lernt Deutsch – Deutschkurse für Frauen',
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',
       ps: 'Lorem Ipsum',
       fa: 'Lorem Ipsum',
-      ar: 'دورات اللغة الألمانية المباشرة عبر الإنترنت ÖIF',
+      ar: 'Lorem Ipsum',
       ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
       ka: 'Lorem Ipsum',
       sq: 'Lorem Ipsum'
     },
     subtitle: {
-      en: 'Free German courses for beginners and advanced learners (A1-B2) - Daily from Monday to Saturday with qualified trainers',
-      de: 'Kostenlose Deutschkurse für Anfänger und Fortgeschrittene (A1-B2) – Täglich von Montag bis Samstag mit qualifizierten Trainerinnen und Trainern',
+      en: 'Empowering Women Through Basic Education and Language Skills',
+      de: 'Stärkt Frauen durch Grundbildung und Sprachkenntnisse',
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',
       ps: 'Lorem Ipsum',
       fa: 'Lorem Ipsum',
-      ar: 'دورات اللغة الألمانية المجانية للمتعلمين المبتدئين والمتقدمين (A1-B2) - يومياً من الاثنين إلى السبت مع مدربين مؤهلين',
+      ar: 'Lorem Ipsum',
       ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
       ka: 'Lorem Ipsum',
       sq: 'Lorem Ipsum'
     },
     description: {
-      en: `The ÖIF online courses offer an excellent opportunity for German learners to improve their language skills to A1 level. With daily live sessions and a variety of learning materials, the course supports the introduction to the German language and promotes integration in Austria.
-
+      en: `The "Mama lernt Deutsch" program is a free educational initiative by Station Wien, designed specifically for women who have had limited or no formal schooling. The courses aim to provide foundational skills in reading, writing, and German language proficiency, catering to women from diverse backgrounds, including refugees and migrants. The program also includes basic mathematics, digital literacy, and cultural excursions, enhancing the learning experience. Childcare services are provided during classes, ensuring that mothers can participate without concerns about their children's care. The courses are funded by the EU, the Austrian Ministry of Education, and the City of Vienna, making them accessible at no cost to participants.
+           
 Course details:
-• Level: A1-B2
-• Duration: Flexible, depending on individual learning progress
-• Schedule: Monday to Saturday, different times depending on the course room
-• Location: Online (Zoom platform)
-• Class size: Varies, usually small groups for individual attention
-• Childcare: N/A
+• Level: A1 to B1 (German language proficiency)
+• Duration: Varies; typically several months
+• Schedule: Morning courses: Monday to Friday, 8:20–12:00; Afternoon courses: Monday to Wednesday, 12:30–15:15
+• Location: Einsiedlerplatz 5, 1050 Vienna, Austria
+• Class size: Small groups to ensure personalized attention
+• Childcare: Yes
 • Price: Free of charge
-• Provider: Public (state funded)
-• Language support: Dari/Farsi, Arabic, English, Ukrainian
-• Relevant: for integration agreements and language support
-• Certificate: Yes - confirmation of participation for regular attendance
-
+• Provider: NGO (Station Vienna)
+• Language support:  Information available in multiple languages; specific language support may vary
+• Relevant: relevant for integration requirements in Austria
+• Certificate: No formal certificate
 
 What you will learn:
-• Basic German language skills for everyday life
-• Communication in simple everyday situations
-• Pronunciation and listening comprehension
-• Simple grammar and vocabulary
-• Preparation for integration exams
+• Basic German language skills (A1 to B1 level)
+• Reading and writing fundamentals (Alphabetisierung)
+• Basic mathematics
+• Digital literacy (using mobile phones and computers)
+• Effective learning strategies
+• Cultural integration through excursions and community activities
 
-At the end of this course you will be able to
-• Communicate in basic everyday situations in German
-• Hold simple conversations and exchange information
-• Understand German texts at a basic level
-• Compose simple written messages
-• Prepare for integration and language exams.
+At the end of this course you will be able to:
+• Communicate effectively in everyday situations in German
+• Read and write basic German texts
+• Use digital tools for communication and information
+• Understand and apply basic mathematical concepts
+• Navigate German society with greater confidence.
 
-For more information and to register, please visit the official website of the language portal.`,
-      de: `Die ÖIF-Online-Kurse bieten eine ausgezeichnete Gelegenheit für Deutschlernende, ihre Sprachkenntnisse auf A1-Niveau zu verbessern. Mit täglichen Live-Sitzungen und vielfältigen Lernmaterialien unterstützt der Kurs den Einstieg in die deutsche Sprache und fördert die Integration in Österreich.
+For more information and to register, please contact:
+    Magdalena Niklas-Kujabi, BA
+    Email: magdalena.niklas-@-stationwien.com
+    Phone: +43 (0)676 36 22 760
+    Address: Einsiedlerplatz 5, 1050 Vienna, Austria
+
+This program is an excellent opportunity for women seeking to improve their German language skills and integrate more fully into Austrian society.`,
+      de: `Das Programm „Mama lernt Deutsch“ ist eine kostenlose Bildungsinitiative der Station Wien, die sich speziell an Frauen mit eingeschränkter oder keiner Schulbildung richtet. Die Kurse vermitteln grundlegende Lese-, Schreib- und Deutschkenntnisse und richten sich an Frauen mit unterschiedlichem Hintergrund, darunter auch Geflüchtete und Migrantinnen. Das Programm umfasst außerdem grundlegende Mathematik, digitale Kompetenzen und kulturelle Exkursionen, die das Lernerlebnis bereichern. Während des Unterrichts wird eine Kinderbetreuung angeboten, damit Mütter ohne Sorgen um die Betreuung ihrer Kinder teilnehmen können. Die Kurse werden von der EU, dem österreichischen Bildungsministerium und der Stadt Wien gefördert und sind für die Teilnehmerinnen kostenlos.
 
 Kursdetails:
-• Level: A1-B2
-• Dauer: Flexibel, je nach individuellem Lernfortschritt
-• Zeitplan: Montag bis Samstag, verschiedene Zeiten je nach Kursraum
-• Ort: Online (Zoom-Plattform)
-• Klassengröße: Variiert, in der Regel kleine Gruppen für individuelle Betreuung
-• Kinderbetreuung: N/A
+• Niveau: A1 bis B1 (Deutschkenntnisse)
+• Dauer: Variiert; in der Regel mehrere Monate
+• Zeitplan: Vormittagskurse: Montag bis Freitag, 8:20–12:00 Uhr; Nachmittagskurse: Montag bis Mittwoch, 12:30–15:15 Uhr
+• Ort: Einsiedlerplatz 5, 1050 Wien, Österreich
+• Kursgröße: Kleine Gruppen für individuelle Betreuung
+• Kinderbetreuung: Ja
 • Preis: Kostenlos
-• Anbieter: Öffentlich (staatlich gefördert)
-• Sprachliche Unterstützung: Dari/Farsi, Arabisch, Englisch, Ukrainisch
-• Relevant: für Integrationsvereinbarungen und Sprachförderung
-• Zertifikat: Ja – Teilnahmebestätigung bei regelmäßiger Teilnahme
-
+• Anbieter: NGO (Station Vienna)
+• Sprachförderung: Informationen in mehreren Sprachen verfügbar; die spezifische Sprachförderung kann variieren
+• Relevanz: Relevant für Integrationsanforderungen in Österreich
+• Zertifikat: Kein formales Zertifikat
 
 Was Sie lernen werden:
-• Grundlegende Deutschkenntnisse für den Alltag
-• Kommunikation in einfachen Alltagssituationen
-• Aussprache und Hörverständnis
-• Einfache Grammatik und Wortschatz
-• Vorbereitung auf Integrationsprüfungen
+• Grundlegende Deutschkenntnisse (Niveau A1 bis B1)
+• Alphabetisierung (Grundlagen des Lesens und Schreibens)
+• Grundlegende Mathematikkenntnisse
+• Digitale Kompetenz (Nutzung von Mobiltelefonen und Computern)
+• Effektive Lernstrategien
+• Kulturelle Integration durch Ausflüge und Gemeinschaftsaktivitäten
 
 Am Ende dieses Kurses können Sie:
-• Sich in grundlegenden Alltagssituationen auf Deutsch verständigen
-• Einfache Gespräche führen und Informationen austauschen
-• Deutsche Texte auf einfachem Niveau verstehen
-• Einfache schriftliche Mitteilungen verfassen
-• Sich auf Integrations- und Sprachprüfungen vorbereiten.
+• Effektiv in Alltagssituationen auf Deutsch kommunizieren
+• Einfache deutsche Texte lesen und schreiben
+• Digitale Werkzeuge für Kommunikation und Information nutzen
+• Grundlegende mathematische Konzepte verstehen und anwenden
+• Sich sicherer in der deutschen Gesellschaft bewegen
 
-Für weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website des Sprachportals.`,
+Für weitere Informationen und zur Anmeldung wenden Sie sich bitte an:
+Magdalena Niklas-Kujabi, BA
+E-Mail: magdalena.niklas-@-stationwien.com
+Telefon: +43 (0)676 36 22 760
+Adresse: Einsiedlerplatz 5, 1050 Wien, Österreich
+
+Dieses Programm ist eine hervorragende Gelegenheit für Frauen, ihre Deutschkenntnisse zu verbessern und sich besser in die österreichische Gesellschaft zu integrieren.`,
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',
       ps: 'Lorem Ipsum',
       fa: 'Lorem Ipsum',
-      ar: `تقدم دورات ÖIF عبر الإنترنت فرصة ممتازة لدارسي اللغة الألمانية لتحسين مهاراتهم اللغوية إلى المستوى A1. من خلال جلسات يومية مباشرة ومجموعة متنوعة من المواد التعليمية، تدعم الدورة التدريبية مقدمة اللغة الألمانية وتعزز الاندماج في النمسا.
-
-                      تفاصيل الدورة:
-                      • المستوى: A1-B2
-                      • المدة: مرنة، حسب تقدم التعلم الفردي
-                      • الجدول الزمني: من الاثنين إلى السبت، أوقات مختلفة حسب قاعة الدورة التدريبية
-                      • الموقع: عبر الإنترنت (منصة زووم)
-                      • حجم الفصل: يختلف، عادةً ما تكون مجموعات صغيرة للاهتمام الفردي
-                      • رعاية الأطفال: غير متاح
-                      • السعر: مجاناً
-                      • مقدم الخدمة: عام (ممول من الدولة)
-                      • دعم اللغات: الداري/الفارسية، العربية، العربية، الإنجليزية، الأوكرانية
-                      • ذات صلة: لاتفاقيات الاندماج والدعم اللغوي
-                      • الشهادة: نعم - تأكيد المشاركة للحضور المنتظم
-
-
-                      ما ستتعلمه:
-                      • مهارات اللغة الألمانية الأساسية للحياة اليومية
-                      • التواصل في المواقف اليومية البسيطة
-                      • النطق والاستماع والاستيعاب اللغوي
-                      • قواعد اللغة والمفردات البسيطة
-                      • التحضير لامتحانات الاندماج
-
-في نهاية هذه الدورة سوف تكون قادراً على
-           • التواصل في المواقف اليومية الأساسية باللغة الألمانية
-           • إجراء محادثات بسيطة وتبادل المعلومات
-           • فهم النصوص الألمانية بمستوى أساسي
-           • تأليف رسائل مكتوبة بسيطة
-           • الاستعداد لامتحانات الاندماج واللغة.
-
-           لمزيد من المعلومات وللتسجيل، يرجى زيارة الموقع الرسمي لبوابة اللغة.`,
+      ar: 'Lorem Ipsum',
       ku: 'Lorem Ipsum',
       so: 'Lorem Ipsum',
       ka: 'Lorem Ipsum',
       sq: 'Lorem Ipsum'
     },
-    provider: 'Österreichischer Integrations Fond (ÖIF)',
+    provider: 'Station Wien',
     contact: {
-      phone: '+43 5 0468-0',
-      email: 'info@integrationsfonds.at',
-      website: 'https://sprachportal.at/kurse-und-pruefungen/kursangebote/online-kurse/'
+      phone: '+43 676 36 22 760',
+      email: ' magdalena.niklas@stationwien.com',
+      website: 'https://www.stationwien.org/projekte/mama-lernt-deutsch.html/'
     },
   };
 
@@ -236,7 +218,7 @@ Für weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle W
               <Text style={styles.mapPlaceholderText}>
                 {currentLanguage === 'de' ? 'Karte wird geladen...' : 'Map loading...'}
               </Text>
-              <Text style={styles.mapLocationText}>VHS Vienna, Urania Building</Text>
+              <Text style={styles.mapLocationText}>CarBiz – Caritas Bildungszentrum, Nobilegasse 23–25 / 2. Stock, 1150 Wien</Text>
             </View>
           </View>
         </View>
@@ -432,4 +414,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default OIFLiveCourse;
+export default OIFOfflineCourse;
