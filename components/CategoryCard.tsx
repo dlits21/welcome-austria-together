@@ -1,79 +1,80 @@
 
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, useWindowDimensions } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 interface CategoryCardProps {
   title: string;
-  subtitle: string;
-  icon: string;
-  color: string;
+  description: string;
+  icon: keyof typeof MaterialIcons.glyphMap;
   onPress: () => void;
+  color?: string;
 }
 
-const CategoryCard: React.FC<CategoryCardProps> = ({ 
-  title, 
-  subtitle, 
-  icon, 
-  color, 
-  onPress 
+const CategoryCard: React.FC<CategoryCardProps> = ({
+  title,
+  description,
+  icon,
+  onPress,
+  color = '#3B82F6'
 }) => {
-  const { width } = useWindowDimensions();
-  
-  // Calculate card width based on screen width
-  let cardWidth = width - 32; // Default: full width for narrow screens
-  
-  if (width > 1100) {
-    cardWidth = (width - 80) / 4; // 4 cards per row with spacing
-  } else if (width > 800) {
-    cardWidth = (width - 64) / 3; // 3 cards per row with spacing
-  } else if (width > 500) {
-    cardWidth = (width - 48) / 2; // 2 cards per row with spacing
-  }
+  const screenWidth = Dimensions.get('window').width;
+  const cardWidth = (screenWidth - 48) / 2; // 2 columns with padding
+  const iconSize = Math.max(32, cardWidth * 0.15); // Responsive icon size, minimum 32
 
   return (
     <TouchableOpacity 
-      style={[
-        styles.categoryCard, 
-        { borderColor: color + '40', width: cardWidth }
-      ]} 
+      style={[styles.card, { width: cardWidth }]} 
       onPress={onPress}
     >
-      <View style={[styles.iconContainer, { backgroundColor: color + '20' }]}>
-        <MaterialIcons name={icon} size={36} color={color} />
+      <View style={[styles.iconContainer, { backgroundColor: `${color}15` }]}>
+        <MaterialIcons 
+          name={icon} 
+          size={iconSize} 
+          color={color} 
+        />
       </View>
-      <Text style={styles.cardTitle}>{title}</Text>
-      <Text style={styles.cardSubtitle} numberOfLines={2}>{subtitle}</Text>
+      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.description}>{description}</Text>
     </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
-  categoryCard: {
-    marginBottom: 16,
-    borderWidth: 2,
+  card: {
+    backgroundColor: '#fff',
     borderRadius: 12,
     padding: 16,
-    backgroundColor: '#fff',
-  },
-  iconContainer: {
-    width: '100%',
-    aspectRatio: 4/3,
-    borderRadius: 8,
-    marginBottom: 12,
-    justifyContent: 'center',
+    marginBottom: 16,
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
+    elevation: 2,
     alignItems: 'center',
   },
-  cardTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 4,
-    textAlign: 'center', // Center title text
+  iconContainer: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 12,
   },
-  cardSubtitle: {
+  title: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#1f2937',
+    textAlign: 'center',
+    marginBottom: 8,
+  },
+  description: {
     fontSize: 14,
-    color: '#666',
-    textAlign: 'center', // Center subtitle text
+    color: '#6b7280',
+    textAlign: 'center',
+    lineHeight: 20,
   },
 });
 

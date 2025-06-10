@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, TouchableOpacity, Linking } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -19,6 +18,14 @@ const OIFOfflineCourse: React.FC = () => {
 
   const toggleSound = () => {
     setSoundEnabled(!soundEnabled);
+  };
+
+  const handlePhonePress = () => {
+    Linking.openURL(`tel:${content.contact.phone}`);
+  };
+
+  const handleEmailPress = () => {
+    Linking.openURL(`mailto:${content.contact.email}`);
   };
 
   const handleEnrollPress = () => {
@@ -170,32 +177,40 @@ F√ºr weitere Informationen und zur Anmeldung wenden Sie sich bitte an Ihre zust√
           {getCurrentContent(content.description)}
         </Text>
         
-        {/* Contact Information - Updated to match BBU style */}
+        {/* Contact Information - Updated with clickable elements */}
         <View style={styles.contactSection}>
           <Text style={styles.sectionTitle}>
             {getContactInformation(currentLanguage)}
           </Text>
           
           <View style={styles.contactGrid}>
-            <View style={styles.contactCard}>
+            <TouchableOpacity 
+              style={styles.contactCard}
+              onPress={handlePhonePress}
+            >
               <MaterialIcons name="phone" size={24} color="#3B82F6" />
               <View style={styles.contactInfo}>
                 <Text style={styles.contactLabel}>
                   {currentLanguage === 'de' ? 'Telefon' : 'Phone'}
                 </Text>
-                <Text style={styles.contactValue}>{content.contact.phone}</Text>
+                <Text style={[styles.contactValue, styles.linkText]}>{content.contact.phone}</Text>
               </View>
-            </View>
+              <MaterialIcons name="open-in-new" size={16} color="#666" />
+            </TouchableOpacity>
             
-            <View style={styles.contactCard}>
+            <TouchableOpacity 
+              style={styles.contactCard}
+              onPress={handleEmailPress}
+            >
               <MaterialIcons name="email" size={24} color="#3B82F6" />
               <View style={styles.contactInfo}>
                 <Text style={styles.contactLabel}>
                   {currentLanguage === 'de' ? 'E-Mail' : 'Email'}
                 </Text>
-                <Text style={styles.contactValue}>{content.contact.email}</Text>
+                <Text style={[styles.contactValue, styles.linkText]}>{content.contact.email}</Text>
               </View>
-            </View>
+              <MaterialIcons name="open-in-new" size={16} color="#666" />
+            </TouchableOpacity>
             
             <TouchableOpacity 
               style={styles.contactCard}

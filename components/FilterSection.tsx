@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 
@@ -90,7 +89,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({
 
 const styles = StyleSheet.create({
   scrollableContainer: {
-    maxHeight: 300,
+    maxHeight: 400, // Increased from 300 to 400
     marginBottom: 16,
   },
   filterSection: {
@@ -98,6 +97,7 @@ const styles = StyleSheet.create({
     padding: 16,
     borderRadius: 12,
     marginBottom: 16,
+    minHeight: 200, // Added minimum height to make it bigger
   },
   filterSectionTitle: {
     fontSize: 18,

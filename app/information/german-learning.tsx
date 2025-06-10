@@ -1383,6 +1383,17 @@ const GermanLearningPage: React.FC = () => {
   // Quiz questions
   const quizQuestions = [
     {
+      question: language.code === 'de' 
+        ? 'Suchen Sie nach einem Kurs, einer Prüfung oder Ressourcen?' 
+        : 'Are you looking for a course, an exam or resources?',
+      answers: [
+        { key: 'course', en: 'Course', de: 'Kurs' },
+        { key: 'resource', en: 'Resources', de: 'Ressourcen' },
+        { key: 'exam', en: 'Exam', de: 'Prüfung' }
+      ],
+      key: 'type' as keyof typeof quizAnswers
+    },
+    {
       question: language.code === 'de' ? 'Wie ist Ihr Niveau?' : 'What\'s your level?',
       answers: ['A0', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'],
       key: 'level' as keyof typeof quizAnswers
@@ -1397,17 +1408,6 @@ const GermanLearningPage: React.FC = () => {
         { key: 'in-person', en: 'In-person', de: 'Persönlich' }
       ],
       key: 'format' as keyof typeof quizAnswers
-    },
-    {
-      question: language.code === 'de' 
-        ? 'Suchen Sie nach einem Kurs, einer Prüfung oder Ressourcen?' 
-        : 'Are you looking for a course, an exam or resources?',
-      answers: [
-        { key: 'course', en: 'Course', de: 'Kurs' },
-        { key: 'exam', en: 'Exam', de: 'Prüfung' },
-        { key: 'resource', en: 'Resources', de: 'Ressourcen' }
-      ],
-      key: 'type' as keyof typeof quizAnswers
     }
   ];
 
@@ -1646,20 +1646,70 @@ const GermanLearningPage: React.FC = () => {
       <Text style={styles.filterGroupTitle}>
         {language.code === 'de' ? 'Weitere Filter' : 'Additional Filters'}
       </Text>
-      <TouchableOpacity
-        style={[
-          styles.filterChip,
-          freeOnly && styles.activeFilterChip
-        ]}
-        onPress={() => setFreeOnly(!freeOnly)}
-      >
-        <Text style={[
-          styles.filterChipText,
-          freeOnly && styles.activeFilterChipText
-        ]}>
-          {language.code === 'de' ? 'Nur kostenlos' : 'Free only'}
-        </Text>
-      </TouchableOpacity>
+      <View style={styles.filterChips}>
+        <TouchableOpacity
+          style={[
+            styles.filterChip,
+            freeOnly && styles.activeFilterChip
+          ]}
+          onPress={() => setFreeOnly(!freeOnly)}
+        >
+          <Text style={[
+            styles.filterChipText,
+            freeOnly && styles.activeFilterChipText
+          ]}>
+            {language.code === 'de' ? 'Nur kostenlos' : 'Free only'}
+          </Text>
+        </TouchableOpacity>
+        
+        <TouchableOpacity
+          style={[
+            styles.filterChip,
+            // Add state for women filter when implemented
+          ]}
+          onPress={() => {/* TODO: Implement women filter */}}
+        >
+          <Text style={styles.filterChipText}>
+            {language.code === 'de' ? 'Für Frauen' : 'For women'}
+          </Text>
+        </TouchableOpacity>
+        
+        <TouchableOpacity
+          style={[
+            styles.filterChip,
+            // Add state for young migrants filter when implemented
+          ]}
+          onPress={() => {/* TODO: Implement young migrants filter */}}
+        >
+          <Text style={styles.filterChipText}>
+            {language.code === 'de' ? 'Für junge Migrant:innen' : 'For young migrants'}
+          </Text>
+        </TouchableOpacity>
+        
+        <TouchableOpacity
+          style={[
+            styles.filterChip,
+            // Add state for childcare filter when implemented
+          ]}
+          onPress={() => {/* TODO: Implement childcare filter */}}
+        >
+          <Text style={styles.filterChipText}>
+            {language.code === 'de' ? 'Kinderbetreuung verfügbar' : 'Childcare available'}
+          </Text>
+        </TouchableOpacity>
+        
+        <TouchableOpacity
+          style={[
+            styles.filterChip,
+            // Add state for integration requirement filter when implemented
+          ]}
+          onPress={() => {/* TODO: Implement integration requirement filter */}}
+        >
+          <Text style={styles.filterChipText}>
+            {language.code === 'de' ? 'Erfüllt Integrationsanforderung' : 'Fulfills integration requirement'}
+          </Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 
@@ -1899,3 +1949,5 @@ const styles = StyleSheet.create({
 });
 
 export default GermanLearningPage;
+
+}
