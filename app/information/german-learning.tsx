@@ -546,7 +546,7 @@ description: {
      pl: 'Lorem Ipsum',
      sr: 'Lorem Ipsum'
    },
-   provider: 'AMS',
+   provider: 'Arbeitsmarktservice (AMS)',
    forWomen: false,
    forYoungMigrants: false,
    childcare: false,

@@ -6,7 +6,9 @@ import { Stack } from 'expo-router';
 export default function RootLayout() {
   return (
     <LanguageProvider>
-      <Stack>
+      <Stack screenOptions={{
+                   headerShown: false,
+                 }}>
         <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="home" options={{ headerShown: false }} />
         <Stack.Screen name="learn" options={{ headerShown: false }} />
@@ -44,7 +46,6 @@ export default function RootLayout() {
         <Stack.Screen name="information/political-education/civic-duties" options={{ headerShown: false }} />
         <Stack.Screen name="information/political-education/integration-process" options={{ headerShown: false }} />
         <Stack.Screen name="information/political-education/legal-system" options={{ headerShown: false }} />
-        <Stack.Screen name="information/german-learning/oif_live_course" options={{ headerShown: false }} />
         {/* Add other screens as needed */}
       </Stack>
     </LanguageProvider>

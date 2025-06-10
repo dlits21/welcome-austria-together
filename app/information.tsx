@@ -203,7 +203,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   categoryIcon: {
-    fontSize: 30,
+    fontSize: 80,
   },
   categoryTitle: {
     fontSize: 14,

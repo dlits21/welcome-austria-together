@@ -1,0 +1,63 @@
+{
+  "ams_integration": {
+    "id": "ams_integration",
+    "title": {
+      "en": "AMS - Year of Integration",
+      "de": "AMS - Integrationsjahr"
+    },
+    "subtitle": {
+      "en": "Learning German, professional orientation and integration into the Austrian labor market",
+      "de": "Deutsch lernen, berufliche Orientierung und Integration in den österreichischen Arbeitsmarkt"
+    },
+    "provider": "Arbeitsmarktservice (AMS)",
+    "description": {
+      "en": "The Integration Year is a program of the Public Employment Service Austria (AMS) that aims to offer structured support to persons entitled to asylum, subsidiary protection and certain asylum seekers with a high probability of recognition for integration into the Austrian labour market. The program combines language support, professional orientation and practical experience to increase the chances of sustainable employment.\n\nCourse details:\n• Level: A1-C1\n• Duration: Maximum 12 months; measures already started can be completed beyond the year\n• Timetable: Various modules, adapted to individual needs\n• Location: AMS offices throughout Austria\n• Class size: Small groups for individual support\n• Childcare: N/A\n• Price: Free of charge for participants\n• Provider: Public (state-funded)\n• Language support: German, English, Arabic, Farsi, French\n• Relevant: for integration agreements and language support\n• Certificate: Yes - confirmation of participation with integration card\n\n\nWhat you will learn:\n• German language skills at A2 to C1 level\n• Professional orientation and job application training\n• Recognizing and using individual skills\n• Practical experience in various professional fields\n• Integration into the Austrian labor market\n\n\nAt the end of this course you will be able to\n• Communicate confidently in the German language\n• Develop a clear professional orientation and perspective\n• Successfully write job applications and conduct job interviews\n• Gain practical experience in a professional field\n• Achieve sustainable integration into the labor market\n\nFor further information and to register, please contact your responsible AMS advisor. Together we will check the requirements and draw up an individual schedule for your integration year.",
+      "de": "Das Integrationsjahr ist ein Programm des Arbeitsmarktservice Österreich (AMS), das darauf abzielt, Asylberechtigten, subsidiär Schutzberechtigten und bestimmten Asylwerber*innen mit hoher Anerkennungswahrscheinlichkeit eine strukturierte Unterstützung bei der Integration in den österreichischen Arbeitsmarkt zu bieten. Das Programm kombiniert Sprachförderung, berufliche Orientierung und praktische Erfahrungen, um die Chancen auf eine nachhaltige Erwerbstätigkeit zu erhöhen.\n\nKursdetails:\n• Level: A1-C1\n• Dauer: Maximal 12 Monate; bereits begonnene Maßnahmen können über das Jahr hinaus abgeschlossen werden\n• Zeitplan: Verschiedene Module, angepasst an individuelle Bedürfnisse\n• Ort: AMS Geschäftsstellen in ganz Österreich\n• Klassengröße: Kleine Gruppen für individuelle Betreuung\n• Kinderbetreuung: N/A\n• Preis: Kostenlos für Teilnehmer*innen\n• Anbieter: Öffentlich (staatlich gefördert)\n• Sprachliche Unterstützung: Deutsch, Englisch, Arabisch, Farsi, Französisch\n• Relevant: für Integrationsvereinbarungen und Sprachförderung\n• Zertifikat: Ja – Teilnahmebestätigung mit Integrationskarte\n\n\nWas Sie lernen werden:\n•  Deutschkenntnisse auf A2 bis C1 Niveau\n•  Berufliche Orientierung und Bewerbungstraining\n•  Erkennen und Nutzen individueller Kompetenzen\n•  Praktische Erfahrungen in verschiedenen Berufsfeldern\n•  Integration in den österreichischen Arbeitsmarkt\n\nAm Ende dieses Kurses können Sie:\n• Sich sicher in der deutschen Sprache verständigen\n• Eine klare berufliche Orientierung und Perspektive entwickeln\n• Erfolgreich Bewerbungen verfassen und Vorstellungsgespräche führen\n• Praktische Erfahrungen in einem Berufsfeld sammeln\n• Eine nachhaltige Integration in den Arbeitsmarkt erreichen\n\nFür weitere Informationen und zur Anmeldung wenden Sie sich bitte an Ihre zuständige AMS Beraterin oder Ihren zuständigen AMS Berater. Gemeinsam werden die Voraussetzungen geprüft und ein individueller Ablaufplan für Ihr Integrationsjahr erstellt."
+    },
+    "contact": {
+      "phone": "+43 50 904 222 (AMS Serviceline)",
+      "email": "service@ams.at",
+      "website": "https://www.ams.at/arbeitsuchende/arbeiten-in-oesterreich-und-der-eu/das-integrationsjahr"
+    },
+    "courseDetails": {
+      "level": "A1-C1",
+      "price": "Free",
+      "location": "Nationwide",
+      "certificate": "Yes",
+      "type": "course"
+    },
+    "tags": ["A1-C1", "Free", "Online", "Public", "With Certificate"],
+    "hasMap": true,
+    "isResource": false
+  },
+  "duolingo": {
+    "id": "duolingo",
+    "title": {
+      "en": "Duolingo – Fun and Free Language Learning",
+      "de": "Duolingo – Spaß beim kostenlosen Sprachenlernen"
+    },
+    "subtitle": {
+      "en": "Interactive language learning with game like lessons",
+      "de": "Interaktives Sprachenlernen mit spielerischen Lektionen"
+    },
+    "provider": "Duolingo Inc.",
+    "description": {
+      "en": "Duolingo is a globally popular language learning platform offering free, interactive lessons designed like games to help users stay motivated. With German courses ranging from beginner (A1) to intermediate (B1), Duolingo provides a fun and engaging way to learn vocabulary, grammar, pronunciation, and sentence structure.\n\nResource Details:\n• Level: A1–B1\n• Online/Offline: Online\n• Price: Free (with optional paid version)\n• Provider: Private company\n• Language support: English, Arabic, Farsi, Turkish, Russian, and many more\n\nWhat you will learn:\n• Basic vocabulary and grammar\n• Sentence structure and pronunciation\n• Everyday communication in German\n\nType of Materials:\n• Interactive lessons\n• Quizzes and review exercises\n• Listening and speaking practice\n• Achievement rewards and streak system\n\nBy the end of this course you'll be able to:\n• Understand and use common German phrases\n• Form basic sentences in German\n• Communicate in simple, everyday situations\n• Continue learning independently with strong motivation",
+      "de": "Duolingo ist eine weltweit beliebte Sprachlernplattform mit kostenlosen, interaktiven Lektionen in spielerischer Form, die den Lernprozess unterhaltsam und motivierend gestalten. Der Deutschkurs reicht von A1 bis B1 und hilft beim Lernen von Vokabeln, Grammatik, Aussprache und Satzbau.\n\nRessourcendetails:\n• Niveau: A1–B1\n• Online/Offline: Online\n• Preis: Kostenlos (mit optionaler Bezahlversion)\n• Anbieter: Privatunternehmen\n• Sprachunterstützung: Englisch, Arabisch, Farsi, Türkisch, Russisch und viele weitere\n\nWas Sie lernen werden:\n• Grundwortschatz und Grammatik\n• Satzbau und Aussprache\n• Alltagskommunikation auf Deutsch\n\nMaterialien:\n• Interaktive Lektionen\n• Quizze und Wiederholungsübungen\n• Hör- und Sprechtraining\n• Belohnungssystem und Lernfortschritt-Anzeige\n\nAm Ende dieses Kurses können Sie:\n• Gängige deutsche Redewendungen verstehen und verwenden\n• Einfache Sätze auf Deutsch bilden\n• In alltäglichen Situationen kommunizieren\n• Selbstständig mit Freude weiterlernen`"
+    },
+    "contact": {
+      "website": "https://www.duolingo.com/"
+    },
+    "courseDetails": {
+      "level": "A1-B1",
+      "duration": "Self-paced",
+      "price": "Free",
+      "location": "Online",
+      "certificate": "No",
+      "type": "App/Website"
+    },
+    "tags": ["A1-B1", "Free", "Online", "Private", "App", "Website"],
+    "hasMap": false,
+    "isResource": true
+  }
+}
