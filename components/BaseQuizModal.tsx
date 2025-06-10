@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Modal, View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { Modal, View, Text, TouchableOpacity, StyleSheet, ScrollView, Platform } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 interface BaseQuizQuestion {
@@ -43,6 +43,7 @@ const BaseQuizModal: React.FC<BaseQuizModalProps> = ({
       visible={visible}
       transparent={true}
       animationType="fade"
+      statusBarTranslucent={Platform.OS === 'android'}
     >
       <View style={styles.modalOverlay}>
         <View style={styles.modalContent}>
@@ -56,7 +57,12 @@ const BaseQuizModal: React.FC<BaseQuizModalProps> = ({
           <View style={styles.questionContainer}>
             <Text style={styles.questionText}>{currentQ.question}</Text>
             
-            <ScrollView style={styles.answersScrollView} contentContainerStyle={styles.answersContainer}>
+            <ScrollView 
+              style={styles.answersScrollView} 
+              contentContainerStyle={styles.answersContainer}
+              showsVerticalScrollIndicator={true}
+              nestedScrollEnabled={true}
+            >
               {currentQ.answers.map((answer, index) => {
                 const isStringAnswer = typeof answer === 'string';
                 let displayText = isStringAnswer ? answer : (languageCode === 'de' ? answer.de : answer.en);
@@ -105,6 +111,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
+    paddingTop: Platform.OS === 'ios' ? 50 : 20,
   },
   modalContent: {
     backgroundColor: '#fff',
@@ -112,15 +119,27 @@ const styles = StyleSheet.create({
     padding: 24,
     width: '100%',
     maxWidth: 400,
-    maxHeight: '80%',
+    maxHeight: Platform.OS === 'ios' ? '85%' : '80%',
     alignItems: 'center',
     position: 'relative',
+    ...Platform.select({
+      ios: {
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+      },
+      android: {
+        elevation: 5,
+      },
+    }),
   },
   closeButton: {
     position: 'absolute',
     top: 16,
     left: 16,
     padding: 8,
+    zIndex: 1,
   },
   modalTitle: {
     fontSize: 22,
@@ -152,11 +171,12 @@ const styles = StyleSheet.create({
   },
   answersScrollView: {
     width: '100%',
-    maxHeight: 300,
+    maxHeight: Platform.OS === 'ios' ? 300 : 250,
   },
   answersContainer: {
     width: '100%',
     gap: 12,
+    paddingBottom: 20,
   },
   answerButton: {
     backgroundColor: '#f8fafc',
@@ -166,19 +186,24 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     paddingHorizontal: 20,
     alignItems: 'center',
-    width: '100%',
+    minHeight: 50,
+    justifyContent: 'center',
   },
   answerText: {
     fontSize: 16,
     color: '#374151',
     fontWeight: '500',
     textAlign: 'center',
+    lineHeight: 20,
   },
   modalFooter: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     width: '100%',
+    paddingTop: 16,
+    borderTopWidth: 1,
+    borderTopColor: '#f3f4f6',
   },
   skipButton: {
     paddingVertical: 8,
