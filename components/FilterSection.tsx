@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 
 interface FilterGroup {
   title: string;
@@ -17,6 +17,7 @@ interface FilterSectionProps {
   filterGroups: FilterGroup[];
   additionalFilters?: React.ReactNode;
   onClearFilters: () => void;
+  scrollable?: boolean;
 }
 
 const FilterSection: React.FC<FilterSectionProps> = ({
@@ -25,11 +26,12 @@ const FilterSection: React.FC<FilterSectionProps> = ({
   languageCode,
   filterGroups,
   additionalFilters,
-  onClearFilters
+  onClearFilters,
+  scrollable = false
 }) => {
   if (!visible) return null;
 
-  return (
+  const FilterContent = () => (
     <View style={styles.filterSection}>
       <Text style={styles.filterSectionTitle}>{title}</Text>
       
@@ -37,7 +39,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({
         <View key={index}>
           <Text style={styles.filterGroupTitle}>{group.title}</Text>
           <View style={styles.filterChips}>
-            {group.items.map(item => (
+            {group.items.map((item) => (
               <TouchableOpacity
                 key={item}
                 style={[
@@ -57,19 +59,40 @@ const FilterSection: React.FC<FilterSectionProps> = ({
           </View>
         </View>
       ))}
-
+      
       {additionalFilters}
-
-      <TouchableOpacity style={styles.clearFiltersButton} onPress={onClearFilters}>
+      
+      <TouchableOpacity
+        style={styles.clearFiltersButton}
+        onPress={onClearFilters}
+      >
         <Text style={styles.clearFiltersText}>
-          {languageCode === 'de' ? 'Filter löschen' : 'Clear Filters'}
+          {languageCode === 'de' ? 'Filter löschen' : 'Clear filters'}
         </Text>
       </TouchableOpacity>
     </View>
   );
+
+  if (scrollable) {
+    return (
+      <ScrollView 
+        style={styles.scrollableContainer}
+        showsVerticalScrollIndicator={true}
+        nestedScrollEnabled={true}
+      >
+        <FilterContent />
+      </ScrollView>
+    );
+  }
+
+  return <FilterContent />;
 };
 
 const styles = StyleSheet.create({
+  scrollableContainer: {
+    maxHeight: 300,
+    marginBottom: 16,
+  },
   filterSection: {
     backgroundColor: '#f8fafc',
     padding: 16,

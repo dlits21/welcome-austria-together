@@ -54,6 +54,10 @@ interface GermanCourse {
     sr: string;
   };
   provider: string;
+  forWomen?: boolean;
+  forYoungMigrants?: boolean;
+  childcare?: boolean;
+  integrationRequirement?: boolean;
 }
 
 const germanCourses: GermanCourse[] = [
@@ -93,7 +97,11 @@ const germanCourses: GermanCourse[] = [
       pl: 'Lorem Ipsum',
       sr: 'Lorem Ipsum'
     },
-    provider: 'Österreichischer Integrations Fond (ÖIF)'
+    provider: 'Österreichischer Integrations Fond (ÖIF)',
+    forWomen: false,
+    forYoungMigrants: false,
+    childcare: false,
+    integrationRequirement: true
   },
   {
       id: 'oif_offline_course',
@@ -131,7 +139,11 @@ const germanCourses: GermanCourse[] = [
         pl: 'Lorem Ipsum',
         sr: 'Lorem Ipsum'
       },
-      provider: 'Österreichischer Integrations Fond (ÖIF)'
+      provider: 'Österreichischer Integrations Fond (ÖIF)',
+      forWomen: false,
+      forYoungMigrants: false,
+      childcare: false,
+      integrationRequirement: true
     },
     {
     id: 'oif_exam',
@@ -169,6 +181,11 @@ const germanCourses: GermanCourse[] = [
       pl: 'Lorem Ipsum',
       sr: 'Lorem Ipsum'
     },
+    provider: 'Österreichischer Integrations Fond (ÖIF)',
+    forWomen: false,
+    forYoungMigrants: false,
+    childcare: false,
+    integrationRequirement: true
     },
     {
     id: 'caritas_vienna',
@@ -206,6 +223,11 @@ const germanCourses: GermanCourse[] = [
       pl: 'Lorem Ipsum',
       sr: 'Lorem Ipsum'
     },
+    provider: 'Caritas Wien',
+    forWomen: false,
+    forYoungMigrants: false,
+    childcare: false,
+    integrationRequirement: false
 },
 {
     id: 'vhs_vienna',
@@ -243,6 +265,11 @@ const germanCourses: GermanCourse[] = [
       pl: 'Lorem Ipsum',
       sr: 'Lorem Ipsum'
     },
+    provider: 'VHS Wien',
+    forWomen: false,
+    forYoungMigrants: false,
+    childcare: false,
+    integrationRequirement: false
 },
 {
     id: 'vhs_vienna_start',
@@ -280,6 +307,11 @@ const germanCourses: GermanCourse[] = [
       pl: 'Lorem Ipsum',
       sr: 'Lorem Ipsum'
     },
+    provider: 'VHS Wien',
+    forWomen: false,
+    forYoungMigrants: false,
+    childcare: true,
+    integrationRequirement: false
 },
 {
     id: 'vhs_vienna_park',
@@ -317,6 +349,11 @@ const germanCourses: GermanCourse[] = [
       pl: 'Lorem Ipsum',
       sr: 'Lorem Ipsum'
     },
+    provider: 'VHS Wien',
+    forWomen: false,
+    forYoungMigrants: false,
+    childcare: false,
+    integrationRequirement: false
 },
  {
      id: 'wifi_ooe',
@@ -354,6 +391,11 @@ const germanCourses: GermanCourse[] = [
        pl: 'Lorem Ipsum',
        sr: 'Lorem Ipsum'
      },
+     provider: 'WIFI Oberösterreich',
+     forWomen: false,
+     forYoungMigrants: false,
+     childcare: false,
+     integrationRequirement: true
  },
 {
    id: 'bfi_ooe',
@@ -391,6 +433,11 @@ const germanCourses: GermanCourse[] = [
      pl: 'Lorem Ipsum',
      sr: 'Lorem Ipsum'
    },
+   provider: 'BFI Oberösterreich',
+   forWomen: false,
+   forYoungMigrants: false,
+   childcare: false,
+   integrationRequirement: true
 },
 {
 id: 'ams_integration',
@@ -428,6 +475,11 @@ description: {
   pl: 'Lorem Ipsum',
   sr: 'Lorem Ipsum'
  },
+ provider: 'Arbeitsmarktservice (AMS)',
+ forWomen: false,
+ forYoungMigrants: false,
+ childcare: false,
+ integrationRequirement: true
 },
 {
    id: 'sprachportal',
@@ -464,6 +516,11 @@ description: {
      pl: 'Lorem Ipsum',
      sr: 'Lorem Ipsum'
    },
+   provider: 'ÖIF',
+   forWomen: false,
+   forYoungMigrants: false,
+   childcare: false,
+   integrationRequirement: false
 },
 {
    id: 'vhs_lernportal',
@@ -500,6 +557,11 @@ description: {
      pl: 'Lorem Ipsum',
      sr: 'Lorem Ipsum'
    },
+   provider: 'VHS',
+   forWomen: false,
+   forYoungMigrants: false,
+   childcare: false,
+   integrationRequirement: false
 },
 {
    id: 'nicos_weg',
@@ -536,6 +598,11 @@ description: {
      pl: 'Lorem Ipsum',
      sr: 'Lorem Ipsum'
    },
+   provider: 'Deutsche Welle',
+   forWomen: false,
+   forYoungMigrants: false,
+   childcare: false,
+   integrationRequirement: false
 },
 {
    id: 'duolingo',
@@ -572,6 +639,11 @@ description: {
      pl: 'Lorem Ipsum',
      sr: 'Lorem Ipsum'
    },
+   provider: 'Duolingo',
+   forWomen: false,
+   forYoungMigrants: false,
+   childcare: false,
+   integrationRequirement: false
 },
 {
    id: 'babbel',
@@ -608,6 +680,11 @@ description: {
      pl: 'Lorem Ipsum',
      sr: 'Lorem Ipsum'
    },
+   provider: 'Babbel',
+   forWomen: false,
+   forYoungMigrants: false,
+   childcare: false,
+   integrationRequirement: false
 },
 {
    id: 'easy_deutsch',
@@ -644,6 +721,11 @@ description: {
      pl: 'Lorem Ipsum',
      sr: 'Lorem Ipsum'
    },
+   provider: 'Easy Deutsch',
+   forWomen: false,
+   forYoungMigrants: false,
+   childcare: false,
+   integrationRequirement: false
 },
 {
    id: 'fraubock_deutschkurse',
@@ -680,6 +762,11 @@ description: {
      pl: 'Lorem Ipsum',
      sr: 'Lorem Ipsum'
    },
+   provider: 'Verein Ute Bock',
+   forWomen: false,
+   forYoungMigrants: false,
+   childcare: false,
+   integrationRequirement: false
 },
 {
    id: 'schubert_verlag',
@@ -716,6 +803,11 @@ description: {
      pl: 'Lorem Ipsum',
      sr: 'Lorem Ipsum'
    },
+   provider: 'Schubert Verlag',
+   forWomen: false,
+   forYoungMigrants: false,
+   childcare: false,
+   integrationRequirement: false
 },
 {
 id: 'osd_exam',
@@ -752,6 +844,11 @@ description: {
   pl: 'Lorem Ipsum',
   sr: 'Lorem Ipsum'
 },
+provider: 'ÖSD',
+forWomen: false,
+forYoungMigrants: false,
+childcare: false,
+integrationRequirement: true
 },
 {
    id: 'mama_lernt_deutsch',
@@ -788,6 +885,11 @@ description: {
      pl: 'Lorem Ipsum',
      sr: 'Lorem Ipsum'
    },
+   provider: 'Mama lernt Deutsch',
+   forWomen: true,
+   forYoungMigrants: false,
+   childcare: true,
+   integrationRequirement: false
 },
 {
    id: 'einstieg_app',
@@ -824,6 +926,11 @@ description: {
      pl: 'Lorem Ipsum',
      sr: 'Lorem Ipsum'
    },
+   provider: 'VHS',
+   forWomen: false,
+   forYoungMigrants: false,
+   childcare: false,
+   integrationRequirement: false
 },
 {
    id: 'diakonie_kurs',
@@ -860,6 +967,11 @@ description: {
      pl: 'Lorem Ipsum',
      sr: 'Lorem Ipsum'
    },
+   provider: 'Diakonie',
+   forWomen: false,
+   forYoungMigrants: false,
+   childcare: false,
+   integrationRequirement: false
 },
 {
    id: 'deutschlernerblog_course',
@@ -896,6 +1008,11 @@ description: {
      pl: 'Lorem Ipsum',
      sr: 'Lorem Ipsum'
    },
+   provider: 'Deutschlernerblog',
+   forWomen: false,
+   forYoungMigrants: false,
+   childcare: false,
+   integrationRequirement: false
 },
 {
    id: 'levrai_online',
@@ -932,6 +1049,11 @@ description: {
      pl: 'Lorem Ipsum',
      sr: 'Lorem Ipsum'
    },
+   provider: 'Le Vrai',
+   forWomen: false,
+   forYoungMigrants: false,
+   childcare: false,
+   integrationRequirement: false
 },
 {
    id: 'the_connection',
@@ -968,6 +1090,11 @@ description: {
      pl: 'Lorem Ipsum',
      sr: 'Lorem Ipsum'
    },
+   provider: 'The Connection',
+   forWomen: true,
+   forYoungMigrants: false,
+   childcare: true,
+   integrationRequirement: false
 },
 {
    id: 'miteinander',
@@ -1004,6 +1131,11 @@ description: {
      pl: 'Lorem Ipsum',
      sr: 'Lorem Ipsum'
    },
+   provider: 'Miteinander Lernen',
+   forWomen: false,
+   forYoungMigrants: false,
+   childcare: true,
+   integrationRequirement: false
 },
 {
    id: 'offene_deutschkurse',
@@ -1040,6 +1172,11 @@ description: {
      pl: 'Lorem Ipsum',
      sr: 'Lorem Ipsum'
    },
+   provider: 'Amerlinghaus',
+   forWomen: false,
+   forYoungMigrants: false,
+   childcare: false,
+   integrationRequirement: false
 },
 {
    id: 'baju',
@@ -1076,6 +1213,11 @@ description: {
      pl: 'Lorem Ipsum',
      sr: 'Lorem Ipsum'
    },
+   provider: 'BAJU',
+   forWomen: false,
+   forYoungMigrants: true,
+   childcare: false,
+   integrationRequirement: false
 },
 {
    id: 'peregrina',
@@ -1112,6 +1254,11 @@ description: {
      pl: 'Lorem Ipsum',
      sr: 'Lorem Ipsum'
    },
+   provider: 'Peregrina',
+   forWomen: true,
+   forYoungMigrants: false,
+   childcare: false,
+   integrationRequirement: false
 },
 {
    id: 'lefoe',
@@ -1148,6 +1295,11 @@ description: {
      pl: 'Lorem Ipsum',
      sr: 'Lorem Ipsum'
    },
+   provider: 'Lefoe',
+   forWomen: true,
+   forYoungMigrants: false,
+   childcare: true,
+   integrationRequirement: false
 },
 {
    id: 'orient_express',
@@ -1184,9 +1336,13 @@ description: {
      pl: 'Lorem Ipsum',
      sr: 'Lorem Ipsum'
    },
+   provider: 'Orient Express',
+   forWomen: true,
+   forYoungMigrants: false,
+   childcare: false,
+   integrationRequirement: false
 },
 ];
-
 
 const GermanLearningPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
@@ -1307,10 +1463,17 @@ const GermanLearningPage: React.FC = () => {
       );
     }
     
+    // Updated location filter logic: include 'Nationwide' and 'Online' when specific states are selected
     if (selectedLocations.length > 0) {
-      results = results.filter(course => 
-        course.location ? selectedLocations.includes(course.location) : false
-      );
+      results = results.filter(course => {
+        if (!course.location) return false;
+        
+        // If 'Nationwide' or 'Online' locations are selected, show them for any location filter
+        const hasNationwideOrOnline = course.location === 'Nationwide' || course.location === 'Online';
+        const hasSelectedLocation = selectedLocations.includes(course.location);
+        
+        return hasSelectedLocation || hasNationwideOrOnline;
+      });
     }
 
     if (selectedTypes.length > 0) {
@@ -1568,6 +1731,7 @@ const GermanLearningPage: React.FC = () => {
           filterGroups={filterGroups}
           additionalFilters={additionalFilters}
           onClearFilters={clearFilters}
+          scrollable={true}
         />
         
         {!showQuiz && renderTabButtons()}

@@ -15,6 +15,10 @@ interface GermanCourse {
   duration?: string;
   description: { en: string; de: string };
   provider: string;
+  forWomen?: boolean;
+  forYoungMigrants?: boolean;
+  childcare?: boolean;
+  integrationRequirement?: boolean;
 }
 
 interface CourseListProps {
@@ -96,6 +100,39 @@ const CourseList: React.FC<CourseListProps> = ({ courses, languageCode }) => {
         {item.duration && (
           <View style={styles.tag}>
             <Text style={styles.tagText}>{item.duration}</Text>
+          </View>
+        )}
+
+        {/* Additional tags */}
+        {item.forWomen && (
+          <View style={[styles.tag, styles.specialTag]}>
+            <Text style={[styles.tagText, styles.specialTagText]}>
+              {languageCode === 'de' ? 'Für Frauen' : 'For women'}
+            </Text>
+          </View>
+        )}
+
+        {item.forYoungMigrants && (
+          <View style={[styles.tag, styles.specialTag]}>
+            <Text style={[styles.tagText, styles.specialTagText]}>
+              {languageCode === 'de' ? 'Für junge Migrant:innen' : 'For young migrants'}
+            </Text>
+          </View>
+        )}
+
+        {item.childcare && (
+          <View style={[styles.tag, styles.featureTag]}>
+            <Text style={[styles.tagText, styles.featureTagText]}>
+              {languageCode === 'de' ? 'Kinderbetreuung' : 'Childcare'}
+            </Text>
+          </View>
+        )}
+
+        {item.integrationRequirement && (
+          <View style={[styles.tag, styles.integrationTag]}>
+            <Text style={[styles.tagText, styles.integrationTagText]}>
+              {languageCode === 'de' ? 'Erfüllt Integrationsanforderung' : 'Fulfills integration requirement'}
+            </Text>
           </View>
         )}
       </View>
@@ -215,6 +252,30 @@ const styles = StyleSheet.create({
   tagText: {
     fontSize: 12,
     color: '#64748b',
+  },
+  specialTag: {
+    backgroundColor: '#fdf2f8',
+    borderColor: '#ec4899',
+  },
+  specialTagText: {
+    color: '#ec4899',
+    fontWeight: '500',
+  },
+  featureTag: {
+    backgroundColor: '#f0fdf4',
+    borderColor: '#22c55e',
+  },
+  featureTagText: {
+    color: '#22c55e',
+    fontWeight: '500',
+  },
+  integrationTag: {
+    backgroundColor: '#fefce8',
+    borderColor: '#eab308',
+  },
+  integrationTagText: {
+    color: '#eab308',
+    fontWeight: '500',
   },
   noResults: {
     flex: 1,
