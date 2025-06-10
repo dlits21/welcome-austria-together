@@ -25,6 +25,14 @@ const OIFOfflineCourse: React.FC = () => {
     Linking.openURL('https://www.vhs.at/de/info/deutschkurse');
   };
 
+  const handlePhonePress = () => {
+    Linking.openURL(`tel:${content.contact.phone}`);
+  };
+
+  const handleEmailPress = () => {
+    Linking.openURL(`mailto:${content.contact.email}`);
+  };
+
   const content = {
     title: {
       en: 'VHS Vienna - German Courses”',
@@ -165,30 +173,57 @@ For more information and to register for courses, please visit the official webs
           {getCurrentContent(content.description)}
         </Text>
         
-        {/* Contact Information */}
+        {/* Contact Information - Updated with clickable elements */}
         <View style={styles.contactSection}>
           <Text style={styles.sectionTitle}>
             {getContactInformation(currentLanguage)}
           </Text>
-          
-          <View style={styles.contactItem}>
-            <MaterialIcons name="phone" size={20} color="#3B82F6" />
-            <Text style={styles.contactText}>{content.contact.phone}</Text>
+
+          <View style={styles.contactGrid}>
+            <TouchableOpacity
+              style={styles.contactCard}
+              onPress={handlePhonePress}
+            >
+              <MaterialIcons name="phone" size={24} color="#3B82F6" />
+              <View style={styles.contactInfo}>
+                <Text style={styles.contactLabel}>
+                  {currentLanguage === 'de' ? 'Telefon' : 'Phone'}
+                </Text>
+                <Text style={[styles.contactValue, styles.linkText]}>{content.contact.phone}</Text>
+              </View>
+              <MaterialIcons name="open-in-new" size={16} color="#666" />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.contactCard}
+              onPress={handleEmailPress}
+            >
+              <MaterialIcons name="email" size={24} color="#3B82F6" />
+              <View style={styles.contactInfo}>
+                <Text style={styles.contactLabel}>
+                  {currentLanguage === 'de' ? 'E-Mail' : 'Email'}
+                </Text>
+                <Text style={[styles.contactValue, styles.linkText]}>{content.contact.email}</Text>
+              </View>
+              <MaterialIcons name="open-in-new" size={16} color="#666" />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.contactCard}
+              onPress={() => Linking.openURL(content.contact.website)}
+            >
+              <MaterialIcons name="language" size={24} color="#3B82F6" />
+              <View style={styles.contactInfo}>
+                <Text style={styles.contactLabel}>
+                  {currentLanguage === 'de' ? 'Website' : 'Website'}
+                </Text>
+                <Text style={[styles.contactValue, styles.linkText]}>
+                  {currentLanguage === 'de' ? 'Zur Website' : 'Visit website'}
+                </Text>
+              </View>
+              <MaterialIcons name="open-in-new" size={16} color="#666" />
+            </TouchableOpacity>
           </View>
-          
-          <View style={styles.contactItem}>
-            <MaterialIcons name="email" size={20} color="#3B82F6" />
-            <Text style={styles.contactText}>{content.contact.email}</Text>
-          </View>
-          
-          <TouchableOpacity 
-            style={styles.contactItem}
-            onPress={() => Linking.openURL(content.contact.website)}
-          >
-            <MaterialIcons name="language" size={20} color="#3B82F6" />
-            <Text style={[styles.contactText, styles.linkText]}>{content.contact.website}</Text>
-            <MaterialIcons name="open-in-new" size={16} color="#666" />
-          </TouchableOpacity>
         </View>
 
         {/* Location Map */}
@@ -202,32 +237,38 @@ For more information and to register for courses, please visit the official webs
               <Text style={styles.mapPlaceholderText}>
                 {currentLanguage === 'de' ? 'Karte wird geladen...' : 'Map loading...'}
               </Text>
-              <Text style={styles.mapLocationText}>VHS Vienna, Urania Building</Text>
+              <Text style={styles.mapLocationText}>AMS Offices throughout Austria</Text>
             </View>
           </View>
         </View>
-        
-        {/* Tags */}
+
+        {/* Tags - Updated with correct information */}
         <View style={styles.tagsSection}>
           <View style={styles.tag}>
-            <Text style={styles.tagText}>A1</Text>
+            <Text style={styles.tagText}>A1-C2</Text>
           </View>
           <View style={styles.tag}>
             <Text style={styles.tagText}>
-              {currentLanguage === 'de' ? 'Anfänger' : 'Beginner'}
+              {currentLanguage === 'de' ? 'Kostenpflichtig' : 'Paid'}
             </Text>
           </View>
           <View style={styles.tag}>
-            <Text style={styles.tagText}>Vienna</Text>
+            <Text style={styles.tagText}>
+              {currentLanguage === 'de' ? 'Wien' : 'Vienna'}
+            </Text>
           </View>
           <View style={styles.tag}>
-            <Text style={styles.tagText}>8 {currentLanguage === 'de' ? 'Wochen' : 'weeks'}</Text>
+            <Text style={styles.tagText}>
+              {currentLanguage === 'de' ? 'NGO' : 'NGO'}
+            </Text>
           </View>
           <View style={styles.tag}>
-            <Text style={styles.tagText}>€200</Text>
+            <Text style={styles.tagText}>
+              {currentLanguage === 'de' ? 'Kinderbetreuung' : 'Childcare'}
+            </Text>
           </View>
         </View>
-        
+
         {/* Enroll Button */}
         <TouchableOpacity style={styles.enrollButton} onPress={handleEnrollPress}>
           <Text style={styles.enrollButtonText}>
@@ -236,13 +277,13 @@ For more information and to register for courses, please visit the official webs
           <MaterialIcons name="arrow-forward" size={20} color="#fff" />
         </TouchableOpacity>
       </ScrollView>
-      
-      <LanguageModal 
-        visible={showLanguageModal} 
-        onClose={() => setShowLanguageModal(false)} 
+
+      <LanguageModal
+        visible={showLanguageModal}
+        onClose={() => setShowLanguageModal(false)}
         languageCode={language.code}
       />
-      
+
       <HelpModal
         visible={showHelpModal}
         onClose={() => setShowHelpModal(false)}
@@ -300,11 +341,6 @@ const styles = StyleSheet.create({
   },
   contactSection: {
     marginBottom: 32,
-    backgroundColor: '#f8fafc',
-    padding: 16,
-    borderRadius: 12,
-    borderWidth: 1,
-    borderColor: '#e2e8f0',
   },
   sectionTitle: {
     fontSize: 20,
@@ -312,20 +348,34 @@ const styles = StyleSheet.create({
     color: '#1f2937',
     marginBottom: 16,
   },
-  contactItem: {
+  contactGrid: {
+    gap: 12,
+  },
+  contactCard: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 12,
+    padding: 16,
+    backgroundColor: '#f8fafc',
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
   },
-  contactText: {
-    fontSize: 16,
-    color: '#374151',
-    marginLeft: 12,
+  contactInfo: {
     flex: 1,
+    marginLeft: 12,
+  },
+  contactLabel: {
+    fontSize: 14,
+    color: '#6b7280',
+    marginBottom: 2,
+  },
+  contactValue: {
+    fontSize: 16,
+    color: '#111827',
+    fontWeight: '500',
   },
   linkText: {
     color: '#3B82F6',
-    textDecorationLine: 'underline',
   },
   tagsSection: {
     flexDirection: 'row',

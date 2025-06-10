@@ -38,7 +38,6 @@ interface GermanCourse {
   location?: string;
   price: string | number;
   online: boolean;
-  duration?: string;
   description: {
     en: string;
     de: string;
@@ -82,7 +81,6 @@ const germanCourses: GermanCourse[] = [
     location: 'Online',
     price: 'Free',
     online: true,
-    duration: '8 weeks',
     description: {
       en: 'Free German courses for beginners and advanced learners (A1-B2)',
       de: 'Kostenlose Deutschkurse für Anfänger und Fortgeschrittene (A1-B2)',
@@ -124,7 +122,6 @@ const germanCourses: GermanCourse[] = [
       location: 'Nationwide',
       price: 'Free',
       online: false,
-      duration: 'ca. 3-4 month',
       description: {
         en: 'Free German courses for beginners and advanced learners (A1-C1)',
         de: 'Kostenlose Deutschkurse für Anfänger und Fortgeschrittene (A1-C1)',
@@ -166,7 +163,6 @@ const germanCourses: GermanCourse[] = [
     location: 'Nationwide',
     price: 'Paid',
     online: false,
-    duration: '90-240min',
     description: {
       en: 'Official language certificate in German',
       de: 'Offizieller Sprachnachweis in Deutsch',
@@ -208,7 +204,6 @@ const germanCourses: GermanCourse[] = [
     location: 'Wien',
     price: 'Free',
     online: false,
-    duration: 'weekly',
     description: {
       en: 'Applied German course for asylum seekrs',
       de: 'Praktische Deutschkurse für Asylwerber*innen',
@@ -250,7 +245,6 @@ const germanCourses: GermanCourse[] = [
     location: 'Wien',
     price: 'Paid',
     online: false,
-    duration: 'Varying',
     description: {
       en: 'Wide range of German courses for all levels in Vienna',
       de: 'Vielfältige Deutschkurse für alle Niveaustufen in Wien',
@@ -292,7 +286,6 @@ const germanCourses: GermanCourse[] = [
     location: 'Wien',
     price: 'Free',
     online: false,
-    duration: 'Varying',
     description: {
       en: 'Free German courses for asylum seekers in basic care with childcare',
       de: 'Kostenlose Deutschkurse für Asylwerber*innen in der Grundversorgung mit Kinderbetreuung',
@@ -334,7 +327,6 @@ const germanCourses: GermanCourse[] = [
     location: 'Wien',
     price: 'Free',
     online: false,
-    duration: '4 weeks',
     description: {
       en: 'Free German lessons for adults',
       de: 'Gratis Deutsch Lernen für Erwachsene',
@@ -376,7 +368,6 @@ const germanCourses: GermanCourse[] = [
      location: 'Oberösterreich',
      price: 490,
      online: false,
-     duration: '52 units',
      description: {
        en: 'Learning German for integration, residence permits and citizenship',
        de: 'Deutsch lernen für Integration, Aufenthaltstitel und Staatsbürgerschaft',
@@ -418,7 +409,6 @@ const germanCourses: GermanCourse[] = [
    location: 'Oberösterreich',
    price: 560,
    online: false,
-   duration: '8 weeks',
    description: {
      en: 'Learn German for integration, work and everyday life',
      de: 'Deutsch lernen für Integration, Beruf und Alltag',
@@ -460,7 +450,6 @@ level: ['A1', 'A2', 'B1', 'B2', 'C1'],
 location: 'Nationwide',
 price: 'Free',
 online: false,
-duration: 'up to a year',
 description: {
   en: 'Labor market integration for persons entitled to asylum and subsidiary protection',
   de: 'Arbeitsmarktintegration für Asylberechtigte und subsidiär Schutzberechtigte',
@@ -517,6 +506,47 @@ description: {
      sr: 'Lorem Ipsum'
    },
    provider: 'ÖIF',
+   forWomen: false,
+   forYoungMigrants: false,
+   childcare: false,
+   integrationRequirement: false
+},
+{
+   id: 'ankommen',
+   title: {
+     en: '"Ankommen" App',
+     de: '"Ankommen" App',
+     fa: 'Lorem Ipsum',
+     ar: 'Lorem Ipsum',
+     uk: 'Lorem Ipsum',
+     ru: 'Lorem Ipsum',
+     tr: 'Lorem Ipsum',
+     so: 'Lorem Ipsum',
+     fr: 'Lorem Ipsum',
+     es: 'Lorem Ipsum',
+     pl: 'Lorem Ipsum',
+     sr: 'Lorem Ipsum'
+   },
+   type: 'resource',
+   level: ['A1', 'A2', 'B1'],
+   location: 'Online',
+   price: 'Free',
+   online: true,
+   description: {
+     en: 'Free Mobile App Offering Information on Life in Germany, Asylum Procedures, and a German Language Course',
+     de: 'Kostenlose mobile App mit Informationen zum Leben in Deutschland, Asylverfahren und einem Deutschkurs',
+     fa: 'Lorem Ipsum',
+     ar: 'Lorem Ipsum',
+     uk: 'Lorem Ipsum',
+     ru: 'Lorem Ipsum',
+     tr: 'Lorem Ipsum',
+     so: 'Lorem Ipsum',
+     fr: 'Lorem Ipsum',
+     es: 'Lorem Ipsum',
+     pl: 'Lorem Ipsum',
+     sr: 'Lorem Ipsum'
+   },
+   provider: 'AMS',
    forWomen: false,
    forYoungMigrants: false,
    childcare: false,
@@ -1342,6 +1372,47 @@ integrationRequirement: true
    childcare: true,
    integrationRequirement: false
 },
+{
+   id: 'don_bosco',
+   title: {
+     en: 'Don Bosco Social Work - Basic and Bridging Courses',
+     de: 'Kostenlose Deutsch- und Bildungsangebote für junge Geflüchtete',
+     fa: 'Lorem Ipsum',
+     ar: 'Lorem Ipsum',
+     uk: 'Lorem Ipsum',
+     ru: 'Lorem Ipsum',
+     tr: 'Lorem Ipsum',
+     so: 'Lorem Ipsum',
+     fr: 'Lorem Ipsum',
+     es: 'Lorem Ipsum',
+     pl: 'Lorem Ipsum',
+     sr: 'Lorem Ipsum'
+   },
+   type: 'course',
+   level: ['A0', 'A1'],
+   location: 'Vienna',
+   price: 'Free',
+   online: false,
+   description: {
+     en: 'Free German and educational opportunities for young refugees',
+     de: 'Kostenlose Basisbildungskurse für Frauen mit Migrationshintergrund',
+     fa: 'Lorem Ipsum',
+     ar: 'Lorem Ipsum',
+     uk: 'Lorem Ipsum',
+     ru: 'Lorem Ipsum',
+     tr: 'Lorem Ipsum',
+     so: 'Lorem Ipsum',
+     fr: 'Lorem Ipsum',
+     es: 'Lorem Ipsum',
+     pl: 'Lorem Ipsum',
+     sr: 'Lorem Ipsum'
+   },
+   provider: 'Don Bosco',
+   forWomen: false,
+   forYoungMigrants: true,
+   childcare: false,
+   integrationRequirement: false
+},
 ];
 
 const GermanLearningPage: React.FC = () => {
@@ -1949,5 +2020,3 @@ const styles = StyleSheet.create({
 });
 
 export default GermanLearningPage;
-
-}

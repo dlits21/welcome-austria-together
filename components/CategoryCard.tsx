@@ -20,14 +20,14 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
 }) => {
   const screenWidth = Dimensions.get('window').width;
   const cardWidth = (screenWidth - 48) / 2; // 2 columns with padding
-  const iconSize = Math.max(32, cardWidth * 0.15); // Responsive icon size, minimum 32
+  const iconSize = Math.max(32, cardWidth * 0.3); // Responsive icon size, minimum 32
 
   return (
     <TouchableOpacity 
       style={[styles.card, { width: cardWidth }]} 
       onPress={onPress}
     >
-      <View style={[styles.iconContainer, { backgroundColor: `${color}15` }]}>
+      <View style={[styles.iconContainer, { backgroundColor: `${color}15`, width: cardWidth * 0.9, height: Math.min(iconSize*3, 300)}]}>
         <MaterialIcons 
           name={icon} 
           size={iconSize} 
@@ -56,15 +56,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   iconContainer: {
-    width: 60,
-    height: 60,
     borderRadius: 30,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 12,
+    marginTop: 8,
+    marginBottom: 16,
   },
   title: {
-    fontSize: 16,
+    fontSize: 24,
     fontWeight: '600',
     color: '#1f2937',
     textAlign: 'center',

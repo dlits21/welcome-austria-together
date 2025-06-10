@@ -90,25 +90,26 @@ const FilterSection: React.FC<FilterSectionProps> = ({
 const styles = StyleSheet.create({
   scrollableContainer: {
     maxHeight: 400, // Increased from 300 to 400
+    minHeight: 200, // Increased from 300 to 400
     marginBottom: 16,
   },
   filterSection: {
     backgroundColor: '#f8fafc',
     padding: 16,
     borderRadius: 12,
-    marginBottom: 16,
+    marginBottom: 8,
     minHeight: 200, // Added minimum height to make it bigger
   },
   filterSectionTitle: {
     fontSize: 18,
     fontWeight: '600',
-    marginBottom: 16,
+    marginBottom: 8,
   },
   filterGroupTitle: {
     fontSize: 16,
     fontWeight: '500',
     marginBottom: 8,
-    marginTop: 12,
+    marginTop: 4,
   },
   filterChips: {
     flexDirection: 'row',

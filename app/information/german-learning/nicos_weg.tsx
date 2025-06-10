@@ -161,69 +161,64 @@ Weitere Informationen und Zugriff auf die Ressourcen finden Sie auf der offiziel
           {getCurrentContent(content.description)}
         </Text>
         
-        {/* Contact Information */}
+        {/* Contact Information - Updated with clickable elements */}
         <View style={styles.contactSection}>
           <Text style={styles.sectionTitle}>
             {getContactInformation(currentLanguage)}
           </Text>
-          
-          <View style={styles.contactItem}>
-            <MaterialIcons name="phone" size={20} color="#3B82F6" />
-            <Text style={styles.contactText}>{content.contact.phone}</Text>
+
+          <View style={styles.contactGrid}>
+            <TouchableOpacity
+              style={styles.contactCard}
+              onPress={() => Linking.openURL(content.contact.website)}
+            >
+              <MaterialIcons name="language" size={24} color="#3B82F6" />
+              <View style={styles.contactInfo}>
+                <Text style={styles.contactLabel}>
+                  {currentLanguage === 'de' ? 'Website' : 'Website'}
+                </Text>
+                <Text style={[styles.contactValue, styles.linkText]}>
+                  {currentLanguage === 'de' ? 'Zur Website' : 'Visit website'}
+                </Text>
+              </View>
+              <MaterialIcons name="open-in-new" size={16} color="#666" />
+            </TouchableOpacity>
           </View>
-          
-          <View style={styles.contactItem}>
-            <MaterialIcons name="email" size={20} color="#3B82F6" />
-            <Text style={styles.contactText}>{content.contact.email}</Text>
-          </View>
-          
-          <TouchableOpacity 
-            style={styles.contactItem}
-            onPress={() => Linking.openURL(content.contact.website)}
-          >
-            <MaterialIcons name="language" size={20} color="#3B82F6" />
-            <Text style={[styles.contactText, styles.linkText]}>{content.contact.website}</Text>
-            <MaterialIcons name="open-in-new" size={16} color="#666" />
-          </TouchableOpacity>
         </View>
 
-        {/* Location Map */}
-        <View style={styles.mapSection}>
-          <Text style={styles.sectionTitle}>
-            {getLocation(currentLanguage)}
-          </Text>
-          <View style={styles.mapContainer}>
-            <View style={styles.mapPlaceholder}>
-              <MaterialIcons name="location-on" size={48} color="#3B82F6" />
-              <Text style={styles.mapPlaceholderText}>
-                {currentLanguage === 'de' ? 'Karte wird geladen...' : 'Map loading...'}
-              </Text>
-              <Text style={styles.mapLocationText}>VHS Vienna, Urania Building</Text>
-            </View>
-          </View>
-        </View>
-        
-        {/* Tags */}
+
+        {/* Tags - Updated with correct information */}
         <View style={styles.tagsSection}>
           <View style={styles.tag}>
-            <Text style={styles.tagText}>A1</Text>
+            <Text style={styles.tagText}>A1-B1</Text>
           </View>
           <View style={styles.tag}>
             <Text style={styles.tagText}>
-              {currentLanguage === 'de' ? 'Anfänger' : 'Beginner'}
+              {currentLanguage === 'de' ? 'Kostenlos' : 'Free'}
             </Text>
           </View>
           <View style={styles.tag}>
-            <Text style={styles.tagText}>Vienna</Text>
+            <Text style={styles.tagText}>
+              {currentLanguage === 'de' ? 'Online' : 'Online'}
+            </Text>
           </View>
           <View style={styles.tag}>
-            <Text style={styles.tagText}>8 {currentLanguage === 'de' ? 'Wochen' : 'weeks'}</Text>
+            <Text style={styles.tagText}>
+              {currentLanguage === 'de' ? 'Privat' : 'Private'}
+            </Text>
           </View>
           <View style={styles.tag}>
-            <Text style={styles.tagText}>€200</Text>
+            <Text style={styles.tagText}>
+              {currentLanguage === 'de' ? 'Videos' : 'Videos'}
+            </Text>
           </View>
+          <View style={styles.tag}>
+          <Text style={styles.tagText}>
+            {currentLanguage === 'de' ? 'Website' : 'Website'}
+          </Text>
         </View>
-        
+        </View>
+
         {/* Enroll Button */}
         <TouchableOpacity style={styles.enrollButton} onPress={handleEnrollPress}>
           <Text style={styles.enrollButtonText}>
@@ -232,13 +227,13 @@ Weitere Informationen und Zugriff auf die Ressourcen finden Sie auf der offiziel
           <MaterialIcons name="arrow-forward" size={20} color="#fff" />
         </TouchableOpacity>
       </ScrollView>
-      
-      <LanguageModal 
-        visible={showLanguageModal} 
-        onClose={() => setShowLanguageModal(false)} 
+
+      <LanguageModal
+        visible={showLanguageModal}
+        onClose={() => setShowLanguageModal(false)}
         languageCode={language.code}
       />
-      
+
       <HelpModal
         visible={showHelpModal}
         onClose={() => setShowHelpModal(false)}
@@ -296,11 +291,6 @@ const styles = StyleSheet.create({
   },
   contactSection: {
     marginBottom: 32,
-    backgroundColor: '#f8fafc',
-    padding: 16,
-    borderRadius: 12,
-    borderWidth: 1,
-    borderColor: '#e2e8f0',
   },
   sectionTitle: {
     fontSize: 20,
@@ -308,20 +298,34 @@ const styles = StyleSheet.create({
     color: '#1f2937',
     marginBottom: 16,
   },
-  contactItem: {
+  contactGrid: {
+    gap: 12,
+  },
+  contactCard: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 12,
+    padding: 16,
+    backgroundColor: '#f8fafc',
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
   },
-  contactText: {
-    fontSize: 16,
-    color: '#374151',
-    marginLeft: 12,
+  contactInfo: {
     flex: 1,
+    marginLeft: 12,
+  },
+  contactLabel: {
+    fontSize: 14,
+    color: '#6b7280',
+    marginBottom: 2,
+  },
+  contactValue: {
+    fontSize: 16,
+    color: '#111827',
+    fontWeight: '500',
   },
   linkText: {
     color: '#3B82F6',
-    textDecorationLine: 'underline',
   },
   tagsSection: {
     flexDirection: 'row',
