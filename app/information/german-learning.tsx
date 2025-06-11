@@ -33,6 +33,48 @@ const GermanLearningPage: React.FC = () => {
     format: '',
     type: ''
   });
+
+  interface GermanCourse {
+    id: string;
+    title: {
+      en: string;
+      de: string;
+      fa: string;
+      ar: string;
+      uk: string;
+      ru: string;
+      tr: string;
+      so: string;
+      fr: string;
+      es: string;
+      pl: string;
+      sr: string;
+    };
+    type: 'course' | 'resource' | 'exam';
+    level: string[];
+    location?: string;
+    price: string | number;
+    online: boolean;
+    description: {
+      en: string;
+      de: string;
+      fa: string;
+      ar: string;
+      uk: string;
+      ru: string;
+      tr: string;
+      so: string;
+      fr: string;
+      es: string;
+      pl: string;
+      sr: string;
+    };
+    provider: string;
+    forWomen?: boolean;
+    forYoungMigrants?: boolean;
+    childcare?: boolean;
+    integrationRequirement?: boolean;
+  }
   
   // Filter states
   const [selectedLevels, setSelectedLevels] = useState<string[]>([]);
