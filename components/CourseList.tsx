@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { FlatList, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
@@ -41,6 +42,22 @@ const CourseList: React.FC<CourseListProps> = ({ courses, languageCode }) => {
     }
   };
 
+  const formatLevelRange = (levels: string[]) => {
+    if (!levels || levels.length === 0) return '';
+    if (levels.length === 1) return levels[0];
+    
+    // Sort levels by their order
+    const levelOrder = ['A0', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+    const sortedLevels = levels.sort((a, b) => levelOrder.indexOf(a) - levelOrder.indexOf(b));
+    
+    // If consecutive levels, show as range
+    if (sortedLevels.length > 1) {
+      return `${sortedLevels[0]}-${sortedLevels[sortedLevels.length - 1]}`;
+    }
+    
+    return sortedLevels.join(', ');
+  };
+
   const renderCourseItem = ({ item }: { item: GermanCourse }) => (
     <TouchableOpacity 
       style={styles.courseCard}
@@ -62,18 +79,14 @@ const CourseList: React.FC<CourseListProps> = ({ courses, languageCode }) => {
       </View>
       
       <View style={styles.tagsContainer}>
-        {/* Level tags - show individual boxes for each level */}
+        {/* Level tags - show as range */}
         {item.level && item.level.length > 0 && (
-          <View style={styles.levelContainer}>
-            {item.level.map((level, index) => (
-              <View key={index} style={styles.levelTag}>
-                <Text style={styles.levelTagText}>{level}</Text>
-              </View>
-            ))}
+          <View style={styles.levelTag}>
+            <Text style={styles.levelTagText}>{formatLevelRange(item.level)}</Text>
           </View>
         )}
         
-        {/* Location tag - show "Online" if online is true, otherwise show actual location */}
+        {/* Location tag */}
         {(item.online || item.location) && (
           <View style={styles.tag}>
             <Text style={styles.tagText}>
@@ -209,22 +222,18 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     alignItems: 'center',
   },
-  levelContainer: {
-    flexDirection: 'row',
-    marginRight: 8,
-    marginBottom: 8,
-  },
   levelTag: {
     backgroundColor: '#e0f2fe',
     borderRadius: 4,
-    paddingHorizontal: 6,
-    paddingVertical: 3,
-    marginRight: 4,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    marginRight: 8,
+    marginBottom: 8,
     borderWidth: 1,
     borderColor: '#0284c7',
   },
   levelTagText: {
-    fontSize: 11,
+    fontSize: 12,
     color: '#0284c7',
     fontWeight: '600',
   },

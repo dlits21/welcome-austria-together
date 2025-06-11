@@ -1,17 +1,32 @@
 
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, ActivityIndicator } from 'react-native';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-import L from 'leaflet';
+import { View, Text, StyleSheet, ActivityIndicator, Platform } from 'react-native';
 
-// Fix for default markers in react-leaflet
-delete (L.Icon.Default.prototype as any)._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
-  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-});
+// Conditional imports for web only
+let MapContainer: any, TileLayer: any, Marker: any, Popup: any, L: any;
+
+if (Platform.OS === 'web') {
+  try {
+    const leaflet = require('react-leaflet');
+    MapContainer = leaflet.MapContainer;
+    TileLayer = leaflet.TileLayer;
+    Marker = leaflet.Marker;
+    Popup = leaflet.Popup;
+    L = require('leaflet');
+    
+    // Fix for default markers in react-leaflet
+    if (L && L.Icon && L.Icon.Default) {
+      delete (L.Icon.Default.prototype as any)._getIconUrl;
+      L.Icon.Default.mergeOptions({
+        iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
+        iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+      });
+    }
+  } catch (error) {
+    console.warn('Leaflet not available on this platform:', error);
+  }
+}
 
 interface MapViewProps {
   address?: string;
@@ -19,10 +34,15 @@ interface MapViewProps {
     lat: number;
     lng: number;
   };
+  additionalMarkers?: Array<{
+    lat: number;
+    lng: number;
+    name: string;
+  }>;
   providerName: string;
 }
 
-const MapView: React.FC<MapViewProps> = ({ address, coordinates, providerName }) => {
+const MapView: React.FC<MapViewProps> = ({ address, coordinates, additionalMarkers = [], providerName }) => {
   const [mapCoordinates, setMapCoordinates] = useState<{ lat: number; lng: number } | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -61,6 +81,21 @@ const MapView: React.FC<MapViewProps> = ({ address, coordinates, providerName })
     loadCoordinates();
   }, [address, coordinates]);
 
+  // On mobile, show a placeholder or address text instead of map
+  if (Platform.OS !== 'web') {
+    return (
+      <View style={styles.mobileContainer}>
+        <Text style={styles.mobileTitle}>Location</Text>
+        <Text style={styles.mobileAddress}>
+          {address || `${mapCoordinates?.lat.toFixed(4)}, ${mapCoordinates?.lng.toFixed(4)}`}
+        </Text>
+        <Text style={styles.mobileNote}>
+          Maps are available on the web version of this app.
+        </Text>
+      </View>
+    );
+  }
+
   if (loading) {
     return (
       <View style={styles.loadingContainer}>
@@ -70,7 +105,7 @@ const MapView: React.FC<MapViewProps> = ({ address, coordinates, providerName })
     );
   }
 
-  if (error || !mapCoordinates) {
+  if (error || !mapCoordinates || !MapContainer) {
     return (
       <View style={styles.errorContainer}>
         <Text style={styles.errorText}>{error || 'Map not available'}</Text>
@@ -82,7 +117,7 @@ const MapView: React.FC<MapViewProps> = ({ address, coordinates, providerName })
     <View style={styles.mapContainer}>
       <MapContainer
         center={[mapCoordinates.lat, mapCoordinates.lng]}
-        zoom={15}
+        zoom={13}
         style={styles.map}
       >
         <TileLayer
@@ -98,6 +133,15 @@ const MapView: React.FC<MapViewProps> = ({ address, coordinates, providerName })
             </div>
           </Popup>
         </Marker>
+        {additionalMarkers.map((marker, index) => (
+          <Marker key={index} position={[marker.lat, marker.lng]}>
+            <Popup>
+              <div>
+                <strong>{marker.name}</strong>
+              </div>
+            </Popup>
+          </Marker>
+        ))}
       </MapContainer>
     </View>
   );
@@ -115,6 +159,35 @@ const styles = StyleSheet.create({
   map: {
     height: '100%',
     width: '100%',
+  },
+  mobileContainer: {
+    height: 200,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#f8fafc',
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
+    marginBottom: 16,
+    padding: 20,
+  },
+  mobileTitle: {
+    fontSize: 18,
+    fontWeight: '600',
+    color: '#1f2937',
+    marginBottom: 8,
+  },
+  mobileAddress: {
+    fontSize: 16,
+    color: '#374151',
+    textAlign: 'center',
+    marginBottom: 12,
+  },
+  mobileNote: {
+    fontSize: 14,
+    color: '#6b7280',
+    textAlign: 'center',
+    fontStyle: 'italic',
   },
   loadingContainer: {
     height: 300,

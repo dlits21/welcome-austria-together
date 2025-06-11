@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, TouchableOpacity, Linking } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -37,6 +36,11 @@ interface CourseData {
     lat: number;
     lng: number;
   };
+  additionalMarkers?: Array<{
+    lat: number;
+    lng: number;
+    name: string;
+  }>;
 }
 
 interface GenericGermanCoursePageProps {
@@ -159,6 +163,7 @@ const GenericGermanCoursePage: React.FC<GenericGermanCoursePageProps> = ({ cours
             <MapView 
               address={courseData.address}
               coordinates={courseData.coordinates}
+              additionalMarkers={courseData.additionalMarkers}
               providerName={courseData.provider}
             />
           </View>
