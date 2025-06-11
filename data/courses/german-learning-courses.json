@@ -35,7 +35,14 @@
     "coordinates": {
       "lat": 48.2364,
       "lng": 16.3831
-    }
+    },
+    "additionalMarkers": [
+      {
+        "lat": 48.2082,
+        "lng": 16.3738,
+        "name": "AMS Wien - Naschmarkt Office"
+      }
+    ]
   },
   "duolingo": {
     "id": "duolingo",

@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native';
 import { useLanguage } from '../../contexts/LanguageContext';
@@ -53,6 +52,26 @@ const GermanLearningPage: React.FC = () => {
 
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
+  // Helper function to check if a level range overlaps with selected levels
+  const checkLevelOverlap = (courseLevels: string[], selectedLevels: string[]) => {
+    if (selectedLevels.length === 0) return true;
+    
+    const levelOrder = ['A0', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+    
+    // Get min and max for course levels
+    const courseIndices = courseLevels.map(level => levelOrder.indexOf(level)).filter(i => i !== -1);
+    const courseMin = Math.min(...courseIndices);
+    const courseMax = Math.max(...courseIndices);
+    
+    // Get min and max for selected levels
+    const selectedIndices = selectedLevels.map(level => levelOrder.indexOf(level)).filter(i => i !== -1);
+    const selectedMin = Math.min(...selectedIndices);
+    const selectedMax = Math.max(...selectedIndices);
+    
+    // Check if ranges overlap
+    return !(courseMax < selectedMin || courseMin > selectedMax);
+  };
+
   // Convert JSON data to course format
   useEffect(() => {
     const convertedCourses: GermanCourse[] = Object.values(coursesData).map((course: any) => ({
@@ -87,10 +106,10 @@ const GermanLearningPage: React.FC = () => {
       filtered = filtered.filter(course => course.type === activeTab);
     }
 
-    // Apply level filter
+    // Apply level filter with range overlap
     if (selectedLevels.length > 0) {
       filtered = filtered.filter(course =>
-        course.level.some(level => selectedLevels.includes(level))
+        checkLevelOverlap(course.level, selectedLevels)
       );
     }
 
