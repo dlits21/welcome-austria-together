@@ -81,16 +81,38 @@ const MapView: React.FC<MapViewProps> = ({ address, coordinates, additionalMarke
     loadCoordinates();
   }, [address, coordinates]);
 
-  // On mobile, show a placeholder or address text instead of map
+  // On mobile, show location information instead of interactive map
   if (Platform.OS !== 'web') {
+    const allMarkers = [
+      ...(mapCoordinates ? [{ lat: mapCoordinates.lat, lng: mapCoordinates.lng, name: providerName }] : []),
+      ...additionalMarkers
+    ];
+
     return (
       <View style={styles.mobileContainer}>
-        <Text style={styles.mobileTitle}>Location</Text>
-        <Text style={styles.mobileAddress}>
-          {address || `${mapCoordinates?.lat.toFixed(4)}, ${mapCoordinates?.lng.toFixed(4)}`}
-        </Text>
+        <Text style={styles.mobileTitle}>Locations</Text>
+        {address && (
+          <Text style={styles.mobileAddress}>{address}</Text>
+        )}
+        {mapCoordinates && !address && (
+          <Text style={styles.mobileAddress}>
+            {mapCoordinates.lat.toFixed(4)}, {mapCoordinates.lng.toFixed(4)}
+          </Text>
+        )}
+        {allMarkers.length > 0 && (
+          <View style={styles.locationsContainer}>
+            {allMarkers.map((marker, index) => (
+              <View key={index} style={styles.locationItem}>
+                <Text style={styles.locationName}>{marker.name}</Text>
+                <Text style={styles.locationCoords}>
+                  {marker.lat.toFixed(4)}, {marker.lng.toFixed(4)}
+                </Text>
+              </View>
+            ))}
+          </View>
+        )}
         <Text style={styles.mobileNote}>
-          Maps are available on the web version of this app.
+          Interactive maps are available on the web version.
         </Text>
       </View>
     );
@@ -105,10 +127,19 @@ const MapView: React.FC<MapViewProps> = ({ address, coordinates, additionalMarke
     );
   }
 
-  if (error || !mapCoordinates || !MapContainer) {
+  if (error || !mapCoordinates) {
     return (
       <View style={styles.errorContainer}>
         <Text style={styles.errorText}>{error || 'Map not available'}</Text>
+      </View>
+    );
+  }
+
+  // Check if leaflet components are available
+  if (!MapContainer || !TileLayer || !Marker || !Popup) {
+    return (
+      <View style={styles.errorContainer}>
+        <Text style={styles.errorText}>Map components not available</Text>
       </View>
     );
   }
@@ -124,24 +155,34 @@ const MapView: React.FC<MapViewProps> = ({ address, coordinates, additionalMarke
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+        
+        {/* Main marker */}
         <Marker position={[mapCoordinates.lat, mapCoordinates.lng]}>
           <Popup>
             <div>
               <strong>{providerName}</strong>
-              {address && <br />}
-              {address}
+              {address && (
+                <>
+                  <br />
+                  {address}
+                </>
+              )}
             </div>
           </Popup>
         </Marker>
-        {additionalMarkers.map((marker, index) => (
-          <Marker key={index} position={[marker.lat, marker.lng]}>
-            <Popup>
-              <div>
-                <strong>{marker.name}</strong>
-              </div>
-            </Popup>
-          </Marker>
-        ))}
+        
+        {/* Additional markers */}
+        {additionalMarkers && additionalMarkers.length > 0 && 
+          additionalMarkers.map((marker, index) => (
+            <Marker key={`additional-${index}`} position={[marker.lat, marker.lng]}>
+              <Popup>
+                <div>
+                  <strong>{marker.name}</strong>
+                </div>
+              </Popup>
+            </Marker>
+          ))
+        }
       </MapContainer>
     </View>
   );
@@ -161,7 +202,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   mobileContainer: {
-    height: 200,
+    minHeight: 200,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#f8fafc',
@@ -182,6 +223,28 @@ const styles = StyleSheet.create({
     color: '#374151',
     textAlign: 'center',
     marginBottom: 12,
+  },
+  locationsContainer: {
+    width: '100%',
+    marginBottom: 12,
+  },
+  locationItem: {
+    backgroundColor: '#fff',
+    padding: 12,
+    borderRadius: 8,
+    marginBottom: 8,
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
+  },
+  locationName: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#1f2937',
+    marginBottom: 4,
+  },
+  locationCoords: {
+    fontSize: 12,
+    color: '#6b7280',
   },
   mobileNote: {
     fontSize: 14,
