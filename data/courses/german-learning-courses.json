@@ -23,11 +23,12 @@
     "courseDetails": {
       "level": "A1-C1",
       "price": "Free",
-      "location": "Nationwide",
+      "location": "Vienna",
       "certificate": "Yes",
-      "type": "course"
+      "type": "course",
+      "duration": "12 months"
     },
-    "tags": ["A1-C1", "Free", "Online", "Public", "With Certificate"],
+    "tags": ["Integration", "Free", "Public", "With Certificate"],
     "hasMap": true,
     "isResource": false,
     "address": "Treustraße 35-43, 1200 Vienna, Austria",
@@ -60,10 +61,47 @@
       "price": "Free",
       "location": "Online",
       "certificate": "No",
-      "type": "App/Website"
+      "type": "resource"
     },
-    "tags": ["A1-B1", "Free", "Online", "Private", "App", "Website"],
+    "tags": ["Free", "Online", "Private", "App", "Website"],
     "hasMap": false,
     "isResource": true
+  },
+  "vhs_vienna": {
+    "id": "vhs_vienna",
+    "title": {
+      "en": "VHS Vienna - German Courses",
+      "de": "VHS Wien - Deutschkurse"
+    },
+    "subtitle": {
+      "en": "Comprehensive German courses for all levels",
+      "de": "Umfassende Deutschkurse für alle Niveaus"
+    },
+    "provider": "Volkshochschule Wien",
+    "description": {
+      "en": "VHS Vienna offers comprehensive German courses for all levels from A1 to C2. With experienced teachers and proven methods, these courses help you achieve your language learning goals effectively.",
+      "de": "Die VHS Wien bietet umfassende Deutschkurse für alle Niveaus von A1 bis C2. Mit erfahrenen Lehrern und bewährten Methoden helfen diese Kurse dabei, Ihre Sprachlernziele effektiv zu erreichen."
+    },
+    "contact": {
+      "phone": "+43 1 893 00 83",
+      "email": "info@vhs.at",
+      "website": "https://www.vhs.at/"
+    },
+    "courseDetails": {
+      "level": "A1-C2",
+      "duration": "8-12 weeks",
+      "price": "280",
+      "location": "Vienna",
+      "certificate": "Yes",
+      "type": "course"
+    },
+    "tags": ["Public", "With Certificate", "All Levels"],
+    "hasMap": true,
+    "isResource": false,
+    "address": "Lustkandlgasse 50, 1090 Vienna, Austria",
+    "coordinates": {
+      "lat": 48.2205,
+      "lng": 16.3577
+    }
   }
 }
