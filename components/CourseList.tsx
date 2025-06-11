@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { FlatList, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
@@ -30,7 +29,7 @@ const CourseList: React.FC<CourseListProps> = ({ courses, languageCode }) => {
   const router = useRouter();
 
   const handleCoursePress = (courseId: string) => {
-    router.push(`/information/german-learning/${courseId}`);
+    router.push(`/information/german-learning-pages/${courseId}`);
   };
 
   const getBadgeColor = (type: string) => {
@@ -61,10 +60,6 @@ const CourseList: React.FC<CourseListProps> = ({ courses, languageCode }) => {
           </Text>
         </View>
       </View>
-      
-      <Text style={styles.courseDescription}>
-        {languageCode === 'de' ? item.description.de : item.description.en}
-      </Text>
       
       <View style={styles.tagsContainer}>
         {/* Level tags - show individual boxes for each level */}
@@ -182,7 +177,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    marginBottom: 8,
+    marginBottom: 16,
   },
   courseInfo: {
     flex: 1,
@@ -208,12 +203,6 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 12,
     fontWeight: '600',
-  },
-  courseDescription: {
-    fontSize: 14,
-    color: '#334155',
-    marginBottom: 12,
-    lineHeight: 20,
   },
   tagsContainer: {
     flexDirection: 'row',
