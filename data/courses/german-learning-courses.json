@@ -31,17 +31,27 @@
     "tags": ["Integration", "Free", "Public", "With Certificate"],
     "hasMap": true,
     "isResource": false,
-    "address": "Treustraße 35-43, 1200 Vienna, Austria",
+    "forWomen": false,
+    "forYoungMigrants": false,
+    "childcare": false,
+    "address": "AMS Wien – Bundesgeschäftsstelle, Treustraße 35‑43, 1200 Wien",
     "coordinates": {
       "lat": 48.2364,
       "lng": 16.3831
     },
     "additionalMarkers": [
-      {
-        "lat": 48.2082,
-        "lng": 16.3738,
-        "name": "AMS Wien - Naschmarkt Office"
-      }
+        { "lat": 48.2060, "lng": 16.3700, "address": "AMS Wien – Landesgeschäftsstelle, Ungargasse 37, 1030 Wien" },
+        { "lat": 47.0707, "lng": 15.4395, "address": "AMS Graz – Landesgeschäftsstelle, Babenbergerstraße 33, 8020 Graz" },
+        { "lat": 48.3064, "lng": 14.2858, "address": "AMS Linz – Landesgeschäftsstelle, Europaplatz 9, 4021 Linz" },
+        { "lat": 47.8095, "lng": 13.0550, "address": "AMS Salzburg – Landesgeschäftsstelle, Auerspergstraße 67a, 5020 Salzburg" },
+        { "lat": 46.6436, "lng": 14.3100, "address": "AMS Klagenfurt – Landesgeschäftsstelle, Rudolfsbahngürtel 42, 9020 Klagenfurt" },
+        { "lat": 47.5056, "lng": 9.7470,  "address": "AMS Vorarlberg – Landesgeschäftsstelle, Rheinstraße 33, 6901 Bregenz" },
+        { "lat": 47.2682, "lng": 11.4041, "address": "AMS Tirol – Landesgeschäftsstelle, Amraser Straße 8, 6020 Innsbruck" },
+        { "lat": 47.6895, "lng": 16.5456, "address": "AMS Burgenland – Landesgeschäftsstelle, Permayerstraße 10, 7000 Eisenstadt" },
+        { "lat": 48.2085, "lng": 16.3750, "address": "AMS Wien – Landesgeschäftsstelle, Ungargasse 37, 1030 Wien"},
+        { "lat": 48.2478, "lng": 16.4567, "address": "AMS Wien – Wagramer Straße 224c, 1220 Wien"},
+        { "lat": 48.2080, "lng": 16.3630, "address": "AMS Niederösterreich Landesgeschäftsstelle, Hohenstaufengasse 2, 1010 Wien"},
+        { "lat": 47.2690, "lng": 11.4020, "address": "AMS Tirol Landesgeschäftsstelle, Amraser Straße 8, 6020 Innsbruck" }
     ]
   },
   "duolingo": {
@@ -78,16 +88,16 @@
     "id": "vhs_vienna",
     "title": {
       "en": "VHS Vienna - German Courses",
-      "de": "VHS Wien - Deutschkurse"
+      "de": "VHSx Wien - Deutschkurse"
     },
     "subtitle": {
-      "en": "Comprehensive German courses for all levels",
-      "de": "Umfassende Deutschkurse für alle Niveaus"
+      "en": "Wide range of German courses for all levels in Vienna",
+      "de": "Umfassende Deutschkurse für alle Niveaus in Wien"
     },
     "provider": "Volkshochschule Wien",
     "description": {
-      "en": "VHS Vienna offers comprehensive German courses for all levels from A1 to C2. With experienced teachers and proven methods, these courses help you achieve your language learning goals effectively.",
-      "de": "Die VHS Wien bietet umfassende Deutschkurse für alle Niveaus von A1 bis C2. Mit erfahrenen Lehrern und bewährten Methoden helfen diese Kurse dabei, Ihre Sprachlernziele effektiv zu erreichen."
+      "en": "Vienna's adult education centers (VHS) offer a wide range of German courses for all levels (A1 to C2). The courses are aimed at beginners as well as advanced learners and are offered in various formats, including face-to-face classes, online courses and hybrid models. The VHS places particular emphasis on practice-oriented learning and promotes integration through language competence.\n\nCourse details:\n• Level: A1-C2\n• Duration: Varies depending on the course; typically 8-12 weeks\n• Schedule: Various times, including evening and weekend courses\n• Location: Over 20 locations throughout Vienna\n• Class size: Small groups for individual attention\n• Childcare: Yes (depending on location and course)\n• Price: Paid\n• Provider: Public\n• Language support: Dari/Farsi, Arabic, English (depending on course and location)\n• Relevant: Support for integration agreements and language support\n• Certificate: Confirmation of participation\n\n\nWhat you will learn:\n• Basic to advanced German language skills\n• Communication in everyday situations\n• Pronunciation and listening comprehension\n• Simple to complex grammar and vocabulary\n• Preparation for integration exams\n\nAt the end of this course you will be able to\n• Communicate confidently in the German language\n• Understand and apply the principles of the Austrian legal and social order\n• Successfully take the integration exam\n\nFor more information and to register for courses, please visit the official website of the Wiener Volkshochschulen.",
+      "de": "Die Wiener Volkshochschulen (VHS) bieten ein breites Spektrum an Deutschkursen für alle Niveaustufen (A1 bis C1) an. Die Kurse richten sich an Anfänger*innen sowie an Fortgeschrittene und werden in verschiedenen Formaten angeboten, darunter Präsenzunterricht, Online-Kurse und hybride Modelle. Die VHS legt besonderen Wert auf praxisorientiertes Lernen und fördert die Integration durch Sprachkompetenz.\n\nKursdetails:\n• Level: A1-C2\n• Dauer: Variiert je nach Kurs; typischerweise 8–12 Wochen\n• Zeitplan: Verschiedene Zeiten, auch Abend- und Wochenendkurse\n• Ort: Über 20 Standorte in ganz Wien\n• Klassengröße: Kleine Gruppen für individuelle Betreuung\n• Kinderbetreuung: Ja (abhängig vom Standort und Kurs)\n• Preis: Kostenpflichtig\n• Anbieter: Öffentlich\n• Sprachliche Unterstützung: Dari/Farsi, Arabisch, Englisch (abhängig vom Kurs und Standort)\n• Relevant: Unterstützung für Integrationsvereinbarungen und Sprachförderung\n• Zertifikat: Teilnahmebestätigung\n\n\nWas Sie lernen werden:\n•  Grundlegende bis fortgeschrittene Deutschkenntnisse\n•  Kommunikation in Alltagssituationen\n•  Aussprache und Hörverständnis\n•  Einfache bis komplexe Grammatik und Wortschatz\n•  Vorbereitung auf Integrationsprüfungen\n\nAm Ende dieses Kurses können Sie:\n• Sich sicher in der deutschen Sprache verständigen\n• Die Prinzipien der österreichischen Rechts- und Gesellschaftsordnung verstehen und anwenden\n• Die Integrationsprüfung erfolgreich ablegen\n\nFor more information and to register for courses, please visit the official website of the Wiener Volkshochschulen."
     },
     "contact": {
       "phone": "+43 1 893 00 83",
@@ -97,7 +107,7 @@
     "courseDetails": {
       "level": "A1-C2",
       "duration": "8-12 weeks",
-      "price": "280",
+      "price": "280€",
       "location": "Vienna",
       "certificate": "Yes",
       "type": "course"
@@ -105,10 +115,1270 @@
     "tags": ["Public", "With Certificate", "All Levels"],
     "hasMap": true,
     "isResource": false,
+    "forWomen": false,
+    "forYoungMigrants": false,
+    "childcare": true,
     "address": "Lustkandlgasse 50, 1090 Vienna, Austria",
     "coordinates": {
       "lat": 48.2205,
       "lng": 16.3577
+    }
+  },
+  "oif_ankommen_app": {
+    "id": "oif_ankommen_app",
+    "title": {
+      "en": "\"Ankommen\" App",
+      "de": "\"Ankommen\" App"
+    },
+    "subtitle": {
+      "en": "Free Mobile App Offering Information on Life in Germany, Asylum Procedures, and a German Language Course",
+      "de": "Kostenlose mobile App mit Informationen zum Leben in Deutschland, Asylverfahren und einem Deutschkurs"
+    },
+    "provider": "Österreichischer Integrations Fonds (ÖIF)",
+    "description": {
+      "en": "The App \"Ankommen\" is a free mobile application developed by the Federal Office for Migration and Refugees (BAMF) in collaboration with the Goethe-Institut, the Federal Employment Agency, and the Bavarian Broadcasting Corporation (BR). Designed as a practical companion, the app provides essential information to help individuals integrate into life in Germany. It includes details about everyday life, the asylum process, access to the labor market, and a free, multimedia German language course. The app is available in multiple languages and can be used offline after downloading.\n\nResource Details:\n• Level: A1-B1\n• Online/Offline: Both (downloadable for offline use)\n• Price: Free\n• Provider: Public (funded by the German government)\n• Language support: Arabic, English, Farsi, French, German\n\n\nWhat you will learn:\n• Basic to intermediate German language skills\n• Everyday vocabulary and phrases\n• Understanding of the asylum process in Germany\n• Information on accessing the labor market\n• Insights into German culture and society\n\nType of Materials:\n• Interactive language exercises\n• Audio and video content\n• Text-based information\n• Quizzes and assessments\n\nAt the end of this course you will be able to:\n• Communicate effectively in basic German\n• Navigate the asylum process in Germany\n• Access information about work and training opportunities\n• Understand key aspects of daily life in Germany\n\nFor more information and to access the resources, please visit the official website.",
+      "de": "Die App „Ankommen“ ist eine kostenlose mobile Anwendung, die vom Bundesamt für Migration und Flüchtlinge (BAMF) in Zusammenarbeit mit dem Goethe-Institut, der Bundesagentur für Arbeit und dem Bayerischen Rundfunk (BR) entwickelt wurde. Als praktischer Begleiter bietet die App wichtige Informationen für die Integration in Deutschland. Sie umfasst Informationen zum Alltag, zum Asylverfahren, zum Zugang zum Arbeitsmarkt sowie einen kostenlosen, multimedialen Deutschkurs. Die App ist mehrsprachig verfügbar und kann nach dem Download auch offline genutzt werden.\n\nRessourcendetails:\n• Niveau: A1–B1\n• Online/Offline: Beides\n• Preis: Kostenlos\n• Anbieter: Öffentlich (finanziert vom Bund)\n• Sprachunterstützung: Arabisch, Englisch, Farsi, Französisch, Deutsch\n\nWas Sie lernen:\n• Grundkenntnisse bis Mittelstufe Deutsch\n• Alltagsvokabular und -phrasen\n• Verständnis des Asylverfahrens in Deutschland\n• Informationen zum Zugang zum Arbeitsmarkt\n• Einblicke in die deutsche Kultur und Gesellschaft\n\nMaterialarten:\n• Interaktive Sprachübungen\n• Audio- und Videoinhalte\n• Textbasierte Informationen\n• Quizze und Bewertungen\n\nAm Ende dieses Kurses können Sie:\n• Effektiv auf Grundkenntnissen Deutsch kommunizieren\n• Das Asylverfahren in Deutschland bewältigen\n• Informationen über Arbeits- und Ausbildungsmöglichkeiten abrufen\n• Wichtige Aspekte des täglichen Lebens in Deutschland verstehen\n\nWeitere Informationen und Ressourcen finden Sie auf der offiziellen Website."
+    },
+    "contact": {
+      "phone": "+49 30 1815-1111",
+      "email": "service@ams.de",
+      "website": "https://www.ankommenapp.de/APP/DE/Startseite/startseite-node.html"
+    },
+    "courseDetails": {
+      "level": "A1-B1",
+      "duration": null,
+      "price": "Free",
+      "location": "Online",
+      "certificate": null,
+      "type": "resource"
+    },
+    "tags": ["Free", "App", "Online", "Public", "Self-paced"],
+    "hasMap": false,
+    "isResource": true,
+    "forWomen": false,
+    "forYoungMigrants": false,
+    "childcare": false,
+    "address": null,
+    "coordinates": null
+  },
+  "babbel_german_course": {
+    "id": "babbel_german_course",
+    "title": {
+      "en": "Babbel – Learn German Anytime, Anywhere",
+      "de": "Babbel – Deutsch lernen jederzeit und überall"
+    },
+    "subtitle": {
+      "en": "German language learning with real-life dialogues",
+      "de": "Deutsch lernen mit praxisnahen Dialogen"
+    },
+    "provider": "Babbel GmbH",
+    "description": {
+      "en": "Babbel is a premium language learning app that helps users improve their German through short, effective lessons based on real-life situations. Babbel is ideal for learners at levels A1 to B2 and offers customized learning paths, speech recognition, and grammar tips.\n\nResource Details:\n• Level: A1–B2\n• Online/Offline: Online (lessons downloadable)\n• Price: Subscription-based (from €5.99/month)\n• Provider: Private company\n• Language support: Interface available in English, Turkish, Arabic, French, and more\n\nWhat you will learn:\n• Conversational German for daily life\n• Grammar rules and correct sentence structure\n• Pronunciation and listening skills\n\nType of Materials:\n• Interactive lessons\n• Real-life dialogues\n• Voice recognition for pronunciation\n• Grammar and vocabulary training\n\nBy the end of this course you'll be able to:\n• Communicate effectively in German\n• Understand spoken and written German in daily situations\n• Speak German with improved confidence",
+      "de": "Babbel ist eine Premium-Sprachlern-App, die kurze und effektive Lektionen bietet, basierend auf Alltagssituationen. Der Deutschkurs ist geeignet für Lernende auf den Niveaustufen A1 bis B2 und bietet personalisierte Lernpfade, Spracherkennung und Grammatikhilfen.\n\nRessourcendetails:\n• Niveau: A1–B2\n• Online/Offline: Online (Lektionen auch offline verfügbar)\n• Preis: Abonnement (ab 5,99 € pro Monat)\n• Anbieter: Privatunternehmen\n• Sprachunterstützung: Oberfläche auf Englisch, Türkisch, Arabisch, Französisch und mehr\n\nWas Sie lernen werden:\n• Deutsch für Alltagssituationen\n• Grammatikregeln und Satzbau\n• Aussprache und Hörverstehen\n\nMaterialien:\n• Interaktive Lektionen\n• Alltagstaugliche Dialoge\n• Spracherkennung zur Ausspracheübung\n• Grammatik- und Vokabeltraining\n\nAm Ende dieses Kurses können Sie:\n• Sicher auf Deutsch kommunizieren\n• Gesprochenes und geschriebenes Deutsch im Alltag verstehen\n• Mit mehr Selbstbewusstsein Deutsch sprechen"
+    },
+    "contact": {
+      "phone": null,
+      "email": null,
+      "website": "https://www.babbel.com/"
+    },
+    "courseDetails": {
+      "level": "A1-B2",
+      "duration": null,
+      "price": "From €5.99/month",
+      "location": "Online",
+      "certificate": null,
+      "type": "resource"
+    },
+    "tags": ["Paid", "App", "Online", "Private", "Self-paced"],
+    "hasMap": false,
+    "isResource": true,
+    "forWomen": false,
+    "forYoungMigrants": false,
+    "childcare": false,
+    "address": null,
+    "coordinates": null
+  },
+  "baju_integrationshaus": {
+    "id": "baju_integrationshaus",
+    "title": {
+      "en": "BAJU – Basic education for adolescents and young adults with a migration background",
+      "de": "BAJU – Basisbildung für Jugendliche und junge Erwachsene mit Migrationshintergrund"
+    },
+    "subtitle": {
+      "en": "Free educational opportunities to promote German language skills and basic competencies",
+      "de": "Kostenlose Bildungsangebote zur Förderung von Deutschkenntnissen und Grundkompetenzen"
+    },
+    "provider": "BAJU - Integrationshaus",
+    "description": {
+      "en": "The BAJU project is aimed at adolescents and young adults with a migration background aged 15 to 25 whose German language skills and basic competencies are not yet sufficient to participate in further education programs such as compulsory school leaving certificate courses. The focus is on developing language skills, particularly in reading and writing, consolidating basic arithmetic, and teaching basic English and digital skills. The goal is to optimally prepare participants for further education opportunities.\n\nCourse Details:\n• Level: A1-B1\n• Duration: Various programs, e.g., completing compulsory school in 10 months\n• Schedule: Various time models, including childcare\n• Location: Multiple locations in Vienna\n• Class Size: Small groups\n• Childcare: Yes\n• Price: Free\n• Provider: NGO (Integrationshaus Wien)\n• Language Support: English, Arabic, Farsi, French, Kurdish, Pashto, Tigrinya, Turkish, Urdu\n• Relevant: Yes – relevant for integration requirements in Austria\n• Certificate: Yes – confirmation of participation; Preparation for the ÖIF Integration Exam A2\n\nWhat you will learn:\n• Basic German language skills (A1–B1)\n• Reading and writing\n• English language skills at A1–B1 level\n• Basic mathematical skills\n• Use of digital media and basic computer skills\n• Career orientation and application training\n\nBy the end of this course, you will be able to:\n• Communicate effectively in everyday German situations\n• Read and write at a basic level\n• Use English in school or at work\n• Apply basic mathematical skills\n• Develop career prospects and write applications\n\nFor more information and to register, please visit the official website.",
+      "de": "Das Projekt BAJU richtet sich an Jugendliche und junge Erwachsene mit Migrationshintergrund im Alter von 15 bis 25 Jahren, deren Deutschkenntnisse und Grundkompetenzen noch nicht ausreichen, um an weiterführenden Bildungsmaßnahmen wie Pflichtschulabschlusskursen teilzunehmen. Im Vordergrund stehen der Ausbau der sprachlichen Kompetenzen, insbesondere im Lesen und Schreiben, die Festigung der Grundrechenarten sowie die Vermittlung von Grundkenntnissen in Englisch und digitalen Kompetenzen. Das Ziel ist es, die Teilnehmenden optimal auf weiterführende Bildungsangebote vorzubereiten.\n\nKursdetails:\n• Level: A1-B1\n• Dauer: Verschiedene Programme, z.B. Pflichtschulabschluss in 10 Monaten\n• Zeitplan: Verschiedene Zeitmodelle, auch mit Kinderbetreuung\n• Ort: Mehrere Standorte in Wien\n• Klassengröße: Kleine Gruppen\n• Kinderbetreuung: Ja\n• Preis: Kostenlos\n• Anbieter: NGO (Integrationshaus Wien)\n• Sprachliche Unterstützung: Englisch, Arabisch, Farsi, Französisch, Kurdisch, Paschtu, Tigrinya, Türkisch, Urdu\n• Relevant: Ja – relevant für Integrationsanforderungen in Österreich\n• Zertifikat: Ja – Teilnahmebestätigung; Vorbereitung auf die ÖIF Integrationsprüfung A2\n\n\nWas Sie lernen werden:\n• Grundlegende Deutschkenntnisse (A1–B1)\n• Lesen und Schreiben\n• Englischkenntnisse auf A1–B1 Niveau\n• Mathematische Grundkompetenzen\n• Umgang mit digitalen Medien und Computergrundlagen\n• Berufsorientierung und Bewerbungstraining\n\n\nAm Ende dieses Kurses können Sie:\n• Effektiv in Alltagssituationen auf Deutsch zu kommunizieren\n• Lesen und Schreiben auf einem grundlegenden Niveau\n• Englisch in Schule oder Beruf anzuwenden\n• Mathematische Grundkenntnisse anzuwenden\n• Berufliche Perspektiven zu entwickeln und Bewerbungen zu verfassen\n\nFür weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website."
+    },
+    "contact": {
+      "phone": "+43-699-12 12 36 47",
+      "email": "bildung@integrationshaus.at",
+      "website": "https://www.integrationshaus.at/de/projekte-programme/bildung/projekt-baju-basisbildung-für-jugendliche-und-junge-erwachsene-mit-migrationshintergrund"
+    },
+    "courseDetails": {
+      "level": "A1-B1",
+      "duration": "Various programs, 10-month completion possible",
+      "price": "Free",
+      "location": "Vienna",
+      "certificate": "Yes",
+      "type": "course"
+    },
+    "tags": ["Free", "NGO", "All Levels", "Public"],
+    "hasMap": true,
+    "isResource": false,
+    "forWomen": false,
+    "forYoungMigrants": true,
+    "childcare": true,
+    "address": "Integrationshaus Wien, Engerthstraße 161-163, 1020 Wien, Austria",
+    "coordinates": {
+      "lat": 48.2298,
+      "lng": 16.4036
+    }
+  },
+  "bfi_upper_austria": {
+    "id": "bfi_upper_austria",
+    "title": {
+      "en": "BFI Upper Austria - German Courses",
+      "de": "BFI Oberösterreich - Deutschkurse"
+    },
+    "subtitle": {
+      "en": "Learn German for integration, work and everyday life",
+      "de": "Deutsch lernen für Integration, Beruf und Alltag"
+    },
+    "provider": "BFI Oberösterreich",
+    "description": {
+      "en": "BFI Upper Austria's German courses are aimed at people who want to improve their German language skills for integration, work and everyday life. Courses are offered at levels A1 to C1 according to the Common European Framework of Reference for Languages. The courses are offered both as day and evening courses to accommodate working people. The BFI Upper Austria is a licensed examination center of the Austrian Language Diploma (ÖSD) and the Austrian Integration Fund (ÖIF). Free course and funding advice is offered in several languages.\n\nCourse details:\n• Level: A1-C1\n• Duration: Intensive courses of approx. 8 weeks\n• Schedule: Day and evening courses\n• Location: Over 20 locations in Upper Austria\n• Class size: Small groups\n• Childcare: N/A\n• Price: 560€\n• Provider: Public\n• Language support: German, Albanian, Bosnian, Croatian, Serbian, English, French, Macedonian, Russian, Turkish\n• Relevant: Relevant for integration agreements, residence permits and citizenship\n• Certificate: No\n\n\nWhat you will learn:\n• Basic to advanced knowledge of German\n• Communication in everyday situations\n• Pronunciation and listening comprehension\n• Simple to complex grammar and vocabulary\n• Preparation for integration and language exams\n\n\nAt the end of this course you will be able to:\n• Communicate confidently in the German language\n• Understand and apply the principles of the Austrian legal and social order\n• Successfully pass the integration exam\n\nFor further information and to register, please visit the official website of the BFI Upper Austria.",
+      "de": "Die Deutschkurse des BFI Oberösterreich richten sich an Personen, die ihre Deutschkenntnisse für Integration, Beruf und Alltag verbessern möchten. Angeboten werden Kurse auf den Niveaustufen A1 bis C1 gemäß dem Gemeinsamen Europäischen Referenzrahmen für Sprachen. Die Kurse werden sowohl als Tages- als auch Abendkurse angeboten, um Berufstätigen entgegenzukommen. Das BFI OÖ ist lizenziertes Prüfungszentrum des Österreichischen Sprachdiploms (ÖSD) und des Österreichischen Integrationsfonds (ÖIF). Eine kostenlose Kurs- und Förderberatung wird in mehreren Sprachen angeboten.\n\nKursdetails:\n• Level: A1-C1\n• Dauer: Intensivkurse mit ca. 8 Wochen\n• Zeitplan: Tages- und Abendkurse\n• Ort: Über 20 Standorte in Oberösterreich\n• Klassengröße: Kleine Gruppen\n• Kinderbetreuung: N/A\n• Preis: 560€\n• Anbieter: Öffentlich\n• Sprachliche Unterstützung: Deutsch, Albanisch, Bosnisch, Kroatisch, Serbisch, Englisch, Französisch, Mazedonisch, Russisch, Türkisch\n• Relevant: relevant für Integrationsvereinbarungen, Aufenthaltstitel und Staatsbürgerschaft\n• Zertifikat: Nein\n\n\nWas Sie lernen werden:\n•  Grundlegende bis fortgeschrittene Deutschkenntnisse\n•  Kommunikation in Alltagssituationen\n•  Aussprache und Hörverständnis\n•  Einfache bis komplexe Grammatik und Wortschatz\n•  Vorbereitung auf Integrations- und Sprachprüfungen\n\nAm Ende dieses Kurses können Sie:\n• Sich sicher in der deutschen Sprache verständigen\n• Die Prinzipien der österreichischen Rechts- und Gesellschaftsordnung verstehen und anwenden\n• Die Integrationsprüfung erfolgreich ablegen\n\nFür weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website des BFI Oberösterreich."
+    },
+    "contact": {
+      "phone": "+43 810 007 007",
+      "email": "deutschkurse@bfi-ooe.at",
+      "website": "https://www.bfi-ooe.at/de/ausbildungen/sprachen/deutschkurse.html"
+    },
+    "courseDetails": {
+      "level": "A1-C1",
+      "duration": "8 weeks",
+      "price": "560€",
+      "location": "Upper Austria",
+      "certificate": "No",
+      "type": "course"
+    },
+    "tags": ["Paid", "Upper Austria", "Public", "Integration", "A1-C1"],
+    "hasMap": true,
+    "isResource": false,
+    "forWomen": false,
+    "forYoungMigrants": false,
+    "childcare": false,
+    "address": "BFI Oberösterreich, Wegscheider Str. 26, 4020 Linz, Austria",
+    "coordinates": {
+      "lat": 48.3035,
+      "lng": 14.2841
+    }
+  },
+  "caritas_asylum_course": {
+    "id": "caritas_asylum_course",
+    "title": {
+      "en": "Caritas - German Course for Asylum Seekers",
+      "de": "Caritas - Deutschkurse für Asylwerber*innen"
+    },
+    "subtitle": {
+      "en": "Practical German courses for asylum seekers - Free language support in Vienna",
+      "de": "Praktische Deutschkurse für Asylwerber*innen - Kostenlose Sprachförderung in Wien"
+    },
+    "provider": "Caritas",
+    "description": {
+      "en": "Caritas Vienna offers free German courses for asylum seekers and people who do not have access to subsidized German courses. The courses are run by volunteer instructors and are geared towards the everyday lives of the participants. With these courses, you can learn German or improve your existing language skills. Topics include doctor's appointments, work and shopping. Exam advice is also offered if required.\n           \nCourse details:\n• Level: A0-B2\n• Duration: Semester (1-2 times per week)\n• Schedule: As required\n• Location: CarBiz - Caritas Education Center, Nobilegasse 23-25 / 2nd floor, 1150 Vienna\n• Class size: Varies\n• Childcare: N/A\n• Price: Free of charge\n• Provider: NGO (Caritas Vienna)\n• Language support: Dari/Farsi, Arabic, English (depending on the teacher)\n• Relevant: Support for integration agreements and language support\n• Certificate: Yes - confirmation of participation\n\n\nWhat you will learn:\n• Basic German language skills for everyday life\n• Communication in simple everyday situations\n• Pronunciation and listening comprehension\n• Simple grammar and vocabulary\n• Preparation for integration exams\n\nAt the end of this course you will be able to:\n• Communicate in basic everyday situations in German\n• Hold simple conversations and exchange information\n• Understand German texts at a basic level\n• Compose simple written messages\n• Prepare for integration and language exams.\n\nFor more information and to register, please visit the official website of Caritas Vienna.",
+      "de": "Die Caritas Wien bietet kostenlose Deutschkurse für Asylwerber*innen und Personen an, die keinen Zugang zu geförderten Deutschkursen haben. Die Kurse werden von ehrenamtlichen Kursleiter*innen durchgeführt und orientieren sich am Alltag der Teilnehmenden. Mit diesen Kursen können Sie Deutsch lernen oder Ihre vorhandenen Sprachkenntnisse verbessern. Die Themen umfassen unter anderem Arztbesuche, Arbeit und Einkaufen. Bei Bedarf wird auch eine Prüfungsberatung angeboten.\n\nKursdetails:\n• Level: A0-B2\n• Dauer: Semesterweise (1–2 Mal pro Woche)\n• Zeitplan: Nach Bedarf\n• Ort: CarBiz – Caritas Bildungszentrum, Nobilegasse 23–25 / 2. Stock, 1150 Wien\n• Klassengröße: Variiert\n• Kinderbetreuung: N/A\n• Preis: Kostenlos\n• Anbieter: NGO (Caritas Wien)\n• Sprachliche Unterstützung: Dari/Farsi, Arabisch, Englisch (abhängig von den Kursleiter*innen)\n• Relevant: Unterstützung für Integrationsvereinbarungen und Sprachförderung\n• Zertifikat: Ja – Teilnahmebestätigung\n\n\nWas Sie lernen werden:\n•  Grundlegende Deutschkenntnisse für den Alltag\n•  Kommunikation in einfachen Alltagssituationen\n•  Aussprache und Hörverständnis\n•  Einfache Grammatik und Wortschatz\n•  Vorbereitung auf Integrationsprüfungen\n\nAm Ende dieses Kurses können Sie:\n• Sich in grundlegenden Alltagssituationen auf Deutsch verständigen\n• Einfache Gespräche führen und Informationen austauschen\n• Deutsche Texte auf einfachem Niveau verstehen\n• Einfache schriftliche Mitteilungen verfassen\n• Sich auf Integrations- und Sprachprüfungen vorbereiten.\n\nFür weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website der Caritas Wien."
+    },
+    "contact": {
+      "phone": "+43 5 178 031 00",
+      "email": "carbiz@caritas-wien.at",
+      "website": "https://www.caritas-wien.at/"
+    },
+    "courseDetails": {
+      "level": "A0-B2",
+      "price": "Free",
+      "location": "Vienna",
+      "certificate": "Yes",
+      "type": "course",
+      "duration": "1 semester"
+    },
+    "tags": ["Free", "NGO", "Vienna", "With Certificate", "Integration"],
+    "hasMap": true,
+    "isResource": false,
+    "forWomen": false,
+    "forYoungMigrants": false,
+    "childcare": false,
+    "address": "CarBiz, Nobilegasse 23–25, 1150 Wien",
+    "coordinates": {
+      "lat": 48.1905,
+      "lng": 16.3222
+    }
+  },
+  "deutschlernerblog_course": {
+    "id": "deutschlernerblog_course",
+    "title": {
+      "en": "Deutschlernerblog – Free German Learning Resources",
+      "de": "Deutschlernerblog – Kostenlose Deutsch-Lernmaterialien"
+    },
+    "subtitle": {
+      "en": "Grammar, vocabulary, listening, reading & more from A1 to C2",
+      "de": "Grammatik, Wortschatz, Hörverstehen, Leseverstehen & mehr von A1 bis C2"
+    },
+    "provider": "Deutschlernerblog",
+    "description": {
+      "en": "Deutschlernerblog offers a comprehensive collection of free, high‑quality materials for learners at levels A1 to C2. You’ll find grammar explanations and exercises, vocabulary exercises, listening and reading comprehension, writing tips, quizzes, music and video resources. Content is well-organized by level, skill, and topic.\n\nResource Details:\n• Level: A1–C2\n• Online/Offline: Online\n• Price: Free\n• Provider: Independent Educational Blog\n• Language support: German interface; some bilingual (e.g. English)\n\nWhat you'll learn:\n• German grammar across all levels\n• Topic-based vocabulary\n• Listening and reading comprehension\n• Writing & exam preparation skills\n\nType of Materials:\n• Online quizzes & exercises\n• Fill‑in‑the‑blank, matching, multiple‑choice\n• Reading texts and analysis\n• Audio clips, videos, e‑books\n\nBy the end:\n• Strengthen German skills up to C2\n• Gain confidence in reading, listening, writing\n• Self-study independently with rich, structured content",
+      "de": "Deutschlernerblog bietet eine umfassende Sammlung kostenloser, hochwertiger Lernmaterialien für Deutschlernende von A1 bis C2. Enthalten sind Grammatik‑Erklärungen und Übungen, Wortschatz-Aufgaben, Hör- und Leseverstehen, Schreibtipps, Quiz, Musik- und Videomaterial. Die Inhalte sind nach Niveau, Fertigkeit und Thema strukturiert.\n\nRessourcendetails:\n• Niveau: A1–C2\n• Online/Offline: Online\n• Preis: Kostenlos\n• Anbieter: Unabhängiger Lernblog\n• Sprachunterstützung: Deutsch; teils bilingual (z. B. Englisch)\n\nWas Sie lernen werden:\n• Deutsche Grammatik auf allen Niveaus\n• Themenbezogener Wortschatz\n• Hör- und Leseverstehen\n• Schreiben & Prüfungsvorbereitung\n\nMaterialien:\n• Online-Quiz & Übungen\n• Lückentexte, Zuordnungen, Multiple‑Choice\n• Lesetexte mit Analyse\n• Audioclips, Videos, E‑Books\n\nAm Ende können Sie:\n• Ihre Deutschkenntnisse bis C2 festigen\n• Selbstbewusst lesen, hören und schreiben\n• Eigenständig mit strukturierten Lerninhalten lernen"
+    },
+    "contact": {
+      "website": "https://deutschlernerblog.de/"
+    },
+    "courseDetails": {
+      "level": "A1–C2",
+      "price": "Free",
+      "location": "Online",
+      "certificate": "N/A",
+      "type": "resource",
+      "duration": "Self-paced"
+    },
+    "tags": ["Free", "Independent", "Online", "Grammar", "Vocabulary", "Exam Prep"],
+    "hasMap": false,
+    "isResource": true,
+    "forWomen": false,
+    "forYoungMigrants": false,
+    "childcare": false,
+    "address": null,
+    "coordinates": null
+  },
+  "diakonie_education_refugees": {
+    "id": "diakonie_education_refugees",
+    "title": {
+      "en": "Diakonie Austria - Training and educational opportunities for refugees",
+      "de": "Diakonie Österreich - Ausbildung und Bildungsangebote für Flüchtlinge"
+    },
+    "subtitle": {
+      "en": "Free German courses, basic education and career advice for refugees",
+      "de": "Kostenlose Deutschkurse, Basisbildung und Berufsberatung für geflüchtete Menschen"
+    },
+    "provider": "Diakonie Österreich",
+    "description": {
+      "en": "Diakonie Austria offers a comprehensive range of educational programs for refugees to facilitate their access to the Austrian education and vocational system. The program includes free literacy and German language courses up to level B2, basic education courses in German, English, and mathematics, as well as the opportunity to complete compulsory schooling. Educational and career counseling and advanced training programs are also offered. The courses are tailored to the needs of adults, single parents, slow learners, and women. Childcare is also offered during course hours at some locations. All programs are free of charge for participants.\n\nCourse Details:\n• Level: A1–B2\n• Duration: Various programs, e.g., completing compulsory school in 10 months\n• Schedule: Various time models\n• Location: Multiple locations throughout Austria\n• Course Size: Small groups\n• Childcare: Yes (at some locations)\n• Price: Free\n• Provider: NGO (Diakonie Austria)\n• Language support: German, English, Arabic, Farsi, French, Kurdish, Pashto, Tigrinya, Turkish, Urdu\n• Relevance: Yes – relevant for integration requirements in Austria\n• Certificate: Completion of compulsory school or certificate of participation\n\nWhat you will learn:\n• Basic German language skills (A1–B2)\n• Reading and writing (literacy)\n• English language skills at A1–B1 level\n• Basic mathematical skills\n• Use of digital media and computer basics\n• Career orientation and application training\n\nBy the end of this course, you will be able to:\n• Communicate effectively in everyday German situations\n• Read and write at a basic level\n• Apply basic mathematical skills\n• Obtain a compulsory school leaving certificate\n• Develop career prospects and write applications\n\nFor further information and to register, please visit the official Diakonie Austria website.",
+      "de": "Diakonie Österreich bietet ein umfassendes Bildungsangebot für geflüchtete Menschen, um ihnen den Zugang zum österreichischen Bildungs- und Berufssystem zu erleichtern. Das Programm umfasst kostenlose Alphabetisierungs- und Deutschkurse bis zum Niveau B2, Basisbildungskurse in Deutsch, Englisch und Mathematik, sowie die Möglichkeit, den Pflichtschulabschluss nachzuholen. Zusätzlich werden Bildungs- und Berufsberatung sowie Maßnahmen zur Höherqualifizierung angeboten. Die Kurse sind auf die Bedürfnisse von Erwachsenen, Alleinerziehenden, Menschen mit langsamem Lerntempo und Frauen abgestimmt. An einigen Standorten wird auch Kinderbetreuung während der Kurszeiten angeboten. Alle Angebote sind für die Teilnehmer:innen kostenlos.\n\nKursdetails:\n• Niveau: A1–B2\n• Dauer: Verschiedene Programme, z.B. Pflichtschulabschluss in 10 Monaten\n• Zeitplan: Verschiedene Zeitmodelle\n• Ort: Mehrere Standorte in ganz Österreich\n• Kursgröße: Kleine Gruppen\n• Kinderbetreuung: Ja (an einigen Standorten)\n• Preis: Kostenlos\n• Anbieter: NGO (Diakonie Österreich)\n• Sprachförderung: Deutsch, Englisch, Arabisch, Farsi, Französisch, Kurdisch, Paschtu, Tigrinya, Türkisch, Urdu\n• Relevanz: Ja – relevant für Integrationsanforderungen in Österreich\n• Zertifikat: Pflichtschulabschluss oder Teilnahmebestätigungen\n\nWas Sie lernen werden:\n• Grundlegende Deutschkenntnisse (A1–B2)\n• Lesen und Schreiben (Alphabetisierung)\n• Englischkenntnisse auf A1–B1 Niveau\n• Mathematische Grundkompetenzen\n• Umgang mit digitalen Medien und Computergrundlagen\n• Berufsorientierung und Bewerbungstraining\n\nAm Ende dieses Kurses können Sie:\n• Effektiv in Alltagssituationen auf Deutsch kommunizieren\n• Lesen und Schreiben auf einem grundlegenden Niveau\n• Mathematische Grundkenntnisse anwenden\n• Einen Pflichtschulabschluss erwerben\n• Berufliche Perspektiven entwickeln und Bewerbungen verfassen\n\nFür weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website der Diakonie Österreich."
+    },
+    "contact": {
+      "phone": "+43 2236 8686 801",
+      "email": "bach@diakonie.at",
+      "website": "https://www.diakonie.at/unsere-themen/flucht-und-integration/ausbildung-und-bildungsangebote-fuer-fluechtlinge"
+    },
+    "courseDetails": {
+      "level": "A1-B2",
+      "price": "Free",
+      "location": "Austria-wide",
+      "certificate": "Yes",
+      "type": "course"
+    },
+    "tags": ["Free", "NGO", "Nationwide", "With Certificate", "For Women", "Basic Education"],
+    "hasMap": false,
+    "isResource": false,
+    "forWomen": false,
+    "forYoungMigrants": false,
+    "childcare": true,
+    "address": "Multiple locations across Austria",
+    "coordinates": {
+      "lat": 48.2082,
+      "lng": 16.3738
+    }
+  },
+  "don_bosco_basic_bridging": {
+    "id": "don_bosco_basic_bridging",
+    "title": {
+      "en": "Don Bosco Social Work - Basic and Bridging Courses",
+      "de": "Don Bosco Sozialwerk - Basis- und Brückenkurse"
+    },
+    "subtitle": {
+      "en": "Free German and educational opportunities for young refugees",
+      "de": "Kostenlose Deutsch- und Bildungsangebote für junge Geflüchtete"
+    },
+    "provider": "Don Bosco Sozialwerk",
+    "description": {
+      "en": "The Don Bosco Social Welfare Organization's basic and bridging courses are aimed at young refugees between the ages of 15 and 28 with no prior schooling. The courses begin with German literacy and provide access to advanced educational opportunities starting at level A1. All courses are individually tailored to the needs of the participants, and participants can join at any time.\n\nCourse Details:\n• Level: A0-A1\n• Duration: 11 course blocks per year (entry possible at any time)\n• Timeframe: Courses start continuously, entry possible at any time\n• Location: Futterknechtgasse 35, 1230 Vienna\n• Class Size: Small learning groups of approximately 10 participants\n• Childcare: N/A\n• Price: Free (donation-funded free places available)\n• Provider: NGO (Don Bosco Social Work)\n• Language Support: German, English, Arabic, Farsi, French, Kurdish, Pashto, Tigrinya, Turkish, Urdu\n• Relevant: No\n• Certificate: No\n\nWhat You Will Learn:\n• Basic German Skills (A0-A1)\n• Reading and Writing\n• Learning Strategies and Self-Organization\n• Everyday Mathematics (e.g., Dealing with Money, Time, Measurements)\n• Digital Skills (e.g., Using a Smartphone and PC)\n\nBy the end of this course, you will be able to:\n• Effectively communicate in Communicate in everyday situations in German\n• Understand and compose reading and writing simple texts\n• Apply basic mathematical skills in everyday life\n• Use digital devices safely\n• Learn independently and organize your learning processes\n\nFor more information and to register, please visit the official website.",
+      "de": "Die Basis- und Brückenkurse des Don Bosco Sozialwerks richten sich an junge Geflüchtete zwischen 15 und 28 Jahren ohne schulische Vorbildung. Die Kurse beginnen bei der Alphabetisierung in der deutschen Sprache und vermitteln ab einem Deutschniveau von A1 an weiterführende Bildungsmaßnahmen. Alle Kurse sind individuell auf die Bedürfnisse der Teilnehmer:innen abgestimmt, und Einstiege sind jederzeit möglich.\n\nKursdetails:\n• Level: A0-A1\n• Dauer: 11 Kursblöcke pro Jahr (Einstieg jederzeit möglich)\n• Zeitraum: Kurse starten fortlaufend, Einstieg jederzeit möglich\n• Ort: Futterknechtgasse 35, 1230 Wien\n• Klassengröße: Kleine Lerngruppen mit ca. 10 Teilnehmer:innen\n• Kinderbetreuung: N/A\n• Preis: Kostenlos (spendenfinanzierte Gratisplätze möglich)\n• Anbieter: NGO (Don Bosco Sozialwerk)\n• Sprachliche Unterstützung: Deutsch, Englisch, Arabisch, Farsi, Französisch, Kurdisch, Paschtu, Tigrinya, Türkisch, Urdu\n• Relevant: No\n• Zertifikat: No\n\n\nWas Sie lernen werden:\n• Grundlegende Deutschkenntnisse (A0-A1)\n• Lesen und Schreiben\n• Lernstrategien und Selbstorganisation\n• Alltagsmathematik (z.B. Umgang mit Geld, Zeit, Maße)\n• Digitale Kompetenzen (z.B. Nutzung von Smartphone und PC)\n\n\nAm Ende dieses Kurses können Sie:\n• Effektiv in Alltagssituationen auf Deutsch zu kommunizieren\n• Lesen und Schreiben von einfachen Texten zu verstehen und zu verfassen\n• Mathematische Grundkenntnisse im Alltag anzuwenden\n• Digitale Geräte sicher zu nutzen\n• Selbstständig zu lernen und Ihre Lernprozesse zu organisieren\n\nFür weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website."
+    },
+    "contact": {
+      "phone": "+43 1 665 02 55",
+      "email": "leitung.amos@sozialwerk.at",
+      "website": "https://www.peregrina.at/kurse/basisbildungskurse/"
+    },
+    "courseDetails": {
+      "level": "A0-A1",
+      "price": "Free (donation-funded)",
+      "location": "Vienna",
+      "certificate": "No",
+      "type": "course",
+      "duration": "Ongoing (11 blocks/year)"
+    },
+    "tags": ["Free", "NGO", "Vienna", "Basic Education", "Low Literacy"],
+    "hasMap": true,
+    "isResource": false,
+    "forWomen": false,
+    "forYoungMigrants": true,
+    "childcare": false,
+    "address": "Futterknechtgasse 35, 1230 Wien",
+    "coordinates": {
+      "lat": 48.1383,
+      "lng": 16.2896
+    }
+  },
+  "easy_deutsch_grammar": {
+    "id": "easy_deutsch_grammar",
+    "title": {
+      "en": "Easy Deutsch – Practical German Grammar Help",
+      "de": "Easy Deutsch – Praktische Hilfe zur deutschen Grammatik"
+    },
+    "subtitle": {
+      "en": "Understand German grammar simply and clearly",
+      "de": "Deutsch Grammatik einfach und verständlich erklärt"
+    },
+    "provider": "Easy Deutsch",
+    "description": {
+      "en": "Easy Deutsch is an online platform designed to make German grammar easier to understand for learners at all levels. The website offers free grammar guides, examples, explanations, and downloadable materials for independent learning. It’s ideal for anyone looking to strengthen their grammar skills or prepare for exams.\n\nCourse details:\n• Level: A1–C1\n• Online/Offline: Online\n• Price: Free (premium options available)\n• Provider: Private (independent platform)\n• Language support: English, some content in Spanish, Russian, Turkish\n\nWhat you will learn:\n• Key German grammar rules\n• Sentence structure and verb usage\n• Practical usage through examples\n\nType of Materials:\n• Grammar explanations\n• Example sentences\n• PDF downloads\n• Video lessons (YouTube)\n\nAt the end of this course you will be able to:\n• Better understand and apply German grammar rules\n• Write and speak more accurately in German\n• Learn independently using structured guides and examples",
+      "de": "Easy Deutsch ist eine Online-Plattform, die es sich zum Ziel gemacht hat, deutsche Grammatik für Lernende aller Stufen einfach und verständlich zu erklären. Die Webseite bietet kostenlose Grammatikerklärungen, Beispiele, Übungen und herunterladbare Materialien für das Selbststudium.\n\nKursdetails:\n• Niveau: A1–C1\n• Online/Offline: Online\n• Preis: Kostenlos (mit Premium-Angeboten)\n• Anbieter: Privat (unabhängige Plattform)\n• Sprachunterstützung: Englisch, teilweise Spanisch, Russisch, Türkisch\n\nWas Sie lernen werden:\n• Wichtige deutsche Grammatikregeln\n• Satzbau und Verbverwendung\n• Praktische Anwendung durch Beispiele\n\nMaterialien:\n• Grammatikerklärungen\n• Beispielsätze\n• PDF-Downloads\n• Video-Lektionen (YouTube)\n\nAm Ende dieses Kurses können Sie:\n• Deutsche Grammatik besser verstehen und anwenden\n• Richtig schreiben und sprechen\n• Selbstständig mit strukturierten Anleitungen lernen"
+    },
+    "contact": {
+      "website": "https://easy-deutsch.de/"
+    },
+    "courseDetails": {
+      "level": "A1-C1",
+      "price": "Free (with premium options)",
+      "location": "Online",
+      "certificate": "No",
+      "type": "resource"
+    },
+    "tags": ["Free", "Private", "Online", "Grammar", "Self-paced", "Website"],
+    "hasMap": false,
+    "isResource": true,
+    "forWomen": false,
+    "forYoungMigrants": false,
+    "childcare": false
+  },
+  "einstieg_deutsch_app": {
+    "id": "einstieg_deutsch_app",
+    "title": {
+      "en": "Einstieg Deutsch – A Language Learning App for Refugees",
+      "de": "Einstieg Deutsch – Eine Sprachenlern-App für Immigrant:innen"
+    },
+    "subtitle": {
+      "en": "Bridging the Gap to Basic German Communication Skills",
+      "de": "Grundlegende Deutsche Alltagskommunikation lernen"
+    },
+    "provider": "Deutscher Volkshochschul-Verband (DVV)",
+    "description": {
+      "en": "The \"Einstieg Deutsch\" app is a free German language learning tool developed by the German Adult Education Association (DVV) and funded by the German Federal Ministry of Education and Research (BMBF). Designed specifically for refugees and immigrants, the app provides an accessible introduction to the German language, focusing on essential phrases and vocabulary for everyday situations. It aims to bridge the gap for those awaiting formal integration courses or those excluded due to legal status or country of origin. The app employs a \"chunk learning\" method, teaching fixed expressions like \"How are you?\" and polite requests such as \"Could you please...?\" to facilitate quick acquisition of basic communication skills. With over 37,000 downloads since its launch in 2016, the app has been widely used in language classes, volunteer work, and as a self-directed learning resource in adult education centers, community centers, and public libraries.\n\nResource Details:\n• Level: A1\n• Online/Offline: Both (downloadable for offline use)\n• Price: Free\n• Provider: Public (funded by the German government)\n• Language support: Arabic, Dari, English, Farsi, French, Kurmanci, Pashto, Tigrinya, Turkish, Urdu\n\nWhat you will learn:\n• Basic German vocabulary and phrases for everyday situations\n• Listening comprehension and oral reproduction of common expressions\n• Cultural insights through scenarios featuring individuals from Eritrea, Syria, and Afghanistan\n\nType of Materials:\n• Slide shows with subtitles and audio support\n• Interactive exercises focusing on speaking and listening skills\n• Real-life communicative scenarios\n\nBy the end of this course you'll be able to:\n• Communicate effectively in basic German in everyday situations\n• Understand and use essential phrases for social interactions\n• Navigate common scenarios such as medical consultations and administrative tasks\n\nFor more information and to download the app, please visit the official website.",
+      "de": "Die App „Einstieg Deutsch“ ist ein kostenloses Deutschlerntool, das vom Deutschen Volkshochschul-Verband (DVV) entwickelt und vom Bundesministerium für Bildung und Forschung (BMBF) gefördert wird. Die App wurde speziell für Flüchtlinge und Einwanderer entwickelt und bietet einen leicht verständlichen Einstieg in die deutsche Sprache mit Schwerpunkt auf wichtigen Redewendungen und Vokabeln für den Alltag. Sie soll Menschen, die auf einen offiziellen Integrationskurs warten oder aufgrund ihres Aufenthaltsstatus oder Herkunftslandes vom Unterricht ausgeschlossen sind, helfen, die Lernlücke zu schließen. Die App nutzt die „Chunk-Learning“-Methode und vermittelt feste Ausdrücke wie „Wie geht es Ihnen?“ und höfliche Bitten wie „Könnten Sie bitte…?“, um den schnellen Erwerb grundlegender Kommunikationsfähigkeiten zu ermöglichen. Mit über 37.000 Downloads seit ihrer Einführung im Jahr 2016 wird die App häufig in Sprachkursen, im Ehrenamt und als selbstgesteuerte Lernressource in Volkshochschulen, Gemeindezentren und öffentlichen Bibliotheken eingesetzt.\n\nRessourcendetails:\n• Niveau: A1\n• Online/Offline: Beides (herunterladbar für die Offline-Nutzung)\n• Preis: Kostenlos\n• Anbieter: Öffentlich (finanziert vom Bund)\n• Sprachunterstützung: Arabisch, Dari, Englisch, Farsi, Französisch, Kurmanci, Paschtu, Tigrinya, Türkisch, Urdu\n\nWas Sie lernen:\n• Grundlegender deutscher Wortschatz und Redewendungen für Alltagssituationen\n• Hörverstehen und mündliche Wiedergabe gängiger Ausdrücke\n• Kulturelle Einblicke durch Szenarien mit Personen aus Eritrea, Syrien und Afghanistan\n\nMaterialien:\n• Diashows mit Untertiteln und Audiounterstützung\n• Interaktive Übungen zum Sprechen und Hören\n• Reale Kommunikationsszenarien\n\nAm Ende dieses Kurses können Sie:\n• Effektiv in einfachen Deutschkenntnissen im Alltag kommunizieren\n• Wichtige Ausdrücke im sozialen Umgang verstehen und verwenden\n• Häufige Situationen wie Arztbesuche und Verwaltungsaufgaben meistern\n\nWeitere Informationen und die App zum Download finden Sie auf der offiziellen Website."
+    },
+    "contact": {
+      "website": "https://www.dvv-international.de/en/our-work/stories/detail/einstieg-deutsch-a-language-learning-app-for-refugees"
+    },
+    "courseDetails": {
+      "level": "A1",
+      "price": "Free",
+      "location": "Online / Offline (app-based)",
+      "certificate": "No",
+      "type": "resource"
+    },
+    "tags": ["A1", "Free", "Public", "App", "Online", "Self-paced", "Mobile"],
+    "hasMap": false,
+    "isResource": true,
+    "forWomen": false,
+    "forYoungMigrants": false,
+    "childcare": false
+  },
+  "frau_bock_courses": {
+    "id": "frau_bock_courses",
+    "title": {
+      "en": "Frau Bock - German Courses",
+      "de": "Frau Bock - Deutschkurse"
+    },
+    "subtitle": {
+      "en": "Free German courses from literacy to B2 – low-threshold and individual",
+      "de": "Kostenlose Deutschkurse von Alphabetisierung bis B2 – Niedrigschwellig und individuell"
+    },
+    "provider": "Verein Ute Bock",
+    "description": {
+      "en": "The Ute Bock Education Center has been offering free German courses for refugees since 2003. The courses begin with literacy and extend up to language level B2. They are specifically designed for a low-threshold entry, allowing everyone to learn at their own pace. The course schedule allows for individualized support to meet diverse needs. Registration takes place in person, and there is a waiting period of approximately one month before the placement interview. Students at the Education Center have the opportunity to take ÖSD exams at reduced rates. They can also take the ÖIF exam at A2 or B2 levels, provided they are not permitted to take an exam at a subsidized institution.\n\nCourse Details:\n• Level: A0–B2\n• Duration: Course blocks with 2 units per week\n• Schedule: Ongoing, join at any time\n• Location: Inzersdorfer Straße 64, 1100 Vienna\n• Class Size: Small Groups\n• Childcare: N/A\n• Price: Free\n• Provider: NGO (Ute Bock Association)\n• Language Support: German, English, Arabic, Farsi, Russian\n• Relevance: Yes – relevant for integration requirements in Austria\n• Certificate: Yes – confirmation of participation; Preparation for ÖSD and ÖIF exams\n\nWhat you will learn:\n• Basic German language skills (literacy up to B2)\n• Reading and writing\n• Learning strategies and techniques\n• Everyday mathematics (e.g., handling money, time, measurements)\n• Digital skills (e.g., using a smartphone and PC)\n\nBy the end of this course, you will be able to:\n• Communicate effectively in everyday German situations\n• Understand and compose simple reading and writing texts\n• Apply basic mathematical skills in everyday life\n• Use digital devices safely\n• Learn independently and organize your learning processes\n\nFurther information and registration options can be found on the official website.",
+      "de": "Das Bildungszentrum Ute Bock bietet seit 2003 kostenlose Deutschkurse für geflüchtete Menschen an. Die Kurse beginnen bei der Alphabetisierung und reichen bis zum Sprachniveau B2. Sie sind speziell auf einen niedrigschwelligen Einstieg ausgelegt, sodass jede*r in seinem oder ihrem eigenen Tempo lernen kann. Der Kursplan ermöglicht eine individuelle Betreuung, um den unterschiedlichen Bedürfnissen gerecht zu werden. Die Anmeldung erfolgt persönlich vor Ort, und es gibt eine Wartezeit von etwa einem Monat bis zum Einstufungsgespräch. Für Schüler*innen des Bildungszentrums besteht die Möglichkeit, ÖSD-Prüfungen zu vergünstigten Konditionen abzulegen. Außerdem können sie die ÖIF-Prüfung auf A2- oder B2-Niveau ablegen, sofern sie bei keiner geförderten Stelle eine Prüfung ablegen dürfen.\n\nKursdetails:\n• Niveau: A0–B2\n• Dauer: Kursblöcke mit je 2 Einheiten pro Woche\n• Zeitplan: Fortlaufend, Einstieg jederzeit möglich\n• Ort: Inzersdorfer Straße 64, 1100 Wien\n• Kursgröße: Kleine Gruppen\n• Kinderbetreuung: N/A\n• Preis: Kostenlos\n• Anbieter: NGO (Verein Ute Bock)\n• Sprachunterstützung: Deutsch, Englisch, Arabisch, Farsi, Russisch\n• Relevanz: Ja – relevant für Integrationsanforderungen in Österreich\n• Zertifikat: Ja – Teilnahmebestätigung; Vorbereitung auf ÖSD- und ÖIF-Prüfungen\n\nWas Sie lernen:\n• Grundlegende Deutschkenntnisse (Alphabetisierung bis B2)\n• Lesen und Schreiben\n• Lernstrategien und Lerntechniken\n• Alltagsmathematik (z.B. Umgang mit Geld, Zeit, Maße)\n• Digitale Kompetenzen (z. B. Nutzung von Smartphone und PC)\n\nAm Ende dieses Kurses können Sie:\n• Effektiv in Alltagssituationen auf Deutsch kommunizieren\n• Lesen und Schreiben von einfachen Texten zu verstehen und zu verfassen\n• Mathematische Grundkenntnisse im Alltag anzuwenden\n• Digitale Geräte sicher zu nutzen\n• Selbstständig zu lernen und Ihre Lernprozesse zu organisieren\n\nWeitere Informationen und die Möglichkeit zur Anmeldung finden Sie auf der offiziellen Website."
+    },
+    "contact": {
+      "phone": "+43 1 929 24 24 - 0",
+      "email": "info@fraubock.at",
+      "website": "https://www.fraubock.at/de/so-helfen-wir/bildung/deutschkurse"
+    },
+    "courseDetails": {
+      "level": "A0–B2",
+      "price": "Free",
+      "location": "Vienna",
+      "certificate": "Yes",
+      "type": "course"
+    },
+    "tags": ["A0-B2", "Free", "Vienna", "NGO", "ÖIF Preparation", "ÖSD Preparation", "Multilingual", "In-person"],
+    "hasMap": true,
+    "isResource": false,
+    "forWomen": false,
+    "forYoungMigrants": false,
+    "childcare": false,
+    "address": "Inzersdorfer Straße 64, 1100 Wien",
+    "coordinates": {
+      "lat": 48.1728562,
+      "lng": 16.3635832
+    }
+  },
+  "lefoe_learning_centre": {
+    "id": "lefoe_learning_centre",
+    "title": {
+      "en": "LEFÖ - Learning Centre for Migrant Women",
+      "de": "LEFÖ - Lernzentrum für Migrantinnen"
+    },
+    "subtitle": {
+      "en": "Free Basic Education Courses for Migrant Women",
+      "de": "Gratis Grundausbildung für Migrantinnen"
+    },
+    "provider": "LEFÖ – Beratung, Bildung und Begleitung für Migrantinnen*",
+    "description": {
+      "en": "The Learning Centre for Migrant Women is part of LEFÖ – a feminist organization dedicated to supporting migrant women in Austria. The centre offers free basic education courses aimed at empowering women who face educational disadvantages. Courses are designed to be learner-centered, participatory, and feminist, focusing on the specific needs and interests of the participants. The centre also provides free childcare for participants who require it.\n\nCourse Details:\n• Level: A0-B1\n• Duration: Varies; typically aligned with the academic semesters\n• Schedule: Winter semester: August/September to December/January; Summer semester: February to end of June\n• Location: Anastasius-Grün-Gasse 25/4, 1180 Vienna\n• Class Size: Small groups\n• Childcare: Yes, free of charge\n• Price: Free\n• Provider: NGO\n• Language Support: German, Spanish, English\n• Relevant: Yes – relevant for integration requirements in Austria\n• Certificate: Yes – participation certificate; preparation for ÖSD exams\n\nWhat you will learn:\n• Basic German language skills (A1–B1)\n• Reading and writing\n• Learning strategies and study skills\n• Digital competencies (computer training)\n\nBy the end of this course, you will be able to:\n• Communicate effectively in everyday situations in German\n• Read and write basic texts\n• Utilize digital tools for learning and communication\n• Navigate educational and social systems in Austria\n\nFor more information and to register, please visit the official website.",
+      "de": "Das Lernzentrum für Migrantinnen ist Teil von LEFÖ – einer feministischen Organisation zur Unterstützung von Migrantinnen in Österreich. Das Zentrum bietet kostenlose Grundbildungskurse an, die Frauen mit Bildungsbenachteiligung stärken sollen. Die Kurse sind lernerzentriert, partizipativ und feministisch konzipiert und berücksichtigen die spezifischen Bedürfnisse und Interessen der Teilnehmerinnen. Das Zentrum bietet außerdem kostenlose Kinderbetreuung für Teilnehmerinnen an, die diese benötigen.\n\nKursdetails:\n• Niveau: A0–B1\n• Dauer: Variiert; in der Regel an die akademischen Semester angepasst\n• Zeitplan: Wintersemester: August/September bis Dezember/Januar; Sommersemester: Februar bis Ende Juni\n• Ort: Anastasius-Grün-Gasse 25/4, 1180 Wien\n• Kursgröße: Kleine Gruppen\n• Kinderbetreuung: Ja, kostenlos\n• Preis: Kostenlos\n• Anbieter: NGO\n• Sprachunterstützung: Deutsch, Spanisch, Englisch\n• Relevanz: Ja – relevant für Integrationsanforderungen in Österreich\n• Zertifikat: Ja – Teilnahmebescheinigung; Vorbereitung auf die ÖSD-Prüfungen\n\nWas Sie lernen:\n• Grundlegende Deutschkenntnisse (A1–B1)\n• Lesen und Schreiben\n• Lernstrategien und Lerntechniken\n• Digitale Kompetenzen (Computertraining)\n\nAm Ende dieses Kurses können Sie:\n• Effektiv in Alltagssituationen auf Deutsch kommunizieren\n• Einfache Texte lesen und schreiben\n• Digitale Lern- und Kommunikationstools nutzen\n• Sich im österreichischen Bildungs- und Sozialsystem zurechtfinden\n\nWeitere Informationen und die Möglichkeit zur Anmeldung finden Sie auf der offiziellen Website."
+    },
+    "contact": {
+      "phone": "+43 660 5027755 (Thu 09:00–12:00)",
+      "email": "lernzentrum@lefoe.at",
+      "website": "https://lefoe.at/en/learning-centre-for-migrant-women/"
+    },
+    "courseDetails": {
+      "level": "A0–B1",
+      "price": "Free",
+      "location": "Vienna",
+      "certificate": "Yes",
+      "type": "course"
+    },
+    "tags": ["A0‑B1", "Free", "Vienna", "NGO", "ÖSD Preparation"],
+    "hasMap": true,
+    "isResource": true,
+    "forWomen": true,
+    "forYoungMigrants": false,
+    "childcare": true,
+    "address": "Anastasius‑Grün‑Gasse 25/4, 1180 Vienna",
+    "coordinates": {
+      "lat": 48.2155,
+      "lng": 16.3340
+    }
+  },
+  "le_vrai_online_course": {
+    "id": "le_vrai_online_course",
+    "title": {
+      "en": "Le Vrai – Interactive Online Learning for German",
+      "de": "Le Vrai – Interaktives Online-Lernen für Deutsch"
+    },
+    "subtitle": {
+      "en": "Online learning platform with a focus on integration and language support",
+      "de": "Online-Lernplattform mit Fokus auf Integration und Sprachförderung"
+    },
+    "provider": "Le Vrai",
+    "description": {
+      "en": "Le Vrai is an online learning platform that supports learners in German language acquisition, focusing especially on topics relevant for integration. The platform offers simple explanations, exercises, and videos to help migrants and refugees understand the German language and culture.\n\nCourse Details:\n• Level: A1–B1\n• Online/Offline: Online\n• Price: Free\n• Provider: NGO / Private Initiative\n• Language support: Arabic, Farsi, Turkish, English, and more\n\nWhat you will learn:\n• Basic German for everyday communication\n• German culture and social norms\n• Key integration-related topics (living, health, work, rights)\n\nType of Materials:\n• Videos and animations\n• Interactive exercises\n• Multilingual explanations\n• Topic-based learning modules\n\nBy the end of this course you will be able to:\n• Communicate in basic German\n• Understand your rights and duties in Germany\n• Integrate more easily into daily life in German-speaking society",
+      "de": "Le Vrai ist eine Online-Lernplattform zur Unterstützung beim Deutschlernen, insbesondere zu Themen rund um Integration. Die Plattform bietet einfache Erklärungen, Übungen und Videos, um Migrant*innen und Geflüchtete beim Spracherwerb und beim kulturellen Verständnis zu unterstützen.\n\nKursdetails:\n• Niveau: A1–B1\n• Online/Offline: Online\n• Preis: Kostenlos\n• Anbieter: NGO / Private Initiative\n• Sprachunterstützung: Arabisch, Farsi, Türkisch, Englisch und mehr\n\nWas Sie lernen werden:\n• Grundlegendes Deutsch für die Alltagskommunikation\n• Deutsche Kultur und gesellschaftliche Normen\n• Wichtige Integrationsthemen (Wohnen, Gesundheit, Arbeit, Rechte)\n\nMaterialien:\n• Videos und Animationen\n• Interaktive Übungen\n• Mehrsprachige Erklärungen\n• Themenbasierte Lernmodule\n\nAm Ende dieses Kurses können Sie:\n• In einfachem Deutsch kommunizieren\n• Ihre Rechte und Pflichten in Deutschland verstehen\n• Sich leichter in die Gesellschaft integrieren"
+    },
+    "contact": {
+      "website": "https://online-lernen.levrai.de/"
+    },
+    "courseDetails": {
+      "level": "A1–B1",
+      "price": "Free",
+      "location": "Online",
+      "certificate": "No",
+      "type": "resource"
+    },
+    "tags": ["A1–B1", "Free", "Online", "NGO", "Website"],
+    "hasMap": false,
+    "isResource": true,
+    "forWomen": false,
+    "forYoungMigrants": false,
+    "childcare": false
+  },
+  "mama_lernt_deutsch": {
+    "id": "mama_lernt_deutsch",
+    "title": {
+      "en": "Mama lernt Deutsch – German Language Courses for Women'",
+      "de": "Mama lernt Deutsch – Deutschkurse für Frauen"
+    },
+    "subtitle": {
+      "en": "Empowering Women Through Basic Education and Language Skills",
+      "de": "Stärkt Frauen durch Grundbildung und Sprachkenntnisse"
+    },
+    "provider": "Station Wien",
+    "description": {
+      "en": "The \"Mama lernt Deutsch\" program is a free educational initiative by Station Wien, designed specifically for women who have had limited or no formal schooling. The courses aim to provide foundational skills in reading, writing, and German language proficiency, catering to women from diverse backgrounds, including refugees and migrants. The program also includes basic mathematics, digital literacy, and cultural excursions, enhancing the learning experience. Childcare services are provided during classes, ensuring that mothers can participate without concerns about their children's care. The courses are funded by the EU, the Austrian Ministry of Education, and the City of Vienna, making them accessible at no cost to participants.\n           \nCourse details:\n• Level: A1 to B1 (German language proficiency)\n• Duration: Varies; typically several months\n• Schedule: Morning courses: Monday to Friday, 8:20–12:00; Afternoon courses: Monday to Wednesday, 12:30–15:15\n• Location: Einsiedlerplatz 5, 1050 Vienna, Austria\n• Class size: Small groups to ensure personalized attention\n• Childcare: Yes\n• Price: Free of charge\n• Provider: NGO (Station Vienna)\n• Language support:  Information available in multiple languages; specific language support may vary\n• Relevant: relevant for integration requirements in Austria\n• Certificate: No formal certificate\n\nWhat you will learn:\n• Basic German language skills (A1 to B1 level)\n• Reading and writing fundamentals (Alphabetisierung)\n• Basic mathematics\n• Digital literacy (using mobile phones and computers)\n• Effective learning strategies\n• Cultural integration through excursions and community activities\n\nAt the end of this course you will be able to:\n• Communicate effectively in everyday situations in German\n• Read and write basic German texts\n• Use digital tools for communication and information\n• Understand and apply basic mathematical concepts\n• Navigate German society with greater confidence.\n\nFor more information and to register, please contact:\n    Magdalena Niklas-Kujabi, BA\n    Email: magdalena.niklas-@-stationwien.com\n    Phone: +43 (0)676 36 22 760\n    Address: Einsiedlerplatz 5, 1050 Vienna, Austria\n\nThis program is an excellent opportunity for women seeking to improve their German language skills and integrate more fully into Austrian society.",
+      "de": "Das Programm „Mama lernt Deutsch“ ist eine kostenlose Bildungsinitiative der Station Wien, die sich speziell an Frauen mit eingeschränkter oder keiner Schulbildung richtet. Die Kurse vermitteln grundlegende Lese-, Schreib- und Deutschkenntnisse und richten sich an Frauen mit unterschiedlichem Hintergrund, darunter auch Geflüchtete und Migrantinnen. Das Programm umfasst außerdem grundlegende Mathematik, digitale Kompetenzen und kulturelle Exkursionen, die das Lernerlebnis bereichern. Während des Unterrichts wird eine Kinderbetreuung angeboten, damit Mütter ohne Sorgen um die Betreuung ihrer Kinder teilnehmen können. Die Kurse werden von der EU, dem österreichischen Bildungsministerium und der Stadt Wien gefördert und sind für die Teilnehmerinnen kostenlos.\n\nKursdetails:\n• Niveau: A1 bis B1 (Deutschkenntnisse)\n• Dauer: Variiert; in der Regel mehrere Monate\n• Zeitplan: Vormittagskurse: Montag bis Freitag, 8:20–12:00 Uhr; Nachmittagskurse: Montag bis Mittwoch, 12:30–15:15 Uhr\n• Ort: Einsiedlerplatz 5, 1050 Wien, Österreich\n• Kursgröße: Kleine Gruppen für individuelle Betreuung\n• Kinderbetreuung: Ja\n• Preis: Kostenlos\n• Anbieter: NGO (Station Vienna)\n• Sprachförderung: Informationen in mehreren Sprachen verfügbar; die spezifische Sprachförderung kann variieren\n• Relevanz: Relevant für Integrationsanforderungen in Österreich\n• Zertifikat: Kein formales Zertifikat\n\nWas Sie lernen werden:\n• Grundlegende Deutschkenntnisse (Niveau A1 bis B1)\n• Alphabetisierung (Grundlagen des Lesens und Schreibens)\n• Grundlegende Mathematikkenntnisse\n• Digitale Kompetenz (Nutzung von Mobiltelefonen und Computern)\n• Effektive Lernstrategien\n• Kulturelle Integration durch Ausflüge und Gemeinschaftsaktivitäten\n\nAm Ende dieses Kurses können Sie:\n• Effektiv in Alltagssituationen auf Deutsch kommunizieren\n• Einfache deutsche Texte lesen und schreiben\n• Digitale Werkzeuge für Kommunikation und Information nutzen\n• Grundlegende mathematische Konzepte verstehen und anwenden\n• Sich sicherer in der deutschen Gesellschaft bewegen\n\nFür weitere Informationen und zur Anmeldung wenden Sie sich bitte an:\nMagdalena Niklas-Kujabi, BA\nE-Mail: magdalena.niklas-@-stationwien.com\nTelefon: +43 (0)676 36 22 760\nAdresse: Einsiedlerplatz 5, 1050 Wien, Österreich\n\nDieses Programm ist eine hervorragende Gelegenheit für Frauen, ihre Deutschkenntnisse zu verbessern und sich besser in die österreichische Gesellschaft zu integrieren."
+    },
+    "contact": {
+      "phone": "+43 676 36 22 760",
+      "email": "magdalena.niklas@stationwien.com",
+      "website": "https://www.stationwien.org/projekte/mama-lernt-deutsch.html/"
+    },
+    "courseDetails": {
+      "level": "A1–B1",
+      "price": "Free",
+      "location": "Vienna",
+      "certificate": "No",
+      "type": "course"
+    },
+    "tags": ["A1–B1", "Free", "Vienna", "Offline", "Literacy", "Math", "Digital Skills"],
+    "hasMap": true,
+    "coordinates": {
+      "lat": 48.18121,
+      "lng": 16.34878
+    },
+    "address": "Einsiedlerplatz 5, 1050 Vienna",
+    "isResource": false,
+    "forWomen": true,
+    "forYoungMigrants": false,
+    "childcare": true
+  },
+  "miteinander_lernen_basisbildung": {
+    "id": "miteinander_lernen_basisbildung",
+    "title": {
+      "en": "Basic German education – language support for women with a migration background",
+      "de": "Basisbildung Deutsch – Sprachförderung für Frauen mit Migrationshintergrund"
+    },
+    "subtitle": {
+      "en": "Free German courses from A1 to A2 with childcare and exam preparation",
+      "de": "Kostenlose Deutschkurse von A1 bis A2 mit Kinderbetreuung und Prüfungsvorbereitung"
+    },
+    "provider": "Miteinander Lernen – Birlikte Öğrenelim",
+    "description": {
+      "en": "\"Miteinander Lernen – Birlikte Öğrenelim\" is a Viennese association specializing in the educational support of women with a migrant background. Since 1984, the association has offered customized educational programs tailored to the individual needs of participants. The \"Basic German Education\" program is aimed at women who want to improve their German language skills from the ground up. The courses cover reading, writing, listening comprehension, and speaking, as well as mathematical and digital skills. Learning skills, excursions, workshops, and educational counseling are also offered. Particular emphasis is placed on the integration of participants into Austrian society.\n\nCourse Details:\n• Level: A1-A2\n• Duration: Winter Semester: September–December/January; Summer Semester: February–June\n• Schedule: 4 course units per week (216 teaching units)\n• Location: Koppstrasse 38/8, 1160 Vienna\n• Class size: 5–10 women\n• Childcare: Yes\n• Price: Free\n• Provider: NGO\n• Language support: Turkish, Kurdish, English\n• Relevant: Preparation for integration requirements\n• Certificate: Preparation for the ÖIF Integration Exam A2\n\nWhat you will learn:\n• Basic German language skills (A1–A2)\n• Reading, writing, listening comprehension, and speaking\n• Mathematical and digital skills\n• Learning strategies and self-organization\n• Cultural integration through excursions and workshops\n\nBy the end of this course, you will be able to:\n• Communicate effectively in everyday German situations\n• Complete basic mathematical and digital tasks\n• Learn and organize independently\n• Find your way better in Austrian society\n• Successfully pass the ÖIF Integration Exam A2\n\nFor more information and to register, visit please visit the official website.",
+      "de": "\"Miteinander Lernen – Birlikte Öğrenelim\" ist ein Wiener Verein, der sich auf die Bildungsförderung von Frauen mit Migrationshintergrund spezialisiert hat. Seit 1984 bietet der Verein maßgeschneiderte Bildungsangebote an, die auf die individuellen Bedürfnisse der Teilnehmerinnen abgestimmt sind. Das \"Basisbildung Deutsch\"-Programm richtet sich an Frauen, die ihre Deutschkenntnisse von Grund auf verbessern möchten. Die Kurse umfassen Lesen, Schreiben, Hörverstehen und Sprechen sowie mathematische und digitale Kompetenzen. Zusätzlich werden Lernkompetenzen, Exkursionen, Workshops und Bildungsberatung angeboten. Ein besonderes Augenmerk liegt auf der Integration der Teilnehmerinnen in die österreichische Gesellschaft.\n\nKursdetails:\n• Level: A1-A2\n• Dauer:  Wintersemester: September–Dezember/Jänner; Sommersemester: Februar–Juni\n• Zeitplan: 4 Kurseinheiten pro Woche (216 Unterrichtseinheiten)\n• Ort: Koppstrasse 38/8, 1160 Wien\n• Klassengröße: 5–10 Frauen\n• Kinderbetreuung: Ja\n• Preis: Kostenlos\n• Anbieter: NGO\n• Sprachliche Unterstützung: Türkisch, Kurdisch, Englisch\n• Relevant: Vorbereitung für Integrationsanforderung\n• Zertifikat: Vorbereitung auf die ÖIF Integrationsprüfung A2\n\n\nWas Sie lernen werden:\n•  Grundlegende Deutschkenntnisse (A1–A2)\n•  Lesen, Schreiben, Hörverstehen und Sprechen\n•  Mathematische und digitale Kompetenzen\n•  Lernstrategien und Selbstorganisation\n•  Kulturelle Integration durch Exkursionen und Workshops\n\nAm Ende dieses Kurses können Sie:\n• Effektiv in Alltagssituationen auf Deutsch kommunizieren\n• Grundlegende mathematische und digitale Aufgaben bewältigen\n• Selbstständig lernen und organisieren\n• Sich in der österreichischen Gesellschaft besser zurechtfinden\n• Die ÖIF Integrationsprüfung A2 erfolgreich ablegen\n\nFür weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website."
+    },
+    "contact": {
+      "phone": "+43 1 493 16 08",
+      "email": "mlaktuna@miteinlernen.at",
+      "website": "https://miteinlernen.at/basisbildung-deutsch"
+    },
+    "courseDetails": {
+      "level": "A1–A2",
+      "price": "Free",
+      "location": "Vienna",
+      "certificate": "ÖIF Integration Exam A2 Preparation",
+      "type": "course"
+    },
+    "tags": [
+      "A1–A2",
+      "Free",
+      "Vienna",
+      "Literacy",
+      "Math",
+      "Digital Skills",
+      "NGO"
+    ],
+    "hasMap": true,
+    "coordinates": {
+      "lat": 48.21372,
+      "lng": 16.32698},
+    "address": "Koppstrasse 38/8, 1160 Vienna",
+    "isResource": false,
+    "forWomen": true,
+    "forYoungMigrants": false,
+    "childcare": true
+  },
+  "dw_nicos_weg": {
+    "id": "dw_nicos_weg",
+    "title": {
+      "en": "Nicos Weg – Learn German with DW",
+      "de": "Nicos Weg – Deutsch Lernen mit DW"
+    },
+    "subtitle": {
+      "en": "Interactive German Language Course for Beginners to Intermediate Learners",
+      "de": "Interaktiver Deutschkurs für Anfänger und Fortgeschrittene"
+    },
+    "provider": "Deutsche Welle (DW)",
+    "description": {
+      "en": "Nicos Weg is a free, interactive German language course developed by Deutsche Welle (DW) aimed at learners from A1 to B1 proficiency levels. The course follows the journey of Nico, a young man from Spain who arrives in Germany and navigates various everyday situations. Through engaging videos, exercises, and quizzes, learners can improve their listening, reading, and speaking skills in German. The course is designed to be flexible, allowing learners to progress at their own pace.\n\nResource Details:\n• Level: A1-B1\n• Online/Offline: Online\n• Price: Free of charge\n• Provider: Public (funded by the German government)\n• Language support: English, Spanish, Arabic, and more\n\nWhat you will learn:\n• Basic to intermediate German language skills\n• Vocabulary and grammar for everyday situations\n• Cultural insights into life in Germany\n• Listening and reading comprehension\n\nType of Materials:\n• Video episodes\n• Interactive exercises and quizzes\n• Downloadable PDFs\n• Audio recordings\n\nAt the end of this course you will be able to:\n• Communicate effectively in everyday situations in German\n• Understand and use German vocabulary and grammar appropriate for your proficiency level\n• Navigate daily life in Germany with greater ease\n• Prepare for German language proficiency tests\n\nFor more information and to access the resources, please visit the official website.",
+      "de": "Nicos Weg ist ein kostenloser, interaktiver Deutschkurs der Deutschen Welle (DW) für Lernende der Niveaustufen A1 bis B1. Der Kurs begleitet Nico, einen jungen Mann aus Spanien, der nach Deutschland kommt und dort verschiedene Alltagssituationen meistert. Anhand spannender Videos, Übungen und Quizzes können Lernende ihre Hör-, Lese- und Sprechfähigkeiten in Deutsch verbessern. Der Kurs ist flexibel gestaltet und ermöglicht es Lernenden, in ihrem eigenen Tempo voranzukommen.\n\nRessourcendetails:\n• Niveau: A1–B1\n• Online/Offline: Online\n• Preis: Kostenlos\n• Anbieter: Öffentlich (finanziert vom Bund)\n• Sprachunterstützung: Englisch, Spanisch, Arabisch und mehr\n\nWas Sie lernen werden:\n• Grundkenntnisse der deutschen Sprache\n• Wortschatz und Grammatik für Alltagssituationen\n• Kulturelle Einblicke in das Leben in Deutschland\n• Hör- und Leseverstehen\n\nMaterialien:\n• Videosequenzen\n• Interaktive Übungen und Quizze\n• Herunterladbare PDFs\n• Audioaufnahmen\n\nAm Ende dieses Kurses können Sie:\n• Effektiv in Alltagssituationen auf Deutsch kommunizieren\n• Deutschen Wortschatz und Grammatik entsprechend Ihrem Sprachniveau verstehen und anwenden\n• Sich leichter im deutschen Alltag zurechtfinden\n• Sich auf Deutschprüfungen vorbereiten\n\nWeitere Informationen und Zugriff auf die Ressourcen finden Sie auf der offiziellen Website."
+    },
+    "contact": {
+      "website": "https://learngerman.dw.com/en/nicos-weg/c-36519789"
+    },
+    "courseDetails": {
+      "level": "A1–B1",
+      "price": "Free",
+      "location": "Online",
+      "certificate": "No certificate",
+      "type": "resource"
+    },
+    "tags": [
+      "A1–B1",
+      "Free",
+      "Online",
+      "Videos",
+      "Website",
+      "Interactive",
+      "Private",
+      "Flexible",
+      "Multilingual"
+    ],
+    "hasMap": false,
+    "isResource": true,
+    "childcare": false,
+    "forWomen": false,
+    "forYoungMigrants": false
+  },
+  "offene_deutschkurse": {
+    "id": "offene_deutschkurse",
+    "title": {
+      "en": "Open German courses – Free language courses at the Amerlinghaus",
+      "de": "Offene Deutschkurse – Freie Sprachkurse im Amerlinghaus"
+    },
+    "subtitle": {
+      "en": "Free, self-organized German courses without registration",
+      "de": "Kostenlose, selbstorganisierte Deutschkurse ohne Anmeldung"
+    },
+    "provider": "Offenes Kollektiv",
+    "description": {
+      "en": "The Open German Courses are a self-organized, grassroots project that has been taking place since 2000 at the Amerlinghaus, a cultural center in Vienna's 7th district. The courses are open to anyone interested, regardless of origin, gender, or residency status. No registration is required, and participation is free. The instructors work on a voluntary basis and tailor the courses to the needs of the participants. The focus is on a respectful and open learning environment that offers space for individual learning processes.\n\nCourse Details:\n• Level: A0-B1\n• Duration: Varies depending on the course offering\n• Schedule: One to three times per week; exact times vary\n• Location: Amerlinghaus, Stiftgasse 8, 1070 Vienna\n• Class Size: Small groups; Flexible according to needs\n• Childcare: N/A\n• Price: Free\n• Provider: Self-organized\n• Language support: English, Arabic, Farsi, French, Kurdish, Pashto, Tigrinya, Turkish, Urdu\n• Relevant: N/A\n• Certificate: N/A\n\nWhat you will learn:\n• Basic German language skills (A0–B1)\n• Everyday communication\n• Reading and writing skills\n• Language comprehension and pronunciation\n• Cultural integration through informal learning methods\n\nBy the end of this course, you will be able to:\n• Communicate effectively in everyday German situations\n• Read and understand simple texts\n• Complete basic written tasks\n• Act confidently in an open learning environment\n• Participate in a self-organized learning project\n\nFor more information and to register, please visit the official website.",
+      "de": "Die Offenen Deutschkurse sind ein selbstorganisiertes, basisdemokratisches Projekt, das seit 2000 im Amerlinghaus, einem Kulturzentrum im 7. Wiener Gemeindebezirk, stattfindet. Die Kurse richten sich an alle Interessierten, unabhängig von Herkunft, Geschlecht oder Aufenthaltsstatus. Es sind keine Anmeldungen erforderlich, und die Teilnahme ist kostenlos. Die Lehrenden arbeiten ehrenamtlich und gestalten die Kurse flexibel nach den Bedürfnissen der Teilnehmenden. Der Fokus liegt auf einem respektvollen und offenen Lernumfeld, das Raum für individuelle Lernprozesse bietet.\n\nKursdetails:\n• Level: A0-B1\n• Dauer: Variiert je nach Kursangebot\n• Zeitplan: Ein- bis dreimal pro Woche; genaue Zeiten variieren\n• Ort: Amerlinghaus, Stiftgasse 8, 1070 Wien\n• Klassengröße: Kleine Gruppen; flexibel je nach Bedarf\n• Kinderbetreuung: N/A\n• Preis: Kostenlos\n• Anbieter: Sebstorganisiert\n• Sprachliche Unterstützung: Englisch, Arabisch, Farsi, Französisch, Kurdisch, Paschtu, Tigrinya, Türkisch, Urdu\n• Relevant: N/A\n• Zertifikat: N/A\n\n\nWas Sie lernen werden:\n•  Grundlegende Deutschkenntnisse (A0–B1)\n•  Alltagskommunikation\n•  Lese- und Schreibfähigkeiten\n•  Sprachverständnis und Aussprache\n•  Kulturelle Integration durch informelle Lernmethoden\n\nAm Ende dieses Kurses können Sie:\n• Effektiv in Alltagssituationen auf Deutsch kommunizieren\n• Einfache Texte lesen und verstehen\n• Grundlegende schriftliche Aufgaben bewältigen\n• Selbstbewusst in einem offenen Lernumfeld agieren\n• Teil eines selbstorganisierten Lernprojekts sein\n\nFür weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website."
+    },
+    "contact": {
+      "email": "offenedeutschkurse@gmail.com",
+      "website": "https://offenedeutschkurse.wordpress.com"
+    },
+    "courseDetails": {
+      "level": "A0–B1",
+      "price": "Free",
+      "location": "Vienna",
+      "certificate": "No certificate",
+      "type": "course"
+    },
+    "tags": [
+      "A0–B1",
+      "Free",
+      "Vienna",
+      "Self-organized",
+      "Informal Learning",
+      "No Registration",
+      "Multilingual",
+      "Literacy"
+    ],
+    "hasMap": true,
+    "coordinates":{
+      "lat" : 48.2021,
+      "lng": 16.3528
+    },
+    "address": "Amerlinghaus, Stiftgasse 8, 1070 Wien",
+    "isResource": false,
+    "childcare": false,
+    "forWomen": false,
+    "forYoungMigrants": false
+  },
+  "oeif_exam": {
+    "id": "oeif_exam",
+    "title": {
+      "en": "ÖIF - Official German Exam",
+      "de": "ÖIF - Offizieller Deutsch Test"
+    },
+    "subtitle": {
+      "en": "Recognized examinations for German language skills and value orientation in Austria",
+      "de": "Anerkannte Prüfungen für Deutschkenntnisse und Werteorientierung in Österreich"
+    },
+    "provider": "Österreichischer Integrations Fond (ÖIF)",
+    "description": {
+      "en": "The ÖIF examinations provide official proof of German language skills and value orientation, which are necessary for integration in Austria. They are recognized by law and serve as a prerequisite for fulfilling the integration agreement as well as for obtaining a residence permit or citizenship. The examinations are held at certified examination centers throughout Austria and cover various levels from A1 to C1.\n\nCourse details:\n• Level: A1-C1\n• Duration: 90-240min\n• Schedule: Dates are offered regularly; exact dates can be found on the website\n• Location: Over 500 certified exam centers throughout Austria\n• Class size: Varies depending on exam center\n• Childcare: N/A\n• Price: €165-€189\n• Provider: Public (government funded)\n• Language support: Dari/Farsi, Arabic, English (depending on exam center)\n• Relevant: Yes - required for integration agreement, residence permit and citizenship\n• Certificate: Yes - digitally signed result notification\n\n\nWhat you must be able to do:\n• German language skills at the respective level (A1 to C1)\n• Knowledge of values and orientation according to the Austrian legal and social order\n• Practical use of the language in everyday situations\n\nFor more information, exam dates and registration, please visit the official website of the ÖIF.",
+      "de": "Die ÖIF-Prüfungen bieten offizielle Nachweise für Deutschkenntnisse und Werteorientierung, die für die Integration in Österreich erforderlich sind. Sie sind gesetzlich anerkannt und dienen als Voraussetzung für die Erfüllung der Integrationsvereinbarung sowie für die Erlangung eines Aufenthaltstitels oder der Staatsbürgerschaft. Die Prüfungen werden bundesweit an zertifizierten Prüfungszentren durchgeführt und umfassen verschiedene Niveaustufen von A1 bis C1.\n\nKursdetails:\n• Level: A1-C1\n• Dauer: 90-240min\n• Zeitplan: Termine werden regelmäßig angeboten; genaue Daten sind auf der Website einsehbar\n• Ort: Über 500 zertifizierte Prüfungszentren in ganz Österreich\n• Klassengröße: Variiert je nach Prüfungszentrum\n• Kinderbetreuung: N/A\n• Preis: €165-€189\n• Anbieter: Öffentlich (staatlich gefördert)\n• Sprachliche Unterstützung: Dari/Farsi, Arabisch, Englisch (abhängig vom Prüfungszentrum)\n• Relevant: Ja – erforderlich für Integrationsvereinbarung, Aufenthaltstitel und Staatsbürgerschaft\n• Zertifikat: Ja – digital signierte Ergebnismitteilung\n\n\nWas Sie können müssen:\n•  Deutschkenntnisse auf dem jeweiligen Niveau (A1 bis C1)\n•  Werte- und Orientierungswissen gemäß österreichischer Rechts- und Gesellschaftsordnung\n•  Praktische Anwendung der Sprache in Alltagssituationen\n\nFür weitere Informationen, Prüfungstermine und Anmeldung besuchen Sie bitte die offizielle Website des ÖIF."
+    },
+    "contact": {
+      "phone": "+43 1 715 13 15",
+      "email": "info@integrationsfonds.at",
+      "website": "https://sprachportal.at/kurse-und-pruefungen/kursangebote/online-kurse/"
+    },
+    "courseDetails": {
+      "level": "A1–C1",
+      "price": "€165–€189",
+      "location": "Nationwide",
+      "certificate": "Yes",
+      "type": "exam"
+    },
+    "tags": [
+      "A1–C1",
+      "Paid",
+      "Nationwide",
+      "Fulfills integration requirements",
+      "Public",
+      "Certified",
+      "Legal requirement"
+    ],
+    "hasMap": true,
+    "coordinates": {
+      "lat": 48.2076,
+      "lng": 16.3795
+    },
+    "isResource": false,
+    "childcare": false,
+    "forWomen": false,
+    "forYoungMigrants": false
+  },
+  "oeif_live_online": {
+    "id": "oeif_live_online",
+    "title": {
+      "en": "ÖIF Live Online German Courses",
+      "de": "ÖIF Live Online Deutschkurse"
+    },
+    "subtitle": {
+      "en": "Free German courses for beginners and advanced learners (A1-B2) - Daily from Monday to Saturday with qualified trainers",
+      "de": "Kostenlose Deutschkurse für Anfänger und Fortgeschrittene (A1-B2) – Täglich von Montag bis Samstag mit qualifizierten Trainerinnen und Trainern"
+    },
+    "provider": "Österreichischer Integrations Fond (ÖIF)",
+    "description": {
+      "en": "The ÖIF online courses offer an excellent opportunity for German learners to improve their language skills to A1 level. With daily live sessions and a variety of learning materials, the course supports the introduction to the German language and promotes integration in Austria.\n\nCourse details:\n• Level: A1-B2\n• Duration: Flexible, depending on individual learning progress\n• Schedule: Monday to Saturday, different times depending on the course room\n• Location: Online (Zoom platform)\n• Class size: Varies, usually small groups for individual attention\n• Childcare: N/A\n• Price: Free of charge\n• Provider: Public (state funded)\n• Language support: Dari/Farsi, Arabic, English, Ukrainian\n• Relevant: for integration agreements and language support\n• Certificate: Yes - confirmation of participation for regular attendance\n\n\nWhat you will learn:\n• Basic German language skills for everyday life\n• Communication in simple everyday situations\n• Pronunciation and listening comprehension\n• Simple grammar and vocabulary\n• Preparation for integration exams\n\nAt the end of this course you will be able to\n• Communicate in basic everyday situations in German\n• Hold simple conversations and exchange information\n• Understand German texts at a basic level\n• Compose simple written messages\n• Prepare for integration and language exams.\n\nFor more information and to register, please visit the official website of the language portal.",
+      "de": "Die ÖIF-Online-Kurse bieten eine ausgezeichnete Gelegenheit für Deutschlernende, ihre Sprachkenntnisse auf A1-Niveau zu verbessern. Mit täglichen Live-Sitzungen und vielfältigen Lernmaterialien unterstützt der Kurs den Einstieg in die deutsche Sprache und fördert die Integration in Österreich.\n\nKursdetails:\n• Level: A1-B2\n• Dauer: Flexibel, je nach individuellem Lernfortschritt\n• Zeitplan: Montag bis Samstag, verschiedene Zeiten je nach Kursraum\n• Ort: Online (Zoom-Plattform)\n• Klassengröße: Variiert, in der Regel kleine Gruppen für individuelle Betreuung\n• Kinderbetreuung: N/A\n• Preis: Kostenlos\n• Anbieter: Öffentlich (staatlich gefördert)\n• Sprachliche Unterstützung: Dari/Farsi, Arabisch, Englisch, Ukrainisch\n• Relevant: für Integrationsvereinbarungen und Sprachförderung\n• Zertifikat: Ja – Teilnahmebestätigung bei regelmäßiger Teilnahme\n\n\nWas Sie lernen werden:\n• Grundlegende Deutschkenntnisse für den Alltag\n• Kommunikation in einfachen Alltagssituationen\n• Aussprache und Hörverständnis\n• Einfache Grammatik und Wortschatz\n• Vorbereitung auf Integrationsprüfungen\n\nAm Ende dieses Kurses können Sie:\n• Sich in grundlegenden Alltagssituationen auf Deutsch verständigen\n• Einfache Gespräche führen und Informationen austauschen\n• Deutsche Texte auf einfachem Niveau verstehen\n• Einfache schriftliche Mitteilungen verfassen\n• Sich auf Integrations- und Sprachprüfungen vorbereiten.\n\nFür weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website des Sprachportals."
+    },
+    "contact": {
+      "phone": "+43 5 0468-0",
+      "email": "info@integrationsfonds.at",
+      "website": "https://sprachportal.at/kurse-und-pruefungen/kursangebote/online-kurse/"
+    },
+    "courseDetails": {
+      "level": "A1–B2",
+      "price": "Free",
+      "location": "Online",
+      "certificate": "Yes",
+      "type": "resource"
+    },
+    "tags": [
+      "A1–B2",
+      "Free",
+      "Online",
+      "Public",
+      "Live course",
+      "Integration support"
+    ],
+    "hasMap": false,
+    "isResource": true,
+    "childcare": false,
+    "forWomen": false,
+    "forYoungMigrants": false
+  },
+  "oeif_starter_package": {
+    "id": "oeif_starter_package",
+    "title": {
+      "en": "ÖIF “German & Integration Starter Package”",
+      "de": "ÖIF \"Startpaket Deutsch & Integration\""
+    },
+    "subtitle": {
+      "en": "Free German courses for beginners and advanced learners (A1-B2) throughout Austria with ÖIF certificate",
+      "de": "Kostenlose Deutschkurse für Anfänger und Fortgeschrittene (A1-B2) in ganz Österreich mit ÖIF Zertifikat"
+    },
+    "provider": "Österreichischer Integrations Fond (ÖIF)",
+    "description": {
+      "en": "The “Startpaket Deutsch & Integration” offers free German courses at level A1, which are run by various recognized course providers throughout Austria. These courses are ideal for beginners who want to improve their German language skills and integrate better into Austrian society. The courses are practice-oriented and include topics such as everyday communication, culture, values and orientation in Austria.\n\nCourse details:\n• Level: A1-C1\n• Duration: Varies depending on the course provider; typically between 3 and 4 months\n• Schedule: Monday through Friday, depending on the provider\n• Location: Nationwide\n• Class size: Varies depending on provider\n• Childcare: Varies depending on provider\n• Price: Free of charge\n• Provider: Public (state-funded)\n• Language support: Dari/Farsi, Arabic, English (depending on the course provider)\n• Relevant: for integration agreements and language support\n• Certificate: Yes - confirmation of participation with ÖIF certificate\n\n\nWhat you will learn:\n• Basic German language skills for everyday life\n• Communication in simple everyday situations\n• Pronunciation and listening comprehension\n• Simple grammar and vocabulary\n• Preparation for integration exams\n\nAt the end of this course you will be able to:\n• Communicate in basic everyday situations in German\n• Hold simple conversations and exchange information\n• Understand German texts at a basic level\n• Compose simple written messages\n• Prepare for integration and language exams.\n\nFor more information and to register, please visit the official website of the language portal.",
+      "de": "Das \"Startpaket Deutsch & Integration\" bietet kostenlose Deutschkurse auf dem Niveau A1 an, die von verschiedenen anerkannten Kursanbietern in ganz Österreich durchgeführt werden. Diese Kurse sind ideal für Anfänger, die ihre Deutschkenntnisse verbessern und sich besser in die österreichische Gesellschaft integrieren möchten. Die Kurse sind praxisorientiert und beinhalten Themen wie Alltagskommunikation, Kultur, Werte und Orientierung in Österreich.\n\nKursdetails:\n• Level: A1-C1\n• Dauer: Variiert je nach Kursanbieter; typischerweise zwischen 3 und 4 Monaten\n• Zeitplan: Montag bis Freitag, je nach Anbieter\n• Ort: Bundesweit\n• Klassengröße: Variiert je nach Anbieter\n• Kinderbetreuung: Variiert je nach Anbieter\n• Preis: Kostenlos\n• Anbieter: Öffentlich (staatlich gefördert)\n• Sprachliche Unterstützung: Dari/Farsi, Arabisch, Englisch (abhängig vom Kursanbieter)\n• Relevant: für Integrationsvereinbarungen und Sprachförderung\n• Zertifikat: Ja – Teilnahmebestätigung mit ÖIF-Zertifikat\n\n\nWas Sie lernen werden:\n•  Grundlegende Deutschkenntnisse für den Alltag\n•  Kommunikation in einfachen Alltagssituationen\n•  Aussprache und Hörverständnis\n•  Einfache Grammatik und Wortschatz\n•  Vorbereitung auf Integrationsprüfungen\n\nAm Ende dieses Kurses können Sie:\n• Sich in grundlegenden Alltagssituationen auf Deutsch verständigen\n• Einfache Gespräche führen und Informationen austauschen\n• Deutsche Texte auf einfachem Niveau verstehen\n• Einfache schriftliche Mitteilungen verfassen\n• Sich auf Integrations- und Sprachprüfungen vorbereiten.\n\nFür weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website des Sprachportals"
+    },
+    "contact": {
+      "phone": "+43 5 0468-0",
+      "email": "info@integrationsfonds.at",
+      "website": "https://sprachportal.at/kurse-und-pruefungen/kursangebote/startpaket-deutsch-und-integration"
+    },
+    "courseDetails": {
+      "level": "A1–C1",
+      "price": "Free",
+      "location": "Austria-wide",
+      "certificate": "Yes (ÖIF)",
+      "type": "course"
+    },
+    "tags": [
+      "A1–C1",
+      "Free",
+      "Public",
+      "With certificate",
+      "Fulfills integration requirement",
+      "Nationwide"
+    ],
+    "hasMap": true,
+    "isResource": false,
+    "childcare": false,
+    "forWomen": false,
+    "forYoungMigrants": false
+  },
+  "orient_express_learning_center": {
+    "id": "orient_express_learning_center",
+    "title": {
+      "en": "Orient Express Vienna - Learning Center",
+      "de": "Orient Express Wien – Lernzentrum"
+    },
+    "subtitle": {
+      "en": "Free basic education courses for women with a migrant background",
+      "de": "Kostenlose Basisbildungskurse für Frauen mit Migrationshintergrund"
+    },
+    "provider": "Orient Express Wien",
+    "description": {
+      "en": "The Orient Express Learning Center offers basic education courses for women with a migration background. The courses include reading and writing (literacy in German), German as a second language up to level A2, arithmetic, digital skills, and educational counseling. Course levels vary per semester depending on demand. All courses are offered with free childcare. Participation is free and supported as part of the Level Up adult education program.\n\nCourse Details:\n• Level: A0–A2\n• Duration: Semester-long (depending on course level)\n• Schedule: Next placement test: Wednesday, September 3, 2025, 1:00–4:00 PM\n• Location: Schönngasse 15–17/2, 1020 Vienna\n• Class Size: Small groups, free of charge\n• Childcare: Yes\n• Price: Free\n• Provider: NGO (Orient Express Vienna)\n• Language Support: German, English, Arabic, Turkish\n• Relevant: Yes – relevant for integration requirements in Austria\n• Certificate: No\n\nWhat You Will Learn:\n• Basic German Skills (A1–A2)\n• Reading and Writing\n• Math (Basic Arithmetic)\n• Digital Skills (e.g., computer and internet skills)\n• Educational Counseling and Integration Support\n• Career Guidance and Job Application Training\n\nBy the end of this course, you will be able to:\n• Communicate effectively in everyday German situations\n• Read and write simple texts\n• Apply basic arithmetic\n• Use digital devices and applications safely\n• Pursue your educational and integration goals\n\nFor more information and to register, please visit the official website.",
+      "de": "Das Lernzentrum Orient Express bietet Basisbildungskurse für Frauen mit Migrationshintergrund an. Die Kurse umfassen Lesen und Schreiben (Alphabetisierung in deutscher Sprache), Deutsch als Zweitsprache bis Niveau A2, Rechnen, digitale Kompetenzen und Bildungsberatung. Je nach Nachfrage variieren die Kursstufen pro Semester. Alle Kurse werden mit kostenloser Kinderbetreuung angeboten. Die Teilnahme ist kostenlos und wird im Rahmen von Level Up Erwachsenenbildung gefördert.\n\nKursdetails:\n• Level: A1–A2\n• Dauer: Semesterweise (je nach Kursstufe)\n• Zeitplan: Nächster Einstufungstermin: Mittwoch, 03.09.2025, 13:00–16:00\n• Ort: Schönngasse 15–17/2, 1020 Wien\n• Klassengröße: Kleine Gruppen, kostenlos\n• Kinderbetreuung: Ja\n• Preis: Kostenlos\n• Anbieter: NGO (Orient Express Wien)\n• Sprachliche Unterstützung: Deutsch, Englisch, Arabisch, Türkisch\n• Relevant: Ja – relevant für Integrationsanforderungen in Österreich\n• Zertifikat: No\n\nWas Sie lernen werden:\n• Grundlegende Deutschkenntnisse (A1–A2)\n• Lesen und Schreiben\n• Rechnen (Grundrechenarten)\n• Digitale Kompetenzen (z.B. Umgang mit Computern und Internet)\n• Bildungsberatung und Unterstützung bei der Integration\n• Berufsorientierung und Bewerbungstraining\n\nAm Ende dieses Kurses können Sie:\n• Effektiv in Alltagssituationen auf Deutsch zu kommunizieren\n• Einfache Texte zu lesen und zu schreiben\n• Grundrechenarten anzuwenden\n• Digitale Geräte und Anwendungen sicher zu nutzen\n• Ihre Bildungs- und Integrationsziele zu verfolgen\n\nFür weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website."
+    },
+    "contact": {
+      "phone": "+43 1 728 97 25 30",
+      "email": "office@orientexpress-wien.com",
+      "website": "https://www.orientexpress-wien.com/bildung"
+    },
+    "courseDetails": {
+      "level": "A0–A2",
+      "price": "Free",
+      "location": "Vienna",
+      "certificate": "No",
+      "type": "course"
+    },
+    "tags": [
+      "A0–A2",
+      "Free",
+      "NGO",
+      "Vienna",
+      "Literacy"
+    ],
+    "hasMap": true,
+    "isResource": false,
+    "childcare": true,
+    "forWomen": true,
+    "forYoungMigrants": false,
+    "address": "Schönngasse 15–17/2, 1020 Vienna",
+    "coordinates": {
+      "lat": 48.2194148,
+      "lng": 16.4067008
+    }
+  },
+  "osd_certified_exams": {
+    "id": "osd_certified_exams",
+    "title": {
+      "en": "ÖSD - Internationally Recognized German Language Exams",
+      "de": "ÖSD - International anerkannter Deutsch-Sprachtest"
+    },
+    "subtitle": {
+      "en": "Certified German Language Proficiency from A1 to C2 Levels",
+      "de": "Nachweis von Deutschkenntnissen auf den Niveaustufen A1 bis C2"
+    },
+    "provider": "Österreichisches Sprachdiplom Deutsch (ÖSD)",
+    "description": {
+      "en": "The Österreichisches Sprachdiplom Deutsch (ÖSD) is an internationally recognized examination and certification system for German as a foreign and second language. It offers exams across all six levels of the Common European Framework of Reference for Languages (CEFR), from A1 to C2. The ÖSD exams are designed to assess language proficiency in real-life contexts, focusing on practical communication skills. These exams are widely accepted in Austria, Germany, Switzerland, and other German-speaking countries for various purposes, including immigration, university admission, and employment.\n\nExam details:\n• Level: A1-C2\n• Duration: Varies by level and exam format\n• Schedule: Exams are scheduled throughout the year at various examination centers\n• Location: Available at over 400 licensed examination centers worldwide\n• Price: Varies by examination center and exam level; details available upon request\n• Provider: Public (funded by the Austrian government)\n• Language support: English, and other languages depending on the examination center\n• Relevant: Yes – recognized for visa applications, university admissions, and employment in German-speaking countries\n• Certificate: Yes – official ÖSD certificate upon successful completion\n\n\nWhat the exam consists of:\n• Reading comprehension\n• Listening comprehension\n• Writing skills\n• Speaking skills\n• Grammar and vocabulary appropriate to the CEFR level\n\nFor more information, exam dates and registration, please visit the official website of the ÖSD.",
+      "de": "Das Österreichische Sprachdiplom Deutsch (ÖSD) ist ein international anerkanntes Prüfungs- und Zertifizierungssystem für Deutsch als Fremd- und Zweitsprache. Es bietet Prüfungen auf allen sechs Niveaustufen des Gemeinsamen Europäischen Referenzrahmens für Sprachen (GER) von A1 bis C2 an. Die ÖSD-Prüfungen dienen der Bewertung von Sprachkenntnissen in realen Kontexten und legen den Schwerpunkt auf praktische Kommunikationsfähigkeiten. Diese Prüfungen werden in Österreich, Deutschland, der Schweiz und anderen deutschsprachigen Ländern für verschiedene Zwecke anerkannt, darunter Einwanderung, Hochschulzugang und Beschäftigung.\n\nPrüfungsdetails:\n• Niveaustufe: A1–C2\n• Dauer: Variiert je nach Niveaustufe und Prüfungsformat\n• Termine: Die Prüfungen finden das ganze Jahr über an verschiedenen Prüfungszentren statt\n• Ort: Verfügbar an über 400 lizenzierten Prüfungszentren weltweit\n• Preis: Variiert je nach Prüfungszentrum und Prüfungsniveau; Details auf Anfrage.\n• Anbieter: Öffentlich (finanziert vom österreichischen Staat)\n• Sprachunterstützung: Englisch und weitere Sprachen je nach Prüfungszentrum\n• Relevanz: Ja – anerkannt für Visumsanträge, Studienzulassungen und Berufstätigkeit im deutschsprachigen Raum\n• Zertifikat: Ja – offizielles ÖSD-Zertifikat nach erfolgreichem Abschluss\n\nPrüfungsinhalte:\n• Leseverständnis\n• Hörverständnis\n• Schreibfertigkeiten\n• Sprechfertigkeiten\n• Grammatik und Wortschatz entsprechend dem Deutsch-Niveau\n\nWeitere Informationen, Prüfungstermine und Anmeldung finden Sie auf der offiziellen Website des ÖSD."
+    },
+    "contact": {
+      "phone": "+43 1 319 3395",
+      "email": "office@osd.at",
+      "website": "https://www.osd.at/"
+    },
+    "courseDetails": {
+      "level": "A1–C2",
+      "price": "Varies",
+      "location": "Over 400 licensed examination centers worldwide",
+      "certificate": "Yes (ÖSD)",
+      "type": "exam"
+    },
+    "tags": [
+      "A1–C2",
+      "Paid",
+      "Public",
+      "With certificate",
+      "Fulfills integration requirement",
+      "Worldwide"
+    ],
+    "hasMap": true,
+    "isResource": false,
+    "childcare": false,
+    "forWomen": false,
+    "forYoungMigrants": false
+  },
+  "peregrina_basic_german": {
+    "id": "peregrina_basic_german",
+    "title": {
+      "en": "Peregrina – Basic German Courses",
+      "de": "Peregrina – Basisbildungskurse Deutsch"
+    },
+    "subtitle": {
+      "en": "Language support for women with a migration background",
+      "de": "Sprachförderung für Frauen mit Migrationshintergrund"
+    },
+    "provider": "Peregrina – Verein für Frauen",
+    "description": {
+      "en": "Peregrina's basic German courses are aimed at women with a migration background who want to improve their German language skills from the ground up. As part of the \"Level Up – Adult Education\" project, courses are offered at levels A1 to B1+. The focus is on German as a second language, particularly in the areas of reading and writing, learning skills, everyday mathematics, and digital skills. The courses are taught by experienced instructors and also include one-on-one instruction. Free childcare is provided for children ages 1 to 6 during the course.\n\nCourse Details:\n• Level: A1-B1+\n• Duration: 111 to 222 teaching units (including private lessons)\n• Schedule: February to June and September to December/January\n• Course Times: 2 to 4 times per week\n• Location: Wilhelm-Weber-Weg 1/2/1+2, A-1110 Vienna\n• Class Size: Small groups, 2 to 4 times per week\n• Childcare: Yes, for children ages 1 to 6\n• Price: Free\n• Provider: NGO (Peregrina – Association for Women)\n• Language Support: German, Turkish, Kurdish\n• Relevant: Yes – relevant for integration requirements in Austria\n• Certificate: Yes – confirmation of participation; Preparation for the ÖSD Exam\n\nWhat you will learn:\n• Basic German language skills (A1–B1+)\n• Reading and writing in everyday life\n• Learning strategies and self-organization\n• Everyday mathematics (e.g., dealing with money, time, measurements)\n• Digital skills (e.g., using a smartphone and PC)\n\nBy the end of this course, you will be able to:\n• Communicate effectively in everyday German situations\n• Understand and compose simple texts\n• Apply basic mathematical skills in everyday life\n• Use digital devices safely\n• Learn independently and organize your learning processes\n\nFor more information and to register, please visit the official website.",
+      "de": "Die Basisbildungskurse Deutsch von Peregrina richten sich an Frauen mit Migrationshintergrund, die ihre Deutschkenntnisse von Grund auf verbessern möchten. Im Rahmen des Projekts „Level Up – Erwachsenenbildung“ werden Kurse auf den Niveaus A1 bis B1+ angeboten. Der Fokus liegt auf Deutsch als Zweitsprache, insbesondere auf den Bereichen Lesen und Schreiben, Lernkompetenzen, Alltagsmathematik und digitale Kompetenzen. Die Kurse werden von erfahrenen Kursleiterinnen durchgeführt und beinhalten auch Einzelunterrichtseinheiten. Für die Dauer der Kurse wird kostenlose Kinderbetreuung für Kinder von 1 bis 6 Jahren angeboten.\n\nKursdetails:\n• Level: A1-B1+\n• Dauer: 111 bis 222 Unterrichtseinheiten (inkl. Einzelunterricht)\n• Zeitplan: Februar bis Juni und September bis Dezember/Jänner\n• Kurszeiten: 2 bis 4 mal wöchentlich\n• Ort: Wilhelm-Weber-Weg 1/2/1+2, A-1110 Wien\n• Klassengröße: Kleine Gruppen2 bis 4 mal wöchentlich\n• Kinderbetreuung: Ja, für Kinder von 1 bis 6 Jahren\n• Preis: Kostenlos\n• Anbieter: NGO (Peregrina – Verein für Frauen)\n• Sprachliche Unterstützung: Deutsch, Türkisch, Kurdisch\n• Relevant: Ja – relevant für Integrationsanforderungen in Österreich\n• Zertifikat: Ja – Teilnahmebestätigung; Vorbereitung auf die ÖSD-Prüfung\n\n\nWas Sie lernen werden:\n• Grundlegende Deutschkenntnisse (A1–B1+)\n• Lesen und Schreiben im Alltag\n• Lernstrategien und Selbstorganisation\n• Alltagsmathematik (z.B. Umgang mit Geld, Zeit, Maße)\n• Digitale Kompetenzen (z.B. Nutzung von Smartphone und PC)\n\n\nAm Ende dieses Kurses können Sie:\n• Effektiv in Alltagssituationen auf Deutsch zu kommunizieren\n• Lesen und Schreiben von einfachen Texten zu verstehen und zu verfassen\n• Mathematische Grundkenntnisse im Alltag anzuwenden\n• Digitale Geräte sicher zu nutzen\n• Selbstständig zu lernen und Ihre Lernprozesse zu organisieren\n\nFür weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website."
+    },
+    "contact": {
+      "phone": "+43 1 408 61 19",
+      "email": "krauck@peregrina.at",
+      "website": "https://www.peregrina.at/kurse/basisbildungskurse/"
+    },
+    "courseDetails": {
+      "level": "A1–B1",
+      "price": "Free",
+      "location": "Vienna",
+      "certificate": "Yes (confirmation of participation, ÖSD preparation)",
+      "type": "course"
+    },
+    "tags": [
+      "A1–B1+",
+      "Free",
+      "Vienna",
+      "With certificate",
+      "NGO"
+    ],
+    "hasMap": true,
+    "isResource": false,
+    "childcare": true,
+    "forWomen": true,
+    "forYoungMigrants": false,
+    "address": "Wilhelm-Weber-Weg 1/2/1+2, A-1110 Vienna",
+    "coordinates": {
+      "lat": 48.1761977,
+      "lng": 16.4173685
+    }
+  },
+  "schubert_verlag_online": {
+    "id": "schubert_verlag_online",
+    "title": {
+      "en": "Schubert Verlag – Online German Exercises",
+      "de": "Schubert Verlag – Online-Übungen Deutsch"
+    },
+    "subtitle": {
+      "en": "Practice German from A1 to C1 with interactive tasks",
+      "de": "Deutsch üben von A1 bis C1 mit interaktiven Übungen"
+    },
+    "provider": "Schubert Verlag Online",
+    "description": {
+      "en": "Schubert Verlag offers a wide range of free online exercises for German learners from A1 to C1 level. The content includes grammar, vocabulary, reading, and listening tasks based on textbooks like “Begegnungen”. Exercises are chapter-based and include immediate feedback, sample solutions, and PDFs.\n\nResource Details:\n• Level: A1–C1\n• Online/Offline: Online\n• Price: Free\n• Provider: Public / Publisher\n• Language support: German interface; useful for learners with basic English\n\nWhat you will learn:\n• Grammar structures and sentence building\n• Topic-specific vocabulary\n• Reading comprehension\n• Listening comprehension\n\nType of Materials:\n• Interactive quizzes\n• Fill-in-the-blanks\n• Matching exercises\n• PDF downloads with answer keys\n\nBy the end of this course you will be able to:\n• Consolidate your German skills up to C1\n• Understand and apply advanced grammar rules\n• Improve comprehension and self-study ability",
+      "de": "Der Schubert Verlag bietet eine große Auswahl kostenloser Online-Übungen für Deutschlernende der Niveaustufen A1 bis C1. Die Inhalte umfassen Grammatik-, Wortschatz-, Lese- und Hörübungen, basierend auf bekannten Lehrwerken wie „Begegnungen“. Die Übungen sind kapitelweise gegliedert und bieten direkte Rückmeldung, Musterlösungen und PDFs.\n\nRessourcendetails:\n• Niveau: A1–C1\n• Online/Offline: Online\n• Preis: Kostenlos\n• Anbieter: Öffentlich / Verlag\n• Sprachunterstützung: Interface auf Deutsch; geeignet für Lernende mit Grundkenntnissen in Englisch\n\nWas Sie lernen werden:\n• Grammatikstrukturen und Satzbildung\n• Themenbezogener Wortschatz\n• Leseverstehen\n• Hörverstehen\n\nMaterialien:\n• Interaktive Quizfragen\n• Lückentexte\n• Zuordnungsübungen\n• PDF-Downloads mit Lösungen\n\nAm Ende dieses Kurses können Sie:\n• Ihre Deutschkenntnisse bis C1 festigen\n• Fortgeschrittene Grammatik anwenden\n• Ihr Verständnis verbessern und selbstständig lernen"
+    },
+    "contact": {
+      "website": "https://www.aufgaben.schubert-verlag.de/"
+    },
+    "courseDetails": {
+      "level": "A1–C1",
+      "price": "Free",
+      "location": "Online",
+      "certificate": "No",
+      "type": "resource"
+    },
+    "tags": [
+      "A1–C1",
+      "Free",
+      "Online",
+      "Public",
+      "Worksheets",
+      "Website"
+    ],
+    "hasMap": false,
+    "isResource": true,
+    "childcare": false,
+    "forWomen": false,
+    "forYoungMigrants": false
+  },
+  "sprachportal_online": {
+    "id": "sprachportal_online",
+    "title": {
+      "en": "Sprachportal - Your Gateway to Learning German and Integrating into Austria",
+      "de": "Sprachportal - Ihr Tor zum Deutschlernen und zur Integration in Österreich"
+    },
+    "subtitle": {
+      "en": "Free Online Courses, Exercises, and Resources for German Learners",
+      "de": "Kostenlose Online-Kurse, Übungen und Ressourcen für Deutschlernende"
+    },
+    "provider": "Österreichischer Integrations Fond (ÖIF)",
+    "description": {
+      "en": "The Sprachportal is a comprehensive online platform developed by the Austrian Integration Fund (ÖIF) to support individuals in learning German and integrating into Austrian society. It offers a wide range of free resources, including live online courses, interactive exercises, and cultural materials, catering to various proficiency levels from A1 to B2. The platform is designed to assist learners in improving their language skills while gaining insights into everyday life in Austria.\n\nResource Details:\n• Level: A1-B2\n• Online/Offline: Online\n• Price: Free of charge\n• Provider: Public (state-funded)\n• Language support: Arabic, Dari/Farsi, English, French, Turkish, and more\n\n\nWhat you will learn:\n• Basic to intermediate German language skills\n• Vocabulary and grammar for everyday situations\n• Cultural norms and values in Austria\n• Knowledge of Austrian institutions and services\n\nType of Materials:\n• Live online courses with certified instructors\n• Interactive vocabulary trainers\n• 360° panoramic picture exercises\n• Doodle clips (animated learning stories)\n• Learning podcasts\n• Videos on everyday life and values in Austria\n• Interactive learning videos with exercises\n• Learning magazine \"Deutsch lernen\"\n• Materials focusing on Austria\n• Sample tests and materials for test preparation\n\nAt the end of this course you will be able to:\n• Communicate effectively in everyday situations in Austria\n• Understand and use German vocabulary and grammar appropriate for your proficiency level\n• Navigate Austrian institutions and services with greater ease\n• Demonstrate knowledge of Austrian cultural norms and values\n• Prepare for German language proficiency tests\n\nFor more information and to access the resources, please visit the official website.",
+      "de": "Das Sprachportal ist eine umfassende Online-Plattform, die vom Österreichischen Integrationsfonds (ÖIF) entwickelt wurde, um Menschen beim Erlernen der deutschen Sprache und bei der Integration in die österreichische Gesellschaft zu unterstützen. Es bietet eine breite Palette an kostenlosen Ressourcen, darunter Live-Online-Kurse, interaktive Übungen und kulturelle Materialien, die für verschiedene Sprachniveaus von A1 bis B2 geeignet sind. Die Plattform soll Lernenden helfen, ihre Sprachkenntnisse zu verbessern und gleichzeitig Einblicke in das Alltagsleben in Österreich zu gewinnen.\n\nDetails zur Ressource:\n• Niveau: A1-B2\n• Online/Offline: Online\n• Preis: Kostenfrei\n• Anbieter: Öffentlich (staatlich finanziert)\n• Unterstützte Sprachen: Arabisch, Dari/Farsi, Englisch, Französisch, Türkisch, und mehr\n\n\nWas Sie lernen werden:\n• Grund- bis Mittelstufenkenntnisse der deutschen Sprache\n• Wortschatz und Grammatik für Alltagssituationen\n• Kulturelle Normen und Werte in Österreich\n• Kenntnisse über österreichische Institutionen und Dienstleistungen\n\nArt der Materialien:\n• Live-Online-Kurse mit zertifizierten Lehrkräften\n• Interaktive Vokabeltrainer\n• 360°-Panoramabilder-Übungen\n• Doodle-Clips (animierte Lerngeschichten)\n• Lern-Podcasts\n• Videos zu Alltag und Werten in Österreich\n• Interaktive Lernvideos mit Übungen\n• Lernmagazin „Deutsch lernen“\n• Materialien zum Thema Österreich\n• Beispieltests und Materialien zur Testvorbereitung\n\nNach Abschluss dieses Kurses können Sie:\n• effektiv in Alltagssituationen in Österreich kommunizieren\n• deutschen Wortschatz und Grammatik entsprechend Ihrem Sprachniveau verstehen und anwenden\n• sich leichter in österreichischen Institutionen und Dienstleistungen zurechtfinden\n• Kenntnisse der österreichischen kulturellen Normen und Werte nachweisen\n• sich auf Deutschprüfungen vorbereiten\n\nWeitere Informationen und Ressourcen finden Sie auf der offiziellen Website."
+    },
+    "contact": {
+      "phone": "+43 1 715 13 13",
+      "email": "info@integrationsfonds.at",
+      "website": "https://sprachportal.at/en/mein-sprachportal-at-a-glance/"
+    },
+    "courseDetails": {
+      "level": "A1–B2",
+      "price": "Free",
+      "location": "Online",
+      "certificate": "No",
+      "type": "resource"
+    },
+    "tags": [
+      "A1–B2",
+      "Free",
+      "Online",
+      "Public",
+      "Website"
+    ],
+    "hasMap": false,
+    "isResource": true,
+    "childcare": false,
+    "forWomen": false,
+    "forYoungMigrants": false
+  },
+  "the_connection": {
+    "id": "the_connection",
+    "title": {
+      "en": "The Connection – Language and integration courses for migrants and refugees",
+      "de": "The Connection – Sprach- und Integrationskurse für Migrant:innen und Geflüchtete"
+    },
+    "subtitle": {
+      "en": "Free German, English and conversation courses with a focus on women",
+      "de": "Kostenlose Deutsch-, Englisch- und Konversationskurse mit Fokus auf Frauen"
+    },
+    "provider": "The Connection",
+    "description": {
+      "en": "The Connection is a Viennese association that has been supporting migrants and refugees in their integration since 2011. With a special focus on women, the association offers free language and integration courses to facilitate their transition into Austrian society. The courses include German courses for beginners, conversation classes, English courses, and financial education units. The courses are interactive and take into account the diverse needs of the participants.\n\nCourse Details:\n• Level: A0-B2\n• Duration: 4–12 weeks (depending on the course)\n• Schedule: Various time models, including childcare\n• Location: Wiedner Hauptstraße 46, Top 7, 2nd floor, 1040 Vienna\n• Class Size: Small groups\n• Childcare: Yes\n• Price: Free\n• Provider: NGO\n• Language Support: German, English, Arabic, Farsi, French, Kurdish, Pashto, Tigrinya, Turkish, Urdu\n• Relevant: Relevant for integration requirements in Austria\n• Certificate: No\n\nWhat You Will Learn:\n• Basic German Skills (A0–B2)\n• English Skills (A2–B2)\n• Everyday Communication and Conversation\n• Financial and Consumer Literacy\n• Integration into Austrian Society\n\nBy the end of this course, you will be able to:\n• Communicate effectively in everyday German\n• Use English at school or work\n• Make financial decisions confidently\n• Integrate yourself in Austrian society Find your way\n\nFor more information and to register, please visit the official website.",
+      "de": "The Connection ist ein Wiener Verein, der seit 2011 Migrant:innen und Geflüchtete bei ihrer Integration unterstützt. Mit einem besonderen Fokus auf Frauen bietet der Verein kostenlose Sprach- und Integrationskurse an, um den Einstieg in die österreichische Gesellschaft zu erleichtern. Das Kursangebot umfasst Deutschkurse für Anfänger:innen, Konversationsstunden, Englischkurse sowie Finanzbildungseinheiten. Die Kurse sind interaktiv gestaltet und berücksichtigen die unterschiedlichen Bedürfnisse der Teilnehmer:innen.\n\nKursdetails:\n• Level: A0-B2\n• Dauer: 4–12 Wochen (je nach Kurs)\n• Zeitplan: Verschiedene Zeitmodelle, auch mit Kinderbetreuung\n• Ort: Wiedner Hauptstraße 46, Top 7, 2. Stock, 1040 Wien\n• Klassengröße: Kleine Gruppen\n• Kinderbetreuung: Ja\n• Preis: Kostenlos\n• Anbieter: NGO\n• Sprachliche Unterstützung: Deutsch, Englisch, Arabisch, Farsi, Französisch, Kurdisch, Paschtu, Tigrinya, Türkisch, Urdu\n• Relevant: relevant für Integrationsanforderungen in Österreich\n• Zertifikat: Nein\n\n\nWas Sie lernen werden:\n•  Grundlegende Deutschkenntnisse (A0–B2)\n•  Englischkenntnisse (A2–B2)\n•  Alltagskommunikation und Konversation\n•  Finanz- und Konsumkompetenz\n•  Integration in die österreichische Gesellschaft\n\nAm Ende dieses Kurses können Sie:\n• Effektiv in Alltagssituationen auf Deutsch kommunizieren\n• Englisch in Schule oder Beruf anwenden\n• Finanzielle Entscheidungen sicher treffen\n• Sich in der österreichischen Gesellschaft zurechtfinden\n\nFür weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website."
+    },
+    "contact": {
+      "phone": "+43 660 3928123",
+      "email": "office@theconnection.at",
+      "website": "https://www.theconnection.at/kurse"
+    },
+    "courseDetails": {
+      "level": "A0–B2",
+      "price": "Free",
+      "location": "Vienna",
+      "certificate": "No",
+      "type": "course",
+      "duration": "4–12 weeks",
+      "schedule": "Various time models, with childcare"
+    },
+    "tags": [
+      "A0–B2",
+      "Free",
+      "Vienna",
+      "NGO"
+    ],
+    "hasMap": true,
+    "isResource": false,
+    "childcare": true,
+    "forWomen": true,
+    "forYoungMigrants": false,
+    "address": "Wiedner Hauptstraße 46, Top 7, 2nd floor, 1040 Vienna",
+    "coordinates": {
+      "lat": 48.19377,
+      "lng": 16.36841
+    }
+  },
+  "vhs_lernportal": {
+    "id": "vhs_lernportal",
+    "title": {
+      "en": "VHS Lernportal",
+      "de": "VHS Lernportal"
+    },
+    "subtitle": {
+      "en": "Free Interactive Courses in German, Mathematics, and Digital Literacy",
+      "de": "Kostenlose interaktive Kurse in Deutsch, Mathematik und Digitalkompetenz"
+    },
+    "provider": "Deutscher Volkshochschul-Verband (VHS)",
+    "description": {
+      "en": "The vhs-Lernportal is a free online platform developed by the German Volkshochschulen (VHS) network. It offers a wide range of interactive courses designed to improve German language skills, digital literacy, and basic education. The platform is accessible to all learners, including migrants, job seekers, and anyone interested in enhancing their skills. Courses are available at various proficiency levels, from A1 to B2, and cover topics such as everyday communication, professional language use, mathematics, and safe use of digital devices.\n\nResource Details:\n• Level: A1-B2\n• Online/Offline: Online\n• Price: Free of charge\n• Provider: Public (funded by the German government)\n• Language support: English, and other languages depending on the course\n\n\nWhat you can learn:\n• Basic to intermediate German language skills\n• Mathematics for everyday situations\n• Digital literacy and safe use of digital devices\n• Communication in professional contexts\n\nType of Materials:\n• Interactive exercises\n• Audio and video materials\n• Self-assessment tests\n• Printable worksheets\n\nAt the end of this course you will be able to:\n• Communicate effectively in everyday and professional situations\n• Use digital devices safely and responsibly\n• Understand and apply basic mathematical concepts in daily life\n\nFor more information and to access the courses, please visit the official website.",
+      "de": "Das vhs-Lernportal ist eine kostenlose Online-Plattform der Deutschen Volkshochschulen (VHS). Sie bietet eine breite Palette interaktiver Kurse zur Verbesserung der Deutschkenntnisse, der digitalen Kompetenz und der Grundbildung. Die Plattform steht allen Lernenden zur Verfügung, darunter Migranten, Arbeitssuchende und alle, die ihre Fähigkeiten verbessern möchten. Die Kurse sind auf verschiedenen Niveaustufen von A1 bis B2 verfügbar und decken Themen wie Alltagskommunikation, berufliche Sprachverwendung, Mathematik und den sicheren Umgang mit digitalen Geräten ab.\n\nRessourcendetails:\n• Niveau: A1–B2\n• Online/Offline: Online\n• Preis: Kostenlos\n• Anbieter: Öffentlich (finanziert von Deutschland)\n• Sprachunterstützung: Englisch und weitere Sprachen je nach Kurs\n\nWas Sie lernen können:\n• Grundkenntnisse bis Mittelstufe Deutsch\n• Mathematik für den Alltag\n• Digitale Kompetenz und sicherer Umgang mit digitalen Geräten\n• Kommunikation im beruflichen Kontext\n\nMaterialien:\n• Interaktive Übungen\n• Audio- und Videomaterialien\n• Selbsteinschätzungstests\n• Ausdruckbare Arbeitsblätter\n\nNach Abschluss dieses Kurses können Sie:\n• Effektiv im Alltag und im Beruf kommunizieren\n• Digitale Geräte sicher und verantwortungsbewusst nutzen\n• Grundlegende mathematische Konzepte im Alltag verstehen und anwenden\n\nWeitere Informationen und den Zugang zu den Kursen finden Sie auf der offiziellen Website."
+    },
+    "contact": {
+      "phone": "+49 228-97569-0",
+      "email": "info@dvv-vhs.de",
+      "website": "https://www.vhs-lernportal.de/wws/9.php#/wws/home.php"
+    },
+    "courseDetails": {
+      "level": "A1–B2",
+      "price": "Free",
+      "location": "Online",
+      "certificate": "Not specified",
+      "type": "course",
+      "duration": "Flexible",
+      "schedule": "Self-paced"
+    },
+    "tags": [
+      "A1–B2",
+      "Free",
+      "Online",
+      "Public",
+      "Website"
+    ],
+    "hasMap": false,
+    "isResource": true,
+    "childcare": false,
+    "forWomen": false,
+    "forYoungMigrants": false
+  },
+  "vhs_vienna": {
+    "id": "vhs_vienna",
+    "title": {
+      "en": "VHS Vienna - German Courses",
+      "de": "VHS Wien - Deutschkurse"
+    },
+    "subtitle": {
+      "en": "Wide range of German courses for all levels in Vienna",
+      "de": "Vielfältige Deutschkurse für alle Niveaustufen in Wien"
+    },
+    "provider": "Wiener Volkshochschulen (VHS)",
+    "description": {
+      "en": "Vienna's adult education centers (VHS) offer a wide range of German courses for all levels (A1 to C2). The courses are aimed at beginners as well as advanced learners and are offered in various formats, including face-to-face classes, online courses and hybrid models. The VHS places particular emphasis on practice-oriented learning and promotes integration through language competence.\n\nCourse details:\n• Level: A1-C2\n• Duration: Varies depending on the course; typically 8-12 weeks\n• Schedule: Various times, including evening and weekend courses\n• Location: Over 20 locations throughout Vienna\n• Class size: Small groups for individual attention\n• Childcare: Yes (depending on location and course)\n• Price: Paid\n• Provider: Public\n• Language support: Dari/Farsi, Arabic, English (depending on course and location)\n• Relevant: Support for integration agreements and language support\n• Certificate: Confirmation of participation\n\n\nWhat you will learn:\n• Basic to advanced German language skills\n• Communication in everyday situations\n• Pronunciation and listening comprehension\n• Simple to complex grammar and vocabulary\n• Preparation for integration exams\n\nAt the end of this course you will be able to\n• Communicate confidently in the German language\n• Understand and apply the principles of the Austrian legal and social order\n• Successfully take the integration exam\n\nFor more information and to register for courses, please visit the official website of the Wiener Volkshochschulen.",
+      "de": "Die Wiener Volkshochschulen (VHS) bieten ein breites Spektrum an Deutschkursen für alle Niveaustufen (A1 bis C1) an. Die Kurse richten sich an Anfänger*innen sowie an Fortgeschrittene und werden in verschiedenen Formaten angeboten, darunter Präsenzunterricht, Online-Kurse und hybride Modelle. Die VHS legt besonderen Wert auf praxisorientiertes Lernen und fördert die Integration durch Sprachkompetenz.\n\nKursdetails:\n• Level: A1-C2\n• Dauer: Variiert je nach Kurs; typischerweise 8–12 Wochen\n• Zeitplan: Verschiedene Zeiten, auch Abend- und Wochenendkurse\n• Ort: Über 20 Standorte in ganz Wien\n• Klassengröße: Kleine Gruppen für individuelle Betreuung\n• Kinderbetreuung: Ja (abhängig vom Standort und Kurs)\n• Preis: Kostenpflichtig\n• Anbieter: Öffentlich\n• Sprachliche Unterstützung: Dari/Farsi, Arabisch, Englisch (abhängig vom Kurs und Standort)\n• Relevant: Unterstützung für Integrationsvereinbarungen und Sprachförderung\n• Zertifikat: Teilnahmebestätigung\n\n\nWas Sie lernen werden:\n•  Grundlegende bis fortgeschrittene Deutschkenntnisse\n•  Kommunikation in Alltagssituationen\n•  Aussprache und Hörverständnis\n•  Einfache bis komplexe Grammatik und Wortschatz\n•  Vorbereitung auf Integrationsprüfungen\n\nAm Ende dieses Kurses können Sie:\n• Sich sicher in der deutschen Sprache verständigen\n• Die Prinzipien der österreichischen Rechts- und Gesellschaftsordnung verstehen und anwenden\n• Die Integrationsprüfung erfolgreich ablegen\n\nFor more information and to register for courses, please visit the official website of the Wiener Volkshochschulen."
+    },
+    "contact": {
+      "phone": "+43 1 893 00 83",
+      "email": "info@vhs.at",
+      "website": "https://www.vhs.at/de/info/deutschkurse"
+    },
+    "courseDetails": {
+      "level": "A1–C2",
+      "price": "Paid",
+      "location": "Vienna",
+      "certificate": "Confirmation of participation",
+      "type": "course",
+      "duration": "8–12 weeks",
+      "schedule": "Various, including evenings and weekends"
+    },
+    "tags": [
+      "A1–C2",
+      "Paid",
+      "Vienna",
+      "Public",
+      "Website"
+    ],
+    "hasMap": true,
+    "isResource": true,
+    "childcare": true,
+    "forWomen": false,
+    "forYoungMigrants": false
+  },
+  "vhs_vienna_park": {
+    "id": "vhs_vienna_park",
+    "title": {
+      "en": "VHS Vienna - German in a Park",
+      "de": "VHS Wien - Deutsch im Park"
+    },
+    "subtitle": {
+      "en": "Free German courses for adults in Viennese parks",
+      "de": "Kostenlose Deutschkurse für Erwachsene in Wiener Parks"
+    },
+    "provider": "Wiener Volkshochschulen (VHS)",
+    "description": {
+      "en": "“Deutsch im Park” is a summer project of the Vienna Adult Education Centers that has been offering free outdoor German lessons since 2008. Qualified DaZ trainers teach German for adults in various Viennese parks. The courses are open to anyone who wants to improve their German language skills for everyday life. Writing and reading courses for beginners are also offered at the Schwendergasse, Wasserpark, Goethehof and Wiener Flur locations in particular. Registration is not required; anyone interested can simply drop by and join in.\n\nCourse details:\n• Level: A1-B2\n• Duration: 4 weeks (depending on location)\n• Schedule: Various dates, e.g. Mon-Thu, 09:00-12:00 or 14:30-17:30\n• Location: Various Viennese parks, e.g. Schwendergasse, Wasserpark, Goethehof, Wiener Flur\n• Class size: Varies depending on location\n• Childcare: N/A\n• Price: Free of charge\n• Provider: Public (state-funded)\n• Language support: Dari/Farsi, Arabic, English (depending on the teacher)\n• Relevant: for integration agreements and language support\n• Certificate: No\n\n\nWhat you will learn:\n• Basic German language skills for everyday life\n• Communication in various everyday situations\n• Pronunciation and listening comprehension\n• Basic grammar and vocabulary\n• Reading and writing for beginners\n\n\nAt the end of this course you will be able to:\n• Communicate in basic everyday situations in German\n• Hold simple conversations and exchange information\n• Understand German texts at a basic level\n• Compose simple written messages\n\n\nFor more information and to find specific dates and locations, please visit the official website of the Wiener Volkshochschulen.",
+      "de": "„Deutsch im Park“ ist ein Sommerprojekt der Wiener Volkshochschulen, das seit 2008 kostenloses Deutschlernen im Freien anbietet. In verschiedenen Wiener Parks unterrichten qualifizierte DaZ-Trainer*innen Deutsch für Erwachsene. Die Kurse sind offen für alle, die ihre Deutschkenntnisse für den Alltag verbessern möchten. Besonders an den Standorten Schwendergasse, Wasserpark, Goethehof und Wiener Flur werden zusätzlich Schreib- und Lesekurse für Anfänger*innen angeboten. Eine Anmeldung ist nicht erforderlich; Interessierte können einfach vorbeikommen und mitmachen.\n\nKursdetails:\n• Level: A1-B2\n• Dauer: 4 Wochen (je nach Standort)\n• Zeitplan: Verschiedene Termine, z.B. Mo–Do, 09:00–12:00 Uhr oder 14:30–17:30 Uhr\n• Ort: Verschiedene Wiener Parks, z.B. Schwendergasse, Wasserpark, Goethehof, Wiener Flur\n• Klassengröße: Variiert je nach Standort\n• Kinderbetreuung: N/A\n• Preis: Kostenlos\n• Anbieter: Öffentlich (staatlich gefördert)\n• Sprachliche Unterstützung: Dari/Farsi, Arabisch, Englisch (abhängig vom Kursleiter*in)\n• Relevant: für Integrationsvereinbarungen und Sprachförderung\n• Zertifikat: Nein\n\n\nWas Sie lernen werden:\n•  Grundlegende Deutschkenntnisse für den Alltag\n•  Kommunikation in verschiedenen Alltagssituationen\n•  Aussprache und Hörverständnis\n•  Einfache Grammatik und Wortschatz\n•  Lesen und Schreiben für Anfänger*innen\n\nAm Ende dieses Kurses können Sie:\n• Sich in grundlegenden Alltagssituationen auf Deutsch verständigen\n• Einfache Gespräche führen und Informationen austauschen\n• Deutsche Texte auf einfachem Niveau verstehen\n• Einfache schriftliche Mitteilungen verfassen\n\nWeitere Informationen sowie die genauen Termine und Orte finden Sie auf der offiziellen Website der Wiener Volkshochschulen."
+    },
+    "contact": {
+      "phone": "+43 1 893 00 83 (VHS Bildungstelefon)",
+      "email": "info@vhs.at",
+      "website": "https://www.vhs.at/de/deutschimpark"
+    },
+    "courseDetails": {
+      "level": "A1–B2",
+      "price": "Free",
+      "location": "Vienna",
+      "certificate": "None",
+      "type": "course",
+      "duration": "4 weeks (varies by location)",
+      "schedule": "Mon–Thu, 09:00–12:00 or 14:30–17:30"
+    },
+    "tags": [
+      "A1–B2",
+      "Free",
+      "Vienna",
+      "Public",
+      "Outdoor",
+      "Website"
+    ],
+    "hasMap": true,
+    "isResource": false,
+    "childcare": false,
+    "forWomen": false,
+    "forYoungMigrants": false
+  },
+  "vhs_startwien_integration": {
+    "id": "vhs_startwien_integration",
+    "title": {
+      "en": "VHS Vienna - StartWien - Integration from Day 1",
+      "de": "VHS Wien - StartWien - Integration ab Tag 1"
+    },
+    "subtitle": {
+      "en": "Free German courses for asylum seekers in basic care with childcare",
+      "de": "Kostenlose Deutschkurse für Asylwerber*innen in der Grundversorgung mit Kinderbetreuung"
+    },
+    "provider": "Wiener Volkshochschulen (VHS)",
+    "description": {
+      "en": "The “StartWien - Integration from Day 1” project of the Vienna Adult Education Centers offers free German courses for asylum seekers in basic care. The courses cover levels from literacy to C1 and include accompanying childcare to make it easier for people with caring responsibilities to take part. With the appropriate qualifications, the course ends with an ÖIF integration exam. The courses are held at the VHS locations Favoriten, Ottakring, Gatterburggasse and Brigittenau.\n\nCourse details:\n• Level: A0-C1\n• Duration: Varies depending on course level and individual learning progress\n• Schedule: Monday to Friday, exact times depending on location\n• Location: VHS Favoriten, VHS Ottakring, VHS Gatterburggasse, VHS Brigittenau\n• Class size: Small groups for individual attention\n• Childcare: Yes\n• Price: Free of charge\n• Provider: Public (state-funded by the Vienna Social Fund)\n• Language support: Dari/Farsi, Arabic, English (depending on the course provider)\n• Relevant: Support for integration agreements and language support\n• Certificate: Yes - confirmation of participation with ÖIF certificate\n\n\nWhat you will learn:\n• Basic German language skills for everyday life\n• Communication in simple everyday situations\n• Pronunciation and listening comprehension\n• Simple grammar and vocabulary\n• Preparation for integration exams\n\n\nAt the end of this course you will be able to:\n• Communicate confidently in the German language\n• Understand and apply the principles of the Austrian legal and social order\n• Successfully pass the integration exam\n\nFor more information and to register, please visit the official website of the project.",
+      "de": "Das Projekt „StartWien – Integration ab Tag 1“ der Wiener Volkshochschulen bietet kostenlose Deutschkurse für Asylwerber*innen in der Grundversorgung an. Die Kurse decken die Niveaustufen von der Alphabetisierung bis C1 ab und beinhalten eine begleitende Kinderbetreuung, um die Teilnahme für Menschen mit Betreuungspflichten zu erleichtern. Bei entsprechender Qualifikation endet der Kurs mit einer ÖIF-Integrationsprüfung. Die Kurse werden an den VHS-Standorten Favoriten, Ottakring, Gatterburggasse und Brigittenau durchgeführt.\n\nKursdetails:\n• Level: A0-C1\n• Dauer: Variiert je nach Kursniveau und individuellem Lernfortschritt\n• Zeitplan: Montag bis Freitag, genaue Zeiten je nach Standort\n• Ort: VHS Favoriten, VHS Ottakring, VHS Gatterburggasse, VHS Brigittenau\n• Klassengröße: Kleine Gruppen für individuelle Betreuung\n• Kinderbetreuung: Ja\n• Preis: Kostenlos\n• Anbieter: Öffentlich (staatlich gefördert durch den Fonds Soziales Wien)\n• Sprachliche Unterstützung: Dari/Farsi, Arabisch, Englisch (abhängig vom Kursanbieter)\n• Relevant: Unterstützung für Integrationsvereinbarungen und Sprachförderung\n• Zertifikat: Ja – Teilnahmebestätigung mit ÖIF-Zertifikat\n\n\nWas Sie lernen werden:\n• Grundlegende Deutschkenntnisse für den Alltag\n•  Kommunikation in einfachen Alltagssituationen\n•  Aussprache und Hörverständnis\n•  Einfache Grammatik und Wortschatz\n•  Vorbereitung auf Integrationsprüfungen\n\nAm Ende dieses Kurses können Sie:\n• Sich sicher in der deutschen Sprache verständigen\n• Die Prinzipien der österreichischen Rechts- und Gesellschaftsordnung verstehen und anwenden\n• Die Integrationsprüfung erfolgreich ablegen\n\nFür weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website des Projekts."
+    },
+    "contact": {
+      "phone": "+43 1 893 00 83 (VHS Bildungstelefon)",
+      "email": "info@vhs.at",
+      "website": "https://www.vhs.at/de/projekte/startwien-integration-ab-tag-1"
+    },
+    "courseDetails": {
+      "level": "A0–C1",
+      "price": "Free",
+      "location": "Vienna",
+      "certificate": "ÖIF Certificate",
+      "type": "course",
+      "duration": "Varies depending on course level and individual progress",
+      "schedule": "Mon–Fri (exact times depend on location)"
+    },
+    "tags": [
+      "A0–C1",
+      "Free",
+      "Vienna",
+      "Public",
+      "Literacy"
+    ],
+    "hasMap": true,
+    "isResource": false,
+    "childcare": true,
+    "forWomen": false,
+    "forYoungMigrants": false
+  },
+  "wifi_upper_austria_integration": {
+    "id": "wifi_upper_austria_integration",
+    "title": {
+      "en": "WIFI Upper Austria - German integration courses",
+      "de": "WIFI Oberösterreich - Deutsch Integrationskurse"
+    },
+    "subtitle": {
+      "en": "Learning German for integration, residence permits and citizenship",
+      "de": "Deutsch lernen für Integration, Aufenthaltstitel und Staatsbürgerschaft"
+    },
+    "provider": "WIFI Oberösterreich",
+    "description": {
+      "en": "The German integration courses at WIFI Upper Austria are aimed at people who want to improve their German language skills as part of the integration agreement. The courses cover levels A1 to B2 and include language lessons as well as content on Austrian society and the legal system. Upon successful completion, participants can take the ÖIF integration exam. The courses are offered in various cities in Upper Austria, including Linz, Wels, Steyr and Gmunden.\n\nCourse details:\n• Level: A1-B2\n• Duration: Varies depending on the course level; e.g. A1 course: 52 teaching units\n• Schedule: Mon-Thu, 8:00-12:15 (depending on course)\n• Location: WIFI Linz, Wiener Straße 150, 4021 Linz (other locations: Wels, Steyr, Gmunden)\n• Class size: Small groups for individual support\n• Childcare: N/A\n• Price: € 490.00 incl. documents; deductible between € 121.00 and € 290.00 (if you meet the eligibility requirements)\n• Provider: Public (state-funded by the Austrian Integration Fund)\n• Language support: Serbian, Croatian, Turkish, English\n• Relevant: Preparation for integration exams\n• Certificate: Yes - confirmation of participation with ÖIF certificate\n\n\nWhat you will learn:\n• Basic to advanced German language skills\n• Communication in everyday situations\n• Pronunciation and listening comprehension\n• Simple to complex grammar and vocabulary\n• Preparation for the ÖIF integration exam\n\n\n\nAt the end of this course you will be able to:\n• Communicate confidently in the German language\n• Understand and apply the principles of the Austrian legal and social order\n• Successfully pass the integration exam\n\nFor more information and to register, please visit the official website of WIFI Upper Austria.",
+      "de": "Die Deutsch Integrationskurse am WIFI Oberösterreich richten sich an Personen, die ihre Deutschkenntnisse im Rahmen der Integrationsvereinbarung verbessern möchten. Die Kurse decken die Niveaus A1 bis B2 ab und beinhalten sowohl Sprachunterricht als auch Inhalte zur österreichischen Gesellschaft und Rechtsordnung. Mit erfolgreichem Abschluss können Teilnehmer*innen die ÖIF-Integrationsprüfung ablegen. Die Kurse werden in verschiedenen Städten Oberösterreichs angeboten, darunter Linz, Wels, Steyr und Gmunden.\n\nKursdetails:\n• Level: A1-B2\n• Dauer: Variiert je nach Kursniveau; z.B. A1-Kurs: 52 Unterrichtseinheiten\n• Zeitplan: Mo–Do, 8:00–12:15 Uhr (je nach Kurs)\n• Ort: WIFI Linz, Wiener Straße 150, 4021 Linz (weitere Standorte: Wels, Steyr, Gmunden)\n• Klassengröße: Kleine Gruppen für individuelle Betreuung\n• Kinderbetreuung: N/A\n• Preis: 490,00 € inkl. Unterlagen; Selbstbehalt zwischen 121,00 € und 290,00 € (bei Erfüllung der Fördervoraussetzungen)\n• Anbieter: Öffentlich (staatlich gefördert durch den Österreichischen Integrationsfonds)\n• Sprachliche Unterstützung: Serbisch, Kroatisch, Türkisch, Englisch\n• Relevant: Vorbereitung für Integrationsprüfungen\n• Zertifikat: Ja – Teilnahmebestätigung mit ÖIF-Zertifikat\n\n\nWas Sie lernen werden:\n•  Grundlegende bis fortgeschrittene Deutschkenntnisse\n•  Kommunikation in Alltagssituationen\n•  Aussprache und Hörverständnis\n•  Einfache bis komplexe Grammatik und Wortschatz\n•  Vorbereitung auf die ÖIF-Integrationsprüfung\n\nAm Ende dieses Kurses können Sie:\n• Sich sicher in der deutschen Sprache verständigen\n• Die Prinzipien der österreichischen Rechts- und Gesellschaftsordnung verstehen und anwenden\n• Die Integrationsprüfung erfolgreich ablegen\n\nFür weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website des WIFI Oberösterreich."
+    },
+    "contact": {
+      "phone": "+43 5 7000 7553",
+      "email": "Elif.Cevik-Coban@wifi-ooe.at",
+      "website": "https://www.wifi-ooe.at/k/deutsch-integrationskurse"
+    },
+    "courseDetails": {
+      "level": "A1–B2",
+      "price": "€490 (deductible possible)",
+      "location": "Upper Austria",
+      "certificate": "ÖIF Certificate",
+      "type": "course",
+      "duration": "e.g. 52 teaching units for A1",
+      "schedule": "Mon–Thu, 08:00–12:15"
+    },
+    "tags": [
+      "A1–B2",
+      "Paid",
+      "Upper Austria",
+      "Fulfills the integration requirements",
+      "Public",
+      "With certificate"
+    ],
+    "hasMap": true,
+    "isResource": false,
+    "childcare": false,
+    "forWomen": false,
+    "forYoungMigrants": false,
+    "address": "WIFI Linz, Wiener Straße 150, 4021 Linz, Austria",
+    "coordinates": {
+      "lat": 48.29552,
+      "lng": 14.30824
     }
   }
 }

@@ -63,70 +63,8 @@ const OIFOfflineCourse: React.FC = () => {
       sq: 'Lorem Ipsum'
     },
     description: {
-      en: `Peregrina's basic German courses are aimed at women with a migration background who want to improve their German language skills from the ground up. As part of the "Level Up – Adult Education" project, courses are offered at levels A1 to B1+. The focus is on German as a second language, particularly in the areas of reading and writing, learning skills, everyday mathematics, and digital skills. The courses are taught by experienced instructors and also include one-on-one instruction. Free childcare is provided for children ages 1 to 6 during the course.
-
-Course Details:
-• Level: A1-B1+
-• Duration: 111 to 222 teaching units (including private lessons)
-• Schedule: February to June and September to December/January
-• Course Times: 2 to 4 times per week
-• Location: Wilhelm-Weber-Weg 1/2/1+2, A-1110 Vienna
-• Class Size: Small groups, 2 to 4 times per week
-• Childcare: Yes, for children ages 1 to 6
-• Price: Free
-• Provider: NGO (Peregrina – Association for Women)
-• Language Support: German, Turkish, Kurdish
-• Relevant: Yes – relevant for integration requirements in Austria
-• Certificate: Yes – confirmation of participation; Preparation for the ÖSD Exam
-
-What you will learn:
-• Basic German language skills (A1–B1+)
-• Reading and writing in everyday life
-• Learning strategies and self-organization
-• Everyday mathematics (e.g., dealing with money, time, measurements)
-• Digital skills (e.g., using a smartphone and PC)
-
-By the end of this course, you will be able to:
-• Communicate effectively in everyday German situations
-• Understand and compose simple texts
-• Apply basic mathematical skills in everyday life
-• Use digital devices safely
-• Learn independently and organize your learning processes
-
-For more information and to register, please visit the official website.`,
-      de: `Die Basisbildungskurse Deutsch von Peregrina richten sich an Frauen mit Migrationshintergrund, die ihre Deutschkenntnisse von Grund auf verbessern möchten. Im Rahmen des Projekts „Level Up – Erwachsenenbildung“ werden Kurse auf den Niveaus A1 bis B1+ angeboten. Der Fokus liegt auf Deutsch als Zweitsprache, insbesondere auf den Bereichen Lesen und Schreiben, Lernkompetenzen, Alltagsmathematik und digitale Kompetenzen. Die Kurse werden von erfahrenen Kursleiterinnen durchgeführt und beinhalten auch Einzelunterrichtseinheiten. Für die Dauer der Kurse wird kostenlose Kinderbetreuung für Kinder von 1 bis 6 Jahren angeboten.
-
-Kursdetails:
-• Level: A1-B1+
-• Dauer: 111 bis 222 Unterrichtseinheiten (inkl. Einzelunterricht)
-• Zeitplan: Februar bis Juni und September bis Dezember/Jänner
-• Kurszeiten: 2 bis 4 mal wöchentlich
-• Ort: Wilhelm-Weber-Weg 1/2/1+2, A-1110 Wien
-• Klassengröße: Kleine Gruppen2 bis 4 mal wöchentlich
-• Kinderbetreuung: Ja, für Kinder von 1 bis 6 Jahren
-• Preis: Kostenlos
-• Anbieter: NGO (Peregrina – Verein für Frauen)
-• Sprachliche Unterstützung: Deutsch, Türkisch, Kurdisch
-• Relevant: Ja – relevant für Integrationsanforderungen in Österreich
-• Zertifikat: Ja – Teilnahmebestätigung; Vorbereitung auf die ÖSD-Prüfung
-
-
-Was Sie lernen werden:
-• Grundlegende Deutschkenntnisse (A1–B1+)
-• Lesen und Schreiben im Alltag
-• Lernstrategien und Selbstorganisation
-• Alltagsmathematik (z.B. Umgang mit Geld, Zeit, Maße)
-• Digitale Kompetenzen (z.B. Nutzung von Smartphone und PC)
-
-
-Am Ende dieses Kurses können Sie:
-• Effektiv in Alltagssituationen auf Deutsch zu kommunizieren
-• Lesen und Schreiben von einfachen Texten zu verstehen und zu verfassen
-• Mathematische Grundkenntnisse im Alltag anzuwenden
-• Digitale Geräte sicher zu nutzen
-• Selbstständig zu lernen und Ihre Lernprozesse zu organisieren
-
-Für weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website.`,
+      en: ``,
+      de: ``,
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',

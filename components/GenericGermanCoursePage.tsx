@@ -1,206 +1,192 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, SafeAreaView, ScrollView, TouchableOpacity, Linking } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
+import {
+  FlatList,
+  View,
+  Text,
+  TouchableOpacity,
+  Linking,
+  StyleSheet,
+} from 'react-native';
 import { useLanguage } from '../contexts/LanguageContext';
-import { languages } from '../data/languages/common';
 import PageNavigation from './PageNavigation';
 import LanguageModal from './LanguageModal';
 import HelpModal from './HelpModal';
 import MapView from './MapView';
+import { MaterialIcons } from '@expo/vector-icons';
 import { getEnrollNow, getContactInformation, getLocation } from '../data/languages/common';
 
-interface CourseData {
-  id: string;
-  title: { [key: string]: string };
-  subtitle: { [key: string]: string };
-  provider: string;
-  description: { [key: string]: string };
-  contact: {
-    phone?: string;
-    email?: string;
-    website: string;
-  };
-  courseDetails: {
-    level: string;
-    duration?: string;
-    price: string;
-    location: string;
-    certificate: string;
-    type: string;
-  };
-  tags: string[];
-  hasMap: boolean;
-  isResource: boolean;
-  address?: string;
-  coordinates?: {
-    lat: number;
-    lng: number;
-  };
-  additionalMarkers?: Array<{
-    lat: number;
-    lng: number;
-    name: string;
-  }>;
-}
-
-interface GenericGermanCoursePageProps {
-  courseData: CourseData;
-}
-
-const GenericGermanCoursePage: React.FC<GenericGermanCoursePageProps> = ({ courseData }) => {
+const GenericGermanCoursePage = ({ courseData }) => {
   const { currentLanguage } = useLanguage();
-  const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
+  const [mapInteracting, setMapInteracting] = useState(false);
 
-  const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
+  const getCurrentContent = (obj) => obj[currentLanguage] || obj.en;
 
-  const toggleSound = () => {
-    setSoundEnabled(!soundEnabled);
-  };
+  const sections = [
+    { type: 'title' },
+    { type: 'subtitle' },
+    { type: 'provider' },
+    { type: 'description' },
+    { type: 'contact' },
+    { type: 'map', show: courseData.hasMap && (courseData.address || courseData.coordinates) },
+    { type: 'tags' },
+    { type: 'enroll' },
+  ];
 
-  const handleEnrollPress = () => {
-    Linking.openURL(courseData.contact.website);
-  };
+  const renderItem = ({ item }) => {
+    switch (item.type) {
+      case 'title':
+        return <Text style={styles.title}>{getCurrentContent(courseData.title)}</Text>;
 
-  const handlePhonePress = () => {
-    if (courseData.contact.phone) {
-      Linking.openURL(`tel:${courseData.contact.phone}`);
-    }
-  };
+      case 'subtitle':
+        return <Text style={styles.subtitle}>{getCurrentContent(courseData.subtitle)}</Text>;
 
-  const handleEmailPress = () => {
-    if (courseData.contact.email) {
-      Linking.openURL(`mailto:${courseData.contact.email}`);
-    }
-  };
+      case 'provider':
+        return (
+          <View style={styles.providerSection}>
+            <Text style={styles.providerLabel}>
+              {currentLanguage === 'de' ? 'Anbieter:' : 'Provider:'}
+            </Text>
+            <Text style={styles.providerName}>{courseData.provider}</Text>
+          </View>
+        );
 
-  const getCurrentContent = (contentObj: { [key: string]: string }) => {
-    return contentObj[currentLanguage] || contentObj.en;
-  };
+      case 'description':
+        return <Text style={styles.description}>{getCurrentContent(courseData.description)}</Text>;
 
-  return (
-    <SafeAreaView style={styles.container}>
-      <PageNavigation
-        toggleSound={toggleSound}
-        soundEnabled={soundEnabled}
-        showLanguageModal={() => setShowLanguageModal(true)}
-        showHelpModal={() => setShowHelpModal(true)}
-      />
+      case 'contact':
+        return (
+          <View style={styles.contactSection}>
+            <Text style={styles.sectionTitle}>{getContactInformation(currentLanguage)}</Text>
 
-      <ScrollView style={styles.content}>
-        <Text style={styles.title}>{getCurrentContent(courseData.title)}</Text>
-        <Text style={styles.subtitle}>{getCurrentContent(courseData.subtitle)}</Text>
-
-        <View style={styles.providerSection}>
-          <Text style={styles.providerLabel}>{currentLanguage === 'de' ? 'Anbieter:' : 'Provider:'}</Text>
-          <Text style={styles.providerName}>{courseData.provider}</Text>
-        </View>
-
-        <Text style={styles.description}>{getCurrentContent(courseData.description)}</Text>
-
-        {/* Contact Information */}
-        <View style={styles.contactSection}>
-          <Text style={styles.sectionTitle}>
-            {getContactInformation(currentLanguage)}
-          </Text>
-
-          <View style={styles.contactGrid}>
             {courseData.contact.phone && (
-              <TouchableOpacity style={styles.contactCard} onPress={handlePhonePress}>
+              <TouchableOpacity
+                style={styles.contactCard}
+                onPress={() => Linking.openURL(`tel:${courseData.contact.phone}`)}
+              >
                 <MaterialIcons name="phone" size={24} color="#3B82F6" />
                 <View style={styles.contactInfo}>
                   <Text style={styles.contactLabel}>
                     {currentLanguage === 'de' ? 'Telefon' : 'Phone'}
                   </Text>
-                  <Text style={[styles.contactValue, styles.linkText]}>
-                    {courseData.contact.phone}
-                  </Text>
+                  <Text style={styles.contactValue}>{courseData.contact.phone}</Text>
                 </View>
                 <MaterialIcons name="open-in-new" size={16} color="#666" />
               </TouchableOpacity>
             )}
 
             {courseData.contact.email && (
-              <TouchableOpacity style={styles.contactCard} onPress={handleEmailPress}>
+              <TouchableOpacity
+                style={styles.contactCard}
+                onPress={() => Linking.openURL(`mailto:${courseData.contact.email}`)}
+              >
                 <MaterialIcons name="email" size={24} color="#3B82F6" />
                 <View style={styles.contactInfo}>
                   <Text style={styles.contactLabel}>
                     {currentLanguage === 'de' ? 'E-Mail' : 'Email'}
                   </Text>
-                  <Text style={[styles.contactValue, styles.linkText]}>
-                    {courseData.contact.email}
-                  </Text>
+                  <Text style={styles.contactValue}>{courseData.contact.email}</Text>
                 </View>
                 <MaterialIcons name="open-in-new" size={16} color="#666" />
               </TouchableOpacity>
             )}
 
-            <TouchableOpacity
-              style={styles.contactCard}
-              onPress={() => Linking.openURL(courseData.contact.website)}
-            >
-              <MaterialIcons name="language" size={24} color="#3B82F6" />
-              <View style={styles.contactInfo}>
-                <Text style={styles.contactLabel}>
-                  {currentLanguage === 'de' ? 'Website' : 'Website'}
-                </Text>
-                <Text style={[styles.contactValue, styles.linkText]}>
-                  {currentLanguage === 'de' ? 'Zur Website' : 'Visit website'}
-                </Text>
-              </View>
-              <MaterialIcons name="open-in-new" size={16} color="#666" />
-            </TouchableOpacity>
+            {courseData.contact.website && (
+              <TouchableOpacity
+                style={styles.contactCard}
+                onPress={() => Linking.openURL(courseData.contact.website)}
+              >
+                <MaterialIcons name="language" size={24} color="#3B82F6" />
+                <View style={styles.contactInfo}>
+                  <Text style={styles.contactLabel}>
+                    {currentLanguage === 'de' ? 'Website' : 'Website'}
+                  </Text>
+                  <Text style={styles.contactValue}>
+                    {currentLanguage === 'de' ? 'Zur Website' : 'Visit website'}
+                  </Text>
+                </View>
+                <MaterialIcons name="open-in-new" size={16} color="#666" />
+              </TouchableOpacity>
+            )}
           </View>
-        </View>
+        );
 
-        {/* Map Section - Only for courses with hasMap: true */}
-        {courseData.hasMap && (courseData.address || courseData.coordinates) && (
-          <View style={styles.mapSection}>
-            <Text style={styles.sectionTitle}>
-              {getLocation(currentLanguage)}
-            </Text>
-            <MapView 
+      case 'map':
+        if (!item.show) return null;
+        return (
+          <View style={{ height: 300 }}>
+            <Text style={styles.sectionTitle}>{getLocation(currentLanguage)}</Text>
+            <MapView
               address={courseData.address}
               coordinates={courseData.coordinates}
               additionalMarkers={courseData.additionalMarkers}
               providerName={courseData.provider}
+              onInteractionChange={setMapInteracting}
             />
           </View>
-        )}
+        );
 
-        {/* Tags */}
-        <View style={styles.tagsSection}>
-          {courseData.tags.map((tag, index) => (
-            <View key={index} style={styles.tag}>
-              <Text style={styles.tagText}>{tag}</Text>
-            </View>
-          ))}
-        </View>
+      case 'tags':
+        return (
+          <View style={styles.tagsSection}>
+            {courseData.tags.map((tag, index) => (
+              <View key={index} style={styles.tag}>
+                <Text style={styles.tagText}>{tag}</Text>
+              </View>
+            ))}
+          </View>
+        );
 
-        {/* Enroll Button */}
-        <TouchableOpacity style={styles.enrollButton} onPress={handleEnrollPress}>
-          <Text style={styles.enrollButtonText}>
-            {getEnrollNow(currentLanguage)}
-          </Text>
-          <MaterialIcons name="arrow-forward" size={20} color="#fff" />
-        </TouchableOpacity>
-      </ScrollView>
+      case 'enroll':
+        return (
+          <TouchableOpacity
+            style={styles.enrollButton}
+            onPress={() => Linking.openURL(courseData.contact.website)}
+          >
+            <Text style={styles.enrollButtonText}>{getEnrollNow(currentLanguage)}</Text>
+            <MaterialIcons name="arrow-forward" size={20} color="#fff" />
+          </TouchableOpacity>
+        );
+
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <View style={styles.container}>
+      <PageNavigation
+        toggleSound={() => {}}
+        soundEnabled={true}
+        showLanguageModal={() => setShowLanguageModal(true)}
+        showHelpModal={() => setShowHelpModal(true)}
+      />
+
+      <FlatList
+        data={sections}
+        keyExtractor={(item, index) => `${item.type}-${index}`}
+        renderItem={renderItem}
+        contentContainerStyle={styles.content}
+        scrollEnabled={!mapInteracting}
+      />
 
       <LanguageModal
         visible={showLanguageModal}
         onClose={() => setShowLanguageModal(false)}
-        languageCode={language.code}
+        languageCode={currentLanguage}
       />
 
       <HelpModal
         visible={showHelpModal}
         onClose={() => setShowHelpModal(false)}
-        languageCode={language.code}
+        languageCode={currentLanguage}
       />
-    </SafeAreaView>
+    </View>
   );
 };
+
+export default GenericGermanCoursePage;
 
 const styles = StyleSheet.create({
   container: {
@@ -208,7 +194,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   content: {
-    flex: 1,
     padding: 16,
   },
   title: {
@@ -248,43 +233,11 @@ const styles = StyleSheet.create({
     color: '#374151',
     marginBottom: 32,
   },
-  contactSection: {
-    marginBottom: 32,
-  },
   sectionTitle: {
     fontSize: 20,
     fontWeight: '600',
     color: '#1f2937',
     marginBottom: 16,
-  },
-  contactGrid: {
-    gap: 12,
-  },
-  contactCard: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: 16,
-    backgroundColor: '#f8fafc',
-    borderRadius: 12,
-    borderWidth: 1,
-    borderColor: '#e2e8f0',
-  },
-  contactInfo: {
-    flex: 1,
-    marginLeft: 12,
-  },
-  contactLabel: {
-    fontSize: 14,
-    color: '#6b7280',
-    marginBottom: 2,
-  },
-  contactValue: {
-    fontSize: 16,
-    color: '#111827',
-    fontWeight: '500',
-  },
-  linkText: {
-    color: '#3B82F6',
   },
   tagsSection: {
     flexDirection: 'row',
@@ -327,6 +280,35 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     marginRight: 8,
   },
-});
+  contactSection: {
+    marginBottom: 24,
+    gap: 12,
+  },
 
-export default GenericGermanCoursePage;
+  contactCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 16,
+    backgroundColor: '#f8fafc',
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
+  },
+
+  contactInfo: {
+    flex: 1,
+    marginLeft: 12,
+  },
+
+  contactLabel: {
+    fontSize: 14,
+    color: '#6b7280',
+    marginBottom: 2,
+  },
+
+  contactValue: {
+    fontSize: 16,
+    color: '#111827',
+    fontWeight: '500',
+  },
+});

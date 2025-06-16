@@ -63,66 +63,8 @@ const OIFOfflineCourse: React.FC = () => {
       sq: 'Lorem Ipsum'
     },
     description: {
-      en: `The German integration courses at WIFI Upper Austria are aimed at people who want to improve their German language skills as part of the integration agreement. The courses cover levels A1 to B2 and include language lessons as well as content on Austrian society and the legal system. Upon successful completion, participants can take the ÖIF integration exam. The courses are offered in various cities in Upper Austria, including Linz, Wels, Steyr and Gmunden.
-
-Course details:
-• Level: A1-B2
-• Duration: Varies depending on the course level; e.g. A1 course: 52 teaching units
-• Schedule: Mon-Thu, 8:00-12:15 (depending on course)
-• Location: WIFI Linz, Wiener Straße 150, 4021 Linz (other locations: Wels, Steyr, Gmunden)
-• Class size: Small groups for individual support
-• Childcare: N/A
-• Price: € 490.00 incl. documents; deductible between € 121.00 and € 290.00 (if you meet the eligibility requirements)
-• Provider: Public (state-funded by the Austrian Integration Fund)
-• Language support: Serbian, Croatian, Turkish, English
-• Relevant: Preparation for integration exams
-• Certificate: Yes - confirmation of participation with ÖIF certificate
-
-
-What you will learn:
-• Basic to advanced German language skills
-• Communication in everyday situations
-• Pronunciation and listening comprehension
-• Simple to complex grammar and vocabulary
-• Preparation for the ÖIF integration exam
-
-
-
-At the end of this course you will be able to:
-• Communicate confidently in the German language
-• Understand and apply the principles of the Austrian legal and social order
-• Successfully pass the integration exam
-
-For more information and to register, please visit the official website of WIFI Upper Austria.`,
-      de: `Die Deutsch Integrationskurse am WIFI Oberösterreich richten sich an Personen, die ihre Deutschkenntnisse im Rahmen der Integrationsvereinbarung verbessern möchten. Die Kurse decken die Niveaus A1 bis B2 ab und beinhalten sowohl Sprachunterricht als auch Inhalte zur österreichischen Gesellschaft und Rechtsordnung. Mit erfolgreichem Abschluss können Teilnehmer*innen die ÖIF-Integrationsprüfung ablegen. Die Kurse werden in verschiedenen Städten Oberösterreichs angeboten, darunter Linz, Wels, Steyr und Gmunden.
-
-Kursdetails:
-• Level: A1-B2
-• Dauer: Variiert je nach Kursniveau; z.B. A1-Kurs: 52 Unterrichtseinheiten
-• Zeitplan: Mo–Do, 8:00–12:15 Uhr (je nach Kurs)
-• Ort: WIFI Linz, Wiener Straße 150, 4021 Linz (weitere Standorte: Wels, Steyr, Gmunden)
-• Klassengröße: Kleine Gruppen für individuelle Betreuung
-• Kinderbetreuung: N/A
-• Preis: 490,00 € inkl. Unterlagen; Selbstbehalt zwischen 121,00 € und 290,00 € (bei Erfüllung der Fördervoraussetzungen)
-• Anbieter: Öffentlich (staatlich gefördert durch den Österreichischen Integrationsfonds)
-• Sprachliche Unterstützung: Serbisch, Kroatisch, Türkisch, Englisch
-• Relevant: Vorbereitung für Integrationsprüfungen
-• Zertifikat: Ja – Teilnahmebestätigung mit ÖIF-Zertifikat
-
-
-Was Sie lernen werden:
-•  Grundlegende bis fortgeschrittene Deutschkenntnisse
-•  Kommunikation in Alltagssituationen
-•  Aussprache und Hörverständnis
-•  Einfache bis komplexe Grammatik und Wortschatz
-•  Vorbereitung auf die ÖIF-Integrationsprüfung
-
-Am Ende dieses Kurses können Sie:
-• Sich sicher in der deutschen Sprache verständigen
-• Die Prinzipien der österreichischen Rechts- und Gesellschaftsordnung verstehen und anwenden
-• Die Integrationsprüfung erfolgreich ablegen
-
-Für weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website des WIFI Oberösterreich.`,
+      en: ``,
+      de: ``,
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',

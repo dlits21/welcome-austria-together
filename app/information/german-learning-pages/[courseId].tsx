@@ -1,35 +1,32 @@
-
 import React from 'react';
 import { useLocalSearchParams } from 'expo-router';
+import { View, Text, StyleSheet } from 'react-native';
 import GenericGermanCoursePage from '../../../components/GenericGermanCoursePage';
 import coursesData from '../../../data/courses/german-learning-courses.json';
 
 const DynamicCoursePage: React.FC = () => {
   const { courseId } = useLocalSearchParams();
-  
   const selectedCourseId = Array.isArray(courseId) ? courseId[0] : courseId;
-  
+
   if (!selectedCourseId) {
     return (
-      <div className="flex items-center justify-center h-screen">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Invalid course</h1>
-          <p className="text-gray-600">No course ID provided.</p>
-        </div>
-      </div>
+      <View style={styles.centered}>
+        <Text style={styles.title}>Invalid course</Text>
+        <Text style={styles.subtitle}>No course ID provided.</Text>
+      </View>
     );
   }
-  
+
   const courseData = coursesData[selectedCourseId as keyof typeof coursesData];
-  
+
   if (!courseData) {
     return (
-      <div className="flex items-center justify-center h-screen">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Course not found</h1>
-          <p className="text-gray-600">The course "{selectedCourseId}" could not be found.</p>
-        </div>
-      </div>
+      <View style={styles.centered}>
+        <Text style={styles.title}>Course not found</Text>
+        <Text style={styles.subtitle}>
+          The course "{selectedCourseId}" could not be found.
+        </Text>
+      </View>
     );
   }
 
@@ -37,3 +34,22 @@ const DynamicCoursePage: React.FC = () => {
 };
 
 export default DynamicCoursePage;
+
+const styles = StyleSheet.create({
+  centered: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 20,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 12,
+  },
+  subtitle: {
+    fontSize: 16,
+    color: '#666',
+    textAlign: 'center',
+  },
+});

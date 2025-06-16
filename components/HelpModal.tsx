@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Modal, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Modal, FlatList } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 interface HelpModalProps {
@@ -28,23 +28,22 @@ const HelpModal: React.FC<HelpModalProps> = ({ visible, onClose, languageCode })
             </TouchableOpacity>
           </View>
           
-          <ScrollView contentContainerStyle={styles.helpContent}>
-            <Text style={styles.helpText}>
-              {languageCode === 'de' 
-                ? 'Diese Seite bietet Zugang zu Informationen, Lernmaterialien und Community-Ressourcen.' 
-                : 'This page provides access to information, learning materials, and community resources.'}
-            </Text>
-            <Text style={styles.helpText}>
-              {languageCode === 'de'
+          <FlatList
+            data={[
+              languageCode === 'de'
+                ? 'Diese Seite bietet Zugang zu Informationen, Lernmaterialien und Community-Ressourcen.'
+                : 'This page provides access to information, learning materials, and community resources.',
+              languageCode === 'de'
                 ? 'Sie können die Suchleiste verwenden, um spezifische Informationen zu finden.'
-                : 'You can use the search bar to find specific information.'}
-            </Text>
-            <Text style={styles.helpText}>
-              {languageCode === 'de'
+                : 'You can use the search bar to find specific information.',
+              languageCode === 'de'
                 ? 'Die vier Kacheln unten bieten direkten Zugang zu wichtigen Bereichen der Website.'
-                : 'The four tiles below provide direct access to important areas of the website.'}
-            </Text>
-          </ScrollView>
+                : 'The four tiles below provide direct access to important areas of the website.',
+            ]}
+            keyExtractor={(item, index) => `help-${index}`}
+            renderItem={({ item }) => <Text style={styles.helpText}>{item}</Text>}
+            contentContainerStyle={styles.helpContent}
+          />
         </View>
       </View>
     </Modal>

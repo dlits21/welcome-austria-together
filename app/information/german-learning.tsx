@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, SafeAreaView, ScrollView, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity } from 'react-native';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { languages } from '../../data/languages/common';
 import PageNavigation from '../../components/PageNavigation';
@@ -28,7 +28,7 @@ interface GermanCourse {
   integrationRequirement?: boolean;
 }
 
-const GermanLearningPage: React.FC = () => {
+const GermanLearningPage = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
@@ -74,7 +74,14 @@ const GermanLearningPage: React.FC = () => {
 
   // Convert JSON data to course format
   useEffect(() => {
-    const convertedCourses: GermanCourse[] = Object.values(coursesData).map((course: any) => ({
+    const convertedCourses: GermanCourse[] = Object.values(coursesData).map((course: any) => {
+      const baseTags = course.tags || [];
+        if (course.forWomen) baseTags.push("For Women");
+        if (course.forYoungMigrants) baseTags.push("For Young Migrants");
+        if (course.childcare) baseTags.push("Childcare");
+        if (course.integrationRequirement) baseTags.push("Integration Requirement");
+
+    return {
       id: course.id,
       title: course.title,
       type: course.isResource ? 'resource' : (course.courseDetails.type === 'exam' ? 'exam' : 'course'),
@@ -87,11 +94,14 @@ const GermanLearningPage: React.FC = () => {
       duration: course.courseDetails.duration,
       description: course.description,
       provider: course.provider,
+      tags: baseTags,
       forWomen: course.forWomen || false,
       forYoungMigrants: course.forYoungMigrants || false,
       childcare: course.childcare || false,
       integrationRequirement: course.tags?.includes('Integration') || false
-    }));
+    };
+    });
+
 
     setCourses(convertedCourses);
     setFilteredCourses(convertedCourses);
@@ -373,7 +383,7 @@ const GermanLearningPage: React.FC = () => {
         showHelpModal={() => setShowHelpModal(true)}
       />
 
-      <ScrollView style={styles.content}>
+      <View style={styles.content}>
         <Text style={styles.title}>
           {currentLanguage === 'de' ? 'Deutsch lernen' : 'Learning German'}
         </Text>
@@ -427,7 +437,7 @@ const GermanLearningPage: React.FC = () => {
         />
 
         <CourseList courses={filteredCourses} languageCode={currentLanguage} />
-      </ScrollView>
+      </View>
 
       <QuizModal
         visible={showQuiz}

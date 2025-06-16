@@ -1,5 +1,6 @@
 {
   "name": "willkompass",
+  "scheme": "willkompass",
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
@@ -18,8 +19,6 @@
     "@expo/ngrok": "^4.1.0",
     "@expo/vector-icons": "^14.0.0",
     "@react-native-async-storage/async-storage": "^2.1.2",
-    "@react-navigation/bottom-tabs": "^7.2.0",
-    "@react-navigation/native": "^7.0.14",
     "@types/leaflet": "^1.9.18",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
@@ -36,7 +35,9 @@
     "expo-system-ui": "~5.0.7",
     "expo-web-browser": "~14.1.6",
     "flag-icons": "^7.3.2",
+    "leaflet": "^1.9.4",
     "lucide-react": "^0.510.0",
+    "prop-types": "^15.8.1",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-leaflet": "^5.0.0",

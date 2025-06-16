@@ -55,61 +55,8 @@ const OIFOfflineCourse: React.FC = () => {
       sq: 'Lorem Ipsum'
     },
     description: {
-      en: `The vhs-Lernportal is a free online platform developed by the German Volkshochschulen (VHS) network. It offers a wide range of interactive courses designed to improve German language skills, digital literacy, and basic education. The platform is accessible to all learners, including migrants, job seekers, and anyone interested in enhancing their skills. Courses are available at various proficiency levels, from A1 to B2, and cover topics such as everyday communication, professional language use, mathematics, and safe use of digital devices.
-
-Resource Details:
-• Level: A1-B2
-• Online/Offline: Online
-• Price: Free of charge
-• Provider: Public (funded by the German government)
-• Language support: English, and other languages depending on the course
-
-
-What you can learn:
-• Basic to intermediate German language skills
-• Mathematics for everyday situations
-• Digital literacy and safe use of digital devices
-• Communication in professional contexts
-
-Type of Materials:
-• Interactive exercises
-• Audio and video materials
-• Self-assessment tests
-• Printable worksheets
-
-At the end of this course you will be able to:
-• Communicate effectively in everyday and professional situations
-• Use digital devices safely and responsibly
-• Understand and apply basic mathematical concepts in daily life
-
-For more information and to access the courses, please visit the official website.`,
-      de: `Das vhs-Lernportal ist eine kostenlose Online-Plattform der Deutschen Volkshochschulen (VHS). Sie bietet eine breite Palette interaktiver Kurse zur Verbesserung der Deutschkenntnisse, der digitalen Kompetenz und der Grundbildung. Die Plattform steht allen Lernenden zur Verfügung, darunter Migranten, Arbeitssuchende und alle, die ihre Fähigkeiten verbessern möchten. Die Kurse sind auf verschiedenen Niveaustufen von A1 bis B2 verfügbar und decken Themen wie Alltagskommunikation, berufliche Sprachverwendung, Mathematik und den sicheren Umgang mit digitalen Geräten ab.
-
-Ressourcendetails:
-• Niveau: A1–B2
-• Online/Offline: Online
-• Preis: Kostenlos
-• Anbieter: Öffentlich (finanziert von Deutschland)
-• Sprachunterstützung: Englisch und weitere Sprachen je nach Kurs
-
-Was Sie lernen können:
-• Grundkenntnisse bis Mittelstufe Deutsch
-• Mathematik für den Alltag
-• Digitale Kompetenz und sicherer Umgang mit digitalen Geräten
-• Kommunikation im beruflichen Kontext
-
-Materialien:
-• Interaktive Übungen
-• Audio- und Videomaterialien
-• Selbsteinschätzungstests
-• Ausdruckbare Arbeitsblätter
-
-Nach Abschluss dieses Kurses können Sie:
-• Effektiv im Alltag und im Beruf kommunizieren
-• Digitale Geräte sicher und verantwortungsbewusst nutzen
-• Grundlegende mathematische Konzepte im Alltag verstehen und anwenden
-
-Weitere Informationen und den Zugang zu den Kursen finden Sie auf der offiziellen Website.`,
+      en: ``,
+      de: ``,
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',

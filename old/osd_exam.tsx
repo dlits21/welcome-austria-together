@@ -63,49 +63,8 @@ const OIFOfflineCourse: React.FC = () => {
       sq: 'Lorem Ipsum'
     },
     description: {
-      en: `The Österreichisches Sprachdiplom Deutsch (ÖSD) is an internationally recognized examination and certification system for German as a foreign and second language. It offers exams across all six levels of the Common European Framework of Reference for Languages (CEFR), from A1 to C2. The ÖSD exams are designed to assess language proficiency in real-life contexts, focusing on practical communication skills. These exams are widely accepted in Austria, Germany, Switzerland, and other German-speaking countries for various purposes, including immigration, university admission, and employment.
-
-Exam details:
-• Level: A1-C2
-• Duration: Varies by level and exam format
-• Schedule: Exams are scheduled throughout the year at various examination centers
-• Location: Available at over 400 licensed examination centers worldwide
-• Price: Varies by examination center and exam level; details available upon request
-• Provider: Public (funded by the Austrian government)
-• Language support: English, and other languages depending on the examination center
-• Relevant: Yes – recognized for visa applications, university admissions, and employment in German-speaking countries
-• Certificate: Yes – official ÖSD certificate upon successful completion
-
-
-What the exam consists of:
-• Reading comprehension
-• Listening comprehension
-• Writing skills
-• Speaking skills
-• Grammar and vocabulary appropriate to the CEFR level
-
-For more information, exam dates and registration, please visit the official website of the ÖSD.`,
-      de: `Das Österreichische Sprachdiplom Deutsch (ÖSD) ist ein international anerkanntes Prüfungs- und Zertifizierungssystem für Deutsch als Fremd- und Zweitsprache. Es bietet Prüfungen auf allen sechs Niveaustufen des Gemeinsamen Europäischen Referenzrahmens für Sprachen (GER) von A1 bis C2 an. Die ÖSD-Prüfungen dienen der Bewertung von Sprachkenntnissen in realen Kontexten und legen den Schwerpunkt auf praktische Kommunikationsfähigkeiten. Diese Prüfungen werden in Österreich, Deutschland, der Schweiz und anderen deutschsprachigen Ländern für verschiedene Zwecke anerkannt, darunter Einwanderung, Hochschulzugang und Beschäftigung.
-
-Prüfungsdetails:
-• Niveaustufe: A1–C2
-• Dauer: Variiert je nach Niveaustufe und Prüfungsformat
-• Termine: Die Prüfungen finden das ganze Jahr über an verschiedenen Prüfungszentren statt
-• Ort: Verfügbar an über 400 lizenzierten Prüfungszentren weltweit
-• Preis: Variiert je nach Prüfungszentrum und Prüfungsniveau; Details auf Anfrage.
-• Anbieter: Öffentlich (finanziert vom österreichischen Staat)
-• Sprachunterstützung: Englisch und weitere Sprachen je nach Prüfungszentrum
-• Relevanz: Ja – anerkannt für Visumsanträge, Studienzulassungen und Berufstätigkeit im deutschsprachigen Raum
-• Zertifikat: Ja – offizielles ÖSD-Zertifikat nach erfolgreichem Abschluss
-
-Prüfungsinhalte:
-• Leseverständnis
-• Hörverständnis
-• Schreibfertigkeiten
-• Sprechfertigkeiten
-• Grammatik und Wortschatz entsprechend dem Deutsch-Niveau
-
-Weitere Informationen, Prüfungstermine und Anmeldung finden Sie auf der offiziellen Website des ÖSD.`,
+      en: ``,
+      de: ``,
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',

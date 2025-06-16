@@ -63,65 +63,8 @@ const OIFOfflineCourse: React.FC = () => {
       sq: 'Lorem Ipsum'
     },
     description: {
-      en: `The Connection is a Viennese association that has been supporting migrants and refugees in their integration since 2011. With a special focus on women, the association offers free language and integration courses to facilitate their transition into Austrian society. The courses include German courses for beginners, conversation classes, English courses, and financial education units. The courses are interactive and take into account the diverse needs of the participants.
-
-Course Details:
-• Level: A0-B2
-• Duration: 4–12 weeks (depending on the course)
-• Schedule: Various time models, including childcare
-• Location: Wiedner Hauptstraße 46, Top 7, 2nd floor, 1040 Vienna
-• Class Size: Small groups
-• Childcare: Yes
-• Price: Free
-• Provider: NGO
-• Language Support: German, English, Arabic, Farsi, French, Kurdish, Pashto, Tigrinya, Turkish, Urdu
-• Relevant: Relevant for integration requirements in Austria
-• Certificate: No
-
-What You Will Learn:
-• Basic German Skills (A0–B2)
-• English Skills (A2–B2)
-• Everyday Communication and Conversation
-• Financial and Consumer Literacy
-• Integration into Austrian Society
-
-By the end of this course, you will be able to:
-• Communicate effectively in everyday German
-• Use English at school or work
-• Make financial decisions confidently
-• Integrate yourself in Austrian society Find your way
-
-For more information and to register, please visit the official website.`,
-      de: `The Connection ist ein Wiener Verein, der seit 2011 Migrant:innen und Geflüchtete bei ihrer Integration unterstützt. Mit einem besonderen Fokus auf Frauen bietet der Verein kostenlose Sprach- und Integrationskurse an, um den Einstieg in die österreichische Gesellschaft zu erleichtern. Das Kursangebot umfasst Deutschkurse für Anfänger:innen, Konversationsstunden, Englischkurse sowie Finanzbildungseinheiten. Die Kurse sind interaktiv gestaltet und berücksichtigen die unterschiedlichen Bedürfnisse der Teilnehmer:innen.
-
-Kursdetails:
-• Level: A0-B2
-• Dauer: 4–12 Wochen (je nach Kurs)
-• Zeitplan: Verschiedene Zeitmodelle, auch mit Kinderbetreuung
-• Ort: Wiedner Hauptstraße 46, Top 7, 2. Stock, 1040 Wien
-• Klassengröße: Kleine Gruppen
-• Kinderbetreuung: Ja
-• Preis: Kostenlos
-• Anbieter: NGO
-• Sprachliche Unterstützung: Deutsch, Englisch, Arabisch, Farsi, Französisch, Kurdisch, Paschtu, Tigrinya, Türkisch, Urdu
-• Relevant: relevant für Integrationsanforderungen in Österreich
-• Zertifikat: Nein
-
-
-Was Sie lernen werden:
-•  Grundlegende Deutschkenntnisse (A0–B2)
-•  Englischkenntnisse (A2–B2)
-•  Alltagskommunikation und Konversation
-•  Finanz- und Konsumkompetenz
-•  Integration in die österreichische Gesellschaft
-
-Am Ende dieses Kurses können Sie:
-• Effektiv in Alltagssituationen auf Deutsch kommunizieren
-• Englisch in Schule oder Beruf anwenden
-• Finanzielle Entscheidungen sicher treffen
-• Sich in der österreichischen Gesellschaft zurechtfinden
-
-Für weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website.`,
+      en: ``,
+      de: ``,
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',

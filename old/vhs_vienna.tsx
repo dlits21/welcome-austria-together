@@ -63,64 +63,8 @@ const OIFOfflineCourse: React.FC = () => {
       sq: 'Lorem Ipsum'
     },
     description: {
-      en: `Vienna's adult education centers (VHS) offer a wide range of German courses for all levels (A1 to C2). The courses are aimed at beginners as well as advanced learners and are offered in various formats, including face-to-face classes, online courses and hybrid models. The VHS places particular emphasis on practice-oriented learning and promotes integration through language competence.
-
-Course details:
-• Level: A1-C2
-• Duration: Varies depending on the course; typically 8-12 weeks
-• Schedule: Various times, including evening and weekend courses
-• Location: Over 20 locations throughout Vienna
-• Class size: Small groups for individual attention
-• Childcare: Yes (depending on location and course)
-• Price: Paid
-• Provider: Public
-• Language support: Dari/Farsi, Arabic, English (depending on course and location)
-• Relevant: Support for integration agreements and language support
-• Certificate: Confirmation of participation
-
-
-What you will learn:
-• Basic to advanced German language skills
-• Communication in everyday situations
-• Pronunciation and listening comprehension
-• Simple to complex grammar and vocabulary
-• Preparation for integration exams
-
-At the end of this course you will be able to
-• Communicate confidently in the German language
-• Understand and apply the principles of the Austrian legal and social order
-• Successfully take the integration exam
-
-For more information and to register for courses, please visit the official website of the Wiener Volkshochschulen.`,
-      de: `Die Wiener Volkshochschulen (VHS) bieten ein breites Spektrum an Deutschkursen für alle Niveaustufen (A1 bis C1) an. Die Kurse richten sich an Anfänger*innen sowie an Fortgeschrittene und werden in verschiedenen Formaten angeboten, darunter Präsenzunterricht, Online-Kurse und hybride Modelle. Die VHS legt besonderen Wert auf praxisorientiertes Lernen und fördert die Integration durch Sprachkompetenz.
-
-Kursdetails:
-• Level: A1-C2
-• Dauer: Variiert je nach Kurs; typischerweise 8–12 Wochen
-• Zeitplan: Verschiedene Zeiten, auch Abend- und Wochenendkurse
-• Ort: Über 20 Standorte in ganz Wien
-• Klassengröße: Kleine Gruppen für individuelle Betreuung
-• Kinderbetreuung: Ja (abhängig vom Standort und Kurs)
-• Preis: Kostenpflichtig
-• Anbieter: Öffentlich
-• Sprachliche Unterstützung: Dari/Farsi, Arabisch, Englisch (abhängig vom Kurs und Standort)
-• Relevant: Unterstützung für Integrationsvereinbarungen und Sprachförderung
-• Zertifikat: Teilnahmebestätigung
-
-
-Was Sie lernen werden:
-•  Grundlegende bis fortgeschrittene Deutschkenntnisse
-•  Kommunikation in Alltagssituationen
-•  Aussprache und Hörverständnis
-•  Einfache bis komplexe Grammatik und Wortschatz
-•  Vorbereitung auf Integrationsprüfungen
-
-Am Ende dieses Kurses können Sie:
-• Sich sicher in der deutschen Sprache verständigen
-• Die Prinzipien der österreichischen Rechts- und Gesellschaftsordnung verstehen und anwenden
-• Die Integrationsprüfung erfolgreich ablegen
-
-For more information and to register for courses, please visit the official website of the Wiener Volkshochschulen.`,
+      en: ``,
+      de: ``,
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',

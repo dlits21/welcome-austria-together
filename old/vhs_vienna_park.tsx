@@ -63,68 +63,8 @@ const OIFOfflineCourse: React.FC = () => {
       sq: 'Lorem Ipsum'
     },
     description: {
-      en: `“Deutsch im Park” is a summer project of the Vienna Adult Education Centers that has been offering free outdoor German lessons since 2008. Qualified DaZ trainers teach German for adults in various Viennese parks. The courses are open to anyone who wants to improve their German language skills for everyday life. Writing and reading courses for beginners are also offered at the Schwendergasse, Wasserpark, Goethehof and Wiener Flur locations in particular. Registration is not required; anyone interested can simply drop by and join in.
-
-Course details:
-• Level: A1-B2
-• Duration: 4 weeks (depending on location)
-• Schedule: Various dates, e.g. Mon-Thu, 09:00-12:00 or 14:30-17:30
-• Location: Various Viennese parks, e.g. Schwendergasse, Wasserpark, Goethehof, Wiener Flur
-• Class size: Varies depending on location
-• Childcare: N/A
-• Price: Free of charge
-• Provider: Public (state-funded)
-• Language support: Dari/Farsi, Arabic, English (depending on the teacher)
-• Relevant: for integration agreements and language support
-• Certificate: No
-
-
-What you will learn:
-• Basic German language skills for everyday life
-• Communication in various everyday situations
-• Pronunciation and listening comprehension
-• Basic grammar and vocabulary
-• Reading and writing for beginners
-
-
-At the end of this course you will be able to:
-• Communicate in basic everyday situations in German
-• Hold simple conversations and exchange information
-• Understand German texts at a basic level
-• Compose simple written messages
-
-
-For more information and to find specific dates and locations, please visit the official website of the Wiener Volkshochschulen.`,
-      de: `„Deutsch im Park“ ist ein Sommerprojekt der Wiener Volkshochschulen, das seit 2008 kostenloses Deutschlernen im Freien anbietet. In verschiedenen Wiener Parks unterrichten qualifizierte DaZ-Trainer*innen Deutsch für Erwachsene. Die Kurse sind offen für alle, die ihre Deutschkenntnisse für den Alltag verbessern möchten. Besonders an den Standorten Schwendergasse, Wasserpark, Goethehof und Wiener Flur werden zusätzlich Schreib- und Lesekurse für Anfänger*innen angeboten. Eine Anmeldung ist nicht erforderlich; Interessierte können einfach vorbeikommen und mitmachen.
-
-Kursdetails:
-• Level: A1-B2
-• Dauer: 4 Wochen (je nach Standort)
-• Zeitplan: Verschiedene Termine, z.B. Mo–Do, 09:00–12:00 Uhr oder 14:30–17:30 Uhr
-• Ort: Verschiedene Wiener Parks, z.B. Schwendergasse, Wasserpark, Goethehof, Wiener Flur
-• Klassengröße: Variiert je nach Standort
-• Kinderbetreuung: N/A
-• Preis: Kostenlos
-• Anbieter: Öffentlich (staatlich gefördert)
-• Sprachliche Unterstützung: Dari/Farsi, Arabisch, Englisch (abhängig vom Kursleiter*in)
-• Relevant: für Integrationsvereinbarungen und Sprachförderung
-• Zertifikat: Nein
-
-
-Was Sie lernen werden:
-•  Grundlegende Deutschkenntnisse für den Alltag
-•  Kommunikation in verschiedenen Alltagssituationen
-•  Aussprache und Hörverständnis
-•  Einfache Grammatik und Wortschatz
-•  Lesen und Schreiben für Anfänger*innen
-
-Am Ende dieses Kurses können Sie:
-• Sich in grundlegenden Alltagssituationen auf Deutsch verständigen
-• Einfache Gespräche führen und Informationen austauschen
-• Deutsche Texte auf einfachem Niveau verstehen
-• Einfache schriftliche Mitteilungen verfassen
-
-Weitere Informationen sowie die genauen Termine und Orte finden Sie auf der offiziellen Website der Wiener Volkshochschulen.`,
+      en: ``,
+      de: ``,
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',

@@ -55,78 +55,8 @@ const OIFOfflineCourse: React.FC = () => {
       sq: 'Lorem Ipsum'
     },
     description: {
-      en: `The Sprachportal is a comprehensive online platform developed by the Austrian Integration Fund (ÖIF) to support individuals in learning German and integrating into Austrian society. It offers a wide range of free resources, including live online courses, interactive exercises, and cultural materials, catering to various proficiency levels from A1 to B2. The platform is designed to assist learners in improving their language skills while gaining insights into everyday life in Austria.
-
-Resource Details:
-• Level: A1-B2
-• Online/Offline: Online
-• Price: Free of charge
-• Provider: Public (state-funded)
-• Language support: Arabic, Dari/Farsi, English, French, Turkish, and more
-
-
-What you will learn:
-• Basic to intermediate German language skills
-• Vocabulary and grammar for everyday situations
-• Cultural norms and values in Austria
-• Knowledge of Austrian institutions and services
-
-Type of Materials:
-• Live online courses with certified instructors
-• Interactive vocabulary trainers
-• 360° panoramic picture exercises
-• Doodle clips (animated learning stories)
-• Learning podcasts
-• Videos on everyday life and values in Austria
-• Interactive learning videos with exercises
-• Learning magazine "Deutsch lernen"
-• Materials focusing on Austria
-• Sample tests and materials for test preparation
-
-At the end of this course you will be able to:
-• Communicate effectively in everyday situations in Austria
-• Understand and use German vocabulary and grammar appropriate for your proficiency level
-• Navigate Austrian institutions and services with greater ease
-• Demonstrate knowledge of Austrian cultural norms and values
-• Prepare for German language proficiency tests
-
-For more information and to access the resources, please visit the official website.`,
-      de: `Das Sprachportal ist eine umfassende Online-Plattform, die vom Österreichischen Integrationsfonds (ÖIF) entwickelt wurde, um Menschen beim Erlernen der deutschen Sprache und bei der Integration in die österreichische Gesellschaft zu unterstützen. Es bietet eine breite Palette an kostenlosen Ressourcen, darunter Live-Online-Kurse, interaktive Übungen und kulturelle Materialien, die für verschiedene Sprachniveaus von A1 bis B2 geeignet sind. Die Plattform soll Lernenden helfen, ihre Sprachkenntnisse zu verbessern und gleichzeitig Einblicke in das Alltagsleben in Österreich zu gewinnen.
-
-Details zur Ressource:
-• Niveau: A1-B2
-• Online/Offline: Online
-• Preis: Kostenfrei
-• Anbieter: Öffentlich (staatlich finanziert)
-• Unterstützte Sprachen: Arabisch, Dari/Farsi, Englisch, Französisch, Türkisch, und mehr
-
-
-Was Sie lernen werden:
-• Grund- bis Mittelstufenkenntnisse der deutschen Sprache
-• Wortschatz und Grammatik für Alltagssituationen
-• Kulturelle Normen und Werte in Österreich
-• Kenntnisse über österreichische Institutionen und Dienstleistungen
-
-Art der Materialien:
-• Live-Online-Kurse mit zertifizierten Lehrkräften
-• Interaktive Vokabeltrainer
-• 360°-Panoramabilder-Übungen
-• Doodle-Clips (animierte Lerngeschichten)
-• Lern-Podcasts
-• Videos zu Alltag und Werten in Österreich
-• Interaktive Lernvideos mit Übungen
-• Lernmagazin „Deutsch lernen“
-• Materialien zum Thema Österreich
-• Beispieltests und Materialien zur Testvorbereitung
-
-Nach Abschluss dieses Kurses können Sie:
-• effektiv in Alltagssituationen in Österreich kommunizieren
-• deutschen Wortschatz und Grammatik entsprechend Ihrem Sprachniveau verstehen und anwenden
-• sich leichter in österreichischen Institutionen und Dienstleistungen zurechtfinden
-• Kenntnisse der österreichischen kulturellen Normen und Werte nachweisen
-• sich auf Deutschprüfungen vorbereiten
-
-Weitere Informationen und Ressourcen finden Sie auf der offiziellen Website.`,
+      en: ``,
+      de: ``,
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',

@@ -63,66 +63,9 @@ const OIFOfflineCourse: React.FC = () => {
       sq: 'Lorem Ipsum'
     },
     description: {
-      en: `The “StartWien - Integration from Day 1” project of the Vienna Adult Education Centers offers free German courses for asylum seekers in basic care. The courses cover levels from literacy to C1 and include accompanying childcare to make it easier for people with caring responsibilities to take part. With the appropriate qualifications, the course ends with an ÖIF integration exam. The courses are held at the VHS locations Favoriten, Ottakring, Gatterburggasse and Brigittenau.
-
-Course details:
-• Level: A0-C1
-• Duration: Varies depending on course level and individual learning progress
-• Schedule: Monday to Friday, exact times depending on location
-• Location: VHS Favoriten, VHS Ottakring, VHS Gatterburggasse, VHS Brigittenau
-• Class size: Small groups for individual attention
-• Childcare: Yes
-• Price: Free of charge
-• Provider: Public (state-funded by the Vienna Social Fund)
-• Language support: Dari/Farsi, Arabic, English (depending on the course provider)
-• Relevant: Support for integration agreements and language support
-• Certificate: Yes - confirmation of participation with ÖIF certificate
-
-
-What you will learn:
-• Basic German language skills for everyday life
-• Communication in simple everyday situations
-• Pronunciation and listening comprehension
-• Simple grammar and vocabulary
-• Preparation for integration exams
-
-
-At the end of this course you will be able to:
-• Communicate confidently in the German language
-• Understand and apply the principles of the Austrian legal and social order
-• Successfully pass the integration exam
-
-For more information and to register, please visit the official website of the project.
+      en: `
 `,
-      de: `Das Projekt „StartWien – Integration ab Tag 1“ der Wiener Volkshochschulen bietet kostenlose Deutschkurse für Asylwerber*innen in der Grundversorgung an. Die Kurse decken die Niveaustufen von der Alphabetisierung bis C1 ab und beinhalten eine begleitende Kinderbetreuung, um die Teilnahme für Menschen mit Betreuungspflichten zu erleichtern. Bei entsprechender Qualifikation endet der Kurs mit einer ÖIF-Integrationsprüfung. Die Kurse werden an den VHS-Standorten Favoriten, Ottakring, Gatterburggasse und Brigittenau durchgeführt.
-
-Kursdetails:
-• Level: A0-C1
-• Dauer: Variiert je nach Kursniveau und individuellem Lernfortschritt
-• Zeitplan: Montag bis Freitag, genaue Zeiten je nach Standort
-• Ort: VHS Favoriten, VHS Ottakring, VHS Gatterburggasse, VHS Brigittenau
-• Klassengröße: Kleine Gruppen für individuelle Betreuung
-• Kinderbetreuung: Ja
-• Preis: Kostenlos
-• Anbieter: Öffentlich (staatlich gefördert durch den Fonds Soziales Wien)
-• Sprachliche Unterstützung: Dari/Farsi, Arabisch, Englisch (abhängig vom Kursanbieter)
-• Relevant: Unterstützung für Integrationsvereinbarungen und Sprachförderung
-• Zertifikat: Ja – Teilnahmebestätigung mit ÖIF-Zertifikat
-
-
-Was Sie lernen werden:
-• Grundlegende Deutschkenntnisse für den Alltag
-•  Kommunikation in einfachen Alltagssituationen
-•  Aussprache und Hörverständnis
-•  Einfache Grammatik und Wortschatz
-•  Vorbereitung auf Integrationsprüfungen
-
-Am Ende dieses Kurses können Sie:
-• Sich sicher in der deutschen Sprache verständigen
-• Die Prinzipien der österreichischen Rechts- und Gesellschaftsordnung verstehen und anwenden
-• Die Integrationsprüfung erfolgreich ablegen
-
-Für weitere Informationen und zur Anmeldung besuchen Sie bitte die offizielle Website des Projekts.`,
+      de: ``,
       ru: 'Lorem Ipsum',
       ce: 'Lorem Ipsum',
       pr: 'Lorem Ipsum',

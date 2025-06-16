@@ -37,56 +37,8 @@ const SchubertVerlagCourse: React.FC = () => {
       de: 'Deutsch üben von A1 bis C1 mit interaktiven Übungen'
     },
     description: {
-      en: `Schubert Verlag offers a wide range of free online exercises for German learners from A1 to C1 level. The content includes grammar, vocabulary, reading, and listening tasks based on textbooks like “Begegnungen”. Exercises are chapter-based and include immediate feedback, sample solutions, and PDFs.
-
-Resource Details:
-• Level: A1–C1
-• Online/Offline: Online
-• Price: Free
-• Provider: Public / Publisher
-• Language support: German interface; useful for learners with basic English
-
-What you will learn:
-• Grammar structures and sentence building
-• Topic-specific vocabulary
-• Reading comprehension
-• Listening comprehension
-
-Type of Materials:
-• Interactive quizzes
-• Fill-in-the-blanks
-• Matching exercises
-• PDF downloads with answer keys
-
-By the end of this course you will be able to:
-• Consolidate your German skills up to C1
-• Understand and apply advanced grammar rules
-• Improve comprehension and self-study ability`,
-      de: `Der Schubert Verlag bietet eine große Auswahl kostenloser Online-Übungen für Deutschlernende der Niveaustufen A1 bis C1. Die Inhalte umfassen Grammatik-, Wortschatz-, Lese- und Hörübungen, basierend auf bekannten Lehrwerken wie „Begegnungen“. Die Übungen sind kapitelweise gegliedert und bieten direkte Rückmeldung, Musterlösungen und PDFs.
-
-Ressourcendetails:
-• Niveau: A1–C1
-• Online/Offline: Online
-• Preis: Kostenlos
-• Anbieter: Öffentlich / Verlag
-• Sprachunterstützung: Interface auf Deutsch; geeignet für Lernende mit Grundkenntnissen in Englisch
-
-Was Sie lernen werden:
-• Grammatikstrukturen und Satzbildung
-• Themenbezogener Wortschatz
-• Leseverstehen
-• Hörverstehen
-
-Materialien:
-• Interaktive Quizfragen
-• Lückentexte
-• Zuordnungsübungen
-• PDF-Downloads mit Lösungen
-
-Am Ende dieses Kurses können Sie:
-• Ihre Deutschkenntnisse bis C1 festigen
-• Fortgeschrittene Grammatik anwenden
-• Ihr Verständnis verbessern und selbstständig lernen`
+      en: ``,
+      de: ``
     },
     provider: 'Schubert Verlag Online',
     contact: {
