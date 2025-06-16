@@ -68,7 +68,7 @@ const FinancialSupportPage: React.FC = () => {
   const locations = Array.from(new Set(financialSupportEntities.map(entity => entity.location)));
   const supportTypes = Array.from(new Set(financialSupportEntities.flatMap(entity => entity.supportTypes)));
 
-  // Quiz questions - urgency first, then support type, then location
+  // Updated quiz questions for financial literacy
   const quizQuestions = [
     {
       question: language.code === 'de' 
@@ -76,7 +76,7 @@ const FinancialSupportPage: React.FC = () => {
         : 'How urgently do you need financial support?',
       answers: [
         { key: 'immediate', en: 'Immediate/Emergency', de: 'Sofort/Notfall' },
-        { key: 'soon', en: 'Within a few days', de: 'Innerhalb weniger Tage' },
+        { key: 'soon', en: 'Within a few weeks', de: 'Innerhalb weniger Wochen' },
         { key: 'planning', en: 'Planning ahead', de: 'Vorausplanung' }
       ],
       key: 'urgency' as keyof typeof quizAnswers
@@ -86,13 +86,13 @@ const FinancialSupportPage: React.FC = () => {
         ? 'Welche Art von finanzieller Unterstützung benötigen Sie?' 
         : 'What type of financial support do you need?',
       answers: [
-        { key: 'budgeting', en: 'Budgeting Help', de: 'Budgetierungshilfe' },
-        { key: 'debt-counseling', en: 'Debt Counseling', de: 'Schuldnerberatung' },
-        { key: 'financial-planning', en: 'Financial Planning', de: 'Finanzplanung' },
-        { key: 'investment-courses', en: 'Investment Education', de: 'Investmentbildung' },
-        { key: 'banking-basics', en: 'Banking Basics', de: 'Banking-Grundlagen' },
-        { key: 'emergency-aid', en: 'Emergency Financial Aid', de: 'Finanzielle Nothilfe' },
-        { key: 'financial-education', en: 'Financial Education', de: 'Finanzbildung' }
+        { key: 'budgeting', en: 'Help with budgeting and money management', de: 'Hilfe bei Budgetierung und Geldverwaltung' },
+        { key: 'debt-counseling', en: 'Debt counseling and restructuring', de: 'Schuldnerberatung und Umschuldung' },
+        { key: 'financial-planning', en: 'Long-term financial planning', de: 'Langfristige Finanzplanung' },
+        { key: 'investment-courses', en: 'Investment and savings guidance', de: 'Investitions- und Sparanleitung' },
+        { key: 'banking-basics', en: 'Basic banking services', de: 'Grundlegende Bankdienstleistungen' },
+        { key: 'emergency-aid', en: 'Emergency financial assistance', de: 'Finanzielle Nothilfe' },
+        { key: 'financial-education', en: 'Financial literacy courses', de: 'Finanzbildungskurse' }
       ],
       key: 'supportType' as keyof typeof quizAnswers
     },
