@@ -337,7 +337,7 @@
       "website": "https://deutschlernerblog.de/"
     },
     "courseDetails": {
-      "level": "A1–C2",
+      "level": "A1-C2",
       "price": "Free",
       "location": "Online",
       "certificate": "N/A",
@@ -517,7 +517,7 @@
       "website": "https://www.fraubock.at/de/so-helfen-wir/bildung/deutschkurse"
     },
     "courseDetails": {
-      "level": "A0–B2",
+      "level": "A0-B2",
       "price": "Free",
       "location": "Vienna",
       "certificate": "Yes",
@@ -556,7 +556,7 @@
       "website": "https://lefoe.at/en/learning-centre-for-migrant-women/"
     },
     "courseDetails": {
-      "level": "A0–B1",
+      "level": "A0-B1",
       "price": "Free",
       "location": "Vienna",
       "certificate": "Yes",
@@ -593,7 +593,7 @@
       "website": "https://online-lernen.levrai.de/"
     },
     "courseDetails": {
-      "level": "A1–B1",
+      "level": "A1-B1",
       "price": "Free",
       "location": "Online",
       "certificate": "No",
@@ -627,7 +627,7 @@
       "website": "https://www.stationwien.org/projekte/mama-lernt-deutsch.html/"
     },
     "courseDetails": {
-      "level": "A1–B1",
+      "level": "A1-B1",
       "price": "Free",
       "location": "Vienna",
       "certificate": "No",
@@ -666,7 +666,7 @@
       "website": "https://miteinlernen.at/basisbildung-deutsch"
     },
     "courseDetails": {
-      "level": "A1–A2",
+      "level": "A1-A2",
       "price": "Free",
       "location": "Vienna",
       "certificate": "ÖIF Integration Exam A2 Preparation",
@@ -710,7 +710,7 @@
       "website": "https://learngerman.dw.com/en/nicos-weg/c-36519789"
     },
     "courseDetails": {
-      "level": "A1–B1",
+      "level": "A1-B1",
       "price": "Free",
       "location": "Online",
       "certificate": "No certificate",
@@ -753,7 +753,7 @@
       "website": "https://offenedeutschkurse.wordpress.com"
     },
     "courseDetails": {
-      "level": "A0–B1",
+      "level": "A0-B1",
       "price": "Free",
       "location": "Vienna",
       "certificate": "No certificate",
@@ -801,7 +801,7 @@
       "website": "https://sprachportal.at/kurse-und-pruefungen/kursangebote/online-kurse/"
     },
     "courseDetails": {
-      "level": "A1–C1",
+      "level": "A1-C1",
       "price": "€165–€189",
       "location": "Nationwide",
       "certificate": "Yes",
@@ -814,7 +814,8 @@
       "Fulfills integration requirements",
       "Public",
       "Certified",
-      "Legal requirement"
+      "Legal requirement",
+      "Integration"
     ],
     "hasMap": true,
     "coordinates": {
@@ -847,7 +848,7 @@
       "website": "https://sprachportal.at/kurse-und-pruefungen/kursangebote/online-kurse/"
     },
     "courseDetails": {
-      "level": "A1–B2",
+      "level": "A1-B2",
       "price": "Free",
       "location": "Online",
       "certificate": "Yes",
@@ -862,7 +863,7 @@
       "Integration support"
     ],
     "hasMap": false,
-    "isResource": true,
+    "isResource": false,
     "childcare": false,
     "forWomen": false,
     "forYoungMigrants": false
@@ -888,7 +889,7 @@
       "website": "https://sprachportal.at/kurse-und-pruefungen/kursangebote/startpaket-deutsch-und-integration"
     },
     "courseDetails": {
-      "level": "A1–C1",
+      "level": "A1-C1",
       "price": "Free",
       "location": "Austria-wide",
       "certificate": "Yes (ÖIF)",
@@ -929,7 +930,8 @@
       "website": "https://www.orientexpress-wien.com/bildung"
     },
     "courseDetails": {
-      "level": "A0–A2",
+      "level": "A0-A2",
+      "price": "Free",
       "price": "Free",
       "location": "Vienna",
       "certificate": "No",
@@ -974,7 +976,7 @@
       "website": "https://www.osd.at/"
     },
     "courseDetails": {
-      "level": "A1–C2",
+      "level": "A1-C2",
       "price": "Varies",
       "location": "Over 400 licensed examination centers worldwide",
       "certificate": "Yes (ÖSD)",
@@ -986,7 +988,8 @@
       "Public",
       "With certificate",
       "Fulfills integration requirement",
-      "Worldwide"
+      "Worldwide",
+      "Integration"
     ],
     "hasMap": true,
     "isResource": false,
@@ -1015,7 +1018,7 @@
       "website": "https://www.peregrina.at/kurse/basisbildungskurse/"
     },
     "courseDetails": {
-      "level": "A1–B1",
+      "level": "A1-B1",
       "price": "Free",
       "location": "Vienna",
       "certificate": "Yes (confirmation of participation, ÖSD preparation)",
@@ -1058,7 +1061,7 @@
       "website": "https://www.aufgaben.schubert-verlag.de/"
     },
     "courseDetails": {
-      "level": "A1–C1",
+      "level": "A1-C1",
       "price": "Free",
       "location": "Online",
       "certificate": "No",
@@ -1099,7 +1102,7 @@
       "website": "https://sprachportal.at/en/mein-sprachportal-at-a-glance/"
     },
     "courseDetails": {
-      "level": "A1–B2",
+      "level": "A1-B2",
       "price": "Free",
       "location": "Online",
       "certificate": "No",
@@ -1139,7 +1142,7 @@
       "website": "https://www.theconnection.at/kurse"
     },
     "courseDetails": {
-      "level": "A0–B2",
+      "level": "A0-B2",
       "price": "Free",
       "location": "Vienna",
       "certificate": "No",
@@ -1185,7 +1188,7 @@
       "website": "https://www.vhs-lernportal.de/wws/9.php#/wws/home.php"
     },
     "courseDetails": {
-      "level": "A1–B2",
+      "level": "A1-B2",
       "price": "Free",
       "location": "Online",
       "certificate": "Not specified",
@@ -1227,7 +1230,7 @@
       "website": "https://www.vhs.at/de/info/deutschkurse"
     },
     "courseDetails": {
-      "level": "A1–C2",
+      "level": "A1-C2",
       "price": "Paid",
       "location": "Vienna",
       "certificate": "Confirmation of participation",
@@ -1269,12 +1272,12 @@
       "website": "https://www.vhs.at/de/deutschimpark"
     },
     "courseDetails": {
-      "level": "A1–B2",
+      "level": "A1-B2",
       "price": "Free",
       "location": "Vienna",
       "certificate": "None",
       "type": "course",
-      "duration": "4 weeks (varies by location)",
+      "duration": "4 weeks",
       "schedule": "Mon–Thu, 09:00–12:00 or 14:30–17:30"
     },
     "tags": [
@@ -1312,12 +1315,11 @@
       "website": "https://www.vhs.at/de/projekte/startwien-integration-ab-tag-1"
     },
     "courseDetails": {
-      "level": "A0–C1",
+      "level": "A0-C1",
       "price": "Free",
       "location": "Vienna",
       "certificate": "ÖIF Certificate",
       "type": "course",
-      "duration": "Varies depending on course level and individual progress",
       "schedule": "Mon–Fri (exact times depend on location)"
     },
     "tags": [
@@ -1354,12 +1356,12 @@
       "website": "https://www.wifi-ooe.at/k/deutsch-integrationskurse"
     },
     "courseDetails": {
-      "level": "A1–B2",
+      "level": "A1-B2",
       "price": "€490 (deductible possible)",
       "location": "Upper Austria",
       "certificate": "ÖIF Certificate",
       "type": "course",
-      "duration": "e.g. 52 teaching units for A1",
+      "duration": "52 units",
       "schedule": "Mon–Thu, 08:00–12:15"
     },
     "tags": [
