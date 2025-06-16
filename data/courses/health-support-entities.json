@@ -1,0 +1,171 @@
+
+{
+  "austrian-red-cross": {
+    "id": "austrian-red-cross",
+    "title": {
+      "en": "Austrian Red Cross",
+      "de": "Österreichisches Rotes Kreuz"
+    },
+    "subtitle": {
+      "en": "Emergency medical services and health support",
+      "de": "Notfallmedizinische Dienste und Gesundheitsunterstützung"
+    },
+    "provider": "Austrian Red Cross",
+    "location": "Nationwide",
+    "supportTypes": ["emergency", "first-aid", "health-education"],
+    "specializations": ["Emergency Response", "First Aid Training", "Blood Donation", "Disaster Relief"],
+    "description": {
+      "en": "The Austrian Red Cross provides emergency medical services, first aid training, and various health support programs across Austria.",
+      "de": "Das Österreichische Rote Kreuz bietet Notfalldienste, Erste-Hilfe-Schulungen und verschiedene Gesundheitsprogramme in ganz Österreich."
+    },
+    "services": [
+      "Emergency ambulance services",
+      "First aid courses",
+      "Blood donation programs",
+      "Health education workshops",
+      "Disaster response"
+    ],
+    "contact": {
+      "phone": "+43 1 58900",
+      "email": "info@roteskreuz.at",
+      "website": "https://www.roteskreuz.at",
+      "address": "Wiedner Hauptstraße 32, 1040 Vienna"
+    },
+    "hasMap": true,
+    "coordinates": [16.3738, 48.2082]
+  },
+  "caritas-mental-health": {
+    "id": "caritas-mental-health",
+    "title": {
+      "en": "Caritas Mental Health Services",
+      "de": "Caritas Psychosoziale Dienste"
+    },
+    "subtitle": {
+      "en": "Mental health counseling and psychological support",
+      "de": "Psychische Gesundheitsberatung und psychologische Unterstützung"
+    },
+    "provider": "Caritas Austria",
+    "location": "Vienna",
+    "supportTypes": ["mental-health", "counseling", "therapy"],
+    "specializations": ["Depression", "Anxiety", "Trauma", "Addiction", "Family Counseling"],
+    "description": {
+      "en": "Caritas provides comprehensive mental health services including counseling, therapy, and crisis intervention for individuals and families.",
+      "de": "Caritas bietet umfassende psychische Gesundheitsdienste einschließlich Beratung, Therapie und Krisenintervention für Einzelpersonen und Familien."
+    },
+    "services": [
+      "Individual psychological counseling",
+      "Group therapy sessions",
+      "Crisis intervention",
+      "Family and couples therapy",
+      "Addiction counseling"
+    ],
+    "contact": {
+      "phone": "+43 1 878 12",
+      "email": "beratung@caritas-wien.at",
+      "website": "https://www.caritas-wien.at",
+      "address": "Albrechtskreithgasse 19-21, 1160 Vienna"
+    },
+    "hasMap": true,
+    "coordinates": [16.3350, 48.2148]
+  },
+  "sozialmedizinisches-zentrum": {
+    "id": "sozialmedizinisches-zentrum",
+    "title": {
+      "en": "Social Medical Center Baumgartner Höhe",
+      "de": "Sozialmedizinisches Zentrum Baumgartner Höhe"
+    },
+    "subtitle": {
+      "en": "Comprehensive healthcare and specialized medical services",
+      "de": "Umfassende Gesundheitsversorgung und spezialisierte medizinische Dienste"
+    },
+    "provider": "Wiener Gesundheitsverbund",
+    "location": "Vienna",
+    "supportTypes": ["medical-care", "specialized-treatment", "rehabilitation"],
+    "specializations": ["Psychiatry", "Neurology", "Geriatrics", "Physical Medicine", "Rehabilitation"],
+    "description": {
+      "en": "A major healthcare facility providing comprehensive medical services including psychiatry, neurology, and rehabilitation programs.",
+      "de": "Eine große Gesundheitseinrichtung, die umfassende medizinische Dienste einschließlich Psychiatrie, Neurologie und Rehabilitationsprogramme anbietet."
+    },
+    "services": [
+      "Psychiatric treatment",
+      "Neurological care",
+      "Geriatric medicine",
+      "Physical rehabilitation",
+      "Outpatient clinics"
+    ],
+    "contact": {
+      "phone": "+43 1 91060",
+      "email": "info@gesundheitsverbund.at",
+      "website": "https://www.gesundheitsverbund.at",
+      "address": "Baumgartner Höhe 1, 1140 Vienna"
+    },
+    "hasMap": true,
+    "coordinates": [16.2667, 48.2097]
+  },
+  "die-hilfswerke": {
+    "id": "die-hilfswerke",
+    "title": {
+      "en": "Die Hilfswerke Austria",
+      "de": "Die Hilfswerke Österreich"
+    },
+    "subtitle": {
+      "en": "Community health and social support services",
+      "de": "Gemeinschaftsgesundheit und soziale Unterstützungsdienste"
+    },
+    "provider": "Die Hilfswerke",
+    "location": "Nationwide",
+    "supportTypes": ["community-health", "elderly-care", "home-care"],
+    "specializations": ["Home Care", "Elderly Support", "Family Services", "Disability Support"],
+    "description": {
+      "en": "A network of organizations providing community-based health and social services throughout Austria, focusing on home care and support for vulnerable populations.",
+      "de": "Ein Netzwerk von Organisationen, die gemeinschaftsbasierte Gesundheits- und Sozialdienste in ganz Österreich anbieten, mit Fokus auf häusliche Pflege und Unterstützung für gefährdete Bevölkerungsgruppen."
+    },
+    "services": [
+      "Home nursing care",
+      "Elderly assistance programs",
+      "Family support services",
+      "Disability care coordination",
+      "Community health programs"
+    ],
+    "contact": {
+      "phone": "+43 1 40400",
+      "email": "office@hilfswerk.at",
+      "website": "https://www.hilfswerk.at",
+      "address": "Schottenfeldgasse 29, 1070 Vienna"
+    },
+    "hasMap": true,
+    "coordinates": [16.3486, 48.2026]
+  },
+  "telefonseelsorge": {
+    "id": "telefonseelsorge",
+    "title": {
+      "en": "Telephone Counseling Service",
+      "de": "Telefonseelsorge"
+    },
+    "subtitle": {
+      "en": "24/7 crisis support and emotional counseling hotline",
+      "de": "24/7 Krisenunterstützung und emotionale Beratungshotline"
+    },
+    "provider": "Telefonseelsorge Austria",
+    "location": "Nationwide",
+    "supportTypes": ["crisis-support", "emotional-counseling", "suicide-prevention"],
+    "specializations": ["Crisis Intervention", "Suicide Prevention", "Emotional Support", "Anonymous Counseling"],
+    "description": {
+      "en": "A free, anonymous 24/7 telephone counseling service providing emotional support and crisis intervention for people in distress.",
+      "de": "Ein kostenloser, anonymer 24/7-Telefonberatungsdienst, der emotionale Unterstützung und Krisenintervention für Menschen in Not bietet."
+    },
+    "services": [
+      "24/7 crisis hotline",
+      "Anonymous emotional support",
+      "Suicide prevention counseling",
+      "Online chat support",
+      "Email counseling"
+    ],
+    "contact": {
+      "phone": "142",
+      "email": "online@telefonseelsorge.at",
+      "website": "https://www.telefonseelsorge.at"
+    },
+    "hasMap": false
+  }
+}
