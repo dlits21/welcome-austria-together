@@ -23,18 +23,25 @@ const GenericGermanCoursePage = ({ courseData }) => {
 
   const getCurrentContent = (obj) => obj[currentLanguage] || obj.en;
 
+  // Check if this is legal support data (has services) or course data (has tags)
+  const isLegalSupport = courseData.services && !courseData.tags;
+
   const sections = [
     { type: 'title' },
     { type: 'subtitle' },
     { type: 'provider' },
     { type: 'description' },
+    { type: 'services', show: isLegalSupport && courseData.services },
+    { type: 'specializations', show: isLegalSupport && courseData.specializations },
     { type: 'contact' },
     { type: 'map', show: courseData.hasMap && (courseData.address || courseData.coordinates) },
-    { type: 'tags' },
-    { type: 'enroll' },
+    { type: 'tags', show: !isLegalSupport && courseData.tags },
+    { type: 'enroll', show: !isLegalSupport },
   ];
 
   const renderItem = ({ item }) => {
+    if (item.show === false) return null;
+
     switch (item.type) {
       case 'title':
         return <Text style={styles.title}>{getCurrentContent(courseData.title)}</Text>;
@@ -54,6 +61,39 @@ const GenericGermanCoursePage = ({ courseData }) => {
 
       case 'description':
         return <Text style={styles.description}>{getCurrentContent(courseData.description)}</Text>;
+
+      case 'services':
+        if (!courseData.services) return null;
+        return (
+          <View style={styles.servicesSection}>
+            <Text style={styles.sectionTitle}>
+              {currentLanguage === 'de' ? 'Unsere Dienstleistungen' : 'Our Services'}
+            </Text>
+            {courseData.services.map((service, index) => (
+              <View key={index} style={styles.serviceItem}>
+                <MaterialIcons name="check-circle" size={20} color="#10B981" />
+                <Text style={styles.serviceText}>{service}</Text>
+              </View>
+            ))}
+          </View>
+        );
+
+      case 'specializations':
+        if (!courseData.specializations) return null;
+        return (
+          <View style={styles.specializationsSection}>
+            <Text style={styles.sectionTitle}>
+              {currentLanguage === 'de' ? 'Spezialisierungen' : 'Specializations'}
+            </Text>
+            <View style={styles.specializationTags}>
+              {courseData.specializations.map((spec, index) => (
+                <View key={index} style={styles.specializationTag}>
+                  <Text style={styles.specializationTagText}>{spec}</Text>
+                </View>
+              ))}
+            </View>
+          </View>
+        );
 
       case 'contact':
         return (
@@ -128,6 +168,7 @@ const GenericGermanCoursePage = ({ courseData }) => {
         );
 
       case 'tags':
+        if (!courseData.tags) return null;
         return (
           <View style={styles.tagsSection}>
             {courseData.tags.map((tag, index) => (
@@ -139,6 +180,7 @@ const GenericGermanCoursePage = ({ courseData }) => {
         );
 
       case 'enroll':
+        if (!courseData.contact.website) return null;
         return (
           <TouchableOpacity
             style={styles.enrollButton}
@@ -238,6 +280,42 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: '#1f2937',
     marginBottom: 16,
+  },
+  servicesSection: {
+    marginBottom: 32,
+  },
+  serviceItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 8,
+  },
+  serviceText: {
+    fontSize: 16,
+    color: '#333',
+    marginLeft: 12,
+    flex: 1,
+  },
+  specializationsSection: {
+    marginBottom: 32,
+  },
+  specializationTags: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+  specializationTag: {
+    backgroundColor: '#e0f2fe',
+    borderRadius: 16,
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    marginRight: 8,
+    marginBottom: 8,
+    borderWidth: 1,
+    borderColor: '#0284c7',
+  },
+  specializationTagText: {
+    fontSize: 14,
+    color: '#0284c7',
+    fontWeight: '500',
   },
   tagsSection: {
     flexDirection: 'row',

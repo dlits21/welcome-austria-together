@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { FlatList, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';

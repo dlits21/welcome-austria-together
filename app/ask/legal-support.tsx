@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { 
   StyleSheet, 
@@ -12,6 +13,7 @@ import BaseQuizModal from '../../components/BaseQuizModal';
 import FilterSection from '../../components/FilterSection';
 import QuizControls from '../../components/QuizControls';
 import LegalSupportList from '../../components/LegalSupportList';
+import legalSupportEntitiesData from '../../data/courses/legal-support-entities.json';
 
 interface LegalSupportEntity {
   id: string;
@@ -38,124 +40,12 @@ interface LegalSupportEntity {
   };
 }
 
-const legalSupportEntities: LegalSupportEntity[] = [
-  {
-    id: 'bbu-gmbh',
-    title: { 
-      en: 'BBU GmbH (Federal Agency for Care and Support Services)', 
-      de: 'BBU GmbH (Bundesagentur für Betreuungs- und Unterstützungsleistungen)' 
-    },
-    subtitle: { 
-      en: 'Free legal counseling for asylum seekers, including appeals and detention cases.', 
-      de: 'Kostenlose Rechtsberatung für Asylsuchende, einschließlich Berufungen und Haftfälle.' 
-    },
-    location: 'Nationwide',
-    supportTypes: ['asylum-procedures', 'appeals', 'detention'],
-    specializations: ['Asylum Law', 'Appeals Process', 'Detention Rights'],
-    description: {
-      en: 'BBU provides comprehensive legal support for asylum seekers throughout Austria.',
-      de: 'BBU bietet umfassende Rechtsunterstützung für Asylsuchende in ganz Österreich.'
-    },
-    contact: {
-      phone: '+43 1 234 5678',
-      email: 'info@bbu.gv.at',
-      website: 'https://www.bbu.gv.at'
-    }
-  },
-  {
-    id: 'rechtsberatung-wien',
-    title: { 
-      en: 'Legal Counseling Vienna', 
-      de: 'Rechtsberatung Wien' 
-    },
-    subtitle: { 
-      en: 'Specialized legal advice for residence permits and family reunification.', 
-      de: 'Spezialisierte Rechtsberatung für Aufenthaltstitel und Familienzusammenführung.' 
-    },
-    location: 'Vienna',
-    supportTypes: ['residence-permits', 'family-reunification', 'general'],
-    specializations: ['Immigration Law', 'Family Law', 'Residence Permits'],
-    description: {
-      en: 'Providing expert legal guidance for immigration matters in Vienna.',
-      de: 'Expertenberatung für Einwanderungsangelegenheiten in Wien.'
-    },
-    contact: {
-      phone: '+43 1 987 6543',
-      email: 'beratung@wien.gv.at',
-      address: 'Rathaus, 1010 Wien'
-    }
-  },
-  {
-    id: 'citizenship-support-graz',
-    title: { 
-      en: 'Citizenship Support Center Graz', 
-      de: 'Staatsbürgerschaftsberatung Graz' 
-    },
-    subtitle: { 
-      en: 'Assistance with citizenship applications and procedures.', 
-      de: 'Unterstützung bei Staatsbürgerschaftsanträgen und -verfahren.' 
-    },
-    location: 'Graz',
-    supportTypes: ['citizenship', 'general'],
-    specializations: ['Citizenship Law', 'Naturalization Process'],
-    description: {
-      en: 'Specialized support for citizenship applications in Styria.',
-      de: 'Spezialisierte Unterstützung für Staatsbürgerschaftsanträge in der Steiermark.'
-    },
-    contact: {
-      phone: '+43 316 123 456',
-      email: 'citizenship@graz.at'
-    }
-  },
-  {
-    id: 'work-rights-linz',
-    title: { 
-      en: 'Work Rights Legal Aid Linz', 
-      de: 'Arbeitsrechtsberatung Linz' 
-    },
-    subtitle: { 
-      en: 'Legal support for work permits and employment rights.', 
-      de: 'Rechtsunterstützung für Arbeitserlaubnisse und Arbeitsrechte.' 
-    },
-    location: 'Linz',
-    supportTypes: ['work-rights', 'general'],
-    specializations: ['Employment Law', 'Work Permits', 'Labor Rights'],
-    description: {
-      en: 'Expert advice on work permits and employment law for migrants.',
-      de: 'Expertenberatung zu Arbeitserlaubnissen und Arbeitsrecht für Migranten.'
-    },
-    contact: {
-      phone: '+43 732 789 012',
-      email: 'work@linz.at'
-    }
-  },
-  {
-    id: 'discrimination-support',
-    title: { 
-      en: 'Anti-Discrimination Legal Service', 
-      de: 'Antidiskriminierungs-Rechtsdienst' 
-    },
-    subtitle: { 
-      en: 'Legal representation for discrimination cases.', 
-      de: 'Rechtsvertretung bei Diskriminierungsfällen.' 
-    },
-    location: 'Vienna',
-    supportTypes: ['discrimination', 'legal-representation'],
-    specializations: ['Anti-Discrimination Law', 'Equal Rights', 'Legal Representation'],
-    description: {
-      en: 'Specialized legal service for cases of discrimination and equal rights.',
-      de: 'Spezialisierter Rechtsdienst für Diskriminierungsfälle und Gleichberechtigung.'
-    },
-    contact: {
-      phone: '+43 1 456 789',
-      email: 'discrimination@equalrights.at'
-    }
-  }
-];
-
 const LegalSupportPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
+  
+  // Convert JSON data to array format
+  const legalSupportEntities: LegalSupportEntity[] = Object.values(legalSupportEntitiesData);
   const [filteredEntities, setFilteredEntities] = useState<LegalSupportEntity[]>(legalSupportEntities);
   
   // Quiz states
@@ -191,7 +81,6 @@ const LegalSupportPage: React.FC = () => {
         { key: 'family-reunification', en: 'Family Reunification', de: 'Familienzusammenführung' },
         { key: 'citizenship', en: 'Citizenship', de: 'Staatsbürgerschaft' },
         { key: 'detention', en: 'Detention', de: 'Haft' },
-        { key: 'voluntary-return', en: 'Voluntary Return', de: 'Freiwillige Rückkehr' },
         { key: 'discrimination', en: 'Discrimination', de: 'Diskriminierung' },
         { key: 'work-rights', en: 'Work Rights', de: 'Arbeitsrechte' },
         { key: 'legal-representation', en: 'Legal Representation', de: 'Rechtsvertretung' }
@@ -409,96 +298,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#666',
     marginBottom: 24,
-  },
-  controlsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 16,
-  },
-  resetQuizButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#f1f5f9',
-    paddingVertical: 10,
-    paddingHorizontal: 16,
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: '#e2e8f0',
-  },
-  resetQuizText: {
-    color: '#3B82F6',
-    fontWeight: '600',
-    marginLeft: 8,
-    fontSize: 14,
-  },
-  filterButton: {
-    width: 48,
-    height: 48,
-    backgroundColor: '#f9f9f9',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: '#ddd',
-  },
-  filterSection: {
-    backgroundColor: '#f8fafc',
-    padding: 16,
-    borderRadius: 12,
-    marginBottom: 16,
-  },
-  filterSectionTitle: {
-    fontSize: 18,
-    fontWeight: '600',
-    marginBottom: 16,
-  },
-  filterGroupTitle: {
-    fontSize: 16,
-    fontWeight: '500',
-    marginBottom: 8,
-    marginTop: 12,
-  },
-  filterChips: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    marginBottom: 8,
-  },
-  filterChip: {
-    backgroundColor: '#fff',
-    borderWidth: 1,
-    borderColor: '#e2e8f0',
-    borderRadius: 16,
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    marginRight: 8,
-    marginBottom: 8,
-  },
-  activeFilterChip: {
-    backgroundColor: '#3B82F6',
-    borderColor: '#3B82F6',
-  },
-  filterChipText: {
-    fontSize: 12,
-    color: '#64748b',
-    textTransform: 'capitalize',
-  },
-  activeFilterChipText: {
-    color: '#fff',
-  },
-  clearFiltersButton: {
-    backgroundColor: '#fff',
-    borderWidth: 1,
-    borderColor: '#e2e8f0',
-    borderRadius: 8,
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    alignSelf: 'flex-start',
-    marginTop: 8,
-  },
-  clearFiltersText: {
-    color: '#64748b',
-    fontSize: 14,
   },
 });
 
