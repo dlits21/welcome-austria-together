@@ -1,0 +1,183 @@
+
+{
+  "bbu-gmbh": {
+    "id": "bbu-gmbh",
+    "title": {
+      "en": "BBU GmbH (Federal Agency for Care and Support Services)",
+      "de": "BBU GmbH (Bundesagentur für Betreuungs- und Unterstützungsleistungen)"
+    },
+    "subtitle": {
+      "en": "Free legal counseling for asylum seekers, including appeals and detention cases.",
+      "de": "Kostenlose Rechtsberatung für Asylsuchende, einschließlich Berufungen und Haftfälle."
+    },
+    "location": "Nationwide",
+    "supportTypes": ["asylum-procedures", "appeals", "detention"],
+    "specializations": ["Asylum Law", "Appeals Process", "Detention Rights"],
+    "description": {
+      "en": "BBU provides comprehensive legal support for asylum seekers throughout Austria. Our experienced legal advisors help with asylum procedures, appeals, and other legal matters.",
+      "de": "BBU bietet umfassende Rechtsunterstützung für Asylsuchende in ganz Österreich. Unsere erfahrenen Rechtsberater helfen bei Asylverfahren, Berufungen und anderen rechtlichen Angelegenheiten."
+    },
+    "contact": {
+      "phone": "+43 1 234 5678",
+      "email": "info@bbu.gv.at",
+      "website": "https://www.bbu.gv.at"
+    },
+    "coordinates": {
+      "lat": 48.2082,
+      "lng": 16.3738
+    },
+    "address": "Rathaus, 1010 Wien",
+    "services": [
+      "Legal counseling for asylum procedures",
+      "Support with appeal procedures",
+      "Assistance with authority appointments",
+      "Help with detention matters",
+      "Interpreter services",
+      "Document assistance"
+    ]
+  },
+  "rechtsberatung-wien": {
+    "id": "rechtsberatung-wien",
+    "title": {
+      "en": "Legal Counseling Vienna",
+      "de": "Rechtsberatung Wien"
+    },
+    "subtitle": {
+      "en": "Specialized legal advice for residence permits and family reunification.",
+      "de": "Spezialisierte Rechtsberatung für Aufenthaltstitel und Familienzusammenführung."
+    },
+    "location": "Vienna",
+    "supportTypes": ["residence-permits", "family-reunification", "general"],
+    "specializations": ["Immigration Law", "Family Law", "Residence Permits"],
+    "description": {
+      "en": "Providing expert legal guidance for immigration matters in Vienna. Our team specializes in residence permits, family reunification, and general immigration law.",
+      "de": "Expertenberatung für Einwanderungsangelegenheiten in Wien. Unser Team spezialisiert sich auf Aufenthaltstitel, Familienzusammenführung und allgemeines Einwanderungsrecht."
+    },
+    "contact": {
+      "phone": "+43 1 987 6543",
+      "email": "beratung@wien.gv.at",
+      "website": "https://www.wien.gv.at/menschen/integration/beratung/"
+    },
+    "coordinates": {
+      "lat": 48.2085,
+      "lng": 16.3721
+    },
+    "address": "Rathaus, 1010 Wien",
+    "services": [
+      "Residence permit applications",
+      "Family reunification procedures",
+      "Immigration law consultation",
+      "Document preparation",
+      "Translation services",
+      "Legal representation"
+    ]
+  },
+  "citizenship-support-graz": {
+    "id": "citizenship-support-graz",
+    "title": {
+      "en": "Citizenship Support Center Graz",
+      "de": "Staatsbürgerschaftsberatung Graz"
+    },
+    "subtitle": {
+      "en": "Assistance with citizenship applications and procedures.",
+      "de": "Unterstützung bei Staatsbürgerschaftsanträgen und -verfahren."
+    },
+    "location": "Graz",
+    "supportTypes": ["citizenship", "general"],
+    "specializations": ["Citizenship Law", "Naturalization Process"],
+    "description": {
+      "en": "Specialized support for citizenship applications in Styria. We guide you through the entire naturalization process and help with all required documentation.",
+      "de": "Spezialisierte Unterstützung für Staatsbürgerschaftsanträge in der Steiermark. Wir begleiten Sie durch den gesamten Einbürgerungsprozess und helfen bei allen erforderlichen Dokumenten."
+    },
+    "contact": {
+      "phone": "+43 316 123 456",
+      "email": "citizenship@graz.at",
+      "website": "https://www.graz.at/cms/beitrag/10034466/7772565/"
+    },
+    "coordinates": {
+      "lat": 47.0707,
+      "lng": 15.4395
+    },
+    "address": "Hauptplatz 1, 8010 Graz",
+    "services": [
+      "Citizenship application guidance",
+      "Naturalization process support",
+      "Document verification",
+      "Language requirement assistance",
+      "Interview preparation",
+      "Legal consultation"
+    ]
+  },
+  "work-rights-linz": {
+    "id": "work-rights-linz",
+    "title": {
+      "en": "Work Rights Legal Aid Linz",
+      "de": "Arbeitsrechtsberatung Linz"
+    },
+    "subtitle": {
+      "en": "Legal support for work permits and employment rights.",
+      "de": "Rechtsunterstützung für Arbeitserlaubnisse und Arbeitsrechte."
+    },
+    "location": "Linz",
+    "supportTypes": ["work-rights", "general"],
+    "specializations": ["Employment Law", "Work Permits", "Labor Rights"],
+    "description": {
+      "en": "Expert advice on work permits and employment law for migrants. We help navigate the complex Austrian employment system and protect your rights as a worker.",
+      "de": "Expertenberatung zu Arbeitserlaubnissen und Arbeitsrecht für Migranten. Wir helfen dabei, sich im komplexen österreichischen Beschäftigungssystem zurechtzufinden und Ihre Rechte als Arbeitnehmer zu schützen."
+    },
+    "contact": {
+      "phone": "+43 732 789 012",
+      "email": "work@linz.at",
+      "website": "https://www.linz.at/leben/7726.php"
+    },
+    "coordinates": {
+      "lat": 48.3069,
+      "lng": 14.2858
+    },
+    "address": "Hauptstraße 1-5, 4041 Linz",
+    "services": [
+      "Work permit applications",
+      "Employment contract review",
+      "Workplace rights education",
+      "Discrimination support",
+      "Union representation",
+      "Legal dispute assistance"
+    ]
+  },
+  "discrimination-support": {
+    "id": "discrimination-support",
+    "title": {
+      "en": "Anti-Discrimination Legal Service",
+      "de": "Antidiskriminierungs-Rechtsdienst"
+    },
+    "subtitle": {
+      "en": "Legal representation for discrimination cases.",
+      "de": "Rechtsvertretung bei Diskriminierungsfällen."
+    },
+    "location": "Vienna",
+    "supportTypes": ["discrimination", "legal-representation"],
+    "specializations": ["Anti-Discrimination Law", "Equal Rights", "Legal Representation"],
+    "description": {
+      "en": "Specialized legal service for cases of discrimination and equal rights. We provide comprehensive legal representation and fight for justice in discrimination cases.",
+      "de": "Spezialisierter Rechtsdienst für Diskriminierungsfälle und Gleichberechtigung. Wir bieten umfassende Rechtsvertretung und kämpfen für Gerechtigkeit in Diskriminierungsfällen."
+    },
+    "contact": {
+      "phone": "+43 1 456 789",
+      "email": "discrimination@equalrights.at",
+      "website": "https://www.gleichbehandlungsanwaltschaft.gv.at/"
+    },
+    "coordinates": {
+      "lat": 48.2092,
+      "lng": 16.3728
+    },
+    "address": "Taubstummengasse 11, 1040 Wien",
+    "services": [
+      "Discrimination case evaluation",
+      "Legal representation in court",
+      "Mediation services",
+      "Rights education workshops",
+      "Complaint filing assistance",
+      "Community outreach programs"
+    ]
+  }
+}
