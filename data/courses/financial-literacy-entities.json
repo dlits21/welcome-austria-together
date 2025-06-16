@@ -1,0 +1,172 @@
+
+{
+  "financial-planning-center": {
+    "id": "financial-planning-center",
+    "title": {
+      "en": "Financial Planning Center Vienna",
+      "de": "Finanzplanungszentrum Wien"
+    },
+    "subtitle": {
+      "en": "Comprehensive financial planning and budgeting assistance",
+      "de": "Umfassende Finanzplanung und Budgetierungshilfe"
+    },
+    "provider": "City of Vienna",
+    "location": "Vienna",
+    "supportTypes": ["budgeting", "financial-planning", "debt-counseling"],
+    "specializations": ["Personal Budgeting", "Debt Management", "Savings Planning", "Investment Basics"],
+    "description": {
+      "en": "Provides free financial planning services, budgeting workshops, and debt counseling for individuals and families.",
+      "de": "Bietet kostenlose Finanzplanungsdienste, Budgetierungsworkshops und Schuldnerberatung für Einzelpersonen und Familien."
+    },
+    "services": [
+      "Personal budget planning",
+      "Debt counseling and management",
+      "Savings account guidance",
+      "Basic investment education",
+      "Financial literacy workshops"
+    ],
+    "contact": {
+      "phone": "+43 1 4000 8000",
+      "email": "financial.planning@wien.gv.at",
+      "website": "https://www.wien.gv.at/finanzen",
+      "address": "Rathaus, Friedrich-Schmidt-Platz 1, 1010 Vienna"
+    },
+    "hasMap": true,
+    "coordinates": [16.3570, 48.2106]
+  },
+  "schuldnerberatung-wien": {
+    "id": "schuldnerberatung-wien",
+    "title": {
+      "en": "Debt Counseling Vienna",
+      "de": "Schuldnerberatung Wien"
+    },
+    "subtitle": {
+      "en": "Professional debt counseling and financial rehabilitation",
+      "de": "Professionelle Schuldnerberatung und finanzielle Rehabilitation"
+    },
+    "provider": "ASB Schuldnerberatungen GmbH",
+    "location": "Vienna",
+    "supportTypes": ["debt-counseling", "financial-rehabilitation", "legal-support"],
+    "specializations": ["Debt Restructuring", "Insolvency Procedures", "Financial Mediation", "Legal Advice"],
+    "description": {
+      "en": "Specialized debt counseling service helping individuals overcome financial difficulties and rebuild their financial stability.",
+      "de": "Spezialisierter Schuldnerberatungsdienst, der Einzelpersonen hilft, finanzielle Schwierigkeiten zu überwinden und ihre finanzielle Stabilität wieder aufzubauen."
+    },
+    "services": [
+      "Free debt counseling",
+      "Debt restructuring plans",
+      "Insolvency procedure guidance",
+      "Financial mediation with creditors",
+      "Legal advice on financial matters"
+    ],
+    "contact": {
+      "phone": "+43 1 24524 7720",
+      "email": "wien@schuldnerberatung.at",
+      "website": "https://www.schuldnerberatung.at",
+      "address": "Rechte Wienzeile 81/6, 1050 Vienna"
+    },
+    "hasMap": true,
+    "coordinates": [16.3566, 48.1962]
+  },
+  "sparkasse-financial-education": {
+    "id": "sparkasse-financial-education",
+    "title": {
+      "en": "Sparkasse Financial Education Center",
+      "de": "Sparkasse Finanzbildungszentrum"
+    },
+    "subtitle": {
+      "en": "Banking basics and financial literacy courses",
+      "de": "Banking-Grundlagen und Finanzbildungskurse"
+    },
+    "provider": "Erste Bank und Sparkasse",
+    "location": "Vienna",
+    "supportTypes": ["financial-education", "banking-basics", "investment-courses"],
+    "specializations": ["Banking Services", "Investment Planning", "Retirement Planning", "Insurance Products"],
+    "description": {
+      "en": "Offers comprehensive financial education programs covering banking, investments, and personal finance management.",
+      "de": "Bietet umfassende Finanzbildungsprogramme zu Banking, Investitionen und persönlicher Finanzverwaltung."
+    },
+    "services": [
+      "Basic banking courses",
+      "Investment fundamentals",
+      "Retirement planning workshops",
+      "Insurance product education",
+      "Digital banking tutorials"
+    ],
+    "contact": {
+      "phone": "+43 5 0100 10000",
+      "email": "info@sparkasse.at",
+      "website": "https://www.sparkasse.at/bildung",
+      "address": "Am Graben 21, 1010 Vienna"
+    },
+    "hasMap": true,
+    "coordinates": [16.3706, 48.2093]
+  },
+  "caritas-financial-counseling": {
+    "id": "caritas-financial-counseling",
+    "title": {
+      "en": "Caritas Financial Counseling",
+      "de": "Caritas Finanzberatung"
+    },
+    "subtitle": {
+      "en": "Social financial counseling for families in need",
+      "de": "Soziale Finanzberatung für bedürftige Familien"
+    },
+    "provider": "Caritas Austria",
+    "location": "Vienna",
+    "supportTypes": ["social-counseling", "emergency-aid", "budgeting"],
+    "specializations": ["Emergency Financial Aid", "Family Budgeting", "Social Support", "Crisis Intervention"],
+    "description": {
+      "en": "Provides financial counseling and emergency aid for families and individuals facing financial hardship.",
+      "de": "Bietet Finanzberatung und Nothilfe für Familien und Einzelpersonen in finanziellen Notlagen."
+    },
+    "services": [
+      "Emergency financial assistance",
+      "Family budget counseling",
+      "Social support programs",
+      "Crisis intervention",
+      "Resource connection services"
+    ],
+    "contact": {
+      "phone": "+43 1 878 12 0",
+      "email": "beratung@caritas-wien.at",
+      "website": "https://www.caritas-wien.at",
+      "address": "Albrechtskreithgasse 19-21, 1160 Vienna"
+    },
+    "hasMap": true,
+    "coordinates": [16.3350, 48.2148]
+  },
+  "financial-literacy-online": {
+    "id": "financial-literacy-online",
+    "title": {
+      "en": "Online Financial Literacy Platform",
+      "de": "Online-Finanzbildungsplattform"
+    },
+    "subtitle": {
+      "en": "Self-paced online courses for financial education",
+      "de": "Selbstgesteuerte Online-Kurse zur Finanzbildung"
+    },
+    "provider": "Financial Market Authority (FMA)",
+    "location": "Nationwide",
+    "supportTypes": ["online-courses", "self-study", "financial-education"],
+    "specializations": ["Consumer Protection", "Investment Risks", "Financial Products", "Money Management"],
+    "description": {
+      "en": "Comprehensive online platform offering free financial education courses and resources for all levels.",
+      "de": "Umfassende Online-Plattform mit kostenlosen Finanzbildungskursen und Ressourcen für alle Niveaus."
+    },
+    "services": [
+      "Interactive online courses",
+      "Financial calculators and tools",
+      "Investment risk assessments",
+      "Consumer protection guides",
+      "Multilingual resources"
+    ],
+    "contact": {
+      "phone": "+43 1 24959 1000",
+      "email": "fma@fma.gv.at",
+      "website": "https://www.fma.gv.at/verbraucher",
+      "address": "Otto-Wagner-Platz 5, 1090 Vienna"
+    },
+    "hasMap": false
+  }
+}

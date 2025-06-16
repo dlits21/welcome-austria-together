@@ -1,8 +1,9 @@
+
 import React from 'react';
 import { FlatList, View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
 
-interface HealthSupportEntity {
+interface FinancialSupportEntity {
   id: string;
   title: { en: string; de: string };
   subtitle: { en: string; de: string };
@@ -18,19 +19,19 @@ interface HealthSupportEntity {
   };
 }
 
-interface HealthSupportListProps {
-  entities: HealthSupportEntity[];
+interface FinancialSupportListProps {
+  entities: FinancialSupportEntity[];
   languageCode: string;
 }
 
-const HealthSupportList: React.FC<HealthSupportListProps> = ({ entities, languageCode }) => {
+const FinancialSupportList: React.FC<FinancialSupportListProps> = ({ entities, languageCode }) => {
   const router = useRouter();
 
   const handleEntityPress = (entityId: string) => {
-    router.push(`/ask/health/${entityId}`);
+    router.push(`/ask/financial/${entityId}`);
   };
 
-  const renderEntityItem = ({ item }: { item: HealthSupportEntity }) => (
+  const renderEntityItem = ({ item }: { item: FinancialSupportEntity }) => (
     <TouchableOpacity 
       style={styles.entityCard}
       onPress={() => handleEntityPress(item.id)}
@@ -75,8 +76,8 @@ const HealthSupportList: React.FC<HealthSupportListProps> = ({ entities, languag
       <View style={styles.noResults}>
         <Text style={styles.noResultsText}>
           {languageCode === 'de' 
-            ? 'Keine Gesundheitsdienste gefunden.' 
-            : 'No health support services found.'}
+            ? 'Keine Finanzdienstleistungen gefunden.' 
+            : 'No financial services found.'}
         </Text>
       </View>
     );
@@ -175,11 +176,6 @@ const styles = StyleSheet.create({
     color: '#16a34a',
     fontWeight: '500',
   },
-  moreSpecializations: {
-    fontSize: 10,
-    color: '#64748b',
-    fontStyle: 'italic',
-  },
   noResults: {
     flex: 1,
     justifyContent: 'center',
@@ -193,4 +189,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HealthSupportList;
+export default FinancialSupportList;

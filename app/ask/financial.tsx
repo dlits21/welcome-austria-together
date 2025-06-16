@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { 
   StyleSheet, 
@@ -11,10 +12,10 @@ import PageNavigation from '../../components/PageNavigation';
 import BaseQuizModal from '../../components/BaseQuizModal';
 import FilterSection from '../../components/FilterSection';
 import QuizControls from '../../components/QuizControls';
-import HealthSupportList from '../../components/HealthSupportList';
-import healthSupportEntitiesData from '../../data/courses/health-support-entities.json';
+import FinancialSupportList from '../../components/FinancialSupportList';
+import financialLiteracyEntitiesData from '../../data/courses/financial-literacy-entities.json';
 
-interface HealthSupportEntity {
+interface FinancialSupportEntity {
   id: string;
   title: {
     en: string;
@@ -39,21 +40,21 @@ interface HealthSupportEntity {
   };
 }
 
-const HealthSupportPage: React.FC = () => {
+const FinancialSupportPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
   
   // Convert JSON data to array format
-  const healthSupportEntities: HealthSupportEntity[] = Object.values(healthSupportEntitiesData);
-  const [filteredEntities, setFilteredEntities] = useState<HealthSupportEntity[]>(healthSupportEntities);
+  const financialSupportEntities: FinancialSupportEntity[] = Object.values(financialLiteracyEntitiesData);
+  const [filteredEntities, setFilteredEntities] = useState<FinancialSupportEntity[]>(financialSupportEntities);
   
   // Quiz states
   const [showQuiz, setShowQuiz] = useState(true);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [quizAnswers, setQuizAnswers] = useState({
+    urgency: '',
     supportType: '',
-    location: '',
-    urgency: ''
+    location: ''
   });
   
   // Filter states
@@ -64,15 +65,15 @@ const HealthSupportPage: React.FC = () => {
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
   // Extract unique locations and support types
-  const locations = Array.from(new Set(healthSupportEntities.map(entity => entity.location)));
-  const supportTypes = Array.from(new Set(healthSupportEntities.flatMap(entity => entity.supportTypes)));
+  const locations = Array.from(new Set(financialSupportEntities.map(entity => entity.location)));
+  const supportTypes = Array.from(new Set(financialSupportEntities.flatMap(entity => entity.supportTypes)));
 
-  // Quiz questions - reordered with urgency first
+  // Quiz questions - urgency first, then support type, then location
   const quizQuestions = [
     {
       question: language.code === 'de' 
-        ? 'Wie dringend ist Ihr Bedarf?' 
-        : 'How urgent is your need?',
+        ? 'Wie dringend benötigen Sie finanzielle Unterstützung?' 
+        : 'How urgently do you need financial support?',
       answers: [
         { key: 'immediate', en: 'Immediate/Emergency', de: 'Sofort/Notfall' },
         { key: 'soon', en: 'Within a few days', de: 'Innerhalb weniger Tage' },
@@ -82,17 +83,16 @@ const HealthSupportPage: React.FC = () => {
     },
     {
       question: language.code === 'de' 
-        ? 'Welche Art von Gesundheitsunterstützung benötigen Sie?' 
-        : 'What type of health support do you need?',
+        ? 'Welche Art von finanzieller Unterstützung benötigen Sie?' 
+        : 'What type of financial support do you need?',
       answers: [
-        { key: 'emergency', en: 'Emergency Care', de: 'Notfallversorgung' },
-        { key: 'mental-health', en: 'Mental Health', de: 'Psychische Gesundheit' },
-        { key: 'medical-care', en: 'General Medical Care', de: 'Allgemeine medizinische Versorgung' },
-        { key: 'counseling', en: 'Counseling', de: 'Beratung' },
-        { key: 'crisis-support', en: 'Crisis Support', de: 'Krisenunterstützung' },
-        { key: 'community-health', en: 'Community Health', de: 'Gemeinschaftsgesundheit' },
-        { key: 'home-care', en: 'Home Care', de: 'Häusliche Pflege' },
-        { key: 'therapy', en: 'Therapy', de: 'Therapie' }
+        { key: 'budgeting', en: 'Budgeting Help', de: 'Budgetierungshilfe' },
+        { key: 'debt-counseling', en: 'Debt Counseling', de: 'Schuldnerberatung' },
+        { key: 'financial-planning', en: 'Financial Planning', de: 'Finanzplanung' },
+        { key: 'investment-courses', en: 'Investment Education', de: 'Investmentbildung' },
+        { key: 'banking-basics', en: 'Banking Basics', de: 'Banking-Grundlagen' },
+        { key: 'emergency-aid', en: 'Emergency Financial Aid', de: 'Finanzielle Nothilfe' },
+        { key: 'financial-education', en: 'Financial Education', de: 'Finanzbildung' }
       ],
       key: 'supportType' as keyof typeof quizAnswers
     },
@@ -107,7 +107,7 @@ const HealthSupportPage: React.FC = () => {
 
   // Apply filters based on quiz answers and manual filters
   useEffect(() => {
-    let results = healthSupportEntities;
+    let results = financialSupportEntities;
     
     // Apply quiz filters
     if (quizAnswers.supportType) {
@@ -186,7 +186,7 @@ const HealthSupportPage: React.FC = () => {
   };
 
   const resetQuiz = () => {
-    setQuizAnswers({ supportType: '', location: '', urgency: '' });
+    setQuizAnswers({ urgency: '', supportType: '', location: '' });
     setCurrentQuestion(0);
     setShowQuiz(true);
   };
@@ -212,10 +212,10 @@ const HealthSupportPage: React.FC = () => {
     setSelectedLocations([]);
   };
 
-  const pageTitle = language.code === 'de' ? 'Gesundheitsunterstützung' : 'Health Support';
+  const pageTitle = language.code === 'de' ? 'Finanzielle Bildung' : 'Financial Literacy';
   const pageDescription = language.code === 'de' 
-    ? 'Finden Sie Gesundheitsdienste und psychische Gesundheitsunterstützung in Ihrer Nähe.'
-    : 'Find health services and mental health support in your area.';
+    ? 'Finden Sie finanzielle Bildungsdienste und Beratung in Ihrer Nähe.'
+    : 'Find financial education services and counseling in your area.';
 
   // Filter groups for FilterSection
   const filterGroups = [
@@ -253,10 +253,10 @@ const HealthSupportPage: React.FC = () => {
           currentQuestion={currentQuestion}
           questions={quizQuestions}
           languageCode={language.code}
-          title={language.code === 'de' ? 'Gesundheits-Assistent' : 'Health Support Assistant'}
+          title={language.code === 'de' ? 'Finanz-Assistent' : 'Financial Support Assistant'}
           subtitle={language.code === 'de' 
-            ? 'Beantworten Sie ein paar Fragen, um passende Gesundheitsdienste zu finden.'
-            : 'Answer a few questions to find suitable health services.'}
+            ? 'Beantworten Sie ein paar Fragen, um passende Finanzdienstleistungen zu finden.'
+            : 'Answer a few questions to find suitable financial services.'}
           onAnswer={handleQuizAnswer}
           onSkip={handleSkipQuiz}
           onClose={handleCloseQuiz}
@@ -279,7 +279,7 @@ const HealthSupportPage: React.FC = () => {
         />
         
         {!showQuiz && (
-          <HealthSupportList 
+          <FinancialSupportList 
             entities={filteredEntities}
             languageCode={language.code}
           />
@@ -310,4 +310,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HealthSupportPage;
+export default FinancialSupportPage;
