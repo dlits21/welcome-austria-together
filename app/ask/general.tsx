@@ -13,6 +13,8 @@ import { useRouter } from 'expo-router';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { languages } from '../../data/languages/common';
 import PageNavigation from '../../components/PageNavigation';
+import LanguageModal from '../../components/LanguageModal';
+import HelpModal from '../../components/HelpModal';
 
 // Accordion item component
 interface AccordionItemProps {
@@ -122,6 +124,9 @@ const GeneralSupport: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const router = useRouter();
   const [soundEnabled, setSoundEnabled] = useState(true);
+  const [showLanguageModal, setShowLanguageModal] = useState(false);
+  const [showHelpModal, setShowHelpModal] = useState(false);
+
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
   
@@ -214,6 +219,8 @@ const GeneralSupport: React.FC = () => {
       <PageNavigation 
         toggleSound={toggleSound}
         soundEnabled={soundEnabled}
+        showLanguageModal={() => setShowLanguageModal(true)}
+        showHelpModal={() => setShowHelpModal(true)}
       />
       
       <View style={styles.titleContainer}>
@@ -317,7 +324,21 @@ const GeneralSupport: React.FC = () => {
             />
           ))}
         </AccordionItem>
+
       </ScrollView>
+      {/* Language Modal */}
+      <LanguageModal
+        visible={showLanguageModal}
+        onClose={() => setShowLanguageModal(false)}
+        languageCode={language.code}
+      />
+
+      {/* Help Modal */}
+      <HelpModal
+        visible={showHelpModal}
+        onClose={() => setShowHelpModal(false)}
+        languageCode={language.code}
+      />
     </SafeAreaView>
   );
 };

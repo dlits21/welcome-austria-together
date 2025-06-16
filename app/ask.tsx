@@ -6,6 +6,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { useLanguage } from '../contexts/LanguageContext';
 import { languages } from '../data/languages/common';
 import Header from '../components/Header';
+import PageNavigation from '../components/PageNavigation';
 import LanguageModal from '../components/LanguageModal';
 import HelpModal from '../components/HelpModal';
 
@@ -103,7 +104,7 @@ const AskPage: React.FC = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Header 
+      <PageNavigation
         toggleSound={toggleSound}
         soundEnabled={soundEnabled}
         showLanguageModal={() => setShowLanguageModal(true)}

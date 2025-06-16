@@ -9,6 +9,8 @@ import {
 import { useLanguage } from '../../contexts/LanguageContext';
 import { languages } from '../../data/languages/common';
 import PageNavigation from '../../components/PageNavigation';
+import LanguageModal from '../../components/LanguageModal';
+import HelpModal from '../../components/HelpModal';
 import BaseQuizModal from '../../components/BaseQuizModal';
 import FilterSection from '../../components/FilterSection';
 import QuizControls from '../../components/QuizControls';
@@ -43,7 +45,9 @@ interface LegalSupportEntity {
 const LegalSupportPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
-  
+  const [showLanguageModal, setShowLanguageModal] = useState(false);
+  const [showHelpModal, setShowHelpModal] = useState(false);
+
   // Convert JSON data to array format
   const legalSupportEntities: LegalSupportEntity[] = Object.values(legalSupportEntitiesData);
   const [filteredEntities, setFilteredEntities] = useState<LegalSupportEntity[]>(legalSupportEntities);
@@ -233,6 +237,8 @@ const LegalSupportPage: React.FC = () => {
       <PageNavigation 
         toggleSound={toggleSound}
         soundEnabled={soundEnabled}
+        showLanguageModal={() => setShowLanguageModal(true)}
+        showHelpModal={() => setShowHelpModal(true)}
       />
       
       <View style={styles.content}>
@@ -276,6 +282,20 @@ const LegalSupportPage: React.FC = () => {
           />
         )}
       </View>
+
+      {/* Language Modal */}
+      <LanguageModal
+        visible={showLanguageModal}
+        onClose={() => setShowLanguageModal(false)}
+        languageCode={language.code}
+      />
+
+      {/* Help Modal */}
+      <HelpModal
+        visible={showHelpModal}
+        onClose={() => setShowHelpModal(false)}
+        languageCode={language.code}
+      />
     </SafeAreaView>
   );
 };

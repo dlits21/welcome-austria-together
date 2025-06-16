@@ -17,11 +17,13 @@
       "en": "BBU provides comprehensive legal support for asylum seekers throughout Austria. Our experienced legal advisors help with asylum procedures, appeals, and other legal matters.",
       "de": "BBU bietet umfassende Rechtsunterstützung für Asylsuchende in ganz Österreich. Unsere erfahrenen Rechtsberater helfen bei Asylverfahren, Berufungen und anderen rechtlichen Angelegenheiten."
     },
+    "provider": "Bundesagentur für Betreuungs- und Unterstützungsleistungen (BBU) GmbH",
     "contact": {
-      "phone": "+43 1 234 5678",
+      "phone": "+43 1 2676 8709 400",
       "email": "info@bbu.gv.at",
       "website": "https://www.bbu.gv.at"
     },
+    "hasMap": true,
     "coordinates": {
       "lat": 48.2082,
       "lng": 16.3738
@@ -53,6 +55,8 @@
       "en": "Providing expert legal guidance for immigration matters in Vienna. Our team specializes in residence permits, family reunification, and general immigration law.",
       "de": "Expertenberatung für Einwanderungsangelegenheiten in Wien. Unser Team spezialisiert sich auf Aufenthaltstitel, Familienzusammenführung und allgemeines Einwanderungsrecht."
     },
+    "provider": "Stadt Wien",
+    "hasMap": true,
     "contact": {
       "phone": "+43 1 987 6543",
       "email": "beratung@wien.gv.at",
@@ -94,6 +98,8 @@
       "email": "citizenship@graz.at",
       "website": "https://www.graz.at/cms/beitrag/10034466/7772565/"
     },
+    "provider": "Stadt Wien",
+    "hasMap": true,
     "coordinates": {
       "lat": 47.0707,
       "lng": 15.4395
@@ -130,6 +136,8 @@
       "email": "work@linz.at",
       "website": "https://www.linz.at/leben/7726.php"
     },
+    "provider": "Stadt Linu",
+    "hasMap": true,
     "coordinates": {
       "lat": 48.3069,
       "lng": 14.2858
@@ -166,6 +174,8 @@
       "email": "discrimination@equalrights.at",
       "website": "https://www.gleichbehandlungsanwaltschaft.gv.at/"
     },
+    "provider": "Gleichbehandlungsanwaltschaft",
+    "hasMap": true,
     "coordinates": {
       "lat": 48.2092,
       "lng": 16.3728

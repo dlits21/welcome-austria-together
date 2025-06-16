@@ -32,7 +32,10 @@
       "address": "Rathaus, Friedrich-Schmidt-Platz 1, 1010 Vienna"
     },
     "hasMap": true,
-    "coordinates": [16.3570, 48.2106]
+    "coordinates": {
+      "lng":16.3570,
+      "lat":48.2106
+    }
   },
   "schuldnerberatung-wien": {
     "id": "schuldnerberatung-wien",
@@ -66,7 +69,10 @@
       "address": "Rechte Wienzeile 81/6, 1050 Vienna"
     },
     "hasMap": true,
-    "coordinates": [16.3566, 48.1962]
+    "coordinates": {
+      "lng":16.3566,
+      "lat":48.1962
+    }
   },
   "sparkasse-financial-education": {
     "id": "sparkasse-financial-education",
@@ -100,7 +106,10 @@
       "address": "Am Graben 21, 1010 Vienna"
     },
     "hasMap": true,
-    "coordinates": [16.3706, 48.2093]
+    "coordinates": {
+      "lng":16.3706,
+      "lat":48.2093
+    }
   },
   "caritas-financial-counseling": {
     "id": "caritas-financial-counseling",
@@ -134,7 +143,10 @@
       "address": "Albrechtskreithgasse 19-21, 1160 Vienna"
     },
     "hasMap": true,
-    "coordinates": [16.3350, 48.2148]
+    "coordinates": {
+      "lng":16.3350,
+      "lat":48.2148
+    }
   },
   "financial-literacy-online": {
     "id": "financial-literacy-online",

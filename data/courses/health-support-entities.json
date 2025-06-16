@@ -32,7 +32,10 @@
       "address": "Wiedner Hauptstraße 32, 1040 Vienna"
     },
     "hasMap": true,
-    "coordinates": [16.3738, 48.2082]
+    "coordinates": {
+      "lat": 48.2082,
+      "lng": 16.3738
+    }
   },
   "caritas-mental-health": {
     "id": "caritas-mental-health",
@@ -66,7 +69,10 @@
       "address": "Albrechtskreithgasse 19-21, 1160 Vienna"
     },
     "hasMap": true,
-    "coordinates": [16.3350, 48.2148]
+    "coordinates": {
+      "lat": 48.2148,
+      "lng": 16.3350
+    }
   },
   "sozialmedizinisches-zentrum": {
     "id": "sozialmedizinisches-zentrum",
@@ -100,7 +106,10 @@
       "address": "Baumgartner Höhe 1, 1140 Vienna"
     },
     "hasMap": true,
-    "coordinates": [16.2667, 48.2097]
+    "coordinates": {
+      "lat": 48.2148,
+      "lng": 16.3350
+    }
   },
   "die-hilfswerke": {
     "id": "die-hilfswerke",
@@ -134,7 +143,10 @@
       "address": "Schottenfeldgasse 29, 1070 Vienna"
     },
     "hasMap": true,
-    "coordinates": [16.3486, 48.2026]
+    "coordinates": {
+      "lat": 48.2148,
+      "lng": 16.3350
+    }
   },
   "telefonseelsorge": {
     "id": "telefonseelsorge",
