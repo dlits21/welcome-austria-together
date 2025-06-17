@@ -9,7 +9,8 @@ import {
   TouchableOpacity,
   Linking,
   Alert,
-  Platform 
+  Platform,
+  ScrollView
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useLanguage } from '../../contexts/LanguageContext';
@@ -26,6 +27,14 @@ interface EmergencyContact {
   type: string;
 }
 
+interface EmergencyCategory {
+  key: string;
+  emoji: string;
+  title: { en: string; de: string };
+  subtitle: { en: string; de: string };
+  contacts: EmergencyContact[];
+}
+
 const EmergencySupport: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
@@ -39,93 +48,106 @@ const EmergencySupport: React.FC = () => {
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
-  const emergencyContacts: { [key: string]: EmergencyContact[] } = {
-    fire: [
-      {
-        name: { en: 'Fire Department', de: 'Feuerwehr' },
-        phone: '122',
-        description: { en: 'For fires, explosions, and rescue operations', de: 'Für Brände, Explosionen und Rettungsoperationen' },
-        type: 'fire'
-      }
-    ],
-    police: [
-      {
-        name: { en: 'Police', de: 'Polizei' },
-        phone: '133',
-        description: { en: 'For crimes, accidents, and security emergencies', de: 'Für Verbrechen, Unfälle und Sicherheitsnotfälle' },
-        type: 'police'
-      }
-    ],
-    medical: [
-      {
-        name: { en: 'Emergency Medical Services', de: 'Rettungsdienst' },
-        phone: '144',
-        description: { en: 'For medical emergencies and ambulance', de: 'Für medizinische Notfälle und Krankenwagen' },
-        type: 'medical'
-      }
-    ],
-    violence: [
-      {
-        name: { en: 'Women\'s Emergency Hotline', de: 'Frauen-Notruf' },
-        phone: '01 71719',
-        description: { en: 'For domestic violence and sexual assault', de: 'Für häusliche Gewalt und sexuelle Übergriffe' },
-        type: 'violence'
-      },
-      {
-        name: { en: 'Police', de: 'Polizei' },
-        phone: '133',
-        description: { en: 'For immediate danger situations', de: 'Für akute Gefahrensituationen' },
-        type: 'violence'
-      }
-    ],
-    mental: [
-      {
-        name: { en: 'Crisis Intervention Center', de: 'Kriseninterventionszentrum' },
-        phone: '01 406 95 95',
-        description: { en: 'For psychological crises and suicide prevention', de: 'Für psychische Krisen und Suizidprävention' },
-        type: 'mental'
-      }
-    ],
-    general: [
-      {
-        name: { en: 'European Emergency Number', de: 'Europäische Notrufnummer' },
-        phone: '112',
-        description: { en: 'Universal emergency number for all services', de: 'Universelle Notrufnummer für alle Dienste' },
-        type: 'general'
-      }
-    ]
-  };
-
-  const quizQuestions = [
+  const emergencyCategories: EmergencyCategory[] = [
     {
-      question: language.code === 'de' 
-        ? 'Welche Art von Notfall haben Sie?' 
-        : 'What type of emergency do you have?',
-      answers: [
-        { key: 'fire', en: 'Fire or explosion', de: 'Brand oder Explosion' },
-        { key: 'medical', en: 'Medical emergency', de: 'Medizinischer Notfall' },
-        { key: 'police', en: 'Crime or accident', de: 'Verbrechen oder Unfall' },
-        { key: 'violence', en: 'Violence or harassment', de: 'Gewalt oder Belästigung' },
-        { key: 'mental', en: 'Mental health crisis', de: 'Psychische Krise' },
-        { key: 'general', en: 'Other emergency', de: 'Anderer Notfall' }
-      ],
-      key: 'emergencyType'
+      key: 'fire',
+      emoji: '🔥',
+      title: { en: 'Fire Emergency', de: 'Feuer-Notfall' },
+      subtitle: { en: 'Fires, explosions, rescue', de: 'Brände, Explosionen, Rettung' },
+      contacts: [
+        {
+          name: { en: 'Fire Department', de: 'Feuerwehr' },
+          phone: '122',
+          description: { en: 'For fires, explosions, and rescue operations', de: 'Für Brände, Explosionen und Rettungsoperationen' },
+          type: 'fire'
+        }
+      ]
+    },
+    {
+      key: 'police',
+      emoji: '🚔',
+      title: { en: 'Police Emergency', de: 'Polizei-Notfall' },
+      subtitle: { en: 'Crime, accidents, security', de: 'Verbrechen, Unfälle, Sicherheit' },
+      contacts: [
+        {
+          name: { en: 'Police', de: 'Polizei' },
+          phone: '133',
+          description: { en: 'For crimes, accidents, and security emergencies', de: 'Für Verbrechen, Unfälle und Sicherheitsnotfälle' },
+          type: 'police'
+        }
+      ]
+    },
+    {
+      key: 'medical',
+      emoji: '🚑',
+      title: { en: 'Medical Emergency', de: 'Medizinischer Notfall' },
+      subtitle: { en: 'Health emergencies, ambulance', de: 'Gesundheitsnotfälle, Krankenwagen' },
+      contacts: [
+        {
+          name: { en: 'Emergency Medical Services', de: 'Rettungsdienst' },
+          phone: '144',
+          description: { en: 'For medical emergencies and ambulance', de: 'Für medizinische Notfälle und Krankenwagen' },
+          type: 'medical'
+        }
+      ]
+    },
+    {
+      key: 'violence',
+      emoji: '🆘',
+      title: { en: 'Violence/Harassment', de: 'Gewalt/Belästigung' },
+      subtitle: { en: 'Domestic violence, assault', de: 'Häusliche Gewalt, Übergriffe' },
+      contacts: [
+        {
+          name: { en: 'Women\'s Emergency Hotline', de: 'Frauen-Notruf' },
+          phone: '01 71719',
+          description: { en: 'For domestic violence and sexual assault', de: 'Für häusliche Gewalt und sexuelle Übergriffe' },
+          type: 'violence'
+        },
+        {
+          name: { en: 'Police', de: 'Polizei' },
+          phone: '133',
+          description: { en: 'For immediate danger situations', de: 'Für akute Gefahrensituationen' },
+          type: 'violence'
+        }
+      ]
+    },
+    {
+      key: 'mental',
+      emoji: '🧠',
+      title: { en: 'Mental Health Crisis', de: 'Psychische Krise' },
+      subtitle: { en: 'Psychological crisis, suicide prevention', de: 'Psychische Krise, Suizidprävention' },
+      contacts: [
+        {
+          name: { en: 'Crisis Intervention Center', de: 'Kriseninterventionszentrum' },
+          phone: '01 406 95 95',
+          description: { en: 'For psychological crises and suicide prevention', de: 'Für psychische Krisen und Suizidprävention' },
+          type: 'mental'
+        }
+      ]
+    },
+    {
+      key: 'general',
+      emoji: '📞',
+      title: { en: 'General Emergency', de: 'Allgemeiner Notfall' },
+      subtitle: { en: 'Universal emergency number', de: 'Universelle Notrufnummer' },
+      contacts: [
+        {
+          name: { en: 'European Emergency Number', de: 'Europäische Notrufnummer' },
+          phone: '112',
+          description: { en: 'Universal emergency number for all services', de: 'Universelle Notrufnummer für alle Dienste' },
+          type: 'general'
+        }
+      ]
     }
   ];
 
-  const handleQuizAnswer = (answer: string | { key: string; en: string; de: string }) => {
-    const answerValue = typeof answer === 'string' ? answer : answer.key;
-    const contacts = emergencyContacts[answerValue] || emergencyContacts.general;
-    
-    if (contacts.length === 1) {
-      setSelectedEmergency(contacts[0]);
+  const handleCategoryPress = (category: EmergencyCategory) => {
+    if (category.contacts.length === 1) {
+      setSelectedEmergency(category.contacts[0]);
       setShowContactModal(true);
-      setShowQuiz(false);
     } else {
-      // Show selection if multiple contacts
-      setSelectedEmergency(contacts[0]); // For now, show first one
-      setShowContactModal(true);
-      setShowQuiz(false);
+      // Show quiz for categories with multiple contacts
+      setShowQuiz(true);
     }
   };
 
@@ -189,25 +211,32 @@ const EmergencySupport: React.FC = () => {
             : 'Quick access to important emergency contacts'}
         </Text>
 
-        <BaseQuizModal
-          visible={showQuiz}
-          currentQuestion={currentQuestion}
-          questions={quizQuestions}
-          languageCode={language.code}
-          title={language.code === 'de' ? 'Notfall-Assistent' : 'Emergency Assistant'}
-          subtitle={language.code === 'de' 
-            ? 'Wählen Sie Ihren Notfall-Typ für sofortige Hilfe'
-            : 'Select your emergency type for immediate help'}
-          onAnswer={handleQuizAnswer}
-          onSkip={() => setShowQuiz(false)}
-          onClose={() => setShowQuiz(false)}
-        />
+        <ScrollView style={styles.gridContainer} showsVerticalScrollIndicator={false}>
+          <View style={styles.emergencyGrid}>
+            {emergencyCategories.map((category) => (
+              <TouchableOpacity
+                key={category.key}
+                style={styles.emergencyCard}
+                onPress={() => handleCategoryPress(category)}
+              >
+                <Text style={styles.emergencyEmoji}>{category.emoji}</Text>
+                <Text style={styles.emergencyTitle}>
+                  {language.code === 'de' ? category.title.de : category.title.en}
+                </Text>
+                <Text style={styles.emergencySubtitle}>
+                  {language.code === 'de' ? category.subtitle.de : category.subtitle.en}
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+        </ScrollView>
 
         {/* Emergency Contact Modal */}
         <Modal
           visible={showContactModal}
           transparent={true}
           animationType="slide"
+          statusBarTranslucent={Platform.OS === 'android'}
         >
           <View style={styles.modalOverlay}>
             <View style={styles.contactModal}>
@@ -294,12 +323,52 @@ const styles = StyleSheet.create({
     color: '#666',
     marginBottom: 24,
   },
+  gridContainer: {
+    flex: 1,
+  },
+  emergencyGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    paddingBottom: 20,
+  },
+  emergencyCard: {
+    width: '48%',
+    backgroundColor: '#f8fafc',
+    borderRadius: 16,
+    padding: 20,
+    marginBottom: 16,
+    borderWidth: 2,
+    borderColor: '#e2e8f0',
+    alignItems: 'center',
+    minHeight: 140,
+    justifyContent: 'center',
+  },
+  emergencyEmoji: {
+    fontSize: 32,
+    marginBottom: 12,
+  },
+  emergencyTitle: {
+    fontSize: 14,
+    fontWeight: '600',
+    textAlign: 'center',
+    marginBottom: 8,
+    color: '#1e293b',
+    lineHeight: 18,
+  },
+  emergencySubtitle: {
+    fontSize: 12,
+    color: '#64748b',
+    textAlign: 'center',
+    lineHeight: 16,
+  },
   modalOverlay: {
     flex: 1,
     backgroundColor: 'rgba(0,0,0,0.5)',
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
+    paddingTop: Platform.OS === 'ios' ? 50 : 20,
   },
   contactModal: {
     backgroundColor: '#fff',
@@ -309,6 +378,17 @@ const styles = StyleSheet.create({
     maxWidth: 400,
     alignItems: 'center',
     position: 'relative',
+    ...Platform.select({
+      ios: {
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+      },
+      android: {
+        elevation: 5,
+      },
+    }),
   },
   closeButton: {
     position: 'absolute',
