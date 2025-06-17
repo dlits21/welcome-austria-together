@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Modal, View, Text, TouchableOpacity, StyleSheet, ScrollView, Platform } from 'react-native';
+import { Modal, View, Text, TouchableOpacity, StyleSheet, ScrollView, Platform, Dimensions } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 interface BaseQuizQuestion {
@@ -37,6 +37,8 @@ const BaseQuizModal: React.FC<BaseQuizModalProps> = ({
   if (!visible || currentQuestion >= questions.length) return null;
 
   const currentQ = questions[currentQuestion];
+  const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
+  const isSmallScreen = screenWidth < 400 || screenHeight < 700;
 
   return (
     <Modal
@@ -46,19 +48,23 @@ const BaseQuizModal: React.FC<BaseQuizModalProps> = ({
       statusBarTranslucent={Platform.OS === 'android'}
     >
       <View style={styles.modalOverlay}>
-        <View style={styles.modalContent}>
+        <View style={[
+          styles.modalContent,
+          isSmallScreen && styles.modalContentSmall,
+          { maxHeight: screenHeight * 0.9 }
+        ]}>
           <TouchableOpacity style={styles.closeButton} onPress={onClose}>
             <MaterialIcons name="close" size={24} color="#666" />
           </TouchableOpacity>
           
-          <Text style={styles.modalTitle}>{title}</Text>
-          <Text style={styles.modalSubtitle}>{subtitle}</Text>
+          <Text style={[styles.modalTitle, isSmallScreen && styles.modalTitleSmall]}>{title}</Text>
+          <Text style={[styles.modalSubtitle, isSmallScreen && styles.modalSubtitleSmall]}>{subtitle}</Text>
 
           <View style={styles.questionContainer}>
-            <Text style={styles.questionText}>{currentQ.question}</Text>
+            <Text style={[styles.questionText, isSmallScreen && styles.questionTextSmall]}>{currentQ.question}</Text>
             
             <ScrollView 
-              style={styles.answersScrollView} 
+              style={[styles.answersScrollView, { maxHeight: screenHeight * 0.5 }]} 
               contentContainerStyle={styles.answersContainer}
               showsVerticalScrollIndicator={true}
               nestedScrollEnabled={true}
@@ -77,10 +83,10 @@ const BaseQuizModal: React.FC<BaseQuizModalProps> = ({
                 return (
                   <TouchableOpacity
                     key={index}
-                    style={styles.answerButton}
+                    style={[styles.answerButton, isSmallScreen && styles.answerButtonSmall]}
                     onPress={() => onAnswer(answer)}
                   >
-                    <Text style={styles.answerText}>{displayText}</Text>
+                    <Text style={[styles.answerText, isSmallScreen && styles.answerTextSmall]}>{displayText}</Text>
                   </TouchableOpacity>
                 );
               })}
@@ -89,12 +95,12 @@ const BaseQuizModal: React.FC<BaseQuizModalProps> = ({
 
           <View style={styles.modalFooter}>
             <TouchableOpacity style={styles.skipButton} onPress={onSkip}>
-              <Text style={styles.skipButtonText}>
+              <Text style={[styles.skipButtonText, isSmallScreen && styles.skipButtonTextSmall]}>
                 {languageCode === 'de' ? 'Überspringen' : 'Skip'}
               </Text>
             </TouchableOpacity>
             
-            <Text style={styles.progressText}>
+            <Text style={[styles.progressText, isSmallScreen && styles.progressTextSmall]}>
               {currentQuestion + 1} / {questions.length}
             </Text>
           </View>
@@ -110,7 +116,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0.5)',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 20,
+    padding: 16,
     paddingTop: Platform.OS === 'ios' ? 50 : 20,
   },
   modalContent: {
@@ -119,7 +125,6 @@ const styles = StyleSheet.create({
     padding: 24,
     width: '100%',
     maxWidth: 400,
-    maxHeight: Platform.OS === 'ios' ? '85%' : '80%',
     alignItems: 'center',
     position: 'relative',
     ...Platform.select({
@@ -133,6 +138,10 @@ const styles = StyleSheet.create({
         elevation: 5,
       },
     }),
+  },
+  modalContentSmall: {
+    padding: 16,
+    maxWidth: '100%',
   },
   closeButton: {
     position: 'absolute',
@@ -149,12 +158,20 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 20,
   },
+  modalTitleSmall: {
+    fontSize: 18,
+    marginTop: 16,
+  },
   modalSubtitle: {
     fontSize: 14,
     color: '#6b7280',
     lineHeight: 20,
     textAlign: 'center',
     marginBottom: 24,
+  },
+  modalSubtitleSmall: {
+    fontSize: 12,
+    marginBottom: 16,
   },
   questionContainer: {
     width: '100%',
@@ -169,9 +186,12 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     textAlign: 'center',
   },
+  questionTextSmall: {
+    fontSize: 16,
+    marginBottom: 16,
+  },
   answersScrollView: {
     width: '100%',
-    maxHeight: Platform.OS === 'ios' ? 300 : 250,
   },
   answersContainer: {
     width: '100%',
@@ -189,12 +209,21 @@ const styles = StyleSheet.create({
     minHeight: 50,
     justifyContent: 'center',
   },
+  answerButtonSmall: {
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    minHeight: 44,
+  },
   answerText: {
     fontSize: 16,
     color: '#374151',
     fontWeight: '500',
     textAlign: 'center',
     lineHeight: 20,
+  },
+  answerTextSmall: {
+    fontSize: 14,
+    lineHeight: 18,
   },
   modalFooter: {
     flexDirection: 'row',
@@ -214,9 +243,15 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '500',
   },
+  skipButtonTextSmall: {
+    fontSize: 12,
+  },
   progressText: {
     fontSize: 14,
     color: '#6b7280',
+  },
+  progressTextSmall: {
+    fontSize: 12,
   },
 });
 
