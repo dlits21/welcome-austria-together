@@ -16,6 +16,8 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import { languages } from '../../data/languages/common';
 import PageNavigation from '../../components/PageNavigation';
 import BaseQuizModal from '../../components/BaseQuizModal';
+import LanguageModal from '../../components/LanguageModal';
+import HelpModal from '../../components/HelpModal';
 
 interface EmergencyContact {
   name: { en: string; de: string };
@@ -27,6 +29,9 @@ interface EmergencyContact {
 const EmergencySupport: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
+  const [showLanguageModal, setShowLanguageModal] = useState(false);
+  const [showHelpModal, setShowHelpModal] = useState(false);
+
   const [showQuiz, setShowQuiz] = useState(true);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedEmergency, setSelectedEmergency] = useState<EmergencyContact | null>(null);
@@ -170,6 +175,8 @@ const EmergencySupport: React.FC = () => {
       <PageNavigation 
         toggleSound={toggleSound}
         soundEnabled={soundEnabled}
+        showLanguageModal={() => setShowLanguageModal(true)}
+        showHelpModal={() => setShowHelpModal(true)}
       />
       
       <View style={styles.content}>
@@ -251,6 +258,19 @@ const EmergencySupport: React.FC = () => {
           </View>
         </Modal>
       </View>
+       {/* Language Modal */}
+        <LanguageModal
+          visible={showLanguageModal}
+          onClose={() => setShowLanguageModal(false)}
+          languageCode={language.code}
+        />
+
+        {/* Help Modal */}
+        <HelpModal
+          visible={showHelpModal}
+          onClose={() => setShowHelpModal(false)}
+          languageCode={language.code}
+        />
     </SafeAreaView>
   );
 };
