@@ -18,9 +18,11 @@ const DynamicHealthSupportPage: React.FC = () => {
     );
   }
 
-  const entityData = healthSupportEntitiesData[selectedEntityId as keyof typeof healthSupportEntitiesData];
+  const entity = healthSupportEntitiesData.entities.find(
+    entity => entity.id === selectedEntityId
+  );
 
-  if (!entityData) {
+  if (!entity) {
     return (
       <View style={styles.centered}>
         <Text style={styles.title}>Entity not found</Text>
@@ -31,7 +33,7 @@ const DynamicHealthSupportPage: React.FC = () => {
     );
   }
 
-  return <GenericGermanCoursePage courseData={entityData} />;
+  return <GenericGermanCoursePage courseData={entity} />;
 };
 
 export default DynamicHealthSupportPage;
