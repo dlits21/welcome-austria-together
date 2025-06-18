@@ -1,27 +1,34 @@
 
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { SvgUri } from 'react-native-svg';
 
 interface ContactButtonProps {
   title: string;
-  icon?: string;
+  icon?: keyof typeof MaterialIcons.glyphMap;
   iconPath?: string;
   onPress: () => void;
 }
 
-const ContactButton: React.FC<ContactButtonProps> = ({ title, icon, iconPath, onPress }) => {
+const ContactButton: React.FC<ContactButtonProps> = ({
+  title,
+  icon,
+  iconPath,
+  onPress
+}) => {
   return (
     <TouchableOpacity style={styles.contactButton} onPress={onPress}>
-      <View style={styles.contactButtonLeft}>
+      <View style={styles.iconContainer}>
         {iconPath ? (
-          <Image source={{ uri: iconPath }} style={styles.contactIcon} />
-        ) : (
-          <MaterialIcons name={icon || "message"} size={20} color="#666" />
-        )}
-        <Text style={styles.contactButtonText}>{title}</Text>
+          <View style={styles.svgContainer}>
+            <MaterialIcons name="chat" size={20} color="#666" />
+          </View>
+        ) : icon ? (
+          <MaterialIcons name={icon} size={20} color="#666" />
+        ) : null}
       </View>
-      <MaterialIcons name="chevron-right" size={20} color="#666" />
+      <Text style={styles.contactButtonText}>{title}</Text>
     </TouchableOpacity>
   );
 };
@@ -29,7 +36,6 @@ const ContactButton: React.FC<ContactButtonProps> = ({ title, icon, iconPath, on
 const styles = StyleSheet.create({
   contactButton: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
     padding: 12,
     marginBottom: 8,
@@ -38,18 +44,18 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     backgroundColor: '#fff',
   },
-  contactButtonLeft: {
-    flexDirection: 'row',
+  iconContainer: {
+    marginRight: 12,
+    width: 24,
     alignItems: 'center',
-    flex: 1,
+  },
+  svgContainer: {
+    width: 20,
+    height: 20,
   },
   contactButtonText: {
     fontSize: 16,
-    marginLeft: 12,
-  },
-  contactIcon: {
-    width: 20,
-    height: 20,
+    color: '#333',
   },
 });
 

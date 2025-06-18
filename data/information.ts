@@ -130,7 +130,7 @@ export const informationCategories: CategoryItem[] = [
       name: { en: 'Volunteering', de: 'Mithelfen' },
       description: {
         en: 'Learn about volunteer opportunities, including community service and charitable work.',
-        de: 'Erfahren Sie mehr über Mithelfenangebote, einschließlich Gemeinschaftsdienstleistungen und charitablen Arbeiten.'
+        de: 'Erfahren Sie mehr über Mithelferangebote, einschließlich Gemeinschaftsdienstleistungen und charitablen Arbeiten.'
       },
       color: '#FF4500'
     },
@@ -153,5 +153,25 @@ export const informationCategories: CategoryItem[] = [
         de: 'Finden Sie Übersetzungsdienstleistungen und Ressourcen.'
       },
       color: '#FFA500'
+    },
+    {
+      id: 'climate-change',
+      icon: '🌍',
+      name: { en: 'Climate Change', de: 'Klimawandel' },
+      description: {
+        en: 'Learn about climate change impacts, sustainability, and environmental protection.',
+        de: 'Erfahren Sie mehr über Klimawandel-Auswirkungen, Nachhaltigkeit und Umweltschutz.'
+      },
+      color: '#22C55E'
+    },
+    {
+      id: 'mental-health',
+      icon: '🧠',
+      name: { en: 'Mental Health', de: 'Psychische Gesundheit' },
+      description: {
+        en: 'Access mental health resources, counseling services, and wellness support.',
+        de: 'Zugang zu Ressourcen für psychische Gesundheit, Beratungsdiensten und Wellness-Unterstützung.'
+      },
+      color: '#A855F7'
     },
   ];
