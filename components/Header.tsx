@@ -8,13 +8,15 @@ interface HeaderProps {
   showLanguageModal: () => void;
   showHelpModal: () => void;
   soundEnabled: boolean;
+  showVirtualAssistant?: () => void;
 }
 
 const Header: React.FC<HeaderProps> = ({ 
   toggleSound, 
   showLanguageModal, 
   showHelpModal, 
-  soundEnabled 
+  soundEnabled,
+  showVirtualAssistant 
 }) => {
   return (
     <View style={styles.header}>
@@ -25,13 +27,13 @@ const Header: React.FC<HeaderProps> = ({
       />
       
       <View style={styles.headerButtons}>
-        {/* Sound Toggle */}
+        {/* Virtual Assistant Toggle */}
         <TouchableOpacity 
           style={styles.iconButton} 
-          onPress={toggleSound}
+          onPress={showVirtualAssistant || toggleSound}
         >
           <MaterialIcons 
-            name={soundEnabled ? "volume-up" : "volume-off"} 
+            name="record-voice-over" 
             size={24} 
             color="#333" 
           />

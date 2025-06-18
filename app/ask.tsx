@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, ScrollView } from 'react-native';
 import { useRouter } from 'expo-router';
@@ -9,6 +8,7 @@ import Header from '../components/Header';
 import PageNavigation from '../components/PageNavigation';
 import LanguageModal from '../components/LanguageModal';
 import HelpModal from '../components/HelpModal';
+import VirtualAssistantModal from '../components/VirtualAssistantModal';
 
 const AskPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
@@ -16,6 +16,7 @@ const AskPage: React.FC = () => {
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
+  const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
 
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
@@ -109,6 +110,7 @@ const AskPage: React.FC = () => {
         soundEnabled={soundEnabled}
         showLanguageModal={() => setShowLanguageModal(true)}
         showHelpModal={() => setShowHelpModal(true)}
+        showVirtualAssistant={() => setShowVirtualAssistant(true)}
       />
       
       <ScrollView style={styles.content}>
@@ -147,6 +149,12 @@ const AskPage: React.FC = () => {
       <HelpModal
         visible={showHelpModal}
         onClose={() => setShowHelpModal(false)}
+        languageCode={language.code}
+      />
+
+      <VirtualAssistantModal
+        visible={showVirtualAssistant}
+        onClose={() => setShowVirtualAssistant(false)}
         languageCode={language.code}
       />
     </SafeAreaView>

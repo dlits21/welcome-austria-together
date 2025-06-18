@@ -24,6 +24,7 @@ import SearchBar from '../components/SearchBar';
 import CategoryGrid from '../components/CategoryGrid';
 import HelpModal from '../components/HelpModal';
 import LanguageModal from '../components/LanguageModal';
+import VirtualAssistantModal from '../components/VirtualAssistantModal';
 
 const Home: React.FC = () => {
   const { currentLanguage, selectedLanguage } = useLanguage();
@@ -32,6 +33,7 @@ const Home: React.FC = () => {
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
+  const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
   
   // Find the current language object, but don't default to English
   const language = languages.find(lang => lang.code === currentLanguage);
@@ -91,6 +93,7 @@ const Home: React.FC = () => {
         toggleSound={toggleSound}
         showLanguageModal={() => setShowLanguageModal(true)}
         showHelpModal={() => setShowHelpModal(true)}
+        showVirtualAssistant={() => setShowVirtualAssistant(true)}
         soundEnabled={soundEnabled}
       />
       
@@ -135,6 +138,13 @@ const Home: React.FC = () => {
       <HelpModal 
         visible={showHelpModal}
         onClose={() => setShowHelpModal(false)}
+        languageCode={currentLanguage}
+      />
+
+      {/* Virtual Assistant Modal */}
+      <VirtualAssistantModal
+        visible={showVirtualAssistant}
+        onClose={() => setShowVirtualAssistant(false)}
         languageCode={currentLanguage}
       />
     </SafeAreaView>

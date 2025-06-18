@@ -9,13 +9,15 @@ interface PageNavigationProps {
   soundEnabled: boolean;
   showLanguageModal?: () => void;
   showHelpModal?: () => void;
+  showVirtualAssistant?: () => void;
 }
 
 const PageNavigation: React.FC<PageNavigationProps> = ({
   toggleSound,
   soundEnabled,
   showLanguageModal,
-  showHelpModal
+  showHelpModal,
+  showVirtualAssistant
 }) => {
   const router = useRouter();
 
@@ -29,9 +31,12 @@ const PageNavigation: React.FC<PageNavigationProps> = ({
       </TouchableOpacity>
       
       <View style={styles.rightButtons}>
-        <TouchableOpacity style={styles.iconButton} onPress={toggleSound}>
+        <TouchableOpacity 
+          style={styles.iconButton} 
+          onPress={showVirtualAssistant || toggleSound}
+        >
           <MaterialIcons
-            name={soundEnabled ? "volume-up" : "volume-off"}
+            name="record-voice-over"
             size={24}
             color="#333"
           />
