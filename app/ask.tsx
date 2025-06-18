@@ -88,13 +88,13 @@ const AskPage: React.FC = () => {
       route: '/ask/career'
     },
     {
-      id: 'documents',
+      id: 'document',
       icon: 'description',
       title: language.code === 'de' ? 'Dokument- und Zertifizierungsmanagement' : 'Document and Certification Management',
       description: language.code === 'de' 
         ? 'Hilfe bei Dokumenten und Zertifikaten' 
         : 'Help with documents and certificates',
-      route: '/ask/documents'
+      route: '/ask/document'
     }
   ];
 

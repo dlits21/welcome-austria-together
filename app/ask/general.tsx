@@ -7,6 +7,7 @@ import {
   ScrollView, 
   SafeAreaView,
   TouchableOpacity,
+  Linking,
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
@@ -240,7 +241,7 @@ const GeneralSupport: React.FC = () => {
           <ContactButton 
             title="WhatsApp" 
             icon="message" 
-            onPress={() => handleContactClick('whatsapp')}
+            onPress={() => Linking.openURL('whatsapp://send?text=hello&phone=+4368110768180')}
           />
           <ContactButton 
             title="Signal" 
