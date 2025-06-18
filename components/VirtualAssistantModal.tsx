@@ -30,9 +30,6 @@ interface VirtualAssistantModalProps {
   defaultMode?: 'text' | 'voice';
 }
 
-// Global message store to persist messages across modal opens/closes
-let globalMessages: Message[] = [];
-
 const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
   visible,
   onClose,
@@ -50,20 +47,14 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
   const { width } = Dimensions.get('window');
   const isWideScreen = width >= 768;
 
-  // Initialize messages when modal opens
   useEffect(() => {
     if (visible) {
       setChatMode(defaultMode);
-
-      if (globalMessages.length > 0) {
-        setMessages(globalMessages);
-        return;
-      }
-
+      console.log('Rendering');
       const welcomeMessage: Message = {
         id: '1',
-        text: languageCode === 'de' 
-          ? 'Hallo! Ich bin dein virtueller Assistent. Wie kann ich dir helfen?' 
+        text: languageCode === 'de'
+          ? 'Hallo! Ich bin dein virtueller Assistent. Wie kann ich dir helfen?'
           : 'Hello! I\'m your virtual assistant. How can I help you?',
         isUser: false,
         timestamp: new Date(),
@@ -76,10 +67,10 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
           isUser: true,
           timestamp: new Date(),
         };
-        
+
         const assistantResponse: Message = {
           id: '3',
-          text: languageCode === 'de' 
+          text: languageCode === 'de'
             ? `Du hast nach "${initialMessage}" gesucht. Das ist eine interessante Frage! Ich arbeite noch daran, dir besser helfen zu können.`
             : `You searched for "${initialMessage}". That's an interesting question! I'm still learning to help you better.`,
           isUser: false,
@@ -88,35 +79,22 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
 
         const newMessages = [welcomeMessage, userMessage, assistantResponse];
         setMessages(newMessages);
-        globalMessages = newMessages;
       } else {
         const newMessages = [welcomeMessage];
         setMessages(newMessages);
-        globalMessages = newMessages;
       }
     }
   }, [visible, initialMessage, languageCode, defaultMode]);
 
-  // Update global messages when local messages change
-  useEffect(() => {
-    globalMessages = messages;
-  }, [messages]);
-
-  // Scroll to bottom when new messages arrive
-  useEffect(() => {
-    if (scrollViewRef.current && messages.length > 0) {
-      setTimeout(() => {
-        scrollViewRef.current?.scrollToEnd({ animated: true });
-      }, 100);
-    }
-  }, [messages]);
-
-  // Use useCallback to prevent re-rendering issues
+  // Handle input change with memoization to avoid unnecessary re-renders
   const handleInputChange = useCallback((text: string) => {
+      console.log('Rendering2');
     setInputText(text);
   }, []);
 
+  // Send message
   const sendMessage = useCallback(() => {
+      console.log('Rendering3');
     if (inputText.trim()) {
       const newMessage: Message = {
         id: Date.now().toString(),
@@ -125,16 +103,16 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
         timestamp: new Date(),
       };
 
-      const newMessages = [...messages, newMessage];
-      setMessages(newMessages);
-      setInputText('');
+      // Use functional updates to avoid re-renders
+      setMessages(prevMessages => [...prevMessages, newMessage]);
+      setInputText('');  // Clear the input text after sending message
 
-      // Simulate assistant response
+      // Simulate assistant response after a delay
       setTimeout(() => {
         const assistantResponse: Message = {
           id: (Date.now() + 1).toString(),
-          text: languageCode === 'de' 
-            ? 'Das ist eine interessante Frage! Ich arbeite noch daran, dir besser helfen zu können.' 
+          text: languageCode === 'de'
+            ? 'Das ist eine interessante Frage! Ich arbeite noch daran, dir besser helfen zu können.'
             : 'That\'s an interesting question! I\'m still learning to help you better.',
           isUser: false,
           timestamp: new Date(),
@@ -144,6 +122,7 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
     }
   }, [inputText, messages, languageCode]);
 
+  // Toggle voice mode
   const toggleVoiceMode = useCallback(() => {
     setIsListening(!isListening);
   }, [isListening]);
@@ -155,7 +134,7 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
   const VirtualAssistantAvatar = () => (
     <View style={styles.avatarContainer}>
       <View style={styles.largeAvatarContainer}>
-        <Image 
+        <Image
           source={require('../assets/images/assistant.jpg')}
           style={styles.assistantImage}
           resizeMode="contain"
@@ -165,8 +144,8 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
         {languageCode === 'de' ? 'Virtueller Assistent' : 'Virtual Assistant'}
       </Text>
       <Text style={styles.avatarSubtitle}>
-        {languageCode === 'de' 
-          ? 'Ich bin hier, um Ihnen zu helfen!' 
+        {languageCode === 'de'
+          ? 'Ich bin hier, um Ihnen zu helfen!'
           : 'I\'m here to help you!'}
       </Text>
 
@@ -180,7 +159,7 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
             {languageCode === 'de' ? 'Chat' : 'Chat'}
           </Text>
         </TouchableOpacity>
-        
+
         <TouchableOpacity
           style={[styles.modeButton, chatMode === 'voice' && styles.activeModeButton]}
           onPress={() => handleModeChange('voice')}
@@ -194,46 +173,6 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
     </View>
   );
 
-  const MobileTopSection = () => (
-    <View style={styles.mobileTopSection}>
-      <View style={styles.mobileAssistantContainer}>
-        <Image 
-          source={require('../assets/images/assistant.jpg')}
-          style={styles.mobileAssistantImage}
-          resizeMode="contain"
-        />
-      </View>
-      
-      <View style={styles.mobileRightSection}>
-        <Text style={styles.mobileTitle}>
-          {languageCode === 'de' ? 'Virtueller Assistent' : 'Virtual Assistant'}
-        </Text>
-
-        <View style={styles.mobileModeToggle}>
-          <TouchableOpacity
-            style={[styles.mobileModeButton, chatMode === 'text' && styles.activeMobileModeButton]}
-            onPress={() => handleModeChange('text')}
-          >
-            <MaterialIcons name="chat" size={18} color={chatMode === 'text' ? '#fff' : '#666'} />
-            <Text style={[styles.mobileModeButtonText, chatMode === 'text' && styles.activeMobileModeButtonText]}>
-              {languageCode === 'de' ? 'Chat' : 'Chat'}
-            </Text>
-          </TouchableOpacity>
-          
-          <TouchableOpacity
-            style={[styles.mobileModeButton, chatMode === 'voice' && styles.activeMobileModeButton]}
-            onPress={() => handleModeChange('voice')}
-          >
-            <MaterialIcons name="mic" size={18} color={chatMode === 'voice' ? '#fff' : '#666'} />
-            <Text style={[styles.mobileModeButtonText, chatMode === 'voice' && styles.activeMobileModeButtonText]}>
-              {languageCode === 'de' ? 'Sprechen' : 'Talk'}
-            </Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    </View>
-  );
-
   const ChatBubble = ({ message }: { message: Message }) => (
     <View style={[
       styles.messageContainer,
@@ -241,14 +180,14 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
     ]}>
       {!message.isUser && (
         <View style={styles.characterAvatar}>
-          <Image 
+          <Image
             source={require('../assets/images/assistant.jpg')}
             style={styles.avatarImage}
             resizeMode="cover"
           />
         </View>
       )}
-      
+
       <View style={[
         styles.messageBubble,
         message.isUser ? styles.userBubble : styles.assistantBubble
@@ -260,7 +199,7 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
           {message.text}
         </Text>
       </View>
-      
+
       {message.isUser && (
         <View style={styles.userAvatar}>
           <MaterialIcons name="person" size={20} color="#fff" />
@@ -269,25 +208,65 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
     </View>
   );
 
+  const MobileTopSection = () => (
+      <View style={styles.mobileTopSection}>
+        <View style={styles.mobileAssistantContainer}>
+          <Image
+            source={require('../assets/images/assistant.jpg')}
+            style={styles.mobileAssistantImage}
+            resizeMode="contain"
+          />
+        </View>
+
+        <View style={styles.mobileRightSection}>
+          <Text style={styles.mobileTitle}>
+            {languageCode === 'de' ? 'Virtueller Assistent' : 'Virtual Assistant'}
+          </Text>
+
+          <View style={styles.mobileModeToggle}>
+            <TouchableOpacity
+              style={[styles.mobileModeButton, chatMode === 'text' && styles.activeMobileModeButton]}
+              onPress={() => handleModeChange('text')}
+            >
+              <MaterialIcons name="chat" size={18} color={chatMode === 'text' ? '#fff' : '#666'} />
+              <Text style={[styles.mobileModeButtonText, chatMode === 'text' && styles.activeMobileModeButtonText]}>
+                {languageCode === 'de' ? 'Chat' : 'Chat'}
+              </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={[styles.mobileModeButton, chatMode === 'voice' && styles.activeMobileModeButton]}
+              onPress={() => handleModeChange('voice')}
+            >
+              <MaterialIcons name="mic" size={18} color={chatMode === 'voice' ? '#fff' : '#666'} />
+              <Text style={[styles.mobileModeButtonText, chatMode === 'voice' && styles.activeMobileModeButtonText]}>
+                {languageCode === 'de' ? 'Sprechen' : 'Talk'}
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+    );
+
+
   const ChatSection = () => (
-    <KeyboardAvoidingView 
+    <KeyboardAvoidingView
       style={[styles.chatSection, isWideScreen && styles.chatSectionWide]}
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : 20}
     >
-      <ScrollView 
+      <ScrollView
         ref={scrollViewRef}
         style={styles.messagesContainer}
         contentContainerStyle={styles.messagesContent}
         showsVerticalScrollIndicator={false}
         keyboardShouldPersistTaps="handled"
       >
-        {messages.map((message) => (
-          <ChatBubble key={message.id} message={message} />
-        ))}
+        {messages.map((message) => {
+          return ChatBubble({key: message.id, message: message});
+        })}
       </ScrollView>
 
-      {/* Web version: Show voice button in input area when voice mode is active */}
       {isWideScreen ? (
         <View style={[styles.inputContainer]}>
           {chatMode === 'text' ? (
@@ -296,13 +275,12 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
                 ref={textInputRef}
                 style={styles.textInput}
                 value={inputText}
-                onChangeText={handleInputChange}
+                onChangeText={setInputText}
                 placeholder={
-                  languageCode === 'de' 
-                    ? 'Schreibe eine Nachricht...' 
+                  languageCode === 'de'
+                    ? 'Schreibe eine Nachricht...'
                     : 'Type a message...'
                 }
-                multiline
                 maxLength={500}
                 returnKeyType="send"
                 onSubmitEditing={sendMessage}
@@ -318,10 +296,10 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
                 onPress={sendMessage}
                 disabled={!inputText.trim()}
               >
-                <MaterialIcons 
-                  name="send" 
-                  size={20} 
-                  color={inputText.trim() ? "#fff" : "#ccc"} 
+                <MaterialIcons
+                  name="send"
+                  size={20}
+                  color={inputText.trim() ? "#fff" : "#ccc"}
                 />
               </TouchableOpacity>
             </>
@@ -331,13 +309,13 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
                 style={[styles.webVoiceButton, isListening && styles.webVoiceButtonActive]}
                 onPress={toggleVoiceMode}
               >
-                <MaterialIcons 
-                  name={isListening ? "mic" : "mic-none"} 
-                  size={24} 
-                  color="#fff" 
+                <MaterialIcons
+                  name={isListening ? "mic" : "mic-none"}
+                  size={24}
+                  color="#fff"
                 />
                 <Text style={styles.webVoiceButtonText}>
-                  {isListening 
+                  {isListening
                     ? (languageCode === 'de' ? 'Höre zu...' : 'Listening...')
                     : (languageCode === 'de' ? 'Drücken zum Sprechen' : 'Press to Talk')
                   }
@@ -347,7 +325,6 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
           )}
         </View>
       ) : (
-        /* Mobile version: Keep existing behavior */
         <>
           {chatMode === 'text' && (
             <View style={[styles.inputContainer, !isWideScreen && styles.mobileInputContainer]}>
@@ -355,13 +332,12 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
                 ref={textInputRef}
                 style={styles.textInput}
                 value={inputText}
-                onChangeText={handleInputChange}
+                onChangeText={setInputText}
                 placeholder={
-                  languageCode === 'de' 
-                    ? 'Schreibe eine Nachricht...' 
+                  languageCode === 'de'
+                    ? 'Schreibe eine Nachricht...'
                     : 'Type a message...'
                 }
-                multiline
                 maxLength={500}
                 returnKeyType="send"
                 onSubmitEditing={sendMessage}
@@ -377,29 +353,28 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
                 onPress={sendMessage}
                 disabled={!inputText.trim()}
               >
-                <MaterialIcons 
-                  name="send" 
-                  size={20} 
-                  color={inputText.trim() ? "#fff" : "#ccc"} 
+                <MaterialIcons
+                  name="send"
+                  size={20}
+                  color={inputText.trim() ? "#fff" : "#ccc"}
                 />
               </TouchableOpacity>
             </View>
           )}
-
           {chatMode === 'voice' && !isWideScreen && (
             <View style={styles.voiceSection}>
               <TouchableOpacity
                 style={[styles.mobileVoiceButton, isListening && styles.mobileVoiceButtonActive]}
                 onPress={toggleVoiceMode}
               >
-                <MaterialIcons 
-                  name={isListening ? "mic" : "mic-none"} 
-                  size={32} 
-                  color="#fff" 
+                <MaterialIcons
+                  name={isListening ? "mic" : "mic-none"}
+                  size={32}
+                  color="#fff"
                 />
               </TouchableOpacity>
               <Text style={styles.voiceInstructions}>
-                {isListening 
+                {isListening
                   ? (languageCode === 'de' ? 'Höre zu...' : 'Listening...')
                   : (languageCode === 'de' ? 'Tippen zum Sprechen' : 'Tap to Talk')
                 }
@@ -422,11 +397,11 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
           <TouchableOpacity style={styles.closeButton} onPress={onClose}>
             <MaterialIcons name="close" size={24} color="#333" />
           </TouchableOpacity>
-          
+
           {!isWideScreen && (
             <View style={styles.headerContent}>
               <View style={styles.headerAvatar}>
-                <Image 
+                <Image
                   source={require('../assets/images/assistant.jpg')}
                   style={styles.headerAvatarImage}
                   resizeMode="cover"
@@ -437,7 +412,7 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
               </Text>
             </View>
           )}
-          
+
           <View style={styles.placeholder} />
         </View>
 
@@ -445,14 +420,14 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
           {isWideScreen ? (
             <>
               <View style={styles.assistantSection}>
-                <VirtualAssistantAvatar />
+                {VirtualAssistantAvatar()}
               </View>
-              <ChatSection />
+              {ChatSection()}
             </>
           ) : (
             <View style={styles.mobileLayout}>
-              <MobileTopSection />
-              <ChatSection />
+              {MobileTopSection()}
+              {ChatSection()}
             </View>
           )}
         </View>
