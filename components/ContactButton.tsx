@@ -1,13 +1,14 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import { SvgUri } from 'react-native-svg';
+import { SvgXml } from 'react-native-svg';
+import { Asset } from 'expo-asset';
 
 interface ContactButtonProps {
   title: string;
   icon?: keyof typeof MaterialIcons.glyphMap;
-  iconPath?: string;
+  iconPath?: any;
   onPress: () => void;
 }
 
@@ -17,12 +18,36 @@ const ContactButton: React.FC<ContactButtonProps> = ({
   iconPath,
   onPress
 }) => {
+  const [svgXml, setSvgXml] = useState<string | null>(null);
+
+  useEffect(() => {
+      const loadSvg = async () => {
+        try {
+          // Dynamically load the SVG file using Expo Asset
+          const asset = Asset.fromModule(iconPath); // This will load the SVG asset
+
+          await asset.downloadAsync(); // Download the asset (important for caching)
+
+          // Fetch the raw SVG content
+          const svgUri = asset.localUri;
+          if (svgUri) {
+            const response = await fetch(svgUri);
+            const text = await response.text();
+            setSvgXml(text);  // Set the SVG content for rendering
+          }
+        } catch (error) {
+          console.error('Error loading SVG:', error);
+        }
+      };
+
+      loadSvg();
+    }, [iconPath]);
   return (
     <TouchableOpacity style={styles.contactButton} onPress={onPress}>
       <View style={styles.iconContainer}>
         {iconPath ? (
           <View style={styles.svgContainer}>
-            <MaterialIcons name="chat" size={20} color="#666" />
+            <SvgXml xml={svgXml} width={20} height={20} />
           </View>
         ) : icon ? (
           <MaterialIcons name={icon} size={20} color="#666" />
@@ -50,6 +75,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   svgContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
     width: 20,
     height: 20,
   },

@@ -18,6 +18,10 @@ import ContactButton from '../../components/ContactButton';
 import StateCard from '../../components/StateCard';
 import FAQItem from '../../components/FAQItem';
 import { handleContactClick } from '../../utils/contactUtils';
+import FacebookIcon from '../../assets/images/facebook.svg';
+import SignalIcon from '../../assets/images/signal.svg';
+import WhatsAppIcon from '../../assets/images/whatsapp.svg';
+import TelegramIcon from '../../assets/images/telegram.svg';
 
 const GeneralSupport: React.FC = () => {
   const { currentLanguage } = useLanguage();
@@ -135,23 +139,23 @@ const GeneralSupport: React.FC = () => {
         >
           <ContactButton 
             title="WhatsApp" 
-            iconPath="assets/images/whatsapp.svg"
-            onPress={() => handleContactClick('whatsapp', true, language.code)}
+            iconPath={WhatsAppIcon}
+            onPress={() => handleContactClick('../assets/images/whatsapp.svg', true, language.code)}
           />
           <ContactButton 
             title="Signal" 
-            iconPath="assets/images/signal.svg"
-            onPress={() => handleContactClick('signal', true, language.code)}
+            iconPath={SignalIcon}
+            onPress={() => handleContactClick('../assets/images/signal.svg', true, language.code)}
           />
           <ContactButton 
             title="Telegram" 
-            iconPath="assets/images/telegram.svg"
-            onPress={() => handleContactClick('telegram', true, language.code)}
+            iconPath={TelegramIcon}
+            onPress={() => handleContactClick('../assets/images/telegram.svg', true, language.code)}
           />
           <ContactButton 
             title="Facebook" 
-            iconPath="assets/images/facebook.svg"
-            onPress={() => handleContactClick('facebook', true, language.code)}
+            iconPath={FacebookIcon}
+            onPress={() => handleContactClick('../assets/images/facebook.svg', true, language.code)}
           />
           <ContactButton 
             title="Email" 
@@ -175,18 +179,18 @@ const GeneralSupport: React.FC = () => {
         >
           <ContactButton 
             title="WhatsApp" 
-            iconPath="assets/images/whatsapp.svg"
-            onPress={() => handleContactClick('whatsapp', false, language.code)}
+            iconPath={WhatsAppIcon}
+            onPress={() => handleContactClick('../assets/images/whatsapp.svg', false, language.code)}
           />
           <ContactButton 
             title="Signal" 
-            iconPath="assets/images/signal.svg"
-            onPress={() => handleContactClick('signal', false, language.code)}
+            iconPath={SignalIcon}
+            onPress={() => handleContactClick('../assets/images/signal.svg', false, language.code)}
           />
           <ContactButton 
             title="Telegram" 
-            iconPath="assets/images/telegram.svg"
-            onPress={() => handleContactClick('telegram', false, language.code)}
+            iconPath={TelegramIcon}
+            onPress={() => handleContactClick('../assets/images/telegram.svg', false, language.code)}
           />
           <ContactButton 
             title="Forum" 
