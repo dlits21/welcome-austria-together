@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { 
   StyleSheet, 
   Text, 
@@ -73,8 +73,8 @@ const HealthSupportPage: React.FC = () => {
 
   // Create filters object for GenericSupportList
   const filters = {
-    supportType: selectedSupportTypes.length > 0 ? selectedSupportTypes[0] : '',
-    location: selectedLocations.length > 0 ? selectedLocations[0] : '',
+    supportType: selectedSupportTypes.length > 0 ? selectedSupportTypes[0] : quizAnswers.supportType,
+    location: selectedLocations.length > 0 ? selectedLocations[0] : quizAnswers.location,
     urgency: quizAnswers.urgency || ''
   };
 
@@ -117,44 +117,6 @@ const HealthSupportPage: React.FC = () => {
       key: 'location' as keyof typeof quizAnswers
     }
   ];
-
-  // Apply filters based on quiz answers and manual filters
-  useEffect(() => {
-    let results = healthSupportEntities;
-    
-    // Apply quiz filters
-    if (quizAnswers.supportType) {
-      results = results.filter(entity => 
-        entity.supportTypes.includes(quizAnswers.supportType)
-      );
-    }
-    
-    if (quizAnswers.location) {
-      const selectedLocation = locations.find(loc => 
-        loc.toLowerCase() === quizAnswers.location
-      );
-      if (selectedLocation) {
-        results = results.filter(entity => 
-          entity.location === selectedLocation || entity.location === 'Nationwide'
-        );
-      }
-    }
-    
-    // Apply manual filters
-    if (selectedSupportTypes.length > 0) {
-      results = results.filter(entity => 
-        entity.supportTypes.some(type => selectedSupportTypes.includes(type))
-      );
-    }
-    
-    if (selectedLocations.length > 0) {
-      results = results.filter(entity => 
-        selectedLocations.includes(entity.location) || entity.location === 'Nationwide'
-      );
-    }
-    
-    setFilteredEntities(results);
-  }, [quizAnswers, selectedSupportTypes, selectedLocations]);
 
   const toggleSound = () => {
     setSoundEnabled(!soundEnabled);
