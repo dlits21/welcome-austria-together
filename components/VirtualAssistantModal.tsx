@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import {
   StyleSheet,
@@ -111,7 +112,8 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
         timestamp: new Date(),
       };
 
-      setMessages(prev => [...prev, newMessage]);
+      const newMessages = [...messages, newMessage];
+      setMessages(newMessages);
       setInputText('');
 
       // Simulate assistant response
@@ -138,7 +140,7 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
     <View style={styles.avatarContainer}>
       <View style={styles.largeAvatar}>
         <Image 
-          source={{ uri: '/assets/images/assistant.jpg' }}
+          source={require('../assets/images/assistant.jpg')}
           style={styles.assistantImage}
           resizeMode="cover"
         />
@@ -204,7 +206,7 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
       {!message.isUser && (
         <View style={styles.characterAvatar}>
           <Image 
-            source={{ uri: '/assets/images/assistant.jpg' }}
+            source={require('../assets/images/assistant.jpg')}
             style={styles.avatarImage}
             resizeMode="cover"
           />
@@ -232,53 +234,56 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
   );
 
   const ChatSection = () => (
-    <View style={[styles.chatSection, isWideScreen && styles.chatSectionWide]}>
-      <KeyboardAvoidingView 
-        style={styles.chatContainer}
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+    <KeyboardAvoidingView 
+      style={[styles.chatSection, isWideScreen && styles.chatSectionWide]}
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      keyboardVerticalOffset={Platform.OS === 'ios' ? 90 : 0}
+    >
+      <ScrollView 
+        style={styles.messagesContainer}
+        contentContainerStyle={styles.messagesContent}
+        showsVerticalScrollIndicator={false}
+        keyboardShouldPersistTaps="handled"
       >
-        <ScrollView 
-          style={styles.messagesContainer}
-          contentContainerStyle={styles.messagesContent}
-          showsVerticalScrollIndicator={false}
-        >
-          {messages.map((message) => (
-            <ChatBubble key={message.id} message={message} />
-          ))}
-        </ScrollView>
+        {messages.map((message) => (
+          <ChatBubble key={message.id} message={message} />
+        ))}
+      </ScrollView>
 
-        {chatMode === 'text' && (
-          <View style={styles.inputContainer}>
-            <TextInput
-              style={styles.textInput}
-              value={inputText}
-              onChangeText={setInputText}
-              placeholder={
-                languageCode === 'de' 
-                  ? 'Schreibe eine Nachricht...' 
-                  : 'Type a message...'
-              }
-              multiline
-              maxLength={500}
+      {chatMode === 'text' && (
+        <View style={styles.inputContainer}>
+          <TextInput
+            style={styles.textInput}
+            value={inputText}
+            onChangeText={setInputText}
+            placeholder={
+              languageCode === 'de' 
+                ? 'Schreibe eine Nachricht...' 
+                : 'Type a message...'
+            }
+            multiline
+            maxLength={500}
+            returnKeyType="send"
+            onSubmitEditing={sendMessage}
+            blurOnSubmit={false}
+          />
+          <TouchableOpacity
+            style={[
+              styles.sendButton,
+              !inputText.trim() && styles.sendButtonDisabled
+            ]}
+            onPress={sendMessage}
+            disabled={!inputText.trim()}
+          >
+            <MaterialIcons 
+              name="send" 
+              size={20} 
+              color={inputText.trim() ? "#fff" : "#ccc"} 
             />
-            <TouchableOpacity
-              style={[
-                styles.sendButton,
-                !inputText.trim() && styles.sendButtonDisabled
-              ]}
-              onPress={sendMessage}
-              disabled={!inputText.trim()}
-            >
-              <MaterialIcons 
-                name="send" 
-                size={20} 
-                color={inputText.trim() ? "#fff" : "#ccc"} 
-              />
-            </TouchableOpacity>
-          </View>
-        )}
-      </KeyboardAvoidingView>
-    </View>
+          </TouchableOpacity>
+        </View>
+      )}
+    </KeyboardAvoidingView>
   );
 
   return (
@@ -298,7 +303,7 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
             <View style={styles.headerContent}>
               <View style={styles.headerAvatar}>
                 <Image 
-                  source={{ uri: '/assets/images/assistant.jpg' }}
+                  source={require('../assets/images/assistant.jpg')}
                   style={styles.headerAvatarImage}
                   resizeMode="cover"
                 />
@@ -500,9 +505,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   chatSectionWide: {
-    flex: 1,
-  },
-  chatContainer: {
     flex: 1,
   },
   messagesContainer: {
