@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import {
   StyleSheet,
@@ -192,25 +191,6 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
           </Text>
         </TouchableOpacity>
       </View>
-      
-      {chatMode === 'voice' && (
-        <TouchableOpacity
-          style={[styles.voiceButton, isListening && styles.voiceButtonActive]}
-          onPress={toggleVoiceMode}
-        >
-          <MaterialIcons 
-            name={isListening ? "mic" : "mic-none"} 
-            size={24} 
-            color="#fff" 
-          />
-          <Text style={styles.voiceButtonText}>
-            {isListening 
-              ? (languageCode === 'de' ? 'Höre zu...' : 'Listening...')
-              : (languageCode === 'de' ? 'Tippen zum Sprechen' : 'Tap to Talk')
-            }
-          </Text>
-        </TouchableOpacity>
-      )}
     </View>
   );
 
@@ -307,62 +287,126 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
         ))}
       </ScrollView>
 
-      {chatMode === 'text' && (
-        <View style={[styles.inputContainer, !isWideScreen && styles.mobileInputContainer]}>
-          <TextInput
-            ref={textInputRef}
-            style={styles.textInput}
-            value={inputText}
-            onChangeText={handleInputChange}
-            placeholder={
-              languageCode === 'de' 
-                ? 'Schreibe eine Nachricht...' 
-                : 'Type a message...'
-            }
-            multiline
-            maxLength={500}
-            returnKeyType="send"
-            onSubmitEditing={sendMessage}
-            blurOnSubmit={false}
-            autoCorrect={false}
-            autoCapitalize="sentences"
-          />
-          <TouchableOpacity
-            style={[
-              styles.sendButton,
-              !inputText.trim() && styles.sendButtonDisabled
-            ]}
-            onPress={sendMessage}
-            disabled={!inputText.trim()}
-          >
-            <MaterialIcons 
-              name="send" 
-              size={20} 
-              color={inputText.trim() ? "#fff" : "#ccc"} 
-            />
-          </TouchableOpacity>
+      {/* Web version: Show voice button in input area when voice mode is active */}
+      {isWideScreen ? (
+        <View style={[styles.inputContainer]}>
+          {chatMode === 'text' ? (
+            <>
+              <TextInput
+                ref={textInputRef}
+                style={styles.textInput}
+                value={inputText}
+                onChangeText={handleInputChange}
+                placeholder={
+                  languageCode === 'de' 
+                    ? 'Schreibe eine Nachricht...' 
+                    : 'Type a message...'
+                }
+                multiline
+                maxLength={500}
+                returnKeyType="send"
+                onSubmitEditing={sendMessage}
+                blurOnSubmit={false}
+                autoCorrect={false}
+                autoCapitalize="sentences"
+              />
+              <TouchableOpacity
+                style={[
+                  styles.sendButton,
+                  !inputText.trim() && styles.sendButtonDisabled
+                ]}
+                onPress={sendMessage}
+                disabled={!inputText.trim()}
+              >
+                <MaterialIcons 
+                  name="send" 
+                  size={20} 
+                  color={inputText.trim() ? "#fff" : "#ccc"} 
+                />
+              </TouchableOpacity>
+            </>
+          ) : (
+            <View style={styles.webVoiceContainer}>
+              <TouchableOpacity
+                style={[styles.webVoiceButton, isListening && styles.webVoiceButtonActive]}
+                onPress={toggleVoiceMode}
+              >
+                <MaterialIcons 
+                  name={isListening ? "mic" : "mic-none"} 
+                  size={24} 
+                  color="#fff" 
+                />
+                <Text style={styles.webVoiceButtonText}>
+                  {isListening 
+                    ? (languageCode === 'de' ? 'Höre zu...' : 'Listening...')
+                    : (languageCode === 'de' ? 'Drücken zum Sprechen' : 'Press to Talk')
+                  }
+                </Text>
+              </TouchableOpacity>
+            </View>
+          )}
         </View>
-      )}
+      ) : (
+        /* Mobile version: Keep existing behavior */
+        <>
+          {chatMode === 'text' && (
+            <View style={[styles.inputContainer, !isWideScreen && styles.mobileInputContainer]}>
+              <TextInput
+                ref={textInputRef}
+                style={styles.textInput}
+                value={inputText}
+                onChangeText={handleInputChange}
+                placeholder={
+                  languageCode === 'de' 
+                    ? 'Schreibe eine Nachricht...' 
+                    : 'Type a message...'
+                }
+                multiline
+                maxLength={500}
+                returnKeyType="send"
+                onSubmitEditing={sendMessage}
+                blurOnSubmit={false}
+                autoCorrect={false}
+                autoCapitalize="sentences"
+              />
+              <TouchableOpacity
+                style={[
+                  styles.sendButton,
+                  !inputText.trim() && styles.sendButtonDisabled
+                ]}
+                onPress={sendMessage}
+                disabled={!inputText.trim()}
+              >
+                <MaterialIcons 
+                  name="send" 
+                  size={20} 
+                  color={inputText.trim() ? "#fff" : "#ccc"} 
+                />
+              </TouchableOpacity>
+            </View>
+          )}
 
-      {chatMode === 'voice' && !isWideScreen && (
-        <View style={styles.voiceSection}>
-          <TouchableOpacity
-            style={[styles.mobileVoiceButton, isListening && styles.mobileVoiceButtonActive]}
-            onPress={toggleVoiceMode}
-          >
-            <MaterialIcons 
-              name={isListening ? "mic" : "mic-none"} 
-              size={32} 
-              color="#fff" 
-            />
-          </TouchableOpacity>
-          <Text style={styles.voiceInstructions}>
-            {isListening 
-              ? (languageCode === 'de' ? 'Höre zu...' : 'Listening...')
-              : (languageCode === 'de' ? 'Tippen zum Sprechen' : 'Tap to Talk')
-            }
-          </Text>
-        </View>
+          {chatMode === 'voice' && !isWideScreen && (
+            <View style={styles.voiceSection}>
+              <TouchableOpacity
+                style={[styles.mobileVoiceButton, isListening && styles.mobileVoiceButtonActive]}
+                onPress={toggleVoiceMode}
+              >
+                <MaterialIcons 
+                  name={isListening ? "mic" : "mic-none"} 
+                  size={32} 
+                  color="#fff" 
+                />
+              </TouchableOpacity>
+              <Text style={styles.voiceInstructions}>
+                {isListening 
+                  ? (languageCode === 'de' ? 'Höre zu...' : 'Listening...')
+                  : (languageCode === 'de' ? 'Tippen zum Sprechen' : 'Tap to Talk')
+                }
+              </Text>
+            </View>
+          )}
+        </>
       )}
     </KeyboardAvoidingView>
   );
@@ -739,7 +783,29 @@ const styles = StyleSheet.create({
     color: '#666',
     textAlign: 'center',
   },
+    // New web voice container styles
+    webVoiceContainer: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    webVoiceButton: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: '#10B981',
+      paddingHorizontal: 32,
+      paddingVertical: 16,
+      borderRadius: 25,
+    },
+    webVoiceButtonActive: {
+      backgroundColor: '#EF4444',
+    },
+    webVoiceButtonText: {
+      color: '#fff',
+      marginLeft: 12,
+      fontSize: 16,
+      fontWeight: '500',
+    },
 });
 
 export default VirtualAssistantModal;
-
