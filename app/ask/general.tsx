@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { 
   StyleSheet, 
@@ -154,6 +153,27 @@ const GeneralSupport: React.FC = () => {
   
   const handleContactClick = (method: string) => {
     console.log(`Contact via ${method}`);
+    
+    if (method === 'signal') {
+      // Open Signal app with pre-defined message
+      const message = encodeURIComponent(
+        language.code === 'de' 
+          ? 'Hallo, ich benötige Unterstützung und Beratung. Können Sie mir helfen?'
+          : 'Hello, I need support and counseling. Can you help me?'
+      );
+      
+      // Signal deep link format
+      const signalUrl = `sgnl://send?text=${message}`;
+      
+      // Try to open Signal app, fallback to web if not available
+      try {
+        window.open(signalUrl, '_blank');
+      } catch (error) {
+        // Fallback: open Signal web or show instructions
+        console.log('Signal app not available, showing fallback');
+        window.open('https://signal.org/download/', '_blank');
+      }
+    }
   };
   
   // States of Austria
