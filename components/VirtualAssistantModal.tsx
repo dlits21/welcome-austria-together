@@ -204,39 +204,6 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
       </SafeAreaView>
     </Modal>
   );
-
-  function ChatBubble({ message }: { message: Message }) {
-    return (
-      <View style={[
-        styles.messageContainer,
-        message.isUser ? styles.userMessageContainer : styles.assistantMessageContainer
-      ]}>
-        {!message.isUser && (
-          <View style={styles.characterAvatar}>
-            <Text style={styles.characterEmoji}>🤖</Text>
-          </View>
-        )}
-        
-        <View style={[
-          styles.messageBubble,
-          message.isUser ? styles.userBubble : styles.assistantBubble
-        ]}>
-          <Text style={[
-            styles.messageText,
-            message.isUser ? styles.userMessageText : styles.assistantMessageText
-          ]}>
-            {message.text}
-          </Text>
-        </View>
-        
-        {message.isUser && (
-          <View style={styles.userAvatar}>
-            <MaterialIcons name="person" size={20} color="#fff" />
-          </View>
-        )}
-      </View>
-    );
-  }
 };
 
 const styles = StyleSheet.create({

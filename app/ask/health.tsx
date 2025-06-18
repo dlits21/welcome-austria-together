@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import { 
   StyleSheet, 
   Text, 
@@ -14,8 +15,8 @@ import BaseQuizModal from '../../components/BaseQuizModal';
 import FilterSection from '../../components/FilterSection';
 import QuizControls from '../../components/QuizControls';
 import HealthSupportList from '../../components/HealthSupportList';
-import healthSupportEntitiesData from '../../data/courses/health-support-entities.json';
 import VirtualAssistantModal from '../../components/VirtualAssistantModal';
+import healthEntitiesData from '../../data/courses/health-support-entities.json';
 
 interface HealthSupportEntity {
   id: string;
@@ -50,15 +51,15 @@ const HealthSupportPage: React.FC = () => {
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
 
   // Convert JSON data to array format
-  const healthSupportEntities: HealthSupportEntity[] = healthSupportEntitiesData.entities || [];
+  const healthSupportEntities: HealthSupportEntity[] = healthEntitiesData.entities;
   
   // Quiz states
   const [showQuiz, setShowQuiz] = useState(true);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [quizAnswers, setQuizAnswers] = useState({
+    urgency: '',
     supportType: '',
-    location: '',
-    urgency: ''
+    location: ''
   });
   
   // Filter states
@@ -68,27 +69,27 @@ const HealthSupportPage: React.FC = () => {
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
-  // Extract unique locations and support types with safety checks
-  const locations = Array.from(new Set(healthSupportEntities.map(entity => entity.location).filter(Boolean)));
-  const supportTypes = Array.from(new Set(healthSupportEntities.flatMap(entity => entity.supportTypes || []).filter(Boolean)));
+  // Extract unique locations and support types
+  const locations = Array.from(new Set(healthSupportEntities.map(entity => entity.location)));
+  const supportTypes = Array.from(new Set(healthSupportEntities.flatMap(entity => entity.supportTypes)));
 
   // Create filters object for GenericSupportList
   const filters = {
+    urgency: quizAnswers.urgency,
     supportType: selectedSupportTypes.length > 0 ? selectedSupportTypes[0] : quizAnswers.supportType,
-    location: selectedLocations.length > 0 ? selectedLocations[0] : quizAnswers.location,
-    urgency: quizAnswers.urgency || ''
+    location: selectedLocations.length > 0 ? selectedLocations[0] : quizAnswers.location
   };
 
-  // Quiz questions - reordered with urgency first
+  // Updated quiz questions for health support
   const quizQuestions = [
     {
       question: language.code === 'de' 
-        ? 'Wie dringend ist Ihr Bedarf?' 
-        : 'How urgent is your need?',
+        ? 'Wie dringend benötigen Sie Gesundheitsunterstützung?' 
+        : 'How urgently do you need health support?',
       answers: [
         { key: 'immediate', en: 'Immediate/Emergency', de: 'Sofort/Notfall' },
         { key: 'soon', en: 'Within a few days', de: 'Innerhalb weniger Tage' },
-        { key: 'planning', en: 'Planning ahead', de: 'Vorausplanung' }
+        { key: 'routine', en: 'Routine checkup', de: 'Routineuntersuchung' }
       ],
       key: 'urgency' as keyof typeof quizAnswers
     },
@@ -97,14 +98,14 @@ const HealthSupportPage: React.FC = () => {
         ? 'Welche Art von Gesundheitsunterstützung benötigen Sie?' 
         : 'What type of health support do you need?',
       answers: [
-        { key: 'emergency', en: 'Emergency Care', de: 'Notfallversorgung' },
-        { key: 'mental-health', en: 'Mental Health', de: 'Psychische Gesundheit' },
-        { key: 'medical-care', en: 'General Medical Care', de: 'Allgemeine medizinische Versorgung' },
-        { key: 'counseling', en: 'Counseling', de: 'Beratung' },
-        { key: 'crisis-support', en: 'Crisis Support', de: 'Krisenunterstützung' },
-        { key: 'community-health', en: 'Community Health', de: 'Gemeinschaftsgesundheit' },
-        { key: 'home-care', en: 'Home Care', de: 'Häusliche Pflege' },
-        { key: 'therapy', en: 'Therapy', de: 'Therapie' }
+        { key: 'general-practice', en: 'General Practice', de: 'Allgemeinmedizin' },
+        { key: 'mental-health', en: 'Mental Health Support', de: 'Psychische Gesundheit' },
+        { key: 'specialized-care', en: 'Specialized Medical Care', de: 'Spezialisierte medizinische Versorgung' },
+        { key: 'emergency', en: 'Emergency Services', de: 'Notfalldienstleistungen' },
+        { key: 'women-health', en: 'Women\'s Health', de: 'Frauengesundheit' },
+        { key: 'dental', en: 'Dental Care', de: 'Zahnmedizin' },
+        { key: 'pharmacy', en: 'Pharmacy Services', de: 'Apothekendienstleistungen' },
+        { key: 'community', en: 'Community Health Programs', de: 'Gemeinschaftsgesundheitsprogramme' }
       ],
       key: 'supportType' as keyof typeof quizAnswers
     },
@@ -112,9 +113,7 @@ const HealthSupportPage: React.FC = () => {
       question: language.code === 'de' 
         ? 'Wo befinden Sie sich?' 
         : 'What is your location?',
-      answers: locations.length > 0 
-        ? locations.map(location => ({ key: location.toLowerCase(), en: location, de: location }))
-        : [{ key: 'nationwide', en: 'Nationwide', de: 'Österreichweit' }],
+      answers: locations.map(location => ({ key: location.toLowerCase(), en: location, de: location })),
       key: 'location' as keyof typeof quizAnswers
     }
   ];
@@ -162,7 +161,7 @@ const HealthSupportPage: React.FC = () => {
   };
 
   const resetQuiz = () => {
-    setQuizAnswers({ supportType: '', location: '', urgency: '' });
+    setQuizAnswers({ urgency: '', supportType: '', location: '' });
     setCurrentQuestion(0);
     setShowQuiz(true);
   };
@@ -190,8 +189,8 @@ const HealthSupportPage: React.FC = () => {
 
   const pageTitle = language.code === 'de' ? 'Gesundheitsunterstützung' : 'Health Support';
   const pageDescription = language.code === 'de' 
-    ? 'Finden Sie Gesundheitsdienste und psychische Gesundheitsunterstützung in Ihrer Nähe.'
-    : 'Find health services and mental health support in your area.';
+    ? 'Finden Sie Gesundheitsdienste und medizinische Unterstützung in Ihrer Nähe.'
+    : 'Find health services and medical support in your area.';
 
   // Filter groups for FilterSection
   const filterGroups = [
