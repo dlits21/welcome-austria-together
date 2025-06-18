@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { 
   StyleSheet, 
@@ -46,7 +45,6 @@ const FinancialSupportPage: React.FC = () => {
   
   // Convert JSON data to array format
   const financialSupportEntities: FinancialSupportEntity[] = Object.values(financialLiteracyEntitiesData);
-  const [filteredEntities, setFilteredEntities] = useState<FinancialSupportEntity[]>(financialSupportEntities);
   
   // Quiz states
   const [showQuiz, setShowQuiz] = useState(true);
@@ -67,6 +65,13 @@ const FinancialSupportPage: React.FC = () => {
   // Extract unique locations and support types
   const locations = Array.from(new Set(financialSupportEntities.map(entity => entity.location)));
   const supportTypes = Array.from(new Set(financialSupportEntities.flatMap(entity => entity.supportTypes)));
+
+  // Create filters object for GenericSupportList
+  const filters = {
+    urgency: quizAnswers.urgency,
+    supportType: selectedSupportTypes.length > 0 ? selectedSupportTypes[0] : quizAnswers.supportType,
+    location: selectedLocations.length > 0 ? selectedLocations[0] : quizAnswers.location
+  };
 
   // Updated quiz questions for financial literacy
   const quizQuestions = [
@@ -104,44 +109,6 @@ const FinancialSupportPage: React.FC = () => {
       key: 'location' as keyof typeof quizAnswers
     }
   ];
-
-  // Apply filters based on quiz answers and manual filters
-  useEffect(() => {
-    let results = financialSupportEntities;
-    
-    // Apply quiz filters
-    if (quizAnswers.supportType) {
-      results = results.filter(entity => 
-        entity.supportTypes.includes(quizAnswers.supportType)
-      );
-    }
-    
-    if (quizAnswers.location) {
-      const selectedLocation = locations.find(loc => 
-        loc.toLowerCase() === quizAnswers.location
-      );
-      if (selectedLocation) {
-        results = results.filter(entity => 
-          entity.location === selectedLocation || entity.location === 'Nationwide'
-        );
-      }
-    }
-    
-    // Apply manual filters
-    if (selectedSupportTypes.length > 0) {
-      results = results.filter(entity => 
-        entity.supportTypes.some(type => selectedSupportTypes.includes(type))
-      );
-    }
-    
-    if (selectedLocations.length > 0) {
-      results = results.filter(entity => 
-        selectedLocations.includes(entity.location) || entity.location === 'Nationwide'
-      );
-    }
-    
-    setFilteredEntities(results);
-  }, [quizAnswers, selectedSupportTypes, selectedLocations]);
 
   const toggleSound = () => {
     setSoundEnabled(!soundEnabled);
@@ -280,8 +247,9 @@ const FinancialSupportPage: React.FC = () => {
         
         {!showQuiz && (
           <FinancialSupportList 
-            entities={filteredEntities}
+            filters={filters}
             languageCode={language.code}
+            onResetFilters={clearFilters}
           />
         )}
       </View>

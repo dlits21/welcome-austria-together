@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { 
   StyleSheet, 
@@ -50,7 +49,6 @@ const LegalSupportPage: React.FC = () => {
 
   // Convert JSON data to array format
   const legalSupportEntities: LegalSupportEntity[] = Object.values(legalSupportEntitiesData);
-  const [filteredEntities, setFilteredEntities] = useState<LegalSupportEntity[]>(legalSupportEntities);
   
   // Quiz states
   const [showQuiz, setShowQuiz] = useState(true);
@@ -70,6 +68,13 @@ const LegalSupportPage: React.FC = () => {
   // Extract unique locations and support types
   const locations = Array.from(new Set(legalSupportEntities.map(entity => entity.location)));
   const supportTypes = Array.from(new Set(legalSupportEntities.flatMap(entity => entity.supportTypes)));
+
+  // Create filters object for GenericSupportList
+  const filters = {
+    supportType: selectedSupportTypes.length > 0 ? selectedSupportTypes[0] : '',
+    location: selectedLocations.length > 0 ? selectedLocations[0] : '',
+    urgency: ''
+  };
 
   // Quiz questions
   const quizQuestions = [
@@ -99,44 +104,6 @@ const LegalSupportPage: React.FC = () => {
       key: 'location' as keyof typeof quizAnswers
     }
   ];
-
-  // Apply filters based on quiz answers and manual filters
-  useEffect(() => {
-    let results = legalSupportEntities;
-    
-    // Apply quiz filters
-    if (quizAnswers.supportType) {
-      results = results.filter(entity => 
-        entity.supportTypes.includes(quizAnswers.supportType)
-      );
-    }
-    
-    if (quizAnswers.location) {
-      const selectedLocation = locations.find(loc => 
-        loc.toLowerCase() === quizAnswers.location
-      );
-      if (selectedLocation) {
-        results = results.filter(entity => 
-          entity.location === selectedLocation || entity.location === 'Nationwide'
-        );
-      }
-    }
-    
-    // Apply manual filters
-    if (selectedSupportTypes.length > 0) {
-      results = results.filter(entity => 
-        entity.supportTypes.some(type => selectedSupportTypes.includes(type))
-      );
-    }
-    
-    if (selectedLocations.length > 0) {
-      results = results.filter(entity => 
-        selectedLocations.includes(entity.location) || entity.location === 'Nationwide'
-      );
-    }
-    
-    setFilteredEntities(results);
-  }, [quizAnswers, selectedSupportTypes, selectedLocations]);
 
   const toggleSound = () => {
     setSoundEnabled(!soundEnabled);
@@ -277,8 +244,9 @@ const LegalSupportPage: React.FC = () => {
         
         {!showQuiz && (
           <LegalSupportList 
-            entities={filteredEntities}
+            filters={filters}
             languageCode={language.code}
+            onResetFilters={clearFilters}
           />
         )}
       </View>
