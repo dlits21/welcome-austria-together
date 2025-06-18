@@ -1,0 +1,196 @@
+
+{
+  "entities": [
+    {
+      "id": "oif-integration-courses",
+      "name": {
+        "en": "ÖIF Integration Courses",
+        "de": "ÖIF Integrationskurse"
+      },
+      "category": "language-culture",
+      "urgency": "non-urgent",
+      "supportType": "integration-courses",
+      "location": "all-austria",
+      "description": {
+        "en": "Official integration courses combining German language learning with Austrian values and orientation knowledge.",
+        "de": "Offizielle Integrationskurse mit Deutschlernen und österreichischen Werten und Orientierungswissen."
+      },
+      "services": [
+        "Integration courses A1-B1",
+        "Values and orientation courses",
+        "Austrian culture orientation",
+        "Civic education"
+      ],
+      "contact": {
+        "phone": "+43 1 715 10 51-0",
+        "email": "info@integrationsfonds.at",
+        "website": "https://www.integrationsfonds.at",
+        "address": "Schlachthausgasse 30, 1030 Wien"
+      },
+      "languages": ["German", "English", "Arabic", "Farsi"],
+      "eligibility": "Third-country nationals with residence permits",
+      "cost": "€750 per course, refundable upon completion",
+      "openingHours": "Monday-Friday 8:00-17:00"
+    },
+    {
+      "id": "diakonie-integration-center",
+      "name": {
+        "en": "Diakonie Integration Center",
+        "de": "Diakonie Integrationszentrum"
+      },
+      "category": "social-integration",
+      "urgency": "urgent",
+      "supportType": "comprehensive-integration",
+      "location": "vienna",
+      "description": {
+        "en": "Comprehensive integration support including language courses, cultural orientation, and social counseling.",
+        "de": "Umfassende Integrationshilfe mit Sprachkursen, kultureller Orientierung und Sozialberatung."
+      },
+      "services": [
+        "German language courses",
+        "Cultural orientation workshops",
+        "Social counseling",
+        "Integration planning",
+        "Community events"
+      ],
+      "contact": {
+        "phone": "+43 1 409 80 01",
+        "email": "integration@diakonie.at",
+        "website": "https://www.diakonie.at",
+        "address": "Steinergasse 3/12, 1170 Wien"
+      },
+      "languages": ["German", "English", "Arabic", "Farsi", "Turkish"],
+      "eligibility": "Refugees, asylum seekers, and migrants",
+      "cost": "Free for eligible participants",
+      "openingHours": "Monday-Thursday 9:00-17:00, Friday 9:00-14:00"
+    },
+    {
+      "id": "intercultural-center",
+      "name": {
+        "en": "Intercultural Center",
+        "de": "Interkulturelles Zentrum"
+      },
+      "category": "cultural-exchange",
+      "urgency": "non-urgent",
+      "supportType": "cultural-orientation",
+      "location": "vienna",
+      "description": {
+        "en": "Promoting intercultural dialogue and providing cultural orientation programs for newcomers.",
+        "de": "Förderung des interkulturellen Dialogs und kulturelle Orientierungsprogramme für Neuankömmlinge."
+      },
+      "services": [
+        "Cultural orientation workshops",
+        "Intercultural dialogue programs",
+        "Community networking",
+        "Cultural events",
+        "Mentoring programs"
+      ],
+      "contact": {
+        "phone": "+43 1 586 75 44",
+        "email": "office@iz.or.at",
+        "website": "https://www.iz.or.at",
+        "address": "Bacherplatz 10, 1050 Wien"
+      },
+      "languages": ["German", "English", "Multiple languages"],
+      "eligibility": "Open to all interested in intercultural exchange",
+      "cost": "Most programs free, some workshops have fees",
+      "openingHours": "Monday-Friday 9:00-17:00"
+    },
+    {
+      "id": "vhs-integration-courses",
+      "name": {
+        "en": "VHS Integration and Culture Courses",
+        "de": "VHS Integrations- und Kulturkurse"
+      },
+      "category": "education",
+      "urgency": "non-urgent",
+      "supportType": "cultural-education",
+      "location": "all-austria",
+      "description": {
+        "en": "Adult education courses focusing on Austrian culture, language, and social integration.",
+        "de": "Erwachsenenbildungskurse mit Fokus auf österreichische Kultur, Sprache und soziale Integration."
+      },
+      "services": [
+        "Cultural orientation courses",
+        "Austrian history and culture",
+        "Social integration workshops",
+        "Civic education",
+        "Community participation programs"
+      ],
+      "contact": {
+        "phone": "+43 1 891 74-100000",
+        "email": "info@vhs.at",
+        "website": "https://www.vhs.at",
+        "address": "Landstraßer Hauptstraße 112, 1030 Wien"
+      },
+      "languages": ["German", "English"],
+      "eligibility": "Open to all adults",
+      "cost": "Varies by course, subsidies available",
+      "openingHours": "Monday-Friday 8:00-20:00, Saturday 9:00-13:00"
+    },
+    {
+      "id": "red-cross-integration",
+      "name": {
+        "en": "Red Cross Integration Services",
+        "de": "Rotes Kreuz Integrationsdienste"
+      },
+      "category": "humanitarian",
+      "urgency": "urgent",
+      "supportType": "refugee-integration",
+      "location": "all-austria",
+      "description": {
+        "en": "Specialized integration support for refugees and asylum seekers, including cultural orientation and practical life skills.",
+        "de": "Spezialisierte Integrationshilfe für Flüchtlinge und Asylsuchende mit kultureller Orientierung und praktischen Lebenskompetenzen."
+      },
+      "services": [
+        "Refugee integration programs",
+        "Cultural orientation",
+        "Practical life skills training",
+        "Community integration",
+        "Volunteer support programs"
+      ],
+      "contact": {
+        "phone": "+43 1 589 00-0",
+        "email": "service@roteskreuz.at",
+        "website": "https://www.roteskreuz.at",
+        "address": "Wiedner Hauptstraße 32, 1040 Wien"
+      },
+      "languages": ["German", "English", "Arabic", "Farsi", "Somali"],
+      "eligibility": "Refugees, asylum seekers, and vulnerable migrants",
+      "cost": "Free",
+      "openingHours": "Monday-Friday 8:00-17:00"
+    },
+    {
+      "id": "zusammen-osterreich",
+      "name": {
+        "en": "Zusammen Österreich Integration Initiative",
+        "de": "Zusammen Österreich Integrationsinitiative"
+      },
+      "category": "community",
+      "urgency": "non-urgent",
+      "supportType": "community-integration",
+      "location": "all-austria",
+      "description": {
+        "en": "National integration initiative promoting dialogue between people with and without migration background.",
+        "de": "Nationale Integrationsinitiative zur Förderung des Dialogs zwischen Menschen mit und ohne Migrationshintergrund."
+      },
+      "services": [
+        "Integration dialogue events",
+        "School visits and workshops",
+        "Community integration projects",
+        "Mentoring programs",
+        "Success story sharing"
+      ],
+      "contact": {
+        "phone": "+43 1 53120-2919",
+        "email": "zusammen@bmi.gv.at",
+        "website": "https://www.zusammen-oesterreich.at",
+        "address": "Herrengasse 7, 1010 Wien"
+      },
+      "languages": ["German", "English", "Multiple languages"],
+      "eligibility": "Open to all community members",
+      "cost": "Free",
+      "openingHours": "Monday-Friday 9:00-16:00"
+    }
+  ]
+}
