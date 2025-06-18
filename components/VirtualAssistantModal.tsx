@@ -1,6 +1,5 @@
 
-
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import {
   StyleSheet,
   Text,
@@ -47,17 +46,16 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
   const [isListening, setIsListening] = useState(false);
   const [chatMode, setChatMode] = useState<'text' | 'voice'>(defaultMode);
   const textInputRef = useRef<TextInput>(null);
-  
+  const scrollViewRef = useRef<ScrollView>(null);
+
   const { width } = Dimensions.get('window');
   const isWideScreen = width >= 768;
 
   // Initialize messages when modal opens
   useEffect(() => {
     if (visible) {
-      // Set default mode based on prop
       setChatMode(defaultMode);
-      
-      // If we have persisted messages, use them
+
       if (globalMessages.length > 0) {
         setMessages(globalMessages);
         return;
@@ -105,7 +103,21 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
     globalMessages = messages;
   }, [messages]);
 
-  const sendMessage = () => {
+  // Scroll to bottom when new messages arrive
+  useEffect(() => {
+    if (scrollViewRef.current && messages.length > 0) {
+      setTimeout(() => {
+        scrollViewRef.current?.scrollToEnd({ animated: true });
+      }, 100);
+    }
+  }, [messages]);
+
+  // Use useCallback to prevent re-rendering issues
+  const handleInputChange = useCallback((text: string) => {
+    setInputText(text);
+  }, []);
+
+  const sendMessage = useCallback(() => {
     if (inputText.trim()) {
       const newMessage: Message = {
         id: Date.now().toString(),
@@ -131,16 +143,19 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
         setMessages(prev => [...prev, assistantResponse]);
       }, 1000);
     }
-  };
+  }, [inputText, messages, languageCode]);
 
-  const toggleVoiceMode = () => {
+  const toggleVoiceMode = useCallback(() => {
     setIsListening(!isListening);
-    // Here you would implement actual voice recognition
-  };
+  }, [isListening]);
+
+  const handleModeChange = useCallback((mode: 'text' | 'voice') => {
+    setChatMode(mode);
+  }, []);
 
   const VirtualAssistantAvatar = () => (
     <View style={styles.avatarContainer}>
-      <View style={styles.largeAvatar}>
+      <View style={styles.largeAvatarContainer}>
         <Image 
           source={require('../assets/images/assistant.jpg')}
           style={styles.assistantImage}
@@ -155,12 +170,11 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
           ? 'Ich bin hier, um Ihnen zu helfen!' 
           : 'I\'m here to help you!'}
       </Text>
-      
-      {/* Chat/Voice Mode Toggle */}
+
       <View style={styles.modeToggle}>
         <TouchableOpacity
           style={[styles.modeButton, chatMode === 'text' && styles.activeModeButton]}
-          onPress={() => setChatMode('text')}
+          onPress={() => handleModeChange('text')}
         >
           <MaterialIcons name="chat" size={20} color={chatMode === 'text' ? '#fff' : '#666'} />
           <Text style={[styles.modeText, chatMode === 'text' && styles.activeModeText]}>
@@ -170,7 +184,7 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
         
         <TouchableOpacity
           style={[styles.modeButton, chatMode === 'voice' && styles.activeModeButton]}
-          onPress={() => setChatMode('voice')}
+          onPress={() => handleModeChange('voice')}
         >
           <MaterialIcons name="mic" size={20} color={chatMode === 'voice' ? '#fff' : '#666'} />
           <Text style={[styles.modeText, chatMode === 'voice' && styles.activeModeText]}>
@@ -200,14 +214,13 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
     </View>
   );
 
-  // Mobile top section with assistant image and toggle
   const MobileTopSection = () => (
     <View style={styles.mobileTopSection}>
       <View style={styles.mobileAssistantContainer}>
         <Image 
           source={require('../assets/images/assistant.jpg')}
           style={styles.mobileAssistantImage}
-          resizeMode="cover"
+          resizeMode="contain"
         />
       </View>
       
@@ -215,12 +228,11 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
         <Text style={styles.mobileTitle}>
           {languageCode === 'de' ? 'Virtueller Assistent' : 'Virtual Assistant'}
         </Text>
-        
-        {/* Mobile Mode Toggle */}
+
         <View style={styles.mobileModeToggle}>
           <TouchableOpacity
             style={[styles.mobileModeButton, chatMode === 'text' && styles.activeMobileModeButton]}
-            onPress={() => setChatMode('text')}
+            onPress={() => handleModeChange('text')}
           >
             <MaterialIcons name="chat" size={18} color={chatMode === 'text' ? '#fff' : '#666'} />
             <Text style={[styles.mobileModeButtonText, chatMode === 'text' && styles.activeMobileModeButtonText]}>
@@ -230,7 +242,7 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
           
           <TouchableOpacity
             style={[styles.mobileModeButton, chatMode === 'voice' && styles.activeMobileModeButton]}
-            onPress={() => setChatMode('voice')}
+            onPress={() => handleModeChange('voice')}
           >
             <MaterialIcons name="mic" size={18} color={chatMode === 'voice' ? '#fff' : '#666'} />
             <Text style={[styles.mobileModeButtonText, chatMode === 'voice' && styles.activeMobileModeButtonText]}>
@@ -281,9 +293,10 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
     <KeyboardAvoidingView 
       style={[styles.chatSection, isWideScreen && styles.chatSectionWide]}
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      keyboardVerticalOffset={Platform.OS === 'ios' ? 90 : 0}
+      keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : 20}
     >
       <ScrollView 
+        ref={scrollViewRef}
         style={styles.messagesContainer}
         contentContainerStyle={styles.messagesContent}
         showsVerticalScrollIndicator={false}
@@ -300,7 +313,7 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
             ref={textInputRef}
             style={styles.textInput}
             value={inputText}
-            onChangeText={setInputText}
+            onChangeText={handleInputChange}
             placeholder={
               languageCode === 'de' 
                 ? 'Schreibe eine Nachricht...' 
@@ -311,6 +324,8 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
             returnKeyType="send"
             onSubmitEditing={sendMessage}
             blurOnSubmit={false}
+            autoCorrect={false}
+            autoCapitalize="sentences"
           />
           <TouchableOpacity
             style={[
@@ -359,7 +374,6 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
       onRequestClose={onClose}
     >
       <SafeAreaView style={styles.container}>
-        {/* Header */}
         <View style={styles.header}>
           <TouchableOpacity style={styles.closeButton} onPress={onClose}>
             <MaterialIcons name="close" size={24} color="#333" />
@@ -383,7 +397,6 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
           <View style={styles.placeholder} />
         </View>
 
-        {/* Main Content */}
         <View style={[styles.mainContent, isWideScreen && styles.mainContentWide]}>
           {isWideScreen ? (
             <>
@@ -470,11 +483,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 40,
   },
-  largeAvatar: {
+  largeAvatarContainer: {
     width: 300,
-    height: 400,
+    height: 300,
     marginBottom: 24,
+    backgroundColor: '#f8f9fa',
     borderRadius: 16,
+    overflow: 'hidden',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   assistantImage: {
     width: '100%',
@@ -534,7 +551,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '500',
   },
-  // Mobile layout styles
   mobileLayout: {
     flex: 1,
   },
@@ -550,8 +566,9 @@ const styles = StyleSheet.create({
     marginRight: 16,
   },
   mobileAssistantImage: {
-    width: 80,
-    height: 80,
+    width: 100,
+    height: 100,
+    backgroundColor: '#f8f9fa',
     borderRadius: 12,
   },
   mobileRightSection: {
@@ -672,7 +689,8 @@ const styles = StyleSheet.create({
     borderTopColor: '#e0e0e0',
   },
   mobileInputContainer: {
-    paddingBottom: 20,
+    paddingBottom: 30,
+    marginBottom: 10,
   },
   textInput: {
     flex: 1,
