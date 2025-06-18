@@ -50,6 +50,20 @@ const EmergencySupport: React.FC = () => {
 
   const emergencyCategories: EmergencyCategory[] = [
     {
+      key: 'general',
+      emoji: '📞',
+      title: { en: 'General Emergency', de: 'Allgemeiner Notfall' },
+      subtitle: { en: 'Universal emergency number', de: 'Universelle Notrufnummer' },
+      contacts: [
+        {
+          name: { en: 'European Emergency Number', de: 'Europäische Notrufnummer' },
+          phone: '112',
+          description: { en: 'Universal emergency number for all services', de: 'Universelle Notrufnummer für alle Dienste' },
+          type: 'general'
+        }
+      ]
+    },
+    {
       key: 'fire',
       emoji: '🔥',
       title: { en: 'Fire Emergency', de: 'Feuer-Notfall' },
@@ -99,7 +113,7 @@ const EmergencySupport: React.FC = () => {
       contacts: [
         {
           name: { en: 'Women\'s Emergency Hotline', de: 'Frauen-Notruf' },
-          phone: '01 71719',
+          phone: '0800 222 555',
           description: { en: 'For domestic violence and sexual assault', de: 'Für häusliche Gewalt und sexuelle Übergriffe' },
           type: 'violence'
         },
@@ -126,16 +140,30 @@ const EmergencySupport: React.FC = () => {
       ]
     },
     {
-      key: 'general',
-      emoji: '📞',
-      title: { en: 'General Emergency', de: 'Allgemeiner Notfall' },
-      subtitle: { en: 'Universal emergency number', de: 'Universelle Notrufnummer' },
+      key: 'soul-care',
+      emoji: '🕊️',
+      title: { en: 'Care of Soul', de: 'Seelsorge' },
+      subtitle: { en: 'Spiritual and emotional support', de: 'Spirituelle und emotionale Unterstützung' },
       contacts: [
         {
-          name: { en: 'European Emergency Number', de: 'Europäische Notrufnummer' },
-          phone: '112',
-          description: { en: 'Universal emergency number for all services', de: 'Universelle Notrufnummer für alle Dienste' },
-          type: 'general'
+          name: { en: 'Telefonseelsorge', de: 'Telefonseelsorge' },
+          phone: '142',
+          description: { en: 'Spiritual care and emotional support', de: 'Seelsorge und emotionale Unterstützung' },
+          type: 'soul-care'
+        }
+      ]
+    },
+    {
+      key: 'youth',
+      emoji: '👨‍👩‍👧‍👦',
+      title: { en: 'Youth Care', de: 'Jugendbetreuung' },
+      subtitle: { en: 'Support for children and youth', de: 'Unterstützung für Kinder und Jugendliche' },
+      contacts: [
+        {
+          name: { en: 'Rat auf Draht', de: 'Rat auf Draht' },
+          phone: '147',
+          description: { en: 'Emergency hotline for children and youth', de: 'Notruf für Kinder und Jugendliche' },
+          type: 'youth'
         }
       ]
     }

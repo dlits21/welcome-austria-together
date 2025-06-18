@@ -1,0 +1,192 @@
+
+{
+  "entities": [
+    {
+      "id": "ams-career-guidance",
+      "name": {
+        "en": "AMS Career Guidance",
+        "de": "AMS Berufsberatung"
+      },
+      "category": "employment",
+      "urgency": "non-urgent",
+      "supportType": "career-planning",
+      "location": "vienna",
+      "description": {
+        "en": "Professional career counseling and job placement services by the Austrian Employment Service.",
+        "de": "Professionelle Berufsberatung und Arbeitsvermittlung durch das Arbeitsmarktservice Österreich."
+      },
+      "services": [
+        "Career counseling",
+        "Job placement",
+        "Skills assessment",
+        "Training opportunities"
+      ],
+      "contact": {
+        "phone": "+43 50 904 540",
+        "email": "service@ams.at",
+        "website": "https://www.ams.at",
+        "address": "Landstraßer Hauptstraße 55-57, 1030 Wien"
+      },
+      "languages": ["German", "English"],
+      "eligibility": "EU citizens and legal residents",
+      "cost": "Free",
+      "openingHours": "Monday-Friday 8:00-15:30"
+    },
+    {
+      "id": "waff-integration-support",
+      "name": {
+        "en": "WAFF Integration Support",
+        "de": "WAFF Integrationshilfe"
+      },
+      "category": "integration",
+      "urgency": "non-urgent",
+      "supportType": "integration-programs",
+      "location": "vienna",
+      "description": {
+        "en": "Comprehensive integration programs including language courses, job training, and social orientation.",
+        "de": "Umfassende Integrationsprogramme mit Sprachkursen, Berufsausbildung und sozialer Orientierung."
+      },
+      "services": [
+        "Integration courses",
+        "Professional qualification",
+        "Mentoring programs",
+        "Social orientation"
+      ],
+      "contact": {
+        "phone": "+43 1 217 48-555",
+        "email": "info@waff.at",
+        "website": "https://www.waff.at",
+        "address": "Nordbahnstraße 36, 1020 Wien"
+      },
+      "languages": ["German", "English", "Turkish", "Serbian"],
+      "eligibility": "Vienna residents seeking integration support",
+      "cost": "Mostly free, some courses subsidized",
+      "openingHours": "Monday-Thursday 8:00-17:00, Friday 8:00-14:00"
+    },
+    {
+      "id": "caritas-integration-center",
+      "name": {
+        "en": "Caritas Integration Center",
+        "de": "Caritas Integrationszentrum"
+      },
+      "category": "integration",
+      "urgency": "urgent",
+      "supportType": "comprehensive-support",
+      "location": "all-austria",
+      "description": {
+        "en": "Holistic integration support including housing, education, and career guidance for refugees and migrants.",
+        "de": "Ganzheitliche Integrationshilfe mit Wohnen, Bildung und Berufsberatung für Flüchtlinge und Migranten."
+      },
+      "services": [
+        "Housing assistance",
+        "Educational programs",
+        "Career counseling",
+        "Legal advice",
+        "Social work"
+      ],
+      "contact": {
+        "phone": "+43 1 488 31-0",
+        "email": "integration@caritas-wien.at",
+        "website": "https://www.caritas.at",
+        "address": "Albrechtskreithgasse 19-21, 1160 Wien"
+      },
+      "languages": ["German", "English", "Arabic", "Farsi", "French"],
+      "eligibility": "Refugees, asylum seekers, and migrants",
+      "cost": "Free",
+      "openingHours": "Monday-Friday 9:00-17:00"
+    },
+    {
+      "id": "wifi-career-academy",
+      "name": {
+        "en": "WIFI Career Academy",
+        "de": "WIFI Karriere Akademie"
+      },
+      "category": "education",
+      "urgency": "non-urgent",
+      "supportType": "professional-development",
+      "location": "all-austria",
+      "description": {
+        "en": "Professional development courses and certification programs for career advancement.",
+        "de": "Berufliche Weiterbildungskurse und Zertifizierungsprogramme für den Karrierefortschritt."
+      },
+      "services": [
+        "Professional courses",
+        "Certification programs",
+        "Skills training",
+        "Career coaching"
+      ],
+      "contact": {
+        "phone": "+43 1 476 77-5555",
+        "email": "kundenservice@wifi.at",
+        "website": "https://www.wifi.at",
+        "address": "Währinger Gürtel 97, 1180 Wien"
+      },
+      "languages": ["German", "English"],
+      "eligibility": "Open to all",
+      "cost": "Varies by course, funding available",
+      "openingHours": "Monday-Friday 8:00-18:00"
+    },
+    {
+      "id": "mentor-immigrant-network",
+      "name": {
+        "en": "Mentor Immigrant Professional Network",
+        "de": "Mentor Migrant*innen Netzwerk"
+      },
+      "category": "networking",
+      "urgency": "non-urgent",
+      "supportType": "mentoring",
+      "location": "vienna",
+      "description": {
+        "en": "Professional mentoring network connecting skilled immigrants with Austrian professionals in their field.",
+        "de": "Professionelles Mentoring-Netzwerk, das qualifizierte Einwanderer mit österreichischen Fachkräften verbindet."
+      },
+      "services": [
+        "Professional mentoring",
+        "Networking events",
+        "Career guidance",
+        "Industry connections"
+      ],
+      "contact": {
+        "phone": "+43 1 712 51 20",
+        "email": "office@mentoring.at",
+        "website": "https://www.mentoring.at",
+        "address": "Wiedner Hauptstraße 32, 1040 Wien"
+      },
+      "languages": ["German", "English", "Multiple languages"],
+      "eligibility": "Skilled immigrants and refugees",
+      "cost": "Free",
+      "openingHours": "By appointment"
+    },
+    {
+      "id": "bfi-integration-courses",
+      "name": {
+        "en": "BFI Integration Courses",
+        "de": "BFI Integrationskurse"
+      },
+      "category": "education",
+      "urgency": "urgent",
+      "supportType": "language-integration",
+      "location": "all-austria",
+      "description": {
+        "en": "Comprehensive integration courses combining language learning with cultural orientation and job preparation.",
+        "de": "Umfassende Integrationskurse mit Sprachlernen, kultureller Orientierung und Jobvorbereitung."
+      },
+      "services": [
+        "Integration courses",
+        "Language training",
+        "Cultural orientation",
+        "Job preparation"
+      ],
+      "contact": {
+        "phone": "+43 1 811 78-10100",
+        "email": "kundenservice@bfi.wien",
+        "website": "https://www.bfi.wien",
+        "address": "Plößlgasse 13, 1040 Wien"
+      },
+      "languages": ["German", "English", "Multiple languages"],
+      "eligibility": "Migrants and refugees",
+      "cost": "Government funded for eligible participants",
+      "openingHours": "Monday-Friday 8:00-20:00"
+    }
+  ]
+}
