@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image } from 'react-native';
 import { useRouter } from 'expo-router';
 import { MaterialIcons } from '@expo/vector-icons';
 
@@ -109,6 +109,27 @@ const GenericSupportList: React.FC<GenericSupportListProps> = ({
     return languageCode === 'de' ? entity.description.de : entity.description.en;
   };
 
+  const renderIcon = (category: string) => {
+    const iconValue = getCategoryIcon(category);
+    const color = getCategoryColor(category);
+    
+    // Check if icon is a file path (contains . or /)
+    if (iconValue.includes('.') || iconValue.includes('/')) {
+      return (
+        <Image 
+          source={{ uri: iconValue }} 
+          style={[styles.iconImage, { tintColor: color }]}
+          resizeMode="contain"
+        />
+      );
+    } else {
+      // Use MaterialIcons for icon names
+      return (
+        <MaterialIcons name={iconValue as any} size={24} color={color} />
+      );
+    }
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -131,7 +152,7 @@ const GenericSupportList: React.FC<GenericSupportListProps> = ({
           >
             <View style={styles.cardHeader}>
               <View style={[styles.categoryIcon, { backgroundColor: getCategoryColor(entity.category) + '20' }]}>
-                <MaterialIcons name={getCategoryIcon(entity.category) as any} size={24} color={getCategoryColor(entity.category)} />
+                {renderIcon(entity.category)}
               </View>
               <View style={styles.headerText}>
                 <Text style={styles.entityName}>
@@ -170,23 +191,18 @@ const GenericSupportList: React.FC<GenericSupportListProps> = ({
               )}
             </View>
 
-            {/* Show specializations for health/legal support */}
+            {/* Show all specializations */}
             {entity.specializations && entity.specializations.length > 0 && (
               <View style={styles.specializationsContainer}>
                 <Text style={styles.specializationsTitle}>
                   {languageCode === 'de' ? 'Spezialisierungen:' : 'Specializations:'}
                 </Text>
                 <View style={styles.specializationTags}>
-                  {entity.specializations.slice(0, 3).map((spec, index) => (
+                  {entity.specializations.map((spec, index) => (
                     <View key={index} style={styles.specializationTag}>
                       <Text style={styles.specializationTagText}>{spec}</Text>
                     </View>
                   ))}
-                  {entity.specializations.length > 3 && (
-                    <Text style={styles.moreSpecializations}>
-                      +{entity.specializations.length - 3} {languageCode === 'de' ? 'mehr' : 'more'}
-                    </Text>
-                  )}
                 </View>
               </View>
             )}
@@ -266,6 +282,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginRight: 12,
   },
+  iconImage: {
+    width: 24,
+    height: 24,
+  },
   headerText: {
     flex: 1,
   },
@@ -344,11 +364,6 @@ const styles = StyleSheet.create({
     fontSize: 10,
     color: '#16a34a',
     fontWeight: '500',
-  },
-  moreSpecializations: {
-    fontSize: 10,
-    color: '#64748b',
-    fontStyle: 'italic',
   },
   contactInfo: {
     flexDirection: 'row',

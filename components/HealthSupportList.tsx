@@ -1,32 +1,15 @@
 
 import React from 'react';
 import GenericSupportList from './GenericSupportList';
-
-interface HealthSupportEntity {
-  id: string;
-  title: { en: string; de: string };
-  subtitle: { en: string; de: string };
-  location: string;
-  supportTypes: string[];
-  specializations?: string[];
-  description: { en: string; de: string };
-  contact: {
-    phone?: string;
-    email?: string;
-    website?: string;
-    address?: string;
-  };
-  category: string;
-  urgency: string;
-  supportType: string;
-}
+import healthEntities from '../data/courses/health-support-entities.json';
 
 interface HealthSupportListProps {
-  entities: HealthSupportEntity[];
+  filters: Record<string, string>;
   languageCode: string;
+  onResetFilters: () => void;
 }
 
-const HealthSupportList: React.FC<HealthSupportListProps> = ({ entities, languageCode }) => {
+const HealthSupportList: React.FC<HealthSupportListProps> = ({ filters, languageCode, onResetFilters }) => {
   const categoryConfig = {
     'general-practice': { icon: 'local-hospital', color: '#3B82F6' },
     'mental-health': { icon: 'psychology', color: '#8B5CF6' },
@@ -34,15 +17,16 @@ const HealthSupportList: React.FC<HealthSupportListProps> = ({ entities, languag
     'emergency': { icon: 'emergency', color: '#EF4444' },
     'women-health': { icon: 'pregnant-woman', color: '#EC4899' },
     'dental': { icon: 'dentistry', color: '#06B6D4' },
-    'pharmacy': { icon: 'local-pharmacy', color: '#F59E0B' }
+    'pharmacy': { icon: 'local-pharmacy', color: '#F59E0B' },
+    'community': { icon: 'people', color: '#059669' }
   };
 
   return (
     <GenericSupportList
-      entities={entities}
-      filters={{}}
+      entities={healthEntities.entities}
+      filters={filters}
       languageCode={languageCode}
-      onResetFilters={() => {}}
+      onResetFilters={onResetFilters}
       routePrefix="/ask/health"
       categoryConfig={categoryConfig}
       noResultsText={{
