@@ -152,28 +152,82 @@ const GeneralSupport: React.FC = () => {
     }
   };
   
-  const handleContactClick = (method: string) => {
-    console.log(`Contact via ${method}`);
+  const handleContactClick = (method: string, isIndividual: boolean = true) => {
+    console.log(`Contact via ${method}, individual: ${isIndividual}`);
     
     if (method === 'signal') {
-      // Open Signal app with pre-defined message
-      const message = encodeURIComponent(
-        language.code === 'de' 
-          ? 'Hallo, ich benötige Unterstützung und Beratung. Können Sie mir helfen?'
-          : 'Hello, I need support and counseling. Can you help me?'
-      );
-      
-      // Signal deep link format
-      const signalUrl = `sgnl://send?text=${message}`;
-      
-      // Try to open Signal app, fallback to web if not available
-      try {
-        window.open(signalUrl, '_blank');
-      } catch (error) {
-        // Fallback: open Signal web or show instructions
-        console.log('Signal app not available, showing fallback');
-        window.open('https://signal.org/download/', '_blank');
+      if (isIndividual) {
+        // Open Signal chat with specific username
+        const message = encodeURIComponent(
+          language.code === 'de' 
+            ? 'Hallo, ich benötige Unterstützung und Beratung. Können Sie mir helfen?'
+            : 'Hello, I need support and counseling. Can you help me?'
+        );
+        
+        // Signal deep link format for username
+        const signalUrl = `sgnl://signal.me/#p/+yellow.22`;
+        
+        try {
+          Linking.openURL(signalUrl);
+        } catch (error) {
+          // Fallback: open Signal web or show instructions
+          console.log('Signal app not available, showing fallback');
+          Linking.openURL('https://signal.org/download/');
+        }
+      } else {
+        // Open Signal group chat (community)
+        const groupLink = 'https://signal.group/#CjQKIExample_Group_Link_Here';
+        try {
+          Linking.openURL(groupLink);
+        } catch (error) {
+          console.log('Could not open Signal group link');
+          Linking.openURL('https://signal.org/download/');
+        }
       }
+    } else if (method === 'whatsapp') {
+      if (isIndividual) {
+        // Open WhatsApp chat with specific number
+        const message = encodeURIComponent(
+          language.code === 'de' 
+            ? 'Hallo, ich benötige Unterstützung und Beratung. Können Sie mir helfen?'
+            : 'Hello, I need support and counseling. Can you help me?'
+        );
+        
+        const whatsappUrl = `whatsapp://send?phone=+4368110768180&text=${message}`;
+        
+        try {
+          Linking.openURL(whatsappUrl);
+        } catch (error) {
+          // Fallback to web WhatsApp
+          const webWhatsappUrl = `https://web.whatsapp.com/send?phone=4368110768180&text=${message}`;
+          Linking.openURL(webWhatsappUrl);
+        }
+      } else {
+        // Open WhatsApp community
+        const communityLink = 'https://chat.whatsapp.com/invite/community_invite_link_here';
+        try {
+          Linking.openURL(communityLink);
+        } catch (error) {
+          console.log('Could not open WhatsApp community link');
+          Linking.openURL('https://web.whatsapp.com/');
+        }
+      }
+    } else if (method === 'facebook') {
+      // Handle Facebook messenger
+      const facebookUrl = 'https://m.me/your_facebook_page';
+      Linking.openURL(facebookUrl);
+    } else if (method === 'email') {
+      // Handle email
+      const emailUrl = 'mailto:support@example.com';
+      Linking.openURL(emailUrl);
+    } else if (method === 'phone') {
+      // Handle phone call
+      const phoneUrl = 'tel:+4368110768180';
+      Linking.openURL(phoneUrl);
+    } else if (method === 'community-forum') {
+      // Handle community forum
+      const forumUrl = 'https://forum.example.com';
+      Linking.openURL(forumUrl);
     }
   };
   
@@ -261,27 +315,27 @@ const GeneralSupport: React.FC = () => {
           <ContactButton 
             title="WhatsApp" 
             icon="message" 
-            onPress={() => Linking.openURL('whatsapp://send?text=hello&phone=+4368110768180')}
+            onPress={() => handleContactClick('whatsapp', true)}
           />
           <ContactButton 
             title="Signal" 
             icon="message" 
-            onPress={() => handleContactClick('signal')}
+            onPress={() => handleContactClick('signal', true)}
           />
           <ContactButton 
             title="Facebook" 
             icon="facebook" 
-            onPress={() => handleContactClick('facebook')}
+            onPress={() => handleContactClick('facebook', true)}
           />
           <ContactButton 
             title="Email" 
             icon="email" 
-            onPress={() => handleContactClick('email')}
+            onPress={() => handleContactClick('email', true)}
           />
           <ContactButton 
             title={language.code === 'de' ? 'Telefon' : 'Phone'} 
             icon="phone" 
-            onPress={() => handleContactClick('phone')}
+            onPress={() => handleContactClick('phone', true)}
           />
         </AccordionItem>
         
@@ -296,17 +350,17 @@ const GeneralSupport: React.FC = () => {
           <ContactButton 
             title="WhatsApp" 
             icon="message" 
-            onPress={() => handleContactClick('community-whatsapp')}
+            onPress={() => handleContactClick('whatsapp', false)}
           />
           <ContactButton 
             title="Signal" 
             icon="message" 
-            onPress={() => handleContactClick('community-signal')}
+            onPress={() => handleContactClick('signal', false)}
           />
           <ContactButton 
             title="Forum" 
             icon="forum" 
-            onPress={() => handleContactClick('community-forum')}
+            onPress={() => handleContactClick('community-forum', false)}
           />
         </AccordionItem>
         
