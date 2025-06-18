@@ -227,7 +227,7 @@ const GeneralSupport: React.FC = () => {
         <Text style={styles.title}>{pageTitle}</Text>
         <Text style={styles.subtitle}>{pageSubtitle}</Text>
       </View>
-      
+
       <ScrollView style={styles.scrollView} contentContainerStyle={styles.contentContainer}>
         {/* Talk to a mentor */}
         <AccordionItem

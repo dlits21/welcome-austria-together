@@ -60,26 +60,25 @@ const BaseQuizModal: React.FC<BaseQuizModalProps> = ({
           <Text style={[styles.modalTitle, isSmallScreen && styles.modalTitleSmall]}>{title}</Text>
           <Text style={[styles.modalSubtitle, isSmallScreen && styles.modalSubtitleSmall]}>{subtitle}</Text>
 
-          <View style={styles.questionContainer}>
             <Text style={[styles.questionText, isSmallScreen && styles.questionTextSmall]}>{currentQ.question}</Text>
-            
-            <ScrollView 
-              style={[styles.answersScrollView, { maxHeight: screenHeight * 0.5 }]} 
-              contentContainerStyle={styles.answersContainer}
+
+            <ScrollView
+              contentContainerStyle={styles.answersScrollView}
+              style={styles.answersContainer}
               showsVerticalScrollIndicator={true}
               nestedScrollEnabled={true}
             >
               {currentQ.answers.map((answer, index) => {
                 const isStringAnswer = typeof answer === 'string';
                 let displayText = isStringAnswer ? answer : (languageCode === 'de' ? answer.de : answer.en);
-                
+
                 // Add description for level answers if function provided
                 if (currentQ.key === 'level' && isStringAnswer && getLevelDescription) {
                   const levelCode = answer.split(' ')[0];
                   const description = getLevelDescription(levelCode);
                   displayText = `${levelCode} - ${description}`;
                 }
-                
+
                 return (
                   <TouchableOpacity
                     key={index}
@@ -91,7 +90,6 @@ const BaseQuizModal: React.FC<BaseQuizModalProps> = ({
                 );
               })}
             </ScrollView>
-          </View>
 
           <View style={styles.modalFooter}>
             <TouchableOpacity style={styles.skipButton} onPress={onSkip}>
@@ -116,7 +114,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0.5)',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 16,
+    padding: 20,
     paddingTop: Platform.OS === 'ios' ? 50 : 20,
   },
   modalContent: {
@@ -127,6 +125,10 @@ const styles = StyleSheet.create({
     maxWidth: 400,
     alignItems: 'center',
     position: 'relative',
+    minHeight: "25%", // Set a minimum height.
+    flexGrow: 0,      // Allow it to grow and fill remaining space.
+    flexShrink: 1,    // Allow it to shrink based on content.
+    maxHeight: '80%', // Adjust maximum height of the modal
     ...Platform.select({
       ios: {
         shadowColor: '#000',
@@ -173,12 +175,6 @@ const styles = StyleSheet.create({
     fontSize: 12,
     marginBottom: 16,
   },
-  questionContainer: {
-    width: '100%',
-    alignItems: 'center',
-    marginBottom: 24,
-    flex: 1,
-  },
   questionText: {
     fontSize: 18,
     fontWeight: '600',
@@ -192,6 +188,8 @@ const styles = StyleSheet.create({
   },
   answersScrollView: {
     width: '100%',
+    maxHeight: "80%",
+    flexShrink: 1, // Ensure the scrollview shrinks
   },
   answersContainer: {
     width: '100%',
@@ -208,6 +206,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     minHeight: 50,
     justifyContent: 'center',
+    marginBottom: 12,
   },
   answerButtonSmall: {
     paddingVertical: 12,

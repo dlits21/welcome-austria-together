@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Modal, View, Text, TouchableOpacity, StyleSheet, ScrollView, Platform } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -50,64 +49,64 @@ const QuizModal: React.FC<QuizModalProps> = ({
       visible={visible}
       transparent={true}
       animationType="fade"
-      statusBarTranslucent={Platform.OS === 'android'}
+      statusBarTranslucent={Platform.OS === 'ios'}
     >
       <View style={styles.modalOverlay}>
         <View style={styles.modalContent}>
           <TouchableOpacity style={styles.closeButton} onPress={onClose}>
             <MaterialIcons name="close" size={24} color="#666" />
           </TouchableOpacity>
-          
+
           <Text style={styles.modalTitle}>
             {languageCode === 'de' ? 'Finden Sie das Richtige für sich' : 'Find What\'s Right for You'}
           </Text>
-          
+
           <Text style={styles.modalSubtitle}>
-            {languageCode === 'de' 
+            {languageCode === 'de'
               ? 'Beantworten Sie ein paar kurze Fragen, um personalisierte Empfehlungen zu erhalten.'
               : 'Answer a few quick questions to get personalized recommendations.'}
           </Text>
 
-          <View style={styles.questionContainer}>
+          {/* Scrollable content container */}
+          <ScrollView
+            contentContainerStyle={styles.answersScrollView}
+            style={styles.answersContainer}
+            showsVerticalScrollIndicator={true}
+            nestedScrollEnabled={true}
+          >
             <Text style={styles.questionText}>{currentQ.question}</Text>
-            
-            <ScrollView 
-              style={styles.answersScrollView} 
-              contentContainerStyle={styles.answersContainer}
-              showsVerticalScrollIndicator={true}
-              nestedScrollEnabled={true}
-            >
-              {currentQ.answers.map((answer, index) => {
-                const isStringAnswer = typeof answer === 'string';
-                let displayText = isStringAnswer ? answer : (languageCode === 'de' ? answer.de : answer.en);
-                
-                // Add description for level answers without duplication
-                if (currentQ.key === 'level' && isStringAnswer) {
-                  const levelCode = answer.split(' ')[0]; // Extract A0, A1, etc.
-                  const description = getLevelDescription(levelCode);
-                  displayText = `${levelCode} - ${description}`;
-                }
-                
-                return (
-                  <TouchableOpacity
-                    key={index}
-                    style={styles.answerButton}
-                    onPress={() => onAnswer(answer)}
-                  >
-                    <Text style={styles.answerText}>{displayText}</Text>
-                  </TouchableOpacity>
-                );
-              })}
-            </ScrollView>
-          </View>
 
+            {currentQ.answers.map((answer, index) => {
+              const isStringAnswer = typeof answer === 'string';
+              let displayText = isStringAnswer ? answer : (languageCode === 'de' ? answer.de : answer.en);
+
+              // Add description for level answers without duplication
+              if (currentQ.key === 'level' && isStringAnswer) {
+                const levelCode = answer.split(' ')[0]; // Extract A0, A1, etc.
+                const description = getLevelDescription(levelCode);
+                displayText = `${levelCode} - ${description}`;
+              }
+
+              return (
+                <TouchableOpacity
+                  key={index}
+                  style={styles.answerButton}
+                  onPress={() => onAnswer(answer)}
+                >
+                  <Text style={styles.answerText}>{displayText}</Text>
+                </TouchableOpacity>
+              );
+            })}
+          </ScrollView>
+
+          {/* Modal Footer */}
           <View style={styles.modalFooter}>
             <TouchableOpacity style={styles.skipButton} onPress={onSkip}>
               <Text style={styles.skipButtonText}>
                 {languageCode === 'de' ? 'Überspringen' : 'Skip'}
               </Text>
             </TouchableOpacity>
-            
+
             <Text style={styles.progressText}>
               {currentQuestion + 1} / {questions.length}
             </Text>
@@ -128,14 +127,17 @@ const styles = StyleSheet.create({
     paddingTop: Platform.OS === 'ios' ? 50 : 20,
   },
   modalContent: {
+    width: '100%',
+    maxWidth: 400,
     backgroundColor: '#fff',
     borderRadius: 20,
     padding: 24,
-    width: '100%',
-    maxWidth: 400,
-    maxHeight: Platform.OS === 'ios' ? '85%' : '80%',
     alignItems: 'center',
     position: 'relative',
+    minHeight: "25%", // Set a minimum height.
+    flexGrow: 0,      // Allow it to grow and fill remaining space.
+    flexShrink: 1,    // Allow it to shrink based on content.
+    maxHeight: '80%', // Adjust maximum height of the modal
     ...Platform.select({
       ios: {
         shadowColor: '#000',
@@ -170,27 +172,22 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 24,
   },
-  questionContainer: {
-    width: '100%',
-    alignItems: 'center',
-    marginBottom: 24,
-    flex: 1,
-  },
+    answersScrollView: {
+      width: '100%',
+      maxHeight: "80%",
+      flexShrink: 1, // Ensure the scrollview shrinks
+    },
+    answersContainer: {
+      width: '100%',
+      gap: 12,
+      paddingBottom: 20,
+    },
   questionText: {
     fontSize: 18,
     fontWeight: '600',
     color: '#374151',
     marginBottom: 20,
     textAlign: 'center',
-  },
-  answersScrollView: {
-    width: '100%',
-    maxHeight: Platform.OS === 'ios' ? 300 : 250,
-  },
-  answersContainer: {
-    width: '100%',
-    gap: 12,
-    paddingBottom: 20,
   },
   answerButton: {
     backgroundColor: '#f8fafc',
@@ -202,13 +199,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     minHeight: 50,
     justifyContent: 'center',
+    marginBottom: 12,
   },
   answerText: {
     fontSize: 16,
     color: '#374151',
     fontWeight: '500',
     textAlign: 'center',
-    lineHeight: 20,
   },
   modalFooter: {
     flexDirection: 'row',

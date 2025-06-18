@@ -33,7 +33,7 @@ const GermanLearningPage = () => {
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
-  const [showQuiz, setShowQuiz] = useState(false);
+  const [showQuiz, setShowQuiz] = useState(true);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showFilters, setShowFilters] = useState(false);
   const [courses, setCourses] = useState<GermanCourse[]>([]);
@@ -171,8 +171,8 @@ const GermanLearningPage = () => {
       question: currentLanguage === 'de' ? 'Welche Art von Kurs bevorzugen Sie?' : 'What type of course do you prefer?',
       answers: [
         { key: 'course', en: 'Structured course', de: 'Strukturierter Kurs' },
-        { key: 'resource', en: 'Self-study resources', de: 'Selbststudium-Ressourcen' },
-        { key: 'exam', en: 'Exam preparation', de: 'Prüfungsvorbereitung' }
+        { key: 'resource', en: 'Resources', de: 'Ressourcen' },
+        { key: 'exam', en: 'Exams', de: 'Prüfungen' }
       ],
       key: 'type'
     },
