@@ -144,7 +144,7 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
         <Image 
           source={require('../assets/images/assistant.jpg')}
           style={styles.assistantImage}
-          resizeMode="cover"
+          resizeMode="contain"
         />
       </View>
       <Text style={styles.avatarTitle}>
@@ -471,10 +471,9 @@ const styles = StyleSheet.create({
     paddingVertical: 40,
   },
   largeAvatar: {
-    width: 200,
-    height: 200,
+    width: 300,
+    height: 400,
     marginBottom: 24,
-    overflow: 'hidden',
     borderRadius: 16,
   },
   assistantImage: {
