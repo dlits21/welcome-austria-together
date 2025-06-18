@@ -23,6 +23,7 @@ import {
 import PageNavigation from '../components/PageNavigation';
 import LanguageModal from '../components/LanguageModal';
 import HelpModal from '../components/HelpModal';
+import VirtualAssistantModal from '../components/VirtualAssistantModal';
 import {CategoryItem, informationCategories} from '../data/information'
 
 const Information: React.FC = () => {
@@ -31,6 +32,8 @@ const Information: React.FC = () => {
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
+  const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
+  const [searchQuery, setSearchQuery] = useState<string>('');
   const router = useRouter();
   const { width } = useWindowDimensions();
   
@@ -42,8 +45,9 @@ const Information: React.FC = () => {
 
   const handleSearch = () => {
     if (searchInput.trim()) {
-      console.log('Search query:', searchInput);
-      // Search logic here
+      setSearchQuery(searchInput);
+      setShowVirtualAssistant(true);
+      setSearchInput('');
     }
   };
 
@@ -51,6 +55,11 @@ const Information: React.FC = () => {
     console.log(`Selected: ${categoryId}`);
     // Navigate to the specific information subpage
     router.push(`/information/${categoryId}`);
+  };
+
+  const handleVirtualAssistantClose = () => {
+    setShowVirtualAssistant(false);
+    setSearchQuery('');
   };
 
   // Calculate columns based on screen width - more columns for larger screens
@@ -91,6 +100,7 @@ const Information: React.FC = () => {
         soundEnabled={soundEnabled}
         showLanguageModal={() => setShowLanguageModal(true)}
         showHelpModal={() => setShowHelpModal(true)}
+        showVirtualAssistant={() => setShowVirtualAssistant(true)}
       />
       
       <View style={styles.content}>
@@ -135,6 +145,14 @@ const Information: React.FC = () => {
         visible={showHelpModal}
         onClose={() => setShowHelpModal(false)}
         languageCode={language.code}
+      />
+
+      {/* Virtual Assistant Modal */}
+      <VirtualAssistantModal
+        visible={showVirtualAssistant}
+        onClose={handleVirtualAssistantClose}
+        languageCode={language.code}
+        initialMessage={searchQuery}
       />
     </SafeAreaView>
   );
