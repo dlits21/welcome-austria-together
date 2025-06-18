@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { 
   StyleSheet, 
@@ -16,6 +15,7 @@ import FilterSection from '../../components/FilterSection';
 import QuizControls from '../../components/QuizControls';
 import HealthSupportList from '../../components/HealthSupportList';
 import healthSupportEntitiesData from '../../data/courses/health-support-entities.json';
+import VirtualAssistantModal from '../../components/VirtualAssistantModal';
 
 interface HealthSupportEntity {
   id: string;
@@ -47,6 +47,7 @@ const HealthSupportPage: React.FC = () => {
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
+  const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
 
   // Convert JSON data to array format
   const healthSupportEntities: HealthSupportEntity[] = healthSupportEntitiesData.entities || [];
@@ -219,6 +220,7 @@ const HealthSupportPage: React.FC = () => {
         soundEnabled={soundEnabled}
         showLanguageModal={() => setShowLanguageModal(true)}
         showHelpModal={() => setShowHelpModal(true)}
+        showVirtualAssistant={() => setShowVirtualAssistant(true)}
       />
       
       <View style={styles.content}>
@@ -275,6 +277,13 @@ const HealthSupportPage: React.FC = () => {
       <HelpModal
         visible={showHelpModal}
         onClose={() => setShowHelpModal(false)}
+        languageCode={language.code}
+      />
+
+      {/* Virtual Assistant Modal */}
+      <VirtualAssistantModal
+        visible={showVirtualAssistant}
+        onClose={() => setShowVirtualAssistant(false)}
         languageCode={language.code}
       />
     </SafeAreaView>

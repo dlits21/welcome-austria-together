@@ -13,6 +13,7 @@ import FilterSection from '../../components/FilterSection';
 import QuizControls from '../../components/QuizControls';
 import FinancialSupportList from '../../components/FinancialSupportList';
 import financialLiteracyEntitiesData from '../../data/courses/financial-literacy-entities.json';
+import VirtualAssistantModal from '../../components/VirtualAssistantModal';
 
 interface FinancialSupportEntity {
   id: string;
@@ -42,6 +43,7 @@ interface FinancialSupportEntity {
 const FinancialSupportPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
+  const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
   
   // Convert JSON data to array format
   const financialSupportEntities: FinancialSupportEntity[] = Object.values(financialLiteracyEntitiesData);
@@ -209,6 +211,7 @@ const FinancialSupportPage: React.FC = () => {
       <PageNavigation 
         toggleSound={toggleSound}
         soundEnabled={soundEnabled}
+        showVirtualAssistant={() => setShowVirtualAssistant(true)}
       />
       
       <View style={styles.content}>
@@ -253,6 +256,13 @@ const FinancialSupportPage: React.FC = () => {
           />
         )}
       </View>
+      
+      {/* Virtual Assistant Modal */}
+      <VirtualAssistantModal
+        visible={showVirtualAssistant}
+        onClose={() => setShowVirtualAssistant(false)}
+        languageCode={language.code}
+      />
     </SafeAreaView>
   );
 };

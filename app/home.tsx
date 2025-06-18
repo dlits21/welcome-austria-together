@@ -34,6 +34,7 @@ const Home: React.FC = () => {
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
+  const [searchQuery, setSearchQuery] = useState<string>('');
   
   // Find the current language object, but don't default to English
   const language = languages.find(lang => lang.code === currentLanguage);
@@ -46,12 +47,10 @@ const Home: React.FC = () => {
 
   const handleSearch = () => {
     if (searchInput.trim()) {
-      router.push({
-        pathname: '/search',
-        params: { query: searchInput }
-      });
+      setSearchQuery(searchInput);
+      setShowVirtualAssistant(true);
+      setSearchInput('');
     } else {
-      // Toast would go here with a native implementation
       alert(getSearchTerm(currentLanguage));
     }
   };
@@ -62,13 +61,15 @@ const Home: React.FC = () => {
 
   const toggleSound = () => {
     setSoundEnabled(!soundEnabled);
-    // Sound toggle logic would be implemented here
-    
-    // Toast message would go here with a native implementation
     alert(soundEnabled 
       ? getSoundEnabled(currentLanguage, 'disabled') 
       : getSoundEnabled(currentLanguage, 'enabled')
     );
+  };
+
+  const handleVirtualAssistantClose = () => {
+    setShowVirtualAssistant(false);
+    setSearchQuery('');
   };
 
   // Prepare translations and text content
@@ -144,8 +145,9 @@ const Home: React.FC = () => {
       {/* Virtual Assistant Modal */}
       <VirtualAssistantModal
         visible={showVirtualAssistant}
-        onClose={() => setShowVirtualAssistant(false)}
+        onClose={handleVirtualAssistantClose}
         languageCode={currentLanguage}
+        initialMessage={searchQuery}
       />
     </SafeAreaView>
   );

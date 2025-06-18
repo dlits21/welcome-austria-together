@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   StyleSheet,
   Text,
@@ -25,24 +25,53 @@ interface VirtualAssistantModalProps {
   visible: boolean;
   onClose: () => void;
   languageCode: string;
+  initialMessage?: string;
 }
 
 const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
   visible,
   onClose,
   languageCode,
+  initialMessage,
 }) => {
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: '1',
-      text: languageCode === 'de' 
-        ? 'Hallo! Ich bin dein virtueller Assistent. Wie kann ich dir helfen?' 
-        : 'Hello! I\'m your virtual assistant. How can I help you?',
-      isUser: false,
-      timestamp: new Date(),
-    },
-  ]);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [inputText, setInputText] = useState('');
+
+  // Initialize messages when modal opens
+  useEffect(() => {
+    if (visible) {
+      const welcomeMessage: Message = {
+        id: '1',
+        text: languageCode === 'de' 
+          ? 'Hallo! Ich bin dein virtueller Assistent. Wie kann ich dir helfen?' 
+          : 'Hello! I\'m your virtual assistant. How can I help you?',
+        isUser: false,
+        timestamp: new Date(),
+      };
+
+      if (initialMessage) {
+        const userMessage: Message = {
+          id: '2',
+          text: initialMessage,
+          isUser: true,
+          timestamp: new Date(),
+        };
+        
+        const assistantResponse: Message = {
+          id: '3',
+          text: languageCode === 'de' 
+            ? `Du hast nach "${initialMessage}" gesucht. Das ist eine interessante Frage! Ich arbeite noch daran, dir besser helfen zu können.`
+            : `You searched for "${initialMessage}". That's an interesting question! I'm still learning to help you better.`,
+          isUser: false,
+          timestamp: new Date(),
+        };
+
+        setMessages([welcomeMessage, userMessage, assistantResponse]);
+      } else {
+        setMessages([welcomeMessage]);
+      }
+    }
+  }, [visible, initialMessage, languageCode]);
 
   const sendMessage = () => {
     if (inputText.trim()) {
@@ -56,7 +85,7 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
       setMessages(prev => [...prev, newMessage]);
       setInputText('');
 
-      // Simulate assistant response (void logic for now)
+      // Simulate assistant response
       setTimeout(() => {
         const assistantResponse: Message = {
           id: (Date.now() + 1).toString(),
@@ -175,6 +204,39 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
       </SafeAreaView>
     </Modal>
   );
+
+  function ChatBubble({ message }: { message: Message }) {
+    return (
+      <View style={[
+        styles.messageContainer,
+        message.isUser ? styles.userMessageContainer : styles.assistantMessageContainer
+      ]}>
+        {!message.isUser && (
+          <View style={styles.characterAvatar}>
+            <Text style={styles.characterEmoji}>🤖</Text>
+          </View>
+        )}
+        
+        <View style={[
+          styles.messageBubble,
+          message.isUser ? styles.userBubble : styles.assistantBubble
+        ]}>
+          <Text style={[
+            styles.messageText,
+            message.isUser ? styles.userMessageText : styles.assistantMessageText
+          ]}>
+            {message.text}
+          </Text>
+        </View>
+        
+        {message.isUser && (
+          <View style={styles.userAvatar}>
+            <MaterialIcons name="person" size={20} color="#fff" />
+          </View>
+        )}
+      </View>
+    );
+  }
 };
 
 const styles = StyleSheet.create({

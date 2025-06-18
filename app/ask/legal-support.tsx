@@ -14,6 +14,7 @@ import BaseQuizModal from '../../components/BaseQuizModal';
 import FilterSection from '../../components/FilterSection';
 import QuizControls from '../../components/QuizControls';
 import LegalSupportList from '../../components/LegalSupportList';
+import VirtualAssistantModal from '../../components/VirtualAssistantModal';
 import legalSupportEntitiesData from '../../data/courses/legal-support-entities.json';
 
 interface LegalSupportEntity {
@@ -46,6 +47,7 @@ const LegalSupportPage: React.FC = () => {
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
+  const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
 
   // Convert JSON data to array format
   const legalSupportEntities: LegalSupportEntity[] = Object.values(legalSupportEntitiesData);
@@ -206,6 +208,7 @@ const LegalSupportPage: React.FC = () => {
         soundEnabled={soundEnabled}
         showLanguageModal={() => setShowLanguageModal(true)}
         showHelpModal={() => setShowHelpModal(true)}
+        showVirtualAssistant={() => setShowVirtualAssistant(true)}
       />
       
       <View style={styles.content}>
@@ -262,6 +265,13 @@ const LegalSupportPage: React.FC = () => {
       <HelpModal
         visible={showHelpModal}
         onClose={() => setShowHelpModal(false)}
+        languageCode={language.code}
+      />
+
+      {/* Virtual Assistant Modal */}
+      <VirtualAssistantModal
+        visible={showVirtualAssistant}
+        onClose={() => setShowVirtualAssistant(false)}
         languageCode={language.code}
       />
     </SafeAreaView>
