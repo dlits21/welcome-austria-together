@@ -212,6 +212,34 @@ const GeneralSupport: React.FC = () => {
           Linking.openURL('https://web.whatsapp.com/Br987MYfTB88haisyOuWof');
         }
       }
+    } else if (method === 'telegram') {
+      if (isIndividual) {
+        // Open Telegram chat with specific username
+        const message = encodeURIComponent(
+          language.code === 'de' 
+            ? 'Hallo, ich benötige Unterstützung und Beratung. Können Sie mir helfen?'
+            : 'Hello, I need support and counseling. Can you help me?'
+        );
+        
+        const telegramUrl = `tg://resolve?domain=support_helper&text=${message}`;
+        
+        try {
+          Linking.openURL(telegramUrl);
+        } catch (error) {
+          // Fallback to web Telegram
+          const webTelegramUrl = `https://t.me/support_helper?text=${message}`;
+          Linking.openURL(webTelegramUrl);
+        }
+      } else {
+        // Open Telegram community
+        const communityLink = 'https://t.me/+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefgh';
+        try {
+          Linking.openURL(communityLink);
+        } catch (error) {
+          console.log('Could not open Telegram community link');
+          Linking.openURL(communityLink);
+        }
+      }
     } else if (method === 'facebook') {
       // Handle Facebook messenger
       const facebookUrl = 'https://m.me/your_facebook_page';
@@ -323,6 +351,11 @@ const GeneralSupport: React.FC = () => {
             onPress={() => handleContactClick('signal', true)}
           />
           <ContactButton 
+            title="Telegram" 
+            icon="message" 
+            onPress={() => handleContactClick('telegram', true)}
+          />
+          <ContactButton 
             title="Facebook" 
             icon="facebook" 
             onPress={() => handleContactClick('facebook', true)}
@@ -356,6 +389,11 @@ const GeneralSupport: React.FC = () => {
             title="Signal" 
             icon="message" 
             onPress={() => handleContactClick('signal', false)}
+          />
+          <ContactButton 
+            title="Telegram" 
+            icon="message" 
+            onPress={() => handleContactClick('telegram', false)}
           />
           <ContactButton 
             title="Forum" 
