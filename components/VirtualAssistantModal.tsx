@@ -1,19 +1,19 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   StyleSheet,
   Text,
   View,
   Modal,
   TouchableOpacity,
-  ScrollView,
-  TextInput,
   SafeAreaView,
-  KeyboardAvoidingView,
-  Platform,
   Dimensions,
   Image,
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import VirtualAssistantAvatar from './VirtualAssistantAvatar';
+import ModeToggle from './ModeToggle';
+import ChatSection from './ChatSection';
 
 interface Message {
   id: string;
@@ -41,8 +41,6 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
   const [inputText, setInputText] = useState('');
   const [isListening, setIsListening] = useState(false);
   const [chatMode, setChatMode] = useState<'text' | 'voice'>(defaultMode);
-  const textInputRef = useRef<TextInput>(null);
-  const scrollViewRef = useRef<ScrollView>(null);
 
   const { width } = Dimensions.get('window');
   const isWideScreen = width >= 768;
@@ -86,15 +84,13 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
     }
   }, [visible, initialMessage, languageCode, defaultMode]);
 
-  // Handle input change with memoization to avoid unnecessary re-renders
   const handleInputChange = useCallback((text: string) => {
-      console.log('Rendering2');
+    console.log('Rendering2');
     setInputText(text);
   }, []);
 
-  // Send message
   const sendMessage = useCallback(() => {
-      console.log('Rendering3');
+    console.log('Rendering3');
     if (inputText.trim()) {
       const newMessage: Message = {
         id: Date.now().toString(),
@@ -103,11 +99,9 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
         timestamp: new Date(),
       };
 
-      // Use functional updates to avoid re-renders
       setMessages(prevMessages => [...prevMessages, newMessage]);
-      setInputText('');  // Clear the input text after sending message
+      setInputText('');
 
-      // Simulate assistant response after a delay
       setTimeout(() => {
         const assistantResponse: Message = {
           id: (Date.now() + 1).toString(),
@@ -120,9 +114,8 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
         setMessages(prev => [...prev, assistantResponse]);
       }, 1000);
     }
-  }, [inputText, messages, languageCode]);
+  }, [inputText, languageCode]);
 
-  // Toggle voice mode
   const toggleVoiceMode = useCallback(() => {
     setIsListening(!isListening);
   }, [isListening]);
@@ -130,261 +123,6 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
   const handleModeChange = useCallback((mode: 'text' | 'voice') => {
     setChatMode(mode);
   }, []);
-
-  const VirtualAssistantAvatar = () => (
-    <View style={styles.avatarContainer}>
-      <View style={styles.largeAvatarContainer}>
-        <Image
-          source={require('../assets/images/assistant.jpg')}
-          style={styles.assistantImage}
-          resizeMode="contain"
-        />
-      </View>
-      <Text style={styles.avatarTitle}>
-        {languageCode === 'de' ? 'Virtueller Assistent' : 'Virtual Assistant'}
-      </Text>
-      <Text style={styles.avatarSubtitle}>
-        {languageCode === 'de'
-          ? 'Ich bin hier, um Ihnen zu helfen!'
-          : 'I\'m here to help you!'}
-      </Text>
-
-      <View style={styles.modeToggle}>
-        <TouchableOpacity
-          style={[styles.modeButton, chatMode === 'text' && styles.activeModeButton]}
-          onPress={() => handleModeChange('text')}
-        >
-          <MaterialIcons name="chat" size={20} color={chatMode === 'text' ? '#fff' : '#666'} />
-          <Text style={[styles.modeText, chatMode === 'text' && styles.activeModeText]}>
-            {languageCode === 'de' ? 'Chat' : 'Chat'}
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={[styles.modeButton, chatMode === 'voice' && styles.activeModeButton]}
-          onPress={() => handleModeChange('voice')}
-        >
-          <MaterialIcons name="mic" size={20} color={chatMode === 'voice' ? '#fff' : '#666'} />
-          <Text style={[styles.modeText, chatMode === 'voice' && styles.activeModeText]}>
-            {languageCode === 'de' ? 'Sprechen' : 'Talk'}
-          </Text>
-        </TouchableOpacity>
-      </View>
-    </View>
-  );
-
-  const ChatBubble = ({ message }: { message: Message }) => (
-    <View style={[
-      styles.messageContainer,
-      message.isUser ? styles.userMessageContainer : styles.assistantMessageContainer
-    ]}>
-      {!message.isUser && (
-        <View style={styles.characterAvatar}>
-          <Image
-            source={require('../assets/images/assistant.jpg')}
-            style={styles.avatarImage}
-            resizeMode="cover"
-          />
-        </View>
-      )}
-
-      <View style={[
-        styles.messageBubble,
-        message.isUser ? styles.userBubble : styles.assistantBubble
-      ]}>
-        <Text style={[
-          styles.messageText,
-          message.isUser ? styles.userMessageText : styles.assistantMessageText
-        ]}>
-          {message.text}
-        </Text>
-      </View>
-
-      {message.isUser && (
-        <View style={styles.userAvatar}>
-          <MaterialIcons name="person" size={20} color="#fff" />
-        </View>
-      )}
-    </View>
-  );
-
-  const MobileTopSection = () => (
-      <View style={styles.mobileTopSection}>
-        <View style={styles.mobileAssistantContainer}>
-          <Image
-            source={require('../assets/images/assistant.jpg')}
-            style={styles.mobileAssistantImage}
-            resizeMode="contain"
-          />
-        </View>
-
-        <View style={styles.mobileRightSection}>
-          <Text style={styles.mobileTitle}>
-            {languageCode === 'de' ? 'Virtueller Assistent' : 'Virtual Assistant'}
-          </Text>
-
-          <View style={styles.mobileModeToggle}>
-            <TouchableOpacity
-              style={[styles.mobileModeButton, chatMode === 'text' && styles.activeMobileModeButton]}
-              onPress={() => handleModeChange('text')}
-            >
-              <MaterialIcons name="chat" size={18} color={chatMode === 'text' ? '#fff' : '#666'} />
-              <Text style={[styles.mobileModeButtonText, chatMode === 'text' && styles.activeMobileModeButtonText]}>
-                {languageCode === 'de' ? 'Chat' : 'Chat'}
-              </Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity
-              style={[styles.mobileModeButton, chatMode === 'voice' && styles.activeMobileModeButton]}
-              onPress={() => handleModeChange('voice')}
-            >
-              <MaterialIcons name="mic" size={18} color={chatMode === 'voice' ? '#fff' : '#666'} />
-              <Text style={[styles.mobileModeButtonText, chatMode === 'voice' && styles.activeMobileModeButtonText]}>
-                {languageCode === 'de' ? 'Sprechen' : 'Talk'}
-              </Text>
-            </TouchableOpacity>
-          </View>
-        </View>
-      </View>
-    );
-
-
-  const ChatSection = () => (
-    <KeyboardAvoidingView
-      style={[styles.chatSection, isWideScreen && styles.chatSectionWide]}
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      keyboardVerticalOffset={Platform.OS === 'ios' ? 100 : 20}
-    >
-      <ScrollView
-        ref={scrollViewRef}
-        style={styles.messagesContainer}
-        contentContainerStyle={styles.messagesContent}
-        showsVerticalScrollIndicator={false}
-        keyboardShouldPersistTaps="handled"
-      >
-        {messages.map((message) => {
-          return ChatBubble({key: message.id, message: message});
-        })}
-      </ScrollView>
-
-      {isWideScreen ? (
-        <View style={[styles.inputContainer]}>
-          {chatMode === 'text' ? (
-            <>
-              <TextInput
-                ref={textInputRef}
-                style={styles.textInput}
-                value={inputText}
-                onChangeText={setInputText}
-                placeholder={
-                  languageCode === 'de'
-                    ? 'Schreibe eine Nachricht...'
-                    : 'Type a message...'
-                }
-                maxLength={500}
-                returnKeyType="send"
-                onSubmitEditing={sendMessage}
-                blurOnSubmit={false}
-                autoCorrect={false}
-                autoCapitalize="sentences"
-              />
-              <TouchableOpacity
-                style={[
-                  styles.sendButton,
-                  !inputText.trim() && styles.sendButtonDisabled
-                ]}
-                onPress={sendMessage}
-                disabled={!inputText.trim()}
-              >
-                <MaterialIcons
-                  name="send"
-                  size={20}
-                  color={inputText.trim() ? "#fff" : "#ccc"}
-                />
-              </TouchableOpacity>
-            </>
-          ) : (
-            <View style={styles.webVoiceContainer}>
-              <TouchableOpacity
-                style={[styles.webVoiceButton, isListening && styles.webVoiceButtonActive]}
-                onPress={toggleVoiceMode}
-              >
-                <MaterialIcons
-                  name={isListening ? "mic" : "mic-none"}
-                  size={24}
-                  color="#fff"
-                />
-                <Text style={styles.webVoiceButtonText}>
-                  {isListening
-                    ? (languageCode === 'de' ? 'Höre zu...' : 'Listening...')
-                    : (languageCode === 'de' ? 'Drücken zum Sprechen' : 'Press to Talk')
-                  }
-                </Text>
-              </TouchableOpacity>
-            </View>
-          )}
-        </View>
-      ) : (
-        <>
-          {chatMode === 'text' && (
-            <View style={[styles.inputContainer, !isWideScreen && styles.mobileInputContainer]}>
-              <TextInput
-                ref={textInputRef}
-                style={styles.textInput}
-                value={inputText}
-                onChangeText={setInputText}
-                placeholder={
-                  languageCode === 'de'
-                    ? 'Schreibe eine Nachricht...'
-                    : 'Type a message...'
-                }
-                maxLength={500}
-                returnKeyType="send"
-                onSubmitEditing={sendMessage}
-                blurOnSubmit={false}
-                autoCorrect={false}
-                autoCapitalize="sentences"
-              />
-              <TouchableOpacity
-                style={[
-                  styles.sendButton,
-                  !inputText.trim() && styles.sendButtonDisabled
-                ]}
-                onPress={sendMessage}
-                disabled={!inputText.trim()}
-              >
-                <MaterialIcons
-                  name="send"
-                  size={20}
-                  color={inputText.trim() ? "#fff" : "#ccc"}
-                />
-              </TouchableOpacity>
-            </View>
-          )}
-          {chatMode === 'voice' && !isWideScreen && (
-            <View style={styles.voiceSection}>
-              <TouchableOpacity
-                style={[styles.mobileVoiceButton, isListening && styles.mobileVoiceButtonActive]}
-                onPress={toggleVoiceMode}
-              >
-                <MaterialIcons
-                  name={isListening ? "mic" : "mic-none"}
-                  size={32}
-                  color="#fff"
-                />
-              </TouchableOpacity>
-              <Text style={styles.voiceInstructions}>
-                {isListening
-                  ? (languageCode === 'de' ? 'Höre zu...' : 'Listening...')
-                  : (languageCode === 'de' ? 'Tippen zum Sprechen' : 'Tap to Talk')
-                }
-              </Text>
-            </View>
-          )}
-        </>
-      )}
-    </KeyboardAvoidingView>
-  );
 
   return (
     <Modal
@@ -420,14 +158,54 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
           {isWideScreen ? (
             <>
               <View style={styles.assistantSection}>
-                {VirtualAssistantAvatar()}
+                <VirtualAssistantAvatar 
+                  languageCode={languageCode}
+                  isWideScreen={isWideScreen}
+                />
+                <ModeToggle
+                  chatMode={chatMode}
+                  onModeChange={handleModeChange}
+                  languageCode={languageCode}
+                  isWideScreen={isWideScreen}
+                />
               </View>
-              {ChatSection()}
+              <ChatSection
+                messages={messages}
+                inputText={inputText}
+                onInputChange={handleInputChange}
+                onSendMessage={sendMessage}
+                chatMode={chatMode}
+                isListening={isListening}
+                onToggleVoice={toggleVoiceMode}
+                languageCode={languageCode}
+                isWideScreen={isWideScreen}
+              />
             </>
           ) : (
             <View style={styles.mobileLayout}>
-              {MobileTopSection()}
-              {ChatSection()}
+              <View style={styles.mobileTopContainer}>
+                <VirtualAssistantAvatar 
+                  languageCode={languageCode}
+                  isWideScreen={isWideScreen}
+                />
+                <ModeToggle
+                  chatMode={chatMode}
+                  onModeChange={handleModeChange}
+                  languageCode={languageCode}
+                  isWideScreen={isWideScreen}
+                />
+              </View>
+              <ChatSection
+                messages={messages}
+                inputText={inputText}
+                onInputChange={handleInputChange}
+                onSendMessage={sendMessage}
+                chatMode={chatMode}
+                isListening={isListening}
+                onToggleVoice={toggleVoiceMode}
+                languageCode={languageCode}
+                isWideScreen={isWideScreen}
+              />
             </View>
           )}
         </View>
@@ -498,289 +276,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 32,
   },
-  avatarContainer: {
-    alignItems: 'center',
-    paddingVertical: 40,
-  },
-  largeAvatarContainer: {
-    width: 300,
-    height: 300,
-    marginBottom: 24,
-    backgroundColor: '#f8f9fa',
-    borderRadius: 16,
-    overflow: 'hidden',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  assistantImage: {
-    width: '100%',
-    height: '100%',
-  },
-  avatarTitle: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#333',
-    marginBottom: 8,
-  },
-  avatarSubtitle: {
-    fontSize: 16,
-    color: '#666',
-    textAlign: 'center',
-    marginBottom: 32,
-  },
-  modeToggle: {
-    flexDirection: 'row',
-    backgroundColor: '#f0f0f0',
-    borderRadius: 25,
-    padding: 4,
-    marginBottom: 24,
-  },
-  modeButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    borderRadius: 20,
-  },
-  activeModeButton: {
-    backgroundColor: '#3B82F6',
-  },
-  modeText: {
-    marginLeft: 8,
-    fontSize: 14,
-    color: '#666',
-  },
-  activeModeText: {
-    color: '#fff',
-  },
-  voiceButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#10B981',
-    paddingHorizontal: 24,
-    paddingVertical: 12,
-    borderRadius: 25,
-  },
-  voiceButtonActive: {
-    backgroundColor: '#EF4444',
-  },
-  voiceButtonText: {
-    color: '#fff',
-    marginLeft: 8,
-    fontSize: 16,
-    fontWeight: '500',
-  },
   mobileLayout: {
     flex: 1,
   },
-  mobileTopSection: {
-    flexDirection: 'row',
-    padding: 16,
+  mobileTopContainer: {
     backgroundColor: '#fff',
     borderBottomWidth: 1,
     borderBottomColor: '#e0e0e0',
-    alignItems: 'center',
   },
-  mobileAssistantContainer: {
-    marginRight: 16,
-  },
-  mobileAssistantImage: {
-    width: 100,
-    height: 100,
-    backgroundColor: '#f8f9fa',
-    borderRadius: 12,
-  },
-  mobileRightSection: {
-    flex: 1,
-  },
-  mobileTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#333',
-    marginBottom: 12,
-  },
-  mobileModeToggle: {
-    flexDirection: 'row',
-    backgroundColor: '#f0f0f0',
-    borderRadius: 20,
-    padding: 3,
-    alignSelf: 'flex-start',
-  },
-  mobileModeButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 16,
-  },
-  activeMobileModeButton: {
-    backgroundColor: '#3B82F6',
-  },
-  mobileModeButtonText: {
-    marginLeft: 4,
-    fontSize: 12,
-    color: '#666',
-  },
-  activeMobileModeButtonText: {
-    color: '#fff',
-  },
-  chatSection: {
-    flex: 1,
-  },
-  chatSectionWide: {
-    flex: 1,
-  },
-  messagesContainer: {
-    flex: 1,
-  },
-  messagesContent: {
-    padding: 16,
-    paddingBottom: 20,
-  },
-  messageContainer: {
-    flexDirection: 'row',
-    marginBottom: 16,
-    alignItems: 'flex-end',
-  },
-  userMessageContainer: {
-    justifyContent: 'flex-end',
-  },
-  assistantMessageContainer: {
-    justifyContent: 'flex-start',
-  },
-  characterAvatar: {
-    width: 32,
-    height: 32,
-    borderRadius: 16,
-    backgroundColor: '#3B82F6',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginRight: 8,
-    overflow: 'hidden',
-  },
-  avatarImage: {
-    width: '100%',
-    height: '100%',
-    borderRadius: 16,
-  },
-  userAvatar: {
-    width: 32,
-    height: 32,
-    borderRadius: 16,
-    backgroundColor: '#10B981',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginLeft: 8,
-  },
-  messageBubble: {
-    maxWidth: '75%',
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    borderRadius: 18,
-  },
-  userBubble: {
-    backgroundColor: '#3B82F6',
-    borderBottomRightRadius: 4,
-  },
-  assistantBubble: {
-    backgroundColor: '#fff',
-    borderBottomLeftRadius: 4,
-    borderWidth: 1,
-    borderColor: '#e0e0e0',
-  },
-  messageText: {
-    fontSize: 16,
-    lineHeight: 20,
-  },
-  userMessageText: {
-    color: '#fff',
-  },
-  assistantMessageText: {
-    color: '#333',
-  },
-  inputContainer: {
-    flexDirection: 'row',
-    alignItems: 'flex-end',
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    backgroundColor: '#fff',
-    borderTopWidth: 1,
-    borderTopColor: '#e0e0e0',
-  },
-  mobileInputContainer: {
-    paddingBottom: 30,
-    marginBottom: 10,
-  },
-  textInput: {
-    flex: 1,
-    borderWidth: 1,
-    borderColor: '#e0e0e0',
-    borderRadius: 20,
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    maxHeight: 100,
-    fontSize: 16,
-    backgroundColor: '#f9f9f9',
-  },
-  sendButton: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    backgroundColor: '#3B82F6',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginLeft: 8,
-  },
-  sendButtonDisabled: {
-    backgroundColor: '#f0f0f0',
-  },
-  voiceSection: {
-    alignItems: 'center',
-    padding: 24,
-    backgroundColor: '#fff',
-    borderTopWidth: 1,
-    borderTopColor: '#e0e0e0',
-  },
-  mobileVoiceButton: {
-    width: 80,
-    height: 80,
-    borderRadius: 40,
-    backgroundColor: '#10B981',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 12,
-  },
-  mobileVoiceButtonActive: {
-    backgroundColor: '#EF4444',
-  },
-  voiceInstructions: {
-    fontSize: 16,
-    color: '#666',
-    textAlign: 'center',
-  },
-    // New web voice container styles
-    webVoiceContainer: {
-      flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    webVoiceButton: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      backgroundColor: '#10B981',
-      paddingHorizontal: 32,
-      paddingVertical: 16,
-      borderRadius: 25,
-    },
-    webVoiceButtonActive: {
-      backgroundColor: '#EF4444',
-    },
-    webVoiceButtonText: {
-      color: '#fff',
-      marginLeft: 12,
-      fontSize: 16,
-      fontWeight: '500',
-    },
 });
 
 export default VirtualAssistantModal;
