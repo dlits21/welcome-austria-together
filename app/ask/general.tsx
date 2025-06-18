@@ -165,7 +165,7 @@ const GeneralSupport: React.FC = () => {
         );
         
         // Signal deep link format for username
-        const signalUrl = `sgnl://signal.me/#p/+yellow.22`;
+        const signalUrl = `sgnl://signal.me/#p/+yelloew.22`;
         
         try {
           Linking.openURL(signalUrl);
@@ -176,7 +176,7 @@ const GeneralSupport: React.FC = () => {
         }
       } else {
         // Open Signal group chat (community)
-        const groupLink = 'https://signal.group/#CjQKIExample_Group_Link_Here';
+        const groupLink = 'https://signal.group/#CjQKINz5quiReN4ZksBVp99kW_f4-eCiPBR7bfwSphZDES8-EhBMIwtzlhtvoP42pntNjdaA';
         try {
           Linking.openURL(groupLink);
         } catch (error) {
@@ -204,12 +204,12 @@ const GeneralSupport: React.FC = () => {
         }
       } else {
         // Open WhatsApp community
-        const communityLink = 'https://chat.whatsapp.com/invite/community_invite_link_here';
+        const communityLink = 'https://chat.whatsapp.com/Br987MYfTB88haisyOuWof';
         try {
           Linking.openURL(communityLink);
         } catch (error) {
           console.log('Could not open WhatsApp community link');
-          Linking.openURL('https://web.whatsapp.com/');
+          Linking.openURL('https://web.whatsapp.com/Br987MYfTB88haisyOuWof');
         }
       }
     } else if (method === 'facebook') {
@@ -218,7 +218,7 @@ const GeneralSupport: React.FC = () => {
       Linking.openURL(facebookUrl);
     } else if (method === 'email') {
       // Handle email
-      const emailUrl = 'mailto:support@example.com';
+      const emailUrl = 'mailto:dlits2111@gmail.com';
       Linking.openURL(emailUrl);
     } else if (method === 'phone') {
       // Handle phone call
