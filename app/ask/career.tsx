@@ -49,8 +49,10 @@ const CareerSupportPage: React.FC = () => {
   const [showHelpModal, setShowHelpModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
   
-  // Convert JSON data to array format
-  const careerCounselingEntities: CareerCounselingEntity[] = Object.values(careerCounselingEntitiesData);
+  // Convert JSON data to array format - handle both structures
+  const careerCounselingEntities: CareerCounselingEntity[] = careerCounselingEntitiesData.entities ? 
+    Object.values(careerCounselingEntitiesData.entities) : 
+    Object.values(careerCounselingEntitiesData);
   
   // Quiz states
   const [showQuiz, setShowQuiz] = useState(true);
@@ -68,9 +70,21 @@ const CareerSupportPage: React.FC = () => {
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
-  // Extract unique locations and support types
-  const locations = Array.from(new Set(careerCounselingEntities.map(entity => entity.location)));
-  const supportTypes = Array.from(new Set(careerCounselingEntities.flatMap(entity => entity.supportTypes)));
+  // Extract unique locations and support types with fallbacks
+  const locations = Array.from(new Set(
+    careerCounselingEntities
+      .map(entity => entity.location)
+      .filter(location => location) // Filter out undefined/null values
+  ));
+  
+  const supportTypes = Array.from(new Set(
+    careerCounselingEntities
+      .flatMap(entity => entity.supportTypes || [])
+      .filter(type => type) // Filter out undefined/null values
+  ));
+
+  // Add fallback locations if none found
+  const finalLocations = locations.length > 0 ? locations : ['Vienna', 'Graz', 'Linz', 'Salzburg', 'Innsbruck'];
 
   // Create filters object for GenericSupportList
   const filters = {
@@ -111,7 +125,7 @@ const CareerSupportPage: React.FC = () => {
       question: language.code === 'de' 
         ? 'Wo befinden Sie sich?' 
         : 'What is your location?',
-      answers: locations.map(location => ({ key: location.toLowerCase(), en: location, de: location })),
+      answers: finalLocations.map(location => ({ key: location.toLowerCase(), en: location, de: location })),
       key: 'location' as keyof typeof quizAnswers
     }
   ];
@@ -133,7 +147,7 @@ const CareerSupportPage: React.FC = () => {
     if (questionKey === 'supportType') {
       setSelectedSupportTypes([answerValue]);
     } else if (questionKey === 'location') {
-      const locationName = locations.find(loc => loc.toLowerCase() === answerValue);
+      const locationName = finalLocations.find(loc => loc.toLowerCase() === answerValue);
       if (locationName) {
         setSelectedLocations([locationName]);
       }
@@ -204,7 +218,7 @@ const CareerSupportPage: React.FC = () => {
     },
     {
       title: language.code === 'de' ? 'Standort' : 'Location',
-      items: locations,
+      items: finalLocations,
       selectedItems: selectedLocations,
       onToggle: toggleLocation
     }
