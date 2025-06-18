@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from "react";
 import {
   StyleSheet,
@@ -267,11 +266,12 @@ export default function LanguageSelectionScreen() {
         onClose={() => setShowInfo(false)}
       />
 
-      {/* Virtual Assistant Modal */}
+      {/* Virtual Assistant Modal - Default to voice mode from index */}
       <VirtualAssistantModal
         visible={showVirtualAssistant}
         onClose={handleVirtualAssistantClose}
         languageCode={currentLanguage}
+        defaultMode="voice"
       />
     </SafeAreaView>
   );

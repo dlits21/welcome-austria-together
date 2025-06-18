@@ -11,6 +11,7 @@ import {
   KeyboardAvoidingView,
   Platform,
   Dimensions,
+  Image,
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
@@ -26,18 +27,23 @@ interface VirtualAssistantModalProps {
   onClose: () => void;
   languageCode: string;
   initialMessage?: string;
+  defaultMode?: 'text' | 'voice';
 }
+
+// Global message store to persist messages across modal opens/closes
+let globalMessages: Message[] = [];
 
 const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
   visible,
   onClose,
   languageCode,
   initialMessage,
+  defaultMode = 'text',
 }) => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputText, setInputText] = useState('');
   const [isListening, setIsListening] = useState(false);
-  const [chatMode, setChatMode] = useState<'text' | 'voice'>('text');
+  const [chatMode, setChatMode] = useState<'text' | 'voice'>(defaultMode);
   
   const { width } = Dimensions.get('window');
   const isWideScreen = width >= 768;
@@ -45,6 +51,15 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
   // Initialize messages when modal opens
   useEffect(() => {
     if (visible) {
+      // Set default mode based on prop
+      setChatMode(defaultMode);
+      
+      // If we have persisted messages, use them
+      if (globalMessages.length > 0) {
+        setMessages(globalMessages);
+        return;
+      }
+
       const welcomeMessage: Message = {
         id: '1',
         text: languageCode === 'de' 
@@ -71,12 +86,21 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
           timestamp: new Date(),
         };
 
-        setMessages([welcomeMessage, userMessage, assistantResponse]);
+        const newMessages = [welcomeMessage, userMessage, assistantResponse];
+        setMessages(newMessages);
+        globalMessages = newMessages;
       } else {
-        setMessages([welcomeMessage]);
+        const newMessages = [welcomeMessage];
+        setMessages(newMessages);
+        globalMessages = newMessages;
       }
     }
-  }, [visible, initialMessage, languageCode]);
+  }, [visible, initialMessage, languageCode, defaultMode]);
+
+  // Update global messages when local messages change
+  useEffect(() => {
+    globalMessages = messages;
+  }, [messages]);
 
   const sendMessage = () => {
     if (inputText.trim()) {
@@ -113,7 +137,11 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
   const VirtualAssistantAvatar = () => (
     <View style={styles.avatarContainer}>
       <View style={styles.largeAvatar}>
-        <Text style={styles.largeAvatarEmoji}>🤖</Text>
+        <Image 
+          source={{ uri: '/assets/images/assistant.jpg' }}
+          style={styles.assistantImage}
+          resizeMode="cover"
+        />
       </View>
       <Text style={styles.avatarTitle}>
         {languageCode === 'de' ? 'Virtueller Assistent' : 'Virtual Assistant'}
@@ -175,7 +203,11 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
     ]}>
       {!message.isUser && (
         <View style={styles.characterAvatar}>
-          <Text style={styles.characterEmoji}>🤖</Text>
+          <Image 
+            source={{ uri: '/assets/images/assistant.jpg' }}
+            style={styles.avatarImage}
+            resizeMode="cover"
+          />
         </View>
       )}
       
@@ -265,11 +297,34 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
           {!isWideScreen && (
             <View style={styles.headerContent}>
               <View style={styles.headerAvatar}>
-                <Text style={styles.headerEmoji}>🤖</Text>
+                <Image 
+                  source={{ uri: '/assets/images/assistant.jpg' }}
+                  style={styles.headerAvatarImage}
+                  resizeMode="cover"
+                />
               </View>
               <Text style={styles.headerTitle}>
                 {languageCode === 'de' ? 'Virtueller Assistent' : 'Virtual Assistant'}
               </Text>
+            </View>
+          )}
+          
+          {/* Mobile Mode Toggle */}
+          {!isWideScreen && (
+            <View style={styles.mobileModeToggle}>
+              <TouchableOpacity
+                style={[styles.mobileModeButton, chatMode === 'text' && styles.activeMobileModeButton]}
+                onPress={() => setChatMode('text')}
+              >
+                <MaterialIcons name="chat" size={18} color={chatMode === 'text' ? '#fff' : '#666'} />
+              </TouchableOpacity>
+              
+              <TouchableOpacity
+                style={[styles.mobileModeButton, chatMode === 'voice' && styles.activeMobileModeButton]}
+                onPress={() => setChatMode('voice')}
+              >
+                <MaterialIcons name="mic" size={18} color={chatMode === 'voice' ? '#fff' : '#666'} />
+              </TouchableOpacity>
             </View>
           )}
           
@@ -324,14 +379,31 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 12,
+    overflow: 'hidden',
   },
-  headerEmoji: {
-    fontSize: 20,
+  headerAvatarImage: {
+    width: '100%',
+    height: '100%',
+    borderRadius: 20,
   },
   headerTitle: {
     fontSize: 18,
     fontWeight: '600',
     color: '#333',
+  },
+  mobileModeToggle: {
+    flexDirection: 'row',
+    backgroundColor: '#f0f0f0',
+    borderRadius: 15,
+    padding: 2,
+  },
+  mobileModeButton: {
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 12,
+  },
+  activeMobileModeButton: {
+    backgroundColor: '#3B82F6',
   },
   placeholder: {
     width: 40,
@@ -363,9 +435,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 24,
+    overflow: 'hidden',
   },
-  largeAvatarEmoji: {
-    fontSize: 60,
+  assistantImage: {
+    width: '100%',
+    height: '100%',
+    borderRadius: 60,
   },
   avatarTitle: {
     fontSize: 24,
@@ -456,9 +531,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 8,
+    overflow: 'hidden',
   },
-  characterEmoji: {
-    fontSize: 16,
+  avatarImage: {
+    width: '100%',
+    height: '100%',
+    borderRadius: 16,
   },
   userAvatar: {
     width: 32,
