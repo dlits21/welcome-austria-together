@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { 
   StyleSheet, 
   Text, 
@@ -14,10 +14,10 @@ import HelpModal from '../../components/HelpModal';
 import BaseQuizModal from '../../components/BaseQuizModal';
 import FilterSection from '../../components/FilterSection';
 import QuizControls from '../../components/QuizControls';
-import HealthSupportList from '../../components/HealthSupportList';
-import healthSupportEntitiesData from '../../data/courses/health-support-entities.json';
+import DocumentSupportList from '../../components/DocumentSupportList';
+import documentCertificationEntitiesData from '../../data/courses/document-certification-entities.json';
 
-interface HealthSupportEntity {
+interface DocumentSupportEntity {
   id: string;
   title: {
     en: string;
@@ -42,22 +42,22 @@ interface HealthSupportEntity {
   };
 }
 
-const HealthSupportPage: React.FC = () => {
+const DocumentSupportPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
 
   // Convert JSON data to array format
-  const healthSupportEntities: HealthSupportEntity[] = healthSupportEntitiesData.entities || [];
+  const documentSupportEntities: DocumentSupportEntity[] = documentCertificationEntitiesData.entities || [];
   
   // Quiz states
   const [showQuiz, setShowQuiz] = useState(true);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [quizAnswers, setQuizAnswers] = useState({
+    urgency: '',
     supportType: '',
-    location: '',
-    urgency: ''
+    location: ''
   });
   
   // Filter states
@@ -68,42 +68,41 @@ const HealthSupportPage: React.FC = () => {
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
   // Extract unique locations and support types with safety checks
-  const locations = Array.from(new Set(healthSupportEntities.map(entity => entity.location).filter(Boolean)));
-  const supportTypes = Array.from(new Set(healthSupportEntities.flatMap(entity => entity.supportTypes || []).filter(Boolean)));
+  const locations = Array.from(new Set(documentSupportEntities.map(entity => entity.location).filter(Boolean)));
+  const supportTypes = Array.from(new Set(documentSupportEntities.flatMap(entity => entity.supportTypes || []).filter(Boolean)));
 
   // Create filters object for GenericSupportList
   const filters = {
-    supportType: selectedSupportTypes.length > 0 ? selectedSupportTypes[0] : '',
-    location: selectedLocations.length > 0 ? selectedLocations[0] : '',
-    urgency: quizAnswers.urgency || ''
+    urgency: quizAnswers.urgency,
+    supportType: selectedSupportTypes.length > 0 ? selectedSupportTypes[0] : quizAnswers.supportType,
+    location: selectedLocations.length > 0 ? selectedLocations[0] : quizAnswers.location
   };
 
-  // Quiz questions - reordered with urgency first
+  // Quiz questions for document and certification support
   const quizQuestions = [
     {
       question: language.code === 'de' 
-        ? 'Wie dringend ist Ihr Bedarf?' 
-        : 'How urgent is your need?',
+        ? 'Wie dringend benötigen Sie Dokumentenhilfe?' 
+        : 'How urgently do you need document assistance?',
       answers: [
-        { key: 'immediate', en: 'Immediate/Emergency', de: 'Sofort/Notfall' },
-        { key: 'soon', en: 'Within a few days', de: 'Innerhalb weniger Tage' },
+        { key: 'immediate', en: 'Immediate/Urgent', de: 'Sofort/Dringend' },
+        { key: 'soon', en: 'Within a few weeks', de: 'Innerhalb weniger Wochen' },
         { key: 'planning', en: 'Planning ahead', de: 'Vorausplanung' }
       ],
       key: 'urgency' as keyof typeof quizAnswers
     },
     {
       question: language.code === 'de' 
-        ? 'Welche Art von Gesundheitsunterstützung benötigen Sie?' 
-        : 'What type of health support do you need?',
+        ? 'Welche Art von Dokumentenhilfe benötigen Sie?' 
+        : 'What type of document assistance do you need?',
       answers: [
-        { key: 'emergency', en: 'Emergency Care', de: 'Notfallversorgung' },
-        { key: 'mental-health', en: 'Mental Health', de: 'Psychische Gesundheit' },
-        { key: 'medical-care', en: 'General Medical Care', de: 'Allgemeine medizinische Versorgung' },
-        { key: 'counseling', en: 'Counseling', de: 'Beratung' },
-        { key: 'crisis-support', en: 'Crisis Support', de: 'Krisenunterstützung' },
-        { key: 'community-health', en: 'Community Health', de: 'Gemeinschaftsgesundheit' },
-        { key: 'home-care', en: 'Home Care', de: 'Häusliche Pflege' },
-        { key: 'therapy', en: 'Therapy', de: 'Therapie' }
+        { key: 'document-translation', en: 'Document Translation', de: 'Dokumentenübersetzung' },
+        { key: 'credential-recognition', en: 'Credential Recognition', de: 'Anerkennung von Qualifikationen' },
+        { key: 'legal-translation', en: 'Legal Document Translation', de: 'Rechtsdokumentenübersetzung' },
+        { key: 'professional-certification', en: 'Professional Certification', de: 'Berufliche Zertifizierung' },
+        { key: 'document-assistance', en: 'General Document Assistance', de: 'Allgemeine Dokumentenhilfe' },
+        { key: 'application-support', en: 'Application Support', de: 'Antragsunterstützung' },
+        { key: 'academic-evaluation', en: 'Academic Evaluation', de: 'Akademische Bewertung' }
       ],
       key: 'supportType' as keyof typeof quizAnswers
     },
@@ -117,44 +116,6 @@ const HealthSupportPage: React.FC = () => {
       key: 'location' as keyof typeof quizAnswers
     }
   ];
-
-  // Apply filters based on quiz answers and manual filters
-  useEffect(() => {
-    let results = healthSupportEntities;
-    
-    // Apply quiz filters
-    if (quizAnswers.supportType) {
-      results = results.filter(entity => 
-        entity.supportTypes.includes(quizAnswers.supportType)
-      );
-    }
-    
-    if (quizAnswers.location) {
-      const selectedLocation = locations.find(loc => 
-        loc.toLowerCase() === quizAnswers.location
-      );
-      if (selectedLocation) {
-        results = results.filter(entity => 
-          entity.location === selectedLocation || entity.location === 'Nationwide'
-        );
-      }
-    }
-    
-    // Apply manual filters
-    if (selectedSupportTypes.length > 0) {
-      results = results.filter(entity => 
-        entity.supportTypes.some(type => selectedSupportTypes.includes(type))
-      );
-    }
-    
-    if (selectedLocations.length > 0) {
-      results = results.filter(entity => 
-        selectedLocations.includes(entity.location) || entity.location === 'Nationwide'
-      );
-    }
-    
-    setFilteredEntities(results);
-  }, [quizAnswers, selectedSupportTypes, selectedLocations]);
 
   const toggleSound = () => {
     setSoundEnabled(!soundEnabled);
@@ -199,7 +160,7 @@ const HealthSupportPage: React.FC = () => {
   };
 
   const resetQuiz = () => {
-    setQuizAnswers({ supportType: '', location: '', urgency: '' });
+    setQuizAnswers({ urgency: '', supportType: '', location: '' });
     setCurrentQuestion(0);
     setShowQuiz(true);
   };
@@ -225,10 +186,10 @@ const HealthSupportPage: React.FC = () => {
     setSelectedLocations([]);
   };
 
-  const pageTitle = language.code === 'de' ? 'Gesundheitsunterstützung' : 'Health Support';
+  const pageTitle = language.code === 'de' ? 'Dokumente & Zertifizierung' : 'Documents & Certification';
   const pageDescription = language.code === 'de' 
-    ? 'Finden Sie Gesundheitsdienste und psychische Gesundheitsunterstützung in Ihrer Nähe.'
-    : 'Find health services and mental health support in your area.';
+    ? 'Finden Sie Unterstützung bei Dokumentenübersetzung, Anerkennung und Zertifizierung.'
+    : 'Find support for document translation, recognition and certification services.';
 
   // Filter groups for FilterSection
   const filterGroups = [
@@ -268,10 +229,10 @@ const HealthSupportPage: React.FC = () => {
           currentQuestion={currentQuestion}
           questions={quizQuestions}
           languageCode={language.code}
-          title={language.code === 'de' ? 'Gesundheits-Assistent' : 'Health Support Assistant'}
+          title={language.code === 'de' ? 'Dokumenten-Assistent' : 'Document Support Assistant'}
           subtitle={language.code === 'de' 
-            ? 'Beantworten Sie ein paar Fragen, um passende Gesundheitsdienste zu finden.'
-            : 'Answer a few questions to find suitable health services.'}
+            ? 'Beantworten Sie ein paar Fragen, um passende Dokumentendienste zu finden.'
+            : 'Answer a few questions to find suitable document services.'}
           onAnswer={handleQuizAnswer}
           onSkip={handleSkipQuiz}
           onClose={handleCloseQuiz}
@@ -294,7 +255,7 @@ const HealthSupportPage: React.FC = () => {
         />
         
         {!showQuiz && (
-          <HealthSupportList 
+          <DocumentSupportList 
             filters={filters}
             languageCode={language.code}
             onResetFilters={clearFilters}
@@ -340,4 +301,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HealthSupportPage;
+export default DocumentSupportPage;

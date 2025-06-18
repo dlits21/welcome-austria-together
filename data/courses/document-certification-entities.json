@@ -1,0 +1,140 @@
+
+{
+  "entities": [
+    {
+      "id": "ams-translation-service",
+      "title": {
+        "en": "AMS Translation Service",
+        "de": "AMS Übersetzungsdienst"
+      },
+      "subtitle": {
+        "en": "Official document translation for employment purposes",
+        "de": "Offizielle Dokumentenübersetzung für Beschäftigungszwecke"
+      },
+      "category": "translation",
+      "urgency": "non-urgent",
+      "supportType": "document-translation",
+      "location": "Nationwide",
+      "description": {
+        "en": "The Austrian Public Employment Service provides certified translation services for employment-related documents including diplomas, certificates, and work experience records.",
+        "de": "Das Arbeitsmarktservice Österreich bietet zertifizierte Übersetzungsdienste für beschäftigungsbezogene Dokumente wie Diplome, Zertifikate und Arbeitserfahrungsnachweise."
+      },
+      "supportTypes": ["document-translation", "employment-documents"],
+      "specializations": ["Employment Documents", "Educational Certificates", "Professional Qualifications"],
+      "contact": {
+        "phone": "+43 50 904",
+        "email": "info@ams.at",
+        "website": "https://www.ams.at",
+        "address": "Treustraße 35-43, 1200 Vienna"
+      }
+    },
+    {
+      "id": "oead-recognition-center",
+      "title": {
+        "en": "OeAD Recognition Center",
+        "de": "OeAD Anerkennungsstelle"
+      },
+      "subtitle": {
+        "en": "Academic credential recognition and evaluation",
+        "de": "Anerkennung und Bewertung akademischer Qualifikationen"
+      },
+      "category": "certification",
+      "urgency": "non-urgent",
+      "supportType": "credential-recognition",
+      "location": "Vienna",
+      "description": {
+        "en": "The Austrian Agency for Education and Internationalisation provides recognition services for foreign academic qualifications and assists with the validation process for educational credentials.",
+        "de": "Die Österreichische Agentur für Bildung und Internationalisierung bietet Anerkennungsdienstleistungen für ausländische akademische Qualifikationen und unterstützt beim Validierungsprozess für Bildungsnachweise."
+      },
+      "supportTypes": ["credential-recognition", "academic-evaluation"],
+      "specializations": ["University Degrees", "Vocational Qualifications", "Professional Certifications", "School Diplomas"],
+      "contact": {
+        "phone": "+43 1 534 08",
+        "email": "recognition@oead.at",
+        "website": "https://www.oead.at",
+        "address": "Ebendorferstraße 7, 1010 Vienna"
+      }
+    },
+    {
+      "id": "beeidigt-dolmetscher",
+      "title": {
+        "en": "Certified Court Interpreters and Translators",
+        "de": "Beeidigt gerichtlich zertifizierte Dolmetscher und Übersetzer"
+      },
+      "subtitle": {
+        "en": "Sworn translation services for legal documents",
+        "de": "Beeidigte Übersetzungsdienste für Rechtsdokumente"
+      },
+      "category": "translation",
+      "urgency": "urgent",
+      "supportType": "legal-translation",
+      "location": "Nationwide",
+      "description": {
+        "en": "Network of court-certified translators and interpreters providing official translations for legal proceedings, immigration documents, and official certificates.",
+        "de": "Netzwerk von gerichtlich zertifizierten Übersetzern und Dolmetschern, die offizielle Übersetzungen für Gerichtsverfahren, Einwanderungsdokumente und amtliche Zertifikate bereitstellen."
+      },
+      "supportTypes": ["legal-translation", "court-interpretation"],
+      "specializations": ["Legal Documents", "Immigration Papers", "Birth/Marriage Certificates", "Court Proceedings"],
+      "contact": {
+        "phone": "+43 1 521 55",
+        "email": "info@gerichtsdolmetscher.at",
+        "website": "https://www.justiz.gv.at",
+        "address": "Various locations nationwide"
+      }
+    },
+    {
+      "id": "wirtschaftskammer-certification",
+      "title": {
+        "en": "Austrian Federal Economic Chamber - Certification Services",
+        "de": "Wirtschaftskammer Österreich - Zertifizierungsdienste"
+      },
+      "subtitle": {
+        "en": "Professional qualification recognition and certification",
+        "de": "Anerkennung und Zertifizierung beruflicher Qualifikationen"
+      },
+      "category": "certification",
+      "urgency": "non-urgent",
+      "supportType": "professional-certification",
+      "location": "Nationwide",
+      "description": {
+        "en": "The Austrian Federal Economic Chamber provides recognition services for professional qualifications, trade certifications, and business-related credentials from foreign countries.",
+        "de": "Die Wirtschaftskammer Österreich bietet Anerkennungsdienstleistungen für berufliche Qualifikationen, Handelszertifikate und geschäftsbezogene Nachweise aus dem Ausland."
+      },
+      "supportTypes": ["professional-certification", "trade-recognition"],
+      "specializations": ["Trade Qualifications", "Business Certifications", "Professional Skills", "Vocational Training"],
+      "contact": {
+        "phone": "+43 5 90 900",
+        "email": "service@wko.at",
+        "website": "https://www.wko.at",
+        "address": "Wiedner Hauptstraße 63, 1045 Vienna"
+      }
+    },
+    {
+      "id": "caritas-document-assistance",
+      "title": {
+        "en": "Caritas Document Assistance Program",
+        "de": "Caritas Dokumentenhilfe-Programm"
+      },
+      "subtitle": {
+        "en": "Support with document processing and application assistance",
+        "de": "Unterstützung bei der Dokumentenbearbeitung und Antragsstellungshilfe"
+      },
+      "category": "assistance",
+      "urgency": "non-urgent",
+      "supportType": "document-assistance",
+      "location": "Vienna",
+      "description": {
+        "en": "Caritas provides comprehensive support for refugees and migrants in obtaining, translating, and certifying important documents needed for integration and employment.",
+        "de": "Caritas bietet umfassende Unterstützung für Flüchtlinge und Migranten beim Beschaffen, Übersetzen und Beglaubigen wichtiger Dokumente, die für Integration und Beschäftigung benötigt werden."
+      },
+      "supportTypes": ["document-assistance", "application-support"],
+      "specializations": ["Refugee Documents", "Integration Support", "Application Assistance", "Document Guidance"],
+      "contact": {
+        "phone": "+43 1 878 12",
+        "email": "beratung@caritas-wien.at",
+        "website": "https://www.caritas-wien.at",
+        "address": "Albrechtskreithgasse 19-21, 1160 Vienna"
+      }
+    }
+  ]
+}
