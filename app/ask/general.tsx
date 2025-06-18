@@ -221,18 +221,18 @@ const GeneralSupport: React.FC = () => {
             : 'Hello, I need support and counseling. Can you help me?'
         );
         
-        const telegramUrl = `tg://resolve?domain=support_helper&text=${message}`;
+        const telegramUrl = `tg://resolve?domain=Dlits2&text=${message}`;
         
         try {
           Linking.openURL(telegramUrl);
         } catch (error) {
           // Fallback to web Telegram
-          const webTelegramUrl = `https://t.me/support_helper?text=${message}`;
+          const webTelegramUrl = `https://t.me/Dlits2?text=${message}`;
           Linking.openURL(webTelegramUrl);
         }
       } else {
         // Open Telegram community
-        const communityLink = 'https://t.me/+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefgh';
+        const communityLink = 'https://t.me/+iHlinCIOaTI3OTNk';
         try {
           Linking.openURL(communityLink);
         } catch (error) {
