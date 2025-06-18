@@ -1,12 +1,6 @@
 
 import React from 'react';
-import { 
-  StyleSheet, 
-  Text, 
-  View, 
-  TouchableOpacity, 
-  Dimensions 
-} from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 interface LanguageSelectionHeaderProps {
@@ -14,37 +8,44 @@ interface LanguageSelectionHeaderProps {
   setShowInfo: (show: boolean) => void;
   soundEnabled: boolean;
   setSoundEnabled: (enabled: boolean) => void;
+  showVirtualAssistant?: () => void;
 }
 
 const LanguageSelectionHeader: React.FC<LanguageSelectionHeaderProps> = ({
   currentWelcomeMessage,
   setShowInfo,
   soundEnabled,
-  setSoundEnabled
+  setSoundEnabled,
+  showVirtualAssistant
 }) => {
   return (
     <View style={styles.header}>
-      <Text style={styles.title}>{currentWelcomeMessage}</Text>
-      <Text style={styles.subtitle}>Please choose your preferred language</Text>
+      {/* Logo */}
+      <Image 
+        source={require('../assets/images/icon simple.png')}
+        style={styles.logo}
+        resizeMode="contain"
+      />
       
-      {/* Top right buttons */}
-      <View style={styles.topRightButtons}>
+      <View style={styles.headerButtons}>
+        {/* Virtual Assistant Button */}
+        <TouchableOpacity 
+          style={styles.iconButton} 
+          onPress={showVirtualAssistant || (() => setSoundEnabled(!soundEnabled))}
+        >
+          <MaterialIcons 
+            name="record-voice-over" 
+            size={24} 
+            color="#333" 
+          />
+        </TouchableOpacity>
+        
+        {/* Info Button */}
         <TouchableOpacity 
           style={styles.iconButton} 
           onPress={() => setShowInfo(true)}
         >
-          <MaterialIcons name="help" size={Dimensions.get('window').width / 25} color="#333" />
-        </TouchableOpacity>
-        
-        <TouchableOpacity 
-          style={styles.iconButton} 
-          onPress={() => setSoundEnabled(!soundEnabled)}
-        >
-          <MaterialIcons 
-            name={soundEnabled ? "volume-up" : "volume-off"} 
-            size={Dimensions.get('window').width / 25}
-            color="#333" 
-          />
+          <MaterialIcons name="info" size={24} color="#333" />
         </TouchableOpacity>
       </View>
     </View>
@@ -53,31 +54,23 @@ const LanguageSelectionHeader: React.FC<LanguageSelectionHeaderProps> = ({
 
 const styles = StyleSheet.create({
   header: {
-    padding: 20,
-    alignItems: "center",
-    position: "relative",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 16,
+    paddingVertical: 12,
   },
-  title: {
-    fontSize: 34,
-    fontWeight: "bold",
-    marginBottom: 10,
-    textAlign: "center",
-    width: "60%"
+  logo: {
+    width: 80,
+    height: 40,
   },
-  subtitle: {
-    fontSize: 16,
-    color: "#666",
-    textAlign: "center",
-  },
-  topRightButtons: {
-    position: "absolute",
-    top: 20,
-    right: 20,
-    flexDirection: "row",
+  headerButtons: {
+    flexDirection: 'row',
   },
   iconButton: {
-    padding: 10,
-    marginLeft: 10,
+    padding: 8,
+    marginLeft: 8,
+    borderRadius: 20,
   },
 });
 

@@ -7,6 +7,7 @@ import {
   SafeAreaView,
   TouchableOpacity,
   Linking,
+  Image,
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
@@ -15,6 +16,7 @@ import { languages } from '../../data/languages/common';
 import PageNavigation from '../../components/PageNavigation';
 import LanguageModal from '../../components/LanguageModal';
 import HelpModal from '../../components/HelpModal';
+import VirtualAssistantModal from '../../components/VirtualAssistantModal';
 
 // Accordion item component
 interface AccordionItemProps {
@@ -61,18 +63,26 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
   );
 };
 
-// Contact button component
+// Contact button component with icon support
 interface ContactButtonProps {
   title: string;
-  icon: string;
+  icon?: string;
+  iconPath?: string;
   onPress: () => void;
 }
 
-const ContactButton: React.FC<ContactButtonProps> = ({ title, icon, onPress }) => {
+const ContactButton: React.FC<ContactButtonProps> = ({ title, icon, iconPath, onPress }) => {
   return (
     <TouchableOpacity style={styles.contactButton} onPress={onPress}>
-      <Text style={styles.contactButtonText}>{title}</Text>
-      <MaterialIcons name={icon} size={20} color="#666" />
+      <View style={styles.contactButtonLeft}>
+        {iconPath ? (
+          <Image source={{ uri: iconPath }} style={styles.contactIcon} />
+        ) : (
+          <MaterialIcons name={icon || "message"} size={20} color="#666" />
+        )}
+        <Text style={styles.contactButtonText}>{title}</Text>
+      </View>
+      <MaterialIcons name="chevron-right" size={20} color="#666" />
     </TouchableOpacity>
   );
 };
@@ -126,6 +136,7 @@ const GeneralSupport: React.FC = () => {
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
+  const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
 
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
@@ -324,6 +335,7 @@ const GeneralSupport: React.FC = () => {
         soundEnabled={soundEnabled}
         showLanguageModal={() => setShowLanguageModal(true)}
         showHelpModal={() => setShowHelpModal(true)}
+        showVirtualAssistant={() => setShowVirtualAssistant(true)}
       />
       
       <View style={styles.titleContainer}>
@@ -342,22 +354,22 @@ const GeneralSupport: React.FC = () => {
         >
           <ContactButton 
             title="WhatsApp" 
-            icon="message" 
+            iconPath="assets/images/whatsapp.svg"
             onPress={() => handleContactClick('whatsapp', true)}
           />
           <ContactButton 
             title="Signal" 
-            icon="message" 
+            iconPath="assets/images/signal.svg"
             onPress={() => handleContactClick('signal', true)}
           />
           <ContactButton 
             title="Telegram" 
-            icon="message" 
+            iconPath="assets/images/telegram.svg"
             onPress={() => handleContactClick('telegram', true)}
           />
           <ContactButton 
             title="Facebook" 
-            icon="facebook" 
+            iconPath="assets/images/facebook.svg"
             onPress={() => handleContactClick('facebook', true)}
           />
           <ContactButton 
@@ -382,17 +394,17 @@ const GeneralSupport: React.FC = () => {
         >
           <ContactButton 
             title="WhatsApp" 
-            icon="message" 
+            iconPath="assets/images/whatsapp.svg"
             onPress={() => handleContactClick('whatsapp', false)}
           />
           <ContactButton 
             title="Signal" 
-            icon="message" 
+            iconPath="assets/images/signal.svg"
             onPress={() => handleContactClick('signal', false)}
           />
           <ContactButton 
             title="Telegram" 
-            icon="message" 
+            iconPath="assets/images/telegram.svg"
             onPress={() => handleContactClick('telegram', false)}
           />
           <ContactButton 
@@ -450,6 +462,13 @@ const GeneralSupport: React.FC = () => {
       <HelpModal
         visible={showHelpModal}
         onClose={() => setShowHelpModal(false)}
+        languageCode={language.code}
+      />
+
+      {/* Virtual Assistant Modal */}
+      <VirtualAssistantModal
+        visible={showVirtualAssistant}
+        onClose={() => setShowVirtualAssistant(false)}
         languageCode={language.code}
       />
     </SafeAreaView>
@@ -520,8 +539,18 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     backgroundColor: '#fff',
   },
+  contactButtonLeft: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flex: 1,
+  },
   contactButtonText: {
     fontSize: 16,
+    marginLeft: 12,
+  },
+  contactIcon: {
+    width: 20,
+    height: 20,
   },
   stateCard: {
     padding: 12,

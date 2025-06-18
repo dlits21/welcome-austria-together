@@ -31,6 +31,7 @@ import LanguageSelectionGrid from "../components/LanguageSelectionGrid";
 import HoverTooltip from "../components/HoverTooltip";
 import LanguageConfirmation from "../components/LanguageConfirmation";
 import InfoModal from "../components/InfoModal";
+import VirtualAssistantModal from "../components/VirtualAssistantModal";
 
 // Language data with correct flags and languages
 const languages = [
@@ -94,6 +95,7 @@ export default function LanguageSelectionScreen() {
   const [currentWelcomeIndex, setCurrentWelcomeIndex] = useState(0);
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showInfo, setShowInfo] = useState(false);
+  const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
   const [selectedLanguageState, setSelectedLanguageState] = useState<Language | null>(null);
   const [hoverLanguage, setHoverLanguage] = useState<Language | null>(null);
   const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
@@ -194,6 +196,11 @@ export default function LanguageSelectionScreen() {
     setHoverLanguage(null);
   };
 
+  // Handle virtual assistant close
+  const handleVirtualAssistantClose = () => {
+    setShowVirtualAssistant(false);
+  };
+
   // Get current welcome message based on index
   const currentWelcomeCode = languages[currentWelcomeIndex]?.code;
   const currentWelcomeMessage = getWelcomeText(currentWelcomeCode)
@@ -208,6 +215,7 @@ export default function LanguageSelectionScreen() {
         setShowInfo={setShowInfo}
         soundEnabled={soundEnabled}
         setSoundEnabled={setSoundEnabled}
+        showVirtualAssistant={() => setShowVirtualAssistant(true)}
       />
 
       {/* Language Grid */}
@@ -250,6 +258,13 @@ export default function LanguageSelectionScreen() {
       <InfoModal
         visible={showInfo}
         onClose={() => setShowInfo(false)}
+      />
+
+      {/* Virtual Assistant Modal */}
+      <VirtualAssistantModal
+        visible={showVirtualAssistant}
+        onClose={handleVirtualAssistantClose}
+        languageCode={currentLanguage}
       />
     </SafeAreaView>
   );
