@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from "react";
 import {
   StyleSheet,
@@ -8,6 +9,7 @@ import {
   Modal,
   Animated,
   Dimensions,
+  Text,
 } from "react-native";
 import { useRouter } from "expo-router";
 import {
@@ -209,6 +211,11 @@ export default function LanguageSelectionScreen() {
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" />
 
+      {/* Welcome Title */}
+      <View style={styles.welcomeContainer}>
+        <Text style={styles.welcomeTitle}>{currentWelcomeMessage}</Text>
+      </View>
+
       {/* Header */}
       <LanguageSelectionHeader
         currentWelcomeMessage={currentWelcomeMessage}
@@ -274,6 +281,17 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
+  },
+  welcomeContainer: {
+    paddingHorizontal: 16,
+    paddingVertical: 20,
+    alignItems: 'center',
+  },
+  welcomeTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#333',
+    textAlign: 'center',
   },
   modalOverlay: {
     flex: 1,

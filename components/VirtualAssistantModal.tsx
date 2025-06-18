@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import {
   StyleSheet,
@@ -11,6 +10,7 @@ import {
   SafeAreaView,
   KeyboardAvoidingView,
   Platform,
+  Dimensions,
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
@@ -36,6 +36,11 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
 }) => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputText, setInputText] = useState('');
+  const [isListening, setIsListening] = useState(false);
+  const [chatMode, setChatMode] = useState<'text' | 'voice'>('text');
+  
+  const { width } = Dimensions.get('window');
+  const isWideScreen = width >= 768;
 
   // Initialize messages when modal opens
   useEffect(() => {
@@ -100,6 +105,69 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
     }
   };
 
+  const toggleVoiceMode = () => {
+    setIsListening(!isListening);
+    // Here you would implement actual voice recognition
+  };
+
+  const VirtualAssistantAvatar = () => (
+    <View style={styles.avatarContainer}>
+      <View style={styles.largeAvatar}>
+        <Text style={styles.largeAvatarEmoji}>🤖</Text>
+      </View>
+      <Text style={styles.avatarTitle}>
+        {languageCode === 'de' ? 'Virtueller Assistent' : 'Virtual Assistant'}
+      </Text>
+      <Text style={styles.avatarSubtitle}>
+        {languageCode === 'de' 
+          ? 'Ich bin hier, um Ihnen zu helfen!' 
+          : 'I\'m here to help you!'}
+      </Text>
+      
+      {/* Chat/Voice Mode Toggle */}
+      <View style={styles.modeToggle}>
+        <TouchableOpacity
+          style={[styles.modeButton, chatMode === 'text' && styles.activeModeButton]}
+          onPress={() => setChatMode('text')}
+        >
+          <MaterialIcons name="chat" size={20} color={chatMode === 'text' ? '#fff' : '#666'} />
+          <Text style={[styles.modeText, chatMode === 'text' && styles.activeModeText]}>
+            {languageCode === 'de' ? 'Chat' : 'Chat'}
+          </Text>
+        </TouchableOpacity>
+        
+        <TouchableOpacity
+          style={[styles.modeButton, chatMode === 'voice' && styles.activeModeButton]}
+          onPress={() => setChatMode('voice')}
+        >
+          <MaterialIcons name="mic" size={20} color={chatMode === 'voice' ? '#fff' : '#666'} />
+          <Text style={[styles.modeText, chatMode === 'voice' && styles.activeModeText]}>
+            {languageCode === 'de' ? 'Sprechen' : 'Talk'}
+          </Text>
+        </TouchableOpacity>
+      </View>
+      
+      {chatMode === 'voice' && (
+        <TouchableOpacity
+          style={[styles.voiceButton, isListening && styles.voiceButtonActive]}
+          onPress={toggleVoiceMode}
+        >
+          <MaterialIcons 
+            name={isListening ? "mic" : "mic-none"} 
+            size={24} 
+            color="#fff" 
+          />
+          <Text style={styles.voiceButtonText}>
+            {isListening 
+              ? (languageCode === 'de' ? 'Höre zu...' : 'Listening...')
+              : (languageCode === 'de' ? 'Tippen zum Sprechen' : 'Tap to Talk')
+            }
+          </Text>
+        </TouchableOpacity>
+      )}
+    </View>
+  );
+
   const ChatBubble = ({ message }: { message: Message }) => (
     <View style={[
       styles.messageContainer,
@@ -131,47 +199,23 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
     </View>
   );
 
-  return (
-    <Modal
-      visible={visible}
-      animationType="slide"
-      onRequestClose={onClose}
-    >
-      <SafeAreaView style={styles.container}>
-        {/* Header */}
-        <View style={styles.header}>
-          <TouchableOpacity style={styles.closeButton} onPress={onClose}>
-            <MaterialIcons name="close" size={24} color="#333" />
-          </TouchableOpacity>
-          
-          <View style={styles.headerContent}>
-            <View style={styles.headerAvatar}>
-              <Text style={styles.headerEmoji}>🤖</Text>
-            </View>
-            <Text style={styles.headerTitle}>
-              {languageCode === 'de' ? 'Virtueller Assistent' : 'Virtual Assistant'}
-            </Text>
-          </View>
-          
-          <View style={styles.placeholder} />
-        </View>
-
-        {/* Chat Area */}
-        <KeyboardAvoidingView 
-          style={styles.chatContainer}
-          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+  const ChatSection = () => (
+    <View style={[styles.chatSection, isWideScreen && styles.chatSectionWide]}>
+      <KeyboardAvoidingView 
+        style={styles.chatContainer}
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      >
+        <ScrollView 
+          style={styles.messagesContainer}
+          contentContainerStyle={styles.messagesContent}
+          showsVerticalScrollIndicator={false}
         >
-          <ScrollView 
-            style={styles.messagesContainer}
-            contentContainerStyle={styles.messagesContent}
-            showsVerticalScrollIndicator={false}
-          >
-            {messages.map((message) => (
-              <ChatBubble key={message.id} message={message} />
-            ))}
-          </ScrollView>
+          {messages.map((message) => (
+            <ChatBubble key={message.id} message={message} />
+          ))}
+        </ScrollView>
 
-          {/* Input Area */}
+        {chatMode === 'text' && (
           <View style={styles.inputContainer}>
             <TextInput
               style={styles.textInput}
@@ -200,7 +244,49 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
               />
             </TouchableOpacity>
           </View>
-        </KeyboardAvoidingView>
+        )}
+      </KeyboardAvoidingView>
+    </View>
+  );
+
+  return (
+    <Modal
+      visible={visible}
+      animationType="slide"
+      onRequestClose={onClose}
+    >
+      <SafeAreaView style={styles.container}>
+        {/* Header */}
+        <View style={styles.header}>
+          <TouchableOpacity style={styles.closeButton} onPress={onClose}>
+            <MaterialIcons name="close" size={24} color="#333" />
+          </TouchableOpacity>
+          
+          {!isWideScreen && (
+            <View style={styles.headerContent}>
+              <View style={styles.headerAvatar}>
+                <Text style={styles.headerEmoji}>🤖</Text>
+              </View>
+              <Text style={styles.headerTitle}>
+                {languageCode === 'de' ? 'Virtueller Assistent' : 'Virtual Assistant'}
+              </Text>
+            </View>
+          )}
+          
+          <View style={styles.placeholder} />
+        </View>
+
+        {/* Main Content */}
+        <View style={[styles.mainContent, isWideScreen && styles.mainContentWide]}>
+          {isWideScreen && (
+            <View style={styles.assistantSection}>
+              <VirtualAssistantAvatar />
+            </View>
+          )}
+          
+          {!isWideScreen && chatMode === 'voice' && <VirtualAssistantAvatar />}
+          {(isWideScreen || chatMode === 'text') && <ChatSection />}
+        </View>
       </SafeAreaView>
     </Modal>
   );
@@ -249,6 +335,97 @@ const styles = StyleSheet.create({
   },
   placeholder: {
     width: 40,
+  },
+  mainContent: {
+    flex: 1,
+  },
+  mainContentWide: {
+    flexDirection: 'row',
+  },
+  assistantSection: {
+    flex: 1,
+    backgroundColor: '#fff',
+    borderRightWidth: 1,
+    borderRightColor: '#e0e0e0',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 32,
+  },
+  avatarContainer: {
+    alignItems: 'center',
+    paddingVertical: 40,
+  },
+  largeAvatar: {
+    width: 120,
+    height: 120,
+    borderRadius: 60,
+    backgroundColor: '#3B82F6',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 24,
+  },
+  largeAvatarEmoji: {
+    fontSize: 60,
+  },
+  avatarTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#333',
+    marginBottom: 8,
+  },
+  avatarSubtitle: {
+    fontSize: 16,
+    color: '#666',
+    textAlign: 'center',
+    marginBottom: 32,
+  },
+  modeToggle: {
+    flexDirection: 'row',
+    backgroundColor: '#f0f0f0',
+    borderRadius: 25,
+    padding: 4,
+    marginBottom: 24,
+  },
+  modeButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 20,
+  },
+  activeModeButton: {
+    backgroundColor: '#3B82F6',
+  },
+  modeText: {
+    marginLeft: 8,
+    fontSize: 14,
+    color: '#666',
+  },
+  activeModeText: {
+    color: '#fff',
+  },
+  voiceButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#10B981',
+    paddingHorizontal: 24,
+    paddingVertical: 12,
+    borderRadius: 25,
+  },
+  voiceButtonActive: {
+    backgroundColor: '#EF4444',
+  },
+  voiceButtonText: {
+    color: '#fff',
+    marginLeft: 8,
+    fontSize: 16,
+    fontWeight: '500',
+  },
+  chatSection: {
+    flex: 1,
+  },
+  chatSectionWide: {
+    flex: 1,
   },
   chatContainer: {
     flex: 1,
