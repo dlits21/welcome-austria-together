@@ -49,7 +49,6 @@ const HealthSupportPage: React.FC = () => {
 
   // Convert JSON data to array format
   const healthSupportEntities: HealthSupportEntity[] = Object.values(healthSupportEntitiesData);
-  const [filteredEntities, setFilteredEntities] = useState<HealthSupportEntity[]>(healthSupportEntities);
   
   // Quiz states
   const [showQuiz, setShowQuiz] = useState(true);
@@ -70,6 +69,13 @@ const HealthSupportPage: React.FC = () => {
   // Extract unique locations and support types
   const locations = Array.from(new Set(healthSupportEntities.map(entity => entity.location)));
   const supportTypes = Array.from(new Set(healthSupportEntities.flatMap(entity => entity.supportTypes)));
+
+  // Create filters object for GenericSupportList
+  const filters = {
+    supportType: selectedSupportTypes.length > 0 ? selectedSupportTypes[0] : '',
+    location: selectedLocations.length > 0 ? selectedLocations[0] : '',
+    urgency: quizAnswers.urgency || ''
+  };
 
   // Quiz questions - reordered with urgency first
   const quizQuestions = [
@@ -286,8 +292,9 @@ const HealthSupportPage: React.FC = () => {
         
         {!showQuiz && (
           <HealthSupportList 
-            entities={filteredEntities}
+            filters={filters}
             languageCode={language.code}
+            onResetFilters={clearFilters}
           />
         )}
       </View>
