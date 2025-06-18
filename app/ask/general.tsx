@@ -354,22 +354,22 @@ const GeneralSupport: React.FC = () => {
         >
           <ContactButton 
             title="WhatsApp" 
-            iconPath="assets/images/whatsapp.svg"
+            iconPath="../../assets/images/whatsapp.svg"
             onPress={() => handleContactClick('whatsapp', true)}
           />
           <ContactButton 
             title="Signal" 
-            iconPath="assets/images/signal.svg"
+            iconPath="../../assets/images/signal.svg"
             onPress={() => handleContactClick('signal', true)}
           />
           <ContactButton 
             title="Telegram" 
-            iconPath="assets/images/telegram.svg"
+            iconPath="../../assets/images/telegram.svg"
             onPress={() => handleContactClick('telegram', true)}
           />
           <ContactButton 
             title="Facebook" 
-            iconPath="assets/images/facebook.svg"
+            iconPath="../../assets/images/facebook.svg"
             onPress={() => handleContactClick('facebook', true)}
           />
           <ContactButton 
@@ -394,17 +394,17 @@ const GeneralSupport: React.FC = () => {
         >
           <ContactButton 
             title="WhatsApp" 
-            iconPath="assets/images/whatsapp.svg"
+            iconPath="../../assets/images/whatsapp.svg"
             onPress={() => handleContactClick('whatsapp', false)}
           />
           <ContactButton 
             title="Signal" 
-            iconPath="assets/images/signal.svg"
+            iconPath="../../assets/images/signal.svg"
             onPress={() => handleContactClick('signal', false)}
           />
           <ContactButton 
             title="Telegram" 
-            iconPath="assets/images/telegram.svg"
+            iconPath="../../assets/images/telegram.svg"
             onPress={() => handleContactClick('telegram', false)}
           />
           <ContactButton 
