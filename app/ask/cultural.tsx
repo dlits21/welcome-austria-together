@@ -1,141 +1,214 @@
-
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { 
+  StyleSheet, 
+  Text, 
+  View, 
+  SafeAreaView, 
+} from 'react-native';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { languages } from '../../data/languages/common';
 import PageNavigation from '../../components/PageNavigation';
-import BaseQuizModal from '../../components/BaseQuizModal';
-import CulturalSupportList from '../../components/CulturalSupportList';
 import LanguageModal from '../../components/LanguageModal';
 import HelpModal from '../../components/HelpModal';
+import BaseQuizModal from '../../components/BaseQuizModal';
+import FilterSection from '../../components/FilterSection';
+import QuizControls from '../../components/QuizControls';
+import CulturalSupportList from '../../components/CulturalSupportList';
+import VirtualAssistantModal from '../../components/VirtualAssistantModal';
+import culturalIntegrationEntitiesData from '../../data/courses/cultural-integration-entities.json';
 
-interface QuizQuestion {
-  question: string;
-  answers: (string | { key: string; en: string; de: string })[];
-  key: string;
+interface CulturalIntegrationEntity {
+  id: string;
+  title: {
+    en: string;
+    de: string;
+  };
+  subtitle: {
+    en: string;
+    de: string;
+  };
+  location: string;
+  supportTypes: string[];
+  specializations: string[];
+  description: {
+    en: string;
+    de: string;
+  };
+  contact: {
+    phone?: string;
+    email?: string;
+    website?: string;
+    address?: string;
+  };
 }
 
-const CulturalOrientation: React.FC = () => {
+const CulturalSupportPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
-
+  const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
+  
+  // Convert JSON data to array format
+  const culturalIntegrationEntities: CulturalIntegrationEntity[] = Object.values(culturalIntegrationEntitiesData);
+  
+  // Quiz states
   const [showQuiz, setShowQuiz] = useState(true);
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [quizAnswers, setQuizAnswers] = useState<Record<string, any>>({});
+  const [quizAnswers, setQuizAnswers] = useState({
+    urgency: '',
+    supportType: '',
+    location: ''
+  });
+  
+  // Filter states
+  const [selectedSupportTypes, setSelectedSupportTypes] = useState<string[]>([]);
+  const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
+  const [showFilters, setShowFilters] = useState(false);
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
-  const questions: QuizQuestion[] = language.code === 'de' ? [
+  // Extract unique locations and support types
+  const locations = Array.from(new Set(culturalIntegrationEntities.map(entity => entity.location)));
+  const supportTypes = Array.from(new Set(culturalIntegrationEntities.flatMap(entity => entity.supportTypes)));
+
+  // Create filters object for GenericSupportList
+  const filters = {
+    urgency: quizAnswers.urgency,
+    supportType: selectedSupportTypes.length > 0 ? selectedSupportTypes[0] : quizAnswers.supportType,
+    location: selectedLocations.length > 0 ? selectedLocations[0] : quizAnswers.location
+  };
+
+  // Updated quiz questions for cultural integration
+  const quizQuestions = [
     {
-      key: 'urgency',
-      question: 'Wie dringend benötigen Sie Unterstützung?',
+      question: language.code === 'de' 
+        ? 'Wie dringend benötigen Sie Unterstützung bei der kulturellen Integration?' 
+        : 'How urgently do you need cultural integration support?',
       answers: [
-        { key: 'urgent', en: 'Urgent - I need help immediately', de: 'Dringend - Ich brauche sofort Hilfe' },
-        { key: 'non-urgent', en: 'Non-urgent - I can wait', de: 'Nicht dringend - Ich kann warten' }
-      ]
+        { key: 'immediate', en: 'Immediate/Emergency', de: 'Sofort/Notfall' },
+        { key: 'soon', en: 'Within a few weeks', de: 'Innerhalb weniger Wochen' },
+        { key: 'planning', en: 'Planning ahead', de: 'Vorausplanung' }
+      ],
+      key: 'urgency' as keyof typeof quizAnswers
     },
     {
-      key: 'supportType',
-      question: 'Welche Art von kultureller Unterstützung benötigen Sie?',
+      question: language.code === 'de' 
+        ? 'Welche Art von Unterstützung benötigen Sie?' 
+        : 'What type of support do you need?',
       answers: [
-        { key: 'integration-courses', en: 'Integration Courses', de: 'Integrationskurse' },
-        { key: 'cultural-orientation', en: 'Cultural Orientation', de: 'Kulturelle Orientierung' },
-        { key: 'comprehensive-integration', en: 'Comprehensive Integration', de: 'Umfassende Integration' },
-        { key: 'cultural-education', en: 'Cultural Education', de: 'Kulturelle Bildung' },
-        { key: 'refugee-integration', en: 'Refugee Integration', de: 'Flüchtlingsintegration' },
-        { key: 'community-integration', en: 'Community Integration', de: 'Gemeinschaftsintegration' }
-      ]
+        { key: 'language-courses', en: 'Language courses', de: 'Sprachkurse' },
+        { key: 'legal-advice', en: 'Legal advice', de: 'Rechtsberatung' },
+        { key: 'cultural-workshops', en: 'Cultural workshops', de: 'Kulturworkshops' },
+        { key: 'networking-events', en: 'Networking events', de: 'Networking-Veranstaltungen' },
+        { key: 'translation-services', en: 'Translation services', de: 'Übersetzungsdienste' },
+        { key: 'orientation-programs', en: 'Orientation programs', de: 'Orientierungsprogramme' },
+        { key: 'community-support', en: 'Community support', de: 'Gemeinschaftliche Unterstützung' }
+      ],
+      key: 'supportType' as keyof typeof quizAnswers
     },
     {
-      key: 'location',
-      question: 'Wo befinden Sie sich?',
-      answers: [
-        { key: 'vienna', en: 'Vienna', de: 'Wien' },
-        { key: 'lower-austria', en: 'Lower Austria', de: 'Niederösterreich' },
-        { key: 'upper-austria', en: 'Upper Austria', de: 'Oberösterreich' },
-        { key: 'salzburg', en: 'Salzburg', de: 'Salzburg' },
-        { key: 'tyrol', en: 'Tyrol', de: 'Tirol' },
-        { key: 'vorarlberg', en: 'Vorarlberg', de: 'Vorarlberg' },
-        { key: 'carinthia', en: 'Carinthia', de: 'Kärnten' },
-        { key: 'styria', en: 'Styria', de: 'Steiermark' },
-        { key: 'burgenland', en: 'Burgenland', de: 'Burgenland' },
-        { key: 'all-austria', en: 'All Austria', de: 'Ganz Österreich' }
-      ]
-    }
-  ] : [
-    {
-      key: 'urgency',
-      question: 'How urgently do you need support?',
-      answers: [
-        { key: 'urgent', en: 'Urgent - I need help immediately', de: 'Dringend - Ich brauche sofort Hilfe' },
-        { key: 'non-urgent', en: 'Non-urgent - I can wait', de: 'Nicht dringend - Ich kann warten' }
-      ]
-    },
-    {
-      key: 'supportType',
-      question: 'What type of cultural support do you need?',
-      answers: [
-        { key: 'integration-courses', en: 'Integration Courses', de: 'Integrationskurse' },
-        { key: 'cultural-orientation', en: 'Cultural Orientation', de: 'Kulturelle Orientierung' },
-        { key: 'comprehensive-integration', en: 'Comprehensive Integration', de: 'Umfassende Integration' },
-        { key: 'cultural-education', en: 'Cultural Education', de: 'Kulturelle Bildung' },
-        { key: 'refugee-integration', en: 'Refugee Integration', de: 'Flüchtlingsintegration' },
-        { key: 'community-integration', en: 'Community Integration', de: 'Gemeinschaftsintegration' }
-      ]
-    },
-    {
-      key: 'location',
-      question: 'Where are you located?',
-      answers: [
-        { key: 'vienna', en: 'Vienna', de: 'Wien' },
-        { key: 'lower-austria', en: 'Lower Austria', de: 'Niederösterreich' },
-        { key: 'upper-austria', en: 'Upper Austria', de: 'Oberösterreich' },
-        { key: 'salzburg', en: 'Salzburg', de: 'Salzburg' },
-        { key: 'tyrol', en: 'Tyrol', de: 'Tirol' },
-        { key: 'vorarlberg', en: 'Vorarlberg', de: 'Vorarlberg' },
-        { key: 'carinthia', en: 'Carinthia', de: 'Kärnten' },
-        { key: 'styria', en: 'Styria', de: 'Steiermark' },
-        { key: 'burgenland', en: 'Burgenland', de: 'Burgenland' },
-        { key: 'all-austria', en: 'All Austria', de: 'Ganz Österreich' }
-      ]
+      question: language.code === 'de' 
+        ? 'Wo befinden Sie sich?' 
+        : 'What is your location?',
+      answers: locations.map(location => ({ key: location.toLowerCase(), en: location, de: location })),
+      key: 'location' as keyof typeof quizAnswers
     }
   ];
-
-  const handleAnswer = (answer: string | { key: string; en: string; de: string }) => {
-    const currentQ = questions[currentQuestion];
-    const answerKey = typeof answer === 'string' ? answer : answer.key;
-    
-    setQuizAnswers(prev => ({
-      ...prev,
-      [currentQ.key]: answerKey
-    }));
-
-    if (currentQuestion < questions.length - 1) {
-      setCurrentQuestion(currentQuestion + 1);
-    } else {
-      setShowQuiz(false);
-    }
-  };
-
-  const handleSkip = () => {
-    if (currentQuestion < questions.length - 1) {
-      setCurrentQuestion(currentQuestion + 1);
-    } else {
-      setShowQuiz(false);
-    }
-  };
-
-  const resetQuiz = () => {
-    setShowQuiz(true);
-    setCurrentQuestion(0);
-    setQuizAnswers({});
-  };
 
   const toggleSound = () => {
     setSoundEnabled(!soundEnabled);
   };
+
+  const handleQuizAnswer = (answer: string | { key: string, en: string, de: string }) => {
+    const answerValue = typeof answer === 'string' ? answer : answer.key;
+    const questionKey = quizQuestions[currentQuestion].key;
+    
+    setQuizAnswers(prev => ({
+      ...prev,
+      [questionKey]: answerValue
+    }));
+
+    // Sync quiz answers with filter states
+    if (questionKey === 'supportType') {
+      setSelectedSupportTypes([answerValue]);
+    } else if (questionKey === 'location') {
+      const locationName = locations.find(loc => loc.toLowerCase() === answerValue);
+      if (locationName) {
+        setSelectedLocations([locationName]);
+      }
+    }
+
+    if (currentQuestion < quizQuestions.length - 1) {
+      setCurrentQuestion(currentQuestion + 1);
+    } else {
+      setShowQuiz(false);
+    }
+  };
+
+  const handleSkipQuiz = () => {
+    if (currentQuestion < quizQuestions.length - 1) {
+      setCurrentQuestion(currentQuestion + 1);
+    } else {
+      setShowQuiz(false);
+    }
+  };
+
+  const handleCloseQuiz = () => {
+    setShowQuiz(false);
+  };
+
+  const resetQuiz = () => {
+    setQuizAnswers({ urgency: '', supportType: '', location: '' });
+    setCurrentQuestion(0);
+    setShowQuiz(true);
+  };
+
+  const toggleSupportType = (type: string) => {
+    setSelectedSupportTypes(prev => 
+      prev.includes(type) 
+        ? prev.filter(t => t !== type)
+        : [...prev, type]
+    );
+  };
+
+  const toggleLocation = (location: string) => {
+    setSelectedLocations(prev => 
+      prev.includes(location) 
+        ? prev.filter(l => l !== location)
+        : [...prev, location]
+    );
+  };
+
+  const clearFilters = () => {
+    setSelectedSupportTypes([]);
+    setSelectedLocations([]);
+  };
+
+  const pageTitle = language.code === 'de' ? 'Kulturelle Integration' : 'Cultural Integration';
+  const pageDescription = language.code === 'de' 
+    ? 'Finden Sie Unterstützung für die kulturelle Integration in Ihrer Nähe.'
+    : 'Find cultural integration support services in your area.';
+
+  // Filter groups for FilterSection
+  const filterGroups = [
+    {
+      title: language.code === 'de' ? 'Unterstützungstyp' : 'Support Type',
+      items: supportTypes,
+      selectedItems: selectedSupportTypes,
+      onToggle: toggleSupportType,
+      displayLabels: supportTypes.reduce((acc, type) => ({
+        ...acc,
+        [type]: type.replace('-', ' ')
+      }), {})
+    },
+    {
+      title: language.code === 'de' ? 'Standort' : 'Location',
+      items: locations,
+      selectedItems: selectedLocations,
+      onToggle: toggleLocation
+    }
+  ];
 
   return (
     <SafeAreaView style={styles.container}>
@@ -144,50 +217,70 @@ const CulturalOrientation: React.FC = () => {
         soundEnabled={soundEnabled}
         showLanguageModal={() => setShowLanguageModal(true)}
         showHelpModal={() => setShowHelpModal(true)}
+        showVirtualAssistant={() => setShowVirtualAssistant(true)}
       />
       
       <View style={styles.content}>
-        <Text style={styles.title}>
-          {language.code === 'de' ? 'Kulturelle Orientierung und Integration' : 'Cultural Orientation and Integration'}
-        </Text>
-        <Text style={styles.description}>
-          {language.code === 'de' 
-            ? 'Finden Sie Unterstützung für kulturelle Integration und Orientierung in Österreich'
-            : 'Find support for cultural integration and orientation in Austria'}
-        </Text>
-
-        {!showQuiz ? (
-          <CulturalSupportList 
-            filters={quizAnswers}
+        <Text style={styles.title}>{pageTitle}</Text>
+        <Text style={styles.description}>{pageDescription}</Text>
+        
+        <BaseQuizModal
+          visible={showQuiz}
+          currentQuestion={currentQuestion}
+          questions={quizQuestions}
+          languageCode={language.code}
+          title={language.code === 'de' ? 'Integrations-Assistent' : 'Cultural Integration Assistant'}
+          subtitle={language.code === 'de' 
+            ? 'Beantworten Sie ein paar Fragen, um passende Integrationsdienste zu finden.'
+            : 'Answer a few questions to find suitable integration services.'}
+          onAnswer={handleQuizAnswer}
+          onSkip={handleSkipQuiz}
+          onClose={handleCloseQuiz}
+        />
+        
+        {!showQuiz && (
+          <QuizControls
             languageCode={language.code}
-            onResetFilters={resetQuiz}
+            onResetQuiz={resetQuiz}
+            onToggleFilters={() => setShowFilters(!showFilters)}
           />
-        ) : null}
+        )}
+
+        <FilterSection
+          visible={!showQuiz && showFilters}
+          title={language.code === 'de' ? 'Filter' : 'Filters'}
+          languageCode={language.code}
+          filterGroups={filterGroups}
+          onClearFilters={clearFilters}
+        />
+        
+        {!showQuiz && (
+          <CulturalSupportList 
+            filters={filters}
+            languageCode={language.code}
+            onResetFilters={clearFilters}
+          />
+        )}
       </View>
 
-      <BaseQuizModal
-        visible={showQuiz}
-        currentQuestion={currentQuestion}
-        questions={questions}
-        languageCode={language.code}
-        title={language.code === 'de' ? 'Finden Sie die richtige kulturelle Unterstützung' : 'Find the Right Cultural Support'}
-        subtitle={language.code === 'de' 
-          ? 'Beantworten Sie ein paar Fragen, um passende Integrationsprogramme zu finden'
-          : 'Answer a few questions to find suitable integration programs'}
-        onAnswer={handleAnswer}
-        onSkip={handleSkip}
-        onClose={() => setShowQuiz(false)}
-      />
-
+      {/* Language Modal */}
       <LanguageModal
         visible={showLanguageModal}
         onClose={() => setShowLanguageModal(false)}
         languageCode={language.code}
       />
 
+      {/* Help Modal */}
       <HelpModal
         visible={showHelpModal}
         onClose={() => setShowHelpModal(false)}
+        languageCode={language.code}
+      />
+
+      {/* Virtual Assistant Modal */}
+      <VirtualAssistantModal
+        visible={showVirtualAssistant}
+        onClose={() => setShowVirtualAssistant(false)}
         languageCode={language.code}
       />
     </SafeAreaView>
@@ -215,4 +308,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CulturalOrientation;
+export default CulturalSupportPage;

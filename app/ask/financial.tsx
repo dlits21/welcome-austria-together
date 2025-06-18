@@ -8,12 +8,14 @@ import {
 import { useLanguage } from '../../contexts/LanguageContext';
 import { languages } from '../../data/languages/common';
 import PageNavigation from '../../components/PageNavigation';
+import LanguageModal from '../../components/LanguageModal';
+import HelpModal from '../../components/HelpModal';
 import BaseQuizModal from '../../components/BaseQuizModal';
 import FilterSection from '../../components/FilterSection';
 import QuizControls from '../../components/QuizControls';
 import FinancialSupportList from '../../components/FinancialSupportList';
-import financialLiteracyEntitiesData from '../../data/courses/financial-literacy-entities.json';
 import VirtualAssistantModal from '../../components/VirtualAssistantModal';
+import financialLiteracyEntitiesData from '../../data/courses/financial-literacy-entities.json';
 
 interface FinancialSupportEntity {
   id: string;
@@ -43,6 +45,8 @@ interface FinancialSupportEntity {
 const FinancialSupportPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
+  const [showLanguageModal, setShowLanguageModal] = useState(false);
+  const [showHelpModal, setShowHelpModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
   
   // Convert JSON data to array format
@@ -211,6 +215,8 @@ const FinancialSupportPage: React.FC = () => {
       <PageNavigation 
         toggleSound={toggleSound}
         soundEnabled={soundEnabled}
+        showLanguageModal={() => setShowLanguageModal(true)}
+        showHelpModal={() => setShowHelpModal(true)}
         showVirtualAssistant={() => setShowVirtualAssistant(true)}
       />
       
@@ -256,6 +262,20 @@ const FinancialSupportPage: React.FC = () => {
           />
         )}
       </View>
+
+      {/* Language Modal */}
+      <LanguageModal
+        visible={showLanguageModal}
+        onClose={() => setShowLanguageModal(false)}
+        languageCode={language.code}
+      />
+
+      {/* Help Modal */}
+      <HelpModal
+        visible={showHelpModal}
+        onClose={() => setShowHelpModal(false)}
+        languageCode={language.code}
+      />
       
       {/* Virtual Assistant Modal */}
       <VirtualAssistantModal

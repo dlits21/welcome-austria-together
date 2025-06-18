@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { 
   StyleSheet, 
@@ -19,6 +18,7 @@ import PageNavigation from '../../components/PageNavigation';
 import BaseQuizModal from '../../components/BaseQuizModal';
 import LanguageModal from '../../components/LanguageModal';
 import HelpModal from '../../components/HelpModal';
+import VirtualAssistantModal from '../../components/VirtualAssistantModal';
 
 interface EmergencyContact {
   name: { en: string; de: string };
@@ -40,6 +40,7 @@ const EmergencySupport: React.FC = () => {
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
+  const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
 
   const [showQuiz, setShowQuiz] = useState(true);
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -227,6 +228,7 @@ const EmergencySupport: React.FC = () => {
         soundEnabled={soundEnabled}
         showLanguageModal={() => setShowLanguageModal(true)}
         showHelpModal={() => setShowHelpModal(true)}
+        showVirtualAssistant={() => setShowVirtualAssistant(true)}
       />
       
       <View style={styles.content}>
@@ -326,6 +328,13 @@ const EmergencySupport: React.FC = () => {
         <HelpModal
           visible={showHelpModal}
           onClose={() => setShowHelpModal(false)}
+          languageCode={language.code}
+        />
+
+        {/* Virtual Assistant Modal */}
+        <VirtualAssistantModal
+          visible={showVirtualAssistant}
+          onClose={() => setShowVirtualAssistant(false)}
           languageCode={language.code}
         />
     </SafeAreaView>

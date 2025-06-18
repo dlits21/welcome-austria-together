@@ -1,141 +1,214 @@
-
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { 
+  StyleSheet, 
+  Text, 
+  View, 
+  SafeAreaView, 
+} from 'react-native';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { languages } from '../../data/languages/common';
 import PageNavigation from '../../components/PageNavigation';
-import BaseQuizModal from '../../components/BaseQuizModal';
-import CareerSupportList from '../../components/CareerSupportList';
 import LanguageModal from '../../components/LanguageModal';
 import HelpModal from '../../components/HelpModal';
+import BaseQuizModal from '../../components/BaseQuizModal';
+import FilterSection from '../../components/FilterSection';
+import QuizControls from '../../components/QuizControls';
+import CareerSupportList from '../../components/CareerSupportList';
+import VirtualAssistantModal from '../../components/VirtualAssistantModal';
+import careerCounselingEntitiesData from '../../data/courses/career-counseling-entities.json';
 
-interface QuizQuestion {
-  question: string;
-  answers: (string | { key: string; en: string; de: string })[];
-  key: string;
+interface CareerCounselingEntity {
+  id: string;
+  title: {
+    en: string;
+    de: string;
+  };
+  subtitle: {
+    en: string;
+    de: string;
+  };
+  location: string;
+  supportTypes: string[];
+  specializations: string[];
+  description: {
+    en: string;
+    de: string;
+  };
+  contact: {
+    phone?: string;
+    email?: string;
+    website?: string;
+    address?: string;
+  };
 }
 
-const CareerSupport: React.FC = () => {
+const CareerSupportPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
-
+  const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
+  
+  // Convert JSON data to array format
+  const careerCounselingEntities: CareerCounselingEntity[] = Object.values(careerCounselingEntitiesData);
+  
+  // Quiz states
   const [showQuiz, setShowQuiz] = useState(true);
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [quizAnswers, setQuizAnswers] = useState<Record<string, any>>({});
+  const [quizAnswers, setQuizAnswers] = useState({
+    urgency: '',
+    supportType: '',
+    location: ''
+  });
+  
+  // Filter states
+  const [selectedSupportTypes, setSelectedSupportTypes] = useState<string[]>([]);
+  const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
+  const [showFilters, setShowFilters] = useState(false);
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
-  const questions: QuizQuestion[] = language.code === 'de' ? [
+  // Extract unique locations and support types
+  const locations = Array.from(new Set(careerCounselingEntities.map(entity => entity.location)));
+  const supportTypes = Array.from(new Set(careerCounselingEntities.flatMap(entity => entity.supportTypes)));
+
+  // Create filters object for GenericSupportList
+  const filters = {
+    urgency: quizAnswers.urgency,
+    supportType: selectedSupportTypes.length > 0 ? selectedSupportTypes[0] : quizAnswers.supportType,
+    location: selectedLocations.length > 0 ? selectedLocations[0] : quizAnswers.location
+  };
+
+  // Updated quiz questions for career counseling
+  const quizQuestions = [
     {
-      key: 'urgency',
-      question: 'Wie dringend benötigen Sie Unterstützung?',
+      question: language.code === 'de' 
+        ? 'Wie dringend benötigen Sie Karriereberatung?' 
+        : 'How urgently do you need career counseling?',
       answers: [
-        { key: 'urgent', en: 'Urgent - I need help immediately', de: 'Dringend - Ich brauche sofort Hilfe' },
-        { key: 'non-urgent', en: 'Non-urgent - I can wait', de: 'Nicht dringend - Ich kann warten' }
-      ]
+        { key: 'immediate', en: 'Immediate/Emergency', de: 'Sofort/Notfall' },
+        { key: 'soon', en: 'Within a few weeks', de: 'Innerhalb weniger Wochen' },
+        { key: 'planning', en: 'Planning ahead', de: 'Vorausplanung' }
+      ],
+      key: 'urgency' as keyof typeof quizAnswers
     },
     {
-      key: 'supportType',
-      question: 'Welche Art von Unterstützung benötigen Sie?',
+      question: language.code === 'de' 
+        ? 'Welche Art von Karriereunterstützung benötigen Sie?' 
+        : 'What type of career support do you need?',
       answers: [
-        { key: 'career-planning', en: 'Career Planning', de: 'Karriereplanung' },
-        { key: 'integration-programs', en: 'Integration Programs', de: 'Integrationsprogramme' },
-        { key: 'professional-development', en: 'Professional Development', de: 'Berufliche Weiterentwicklung' },
-        { key: 'mentoring', en: 'Mentoring', de: 'Mentoring' },
-        { key: 'language-integration', en: 'Language & Integration', de: 'Sprache & Integration' },
-        { key: 'comprehensive-support', en: 'Comprehensive Support', de: 'Umfassende Unterstützung' }
-      ]
+        { key: 'resume-writing', en: 'Resume and cover letter writing', de: 'Lebenslauf- und Anschreiben-Erstellung' },
+        { key: 'interview-skills', en: 'Interview skills training', de: 'Bewerbungsgesprächstraining' },
+        { key: 'career-guidance', en: 'Career guidance and planning', de: 'Karriereberatung und -planung' },
+        { key: 'job-search', en: 'Job search strategies', de: 'Strategien zur Jobsuche' },
+        { key: 'skill-development', en: 'Skill development and training', de: 'Kompetenzentwicklung und Schulung' },
+        { key: 'networking', en: 'Networking opportunities', de: 'Networking-Möglichkeiten' },
+        { key: 'career-change', en: 'Career change advice', de: 'Beratung zum Karrierewechsel' }
+      ],
+      key: 'supportType' as keyof typeof quizAnswers
     },
     {
-      key: 'location',
-      question: 'Wo befinden Sie sich?',
-      answers: [
-        { key: 'vienna', en: 'Vienna', de: 'Wien' },
-        { key: 'lower-austria', en: 'Lower Austria', de: 'Niederösterreich' },
-        { key: 'upper-austria', en: 'Upper Austria', de: 'Oberösterreich' },
-        { key: 'salzburg', en: 'Salzburg', de: 'Salzburg' },
-        { key: 'tyrol', en: 'Tyrol', de: 'Tirol' },
-        { key: 'vorarlberg', en: 'Vorarlberg', de: 'Vorarlberg' },
-        { key: 'carinthia', en: 'Carinthia', de: 'Kärnten' },
-        { key: 'styria', en: 'Styria', de: 'Steiermark' },
-        { key: 'burgenland', en: 'Burgenland', de: 'Burgenland' },
-        { key: 'all-austria', en: 'All Austria', de: 'Ganz Österreich' }
-      ]
-    }
-  ] : [
-    {
-      key: 'urgency',
-      question: 'How urgently do you need support?',
-      answers: [
-        { key: 'urgent', en: 'Urgent - I need help immediately', de: 'Dringend - Ich brauche sofort Hilfe' },
-        { key: 'non-urgent', en: 'Non-urgent - I can wait', de: 'Nicht dringend - Ich kann warten' }
-      ]
-    },
-    {
-      key: 'supportType',
-      question: 'What type of support do you need?',
-      answers: [
-        { key: 'career-planning', en: 'Career Planning', de: 'Karriereplanung' },
-        { key: 'integration-programs', en: 'Integration Programs', de: 'Integrationsprogramme' },
-        { key: 'professional-development', en: 'Professional Development', de: 'Berufliche Weiterentwicklung' },
-        { key: 'mentoring', en: 'Mentoring', de: 'Mentoring' },
-        { key: 'language-integration', en: 'Language & Integration', de: 'Sprache & Integration' },
-        { key: 'comprehensive-support', en: 'Comprehensive Support', de: 'Umfassende Unterstützung' }
-      ]
-    },
-    {
-      key: 'location',
-      question: 'Where are you located?',
-      answers: [
-        { key: 'vienna', en: 'Vienna', de: 'Wien' },
-        { key: 'lower-austria', en: 'Lower Austria', de: 'Niederösterreich' },
-        { key: 'upper-austria', en: 'Upper Austria', de: 'Oberösterreich' },
-        { key: 'salzburg', en: 'Salzburg', de: 'Salzburg' },
-        { key: 'tyrol', en: 'Tyrol', de: 'Tirol' },
-        { key: 'vorarlberg', en: 'Vorarlberg', de: 'Vorarlberg' },
-        { key: 'carinthia', en: 'Carinthia', de: 'Kärnten' },
-        { key: 'styria', en: 'Styria', de: 'Steiermark' },
-        { key: 'burgenland', en: 'Burgenland', de: 'Burgenland' },
-        { key: 'all-austria', en: 'All Austria', de: 'Ganz Österreich' }
-      ]
+      question: language.code === 'de' 
+        ? 'Wo befinden Sie sich?' 
+        : 'What is your location?',
+      answers: locations.map(location => ({ key: location.toLowerCase(), en: location, de: location })),
+      key: 'location' as keyof typeof quizAnswers
     }
   ];
-
-  const handleAnswer = (answer: string | { key: string; en: string; de: string }) => {
-    const currentQ = questions[currentQuestion];
-    const answerKey = typeof answer === 'string' ? answer : answer.key;
-    
-    setQuizAnswers(prev => ({
-      ...prev,
-      [currentQ.key]: answerKey
-    }));
-
-    if (currentQuestion < questions.length - 1) {
-      setCurrentQuestion(currentQuestion + 1);
-    } else {
-      setShowQuiz(false);
-    }
-  };
-
-  const handleSkip = () => {
-    if (currentQuestion < questions.length - 1) {
-      setCurrentQuestion(currentQuestion + 1);
-    } else {
-      setShowQuiz(false);
-    }
-  };
-
-  const resetQuiz = () => {
-    setShowQuiz(true);
-    setCurrentQuestion(0);
-    setQuizAnswers({});
-  };
 
   const toggleSound = () => {
     setSoundEnabled(!soundEnabled);
   };
+
+  const handleQuizAnswer = (answer: string | { key: string, en: string, de: string }) => {
+    const answerValue = typeof answer === 'string' ? answer : answer.key;
+    const questionKey = quizQuestions[currentQuestion].key;
+    
+    setQuizAnswers(prev => ({
+      ...prev,
+      [questionKey]: answerValue
+    }));
+
+    // Sync quiz answers with filter states
+    if (questionKey === 'supportType') {
+      setSelectedSupportTypes([answerValue]);
+    } else if (questionKey === 'location') {
+      const locationName = locations.find(loc => loc.toLowerCase() === answerValue);
+      if (locationName) {
+        setSelectedLocations([locationName]);
+      }
+    }
+
+    if (currentQuestion < quizQuestions.length - 1) {
+      setCurrentQuestion(currentQuestion + 1);
+    } else {
+      setShowQuiz(false);
+    }
+  };
+
+  const handleSkipQuiz = () => {
+    if (currentQuestion < quizQuestions.length - 1) {
+      setCurrentQuestion(currentQuestion + 1);
+    } else {
+      setShowQuiz(false);
+    }
+  };
+
+  const handleCloseQuiz = () => {
+    setShowQuiz(false);
+  };
+
+  const resetQuiz = () => {
+    setQuizAnswers({ urgency: '', supportType: '', location: '' });
+    setCurrentQuestion(0);
+    setShowQuiz(true);
+  };
+
+  const toggleSupportType = (type: string) => {
+    setSelectedSupportTypes(prev => 
+      prev.includes(type) 
+        ? prev.filter(t => t !== type)
+        : [...prev, type]
+    );
+  };
+
+  const toggleLocation = (location: string) => {
+    setSelectedLocations(prev => 
+      prev.includes(location) 
+        ? prev.filter(l => l !== location)
+        : [...prev, location]
+    );
+  };
+
+  const clearFilters = () => {
+    setSelectedSupportTypes([]);
+    setSelectedLocations([]);
+  };
+
+  const pageTitle = language.code === 'de' ? 'Karriereberatung' : 'Career Counseling';
+  const pageDescription = language.code === 'de' 
+    ? 'Finden Sie Karriereberatungsdienste und Unterstützung in Ihrer Nähe.'
+    : 'Find career counseling services and support in your area.';
+
+  // Filter groups for FilterSection
+  const filterGroups = [
+    {
+      title: language.code === 'de' ? 'Unterstützungstyp' : 'Support Type',
+      items: supportTypes,
+      selectedItems: selectedSupportTypes,
+      onToggle: toggleSupportType,
+      displayLabels: supportTypes.reduce((acc, type) => ({
+        ...acc,
+        [type]: type.replace('-', ' ')
+      }), {})
+    },
+    {
+      title: language.code === 'de' ? 'Standort' : 'Location',
+      items: locations,
+      selectedItems: selectedLocations,
+      onToggle: toggleLocation
+    }
+  ];
 
   return (
     <SafeAreaView style={styles.container}>
@@ -144,50 +217,70 @@ const CareerSupport: React.FC = () => {
         soundEnabled={soundEnabled}
         showLanguageModal={() => setShowLanguageModal(true)}
         showHelpModal={() => setShowHelpModal(true)}
+        showVirtualAssistant={() => setShowVirtualAssistant(true)}
       />
       
       <View style={styles.content}>
-        <Text style={styles.title}>
-          {language.code === 'de' ? 'Integrationswege und Karriereberatung' : 'Integration Pathways and Career Counseling'}
-        </Text>
-        <Text style={styles.description}>
-          {language.code === 'de' 
-            ? 'Finden Sie Unterstützung für Ihre berufliche Integration und Karriereentwicklung'
-            : 'Find support for your professional integration and career development'}
-        </Text>
-
-        {!showQuiz ? (
-          <CareerSupportList 
-            filters={quizAnswers}
+        <Text style={styles.title}>{pageTitle}</Text>
+        <Text style={styles.description}>{pageDescription}</Text>
+        
+        <BaseQuizModal
+          visible={showQuiz}
+          currentQuestion={currentQuestion}
+          questions={quizQuestions}
+          languageCode={language.code}
+          title={language.code === 'de' ? 'Karriere-Assistent' : 'Career Support Assistant'}
+          subtitle={language.code === 'de' 
+            ? 'Beantworten Sie ein paar Fragen, um passende Karriereberatungsdienste zu finden.'
+            : 'Answer a few questions to find suitable career counseling services.'}
+          onAnswer={handleQuizAnswer}
+          onSkip={handleSkipQuiz}
+          onClose={handleCloseQuiz}
+        />
+        
+        {!showQuiz && (
+          <QuizControls
             languageCode={language.code}
-            onResetFilters={resetQuiz}
+            onResetQuiz={resetQuiz}
+            onToggleFilters={() => setShowFilters(!showFilters)}
           />
-        ) : null}
+        )}
+
+        <FilterSection
+          visible={!showQuiz && showFilters}
+          title={language.code === 'de' ? 'Filter' : 'Filters'}
+          languageCode={language.code}
+          filterGroups={filterGroups}
+          onClearFilters={clearFilters}
+        />
+        
+        {!showQuiz && (
+          <CareerSupportList 
+            filters={filters}
+            languageCode={language.code}
+            onResetFilters={clearFilters}
+          />
+        )}
       </View>
 
-      <BaseQuizModal
-        visible={showQuiz}
-        currentQuestion={currentQuestion}
-        questions={questions}
-        languageCode={language.code}
-        title={language.code === 'de' ? 'Finden Sie die richtige Unterstützung' : 'Find the Right Support'}
-        subtitle={language.code === 'de' 
-          ? 'Beantworten Sie ein paar Fragen, um passende Beratungsangebote zu finden'
-          : 'Answer a few questions to find suitable counseling services'}
-        onAnswer={handleAnswer}
-        onSkip={handleSkip}
-        onClose={() => setShowQuiz(false)}
-      />
-
+      {/* Language Modal */}
       <LanguageModal
         visible={showLanguageModal}
         onClose={() => setShowLanguageModal(false)}
         languageCode={language.code}
       />
 
+      {/* Help Modal */}
       <HelpModal
         visible={showHelpModal}
         onClose={() => setShowHelpModal(false)}
+        languageCode={language.code}
+      />
+
+      {/* Virtual Assistant Modal */}
+      <VirtualAssistantModal
+        visible={showVirtualAssistant}
+        onClose={() => setShowVirtualAssistant(false)}
         languageCode={language.code}
       />
     </SafeAreaView>
@@ -215,4 +308,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CareerSupport;
+export default CareerSupportPage;

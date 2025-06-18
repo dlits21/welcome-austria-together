@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   StyleSheet, 
   Text, 
@@ -15,6 +14,7 @@ import BaseQuizModal from '../../components/BaseQuizModal';
 import FilterSection from '../../components/FilterSection';
 import QuizControls from '../../components/QuizControls';
 import DocumentSupportList from '../../components/DocumentSupportList';
+import VirtualAssistantModal from '../../components/VirtualAssistantModal';
 import documentCertificationEntitiesData from '../../data/courses/document-certification-entities.json';
 
 interface DocumentSupportEntity {
@@ -47,7 +47,8 @@ const DocumentSupportPage: React.FC = () => {
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
-
+  const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
+  
   // Convert JSON data to array format
   const documentSupportEntities: DocumentSupportEntity[] = documentCertificationEntitiesData.entities || [];
   
@@ -218,6 +219,7 @@ const DocumentSupportPage: React.FC = () => {
         soundEnabled={soundEnabled}
         showLanguageModal={() => setShowLanguageModal(true)}
         showHelpModal={() => setShowHelpModal(true)}
+        showVirtualAssistant={() => setShowVirtualAssistant(true)}
       />
       
       <View style={styles.content}>
@@ -274,6 +276,13 @@ const DocumentSupportPage: React.FC = () => {
       <HelpModal
         visible={showHelpModal}
         onClose={() => setShowHelpModal(false)}
+        languageCode={language.code}
+      />
+
+      {/* Virtual Assistant Modal */}
+      <VirtualAssistantModal
+        visible={showVirtualAssistant}
+        onClose={() => setShowVirtualAssistant(false)}
         languageCode={language.code}
       />
     </SafeAreaView>
