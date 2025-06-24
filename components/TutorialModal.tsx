@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Modal, ScrollView, useWindowDimensions, PanGestureHandler, State } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Modal, ScrollView, useWindowDimensions } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import TutorialSlideContent from './TutorialSlideContent';
 import TutorialIndicators from './TutorialIndicators';
@@ -36,17 +36,6 @@ const TutorialModal: React.FC<TutorialModalProps> = ({ visible, onClose, languag
     onClose();
   };
 
-  const handleSwipe = ({ nativeEvent }: any) => {
-    if (nativeEvent.state === State.END) {
-      const { translationX } = nativeEvent;
-      if (translationX > 50) {
-        prevSlide();
-      } else if (translationX < -50) {
-        nextSlide();
-      }
-    }
-  };
-
   const playAudio = () => {
     // TODO: Implement audio playback functionality
     console.log('Play audio for current slide:', currentSlide);
@@ -77,16 +66,14 @@ const TutorialModal: React.FC<TutorialModalProps> = ({ visible, onClose, languag
             currentSlide={currentSlide}
           />
 
-          {/* Slide Content with Swipe Support */}
-          <PanGestureHandler onHandlerStateChange={handleSwipe}>
-            <ScrollView style={styles.slideContainer} showsVerticalScrollIndicator={false}>
-              <TutorialSlideContent 
-                currentSlide={currentSlide}
-                languageCode={languageCode}
-                isWideScreen={isWideScreen}
-              />
-            </ScrollView>
-          </PanGestureHandler>
+          {/* Slide Content */}
+          <ScrollView style={styles.slideContainer} showsVerticalScrollIndicator={false}>
+            <TutorialSlideContent 
+              currentSlide={currentSlide}
+              languageCode={languageCode}
+              isWideScreen={isWideScreen}
+            />
+          </ScrollView>
 
           {/* Navigation */}
           <TutorialNavigation 
