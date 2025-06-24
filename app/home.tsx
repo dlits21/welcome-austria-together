@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { 
   StyleSheet, 
@@ -22,7 +23,7 @@ import {
 import Header from '../components/Header';
 import SearchBar from '../components/SearchBar';
 import CategoryGrid from '../components/CategoryGrid';
-import HelpModal from '../components/HelpModal';
+import TutorialModal from '../components/TutorialModal';
 import LanguageModal from '../components/LanguageModal';
 import VirtualAssistantModal from '../components/VirtualAssistantModal';
 
@@ -32,7 +33,7 @@ const Home: React.FC = () => {
   const [searchInput, setSearchInput] = useState('');
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
-  const [showHelpModal, setShowHelpModal] = useState(false);
+  const [showTutorialModal, setShowTutorialModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
   const [searchQuery, setSearchQuery] = useState<string>('');
   
@@ -93,7 +94,7 @@ const Home: React.FC = () => {
       <Header 
         toggleSound={toggleSound}
         showLanguageModal={() => setShowLanguageModal(true)}
-        showHelpModal={() => setShowHelpModal(true)}
+        showHelpModal={() => setShowTutorialModal(true)}
         showVirtualAssistant={() => setShowVirtualAssistant(true)}
         soundEnabled={soundEnabled}
       />
@@ -135,10 +136,10 @@ const Home: React.FC = () => {
         languageCode={currentLanguage}
       />
       
-      {/* Help Modal */}
-      <HelpModal 
-        visible={showHelpModal}
-        onClose={() => setShowHelpModal(false)}
+      {/* Tutorial Modal */}
+      <TutorialModal 
+        visible={showTutorialModal}
+        onClose={() => setShowTutorialModal(false)}
         languageCode={currentLanguage}
       />
 
