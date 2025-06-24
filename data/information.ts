@@ -15,16 +15,6 @@ export interface CategoryItem {
 
 export const informationCategories: CategoryItem[] = [
     {
-      id: 'political-education',
-      icon: '📚',
-      name: { en: 'Political Education', de: 'Politische Bildung' },
-      description: {
-        en: 'Learn about the Austrian political system, your rights and responsibilities.',
-        de: 'Erfahren Sie mehr über das österreichische politische System, Ihre Rechte und Pflichten.'
-      },
-      color: '#3B82F6'
-    },
-    {
       id: 'german-learning',
       icon: '🇩🇪',
       name: { en: 'Learn German', de: 'Deutsch Lernen' },
@@ -45,16 +35,6 @@ export const informationCategories: CategoryItem[] = [
       color: '#F59E0B'
     },
     {
-      id: 'security',
-      icon: '🛡️',
-      name: { en: 'Security', de: 'Sicherheit' },
-      description: {
-        en: 'Information about security, police, privacy, and online protection.',
-        de: 'Informationen zu Sicherheit, Polizei, Datenschutz und Online-Schutz.'
-      },
-      color: '#8B5CF6'
-    },
-    {
       id: 'housing',
       icon: '🏠',
       name: { en: 'Housing', de: 'Wohnen' },
@@ -63,6 +43,36 @@ export const informationCategories: CategoryItem[] = [
         de: 'Finden Sie Informationen über Wohnungen, einschließlich Appartements, Häuser und Mietoptionen.'
       },
       color: '#228B22'
+    },
+    {
+      id: 'translation',
+      icon: '🔄',
+      name: { en: 'Translation', de: 'Übersetzen' },
+      description: {
+        en: 'Find translation services and resources.',
+        de: 'Finden Sie Übersetzungsdienstleistungen und Ressourcen.'
+      },
+      color: '#FFA500'
+    },
+    {
+      id: 'political-education',
+      icon: '📚',
+      name: { en: 'Political Education', de: 'Politische Bildung' },
+      description: {
+        en: 'Learn about the Austrian political system, your rights and responsibilities.',
+        de: 'Erfahren Sie mehr über das österreichische politische System, Ihre Rechte und Pflichten.'
+      },
+      color: '#3B82F6'
+    },
+    {
+      id: 'security',
+      icon: '🛡️',
+      name: { en: 'Security', de: 'Sicherheit' },
+      description: {
+        en: 'Information about security, police, privacy, and online protection.',
+        de: 'Informationen zu Sicherheit, Polizei, Datenschutz und Online-Schutz.'
+      },
+      color: '#8B5CF6'
     },
     {
       id: 'finance',
@@ -143,16 +153,6 @@ export const informationCategories: CategoryItem[] = [
         de: 'Finden Sie Informationen über wichtige Kontakte und rechtliche Hilfe.'
       },
       color: '#008000'
-    },
-    {
-      id: 'translation',
-      icon: '🔄',
-      name: { en: 'Translation', de: 'Übersetzen' },
-      description: {
-        en: 'Find translation services and resources.',
-        de: 'Finden Sie Übersetzungsdienstleistungen und Ressourcen.'
-      },
-      color: '#FFA500'
     },
     {
       id: 'climate-change',

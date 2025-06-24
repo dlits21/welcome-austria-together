@@ -133,14 +133,14 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
         return (
           <View style={styles.slideContent}>
             <View style={styles.centerContent}>
-              <MaterialIcons name="record-voice-over" size={80} color="#10B981" />
+              <MaterialIcons name="mic" size={80} color="#10B981" />
               <Text style={styles.slideTitle}>
                 {languageCode === 'de' ? 'Sprach-Assistent' : 'Voice Assistant'}
               </Text>
               <Text style={styles.slideText}>
                 {languageCode === 'de' 
-                  ? 'Verwenden Sie das Sprach-Symbol oben rechts, um mit dem intelligenten Assistenten zu sprechen. Er kann Ihnen bei der Navigation durch die Plattform helfen, Fragen beantworten und Sie zu den richtigen Ressourcen weiterleiten. Sprechen Sie einfach Ihre Frage aus, und der Assistent wird Ihnen mit personalisierten Antworten und Empfehlungen helfen.'
-                  : 'Use the voice icon in the top right to speak with the intelligent assistant. It can help you navigate through the platform, answer questions, and direct you to the right resources. Simply speak your question, and the assistant will help you with personalized answers and recommendations.'}
+                  ? 'Verwenden Sie das Mikrofon-Symbol oben rechts, um mit dem intelligenten Assistenten zu sprechen. Er kann Ihnen bei der Navigation durch die Plattform helfen, Fragen beantworten und Sie zu den richtigen Ressourcen weiterleiten. Sprechen Sie einfach Ihre Frage aus, und der Assistent wird Ihnen mit personalisierten Antworten und Empfehlungen helfen.'
+                  : 'Use the microphone icon in the top right to speak with the intelligent assistant. It can help you navigate through the platform, answer questions, and direct you to the right resources. Simply speak your question, and the assistant will help you with personalized answers and recommendations.'}
               </Text>
             </View>
           </View>
