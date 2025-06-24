@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Modal, ScrollView, useWindowDimensions } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Modal, ScrollView, useWindowDimensions, PanGestureHandler, State } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import CategoryCard from './CategoryCard';
 
@@ -15,7 +15,7 @@ const TutorialModal: React.FC<TutorialModalProps> = ({ visible, onClose, languag
   const { width } = useWindowDimensions();
   const isWideScreen = width > 768;
 
-  const totalSlides = 6;
+  const totalSlides = 7;
 
   const nextSlide = () => {
     if (currentSlide < totalSlides - 1) {
@@ -32,6 +32,17 @@ const TutorialModal: React.FC<TutorialModalProps> = ({ visible, onClose, languag
   const handleClose = () => {
     setCurrentSlide(0);
     onClose();
+  };
+
+  const handleSwipe = ({ nativeEvent }: any) => {
+    if (nativeEvent.state === State.END) {
+      const { translationX } = nativeEvent;
+      if (translationX > 50) {
+        prevSlide();
+      } else if (translationX < -50) {
+        nextSlide();
+      }
+    }
   };
 
   const playAudio = () => {
@@ -51,8 +62,8 @@ const TutorialModal: React.FC<TutorialModalProps> = ({ visible, onClose, languag
               </Text>
               <Text style={styles.slideText}>
                 {languageCode === 'de' 
-                  ? 'Diese Plattform bietet Ihnen Zugang zu wichtigen Informationen, Lernmaterialien und Community-Ressourcen. Navigieren Sie durch die verschiedenen Bereiche, um die Unterstützung zu finden, die Sie benötigen.'
-                  : 'This platform provides you with access to important information, learning materials, and community resources. Navigate through the different sections to find the support you need.'}
+                  ? 'Diese Plattform bietet Ihnen umfassende Unterstützung für Ihr Leben in Österreich. Sie finden hier Informationen zu wichtigen Themen, können Fragen stellen, Deutsch lernen und sich mit der Community vernetzen. Navigieren Sie durch die verschiedenen Bereiche, um die Unterstützung zu finden, die Sie benötigen.'
+                  : 'This platform provides comprehensive support for your life in Austria. Here you can find information on important topics, ask questions, learn German, and connect with the community. Navigate through the different sections to find the support you need.'}
               </Text>
             </View>
           </View>
@@ -75,8 +86,8 @@ const TutorialModal: React.FC<TutorialModalProps> = ({ visible, onClose, languag
               </Text>
               <Text style={styles.slideText}>
                 {languageCode === 'de' 
-                  ? 'Hier können Sie Fragen zu verschiedenen Themen stellen und Unterstützung von Experten erhalten.'
-                  : 'Here you can ask questions on various topics and get support from experts.'}
+                  ? 'Hier erhalten Sie Unterstützung in verschiedenen Lebensbereichen: Karriereberatung und Jobsuche, kulturelle Integration und Traditionen, Dokumentenhilfe und Zertifizierungen, Finanzberatung und Bankwesen, Gesundheitswesen und medizinische Versorgung, sowie rechtliche Unterstützung und Beratung. Stellen Sie Ihre Fragen und erhalten Sie kompetente Antworten von Experten.'
+                  : 'Here you get support in various life areas: career counseling and job search, cultural integration and traditions, document assistance and certifications, financial advice and banking, healthcare and medical care, as well as legal support and counseling. Ask your questions and receive expert answers from professionals.'}
               </Text>
             </View>
           </View>
@@ -99,8 +110,8 @@ const TutorialModal: React.FC<TutorialModalProps> = ({ visible, onClose, languag
               </Text>
               <Text style={styles.slideText}>
                 {languageCode === 'de' 
-                  ? 'Finden Sie wichtige Informationen zu Gesundheit, Bildung, Finanzen und mehr.'
-                  : 'Find important information about health, education, finances, and more.'}
+                  ? 'Umfassende Informationen zu allen wichtigen Lebensbereichen: Gesundheit und medizinische Versorgung, Bildung und Schulwesen, Finanzen und Bankdienstleistungen, Wohnen und Immobilien, Mobilität und Verkehr, Arbeit und Beschäftigung, Kultur und Freizeitaktivitäten, Sicherheit und Notfalldienste, Übersetzungsdienste, ehrenamtliche Tätigkeiten, Fördermöglichkeiten, politische Bildung und Bürgerkunde sowie spezielle Kontakte für verschiedene Anliegen.'
+                  : 'Comprehensive information on all important life areas: health and medical care, education and schooling, finances and banking services, housing and real estate, mobility and transportation, work and employment, culture and leisure activities, security and emergency services, translation services, volunteer opportunities, funding possibilities, political education and civics, as well as special contacts for various concerns.'}
               </Text>
             </View>
           </View>
@@ -123,8 +134,8 @@ const TutorialModal: React.FC<TutorialModalProps> = ({ visible, onClose, languag
               </Text>
               <Text style={styles.slideText}>
                 {languageCode === 'de' 
-                  ? 'Zugang zu Kursen, Sprachlernmaterialien und Bildungsressourcen.'
-                  : 'Access courses, language learning materials, and educational resources.'}
+                  ? 'Vielfältige Lernmöglichkeiten für Ihre persönliche und berufliche Entwicklung: Deutschkurse für alle Niveaus von A1 bis C2, sowohl online als auch in Präsenz, Integrationskurse und kulturelle Bildung, berufliche Weiterbildung und Qualifizierung, digitale Kompetenzen und Computerkurse, sowie spezielle Programme für verschiedene Zielgruppen. Entdecken Sie passende Kurse und Bildungsangebote für Ihren individuellen Bedarf.'
+                  : 'Diverse learning opportunities for your personal and professional development: German courses for all levels from A1 to C2, both online and in-person, integration courses and cultural education, professional development and qualification, digital skills and computer courses, as well as special programs for different target groups. Discover suitable courses and educational offerings for your individual needs.'}
               </Text>
             </View>
           </View>
@@ -147,8 +158,8 @@ const TutorialModal: React.FC<TutorialModalProps> = ({ visible, onClose, languag
               </Text>
               <Text style={styles.slideText}>
                 {languageCode === 'de' 
-                  ? 'Verbinden Sie sich mit anderen, teilen Sie Erfahrungen und finden Sie lokale Unterstützung.'
-                  : 'Connect with others, share experiences, and find local support.'}
+                  ? 'Vernetzen Sie sich mit anderen und finden Sie lokale Unterstützung: Teilen Sie Ihre Fähigkeiten und helfen Sie anderen in der Community, finden Sie Menschen, die Ihnen bei spezifischen Bedürfnissen helfen können, entdecken Sie lokale Ressourcen und Dienstleistungen auf unserer interaktiven Karte, treten Sie Interessensgruppen bei und knüpfen Sie neue Kontakte. Bauen Sie ein starkes Netzwerk auf und werden Sie Teil der Gemeinschaft.'
+                  : 'Connect with others and find local support: Share your skills and help others in the community, find people who can assist you with specific needs, discover local resources and services on our interactive map, join interest groups and make new connections. Build a strong network and become part of the community.'}
               </Text>
             </View>
           </View>
@@ -157,14 +168,30 @@ const TutorialModal: React.FC<TutorialModalProps> = ({ visible, onClose, languag
         return (
           <View style={styles.slideContent}>
             <View style={styles.centerContent}>
-              <MaterialIcons name="mic" size={80} color="#10B981" />
+              <MaterialIcons name="record-voice-over" size={80} color="#10B981" />
               <Text style={styles.slideTitle}>
                 {languageCode === 'de' ? 'Sprach-Assistent' : 'Voice Assistant'}
               </Text>
               <Text style={styles.slideText}>
                 {languageCode === 'de' 
-                  ? 'Verwenden Sie das Mikrofon-Symbol oben rechts, um mit dem Sprach-Assistenten zu sprechen. Er kann Ihnen bei der Navigation helfen und Fragen beantworten.'
-                  : 'Use the microphone icon in the top right to speak with the voice assistant. It can help you navigate and answer questions.'}
+                  ? 'Verwenden Sie das Sprach-Symbol oben rechts, um mit dem intelligenten Assistenten zu sprechen. Er kann Ihnen bei der Navigation durch die Plattform helfen, Fragen beantworten und Sie zu den richtigen Ressourcen weiterleiten. Sprechen Sie einfach Ihre Frage aus, und der Assistent wird Ihnen mit personalisierten Antworten und Empfehlungen helfen.'
+                  : 'Use the voice icon in the top right to speak with the intelligent assistant. It can help you navigate through the platform, answer questions, and direct you to the right resources. Simply speak your question, and the assistant will help you with personalized answers and recommendations.'}
+              </Text>
+            </View>
+          </View>
+        );
+      case 6:
+        return (
+          <View style={styles.slideContent}>
+            <View style={styles.centerContent}>
+              <MaterialIcons name="language" size={80} color="#8B5CF6" />
+              <Text style={styles.slideTitle}>
+                {languageCode === 'de' ? 'Sprache wechseln' : 'Change Language'}
+              </Text>
+              <Text style={styles.slideText}>
+                {languageCode === 'de' 
+                  ? 'Verwenden Sie das Sprach-Symbol oben rechts, um zwischen Deutsch und Englisch zu wechseln. Die gesamte Plattform wird in Ihrer bevorzugten Sprache angezeigt, einschließlich aller Informationen, Menüs und Hilfestellungen. Sie können die Sprache jederzeit ändern, um die Inhalte in der für Sie verständlichsten Sprache zu lesen.'
+                  : 'Use the language icon in the top right to switch between German and English. The entire platform will be displayed in your preferred language, including all information, menus, and assistance. You can change the language at any time to read the content in the language that is most understandable for you.'}
               </Text>
             </View>
           </View>
@@ -206,10 +233,12 @@ const TutorialModal: React.FC<TutorialModalProps> = ({ visible, onClose, languag
             ))}
           </View>
 
-          {/* Slide Content */}
-          <ScrollView style={styles.slideContainer} showsVerticalScrollIndicator={false}>
-            {getSlideContent()}
-          </ScrollView>
+          {/* Slide Content with Swipe Support */}
+          <PanGestureHandler onHandlerStateChange={handleSwipe}>
+            <ScrollView style={styles.slideContainer} showsVerticalScrollIndicator={false}>
+              {getSlideContent()}
+            </ScrollView>
+          </PanGestureHandler>
 
           {/* Navigation */}
           <View style={styles.navigationContainer}>
@@ -311,7 +340,7 @@ const styles = StyleSheet.create({
   },
   slideContentWide: {
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     gap: 32,
   },
   centerContent: {
@@ -325,11 +354,12 @@ const styles = StyleSheet.create({
     marginBottom: 24,
   },
   tileShowcaseWide: {
-    flex: 1,
+    flex: 0.4,
     marginBottom: 0,
+    maxWidth: '40%',
   },
   slideInfo: {
-    flex: 1,
+    flex: 0.6,
   },
   slideTitle: {
     fontSize: 24,
