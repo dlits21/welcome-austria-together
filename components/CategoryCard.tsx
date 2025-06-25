@@ -20,7 +20,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
 }) => {
   const screenWidth = Dimensions.get('window').width;
   const cardWidth = (screenWidth - 48) / 2; // 2 columns with padding
-  const iconSize = Math.max(32, cardWidth * 0.3); // Responsive icon size, minimum 32
+  const iconSize = Math.min(Math.max(32, cardWidth * 0.3), 200); // Responsive icon size, minimum 32
 
   return (
     <TouchableOpacity 
