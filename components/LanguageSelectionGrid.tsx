@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { 
   StyleSheet, 
@@ -71,17 +72,36 @@ const styles = StyleSheet.create({
     backgroundColor: "#f5f5f5",
     borderRadius: 12,
     padding: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
   flagContainer: {
     width: "100%",
     aspectRatio: 1,
     marginBottom: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 2,
+    elevation: 3,
+    borderRadius: 8,
   },
   flag: {
-    width: "10%",
-    height: "10%",
+    width: "100%",
+    height: "100%",
     marginBottom: 10,
-    borderRadius: 30,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: "#ddd",
   },
   languageName: {
     fontSize: 25,

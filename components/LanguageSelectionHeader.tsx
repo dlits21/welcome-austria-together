@@ -52,14 +52,6 @@ const LanguageSelectionHeader: React.FC<LanguageSelectionHeaderProps> = ({
             color="#333" 
           />
         </TouchableOpacity>
-        
-        {/* Info Button */}
-        <TouchableOpacity 
-          style={styles.iconButton} 
-          onPress={() => setShowInfo(true)}
-        >
-          <MaterialIcons name="info" size={24} color="#333" />
-        </TouchableOpacity>
       </View>
     </View>
   );
