@@ -1,0 +1,137 @@
+
+{
+  "slides": [
+    {
+      "id": 0,
+      "type": "welcome",
+      "title": {
+        "de": "Willkommen zur Plattform!",
+        "en": "Welcome to the Platform!"
+      },
+      "text": {
+        "de": "Diese Plattform bietet Ihnen umfassende Unterstützung für Ihr Leben in Österreich. Sie finden hier Informationen zu wichtigen Themen, können Fragen stellen, Deutsch lernen und sich mit der Community vernetzen. Navigieren Sie durch die verschiedenen Bereiche, um die Unterstützung zu finden, die Sie benötigen.",
+        "en": "This platform provides comprehensive support for your life in Austria. Here you can find information on important topics, ask questions, learn German, and connect with the community. Navigate through the different sections to find the support you need."
+      }
+    },
+    {
+      "id": 1,
+      "type": "category",
+      "title": {
+        "de": "Fragen Bereich",
+        "en": "Ask Section"
+      },
+      "text": {
+        "de": "Hier erhalten Sie Unterstützung in verschiedenen Lebensbereichen: Karriereberatung und Jobsuche, kulturelle Integration und Traditionen, Dokumentenhilfe und Zertifizierungen, Finanzberatung und Bankwesen, Gesundheitswesen und medizinische Versorgung, sowie rechtliche Unterstützung und Beratung. Stellen Sie Ihre Fragen und erhalten Sie kompetente Antworten von Experten.",
+        "en": "Here you get support in various life areas: career counseling and job search, cultural integration and traditions, document assistance and certifications, financial advice and banking, healthcare and medical care, as well as legal support and counseling. Ask your questions and receive expert answers from professionals."
+      },
+      "category": {
+        "title": {
+          "de": "Fragen",
+          "en": "Ask"
+        },
+        "description": {
+          "de": "Stellen Sie Fragen",
+          "en": "Ask questions"
+        },
+        "icon": "question-answer",
+        "color": "#3B82F6"
+      }
+    },
+    {
+      "id": 2,
+      "type": "category",
+      "title": {
+        "de": "Informationen Bereich",
+        "en": "Information Section"
+      },
+      "text": {
+        "de": "Umfassende Informationen zu allen wichtigen Lebensbereichen: Gesundheit und medizinische Versorgung, Bildung und Schulwesen, Finanzen und Bankdienstleistungen, Wohnen und Immobilien, Mobilität und Verkehr, Arbeit und Beschäftigung, Kultur und Freizeitaktivitäten, Sicherheit und Notfalldienste, Übersetzungsdienste, ehrenamtliche Tätigkeiten, Fördermöglichkeiten, politische Bildung und Bürgerkunde sowie spezielle Kontakte für verschiedene Anliegen.",
+        "en": "Comprehensive information on all important life areas: health and medical care, education and schooling, finances and banking services, housing and real estate, mobility and transportation, work and employment, culture and leisure activities, security and emergency services, translation services, volunteer opportunities, funding possibilities, political education and civics, as well as special contacts for various concerns."
+      },
+      "category": {
+        "title": {
+          "de": "Informationen",
+          "en": "Information"
+        },
+        "description": {
+          "de": "Wichtige Informationen",
+          "en": "Important information"
+        },
+        "icon": "info",
+        "color": "#10B981"
+      }
+    },
+    {
+      "id": 3,
+      "type": "category",
+      "title": {
+        "de": "Lernen Bereich",
+        "en": "Learn Section"
+      },
+      "text": {
+        "de": "Vielfältige Lernmöglichkeiten für Ihre persönliche und berufliche Entwicklung: Deutschkurse für alle Niveaus von A1 bis C2, sowohl online als auch in Präsenz, Integrationskurse und kulturelle Bildung, berufliche Weiterbildung und Qualifizierung, digitale Kompetenzen und Computerkurse, sowie spezielle Programme für verschiedene Zielgruppen. Entdecken Sie passende Kurse und Bildungsangebote für Ihren individuellen Bedarf.",
+        "en": "Diverse learning opportunities for your personal and professional development: German courses for all levels from A1 to C2, both online and in-person, integration courses and cultural education, professional development and qualification, digital skills and computer courses, as well as special programs for different target groups. Discover suitable courses and educational offerings for your individual needs."
+      },
+      "category": {
+        "title": {
+          "de": "Lernen",
+          "en": "Learn"
+        },
+        "description": {
+          "de": "Lernmaterialien",
+          "en": "Learning materials"
+        },
+        "icon": "menu-book",
+        "color": "#8B5CF6"
+      }
+    },
+    {
+      "id": 4,
+      "type": "category",
+      "title": {
+        "de": "Community Bereich",
+        "en": "Community Section"
+      },
+      "text": {
+        "de": "Vernetzen Sie sich mit anderen und finden Sie lokale Unterstützung: Teilen Sie Ihre Fähigkeiten und helfen Sie anderen in der Community, finden Sie Menschen, die Ihnen bei spezifischen Bedürfnissen helfen können, entdecken Sie lokale Ressourcen und Dienstleistungen auf unserer interaktiven Karte, treten Sie Interessensgruppen bei und knüpfen Sie neue Kontakte. Bauen Sie ein starkes Netzwerk auf und werden Sie Teil der Gemeinschaft.",
+        "en": "Connect with others and find local support: Share your skills and help others in the community, find people who can assist you with specific needs, discover local resources and services on our interactive map, join interest groups and make new connections. Build a strong network and become part of the community."
+      },
+      "category": {
+        "title": {
+          "de": "Community",
+          "en": "Community"
+        },
+        "description": {
+          "de": "Gemeinschaftsressourcen",
+          "en": "Community resources"
+        },
+        "icon": "people",
+        "color": "#F97316"
+      }
+    },
+    {
+      "id": 5,
+      "type": "feature",
+      "title": {
+        "de": "Sprach-Assistent",
+        "en": "Voice Assistant"
+      },
+      "text": {
+        "de": "Verwenden Sie das Mikrofon-Symbol oben rechts, um mit dem intelligenten Assistenten zu sprechen. Er kann Ihnen bei der Navigation durch die Plattform helfen, Fragen beantworten und Sie zu den richtigen Ressourcen weiterleiten. Sprechen Sie einfach Ihre Frage aus, und der Assistent wird Ihnen mit personalisierten Antworten und Empfehlungen helfen.",
+        "en": "Use the microphone icon in the top right to speak with the intelligent assistant. It can help you navigate through the platform, answer questions, and direct you to the right resources. Simply speak your question, and the assistant will help you with personalized answers and recommendations."
+      }
+    },
+    {
+      "id": 6,
+      "type": "feature",
+      "title": {
+        "de": "Sprache wechseln",
+        "en": "Change Language"
+      },
+      "text": {
+        "de": "Verwenden Sie das Sprach-Symbol oben rechts, um zwischen Deutsch und Englisch zu wechseln. Die gesamte Plattform wird in Ihrer bevorzugten Sprache angezeigt, einschließlich aller Informationen, Menüs und Hilfestellungen. Sie können die Sprache jederzeit ändern, um die Inhalte in der für Sie verständlichsten Sprache zu lesen.",
+        "en": "Use the language icon in the top right to switch between German and English. The entire platform will be displayed in your preferred language, including all information, menus, and assistance. You can change the language at any time to read the content in the language that is most understandable for you."
+      }
+    }
+  ]
+}
