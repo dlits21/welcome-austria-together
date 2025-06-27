@@ -1,0 +1,87 @@
+
+{
+  "generalSupport": {
+    "en": "General Support",
+    "de": "Allgemeine Unterstützung",
+    "ru": "Общая поддержка",
+    "ce": "Йуьхь гlо",
+    "prs": "حمایت عمومی",
+    "ps": "عمومي ملاتړ",
+    "fa": "پشتیبانی عمومی",
+    "ar": "الدعم العام",
+    "ku": "پشتگیری گشتی",
+    "so": "Taageero guud",
+    "ka": "ზოგადი მხარდაჭერა",
+    "sq": "Mbështetje e përgjithshme"
+  },
+  "reachOutDirectly": {
+    "en": "Reach out to us directly",
+    "de": "Kontaktiere uns direkt",
+    "ru": "Свяжитесь с нами напрямую",
+    "ce": "Шуьгахь йoьхна хиллалора",
+    "prs": "مستقیماً با ما تماس بگیرید",
+    "ps": "مستقیم موږ سره اړیکه ونیسئ",
+    "fa": "مستقیماً با ما تماس بگیرید",
+    "ar": "تواصل معنا مباشرة",
+    "ku": "ڕاستەوخۆ پەیوەندیمان پێوە بکە",
+    "so": "Si toos ah noogu soo wac",
+    "ka": "დაუკავშირდით ჩვენ პირდაპირ",
+    "sq": "Na kontaktoni drejtpërdrejt"
+  },
+  "talkToMentor": {
+    "en": "Talk to a mentor",
+    "de": "Mit einem Mentor sprechen",
+    "ru": "Поговорить с наставником",
+    "ce": "Дешархочо гай",
+    "prs": "با یک مربی صحبت کنید",
+    "ps": "د یو ښوونکي سره خبرې وکړئ",
+    "fa": "با یک مربی صحبت کنید",
+    "ar": "تحدث مع مرشد",
+    "ku": "لەگەڵ ڕێبەرێک قسە بکە",
+    "so": "Kala hadal macalin",
+    "ka": "ისაუბრეთ მენტორთან",
+    "sq": "Flisni me një mentor"
+  },
+  "askCommunity": {
+    "en": "Ask the community",
+    "de": "Frage die Community",
+    "ru": "Спросить сообщество",
+    "ce": "Жамlате хаттар де",
+    "prs": "از جامعه بپرسید",
+    "ps": "له ټولنې وپوښتنه وکړئ",
+    "fa": "از جامعه بپرسید",
+    "ar": "اسأل المجتمع",
+    "ku": "لە کۆمەڵگا بپرسە",
+    "so": "Weydiiso bulshada",
+    "ka": "ჰკითხეთ საზოგადოებას",
+    "sq": "Pyesni komunitetin"
+  },
+  "visitInPerson": {
+    "en": "Visit us in person",
+    "de": "Besuche uns persönlich",
+    "ru": "Посетите нас лично",
+    "ce": "Шуьга хьажа дехьавайла",
+    "prs": "شخصاً به ما مراجعه کنید",
+    "ps": "په شخصي ډول موږ ته راشئ",
+    "fa": "شخصاً به ما مراجعه کنید",
+    "ar": "قم بزيارتنا شخصياً",
+    "ku": "بە کەسی سەردانمان بکە",
+    "so": "Naga booqo si gaar ah",
+    "ka": "ეწვიეთ ჩვენ პირადად",
+    "sq": "Na vizitoni personalisht"
+  },
+  "faq": {
+    "en": "FAQ",
+    "de": "Häufig gestellte Fragen",
+    "ru": "Часто задаваемые вопросы",
+    "ce": "Дуккха хатторш",
+    "prs": "سوالات متداول",
+    "ps": "ډیری پوښتل شوې پوښتنې",
+    "fa": "سوالات متداول",
+    "ar": "الأسئلة الشائعة",
+    "ku": "پرسیارە دووبارەبووەکان",
+    "so": "Su'aalaha inta badan la is weydiiyo",
+    "ka": "ხშირად დასმული კითხვები",
+    "sq": "Pyetjet e shpeshta"
+  }
+}

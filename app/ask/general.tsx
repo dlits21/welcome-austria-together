@@ -11,8 +11,8 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import { languages } from '../../data/languages/common';
 import PageNavigation from '../../components/PageNavigation';
 import LanguageModal from '../../components/LanguageModal';
-import HelpModal from '../../components/HelpModal';
 import VirtualAssistantModal from '../../components/VirtualAssistantModal';
+import TutorialModal from '../../components/TutorialModal';
 import AccordionItem from '../../components/AccordionItem';
 import ContactButton from '../../components/ContactButton';
 import StateCard from '../../components/StateCard';
@@ -22,13 +22,22 @@ import FacebookIcon from '../../assets/images/facebook.svg';
 import SignalIcon from '../../assets/images/signal.svg';
 import WhatsAppIcon from '../../assets/images/whatsapp.svg';
 import TelegramIcon from '../../assets/images/telegram.svg';
+import { getGlobalText } from '../../utils/languageUtils';
+
+// Import general support translations
+import generalTranslations from '../../data/language/ask/general.json';
+
+const getGeneralText = (key: string, languageCode: string): string => {
+  const translation = generalTranslations[key as keyof typeof generalTranslations];
+  return translation?.[languageCode as keyof typeof translation] || translation?.en || key;
+};
 
 const GeneralSupport: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
-  const [showHelpModal, setShowHelpModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
+  const [showTutorial, setShowTutorial] = useState(false);
 
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
@@ -104,14 +113,6 @@ const GeneralSupport: React.FC = () => {
       answer: 'We offer support in German, English, and many other languages.'
     }
   ];
-  
-  // Translate based on language
-  const mentorTitle = language.code === 'de' ? 'Mit einem Mentor sprechen' : 'Talk to a mentor';
-  const communityTitle = language.code === 'de' ? 'Frage die Community' : 'Ask the community';
-  const visitTitle = language.code === 'de' ? 'Besuche uns persönlich' : 'Visit us in person';
-  const faqTitle = language.code === 'de' ? 'Häufig gestellte Fragen' : 'FAQ';
-  const pageTitle = language.code === 'de' ? 'Allgemeine Unterstützung' : 'General Support';
-  const pageSubtitle = language.code === 'de' ? 'Kontaktiere uns direkt' : 'Reach out to us directly';
 
   return (
     <SafeAreaView style={styles.container}>
@@ -119,19 +120,19 @@ const GeneralSupport: React.FC = () => {
         toggleSound={toggleSound}
         soundEnabled={soundEnabled}
         showLanguageModal={() => setShowLanguageModal(true)}
-        showHelpModal={() => setShowHelpModal(true)}
         showVirtualAssistant={() => setShowVirtualAssistant(true)}
+        showTutorial={() => setShowTutorial(true)}
       />
       
       <View style={styles.titleContainer}>
-        <Text style={styles.title}>{pageTitle}</Text>
-        <Text style={styles.subtitle}>{pageSubtitle}</Text>
+        <Text style={styles.title}>{getGeneralText('generalSupport', currentLanguage)}</Text>
+        <Text style={styles.subtitle}>{getGeneralText('reachOutDirectly', currentLanguage)}</Text>
       </View>
 
       <ScrollView style={styles.scrollView} contentContainerStyle={styles.contentContainer}>
         {/* Talk to a mentor */}
         <AccordionItem
-          title={mentorTitle}
+          title={getGeneralText('talkToMentor', currentLanguage)}
           icon="question-answer"
           iconColor="#3B82F6"
           expanded={expandedSection === 'mentor'}
@@ -171,7 +172,7 @@ const GeneralSupport: React.FC = () => {
         
         {/* Ask the community */}
         <AccordionItem
-          title={communityTitle}
+          title={getGeneralText('askCommunity', currentLanguage)}
           icon="people"
           iconColor="#10B981"
           expanded={expandedSection === 'community'}
@@ -201,7 +202,7 @@ const GeneralSupport: React.FC = () => {
         
         {/* Visit in person */}
         <AccordionItem
-          title={visitTitle}
+          title={getGeneralText('visitInPerson', currentLanguage)}
           icon="location-on"
           iconColor="#8B5CF6"
           expanded={expandedSection === 'visit'}
@@ -218,7 +219,7 @@ const GeneralSupport: React.FC = () => {
 
         {/* FAQ Section */}
         <AccordionItem
-          title={faqTitle}
+          title={getGeneralText('faq', currentLanguage)}
           icon="help"
           iconColor="#F59E0B"
           expanded={expandedSection === 'faq'}
@@ -243,16 +244,17 @@ const GeneralSupport: React.FC = () => {
         languageCode={language.code}
       />
 
-      <HelpModal
-        visible={showHelpModal}
-        onClose={() => setShowHelpModal(false)}
-        languageCode={language.code}
-      />
-
       <VirtualAssistantModal
         visible={showVirtualAssistant}
         onClose={() => setShowVirtualAssistant(false)}
         languageCode={language.code}
+      />
+
+      <TutorialModal
+        visible={showTutorial}
+        onClose={() => setShowTutorial(false)}
+        languageCode={language.code}
+        tutorialType="ask-general"
       />
     </SafeAreaView>
   );

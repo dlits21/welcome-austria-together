@@ -1,0 +1,163 @@
+
+{
+  "slides": [
+    {
+      "type": "welcome",
+      "title": {
+        "en": "Welcome to General Support",
+        "de": "Willkommen bei der allgemeinen Unterstützung",
+        "ru": "Добро пожаловать в общую поддержку",
+        "ce": "Марша вогӏийла йуьхь гӀонах",
+        "prs": "به حمایت عمومی خوش آمدید",
+        "ps": "عمومي ملاتړ ته ښه راغلاست",
+        "fa": "به پشتیبانی عمومی خوش آمدید",
+        "ar": "مرحباً بك في الدعم العام",
+        "ku": "بەخێربێن بۆ پشتگیری گشتی",
+        "so": "Ku soo dhawow taageerka guud",
+        "ka": "კეთილი იყოს თქვენი მობრძანება ზოგად მხარდაჭერაში",
+        "sq": "Mirësevini në mbështetjen e përgjithshme"
+      },
+      "description": {
+        "en": "This section provides various ways to get help and support. Let's explore your options.",
+        "de": "Dieser Bereich bietet verschiedene Möglichkeiten, Hilfe und Unterstützung zu erhalten. Lassen Sie uns Ihre Optionen erkunden.",
+        "ru": "Этот раздел предоставляет различные способы получения помощи и поддержки. Давайте изучим ваши варианты.",
+        "ce": "Хlара дакъа гlо лорна а гlулакх хlокхуш йуьлу юкъера некъаш ду. Хlинца дехьа хlума вариантш.",
+        "prs": "این بخش روش‌های مختلفی برای دریافت کمک و حمایت ارائه می‌دهد. بیایید گزینه‌های شما را بررسی کنیم.",
+        "ps": "دا برخه د مرستې او ملاتړ ترلاسه کولو لپاره مختلف لارې وړاندې کوي. راځئ چې ستاسو انتخابونه وګورو.",
+        "fa": "این بخش روش‌های مختلفی برای دریافت کمک و پشتیبانی ارائه می‌دهد. بیایید گزینه‌های شما را بررسی کنیم.",
+        "ar": "يوفر هذا القسم طرقًا مختلفة للحصول على المساعدة والدعم. دعنا نستكشف خياراتك.",
+        "ku": "ئەم بەشە ڕێگای جۆراوجۆر بۆ وەرگرتنی یارمەتی و پشتگیری دابین دەکات. با هەڵبژاردەکانت بخوێنینەوە.",
+        "so": "Qaybkani wuxuu bixiyaa siyaabo kala duwan oo lagu heli karo caawimaad iyo taageero. Aynu sahamino doorashadaada.",
+        "ka": "ეს განყოფილება სხვადასხვა გზებს გთავაზობთ დახმარებისა და მხარდაჭერის მისაღებად. მოდით განვიხილოთ თქვენი ვარიანტები.",
+        "sq": "Ky seksion ofron mënyra të ndryshme për të marrë ndihmë dhe mbështetje. Le të eksploroj opsionet tuaja."
+      }
+    },
+    {
+      "type": "category",
+      "category": "mentor",
+      "title": {
+        "en": "Talk to a Mentor",
+        "de": "Mit einem Mentor sprechen",
+        "ru": "Поговорить с наставником",
+        "ce": "Дешархочо гай",
+        "prs": "با یک مربی صحبت کنید",
+        "ps": "د یو ښوونکي سره خبرې وکړئ",
+        "fa": "با یک مربی صحبت کنید",
+        "ar": "تحدث مع مرشد",
+        "ku": "لەگەڵ ڕێبەرێک قسە بکە",
+        "so": "Kala hadal macalin",
+        "ka": "ისაუბრეთ მენტორთან",
+        "sq": "Flisni me një mentor"
+      },
+      "description": {
+        "en": "Get one-on-one support from experienced mentors through various communication channels including WhatsApp, Signal, Telegram, Facebook, email, and phone.",
+        "de": "Erhalten Sie individuelle Unterstützung von erfahrenen Mentoren über verschiedene Kommunikationskanäle wie WhatsApp, Signal, Telegram, Facebook, E-Mail und Telefon.",
+        "ru": "Получите индивидуальную поддержку от опытных наставников через различные каналы связи, включая WhatsApp, Signal, Telegram, Facebook, электронную почту и телефон.",
+        "ce": "Хlажанца дешархойн гlонца цхьаъ-цхьаъ гlулакх хlокху юкъера некъаш тlехула: WhatsApp, Signal, Telegram, Facebook, электрон почта а телефон а.",
+        "prs": "از طریق کانال‌های مختلف ارتباطی از جمله واتس‌اپ، سیگنال، تلگرام، فیس‌بوک، ایمیل و تلفن، حمایت فردی از مربیان با تجربه دریافت کنید.",
+        "ps": "د مختلفو اړیکو لارو له لارې د تجربه لرونکو ښوونکو څخه د یو په یو ملاتړ واخلئ پشمول واټس اپ، سیګنال، ټیلګرام، فیسبوک، بریښنالیک او تلیفون.",
+        "fa": "از طریق کانال‌های مختلف ارتباطی از جمله واتس‌اپ، سیگنال، تلگرام، فیس‌بوک، ایمیل و تلفن، پشتیبانی فردی از مربیان باتجربه دریافت کنید.",
+        "ar": "احصل على دعم فردي من موجهين ذوي خبرة من خلال قنوات اتصال مختلفة بما في ذلك واتساب وسيجنال وتيليجرام وفيسبوك والبريد الإلكتروني والهاتف.",
+        "ku": "لە ڕێگای جۆراوجۆری پەیوەندیکردن پشتگیری تاکەکەسی لە ڕێبەرانی بەئەزموونەوە وەربگرە لەوانە واتساپ، سیگناڵ، تیلیگرام، فەیسبووک، ئیمەیڵ و تەلەفۆن.",
+        "so": "Hel taageero shaqsi ah oo ka timid macalimiinta khibradda leh iyada oo loo marayo wadooyinka kala duwan ee isgaadhsiinta oo ay ku jiraan WhatsApp, Signal, Telegram, Facebook, email, iyo telefoon.",
+        "ka": "მიიღეთ ინდივიდუალური მხარდაჭერა გამოცდილი მენტორებისგან სხვადასხვა საკომუნიკაციო არხების საშუალებით, მათ შორის WhatsApp, Signal, Telegram, Facebook, ელექტრონული ფოსტა და ტელეფონი.",
+        "sq": "Merrni mbështetje individuale nga mentorët me përvojë përmes kanaleve të ndryshme komunikimi duke përfshirë WhatsApp, Signal, Telegram, Facebook, email dhe telefon."
+      }
+    },
+    {
+      "type": "category",
+      "category": "community",
+      "title": {
+        "en": "Ask the Community",
+        "de": "Frage die Community",
+        "ru": "Спросить сообщество",
+        "ce": "Жамlате хаттар де",
+        "prs": "از جامعه بپرسید",
+        "ps": "له ټولنې وپوښتنه وکړئ",
+        "fa": "از جامعه بپرسید",
+        "ar": "اسأل المجتمع",
+        "ku": "لە کۆمەڵگا بپرسە",
+        "so": "Weydiiso bulshada",
+        "ka": "ჰკითხეთ საზოგადოებას",
+        "sq": "Pyesni komunitetin"
+      },
+      "description": {
+        "en": "Connect with others in similar situations through community platforms like WhatsApp groups, Signal, Telegram, and forums where you can share experiences and get advice.",
+        "de": "Verbinden Sie sich mit anderen in ähnlichen Situationen über Community-Plattformen wie WhatsApp-Gruppen, Signal, Telegram und Foren, wo Sie Erfahrungen teilen und Ratschläge erhalten können.",
+        "ru": "Свяжитесь с другими людьми в похожих ситуациях через платформы сообщества, такие как группы WhatsApp, Signal, Telegram и форумы, где вы можете делиться опытом и получать советы.",
+        "ce": "Иштта нисйоцурш доцуш йолучухь жамlатин платформашца йоьлла хила: WhatsApp тобанаш, Signal, Telegram а форумаш а, маьлла хьуна тайп-тайпанчи болх болхбала а хаамаш ло а йиш ю.",
+        "prs": "از طریق پلتفرم‌های جامعه مانند گروه‌های واتس‌اپ، سیگنال، تلگرام و انجمن‌ها که در آن می‌توانید تجربیات خود را به اشتراک بگذارید و توصیه دریافت کنید، با دیگران در موقعیت‌های مشابه ارتباط برقرار کنید.",
+        "ps": "د ټولنیزو پلیټفارمونو له لارې د ورته حالاتو سره نورو سره اړیکه ونیسئ لکه د واټس اپ ډلې، سیګنال، ټیلګرام او فورمونه چیرې چې تاسو کولی شئ تجربې شریکې کړئ او مشورې واخلئ.",
+        "fa": "از طریق پلتفرم‌های جامعه مانند گروه‌های واتس‌اپ، سیگنال، تلگرام و انجمن‌ها که در آن می‌توانید تجربیات خود را به اشتراک بگذارید و مشاوره دریافت کنید، با دیگران در موقعیت‌های مشابه ارتباط برقرار کنید.",
+        "ar": "تواصل مع الآخرين في مواقف مماثلة من خلال منصات المجتمع مثل مجموعات واتساب وسيجنال وتيليجرام والمنتديات حيث يمكنك مشاركة التجارب والحصول على المشورة.",
+        "ku": "لە ڕێگای پلاتفۆرمی کۆمەڵایەتیەوە لەگەڵ کەسانی تری هاوشێوە پەیوەندی بکە وەک گرووپەکانی واتساپ، سیگناڵ، تیلیگرام و فۆرمەکان کە دەتوانیت ئەزموونەکانت بەشی بکەیت و ڕاوێژکاری وەربگریت.",
+        "so": "Kula xiriir dadka kale ee xaaladaha la mid ah iyada oo loo marayo goobaha bulshada sida kooxaha WhatsApp, Signal, Telegram, iyo foramiinta halkaas oo aad wadaagi karto waayo-aragnimo oo heli karto talo.",
+        "ka": "დაუკავშირდით სხვებს მსგავს სიტუაციებში საზოგადოების პლატფորმების საშუალებით, როგორიცაა WhatsApp ჯგუფები, Signal, Telegram და ფორუმები, სადაც შეგიძლიათ გაუზიაროთ გამოცდილება და მიიღოთ რჩევები.",
+        "sq": "Lidhuni me të tjerët në situata të ngjashme përmes platformave të komunitetit si grupet e WhatsApp, Signal, Telegram dhe forumet ku mund të ndani përvojat dhe merrni këshilla."
+      }
+    },
+    {
+      "type": "category",
+      "category": "visit",
+      "title": {
+        "en": "Visit Us in Person",
+        "de": "Besuche uns persönlich",
+        "ru": "Посетите нас лично",
+        "ce": "Шуьга хьажа дехьавайла",
+        "prs": "شخصاً به ما مراجعه کنید",
+        "ps": "په شخصي ډول موږ ته راشئ",
+        "fa": "شخصاً به ما مراجعه کنید",
+        "ar": "قم بزيارتنا شخصياً",
+        "ku": "بە کەسی سەردانمان بکە",
+        "so": "Naga booqo si gaar ah",
+        "ka": "ეწვიეთ ჩვენ პირადად",
+        "sq": "Na vizitoni personalisht"
+      },
+      "description": {
+        "en": "Find our physical locations across all Austrian states. Each office provides in-person support and counseling services.",
+        "de": "Finden Sie unsere physischen Standorte in allen österreichischen Bundesländern. Jedes Büro bietet persönliche Unterstützung und Beratungsdienste.",
+        "ru": "Найдите наши физические местоположения во всех австрийских землях. Каждый офис предоставляет личную поддержку и консультационные услуги.",
+        "ce": "Австрин массо штаташкахь шуьйра оффисаш карийта. Дукхаза оффисехь шуьга йоьлла гlо а дешхьало а делахь ю.",
+        "prs": "مکان‌های فیزیکی ما را در تمام ایالات اتریش پیدا کنید. هر دفتر خدمات حمایت و مشاوره حضوری ارائه می‌دهد.",
+        "ps": "زموږ فزیکي ځایونه د اتریش په ټولو ایالتونو کې ومومئ. هر دفتر د حضوري ملاتړ او مشورې خدمات وړاندې کوي.",
+        "fa": "مکان‌های فیزیکی ما را در تمام ایالات اتریش پیدا کنید. هر دفتر خدمات پشتیبانی و مشاوره حضوری ارائه می‌دهد.",
+        "ar": "ابحث عن مواقعنا الفعلية في جميع ولايات النمسا. يوفر كل مكتب خدمات الدعم والاستشارة الشخصية.",
+        "ku": "شوێنە فیزیکییەکانمان لە هەموو ویلایەتەکانی نەمسا بدۆزەوە. هەر نووسینگەیەک خزمەتگوزاری پشتگیری و ڕاوێژکاری کەسی دابین دەکات.",
+        "so": "Hel meelahayaga jirka ah ee dhammaan gobollada Austria. Xafiis walba wuxuu bixiyaa adeegyada taageerada iyo la-talinta shakhsiga ah.",
+        "ka": "იპოვეთ ჩვენი ფიზიკური მდებარეობები ავსტრიის ყველა შტატში. ყოველი ოფისი უზრუნველყოფს პირად მხარდაჭერას და საკონსულტაციო მომსახურებას.",
+        "sq": "Gjeni vendet tona fizike në të gjitha shtetet e Austrisë. Çdo zyrë ofron shërbime mbështetjeje dhe këshillimi në person."
+      }
+    },
+    {
+      "type": "icons",
+      "title": {
+        "en": "Navigation Icons",
+        "de": "Navigations-Symbole",
+        "ru": "Значки навигации",
+        "ce": "Навигацин билгалонаш",
+        "prs": "نمادهای ناوبری",
+        "ps": "د لارښود نښېګانې",
+        "fa": "نمادهای ناوبری",
+        "ar": "رموز التنقل",
+        "ku": "نیشانەکانی ناوبری",
+        "so": "Calaamadaha dhaqdhaqaaqa",
+        "ka": "ნავიგაციის ხატულები",
+        "sq": "Ikonat e navigimit"
+      },
+      "description": {
+        "en": "Learn about the navigation icons: Sound toggle, Language selector, Help/Tutorial, and Virtual Assistant.",
+        "de": "Erfahren Sie mehr über die Navigationsymbole: Sound-Umschaltung, Sprachauswahl, Hilfe/Tutorial und Virtueller Assistent.",
+        "ru": "Узнайте о значках навигации: переключатель звука, выбор языка, помощь/руководство и виртуальный помощник.",
+        "ce": "Навигацин билгалонашкахь хаа: Аудионан товар, мотт харжар, гlо/дешаран хаам, виртуальни ассистент.",
+        "prs": "در مورد نمادهای ناوبری بیاموزید: تغییر صدا، انتخابگر زبان، راهنما/آموزش و دستیار مجازی.",
+        "ps": "د لارښود نښانګانو په اړه زده کړئ: د غږ بدلول، د ژبې ټاکونکی، مرسته/روزنه، او مجازی ملګری.",
+        "fa": "در مورد نمادهای ناوبری بیاموزید: تغییر صدا، انتخابگر زبان، راهنما/آموزش و دستیار مجازی.",
+        "ar": "تعرف على رموز التنقل: تبديل الصوت، منتقي اللغة، المساعدة/الدليل، والمساعد الافتراضي.",
+        "ku": "زانیاری لەسەر نیشانەکانی ناوبری: گۆڕانی دەنگ، هەڵبژاردنی زمان، یارمەتی/فێرکردن، و یاریدەدەری مەجازی.",
+        "so": "Baro calaamadaha dhaqdhaqaaqa: Beddelka codka, Doorashada luqadda, Caawimaadda/Tababarka, iyo Caawiyaha Farsamada ah.",
+        "ka": "გაიცანით ნავიგაციის ხატულები: ხმის გადართვა, ენის არჩევა, დახმარება/სახელმძღვანელო და ვირტუალური ასისტენტი.",
+        "sq": "Mësoni për ikonat e navigimit: Ndryshimi i zërit, Zgjedhësi i gjuhës, Ndihma/Udhëzuesi dhe Asistenti Virtual."
+      }
+    }
+  ]
+}

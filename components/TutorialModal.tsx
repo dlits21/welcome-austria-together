@@ -8,12 +8,13 @@ import TutorialIndicators from './TutorialIndicators';
 // Import tutorial data
 import indexTutorialData from '../data/tutorial/index.json';
 import askTutorialData from '../data/tutorial/ask.json';
+import askGeneralTutorialData from '../data/tutorial/ask/general.json';
 
 interface TutorialModalProps {
   visible: boolean;
   onClose: () => void;
   languageCode: string;
-  tutorialType?: 'index' | 'ask';
+  tutorialType?: 'index' | 'ask' | 'ask-general';
 }
 
 const TutorialModal: React.FC<TutorialModalProps> = ({
@@ -27,7 +28,18 @@ const TutorialModal: React.FC<TutorialModalProps> = ({
   const isWideScreen = width > 768;
 
   // Get tutorial data based on type
-  const tutorialData = tutorialType === 'ask' ? askTutorialData : indexTutorialData;
+  let tutorialData;
+  switch (tutorialType) {
+    case 'ask-general':
+      tutorialData = askGeneralTutorialData;
+      break;
+    case 'ask':
+      tutorialData = askTutorialData;
+      break;
+    default:
+      tutorialData = indexTutorialData;
+  }
+  
   const slides = tutorialData.slides;
 
   useEffect(() => {

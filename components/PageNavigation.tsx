@@ -7,7 +7,7 @@ interface PageNavigationProps {
   toggleSound: () => void;
   soundEnabled: boolean;
   showLanguageModal: () => void;
-  showHelpModal: () => void;
+  showHelpModal?: () => void;
   showVirtualAssistant: () => void;
   showTutorial?: () => void;
 }
@@ -20,6 +20,14 @@ const PageNavigation: React.FC<PageNavigationProps> = ({
   showVirtualAssistant,
   showTutorial
 }) => {
+  const handleHelpPress = () => {
+    if (showTutorial) {
+      showTutorial();
+    } else if (showHelpModal) {
+      showHelpModal();
+    }
+  };
+
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={toggleSound} style={styles.button}>
@@ -34,19 +42,13 @@ const PageNavigation: React.FC<PageNavigationProps> = ({
         <MaterialIcons name="language" size={24} color="#333" />
       </TouchableOpacity>
       
-      <TouchableOpacity onPress={showHelpModal} style={styles.button}>
+      <TouchableOpacity onPress={handleHelpPress} style={styles.button}>
         <MaterialIcons name="help" size={24} color="#333" />
       </TouchableOpacity>
       
       <TouchableOpacity onPress={showVirtualAssistant} style={styles.button}>
         <MaterialIcons name="smart-toy" size={24} color="#333" />
       </TouchableOpacity>
-
-      {showTutorial && (
-        <TouchableOpacity onPress={showTutorial} style={styles.button}>
-          <MaterialIcons name="school" size={24} color="#333" />
-        </TouchableOpacity>
-      )}
     </View>
   );
 };
