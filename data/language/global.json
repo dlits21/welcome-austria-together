@@ -153,5 +153,19 @@
     "so": "Barashada",
     "ka": "სწავლა",
     "sq": "Mëso"
+  },
+  "changeLanguage": {
+    "en": "Change Language",
+    "de": "Sprache ändern",
+    "ru": "Изменить язык",
+    "ce": "Мотт хийца",
+    "prs": "تغییر زبان",
+    "ps": "ژبه بدلول",
+    "fa": "تغییر زبان",
+    "ar": "تغيير اللغة",
+    "ku": "Zimanê biguhere",
+    "so": "Bedel luqadda",
+    "ka": "ენის შეცვლა",
+    "sq": "Ndrysho gjuhën"
   }
 }

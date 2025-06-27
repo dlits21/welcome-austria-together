@@ -170,7 +170,7 @@ export default function LanguageSelectionScreen() {
     router.push('/home');
   };
 
-  // Updated hover handlers for web vs mobile detection
+  // Updated hover handlers - keep tooltip visible while mouse is over tile
   const handlePressIn = (language: Language, event: any) => {
     // For mobile devices, show on press
     if ('ontouchstart' in window) {
@@ -188,7 +188,7 @@ export default function LanguageSelectionScreen() {
     }
   };
 
-  // New hover handlers for web
+  // Updated hover handlers for web - tooltip stays visible while mouse is over tile
   const handleMouseEnter = (language: Language, event: any) => {
     if (!('ontouchstart' in window)) {
       setIsHovering(true);

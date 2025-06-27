@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import CategoryCard from './CategoryCard';
@@ -15,6 +15,22 @@ interface TutorialSlideContentProps {
   onVirtualAssistant?: () => void;
 }
 
+// Languages for button text rotation
+const languages = [
+  { code: "de", name: "Deutsch" },
+  { code: "en", name: "English" },
+  { code: "ru", name: "Русский" },
+  { code: "ce", name: "Нохчийн" },
+  { code: "prs", name: "دری" },
+  { code: "ps", name: "پښتو" },
+  { code: "fa", name: "فارسی" },
+  { code: "ar", name: "العربية" },
+  { code: "ku", name: "Kurdî" },
+  { code: "so", name: "Soomaali" },
+  { code: "ka", name: "ქართული" },
+  { code: "sq", name: "Shqip" }
+];
+
 const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({ 
   currentSlide, 
   languageCode, 
@@ -22,8 +38,19 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
   tutorialData = 'home',
   onVirtualAssistant
 }) => {
+  const [buttonTextIndex, setButtonTextIndex] = useState(0);
   const data = tutorialData === 'index' ? indexTutorialData : homeTutorialData;
   const slide = data.slides.find(s => s.id === currentSlide);
+
+  // Rotate button text every 5 seconds for the first slide
+  useEffect(() => {
+    if (currentSlide === 0 && slide?.type === 'assistant') {
+      const interval = setInterval(() => {
+        setButtonTextIndex((prevIndex) => (prevIndex + 1) % languages.length);
+      }, 5000);
+      return () => clearInterval(interval);
+    }
+  }, [currentSlide, slide?.type]);
   
   if (!slide) {
     return null;
@@ -32,6 +59,9 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
   const getSlideContent = () => {
     switch (slide.type) {
       case 'assistant':
+        const currentButtonLanguage = languages[buttonTextIndex];
+        const buttonText = slide.buttonText?.[currentButtonLanguage.code] || slide.buttonText?.en || 'Get Help Now';
+        
         return (
           <View style={styles.slideContent}>
             <View style={styles.assistantContainer}>
@@ -55,7 +85,7 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
               onPress={onVirtualAssistant}
             >
               <Text style={styles.assistantButtonText}>
-                {slide.buttonText?.[languageCode] || slide.buttonText?.en || 'Get Help Now'}
+                {buttonText}
               </Text>
             </TouchableOpacity>
           </View>
