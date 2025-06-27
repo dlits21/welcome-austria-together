@@ -92,6 +92,7 @@ export default function LanguageSelectionScreen() {
   const animatedOpacity = useRef(new Animated.Value(0)).current;
   const countdownProgress = useRef(new Animated.Value(1)).current;
   const countdownTimer = useRef<NodeJS.Timeout | null>(null);
+  const hoverTimeout = useRef<NodeJS.Timeout | null>(null);
 
   // Rotate through welcome messages
   useEffect(() => {
@@ -170,7 +171,7 @@ export default function LanguageSelectionScreen() {
     router.push('/home');
   };
 
-  // Updated hover handlers - keep tooltip visible while mouse is over tile
+  // Updated hover handlers with 5-second delay
   const handlePressIn = (language: Language, event: any) => {
     // For mobile devices, show on press
     if ('ontouchstart' in window) {
@@ -188,15 +189,26 @@ export default function LanguageSelectionScreen() {
     }
   };
 
-  // Updated hover handlers for web - tooltip stays visible while mouse is over tile
+  // Updated hover handlers for web with 5-second delay
   const handleMouseEnter = (language: Language, event: any) => {
     if (!('ontouchstart' in window)) {
       setIsHovering(true);
-      setHoverLanguage(language);
-      setHoverPosition({
-        x: event.nativeEvent.pageX || event.nativeEvent.clientX,
-        y: event.nativeEvent.pageY || event.nativeEvent.clientY,
-      });
+      
+      // Clear any existing timeout
+      if (hoverTimeout.current) {
+        clearTimeout(hoverTimeout.current);
+      }
+      
+      // Set a 5-second delay before showing tooltip
+      hoverTimeout.current = setTimeout(() => {
+        if (isHovering) {
+          setHoverLanguage(language);
+          setHoverPosition({
+            x: event.nativeEvent.pageX || event.nativeEvent.clientX,
+            y: event.nativeEvent.pageY || event.nativeEvent.clientY,
+          });
+        }
+      }, 5000);
     }
   };
 
@@ -204,6 +216,11 @@ export default function LanguageSelectionScreen() {
     if (!('ontouchstart' in window)) {
       setIsHovering(false);
       setHoverLanguage(null);
+      
+      // Clear the timeout if mouse leaves before 5 seconds
+      if (hoverTimeout.current) {
+        clearTimeout(hoverTimeout.current);
+      }
     }
   };
 

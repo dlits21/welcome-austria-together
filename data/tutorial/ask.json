@@ -177,18 +177,18 @@
         "sq": "Ikonat e navigimit"
       },
       "description": {
-        "en": "Learn about the navigation icons at the top of the screen and their functions.",
-        "de": "Erfahren Sie mehr über die Navigationssymbole am oberen Bildschirmrand und ihre Funktionen.",
-        "ru": "Узнайте о значках навигации в верхней части экрана и их функциях.",
-        "ce": "Экранан лакхарчу агlонашкахь долу навигацин билгалонашкахь а цара болхбалларх а хаа.",
-        "prs": "در مورد نمادهای ناوبری در بالای صفحه و کارکردهای آنها بیاموزید.",
-        "ps": "د سکرین په پورتنۍ برخه کې د لارښود نښانګانو او د دوی د دندو په اړه زده کړئ.",
-        "fa": "در مورد نمادهای ناوبری در بالای صفحه و عملکردهای آنها بیاموزید.",
-        "ar": "تعرف على رموز التنقل في الجزء العلوي من الشاشة ووظائفها.",
-        "ku": "زانیاری لەسەر نیشانەکانی ناوبری لە سەرەوەی شاشەکە و کارەکانیان وەربگرە.",
-        "so": "Baro calaamadaha dhaqdhaqaaqa ee dusha sare ee shaashadda iyo hawlahooda.",
-        "ka": "გაიცანით ნავიგაციის ხატულები ეკრანის ზედა ნაწილში და მათი ფუნქციები.",
-        "sq": "Mësoni për ikonat e navigimit në krye të ekranit dhe funksionet e tyre."
+        "en": "Learn about the navigation icons at the top of the screen. The back arrow takes you to the previous page, the robot icon opens the virtual assistant, the globe icon changes the language, and the help icon opens this tutorial.",
+        "de": "Erfahren Sie mehr über die Navigationssymbole am oberen Bildschirmrand. Der Rückwärtspfeil führt Sie zur vorherigen Seite, das Roboter-Symbol öffnet den virtuellen Assistenten, das Globus-Symbol ändert die Sprache und das Hilfe-Symbol öffnet dieses Tutorial.",
+        "ru": "Узнайте о значках навигации в верхней части экрана. Стрелка назад ведет на предыдущую страницу, значок робота открывает виртуального помощника, значок глобуса меняет язык, а значок справки открывает этот учебник.",
+        "ce": "Экранан лакхарчу агlонашкахь долу навигацин билгалонашкахь хаа. ЧIогIа йолу стрелкина хьалха агIо йолучу агIонга дехьавайта, робот билгало виртуальни ассистент схьаелийта, дуьненан билгало мотт хийцийта, гIo билгало хlара урок схьаелийта.",
+        "prs": "در مورد نمادهای ناوبری در بالای صفحه بیاموزید. فلش برگشت شما را به صفحه قبلی می‌برد، نماد ربات دستیار مجازی را باز می‌کند، نماد کره زمین زبان را تغییر می‌دهد و نماد کمک این آموزش را باز می‌کند.",
+        "ps": "د سکرین په پورتنۍ برخه کې د لارښود نښانګانو په اړه زده کړئ. د شاته تیر تاسو پخوانۍ پاڼې ته بیایي، د روبوټ نښه مجازي مرستیال خلاصوي، د نړۍ نښه ژبه بدلوي، او د مرستې نښه دا درس خلاصوي.",
+        "fa": "درباره نمادهای ناوبری در بالای صفحه بیاموزید. فلش برگشت شما را به صفحه قبلی می‌برد، نماد ربات دستیار مجازی را باز می‌کند، نماد کره زمین زبان را تغییر می‌دهد و نماد کمک این آموزش را باز می‌کند.",
+        "ar": "تعرف على رموز التنقل في الجزء العلوي من الشاشة. السهم الخلفي يأخذك إلى الصفحة السابقة، رمز الروبوت يفتح المساعد الافتراضي، رمز الكرة الأرضية يغير اللغة، ورمز المساعدة يفتح هذا الدليل.",
+        "ku": "زانیاری لەسەر نیشانەکانی ناوبری لە سەرەوەی شاشەکەت وەربگرە. تیری گەڕانەوە دەتگەڕێنێتەوە بۆ پەڕەی پێشوو، نیشانەی ڕۆبۆت یاریدەدەری مەجازی دەکاتەوە، نیشانەی گۆی زەوی زمان دەگۆڕێت، و نیشانەی یارمەتی ئەم فێرکاریەت دەکاتەوە.",
+        "so": "Baro calaamadaha dhaqdhaqaaqa ee dusha sare ee shaashadda. Falaarrada dib-u-socda waxay ku geynaysaa bogga hore, calaamadda roobada waxay furaysa kaaliyaha farsamada, calaamadda dhulka waxay bedeshaa luqadda, calaamadda caawimada waxay furaysa tababarkan.",
+        "ka": "გაიცანით ნავიგაციის ხატულები ეკრანის ზედა ნაწილში. უკან ისარი გაგიყვანთ წინა გვერდზე, რობოტის ხატულა აღება ვირტუალურ ასისტენტს, დედამიწის ხატულა ცვლის ენას და დახმარების ხატულა ღებულობს ამ გაკვეთილს.",
+        "sq": "Mësoni për ikonat e navigimit në krye të ekranit. Shigjeta e kthimit ju çon në faqen e mëparshme, ikona e robotit hap asistentin virtual, ikona e globit ndryshon gjuhën dhe ikona e ndihmës hap këtë udhëzues."
       }
     }
   ]

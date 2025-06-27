@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, ScrollView } from 'react-native';
 import { useRouter } from 'expo-router';
@@ -98,11 +99,10 @@ const AskPage: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <PageNavigation
-        toggleSound={toggleSound}
-        soundEnabled={soundEnabled}
         showLanguageModal={() => setShowLanguageModal(true)}
         showVirtualAssistant={() => setShowVirtualAssistant(true)}
         showTutorial={() => setShowTutorial(true)}
+        showBackButton={true}
       />
       
       <ScrollView style={styles.content}>

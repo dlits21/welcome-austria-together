@@ -2,14 +2,16 @@
 import React from 'react';
 import { View, TouchableOpacity, StyleSheet } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 
 interface PageNavigationProps {
-  toggleSound: () => void;
-  soundEnabled: boolean;
+  toggleSound?: () => void;
+  soundEnabled?: boolean;
   showLanguageModal: () => void;
   showHelpModal?: () => void;
   showVirtualAssistant: () => void;
   showTutorial?: () => void;
+  showBackButton?: boolean;
 }
 
 const PageNavigation: React.FC<PageNavigationProps> = ({
@@ -18,8 +20,11 @@ const PageNavigation: React.FC<PageNavigationProps> = ({
   showLanguageModal,
   showHelpModal,
   showVirtualAssistant,
-  showTutorial
+  showTutorial,
+  showBackButton = false
 }) => {
+  const router = useRouter();
+
   const handleHelpPress = () => {
     if (showTutorial) {
       showTutorial();
@@ -28,27 +33,31 @@ const PageNavigation: React.FC<PageNavigationProps> = ({
     }
   };
 
+  const handleBackPress = () => {
+    router.back();
+  };
+
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={toggleSound} style={styles.button}>
-        <MaterialIcons 
-          name={soundEnabled ? 'volume-up' : 'volume-off'} 
-          size={24} 
-          color="#333" 
-        />
-      </TouchableOpacity>
+      {showBackButton && (
+        <TouchableOpacity onPress={handleBackPress} style={styles.backButton}>
+          <MaterialIcons name="arrow-back" size={24} color="#333" />
+        </TouchableOpacity>
+      )}
       
-      <TouchableOpacity onPress={showLanguageModal} style={styles.button}>
-        <MaterialIcons name="language" size={24} color="#333" />
-      </TouchableOpacity>
-      
-      <TouchableOpacity onPress={handleHelpPress} style={styles.button}>
-        <MaterialIcons name="help" size={24} color="#333" />
-      </TouchableOpacity>
-      
-      <TouchableOpacity onPress={showVirtualAssistant} style={styles.button}>
-        <MaterialIcons name="smart-toy" size={24} color="#333" />
-      </TouchableOpacity>
+      <View style={styles.rightButtons}>
+        <TouchableOpacity onPress={showVirtualAssistant} style={styles.button}>
+          <MaterialIcons name="smart-toy" size={24} color="#333" />
+        </TouchableOpacity>
+        
+        <TouchableOpacity onPress={showLanguageModal} style={styles.button}>
+          <MaterialIcons name="language" size={24} color="#333" />
+        </TouchableOpacity>
+        
+        <TouchableOpacity onPress={handleHelpPress} style={styles.button}>
+          <MaterialIcons name="help" size={24} color="#333" />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -56,13 +65,21 @@ const PageNavigation: React.FC<PageNavigationProps> = ({
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    justifyContent: 'flex-end',
+    justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 16,
     paddingVertical: 12,
     backgroundColor: '#fff',
     borderBottomWidth: 1,
     borderBottomColor: '#e0e0e0',
+  },
+  backButton: {
+    padding: 8,
+    borderRadius: 20,
+    backgroundColor: '#f5f5f5',
+  },
+  rightButtons: {
+    flexDirection: 'row',
   },
   button: {
     padding: 8,

@@ -8,9 +8,17 @@ import {
   Pressable
 } from 'react-native';
 
+interface Language {
+  code: string;
+  name: string;
+  flag: any;
+}
+
 interface LanguageSelectionGridProps {
   languages: Language[];
   handleLanguageSelect: (language: Language) => void;
+  handlePressIn?: (language: Language, event: any) => void;
+  handlePressOut?: () => void;
   handleMouseEnter?: (language: Language, event: any) => void;
   handleMouseLeave?: () => void;
 }
@@ -18,6 +26,8 @@ interface LanguageSelectionGridProps {
 const LanguageSelectionGrid: React.FC<LanguageSelectionGridProps> = ({
   languages,
   handleLanguageSelect,
+  handlePressIn,
+  handlePressOut,
   handleMouseEnter,
   handleMouseLeave
 }) => {
@@ -32,6 +42,8 @@ const LanguageSelectionGrid: React.FC<LanguageSelectionGridProps> = ({
             key={language.code}
             style={styles.languageButton}
             onPress={() => handleLanguageSelect(language)}
+            onPressIn={handlePressIn ? (event) => handlePressIn(language, event) : undefined}
+            onPressOut={handlePressOut}
             onHoverIn={handleMouseEnter ? (event) => handleMouseEnter(language, event) : undefined}
             onHoverOut={handleMouseLeave}
           >
@@ -62,7 +74,7 @@ const styles = StyleSheet.create({
     margin: "1.5%",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#d1d5db",
+    backgroundColor: "#e5e7eb", // Lighter gray
     borderRadius: 12,
     padding: 10,
     shadowColor: "#000",
