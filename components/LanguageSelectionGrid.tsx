@@ -4,7 +4,6 @@ import {
   StyleSheet, 
   Text,
   View, 
-  TouchableOpacity, 
   ScrollView,
   Pressable
 } from 'react-native';
@@ -12,8 +11,6 @@ import {
 interface LanguageSelectionGridProps {
   languages: Language[];
   handleLanguageSelect: (language: Language) => void;
-  handlePressIn: (language: Language, event: any) => void;
-  handlePressOut: () => void;
   handleMouseEnter?: (language: Language, event: any) => void;
   handleMouseLeave?: () => void;
 }
@@ -21,8 +18,6 @@ interface LanguageSelectionGridProps {
 const LanguageSelectionGrid: React.FC<LanguageSelectionGridProps> = ({
   languages,
   handleLanguageSelect,
-  handlePressIn,
-  handlePressOut,
   handleMouseEnter,
   handleMouseLeave
 }) => {
@@ -67,7 +62,7 @@ const styles = StyleSheet.create({
     margin: "1.5%",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#e8e8e8",
+    backgroundColor: "#d1d5db",
     borderRadius: 12,
     padding: 10,
     shadowColor: "#000",

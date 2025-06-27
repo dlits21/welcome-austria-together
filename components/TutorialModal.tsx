@@ -1,36 +1,43 @@
 
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Modal, ScrollView, useWindowDimensions } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
+import React, { useState, useEffect } from 'react';
+import { Modal, View, StyleSheet, Dimensions, Platform } from 'react-native';
 import TutorialSlideContent from './TutorialSlideContent';
-import TutorialIndicators from './TutorialIndicators';
 import TutorialNavigation from './TutorialNavigation';
-import { getGlobalText } from '../utils/languageUtils';
+import TutorialIndicators from './TutorialIndicators';
+
+// Import tutorial data
+import indexTutorialData from '../data/tutorial/index.json';
+import askTutorialData from '../data/tutorial/ask.json';
 
 interface TutorialModalProps {
   visible: boolean;
   onClose: () => void;
   languageCode: string;
-  tutorialData?: string; // 'home' or 'index'
-  onVirtualAssistant?: () => void;
+  tutorialType?: 'index' | 'ask';
 }
 
-const TutorialModal: React.FC<TutorialModalProps> = ({ 
-  visible, 
-  onClose, 
-  languageCode, 
-  tutorialData = 'home',
-  onVirtualAssistant
+const TutorialModal: React.FC<TutorialModalProps> = ({
+  visible,
+  onClose,
+  languageCode,
+  tutorialType = 'index'
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const { width } = useWindowDimensions();
+  const { width, height } = Dimensions.get('window');
   const isWideScreen = width > 768;
 
-  // Different slide counts based on tutorial type
-  const totalSlides = tutorialData === 'index' ? 6 : 7;
+  // Get tutorial data based on type
+  const tutorialData = tutorialType === 'ask' ? askTutorialData : indexTutorialData;
+  const slides = tutorialData.slides;
+
+  useEffect(() => {
+    if (visible) {
+      setCurrentSlide(0);
+    }
+  }, [visible]);
 
   const nextSlide = () => {
-    if (currentSlide < totalSlides - 1) {
+    if (currentSlide < slides.length - 1) {
       setCurrentSlide(currentSlide + 1);
     }
   };
@@ -41,60 +48,42 @@ const TutorialModal: React.FC<TutorialModalProps> = ({
     }
   };
 
-  const handleClose = () => {
-    setCurrentSlide(0);
-    onClose();
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
   };
 
-  const playAudio = () => {
-    // TODO: Implement audio playback functionality
-    console.log('Play audio for current slide:', currentSlide);
-  };
+  if (!visible) return null;
 
   return (
     <Modal
       visible={visible}
-      transparent={true}
       animationType="slide"
-      onRequestClose={handleClose}
+      transparent={false}
+      statusBarTranslucent={Platform.OS === 'android'}
     >
-      <View style={styles.modalOverlay}>
-        <View style={[styles.modalContent, isWideScreen && styles.modalContentWide]}>
-          {/* Header */}
-          <View style={styles.modalHeader}>
-            <Text style={styles.modalTitle}>
-              {getGlobalText('tutorial', languageCode)}
-            </Text>
-            <TouchableOpacity onPress={handleClose}>
-              <MaterialIcons name="close" size={24} color="#333" />
-            </TouchableOpacity>
-          </View>
-
-          {/* Slide Indicators */}
-          <TutorialIndicators 
-            totalSlides={totalSlides}
-            currentSlide={currentSlide}
+      <View style={[styles.container, isWideScreen && styles.wideContainer]}>
+        <View style={[styles.content, isWideScreen && styles.wideContent]}>
+          <TutorialSlideContent
+            slide={slides[currentSlide]}
+            languageCode={languageCode}
+            tutorialType={tutorialType}
+            onVirtualAssistant={onClose}
           />
-
-          {/* Slide Content */}
-          <ScrollView style={styles.slideContainer} showsVerticalScrollIndicator={false}>
-            <TutorialSlideContent 
-              currentSlide={currentSlide}
-              languageCode={languageCode}
-              isWideScreen={isWideScreen}
-              tutorialData={tutorialData}
-              onVirtualAssistant={onVirtualAssistant}
-            />
-          </ScrollView>
-
-          {/* Navigation */}
-          <TutorialNavigation 
+        </View>
+        
+        <View style={styles.footer}>
+          <TutorialIndicators
+            totalSlides={slides.length}
             currentSlide={currentSlide}
-            totalSlides={totalSlides}
-            onPrevious={prevSlide}
+            onSlidePress={goToSlide}
+          />
+          
+          <TutorialNavigation
+            currentSlide={currentSlide}
+            totalSlides={slides.length}
             onNext={nextSlide}
-            onPlayAudio={playAudio}
-            onDone={handleClose}
+            onPrev={prevSlide}
+            onClose={onClose}
             languageCode={languageCode}
           />
         </View>
@@ -104,38 +93,34 @@ const TutorialModal: React.FC<TutorialModalProps> = ({
 };
 
 const styles = StyleSheet.create({
-  modalOverlay: {
+  container: {
     flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    backgroundColor: '#fff',
+    paddingTop: Platform.OS === 'ios' ? 50 : 30,
+  },
+  wideContainer: {
     justifyContent: 'center',
     alignItems: 'center',
   },
-  modalContent: {
-    width: '95%',
-    maxWidth: 600,
-    height: '85%',
-    backgroundColor: '#fff',
-    borderRadius: 12,
-    overflow: 'hidden',
-  },
-  modalContentWide: {
-    maxWidth: 900,
-    height: '90%',
-  },
-  modalHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: '#eee',
-  },
-  modalTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  slideContainer: {
+  content: {
     flex: 1,
+    padding: 20,
+  },
+  wideContent: {
+    maxWidth: 800,
+    maxHeight: 600,
+    backgroundColor: '#fff',
+    borderRadius: 16,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 8,
+  },
+  footer: {
+    padding: 20,
+    borderTopWidth: 1,
+    borderTopColor: '#e0e0e0',
   },
 });
 

@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, ScrollView } from 'react-native';
 import { useRouter } from 'expo-router';
@@ -9,6 +10,15 @@ import PageNavigation from '../components/PageNavigation';
 import LanguageModal from '../components/LanguageModal';
 import HelpModal from '../components/HelpModal';
 import VirtualAssistantModal from '../components/VirtualAssistantModal';
+import TutorialModal from '../components/TutorialModal';
+
+// Import ask translations
+import askTranslations from '../data/language/ask.json';
+
+const getAskText = (key: string, languageCode: string): string => {
+  const translation = askTranslations[key as keyof typeof askTranslations];
+  return translation?.[languageCode as keyof typeof translation] || translation?.en || key;
+};
 
 const AskPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
@@ -17,6 +27,7 @@ const AskPage: React.FC = () => {
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
+  const [showTutorial, setShowTutorial] = useState(false);
 
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
@@ -28,73 +39,57 @@ const AskPage: React.FC = () => {
     {
       id: 'general',
       icon: 'help',
-      title: language.code === 'de' ? 'Allgemein' : 'General',
-      description: language.code === 'de' 
-        ? 'Allgemeine Unterstützung und Beratung' 
-        : 'General support and counseling',
+      title: getAskText('general', currentLanguage),
+      description: getAskText('generalDescription', currentLanguage),
       route: '/ask/general'
     },
     {
       id: 'emergency',
       icon: 'emergency',
-      title: language.code === 'de' ? 'Notfallunterstützung' : 'Emergency Support',
-      description: language.code === 'de' 
-        ? 'Sofortige Hilfe in Notfällen' 
-        : 'Immediate help in emergencies',
+      title: getAskText('emergencySupport', currentLanguage),
+      description: getAskText('emergencyDescription', currentLanguage),
       route: '/ask/emergency'
     },
     {
       id: 'legal',
       icon: 'gavel',
-      title: language.code === 'de' ? 'Rechtsunterstützung' : 'Legal Support',
-      description: language.code === 'de' 
-        ? 'Rechtsberatung und juristische Hilfe' 
-        : 'Legal counseling and juridical help',
+      title: getAskText('legalSupport', currentLanguage),
+      description: getAskText('legalDescription', currentLanguage),
       route: '/ask/legal-support'
     },
     {
       id: 'health',
       icon: 'local-hospital',
-      title: language.code === 'de' ? 'Gesundheit & Psychische Gesundheit' : 'Health & Mental Health Support',
-      description: language.code === 'de' 
-        ? 'Medizinische und psychologische Unterstützung' 
-        : 'Medical and psychological support',
+      title: getAskText('healthMentalHealth', currentLanguage),
+      description: getAskText('healthDescription', currentLanguage),
       route: '/ask/health'
     },
     {
       id: 'financial',
       icon: 'account-balance',
-      title: language.code === 'de' ? 'Finanzielle Bildung' : 'Financial Literacy Support',
-      description: language.code === 'de' 
-        ? 'Hilfe bei Finanzen und Budgetierung' 
-        : 'Help with finances and budgeting',
+      title: getAskText('financialLiteracy', currentLanguage),
+      description: getAskText('financialDescription', currentLanguage),
       route: '/ask/financial'
     },
     {
       id: 'cultural',
       icon: 'groups',
-      title: language.code === 'de' ? 'Kulturelle Orientierung und Integration' : 'Cultural Orientation and Integration Programs',
-      description: language.code === 'de' 
-        ? 'Programme zur kulturellen Integration' 
-        : 'Programs for cultural integration',
+      title: getAskText('culturalOrientation', currentLanguage),
+      description: getAskText('culturalDescription', currentLanguage),
       route: '/ask/cultural'
     },
     {
       id: 'career',
       icon: 'work',
-      title: language.code === 'de' ? 'Integrationswege und Karriereberatung' : 'Integration Pathways and Career Counseling',
-      description: language.code === 'de' 
-        ? 'Berufsberatung und Integrationshilfe' 
-        : 'Career counseling and integration assistance',
+      title: getAskText('integrationPathways', currentLanguage),
+      description: getAskText('careerDescription', currentLanguage),
       route: '/ask/career'
     },
     {
       id: 'document',
       icon: 'description',
-      title: language.code === 'de' ? 'Dokument- und Zertifizierungsmanagement' : 'Document and Certification Management',
-      description: language.code === 'de' 
-        ? 'Hilfe bei Dokumenten und Zertifikaten' 
-        : 'Help with documents and certificates',
+      title: getAskText('documentCertification', currentLanguage),
+      description: getAskText('documentDescription', currentLanguage),
       route: '/ask/document'
     }
   ];
@@ -111,16 +106,15 @@ const AskPage: React.FC = () => {
         showLanguageModal={() => setShowLanguageModal(true)}
         showHelpModal={() => setShowHelpModal(true)}
         showVirtualAssistant={() => setShowVirtualAssistant(true)}
+        showTutorial={() => setShowTutorial(true)}
       />
       
       <ScrollView style={styles.content}>
         <Text style={styles.title}>
-          {language.code === 'de' ? 'Fragen Sie nach Hilfe' : 'Ask for Help'}
+          {getAskText('askForHelp', currentLanguage)}
         </Text>
         <Text style={styles.description}>
-          {language.code === 'de' 
-            ? 'Wählen Sie den Bereich aus, in dem Sie Unterstützung benötigen.'
-            : 'Choose the area where you need support.'}
+          {getAskText('chooseArea', currentLanguage)}
         </Text>
 
         <View style={styles.categoriesGrid}>
@@ -156,6 +150,13 @@ const AskPage: React.FC = () => {
         visible={showVirtualAssistant}
         onClose={() => setShowVirtualAssistant(false)}
         languageCode={language.code}
+      />
+
+      <TutorialModal
+        visible={showTutorial}
+        onClose={() => setShowTutorial(false)}
+        languageCode={language.code}
+        tutorialType="ask"
       />
     </SafeAreaView>
   );

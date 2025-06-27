@@ -1,0 +1,195 @@
+
+{
+  "slides": [
+    {
+      "type": "welcome",
+      "title": {
+        "en": "Welcome to Ask for Help",
+        "de": "Willkommen bei Hilfe anfragen",
+        "ru": "Добро пожаловать в раздел помощи",
+        "ce": "Марша вогӏийла ГӀo дехьа йола меттигге",
+        "prs": "به بخش درخواست کمک خوش آمدید",
+        "ps": "د مرستې غوښتنې برخې ته ښه راغلاست",
+        "fa": "به بخش درخواست کمک خوش آمدید",
+        "ar": "مرحباً بك في قسم طلب المساعدة",
+        "ku": "بەخێربێن بۆ بەشی داوای یارمەتی",
+        "so": "Ku soo dhawow qaybta caawimaad weydiinta",
+        "ka": "კეთილი იყოს თქვენი მობრძანება დახმარების მოთხოვნის განყოფილებაში",
+        "sq": "Mirësevini në seksionin e kërkimit të ndihmës"
+      },
+      "description": {
+        "en": "This section helps you find the right support for your needs. Let's explore the different categories available.",
+        "de": "Dieser Bereich hilft Ihnen, die richtige Unterstützung für Ihre Bedürfnisse zu finden. Lassen Sie uns die verschiedenen verfügbaren Kategorien erkunden.",
+        "ru": "Этот раздел поможет вам найти подходящую поддержку для ваших потребностей. Давайте изучим различные доступные категории.",
+        "ce": "Хlара дакъа хьуна хlажар лаьцна гlо карор хlотталуш ду. Хlинца дехьа хlума юьхь категореш.",
+        "prs": "این بخش به شما کمک می‌کند تا حمایت مناسب برای نیازهایتان پیدا کنید. بیایید دسته‌های مختلف موجود را بررسی کنیم.",
+        "ps": "دا برخه ستاسو د اړتیاو لپاره د سمې ملاتړ موندلو کې مرسته کوي. راځئ چې مختلف شتون لرونکي کټګورۍ وګورو.",
+        "fa": "این بخش به شما کمک می‌کند تا پشتیبانی مناسب برای نیازهایتان پیدا کنید. بیایید دسته‌های مختلف موجود را بررسی کنیم.",
+        "ar": "يساعدك هذا القسم في العثور على الدعم المناسب لاحتياجاتك. دعنا نستكشف الفئات المختلفة المتاحة.",
+        "ku": "ئەم بەشە یارمەتیت دەدات کە گونجاوترین پشتگیری بۆ پێداویستییەکانت بدۆزیتەوە. با جۆراوجۆر پۆلەکانی بەردەست بخوێنینەوە.",
+        "so": "Qaybkani wuxuu kaa caawinayaa inaad hesho taageerada ku habboon baahiyahaaga. Aynu sahamino noocyada kala duwan ee la heli karo.",
+        "ka": "ეს განყოფილება დაგეხმარებათ იპოვოთ თქვენი საჭიროებებისთვის შესაბამისი მხარდაჭერა. მოდით გავეცნოთ სხვადასხვა ხელმისაწვდომ კატეგორიებს.",
+        "sq": "Ky seksion ju ndihmon të gjeni mbështetjen e duhur për nevojat tuaja. Le të eksploroj kategoritë e ndryshme në dispozicion."
+      }
+    },
+    {
+      "type": "category",
+      "category": "general",
+      "title": {
+        "en": "General Support",
+        "de": "Allgemeine Unterstützung",
+        "ru": "Общая поддержка",
+        "ce": "Йуьхь гlо",
+        "prs": "حمایت عمومی", 
+        "ps": "عمومي ملاتړ",
+        "fa": "پشتیبانی عمومی",
+        "ar": "الدعم العام",
+        "ku": "پشتگیری گشتی",
+        "so": "Taageero guud",
+        "ka": "ზოგადი მხარდაჭერა",
+        "sq": "Mbështetje e përgjithshme"
+      },
+      "description": {
+        "en": "Get general support and counseling. Contact mentors, ask the community, visit offices, or find answers to common questions.",
+        "de": "Erhalten Sie allgemeine Unterstützung und Beratung. Kontaktieren Sie Mentoren, fragen Sie die Community, besuchen Sie Büros oder finden Sie Antworten auf häufige Fragen.",
+        "ru": "Получите общую поддержку и консультации. Свяжитесь с наставниками, спросите сообщество, посетите офисы или найдите ответы на часто задаваемые вопросы.",
+        "ce": "Йуьхь гlо а дешхьало а ло. Дешархойх лаьцна, жамlате хаттар де, офисашка хьажа я массара хаттарийн жоьпаш карийта.",
+        "prs": "حمایت عمومی و مشاوره دریافت کنید. با مربیان تماس بگیرید، از جامعه بپرسید، از دفاتر دیدن کنید یا پاسخ سوالات متداول را پیدا کنید.",
+        "ps": "عمومي ملاتړ او مشوره واخلئ. د استادانو سره اړیکه ونیسئ، له ټولنې وپوښتنه وکړئ، دفترونه ولیدل کړئ یا د عامو پوښتنو ځوابونه ومومئ.",
+        "fa": "پشتیبانی عمومی و مشاوره دریافت کنید. با مربیان تماس بگیرید، از جامعه بپرسید، از دفاتر بازدید کنید یا پاسخ سوالات متداول را پیدا کنید.",
+        "ar": "احصل على الدعم العام والاستشارة. تواصل مع الموجهين، اسأل المجتمع، قم بزيارة المكاتب أو اعثر على إجابات للأسئلة الشائعة.",
+        "ku": "پشتگیری گشتی و ڕاوێژکاری وەربگرە. پەیوەندی بە ڕێبەرانەوە بکە، لە کۆمەڵگا بپرسە، سەردانی نووسینگەکان بکە یا وەڵامی پرسیارە باوەکان بدۆزەوە.",
+        "so": "Hel taageero guud iyo la-talinta. Kala xiriir macalimiinta, weydiiso bulshada, booqo xafiisyada ama hel jawaabaha su'aalaha caadiga ah.",
+        "ka": "მიიღეთ ზოგადი მხარდაჭერა და კონსულტაცია. დაუკავშირდით მენტორებს, ჰკითხეთ საზოგადოებას, ეწვიეთ ოფისებს ან იპოვეთ პასუხები ხშირ კითხვებზე.",
+        "sq": "Merrni mbështetje të përgjithshme dhe këshillim. Kontaktoni mentorët, pyesni komunitetin, vizitoni zyrat ose gjeni përgjigje për pyetjet e zakonshme."
+      }
+    },
+    {
+      "type": "category",
+      "category": "emergency",
+      "title": {
+        "en": "Emergency Support",
+        "de": "Notfallunterstützung", 
+        "ru": "Экстренная поддержка",
+        "ce": "Тезара гlо",
+        "prs": "حمایت اضطراری",
+        "ps": "بیړني ملاتړ",
+        "fa": "پشتیبانی اضطراری",
+        "ar": "الدعم الطارئ",
+        "ku": "پشتگیری لەناکاو",
+        "so": "Taageero degdeg ah",
+        "ka": "საგანგებო მხარდაჭერა",
+        "sq": "Mbështetje emergjente"
+      },
+      "description": {
+        "en": "Access immediate help for emergencies. Find contact numbers for police, fire, medical, and other emergency services.",
+        "de": "Sofortigen Zugang zu Nothilfe erhalten. Finden Sie Kontaktnummern für Polizei, Feuerwehr, Medizin und andere Notdienste.",
+        "ru": "Получите немедленную помощь в чрезвычайных ситуациях. Найдите контактные номера полиции, пожарной службы, медицинских и других экстренных служб.",
+        "ce": "Тезара гlонах тlехьажа хlотталор. Полицин, пожарнойн, доктораллин а кхечу тезара гlонашкахь телефонаш карийта.",
+        "prs": "به کمک فوری در شرایط اضطراری دسترسی پیدا کنید. شماره تماس پولیس، آتش‌نشانی، پزشکی و سایر خدمات اضطراری را پیدا کنید.",
+        "ps": "په بیړنیو حالاتو کې سمدستي مرستې ته لاسرسی ومومئ. د پولیسو، اور وژونکو، طبي او نورو بیړنیو خدماتو د اړیکې شمیرې ومومئ.",
+        "fa": "به کمک فوری در شرایط اضطراری دسترسی پیدا کنید. شماره تماس پلیس، آتش‌نشانی، پزشکی و سایر خدمات اضطراری را پیدا کنید.",
+        "ar": "احصل على مساعدة فورية في حالات الطوارئ. ابحث عن أرقام الاتصال بالشرطة والإطفاء والطوارئ الطبية وخدمات الطوارئ الأخرى.",
+        "ku": "دەستڕاگەیشتن بە یارمەتی خێرا بۆ حاڵەتی لەناکاو. ژمارەی پەیوەندی پۆلیس، ئاگرکوژێنەوە، پزیشکی و خزمەتگوزارییە لەناکاوەکانی تر بدۆزەوە.",
+        "so": "Hel caawimaad degdeg ah xaaladaha degdegga ah. Hel lambarrada xiriirka booliska, dab-demiska, caafimaadka iyo adeegyada kale ee degdegga ah.",
+        "ka": "მიიღეთ დაუყოვნებელი დახმარება საგანგებო სიტუაციებში. იპოვეთ პოლიციის, სახანძრო, სამედიცინო და სხვა საგანგებო სამსახურების საკონტაქტო ნომრები.",
+        "sq": "Merrni ndihmë të menjëhershme për emergjencat. Gjeni numrat e kontaktit për policinë, zjarrfikësit, mjekësorin dhe shërbimet e tjera emergjente."
+      }
+    },
+    {
+      "type": "category", 
+      "category": "legal",
+      "title": {
+        "en": "Legal Support",
+        "de": "Rechtsunterstützung",
+        "ru": "Правовая поддержка",
+        "ce": "Бакъо гlо",
+        "prs": "حمایت حقوقی",
+        "ps": "قانوني ملاتړ",
+        "fa": "پشتیبانی حقوقی",
+        "ar": "الدعم القانوني",
+        "ku": "پشتگیری یاسایی",
+        "so": "Taageero sharci",
+        "ka": "იურიდიული მხარდაჭერა",
+        "sq": "Mbështetje ligjore"
+      },
+      "description": {
+        "en": "Get legal counseling and juridical help. Find support for asylum procedures, appeals, residence permits, and other legal matters.",
+        "de": "Erhalten Sie Rechtsberatung und juristische Hilfe. Finden Sie Unterstützung für Asylverfahren, Berufungen, Aufenthaltstitel und andere Rechtsangelegenheiten.",
+        "ru": "Получите юридическое консультирование и юридическую помощь. Найдите поддержку по процедурам предоставления убежища, апелляциям, видам на жительство и другим правовым вопросам.",
+        "ce": "Бакъо дешхьало а юкъе гlо а ло. Политикан паханалла, жалобаш, йоьхьуш долу бакъонаш а кхечу бакъонашкахь гlо карийта.",
+        "prs": "مشاوره حقوقی و کمک قضایی دریافت کنید. حمایت برای روندهای پناهندگی، تجدیدنظر، مجوز اقامت و سایر مسائل حقوقی پیدا کنید.",
+        "ps": "قانوني مشوره او قضایي مرسته واخلئ. د پناه غوښتنې پروسو، استیناف، د اوسیدو اجازه لیکونو او نورو قانوني مسائلو لپاره ملاتړ ومومئ.",
+        "fa": "مشاوره حقوقی و کمک قضایی دریافت کنید. پشتیبانی برای روندهای پناهندگی، تجدیدنظر، مجوز اقامت و سایر مسائل حقوقی پیدا کنید.",
+        "ar": "احصل على الاستشارة القانونية والمساعدة القضائية. ابحث عن الدعم لإجراءات اللجوء والاستئناف وتصاريح الإقامة والمسائل القانونية الأخرى.",
+        "ku": "ڕاوێژکاری یاسایی و یارمەتی دادوەری وەربگرە. پشتگیری بۆ ڕێکارەکانی پەناهەندەیی، نەقزکردنەوە، مۆڵەتی نیشتەجێبوون و کاروباری یاسایی تری بدۆزەوە.",
+        "so": "Hel la-talinta sharciga iyo caawimaadda garsoorka. Hel taageero loogu talagalay hanaanka magangalyo, rafcaadaha, shatiyada degaanka iyo arrimaha kale ee sharciga.",
+        "ka": "მიიღეთ იურიდიული კონსულტაცია და სამართლებრივი დახმარება. იპოვეთ მხარდაჭერა თავშესაფრის პროცედურებისთვის, აპელაციებისთვის, საცხოვრებელი ნებართვებისთვის და სხვა იურიდიული საკითხებისთვის.",
+        "sq": "Merrni këshillim ligjor dhe ndihmë gjyqësore. Gjeni mbështetje për procedurat e azilit, apelet, lejet e qëndrimit dhe çështje të tjera ligjore."
+      }
+    },
+    {
+      "type": "category",
+      "category": "health", 
+      "title": {
+        "en": "Health & Mental Health",
+        "de": "Gesundheit & Psychische Gesundheit",
+        "ru": "Здоровье и психическое здоровье",
+        "ce": "Саламлакх а, психикан саламлакх а",
+        "prs": "سلامت و سلامت روان",
+        "ps": "روغتیا او رواني روغتیا",
+        "fa": "سلامت و سلامت روان",
+        "ar": "الصحة والصحة النفسية",
+        "ku": "تەندروستی و تەندروستی دەروونی",
+        "so": "Caafimaad iyo caafimaad maskax",
+        "ka": "ჯანმრთელობა და ფსიქიკური ჯანმრთელობა",
+        "sq": "Shëndeti dhe shëndeti mendor"
+      },
+      "description": {
+        "en": "Access medical and psychological support. Find healthcare services, mental health counseling, and emergency medical assistance.",
+        "de": "Zugang zu medizinischer und psychologischer Unterstützung. Finden Sie Gesundheitsdienste, psychologische Beratung und medizinische Notfallhilfe.",
+        "ru": "Получите медицинскую и психологическую поддержку. Найдите медицинские услуги, консультации по психическому здоровью и экстренную медицинскую помощь.",
+        "ce": "Доктораллин а, психологин а гlонах тlехьажа хlотталор. Саламан гlулакх хlокху, психикан саламлакхан дешхьало а тезара доктораллин гlо а карийта.",
+        "prs": "به حمایت طبی و روانشناختی دسترسی پیدا کنید. خدمات بهداشتی، مشاوره سلامت روان و کمک پزشکی اضطراری پیدا کنید.",
+        "ps": "طبي او رواني ملاتړ ته لاسرسی ومومئ. د روغتیا خدماتو، د رواني روغتیا مشورې او د طبي بیړني مرستې ومومئ.",
+        "fa": "به پشتیبانی پزشکی و روانشناختی دسترسی پیدا کنید. خدمات بهداشتی، مشاوره سلامت روان و کمک پزشکی اضطراری پیدا کنید.",
+        "ar": "احصل على الدعم الطبي والنفسي. ابحث عن الخدمات الصحية واستشارات الصحة النفسية والمساعدة الطبية الطارئة.",
+        "ku": "دەستڕاگەیشتن بە پشتگیری پزیشکی و دەروونی. خزمەتگوزارییە تەندروستییەکان، ڕاوێژکاری تەندروستی دەروونی و یارمەتی پزیشکی لەناکاو بدۆزەوە.",
+        "so": "Hel taageero caafimaad iyo maskax. Hel adeegyada caafimaadka, la-talinta caafimaadka maskaxda iyo caawimaadda caafimaadka ee degdegga ah.",
+        "ka": "მიიღეთ სამედიცინო და ფსიქოლოგიური მხარდაჭერა. იპოვეთ ჯანდაცვის სერვისები, ფსიქიკური ჯანმრთელობის კონსულტაციები და საგანგებო სამედიცინო დახმარება.",
+        "sq": "Merrni mbështetje mjekësore dhe psikologjike. Gjeni shërbimet e kujdesit shëndetësor, këshillimin e shëndetit mendor dhe ndihmën mjekësore emergjente."
+      }
+    },
+    {
+      "type": "icons",
+      "title": {
+        "en": "Navigation Icons",
+        "de": "Navigations-Symbole",
+        "ru": "Значки навигации",
+        "ce": "Навигацин билгалонаш",
+        "prs": "نمادهای ناوبری",
+        "ps": "د لارښود نښېګانې",
+        "fa": "نمادهای ناوبری",
+        "ar": "رموز التنقل",
+        "ku": "نیشانەکانی ناوبری",
+        "so": "Calaamadaha dhaqdhaqaaqa",
+        "ka": "ნავიგაციის ხატულები",
+        "sq": "Ikonat e navigimit"
+      },
+      "description": {
+        "en": "Learn about the navigation icons at the top of the screen and their functions.",
+        "de": "Erfahren Sie mehr über die Navigationssymbole am oberen Bildschirmrand und ihre Funktionen.",
+        "ru": "Узнайте о значках навигации в верхней части экрана и их функциях.",
+        "ce": "Экранан лакхарчу агlонашкахь долу навигацин билгалонашкахь а цара болхбалларх а хаа.",
+        "prs": "در مورد نمادهای ناوبری در بالای صفحه و کارکردهای آنها بیاموزید.",
+        "ps": "د سکرین په پورتنۍ برخه کې د لارښود نښانګانو او د دوی د دندو په اړه زده کړئ.",
+        "fa": "در مورد نمادهای ناوبری در بالای صفحه و عملکردهای آنها بیاموزید.",
+        "ar": "تعرف على رموز التنقل في الجزء العلوي من الشاشة ووظائفها.",
+        "ku": "زانیاری لەسەر نیشانەکانی ناوبری لە سەرەوەی شاشەکە و کارەکانیان وەربگرە.",
+        "so": "Baro calaamadaha dhaqdhaqaaqa ee dusha sare ee shaashadda iyo hawlahooda.",
+        "ka": "გაიცანით ნავიგაციის ხატულები ეკრანის ზედა ნაწილში და მათი ფუნქციები.",
+        "sq": "Mësoni për ikonat e navigimit në krye të ekranit dhe funksionet e tyre."
+      }
+    }
+  ]
+}
