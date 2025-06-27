@@ -83,22 +83,55 @@
         "sq": "Konfirmoni zgjedhjen tuaj"
       },
       "text": {
-        "en": "After selecting a language, you'll see a confirmation message. You can accept or decline the selection. Don't worry - you can always change your language preference later in the app settings. Choose the language you feel most comfortable reading and understanding.",
-        "de": "Nach der Auswahl einer Sprache sehen Sie eine Bestätigungsnachricht. Sie können die Auswahl annehmen oder ablehnen. Keine Sorge - Sie können Ihre Spracheinstellung später in den App-Einstellungen jederzeit ändern. Wählen Sie die Sprache, die Sie am besten lesen und verstehen können.",
-        "ru": "После выбора языка вы увидите сообщение подтверждения. Вы можете принять или отклонить выбор. Не волнуйтесь - вы всегда можете изменить языковые настройки позже в настройках приложения. Выберите язык, который вам наиболее комфортно читать и понимать.",
-        "ce": "Мотт харжийначохь хьуна хаам гайта бакъдеран. Хьо и бакъде йиш ю я дlаяккха. Мукъа ма деза - хьо хlинц а хьан мотт хийца йиш ю приложенин параметраш чохь. Иза мотт харжа, муьлхха хьо лаьий а, гойтуш а ма-дарра.",
-        "prs": "پس از انتخاب زبان، پیام تأیید را خواهید دید. می‌توانید انتخاب را بپذیرید یا رد کنید. نگران نباشید - همیشه می‌توانید ترجیحات زبان خود را بعداً در تنظیمات برنامه تغییر دهید. زبانی را انتخاب کنید که در خواندن و درک آن راحت‌تر هستید.",
-        "ps": "د ژبې له انتخاب وروسته، تاسو به د تایید پیغام وګورئ. تاسو کولی شئ انتخاب ومنئ یا رد یې کړئ. اندېښنه مه کوئ - تاسو کولی شئ خپل د ژبې غوراوی وروسته د اپلیکیشن په ترتیباتو کې تل بدل کړئ. هغه ژبه وټاکئ چې تاسو یې په لوستلو او پوهېدو کې ډېر اسان یاست.",
-        "fa": "پس از انتخاب زبان، پیام تأیید را خواهید دید. می‌توانید انتخاب را بپذیرید یا رد کنید. نگران نباشید - همیشه می‌توانید ترجیحات زبان خود را بعداً در تنظیمات برنامه تغییر دهید. زبانی را انتخاب کنید که در خواندن و درک آن راحت‌تر هستید.",
-        "ar": "بعد اختيار اللغة، ستشاهد رسالة تأكيد. يمكنك قبول أو رفض الاختيار. لا تقلق - يمكنك دائماً تغيير تفضيلات اللغة لاحقاً في إعدادات التطبيق. اختر اللغة التي تشعر بالراحة أكثر في قراءتها وفهمها.",
-        "ku": "Piştî hilbijartina zimanekî, hûn ê peyamek piştrastkirinê bibînin. Hûn dikarin hilbijartinê qebûl bikin an red bikin. Nîgeran nebin - hûn her dem dikarin vebijarkên zimên xwe paşê di mîhengên sepanê de biguherînin. Ew ziman hilbijêrin ku hûn pê xwendin û têgihiştinê rehet in.",
-        "so": "Ka dib doorashada luqadda, waxaad arki doontaa fariin xaqiijin. Waad aqbali kartaa ama diidi kartaa doorashada. Ha welwelin - had iyo jeer waad bedeli kartaa doorashada luqaddaada markii dambe goobaha barnaamijka. Dooro luqadda aad ugu faraxsan tahay akhris iyo fahamka.",
-        "ka": "ენის არჩევის შემდეგ თქვენ ნახავთ დადასტურების შეტყობინებას. შეგიძლიათ მიღება ან უარყოფა. ნუ ინერვიულებთ - ყოველთვის შეგიძლიათ შეცვალოთ ენის პარამეტრები მოგვიანებით აპლიკაციის პარამეტრებში. აირჩიეთ ის ენა, რომელის კითხვა და გაგება ყველაზე კომფორტულია.",
-        "sq": "Pas zgjedhjes së një gjuhe, do të shihni një mesazh konfirmimi. Mund ta pranoni ose refuzoni zgjedhjen. Mos u shqetësoni - gjithmonë mund të ndryshoni preferencat e gjuhës më vonë në cilësimet e aplikacionit. Zgjidhni gjuhën me të cilën ndiheni më rehat në lexim dhe kuptim."
-      }
+        "en": "After selecting a language, you'll see a confirmation window like this. You can accept or decline the selection. Don't worry - you can always change your language preference later in the app settings. Choose the language you feel most comfortable reading and understanding.",
+        "de": "Nach der Auswahl einer Sprache sehen Sie ein Bestätigungsfenster wie dieses. Sie können die Auswahl annehmen oder ablehnen. Keine Sorge - Sie können Ihre Spracheinstellung später in den App-Einstellungen jederzeit ändern. Wählen Sie die Sprache, die Sie am besten lesen und verstehen können.",
+        "ru": "После выбора языка вы увидите окно подтверждения, подобное этому. Вы можете принять или отклонить выбор. Не волнуйтесь - вы всегда можете изменить языковые настройки позже в настройках приложения. Выберите язык, который вам наиболее комфортно читать и понимать.",
+        "ce": "Мотт харжийначохь хьуна хаам гайта бакъдеран кор кхузахь. Хьо и бакъде йиш ю я дlаяккха. Мукъа ма деза - хьо хlинц а хьан мотт хийца йиш ю приложенин параметраш чохь. Иза мотт харжа, муьлхха хьо лаьий а, гойтуш а ма-дарра.",
+        "prs": "پس از انتخاب زبان، پنجره تأیید مانند این را خواهید دید. می‌توانید انتخاب را بپذیرید یا رد کنید. نگران نباشید - همیشه می‌توانید ترجیحات زبان خود را بعداً در تنظیمات برنامه تغییر دهید. زبانی را انتخاب کنید که در خواندن و درک آن راحت‌تر هستید.",
+        "ps": "د ژبې له انتخاب وروسته، تاسو به د تایید کړکۍ ددې په څېر وګورئ. تاسو کولی شئ انتخاب ومنئ یا رد یې کړئ. اندېښنه مه کوئ - تاسو کولی شئ خپل د ژبې غوراوی وروسته د اپلیکیشن په ترتیباتو کې تل بدل کړئ. هغه ژبه وټاکئ چې تاسو یې په لوستلو او پوهېدو کې ډېر اسان یاست.",
+        "fa": "پس از انتخاب زبان، پنجره تأیید مانند این را خواهید دید. می‌توانید انتخاب را بپذیرید یا رد کنید. نگران نباشید - همیشه می‌توانید ترجیحات زبان خود را بعداً در تنظیمات برنامه تغییر دهید. زبانی را انتخاب کنید که در خواندن و درک آن راحت‌تر هستید.",
+        "ar": "بعد اختيار اللغة، ستشاهد نافذة تأكيد مثل هذه. يمكنك قبول أو رفض الاختيار. لا تقلق - يمكنك دائماً تغيير تفضيلات اللغة لاحقاً في إعدادات التطبيق. اختر اللغة التي تشعر بالراحة أكثر في قراءتها وفهمها.",
+        "ku": "Piştî hilbijartina zimanekî, hûn ê paceyeke piştrastkirinê mîna vê bibînin. Hûn dikarin hilbijartinê qebûl bikin an red bikin. Nîgeran nebin - hûn her dem dikarin vebijarkên zimên xwe paşê di mîhengên sepanê de biguherînin. Ew ziman hilbijêrin ku hûn pê xwendin û têgihiştinê rehet in.",
+        "so": "Ka dib doorashada luqadda, waxaad arki doontaa daaqad xaqiijin sidan oo kale. Waad aqbali kartaa ama diidi kartaa doorashada. Ha welwelin - had iyo jeer waad bedeli kartaa doorashada luqaddaada markii dambe goobaha barnaamijka. Dooro luqadda aad ugu faraxsan tahay akhris iyo fahamka.",
+        "ka": "ენის არჩევის შემდეგ თქვენ ნახავთ დადასტურების ფანჯარას ამგვარს. შეგიძლიათ მიღება ან უარყოფა. ნუ ინერვიულებთ - ყოველთვის შეგიძლიათ შეცვალოთ ენის პარამეტრები მოგვიანებით აპლიკაციის პარამეტრებში. აირჩიეთ ის ენა, რომელის კითხვა და გაგება ყველაზე კომფორტულია.",
+        "sq": "Pas zgjedhjes së një gjuhe, do të shihni një dritare konfirmimi si kjo. Mund ta pranoni ose refuzoni zgjedhjen. Mos u shqetësoni - gjithmonë mund të ndryshoni preferencat e gjuhës më vonë në cilësimet e aplikacionit. Zgjidhni gjuhën me të cilën ndiheni më rehat në lexim dhe kuptim."
+      },
+      "showConfirmation": true
     },
     {
       "id": 3,
+      "type": "feature",
+      "title": {
+        "en": "Virtual Assistant",
+        "de": "Virtueller Assistent",
+        "ru": "Виртуальный помощник",
+        "ce": "Виртуальни ассистент",
+        "prs": "دستیار مجازی",
+        "ps": "مجازی مرستیال",
+        "fa": "دستیار مجازی",
+        "ar": "المساعد الافتراضي",
+        "ku": "Alîkarê Virtual",
+        "so": "Kaaliye Virtual",
+        "ka": "ვირტუალური ასისტენტი",
+        "sq": "Asistenti Virtual"
+      },
+      "text": {
+        "en": "Use the microphone button to access our virtual assistant. It can help you with voice commands, answer questions, and provide guidance throughout your journey in Austria.",
+        "de": "Verwenden Sie die Mikrofon-Schaltfläche, um auf unseren virtuellen Assistenten zuzugreifen. Er kann Ihnen mit Sprachbefehlen helfen, Fragen beantworten und Ihnen auf Ihrer Reise in Österreich Orientierung geben.",
+        "ru": "Используйте кнопку микрофона для доступа к нашему виртуальному помощнику. Он может помочь вам с голосовыми командами, отвечать на вопросы и предоставлять руководство на протяжении всего вашего пути в Австрии.",
+        "ce": "Лела микрофон-кнопка нохан виртуальни ассистент лелор. Иза хьоьга гӀо дина мега аудио-команди, жоьпаш латто а, Австрихь чохь хьан некъехь гӀо латто а.",
+        "prs": "از دکمه میکروفون برای دسترسی به دستیار مجازی ما استفاده کنید. این می‌تواند با دستورات صوتی به شما کمک کند، به سؤالات پاسخ دهد و در طول سفر شما در اتریش راهنمایی ارائه دهد.",
+        "ps": "زموږ د مجازی مرستیال ته د لاسرسي لپاره د میکروفون تڼۍ وکاروئ. دا کولی شي د غږیزو امرونو سره ستاسو سره مرسته وکړي، پوښتنو ته ځواب ورکړي او په اتریش کې ستاسو د سفر په اوږدو کې لارښوونه چمتو کړي.",
+        "fa": "از دکمه میکروفون برای دسترسی به دستیار مجازی ما استفاده کنید. این می‌تواند با دستورات صوتی به شما کمک کند، به سؤالات پاسخ دهد و در طول سفر شما در اتریش راهنمایی ارائه دهد.",
+        "ar": "استخدم زر الميكروفون للوصول إلى مساعدنا الافتراضي. يمكنه مساعدتك بالأوامر الصوتية والإجابة على الأسئلة وتقديم التوجيه طوال رحلتك في النمسا.",
+        "ku": "Bişkoka mîkrofonê bikar bînin da ku hûn bigihîjin alîkarê me yê virtual. Ew dikare bi fermana dengî alîkariya we bike, bersiva pirsan bide û di rêwîtiya we ya li Awistirîya de rêberî peyda bike.",
+        "so": "Isticmaal badhanka makarafoonka si aad u hesho kaalmeeye khayal ah. Wuu kaa caawin karaa amarrada codka, ka jawaabo su'aalaha, oo siiya hagitaan inta lagu jiro safarka Austria.",
+        "ka": "გამოიყენეთ მიკროფონის ღილაკი ჩვენი ვირტუალური ასისტენტის მისაწვდომად. მას შეუძლია დაგეხმაროთ ხმოვანი ბრძანებებით, უპასუხოს კითხვებს და მოგაწოდოთ მითითებები ავსტრიაში თქვენი მოგზაურობის განმავლობაში.",
+        "sq": "Përdorni butonin e mikrofonit për të hyrë te asistenti ynë virtual. Ai mund t'ju ndihmojë me komanda zanore, të përgjigjet pyetjeve dhe të ofrojë udhëzime gjatë rrugëtimit tuaj në Austri."
+      }
+    },
+    {
+      "id": 4,
       "type": "feature",
       "title": {
         "en": "Get Help Anytime",
@@ -115,18 +148,18 @@
         "sq": "Merrni ndihmë në çdo kohë"
       },
       "text": {
-        "en": "Use the help button (?) to open this tutorial anytime, or the microphone button to access our virtual assistant for immediate support and guidance.",
-        "de": "Verwenden Sie die Hilfe-Schaltfläche (?), um dieses Tutorial jederzeit zu öffnen, oder die Mikrofon-Schaltfläche, um auf unseren virtuellen Assistenten für sofortige Unterstützung und Anleitung zuzugreifen.",
-        "ru": "Используйте кнопку помощи (?), чтобы открыть это руководство в любое время, или кнопку микрофона для доступа к нашему виртуальному помощнику для немедленной поддержки и руководства.",
-        "ce": "Лела гӀо-кнопка (?) хӏара дешаран хаам массанхьа схьаеллар, я микрофон-кнопка нохан виртуальни ассистент лело шира гӀо а, хьехар а.",
-        "prs": "از دکمه کمک (؟) برای باز کردن این آموزش در هر زمان استفاده کنید، یا از دکمه میکروفون برای دسترسی به دستیار مجازی ما برای پشتیبانی و راهنمایی فوری استفاده کنید.",
-        "ps": "د مرستې تڼۍ (؟) وکاروئ ترڅو دا روزنه په هر وخت پرانیزئ، یا د میکروفون تڼۍ زموږ د مجازی مرستیال ته د سمدستي ملاتړ او لارښوونې لپاره لاسرسی لپاره وکاروئ.",
-        "fa": "از دکمه کمک (؟) برای باز کردن این آموزش در هر زمان استفاده کنید، یا از دکمه میکروفون برای دسترسی به دستیار مجازی ما برای پشتیبانی و راهنمایی فوری استفاده کنید.",
-        "ar": "استخدم زر المساعدة (؟) لفتح هذا الدليل في أي وقت، أو زر الميكروفون للوصول إلى مساعدنا الافتراضي للدعم والإرشاد الفوري.",
-        "ku": "Bişkoka alîkariyê (?) bikar bînin da ku hûn her dem vê perwerdehiyê vekin, an jî bişkoka mîkrofonê ji bo gihîştina alîkarê me yê virtual ji bo piştgirî û rêberiya tavilê bikar bînin.",
-        "so": "Isticmaal badhanka caawimada (?) si aad u furto tababarkan mar walba, ama badhanka makarafoonka si aad u hesho kaalmeeye khayal ah ee caawimo degdeg ah iyo hagitaan.",
-        "ka": "გამოიყენეთ დახმარების ღილაკი (?) ამ სახელმძღვანელოს ნებისმიერ დროს გასახსნელად, ან მიკროფონის ღილაკი ჩვენი ვირტუალური ასისტენტის მისაწვდომად დაუყოვნებელი მხარდაჭერისა და მითითებისთვის.",
-        "sq": "Përdorni butonin e ndihmës (?) për të hapur këtë udhëzues në çdo kohë, ose butonin e mikrofonit për të hyrë te asistenti ynë virtual për mbështetje dhe udhëzim të menjëhershëm."
+        "en": "Use the help button (?) to open this tutorial anytime for guidance and support throughout your experience with our app.",
+        "de": "Verwenden Sie die Hilfe-Schaltfläche (?), um dieses Tutorial jederzeit für Anleitung und Unterstützung während Ihrer Erfahrung mit unserer App zu öffnen.",
+        "ru": "Используйте кнопку помощи (?), чтобы открыть это руководство в любое время для получения указаний и поддержки во время использования нашего приложения.",
+        "ce": "Лела гӀо-кнопка (?) хӏара дешаран хаам массанхьа схьаеллар хьехаран а гӀоллалин а.",
+        "prs": "از دکمه کمک (؟) برای باز کردن این آموزش در هر زمان برای راهنمایی و پشتیبانی در طول تجربه شما با برنامه ما استفاده کنید.",
+        "ps": "د مرستې تڼۍ (؟) وکاروئ ترڅو دا روزنه په هر وخت د لارښوونې او ملاتړ لپاره زموږ د اپلیکیشن سره ستاسو د تجربې په اوږدو کې پرانیزئ.",
+        "fa": "از دکمه کمک (؟) برای باز کردن این آموزش در هر زمان برای راهنمایی و پشتیبانی در طول تجربه شما با برنامه ما استفاده کنید.",
+        "ar": "استخدم زر المساعدة (؟) لفتح هذا الدليل في أي وقت للحصول على الإرشاد والدعم طوال تجربتك مع تطبيقنا.",
+        "ku": "Bişkoka alîkariyê (?) bikar bînin da ku hûn her dem vê perwerdehiyê ji bo rêberî û piştgiriyê di dema ezmûna we ya bi sepana me re vekin.",
+        "so": "Isticmaal badhanka caawimada (?) si aad u furto tababarkan mar walba si aad u hesho hagitaan iyo taageero inta lagu jiro khibradaada barnaamijkeena.",
+        "ka": "გამოიყენეთ დახმარების ღილაკი (?) ამ სახელმძღვანელოს ნებისმიერ დროს გასახსნელად მითითებისა და მხარდაჭერისთვის ჩვენი აპლიკაციით თქვენი გამოცდილების განმავლობაში.",
+        "sq": "Përdorni butonin e ndihmës (?) për të hapur këtë udhëzues në çdo kohë për udhëzim dhe mbështetje gjatë përvojës tuaj me aplikacionin tonë."
       }
     }
   ]

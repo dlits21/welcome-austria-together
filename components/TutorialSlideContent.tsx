@@ -30,7 +30,6 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
     switch (slide.type) {
       case 'welcome':
       case 'instruction':
-      case 'confirmation':
       case 'feature':
         return (
           <View style={styles.slideContent}>
@@ -44,6 +43,38 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
                 {slide.title[languageCode] || slide.title.en}
               </Text>
               <Text style={styles.slideText}>
+                {slide.text[languageCode] || slide.text.en}
+              </Text>
+            </View>
+          </View>
+        );
+      
+      case 'confirmation':
+        return (
+          <View style={[styles.slideContent, isWideScreen && styles.slideContentWide]}>
+            <View style={[styles.confirmationDemo, isWideScreen && styles.confirmationDemoWide]}>
+              <View style={styles.mockConfirmationWindow}>
+                <View style={styles.mockHeader}>
+                  <Text style={styles.mockTitle}>Deutsch</Text>
+                </View>
+                <Text style={styles.mockMessage}>
+                  Verstehst du Deutsch?{'\n'}Diese App wird ab jetzt auf Deutsch sein.{'\n'}Du kannst das später ändern.
+                </Text>
+                <View style={styles.mockButtons}>
+                  <View style={[styles.mockButton, styles.mockDeclineButton]}>
+                    <Text style={styles.mockButtonText}>Nein</Text>
+                  </View>
+                  <View style={[styles.mockButton, styles.mockAcceptButton]}>
+                    <Text style={styles.mockButtonTextWhite}>Ja</Text>
+                  </View>
+                </View>
+              </View>
+            </View>
+            <View style={[styles.slideInfo, isWideScreen && styles.slideInfoWide]}>
+              <Text style={[styles.slideTitle, isWideScreen && styles.slideTitleWide]}>
+                {slide.title[languageCode] || slide.title.en}
+              </Text>
+              <Text style={[styles.slideText, isWideScreen && styles.slideTextWide]}>
                 {slide.text[languageCode] || slide.text.en}
               </Text>
             </View>
@@ -90,7 +121,7 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
       case 'confirmation':
         return 'check-circle';
       case 'feature':
-        return slideIndex === 3 ? 'help' : 'mic';
+        return slideIndex === 3 ? 'record-voice-over' : slideIndex === 4 ? 'help' : 'mic';
       default:
         return 'info';
     }
@@ -105,7 +136,7 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
       case 'confirmation':
         return '#F59E0B';
       case 'feature':
-        return slideIndex === 3 ? '#8B5CF6' : '#10B981';
+        return slideIndex === 3 ? '#10B981' : slideIndex === 4 ? '#8B5CF6' : '#10B981';
       default:
         return '#3B82F6';
     }
@@ -132,6 +163,81 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     textAlign: 'center',
+  },
+  confirmationDemo: {
+    alignItems: 'center',
+    marginBottom: 24,
+  },
+  confirmationDemoWide: {
+    flex: 1,
+    marginBottom: 0,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingRight: 16,
+    maxWidth: '50%',
+  },
+  mockConfirmationWindow: {
+    backgroundColor: '#fff',
+    borderRadius: 12,
+    padding: 20,
+    minWidth: 250,
+    maxWidth: 300,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 6,
+    elevation: 8,
+    borderWidth: 1,
+    borderColor: '#e0e0e0',
+  },
+  mockHeader: {
+    alignItems: 'center',
+    marginBottom: 16,
+  },
+  mockTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#333',
+  },
+  mockMessage: {
+    fontSize: 14,
+    textAlign: 'center',
+    color: '#666',
+    lineHeight: 20,
+    marginBottom: 20,
+  },
+  mockButtons: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    gap: 12,
+  },
+  mockButton: {
+    flex: 1,
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    borderRadius: 8,
+    alignItems: 'center',
+  },
+  mockDeclineButton: {
+    backgroundColor: '#f0f0f0',
+    borderWidth: 1,
+    borderColor: '#ccc',
+  },
+  mockAcceptButton: {
+    backgroundColor: '#10B981',
+  },
+  mockButtonText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#333',
+  },
+  mockButtonTextWhite: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#fff',
   },
   tileShowcase: {
     alignItems: 'center',
