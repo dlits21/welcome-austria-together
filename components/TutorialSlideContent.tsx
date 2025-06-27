@@ -99,9 +99,10 @@ const styles = StyleSheet.create({
   },
   slideContentWide: {
     flexDirection: 'row',
-    alignItems: 'flex-start',
-    gap: 24,
+    alignItems: 'stretch',
+    gap: 0,
     minHeight: 500,
+    padding: 16,
   },
   centerContent: {
     flex: 1,
@@ -118,7 +119,8 @@ const styles = StyleSheet.create({
     marginBottom: 0,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingRight: 12,
+    paddingRight: 16,
+    maxWidth: '50%',
   },
   categoryCardContainer: {
     width: '100%',
@@ -126,16 +128,17 @@ const styles = StyleSheet.create({
   },
   categoryCardContainerWide: {
     width: '100%',
-    maxWidth: 320,
-    transform: [{ scale: 0.85 }],
+    maxWidth: 240,
+    transform: [{ scale: 0.75 }],
   },
   slideInfo: {
     flex: 1,
   },
   slideInfoWide: {
     flex: 1,
-    paddingLeft: 12,
+    paddingLeft: 16,
     justifyContent: 'center',
+    maxWidth: '50%',
   },
   slideTitle: {
     fontSize: 24,
@@ -146,7 +149,7 @@ const styles = StyleSheet.create({
   },
   slideTitleWide: {
     textAlign: 'left',
-    fontSize: 28,
+    fontSize: 26,
   },
   slideText: {
     fontSize: 16,
@@ -156,8 +159,8 @@ const styles = StyleSheet.create({
   },
   slideTextWide: {
     textAlign: 'left',
-    fontSize: 18,
-    lineHeight: 26,
+    fontSize: 17,
+    lineHeight: 25,
   },
 });
 
