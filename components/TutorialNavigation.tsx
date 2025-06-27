@@ -9,6 +9,7 @@ interface TutorialNavigationProps {
   onPrevious: () => void;
   onNext: () => void;
   onPlayAudio: () => void;
+  onDone: () => void;
   languageCode: string;
 }
 
@@ -18,8 +19,11 @@ const TutorialNavigation: React.FC<TutorialNavigationProps> = ({
   onPrevious,
   onNext,
   onPlayAudio,
+  onDone,
   languageCode
 }) => {
+  const isLastSlide = currentSlide === totalSlides - 1;
+
   return (
     <View style={styles.navigationContainer}>
       <TouchableOpacity
@@ -44,17 +48,23 @@ const TutorialNavigation: React.FC<TutorialNavigationProps> = ({
         </Text>
       </TouchableOpacity>
 
-      <TouchableOpacity
-        style={[styles.navButton, currentSlide === totalSlides - 1 && styles.navButtonDisabled]}
-        onPress={onNext}
-        disabled={currentSlide === totalSlides - 1}
-      >
-        <MaterialIcons 
-          name="arrow-forward" 
-          size={24} 
-          color={currentSlide === totalSlides - 1 ? "#ccc" : "#333"} 
-        />
-      </TouchableOpacity>
+      {isLastSlide ? (
+        <TouchableOpacity
+          style={styles.doneButton}
+          onPress={onDone}
+        >
+          <Text style={styles.doneButtonText}>
+            {languageCode === 'de' ? 'Fertig' : 'Done'}
+          </Text>
+        </TouchableOpacity>
+      ) : (
+        <TouchableOpacity
+          style={styles.navButton}
+          onPress={onNext}
+        >
+          <MaterialIcons name="arrow-forward" size={24} color="#333" />
+        </TouchableOpacity>
+      )}
     </View>
   );
 };
@@ -89,6 +99,19 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   audioButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  doneButton: {
+    backgroundColor: '#3B82F6',
+    paddingHorizontal: 24,
+    paddingVertical: 12,
+    borderRadius: 25,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  doneButtonText: {
     color: '#fff',
     fontSize: 16,
     fontWeight: '600',

@@ -82,6 +82,7 @@ const TutorialModal: React.FC<TutorialModalProps> = ({ visible, onClose, languag
             onPrevious={prevSlide}
             onNext={nextSlide}
             onPlayAudio={playAudio}
+            onDone={handleClose}
             languageCode={languageCode}
           />
         </View>

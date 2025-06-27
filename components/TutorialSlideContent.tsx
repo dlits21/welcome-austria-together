@@ -43,7 +43,7 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
         return (
           <View style={[styles.slideContent, isWideScreen && styles.slideContentWide]}>
             <View style={[styles.tileShowcase, isWideScreen && styles.tileShowcaseWide]}>
-              <View style={styles.smallCategoryCard}>
+              <View style={[styles.categoryCardContainer, isWideScreen && styles.categoryCardContainerWide]}>
                 <CategoryCard 
                   title={slide.category!.title[languageCode] || slide.category!.title.en}
                   description={slide.category!.description[languageCode] || slide.category!.description.en}
@@ -54,10 +54,10 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
               </View>
             </View>
             <View style={[styles.slideInfo, isWideScreen && styles.slideInfoWide]}>
-              <Text style={styles.slideTitle}>
+              <Text style={[styles.slideTitle, isWideScreen && styles.slideTitleWide]}>
                 {slide.title[languageCode] || slide.title.en}
               </Text>
-              <Text style={styles.slideText}>
+              <Text style={[styles.slideText, isWideScreen && styles.slideTextWide]}>
                 {slide.text[languageCode] || slide.text.en}
               </Text>
             </View>
@@ -100,7 +100,8 @@ const styles = StyleSheet.create({
   slideContentWide: {
     flexDirection: 'row',
     alignItems: 'flex-start',
-    gap: 32,
+    gap: 24,
+    minHeight: 500,
   },
   centerContent: {
     flex: 1,
@@ -113,22 +114,28 @@ const styles = StyleSheet.create({
     marginBottom: 24,
   },
   tileShowcaseWide: {
-    flex: 0.5,
+    flex: 1,
     marginBottom: 0,
-    maxWidth: '50%',
     justifyContent: 'center',
+    alignItems: 'center',
+    paddingRight: 12,
   },
-  smallCategoryCard: {
-    transform: [{ scale: 0.5 }],
-    maxWidth: 180,
+  categoryCardContainer: {
+    width: '100%',
+    maxWidth: 280,
+  },
+  categoryCardContainerWide: {
+    width: '100%',
+    maxWidth: 320,
+    transform: [{ scale: 0.85 }],
   },
   slideInfo: {
-    flex: 0.6,
+    flex: 1,
   },
   slideInfoWide: {
-    flex: 0.5,
-    maxWidth: '50%',
-    paddingLeft: 16,
+    flex: 1,
+    paddingLeft: 12,
+    justifyContent: 'center',
   },
   slideTitle: {
     fontSize: 24,
@@ -137,11 +144,20 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333',
   },
+  slideTitleWide: {
+    textAlign: 'left',
+    fontSize: 28,
+  },
   slideText: {
     fontSize: 16,
     lineHeight: 24,
     color: '#666',
     textAlign: 'center',
+  },
+  slideTextWide: {
+    textAlign: 'left',
+    fontSize: 18,
+    lineHeight: 26,
   },
 });
 
