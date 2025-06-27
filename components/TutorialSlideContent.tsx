@@ -30,10 +30,10 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
             <View style={styles.centerContent}>
               <MaterialIcons name="info" size={80} color="#3B82F6" />
               <Text style={styles.slideTitle}>
-                {languageCode === 'de' ? slide.title.de : slide.title.en}
+                {slide.title[languageCode] || slide.title.en}
               </Text>
               <Text style={styles.slideText}>
-                {languageCode === 'de' ? slide.text.de : slide.text.en}
+                {slide.text[languageCode] || slide.text.en}
               </Text>
             </View>
           </View>
@@ -45,20 +45,20 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
             <View style={[styles.tileShowcase, isWideScreen && styles.tileShowcaseWide]}>
               <View style={styles.smallCategoryCard}>
                 <CategoryCard 
-                  title={languageCode === 'de' ? slide.category!.title.de : slide.category!.title.en}
-                  description={languageCode === 'de' ? slide.category!.description.de : slide.category!.description.en}
+                  title={slide.category!.title[languageCode] || slide.category!.title.en}
+                  description={slide.category!.description[languageCode] || slide.category!.description.en}
                   icon={slide.category!.icon as keyof typeof MaterialIcons.glyphMap}
                   color={slide.category!.color}
                   onPress={() => {}}
                 />
               </View>
             </View>
-            <View style={styles.slideInfo}>
+            <View style={[styles.slideInfo, isWideScreen && styles.slideInfoWide]}>
               <Text style={styles.slideTitle}>
-                {languageCode === 'de' ? slide.title.de : slide.title.en}
+                {slide.title[languageCode] || slide.title.en}
               </Text>
               <Text style={styles.slideText}>
-                {languageCode === 'de' ? slide.text.de : slide.text.en}
+                {slide.text[languageCode] || slide.text.en}
               </Text>
             </View>
           </View>
@@ -74,10 +74,10 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
                 color={currentSlide === 5 ? "#10B981" : "#8B5CF6"} 
               />
               <Text style={styles.slideTitle}>
-                {languageCode === 'de' ? slide.title.de : slide.title.en}
+                {slide.title[languageCode] || slide.title.en}
               </Text>
               <Text style={styles.slideText}>
-                {languageCode === 'de' ? slide.text.de : slide.text.en}
+                {slide.text[languageCode] || slide.text.en}
               </Text>
             </View>
           </View>
@@ -113,16 +113,22 @@ const styles = StyleSheet.create({
     marginBottom: 24,
   },
   tileShowcaseWide: {
-    flex: 0.4,
+    flex: 0.5,
     marginBottom: 0,
-    maxWidth: '40%',
+    maxWidth: '50%',
+    justifyContent: 'center',
   },
   smallCategoryCard: {
-    transform: [{ scale: 0.7 }],
-    maxWidth: 200,
+    transform: [{ scale: 0.5 }],
+    maxWidth: 180,
   },
   slideInfo: {
     flex: 0.6,
+  },
+  slideInfoWide: {
+    flex: 0.5,
+    maxWidth: '50%',
+    paddingLeft: 16,
   },
   slideTitle: {
     fontSize: 24,
