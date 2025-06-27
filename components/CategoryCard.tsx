@@ -9,6 +9,7 @@ interface CategoryCardProps {
   icon: keyof typeof MaterialIcons.glyphMap;
   onPress: () => void;
   color?: string;
+  isInTutorial?: boolean;
 }
 
 const CategoryCard: React.FC<CategoryCardProps> = ({
@@ -16,8 +17,30 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
   description,
   icon,
   onPress,
-  color = '#3B82F6'
+  color = '#3B82F6',
+  isInTutorial = false
 }) => {
+  if (isInTutorial) {
+    // Fixed sizing for tutorial mode
+    return (
+      <TouchableOpacity 
+        style={styles.tutorialCard} 
+        onPress={onPress}
+      >
+        <View style={[styles.tutorialIconContainer, { backgroundColor: `${color}15` }]}>
+          <MaterialIcons 
+            name={icon} 
+            size={64} 
+            color={color} 
+          />
+        </View>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.description}>{description}</Text>
+      </TouchableOpacity>
+    );
+  }
+
+  // Responsive sizing for main grid
   const screenWidth = Dimensions.get('window').width;
   const cardWidth = (screenWidth - 48) / 2; // 2 columns with padding
   const iconSize = Math.min(Math.max(32, cardWidth * 0.3), 200); // Responsive icon size, minimum 32
@@ -55,12 +78,36 @@ const styles = StyleSheet.create({
     elevation: 2,
     alignItems: 'center',
   },
+  tutorialCard: {
+    backgroundColor: '#fff',
+    borderRadius: 12,
+    padding: 20,
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
+    elevation: 2,
+    alignItems: 'center',
+    width: '100%',
+    maxWidth: 280,
+  },
   iconContainer: {
     borderRadius: 30,
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 8,
     marginBottom: 16,
+  },
+  tutorialIconContainer: {
+    borderRadius: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 8,
+    marginBottom: 16,
+    width: 120,
+    height: 120,
   },
   title: {
     fontSize: 24,

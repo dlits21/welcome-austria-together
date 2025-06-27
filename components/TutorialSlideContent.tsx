@@ -50,6 +50,7 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
                   icon={slide.category!.icon as keyof typeof MaterialIcons.glyphMap}
                   color={slide.category!.color}
                   onPress={() => {}}
+                  isInTutorial={true}
                 />
               </View>
             </View>
