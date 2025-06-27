@@ -2,6 +2,7 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { getAssistantText } from '../utils/languageUtils';
 
 interface ModeToggleProps {
   chatMode: 'text' | 'voice';
@@ -31,7 +32,7 @@ const ModeToggle: React.FC<ModeToggleProps> = ({
       >
         <MaterialIcons name="chat" size={iconSize} color={chatMode === 'text' ? '#fff' : '#666'} />
         <Text style={[textStyle, chatMode === 'text' && activeTextStyle]}>
-          {languageCode === 'de' ? 'Chat' : 'Chat'}
+          {getAssistantText('chat', languageCode)}
         </Text>
       </TouchableOpacity>
 
@@ -41,7 +42,7 @@ const ModeToggle: React.FC<ModeToggleProps> = ({
       >
         <MaterialIcons name="mic" size={iconSize} color={chatMode === 'voice' ? '#fff' : '#666'} />
         <Text style={[textStyle, chatMode === 'voice' && activeTextStyle]}>
-          {languageCode === 'de' ? 'Sprechen' : 'Talk'}
+          {getAssistantText('talk', languageCode)}
         </Text>
       </TouchableOpacity>
     </View>
@@ -79,7 +80,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#f0f0f0',
     borderRadius: 20,
     padding: 3,
-    alignSelf: 'flex-start',
+    alignSelf: 'flex-end',
+    marginRight: 16,
+    marginBottom: 12,
   },
   mobileModeButton: {
     flexDirection: 'row',

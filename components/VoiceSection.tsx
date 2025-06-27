@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { getAssistantText } from '../utils/languageUtils';
 
 interface VoiceSectionProps {
   isListening: boolean;
@@ -30,8 +30,8 @@ const VoiceSection: React.FC<VoiceSectionProps> = ({
           />
           <Text style={styles.webVoiceButtonText}>
             {isListening
-              ? (languageCode === 'de' ? 'Höre zu...' : 'Listening...')
-              : (languageCode === 'de' ? 'Drücken zum Sprechen' : 'Press to Talk')
+              ? getAssistantText('listening', languageCode)
+              : getAssistantText('pressToTalk', languageCode)
             }
           </Text>
         </TouchableOpacity>
@@ -53,8 +53,8 @@ const VoiceSection: React.FC<VoiceSectionProps> = ({
       </TouchableOpacity>
       <Text style={styles.voiceInstructions}>
         {isListening
-          ? (languageCode === 'de' ? 'Höre zu...' : 'Listening...')
-          : (languageCode === 'de' ? 'Tippen zum Sprechen' : 'Tap to Talk')
+          ? getAssistantText('listening', languageCode)
+          : getAssistantText('tapToTalk', languageCode)
         }
       </Text>
     </View>

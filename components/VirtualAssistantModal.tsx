@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import {
   StyleSheet,
@@ -14,6 +13,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import VirtualAssistantAvatar from './VirtualAssistantAvatar';
 import ModeToggle from './ModeToggle';
 import ChatSection from './ChatSection';
+import { getAssistantText } from '../utils/languageUtils';
 
 interface Message {
   id: string;
@@ -51,9 +51,7 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
       console.log('Rendering');
       const welcomeMessage: Message = {
         id: '1',
-        text: languageCode === 'de'
-          ? 'Hallo! Ich bin dein virtueller Assistent. Wie kann ich dir helfen?'
-          : 'Hello! I\'m your virtual assistant. How can I help you?',
+        text: getAssistantText('greeting', languageCode),
         isUser: false,
         timestamp: new Date(),
       };
@@ -68,9 +66,7 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
 
         const assistantResponse: Message = {
           id: '3',
-          text: languageCode === 'de'
-            ? `Du hast nach "${initialMessage}" gesucht. Das ist eine interessante Frage! Ich arbeite noch daran, dir besser helfen zu können.`
-            : `You searched for "${initialMessage}". That's an interesting question! I'm still learning to help you better.`,
+          text: getAssistantText('searchResponse', languageCode).replace('{query}', initialMessage),
           isUser: false,
           timestamp: new Date(),
         };
@@ -105,9 +101,7 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
       setTimeout(() => {
         const assistantResponse: Message = {
           id: (Date.now() + 1).toString(),
-          text: languageCode === 'de'
-            ? 'Das ist eine interessante Frage! Ich arbeite noch daran, dir besser helfen zu können.'
-            : 'That\'s an interesting question! I\'m still learning to help you better.',
+          text: getAssistantText('interestingQuestion', languageCode),
           isUser: false,
           timestamp: new Date(),
         };
@@ -146,7 +140,7 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
                 />
               </View>
               <Text style={styles.headerTitle}>
-                {languageCode === 'de' ? 'Virtueller Assistent' : 'Virtual Assistant'}
+                {getAssistantText('virtualAssistant', languageCode)}
               </Text>
             </View>
           )}

@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -6,6 +5,7 @@ import CategoryCard from './CategoryCard';
 import { GermanFlag } from './Flags';
 import homeTutorialData from '../data/tutorial/home.json';
 import indexTutorialData from '../data/tutorial/index.json';
+import { getGlobalText } from '../utils/languageUtils';
 
 interface TutorialSlideContentProps {
   currentSlide: number;
@@ -15,7 +15,7 @@ interface TutorialSlideContentProps {
   onVirtualAssistant?: () => void;
 }
 
-// Languages for button text rotation
+// Languages for text rotation
 const languages = [
   { code: "de", name: "Deutsch" },
   { code: "en", name: "English" },
@@ -38,15 +38,15 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
   tutorialData = 'home',
   onVirtualAssistant
 }) => {
-  const [buttonTextIndex, setButtonTextIndex] = useState(0);
+  const [currentLanguageIndex, setCurrentLanguageIndex] = useState(0);
   const data = tutorialData === 'index' ? indexTutorialData : homeTutorialData;
   const slide = data.slides.find(s => s.id === currentSlide);
 
-  // Rotate button text every 5 seconds for the first slide
+  // Rotate all text every 5 seconds for the first slide
   useEffect(() => {
     if (currentSlide === 0 && slide?.type === 'assistant') {
       const interval = setInterval(() => {
-        setButtonTextIndex((prevIndex) => (prevIndex + 1) % languages.length);
+        setCurrentLanguageIndex((prevIndex) => (prevIndex + 1) % languages.length);
       }, 5000);
       return () => clearInterval(interval);
     }
@@ -59,8 +59,10 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
   const getSlideContent = () => {
     switch (slide.type) {
       case 'assistant':
-        const currentButtonLanguage = languages[buttonTextIndex];
-        const buttonText = slide.buttonText?.[currentButtonLanguage.code] || slide.buttonText?.en || 'Get Help Now';
+        const currentLanguage = languages[currentLanguageIndex];
+        const currentTitle = slide.title?.[currentLanguage.code] || slide.title?.en || '';
+        const currentText = slide.text?.[currentLanguage.code] || slide.text?.en || '';
+        const currentButtonText = getGlobalText('help', currentLanguage.code);
         
         return (
           <View style={styles.slideContent}>
@@ -72,20 +74,20 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
               />
               <View style={styles.speechBubble}>
                 <Text style={styles.speechText}>
-                  {slide.title[languageCode] || slide.title.en}
+                  {currentTitle}
                 </Text>
                 <View style={styles.speechArrow} />
               </View>
             </View>
             <Text style={styles.assistantDescription}>
-              {slide.text[languageCode] || slide.text.en}
+              {currentText}
             </Text>
             <TouchableOpacity 
               style={styles.assistantButton}
               onPress={onVirtualAssistant}
             >
               <Text style={styles.assistantButtonText}>
-                {buttonText}
+                {currentButtonText}
               </Text>
             </TouchableOpacity>
           </View>

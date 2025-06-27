@@ -1,6 +1,6 @@
-
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
+import { getAssistantText } from '../utils/languageUtils';
 
 interface VirtualAssistantAvatarProps {
   languageCode: string;
@@ -22,12 +22,10 @@ const VirtualAssistantAvatar: React.FC<VirtualAssistantAvatarProps> = ({
           />
         </View>
         <Text style={styles.avatarTitle}>
-          {languageCode === 'de' ? 'Virtueller Assistent' : 'Virtual Assistant'}
+          {getAssistantText('virtualAssistant', languageCode)}
         </Text>
         <Text style={styles.avatarSubtitle}>
-          {languageCode === 'de'
-            ? 'Ich bin hier, um Ihnen zu helfen!'
-            : 'I\'m here to help you!'}
+          {getAssistantText('helpMessage', languageCode)}
         </Text>
       </View>
     );
@@ -44,7 +42,7 @@ const VirtualAssistantAvatar: React.FC<VirtualAssistantAvatarProps> = ({
       </View>
       <View style={styles.mobileRightSection}>
         <Text style={styles.mobileTitle}>
-          {languageCode === 'de' ? 'Virtueller Assistent' : 'Virtual Assistant'}
+          {getAssistantText('virtualAssistant', languageCode)}
         </Text>
       </View>
     </View>
