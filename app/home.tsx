@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { 
   StyleSheet, 
@@ -10,14 +9,8 @@ import {
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useLanguage } from '../contexts/LanguageContext';
-import {
-    languages,
-    getHowCanIHelpText,
-    getSearchPlaceholder,
-    getSoundEnabled,
-    getSearchTerm,
-    getMainCategories,
-    getMainCategoriesSubtitles } from '../data/languages/common';
+import { languages } from '../data/languages/common';
+import { getHomeText } from '../utils/languageUtils';
 
 // Import refactored components
 import Header from '../components/Header';
@@ -52,7 +45,7 @@ const Home: React.FC = () => {
       setShowVirtualAssistant(true);
       setSearchInput('');
     } else {
-      alert(getSearchTerm(currentLanguage));
+      alert('Please enter a search term');
     }
   };
 
@@ -62,10 +55,7 @@ const Home: React.FC = () => {
 
   const toggleSound = () => {
     setSoundEnabled(!soundEnabled);
-    alert(soundEnabled 
-      ? getSoundEnabled(currentLanguage, 'disabled') 
-      : getSoundEnabled(currentLanguage, 'enabled')
-    );
+    alert(soundEnabled ? 'Sound disabled' : 'Sound enabled');
   };
 
   const handleVirtualAssistantClose = () => {
@@ -73,18 +63,18 @@ const Home: React.FC = () => {
     setSearchQuery('');
   };
 
-  // Prepare translations and text content
-  const askTitle = getMainCategories(currentLanguage, 'ask');
-  const askSubtitle = getMainCategoriesSubtitles(currentLanguage, 'ask');
+  // Get translations using the new utility functions
+  const askTitle = getHomeText('categories.ask.title', currentLanguage);
+  const askSubtitle = getHomeText('categories.ask.description', currentLanguage);
     
-  const infoTitle = getMainCategories(currentLanguage, 'information');
-  const infoSubtitle = getMainCategoriesSubtitles(currentLanguage, 'information');
+  const infoTitle = getHomeText('categories.information.title', currentLanguage);
+  const infoSubtitle = getHomeText('categories.information.description', currentLanguage);
     
-  const learnTitle = getMainCategories(currentLanguage, 'learn');
-  const learnSubtitle = getMainCategoriesSubtitles(currentLanguage, 'learn');
+  const learnTitle = getHomeText('categories.learn.title', currentLanguage);
+  const learnSubtitle = getHomeText('categories.learn.description', currentLanguage);
     
-  const communityTitle = getMainCategories(currentLanguage, 'community');
-  const communitySubtitle = getMainCategoriesSubtitles(currentLanguage, 'community');
+  const communityTitle = getHomeText('categories.community.title', currentLanguage);
+  const communitySubtitle = getHomeText('categories.community.description', currentLanguage);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -105,14 +95,14 @@ const Home: React.FC = () => {
         showsVerticalScrollIndicator={false}
       >
         {/* Title */}
-        <Text style={styles.title}>{getHowCanIHelpText(currentLanguage)}</Text>
+        <Text style={styles.title}>{getHomeText('howCanIHelp', currentLanguage)}</Text>
         
         {/* Search Bar */}
         <SearchBar 
           searchInput={searchInput}
           setSearchInput={setSearchInput}
           handleSearch={handleSearch}
-          placeholder={getSearchPlaceholder(currentLanguage)}
+          placeholder={getHomeText('searchPlaceholder', currentLanguage)}
         />
         
         {/* Category Cards */}

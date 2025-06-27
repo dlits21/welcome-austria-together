@@ -1,10 +1,10 @@
-
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Modal, ScrollView, useWindowDimensions } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import TutorialSlideContent from './TutorialSlideContent';
 import TutorialIndicators from './TutorialIndicators';
 import TutorialNavigation from './TutorialNavigation';
+import { getGlobalText } from '../utils/languageUtils';
 
 interface TutorialModalProps {
   visible: boolean;
@@ -53,7 +53,7 @@ const TutorialModal: React.FC<TutorialModalProps> = ({ visible, onClose, languag
           {/* Header */}
           <View style={styles.modalHeader}>
             <Text style={styles.modalTitle}>
-              {languageCode === 'de' ? 'Tutorial' : 'Tutorial'}
+              {getGlobalText('tutorial', languageCode)}
             </Text>
             <TouchableOpacity onPress={handleClose}>
               <MaterialIcons name="close" size={24} color="#333" />

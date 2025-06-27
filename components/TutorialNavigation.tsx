@@ -2,6 +2,7 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { getGlobalText } from '../utils/languageUtils';
 
 interface TutorialNavigationProps {
   currentSlide: number;
@@ -44,7 +45,7 @@ const TutorialNavigation: React.FC<TutorialNavigationProps> = ({
       >
         <MaterialIcons name="volume-up" size={24} color="#fff" />
         <Text style={styles.audioButtonText}>
-          {languageCode === 'de' ? 'Anhören' : 'Listen'}
+          {getGlobalText('listen', languageCode)}
         </Text>
       </TouchableOpacity>
 
@@ -54,7 +55,7 @@ const TutorialNavigation: React.FC<TutorialNavigationProps> = ({
           onPress={onDone}
         >
           <Text style={styles.doneButtonText}>
-            {languageCode === 'de' ? 'Fertig' : 'Done'}
+            {getGlobalText('done', languageCode)}
           </Text>
         </TouchableOpacity>
       ) : (

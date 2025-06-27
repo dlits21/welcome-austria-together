@@ -1,0 +1,153 @@
+
+{
+  "howCanIHelp": {
+    "en": "How can I help you?",
+    "de": "Wie kann ich Ihnen helfen?",
+    "ru": "Как я могу вам помочь?",
+    "ce": "Мила гӀo луш йиш ю?",
+    "prs": "چگونه می توانم به شما کمک کنم؟",
+    "ps": "زه دي سره څنګه مرسته کولی شم؟",
+    "fa": "چگونه می توانم به شما کمک کنم؟",
+    "ar": "كيف يمكنني مساعدتك؟",
+    "ku": "چۆن دەتوانم یارمەتیت بدەم؟",
+    "so": "Sidee kugu caawin karaa?",
+    "ka": "როგორ შემიძლია დაგეხმაროთ?",
+    "sq": "Si mund t'ju ndihmoj?"
+  },
+  "searchPlaceholder": {
+    "en": "Search for help...",
+    "de": "Nach Hilfe suchen...",
+    "ru": "Поиск помощи...",
+    "ce": "ГӀo лаха...",
+    "prs": "جستجو برای کمک...",
+    "ps": "د مرستې لپاره پلټنه...",
+    "fa": "جستجو برای کمک...",
+    "ar": "البحث عن المساعدة...",
+    "ku": "گەڕان بۆ یارمەتی...",
+    "so": "Raadi caawimo...",
+    "ka": "დახმარების ძიება...",
+    "sq": "Kërko për ndihmë..."
+  },
+  "categories": {
+    "ask": {
+      "title": {
+        "en": "Ask",
+        "de": "Fragen",
+        "ru": "Спросить",
+        "ce": "Хаттар",
+        "prs": "پرسیدن",
+        "ps": "پوښتنه",
+        "fa": "پرسش",
+        "ar": "اسأل",
+        "ku": "پرسیار",
+        "so": "Weydiinta",
+        "ka": "კითხვა",
+        "sq": "Pyet"
+      },
+      "description": {
+        "en": "Ask questions",
+        "de": "Stellen Sie Fragen",
+        "ru": "Задавайте вопросы",
+        "ce": "Хаттарш кхоьлла",
+        "prs": "سوال بپرسید",
+        "ps": "پوښتنې وکړئ",
+        "fa": "سوال بپرسید",
+        "ar": "اطرح الأسئلة",
+        "ku": "پرسیار بکە",
+        "so": "Su'aalo weydii",
+        "ka": "დასვით კითხვები",
+        "sq": "Bëni pyetje"
+      }
+    },
+    "information": {
+      "title": {
+        "en": "Information",
+        "de": "Informationen",
+        "ru": "Информация",
+        "ce": "Хаам",
+        "prs": "معلومات",
+        "ps": "معلومات",
+        "fa": "اطلاعات",
+        "ar": "معلومات",
+        "ku": "زانیاری",
+        "so": "Macluumaad",
+        "ka": "ინფორმაცია",
+        "sq": "Informacion"
+      },
+      "description": {
+        "en": "Important information",
+        "de": "Wichtige Informationen",
+        "ru": "Важная информация",
+        "ce": "Къинхетам хаам",
+        "prs": "معلومات مهم",
+        "ps": "مهم معلومات",
+        "fa": "اطلاعات مهم",
+        "ar": "معلومات مهمة",
+        "ku": "زانیاری گرنگ",
+        "so": "Macluumaad muhiim ah",
+        "ka": "მნიშვნელოვანი ინფორმაცია",
+        "sq": "Informacion i rëndësishëm"
+      }
+    },
+    "learn": {
+      "title": {
+        "en": "Learn",
+        "de": "Lernen",
+        "ru": "Учиться",
+        "ce": "Дешар",
+        "prs": "یادگیری",
+        "ps": "زده کړه",
+        "fa": "یادگیری",
+        "ar": "تعلم",
+        "ku": "فێربوون",
+        "so": "Barashada",
+        "ka": "სწავლა",
+        "sq": "Mëso"
+      },
+      "description": {
+        "en": "Learning materials",
+        "de": "Lernmaterialien",
+        "ru": "Учебные материалы",
+        "ce": "Дешаран хаамаш",
+        "prs": "مواد آموزشی",
+        "ps": "د زده کړې مواد",
+        "fa": "مواد آموزشی",
+        "ar": "مواد التعلم",
+        "ku": "مادەی فێربوون",
+        "so": "Agabka waxbarashada",
+        "ka": "სასწავლო მასალები",
+        "sq": "Materiale mësimore"
+      }
+    },
+    "community": {
+      "title": {
+        "en": "Community",
+        "de": "Community",
+        "ru": "Сообщество",
+        "ce": "Жамагlат",
+        "prs": "جامعه",
+        "ps": "ټولنه",
+        "fa": "جامعه",
+        "ar": "المجتمع",
+        "ku": "کۆمەڵگە",
+        "so": "Bulshada",
+        "ka": "საზოგადოება",
+        "sq": "Komuniteti"
+      },
+      "description": {
+        "en": "Community resources",
+        "de": "Gemeinschaftsressourcen",
+        "ru": "Ресурсы сообщества",
+        "ce": "Жамагlатан ресурсаш",
+        "prs": "منابع جامعه",
+        "ps": "د ټولنې سرچینې",
+        "fa": "منابع جامعه",
+        "ar": "موارد المجتمع",
+        "ku": "سەرچاوەکانی کۆمەڵگە",
+        "so": "Kheyraadka bulshada",
+        "ka": "საზოგადოების რესურსები",
+        "sq": "Burimet e komunitetit"
+      }
+    }
+  }
+}
