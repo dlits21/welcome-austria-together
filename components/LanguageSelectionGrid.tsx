@@ -73,13 +73,14 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   flagContainer: {
-    width: "100%",
+    width: "60%",
     aspectRatio: 1,
     marginBottom: 10,
+    borderRadius: 1,
   },
   flag: {
-    width: "10%",
-    height: "10%",
+    width: "100%",
+    height: "100%",
     marginBottom: 10,
     borderRadius: 30,
   },
