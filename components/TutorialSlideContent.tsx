@@ -130,7 +130,6 @@ const styles = StyleSheet.create({
   categoryCardContainerWide: {
     width: '100%',
     maxWidth: 240,
-    transform: [{ scale: 0.75 }],
   },
   slideInfo: {
     flex: 1,
