@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Modal, ScrollView, useWindowDimensions } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -10,14 +11,16 @@ interface TutorialModalProps {
   visible: boolean;
   onClose: () => void;
   languageCode: string;
+  tutorialData?: string; // 'home' or 'index'
 }
 
-const TutorialModal: React.FC<TutorialModalProps> = ({ visible, onClose, languageCode }) => {
+const TutorialModal: React.FC<TutorialModalProps> = ({ visible, onClose, languageCode, tutorialData = 'home' }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const { width } = useWindowDimensions();
   const isWideScreen = width > 768;
 
-  const totalSlides = 7;
+  // Different slide counts based on tutorial type
+  const totalSlides = tutorialData === 'index' ? 4 : 7;
 
   const nextSlide = () => {
     if (currentSlide < totalSlides - 1) {
@@ -72,6 +75,7 @@ const TutorialModal: React.FC<TutorialModalProps> = ({ visible, onClose, languag
               currentSlide={currentSlide}
               languageCode={languageCode}
               isWideScreen={isWideScreen}
+              tutorialData={tutorialData}
             />
           </ScrollView>
 

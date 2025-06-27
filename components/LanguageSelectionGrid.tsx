@@ -1,54 +1,68 @@
-
 import React from 'react';
 import { 
   StyleSheet, 
   Text,
   View, 
   TouchableOpacity, 
-  ScrollView
+  ScrollView,
+  Pressable
 } from 'react-native';
 
 interface LanguageSelectionGridProps {
-  languages: any[];
-  handleLanguageSelect: (language: any) => void;
-  handlePressIn: (language: any, event: any) => void;
+  languages: Language[];
+  handleLanguageSelect: (language: Language) => void;
+  handlePressIn: (language: Language, event: any) => void;
   handlePressOut: () => void;
+  handleMouseEnter?: (language: Language, event: any) => void;
+  handleMouseLeave?: () => void;
 }
 
 const LanguageSelectionGrid: React.FC<LanguageSelectionGridProps> = ({
   languages,
   handleLanguageSelect,
   handlePressIn,
-  handlePressOut
+  handlePressOut,
+  handleMouseEnter,
+  handleMouseLeave
 }) => {
   return (
-    <ScrollView contentContainerStyle={styles.languageGrid}>
-      {languages.map((language) => (
-        <TouchableOpacity
-          key={language.code}
-          style={styles.languageItem}
-          onPress={() => handleLanguageSelect(language)}
-          onPressIn={(e) => handlePressIn(language, e)}
-          onPressOut={handlePressOut}
-        >
-          <View style={{ width: '60%', aspectRatio:1 }}>
-            <language.flag style={styles.languageFlag}></language.flag>
-          </View>
-          <Text style={styles.languageName}>{language.name}</Text>
-        </TouchableOpacity>
-      ))}
+    <ScrollView 
+      contentContainerStyle={styles.scrollContainer}
+      showsVerticalScrollIndicator={false}
+    >
+      <View style={styles.languageGrid}>
+        {languages.map((language) => (
+          <Pressable
+            key={language.code}
+            style={styles.languageButton}
+            onPress={() => handleLanguageSelect(language)}
+            onPressIn={(event) => handlePressIn(language, event)}
+            onPressOut={handlePressOut}
+            onMouseEnter={handleMouseEnter ? (event) => handleMouseEnter(language, event) : undefined}
+            onMouseLeave={handleMouseLeave}
+          >
+            <View style={styles.flagContainer}>
+              <language.flag style={styles.flag} />
+            </View>
+            <Text style={styles.languageName}>{language.name}</Text>
+          </Pressable>
+        ))}
+      </View>
     </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
+  scrollContainer: {
+    flex: 1,
+  },
   languageGrid: {
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "center",
     padding: 10,
   },
-  languageItem: {
+  languageButton: {
     width: "30%",
     aspectRatio: 1,
     margin: "1.5%",
@@ -58,7 +72,12 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     padding: 10,
   },
-  languageFlag: {
+  flagContainer: {
+    width: "100%",
+    aspectRatio: 1,
+    marginBottom: 10,
+  },
+  flag: {
     width: "10%",
     height: "10%",
     marginBottom: 10,
