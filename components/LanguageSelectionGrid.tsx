@@ -37,10 +37,8 @@ const LanguageSelectionGrid: React.FC<LanguageSelectionGridProps> = ({
             key={language.code}
             style={styles.languageButton}
             onPress={() => handleLanguageSelect(language)}
-            onPressIn={(event) => handlePressIn(language, event)}
-            onPressOut={handlePressOut}
-            onMouseEnter={handleMouseEnter ? (event) => handleMouseEnter(language, event) : undefined}
-            onMouseLeave={handleMouseLeave}
+            onHoverIn={handleMouseEnter ? (event) => handleMouseEnter(language, event) : undefined}
+            onHoverOut={handleMouseLeave}
           >
             <View style={styles.flagContainer}>
               <language.flag style={styles.flag} />
@@ -69,7 +67,7 @@ const styles = StyleSheet.create({
     margin: "1.5%",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#d8d8d8",
+    backgroundColor: "#e8e8e8",
     borderRadius: 12,
     padding: 10,
     shadowColor: "#000",
