@@ -1,17 +1,26 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, SafeAreaView, ScrollView, TouchableOpacity, Linking } from 'react-native';
+import React, { useState, useCallback } from 'react';
+import { StyleSheet, Text, View, SafeAreaView, ScrollView, TouchableOpacity, Linking, Dimensions } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useLanguage } from '../../../contexts/LanguageContext';
 import { languages } from '../../../data/languages/common';
 import PageNavigation from '../../../components/PageNavigation';
 import LanguageModal from '../../../components/LanguageModal';
 import HelpModal from '../../../components/HelpModal';
+import YoutubePlayer from "react-native-youtube-iframe";
 
 const WomensRightsPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
+  const [playing, setPlaying] = useState(false);
+
+  const onStateChange = useCallback((state) => {
+    if (state === "ended") {
+      setPlaying(false);
+      Alert.alert("video has finished playing!");
+    }
+  }, []);
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
@@ -21,10 +30,6 @@ const WomensRightsPage: React.FC = () => {
 
   const handleLinkPress = (url: string) => {
     Linking.openURL(url);
-  };
-
-  const handleVideoPress = () => {
-    Linking.openURL('https://youtube.com/watch?v=dQw4w9WgXcQ');
   };
 
   const content = {
@@ -153,14 +158,14 @@ Verfügbare Unterstützungsdienste:
             {language.code === 'de' ? 'Video' : 'Video'}
           </Text>
           
-          <TouchableOpacity style={styles.videoCard} onPress={handleVideoPress}>
-            <View style={styles.videoThumbnail}>
-              <MaterialIcons name="play-circle-filled" size={48} color="#fff" />
-            </View>
-            <Text style={styles.videoTitle}>
-              {language.code === 'de' ? content.videoTitle.de : content.videoTitle.en}
-            </Text>
-          </TouchableOpacity>
+          <YoutubePlayer
+            width={Math.min(Dimensions.get('window').width * .9, 840)}
+            height={Dimensions.get('window').width * 9/16}
+            play={playing}
+            videoId={"cxlxZd7iKQ"}
+            onChangeState={onStateChange}
+          />
+
         </View>
       </ScrollView>
       
