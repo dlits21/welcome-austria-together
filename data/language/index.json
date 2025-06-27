@@ -1,0 +1,31 @@
+
+{
+  "selectLanguage": {
+    "en": "Select Your Language",
+    "de": "Wählen Sie Ihre Sprache",
+    "ru": "Выберите ваш язык",
+    "ce": "Хьан мотт харжа",
+    "prs": "زبان خود را انتخاب کنید",
+    "ps": "خپله ژبه وټاکئ",
+    "fa": "زبان خود را انتخاب کنید",
+    "ar": "اختر لغتك",
+    "ku": "Zimanê xwe hilbijêre",
+    "so": "Dooro luqaddaada",
+    "ka": "აირჩიეთ თქვენი ენა",
+    "sq": "Zgjidhni gjuhën tuaj"
+  },
+  "hoverInstructions": {
+    "de": "Bitte wählen Sie, wenn Deutsch Ihre Muttersprache ist",
+    "en": "Please select if English is your mother tongue",
+    "ru": "Пожалуйста, выберите, если русский - ваш родной язык",
+    "ce": "Дехар до, нохчийн мотт хьан ненан мотт белахь, харжа",
+    "prs": "لطفاً انتخاب کنید اگر دری زبان مادری شماست",
+    "ps": "مهرباني وکړئ غوره کړئ که پښتو ستاسو مورنۍ ژبه وي",
+    "fa": "لطفاً انتخاب کنید اگر فارسی زبان مادری شماست",
+    "ar": "الرجاء التحديد إذا كانت العربية هي لغتك الأم",
+    "ku": "Eger Kurdî zimanê dayîka we ye, ji kerema xwe hilbijêre",
+    "so": "Fadlan dooro haddii Soomaali ay tahay afkaaga hooyo",
+    "ka": "გთხოვთ აირჩიოთ, თუ ქართული თქვენი მშობლიური ენაა",
+    "sq": "Ju lutemi zgjidhni nëse shqipja është gjuha juaj amtare"
+  }
+}

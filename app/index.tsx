@@ -22,17 +22,18 @@ import {
   GeorgianFlag,
   AlbanianFlag
 } from "../components/Flags";
-import {
-    getWelcomeText } from '../data/languages/common';
+import { getWelcomeText } from '../data/languages/common';
 import { useLanguage } from '../contexts/LanguageContext';
+import { getGlobalText, getIndexText } from '../utils/languageUtils';
 
-// Import our new components
+// Import our components
 import LanguageSelectionHeader from "../components/LanguageSelectionHeader";
 import LanguageSelectionGrid from "../components/LanguageSelectionGrid";
 import HoverTooltip from "../components/HoverTooltip";
 import LanguageConfirmation from "../components/LanguageConfirmation";
 import InfoModal from "../components/InfoModal";
 import VirtualAssistantModal from "../components/VirtualAssistantModal";
+import TutorialModal from "../components/TutorialModal";
 
 // Language data with correct flags and languages
 const languages = [
@@ -65,28 +66,12 @@ const confirmationMessages: Record<string, string> = {
   ce: "Хьуна нохчийн мотт хаъий?\n Хӏара приложение хӏинца дуьйна нохчийн маттахь хир ю.\n Хьо и тӏаьхьо хийца йиш ю.",
   prs: "آیا دری را میفهمید؟ این برنامه از این به بعد به زبان دری خواهد بود. شما می‌توانید بعداً این را تغییر دهید.",
   ps: "ایا تاسو پښتو پوهیږئ؟ دا اپلیکیشن به له دې وروسته په پښتو وي. تاسو کولی شئ دا وروسته بدل کړئ.",
-  fa: "آیا فارسی را میفهمید؟ این برنامه از این به بعد به زبان فارسی خواهد بود. شما می‌توانید بعداً ان را تغییر دهید.",
+  fa: "آیا فارسی را میفهمید؟ این برنامه از این به بعد به زبان فارسی خواهد بود. شما می‌توانید ان را تغییر دهید.",
   ar: "هل تفهم العربية؟ سيكون هذا التطبيق باللغة العربية من الآن فصاعدًا. يمكنك تغيير ذلك لاحقًا.",
   ku: "Tu Kurdî fêm dikî?\n Ev sepan ji niha û pê ve bi Kurdî be.\n Tu dikarî vê paşê biguherînî.",
   so: "Ma fahmaysaa Soomaali?\n Abkan wuxuu noqon doonaa Soomaali hadda.\n Waxaad bedeli kartaa mar dambe.",
   ka: "გესმით ქართული? ეს აპლიკაცია ამიერიდან ქართულ ენაზე იქნება.\n შეგიძლიათ ეს შეცვალოთ მოგვიანებით.",
   sq: "A e kuptoni shqip?\n Ky aplikacion do të jetë në shqip nga tani e tutje.\n Mund ta ndryshoni këtë më vonë.",
-};
-
-// Hover messages in each language
-const hoverMessages: Record<string, string> = {
-  de: "Bitte wählen Sie, wenn Deutsch Ihre Muttersprache ist",
-  en: "Please select if English is your mother tongue",
-  ru: "Пожалуйста, выберите, если русский - ваш родной язык",
-  ce: "Дехар до, нохчийн мотт хьан ненан мотт белахь, харжа",
-  prs: "لطفاً انتخاب کنید اگر دری زبان مادری شماست",
-  ps: "مهرباني وکړئ غوره کړئ که پښتو ستاسو مورنۍ ژبه وي",
-  fa: "لطفاً انتخاب کنید اگر فارسی زبان مادری شماست",
-  ar: "الرجاء التحديد إذا كانت العربية هي لغتك الأم",
-  ku: "Eger Kurdî zimanê dayîka we ye, ji kerema xwe hilbijêre",
-  so: "Fadlan dooro haddii Soomaali ay tahay afkaaga hooyo",
-  ka: "გთხოვთ აირჩიოთ, თუ ქართული თქვენი მშობლიური ენაა",
-  sq: "Ju lutemi zgjidhni nëse shqipja është gjuha juaj amtare",
 };
 
 export default function LanguageSelectionScreen() {
@@ -97,9 +82,11 @@ export default function LanguageSelectionScreen() {
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showInfo, setShowInfo] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
+  const [showTutorial, setShowTutorial] = useState(false);
   const [selectedLanguageState, setSelectedLanguageState] = useState<Language | null>(null);
   const [hoverLanguage, setHoverLanguage] = useState<Language | null>(null);
   const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
 
   const animatedScale = useRef(new Animated.Value(1)).current;
   const animatedOpacity = useRef(new Animated.Value(0)).current;
@@ -183,18 +170,41 @@ export default function LanguageSelectionScreen() {
     router.push('/home');
   };
 
-  // Handle hover effect (simulated for touch devices)
+  // Updated hover handlers for web vs mobile detection
   const handlePressIn = (language: Language, event: any) => {
-    setHoverLanguage(language);
-    // Get touch position
-    setHoverPosition({
-      x: event.nativeEvent.locationX + 50,
-      y: event.nativeEvent.locationY,
-    });
+    // For mobile devices, show on press
+    if ('ontouchstart' in window) {
+      setHoverLanguage(language);
+      setHoverPosition({
+        x: event.nativeEvent.locationX + 50,
+        y: event.nativeEvent.locationY,
+      });
+    }
   };
 
   const handlePressOut = () => {
-    setHoverLanguage(null);
+    if ('ontouchstart' in window) {
+      setHoverLanguage(null);
+    }
+  };
+
+  // New hover handlers for web
+  const handleMouseEnter = (language: Language, event: any) => {
+    if (!('ontouchstart' in window)) {
+      setIsHovering(true);
+      setHoverLanguage(language);
+      setHoverPosition({
+        x: event.nativeEvent.locationX + 50,
+        y: event.nativeEvent.locationY,
+      });
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (!('ontouchstart' in window)) {
+      setIsHovering(false);
+      setHoverLanguage(null);
+    }
   };
 
   // Handle virtual assistant close
@@ -204,7 +214,13 @@ export default function LanguageSelectionScreen() {
 
   // Get current welcome message based on index
   const currentWelcomeCode = languages[currentWelcomeIndex]?.code;
-  const currentWelcomeMessage = getWelcomeText(currentWelcomeCode)
+  const currentWelcomeMessage = getWelcomeText(currentWelcomeCode);
+
+  // Get hover messages from language file
+  const hoverMessages: Record<string, string> = {};
+  languages.forEach(lang => {
+    hoverMessages[lang.code] = getIndexText('hoverInstructions', lang.code);
+  });
 
   return (
     <SafeAreaView style={styles.container}>
@@ -222,14 +238,17 @@ export default function LanguageSelectionScreen() {
         soundEnabled={soundEnabled}
         setSoundEnabled={setSoundEnabled}
         showVirtualAssistant={() => setShowVirtualAssistant(true)}
+        showTutorial={() => setShowTutorial(true)}
       />
 
-      {/* Language Grid */}
+      {/* Language Grid with updated hover props */}
       <LanguageSelectionGrid
         languages={languages}
         handleLanguageSelect={handleLanguageSelect}
         handlePressIn={handlePressIn}
         handlePressOut={handlePressOut}
+        handleMouseEnter={handleMouseEnter}
+        handleMouseLeave={handleMouseLeave}
       />
 
       {/* Hover tooltip */}
@@ -259,6 +278,14 @@ export default function LanguageSelectionScreen() {
           </View>
         </Pressable>
       </Modal>
+
+      {/* Tutorial Modal */}
+      <TutorialModal 
+        visible={showTutorial}
+        onClose={() => setShowTutorial(false)}
+        languageCode={currentLanguage}
+        tutorialData="index"
+      />
 
       {/* Info Modal */}
       <InfoModal

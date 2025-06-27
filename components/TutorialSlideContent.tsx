@@ -3,20 +3,24 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import CategoryCard from './CategoryCard';
-import tutorialData from '../data/tutorial/home.json';
+import homeTutorialData from '../data/tutorial/home.json';
+import indexTutorialData from '../data/tutorial/index.json';
 
 interface TutorialSlideContentProps {
   currentSlide: number;
   languageCode: string;
   isWideScreen: boolean;
+  tutorialData?: string;
 }
 
 const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({ 
   currentSlide, 
   languageCode, 
-  isWideScreen 
+  isWideScreen,
+  tutorialData = 'home'
 }) => {
-  const slide = tutorialData.slides.find(s => s.id === currentSlide);
+  const data = tutorialData === 'index' ? indexTutorialData : homeTutorialData;
+  const slide = data.slides.find(s => s.id === currentSlide);
   
   if (!slide) {
     return null;
@@ -25,10 +29,17 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
   const getSlideContent = () => {
     switch (slide.type) {
       case 'welcome':
+      case 'instruction':
+      case 'confirmation':
+      case 'feature':
         return (
           <View style={styles.slideContent}>
             <View style={styles.centerContent}>
-              <MaterialIcons name="info" size={80} color="#3B82F6" />
+              <MaterialIcons 
+                name={getIconForSlide(slide.type, currentSlide)} 
+                size={80} 
+                color={getColorForSlide(slide.type, currentSlide)} 
+              />
               <Text style={styles.slideTitle}>
                 {slide.title[languageCode] || slide.title.en}
               </Text>
@@ -65,27 +76,38 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
           </View>
         );
       
-      case 'feature':
-        return (
-          <View style={styles.slideContent}>
-            <View style={styles.centerContent}>
-              <MaterialIcons 
-                name={currentSlide === 5 ? "mic" : "language"} 
-                size={80} 
-                color={currentSlide === 5 ? "#10B981" : "#8B5CF6"} 
-              />
-              <Text style={styles.slideTitle}>
-                {slide.title[languageCode] || slide.title.en}
-              </Text>
-              <Text style={styles.slideText}>
-                {slide.text[languageCode] || slide.text.en}
-              </Text>
-            </View>
-          </View>
-        );
-      
       default:
         return null;
+    }
+  };
+
+  const getIconForSlide = (type: string, slideIndex: number) => {
+    switch (type) {
+      case 'welcome':
+        return 'info';
+      case 'instruction':
+        return 'touch-app';
+      case 'confirmation':
+        return 'check-circle';
+      case 'feature':
+        return slideIndex === 3 ? 'help' : 'mic';
+      default:
+        return 'info';
+    }
+  };
+
+  const getColorForSlide = (type: string, slideIndex: number) => {
+    switch (type) {
+      case 'welcome':
+        return '#3B82F6';
+      case 'instruction':
+        return '#10B981';
+      case 'confirmation':
+        return '#F59E0B';
+      case 'feature':
+        return slideIndex === 3 ? '#8B5CF6' : '#10B981';
+      default:
+        return '#3B82F6';
     }
   };
 

@@ -9,6 +9,7 @@ interface LanguageSelectionHeaderProps {
   soundEnabled: boolean;
   setSoundEnabled: (enabled: boolean) => void;
   showVirtualAssistant: () => void;
+  showTutorial: () => void;
 }
 
 const LanguageSelectionHeader: React.FC<LanguageSelectionHeaderProps> = ({
@@ -16,7 +17,8 @@ const LanguageSelectionHeader: React.FC<LanguageSelectionHeaderProps> = ({
   setShowInfo,
   soundEnabled,
   setSoundEnabled,
-  showVirtualAssistant
+  showVirtualAssistant,
+  showTutorial
 }) => {
   return (
     <View style={styles.header}>
@@ -27,6 +29,18 @@ const LanguageSelectionHeader: React.FC<LanguageSelectionHeaderProps> = ({
       />
       
       <View style={styles.headerButtons}>
+        {/* Tutorial Button */}
+        <TouchableOpacity 
+          style={styles.iconButton} 
+          onPress={showTutorial}
+        >
+          <MaterialIcons 
+            name="help" 
+            size={24} 
+            color="#333" 
+          />
+        </TouchableOpacity>
+
         {/* Virtual Assistant Toggle */}
         <TouchableOpacity 
           style={styles.iconButton} 
@@ -39,12 +53,12 @@ const LanguageSelectionHeader: React.FC<LanguageSelectionHeaderProps> = ({
           />
         </TouchableOpacity>
         
-        {/* Info Button - Changed to question mark */}
+        {/* Info Button */}
         <TouchableOpacity 
           style={styles.iconButton} 
           onPress={() => setShowInfo(true)}
         >
-          <MaterialIcons name="help" size={24} color="#333" />
+          <MaterialIcons name="info" size={24} color="#333" />
         </TouchableOpacity>
       </View>
     </View>
