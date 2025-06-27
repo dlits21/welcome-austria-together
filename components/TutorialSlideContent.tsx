@@ -21,7 +21,7 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
         return (
           <View style={styles.slideContent}>
             <View style={styles.centerContent}>
-              <MaterialIcons name="info" size={80} color="#3B82F6" />
+              <MaterialIcons name="info" size={isWideScreen ? 64 : 48} color="#3B82F6" />
               <Text style={styles.slideTitle}>
                 {languageCode === 'de' ? 'Willkommen zur Plattform!' : 'Welcome to the Platform!'}
               </Text>
@@ -133,7 +133,7 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
         return (
           <View style={styles.slideContent}>
             <View style={styles.centerContent}>
-              <MaterialIcons name="mic" size={80} color="#10B981" />
+              <MaterialIcons name="record-voice-over" size={isWideScreen ? 64 : 48} color="#10B981" />
               <Text style={styles.slideTitle}>
                 {languageCode === 'de' ? 'Sprach-Assistent' : 'Voice Assistant'}
               </Text>
@@ -149,7 +149,7 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
         return (
           <View style={styles.slideContent}>
             <View style={styles.centerContent}>
-              <MaterialIcons name="language" size={80} color="#8B5CF6" />
+              <MaterialIcons name="language" size={isWideScreen ? 64 : 48} color="#8B5CF6" />
               <Text style={styles.slideTitle}>
                 {languageCode === 'de' ? 'Sprache wechseln' : 'Change Language'}
               </Text>

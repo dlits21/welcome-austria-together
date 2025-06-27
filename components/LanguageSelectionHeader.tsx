@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Text, Image } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 interface LanguageSelectionHeaderProps {
@@ -8,7 +8,7 @@ interface LanguageSelectionHeaderProps {
   setShowInfo: (show: boolean) => void;
   soundEnabled: boolean;
   setSoundEnabled: (enabled: boolean) => void;
-  showVirtualAssistant?: () => void;
+  showVirtualAssistant: () => void;
 }
 
 const LanguageSelectionHeader: React.FC<LanguageSelectionHeaderProps> = ({
@@ -20,7 +20,6 @@ const LanguageSelectionHeader: React.FC<LanguageSelectionHeaderProps> = ({
 }) => {
   return (
     <View style={styles.header}>
-      {/* Logo */}
       <Image 
         source={require('../assets/images/icon simple.png')}
         style={styles.logo}
@@ -28,10 +27,10 @@ const LanguageSelectionHeader: React.FC<LanguageSelectionHeaderProps> = ({
       />
       
       <View style={styles.headerButtons}>
-        {/* Virtual Assistant Button */}
+        {/* Virtual Assistant Toggle */}
         <TouchableOpacity 
           style={styles.iconButton} 
-          onPress={showVirtualAssistant || (() => setSoundEnabled(!soundEnabled))}
+          onPress={showVirtualAssistant}
         >
           <MaterialIcons 
             name="record-voice-over" 
@@ -40,12 +39,12 @@ const LanguageSelectionHeader: React.FC<LanguageSelectionHeaderProps> = ({
           />
         </TouchableOpacity>
         
-        {/* Info Button */}
+        {/* Info Button - Changed to question mark */}
         <TouchableOpacity 
           style={styles.iconButton} 
           onPress={() => setShowInfo(true)}
         >
-          <MaterialIcons name="info" size={24} color="#333" />
+          <MaterialIcons name="help" size={24} color="#333" />
         </TouchableOpacity>
       </View>
     </View>
