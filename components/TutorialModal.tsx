@@ -12,15 +12,22 @@ interface TutorialModalProps {
   onClose: () => void;
   languageCode: string;
   tutorialData?: string; // 'home' or 'index'
+  onVirtualAssistant?: () => void;
 }
 
-const TutorialModal: React.FC<TutorialModalProps> = ({ visible, onClose, languageCode, tutorialData = 'home' }) => {
+const TutorialModal: React.FC<TutorialModalProps> = ({ 
+  visible, 
+  onClose, 
+  languageCode, 
+  tutorialData = 'home',
+  onVirtualAssistant
+}) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const { width } = useWindowDimensions();
   const isWideScreen = width > 768;
 
   // Different slide counts based on tutorial type
-  const totalSlides = tutorialData === 'index' ? 4 : 7;
+  const totalSlides = tutorialData === 'index' ? 6 : 7;
 
   const nextSlide = () => {
     if (currentSlide < totalSlides - 1) {
@@ -76,6 +83,7 @@ const TutorialModal: React.FC<TutorialModalProps> = ({ visible, onClose, languag
               languageCode={languageCode}
               isWideScreen={isWideScreen}
               tutorialData={tutorialData}
+              onVirtualAssistant={onVirtualAssistant}
             />
           </ScrollView>
 

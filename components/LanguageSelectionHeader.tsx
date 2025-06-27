@@ -29,7 +29,7 @@ const LanguageSelectionHeader: React.FC<LanguageSelectionHeaderProps> = ({
       />
       
       <View style={styles.headerButtons}>
-        {/* Tutorial Button */}
+        {/* Tutorial Button - now left-most */}
         <TouchableOpacity 
           style={styles.iconButton} 
           onPress={showTutorial}
@@ -41,7 +41,7 @@ const LanguageSelectionHeader: React.FC<LanguageSelectionHeaderProps> = ({
           />
         </TouchableOpacity>
 
-        {/* Virtual Assistant Toggle */}
+        {/* Virtual Assistant Toggle - now right-most */}
         <TouchableOpacity 
           style={styles.iconButton} 
           onPress={showVirtualAssistant}

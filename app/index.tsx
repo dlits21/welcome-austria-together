@@ -176,8 +176,8 @@ export default function LanguageSelectionScreen() {
     if ('ontouchstart' in window) {
       setHoverLanguage(language);
       setHoverPosition({
-        x: event.nativeEvent.locationX + 50,
-        y: event.nativeEvent.locationY,
+        x: event.nativeEvent.pageX || event.nativeEvent.locationX + 50,
+        y: event.nativeEvent.pageY || event.nativeEvent.locationY,
       });
     }
   };
@@ -194,8 +194,8 @@ export default function LanguageSelectionScreen() {
       setIsHovering(true);
       setHoverLanguage(language);
       setHoverPosition({
-        x: event.nativeEvent.locationX + 50,
-        y: event.nativeEvent.locationY,
+        x: event.nativeEvent.pageX || event.nativeEvent.clientX,
+        y: event.nativeEvent.pageY || event.nativeEvent.clientY,
       });
     }
   };
@@ -210,6 +210,12 @@ export default function LanguageSelectionScreen() {
   // Handle virtual assistant close
   const handleVirtualAssistantClose = () => {
     setShowVirtualAssistant(false);
+  };
+
+  // Handle virtual assistant from tutorial
+  const handleTutorialVirtualAssistant = () => {
+    setShowTutorial(false);
+    setShowVirtualAssistant(true);
   };
 
   // Get current welcome message based on index
@@ -285,6 +291,7 @@ export default function LanguageSelectionScreen() {
         onClose={() => setShowTutorial(false)}
         languageCode={currentLanguage}
         tutorialData="index"
+        onVirtualAssistant={handleTutorialVirtualAssistant}
       />
 
       {/* Info Modal */}

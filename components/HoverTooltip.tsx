@@ -20,8 +20,8 @@ const HoverTooltip: React.FC<HoverTooltipProps> = ({
       style={[
         styles.hoverTooltip,
         {
-          left: Math.max(10, hoverPosition.x - 100), // Center tooltip around touch point
-          top: hoverPosition.y - 60, // Show above the touch point
+          left: Math.max(10, hoverPosition.x - 50), // Closer to mouse position
+          top: hoverPosition.y - 40, // Closer to mouse position
         }
       ]}
     >

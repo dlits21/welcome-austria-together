@@ -3,6 +3,52 @@
   "slides": [
     {
       "id": 0,
+      "type": "assistant",
+      "title": {
+        "en": "Need help finding your language?",
+        "de": "Brauchen Sie Hilfe beim Finden Ihrer Sprache?",
+        "ru": "Нужна помощь в поиске языка?",
+        "ce": "Мотт карор гӀо хила веза?",
+        "prs": "آیا در یافتن زبان خود کمک نیاز دارید؟",
+        "ps": "ایا ستاسو د ژبې موندلو لپاره مرستې ته اړتیا لرئ؟",
+        "fa": "آیا در یافتن زبان خود کمک نیاز دارید؟",
+        "ar": "هل تحتاج مساعدة في العثور على لغتك؟",
+        "ku": "Ji bo dîtina zimanê xwe alîkariyê pêwîst e?",
+        "so": "Ma u baahan tahay caawimo si aad u hesho luqaddaada?",
+        "ka": "გჭირდებათ დახმარება ენის პოვნაში?",
+        "sq": "Keni nevojë për ndihmë për të gjetur gjuhën tuaj?"
+      },
+      "text": {
+        "en": "I'm here to help! If you're unsure which language to choose or need assistance, tap the button below to get personalized help.",
+        "de": "Ich bin hier, um zu helfen! Wenn Sie unsicher sind, welche Sprache Sie wählen sollen oder Hilfe benötigen, tippen Sie auf die Schaltfläche unten, um personalisierte Hilfe zu erhalten.",
+        "ru": "Я здесь, чтобы помочь! Если вы не уверены, какой язык выбрать, или нуждаетесь в помощи, нажмите кнопку ниже, чтобы получить персональную помощь.",
+        "ce": "Аз ахьа ван гӀо латторехь! Хьуна хетарг йац муьлха мотт харжар я гӀо хила веза, лахара кнопка теха гӀо лор.",
+        "prs": "من اینجا هستم تا کمک کنم! اگر مطمئن نیستید که کدام زبان را انتخاب کنید یا به کمک نیاز دارید، دکمه زیر را فشار دهید تا کمک شخصی‌سازی شده دریافت کنید.",
+        "ps": "زه دلته د مرستې لپاره یم! که تاسو ډاډه نه یاست چې کومه ژبه وټاکئ یا مرستې ته اړتیا لرئ، د شخصي مرستې ترلاسه کولو لپاره لاندې تڼۍ فشار ورکړئ.",
+        "fa": "من اینجا هستم تا کمک کنم! اگر مطمئن نیستید که کدام زبان را انتخاب کنید یا به کمک نیاز دارید، دکمه زیر را فشار دهید تا کمک شخصی‌سازی شده دریافت کنید.",
+        "ar": "أنا هنا للمساعدة! إذا كنت غير متأكد من اللغة التي تختارها أو تحتاج إلى مساعدة، اضغط على الزر أدناه للحصول على مساعدة شخصية.",
+        "ku": "Ez li vir im ku alîkarî bikim! Eger hûn ne bawer in ka kîjan ziman hilbijêrin an jî hewce ne alîkariyê, li bişkoka jêrîn bitikînin da ku alîkariya kesane bistînin.",
+        "so": "Waxaan halkan ku jiraa in aan kaa caawiyo! Haddii aadan hubin luqadda aad dooranayso ama aad u baahan tahay caawimo, riix batoonka hoose si aad u hesho caawimo gaara.",
+        "ka": "მე აქ ვარ დასახმარებლად! თუ არ ხართ დარწმუნებული რომელი ენა აირჩიოთ ან გჭირდებათ დახმარება, დააჭირეთ ქვემოთ ღილაკს პერსონალიზებული დახმარების მისაღებად.",
+        "sq": "Jam këtu për të ndihmuar! Nëse nuk jeni të sigurt se cilën gjuhë të zgjidhni ose keni nevojë për ndihmë, prekni butonin më poshtë për të marrë ndihmë të personalizuar."
+      },
+      "buttonText": {
+        "en": "Get Help Now",
+        "de": "Jetzt Hilfe holen",
+        "ru": "Получить помощь сейчас",
+        "ce": "Хlинца гlо ло",
+        "prs": "اکنون کمک بگیرید",
+        "ps": "اوس مرسته واخلئ",
+        "fa": "اکنون کمک بگیرید",
+        "ar": "احصل على المساعدة الآن",
+        "ku": "Niha alîkarî bistînin",
+        "so": "Hel caawimo hadda",
+        "ka": "მიიღეთ დახმარება ახლა",
+        "sq": "Merrni ndihmë tani"
+      }
+    },
+    {
+      "id": 1,
       "type": "welcome",
       "title": {
         "en": "Welcome to Welcome Austria Together",
@@ -34,7 +80,7 @@
       }
     },
     {
-      "id": 1,
+      "id": 2,
       "type": "instruction",
       "title": {
         "en": "Select Your Language",
@@ -66,7 +112,7 @@
       }
     },
     {
-      "id": 2,
+      "id": 3,
       "type": "confirmation",
       "title": {
         "en": "Confirm Your Choice",
@@ -96,10 +142,11 @@
         "ka": "ენის არჩევის შემდეგ თქვენ ნახავთ დადასტურების ფანჯარას ამგვარს. შეგიძლიათ მიღება ან უარყოფა. ნუ ინერვიულებთ - ყოველთვის შეგიძლიათ შეცვალოთ ენის პარამეტრები მოგვიანებით აპლიკაციის პარამეტრებში. აირჩიეთ ის ენა, რომელის კითხვა და გაგება ყველაზე კომფორტულია.",
         "sq": "Pas zgjedhjes së një gjuhe, do të shihni një dritare konfirmimi si kjo. Mund ta pranoni ose refuzoni zgjedhjen. Mos u shqetësoni - gjithmonë mund të ndryshoni preferencat e gjuhës më vonë në cilësimet e aplikacionit. Zgjidhni gjuhën me të cilën ndiheni më rehat në lexim dhe kuptim."
       },
-      "showConfirmation": true
+      "showConfirmation": true,
+      "showFlag": true
     },
     {
-      "id": 3,
+      "id": 4,
       "type": "feature",
       "title": {
         "en": "Virtual Assistant",
@@ -131,7 +178,7 @@
       }
     },
     {
-      "id": 4,
+      "id": 5,
       "type": "feature",
       "title": {
         "en": "Get Help Anytime",

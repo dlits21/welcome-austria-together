@@ -1,8 +1,9 @@
 
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import CategoryCard from './CategoryCard';
+import { GermanFlag } from './Flags';
 import homeTutorialData from '../data/tutorial/home.json';
 import indexTutorialData from '../data/tutorial/index.json';
 
@@ -11,13 +12,15 @@ interface TutorialSlideContentProps {
   languageCode: string;
   isWideScreen: boolean;
   tutorialData?: string;
+  onVirtualAssistant?: () => void;
 }
 
 const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({ 
   currentSlide, 
   languageCode, 
   isWideScreen,
-  tutorialData = 'home'
+  tutorialData = 'home',
+  onVirtualAssistant
 }) => {
   const data = tutorialData === 'index' ? indexTutorialData : homeTutorialData;
   const slide = data.slides.find(s => s.id === currentSlide);
@@ -28,6 +31,36 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
 
   const getSlideContent = () => {
     switch (slide.type) {
+      case 'assistant':
+        return (
+          <View style={styles.slideContent}>
+            <View style={styles.assistantContainer}>
+              <Image 
+                source={require('../assets/images/assistant.jpg')}
+                style={styles.assistantImage}
+                resizeMode="cover"
+              />
+              <View style={styles.speechBubble}>
+                <Text style={styles.speechText}>
+                  {slide.title[languageCode] || slide.title.en}
+                </Text>
+                <View style={styles.speechArrow} />
+              </View>
+            </View>
+            <Text style={styles.assistantDescription}>
+              {slide.text[languageCode] || slide.text.en}
+            </Text>
+            <TouchableOpacity 
+              style={styles.assistantButton}
+              onPress={onVirtualAssistant}
+            >
+              <Text style={styles.assistantButtonText}>
+                {slide.buttonText?.[languageCode] || slide.buttonText?.en || 'Get Help Now'}
+              </Text>
+            </TouchableOpacity>
+          </View>
+        );
+      
       case 'welcome':
       case 'instruction':
       case 'feature':
@@ -55,6 +88,7 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
             <View style={[styles.confirmationDemo, isWideScreen && styles.confirmationDemoWide]}>
               <View style={styles.mockConfirmationWindow}>
                 <View style={styles.mockHeader}>
+                  <GermanFlag style={styles.mockFlag} />
                   <Text style={styles.mockTitle}>Deutsch</Text>
                 </View>
                 <Text style={styles.mockMessage}>
@@ -121,7 +155,7 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
       case 'confirmation':
         return 'check-circle';
       case 'feature':
-        return slideIndex === 3 ? 'record-voice-over' : slideIndex === 4 ? 'help' : 'mic';
+        return slideIndex === 4 ? 'record-voice-over' : slideIndex === 5 ? 'help' : 'mic';
       default:
         return 'info';
     }
@@ -136,7 +170,7 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
       case 'confirmation':
         return '#F59E0B';
       case 'feature':
-        return slideIndex === 3 ? '#10B981' : slideIndex === 4 ? '#8B5CF6' : '#10B981';
+        return slideIndex === 4 ? '#10B981' : slideIndex === 5 ? '#8B5CF6' : '#10B981';
       default:
         return '#3B82F6';
     }
@@ -163,6 +197,71 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     textAlign: 'center',
+  },
+  assistantContainer: {
+    alignItems: 'center',
+    marginBottom: 24,
+    position: 'relative',
+  },
+  assistantImage: {
+    width: 120,
+    height: 120,
+    borderRadius: 60,
+    marginBottom: 20,
+  },
+  speechBubble: {
+    backgroundColor: '#f0f0f0',
+    padding: 16,
+    borderRadius: 20,
+    maxWidth: 280,
+    position: 'relative',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  speechText: {
+    fontSize: 16,
+    textAlign: 'center',
+    color: '#333',
+    fontWeight: '500',
+  },
+  speechArrow: {
+    position: 'absolute',
+    top: -10,
+    left: '50%',
+    marginLeft: -10,
+    width: 0,
+    height: 0,
+    borderLeftWidth: 10,
+    borderRightWidth: 10,
+    borderBottomWidth: 10,
+    borderLeftColor: 'transparent',
+    borderRightColor: 'transparent',
+    borderBottomColor: '#f0f0f0',
+  },
+  assistantDescription: {
+    fontSize: 16,
+    lineHeight: 24,
+    textAlign: 'center',
+    color: '#666',
+    marginBottom: 24,
+  },
+  assistantButton: {
+    backgroundColor: '#3B82F6',
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 25,
+    alignSelf: 'center',
+  },
+  assistantButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: '600',
   },
   confirmationDemo: {
     alignItems: 'center',
@@ -196,6 +295,12 @@ const styles = StyleSheet.create({
   mockHeader: {
     alignItems: 'center',
     marginBottom: 16,
+  },
+  mockFlag: {
+    width: 40,
+    height: 24,
+    borderRadius: 4,
+    marginBottom: 8,
   },
   mockTitle: {
     fontSize: 20,
