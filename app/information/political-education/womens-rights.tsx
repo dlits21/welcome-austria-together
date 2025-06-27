@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { StyleSheet, Text, View, SafeAreaView, ScrollView, TouchableOpacity, Linking, Dimensions, Alert } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, ScrollView, TouchableOpacity, Linking, Dimensions } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useLanguage } from '../../../contexts/LanguageContext';
 import { languages } from '../../../data/languages/common';
@@ -14,9 +14,6 @@ const WomensRightsPage: React.FC = () => {
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
   const [playing, setPlaying] = useState(false);
-  const [videoError, setVideoError] = useState(false);
-  
-  const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
   const onStateChange = useCallback((state) => {
     if (state === "ended") {
@@ -24,10 +21,8 @@ const WomensRightsPage: React.FC = () => {
       Alert.alert("video has finished playing!");
     }
   }, []);
-
-  const onError = useCallback(() => {
-    setVideoError(true);
-  }, []);
+  
+  const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
   const toggleSound = () => {
     setSoundEnabled(!soundEnabled);
@@ -163,22 +158,14 @@ Verfügbare Unterstützungsdienste:
             {language.code === 'de' ? 'Video' : 'Video'}
           </Text>
           
-          {videoError ? (
-            <View style={styles.errorContainer}>
-              <Text style={styles.errorText}>
-                {language.code === 'de' ? 'Video derzeit nicht verfügbar' : 'Video unavailable right now'}
-              </Text>
-            </View>
-          ) : (
-            <YoutubePlayer
-              width={Math.min(Dimensions.get('window').width * .9, 840)}
-              height={Dimensions.get('window').width * 9/16}
-              play={playing}
-              videoId={"cxlxZd7iKQ"}
-              onChangeState={onStateChange}
-              onError={onError}
-            />
-          )}
+          <YoutubePlayer
+            width={Math.min(Dimensions.get('window').width * .9, 840)}
+            height={Dimensions.get('window').width * 9/16}
+            play={playing}
+            videoId={"-cxlxZd7iKQ"}
+            onChangeState={onStateChange}
+          />
+
         </View>
       </ScrollView>
       
@@ -273,20 +260,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '600',
     color: '#fff',
-    textAlign: 'center',
-  },
-  errorContainer: {
-    backgroundColor: '#f8fafc',
-    borderRadius: 8,
-    padding: 40,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderWidth: 1,
-    borderColor: '#e2e8f0',
-  },
-  errorText: {
-    fontSize: 16,
-    color: '#64748b',
     textAlign: 'center',
   },
 });
