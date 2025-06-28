@@ -15,7 +15,7 @@ const PageNavigation: React.FC<PageNavigationProps> = ({
   showLanguageModal,
   showVirtualAssistant,
   showTutorial,
-  showBackButton = false
+  showBackButton = true
 }) => {
   const router = useRouter();
 
@@ -33,7 +33,7 @@ const PageNavigation: React.FC<PageNavigationProps> = ({
       
       <View style={styles.rightButtons}>
         <TouchableOpacity onPress={showVirtualAssistant} style={styles.button}>
-          <MaterialIcons name="smart-toy" size={24} color="#333" />
+          <MaterialIcons name="record-voice-over" size={24} color="#333" />
         </TouchableOpacity>
         
         <TouchableOpacity onPress={showLanguageModal} style={styles.button}>
