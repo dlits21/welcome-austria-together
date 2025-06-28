@@ -1,24 +1,21 @@
 
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 interface TutorialIndicatorsProps {
   totalSlides: number;
   currentSlide: number;
-  onSlidePress: (index: number) => void;
 }
 
 const TutorialIndicators: React.FC<TutorialIndicatorsProps> = ({ 
   totalSlides, 
-  currentSlide,
-  onSlidePress
+  currentSlide 
 }) => {
   return (
     <View style={styles.slideIndicators}>
       {Array.from({ length: totalSlides }).map((_, index) => (
-        <TouchableOpacity
+        <View
           key={index}
-          onPress={() => onSlidePress(index)}
           style={[
             styles.indicator,
             index === currentSlide && styles.activeIndicator

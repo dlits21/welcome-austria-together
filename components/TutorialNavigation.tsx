@@ -7,7 +7,7 @@ import { getGlobalText } from '../utils/languageUtils';
 interface TutorialNavigationProps {
   currentSlide: number;
   totalSlides: number;
-  onPrev: () => void;
+  onPrevious: () => void;
   onNext: () => void;
   onPlayAudio: () => void;
   onDone: () => void;
@@ -17,7 +17,7 @@ interface TutorialNavigationProps {
 const TutorialNavigation: React.FC<TutorialNavigationProps> = ({
   currentSlide,
   totalSlides,
-  onPrev,
+  onPrevious,
   onNext,
   onPlayAudio,
   onDone,
@@ -29,7 +29,7 @@ const TutorialNavigation: React.FC<TutorialNavigationProps> = ({
     <View style={styles.navigationContainer}>
       <TouchableOpacity
         style={[styles.navButton, currentSlide === 0 && styles.navButtonDisabled]}
-        onPress={onPrev}
+        onPress={onPrevious}
         disabled={currentSlide === 0}
       >
         <MaterialIcons 

@@ -1,57 +1,36 @@
 
-import React, { useState, useEffect } from 'react';
-import { Modal, View, StyleSheet, Dimensions, Platform } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, Modal, ScrollView, useWindowDimensions } from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons';
 import TutorialSlideContent from './TutorialSlideContent';
-import TutorialNavigation from './TutorialNavigation';
 import TutorialIndicators from './TutorialIndicators';
-
-// Import tutorial data
-import indexTutorialData from '../data/tutorial/index.json';
-import askTutorialData from '../data/tutorial/ask.json';
-import askGeneralTutorialData from '../data/tutorial/ask/general.json';
+import TutorialNavigation from './TutorialNavigation';
+import { getGlobalText } from '../utils/languageUtils';
 
 interface TutorialModalProps {
   visible: boolean;
   onClose: () => void;
   languageCode: string;
-  tutorialType?: 'index' | 'ask' | 'ask-general';
+  tutorialData?: string; // 'home' or 'index'
   onVirtualAssistant?: () => void;
 }
 
-const TutorialModal: React.FC<TutorialModalProps> = ({
-  visible,
-  onClose,
-  languageCode,
-  tutorialType = 'index',
+const TutorialModal: React.FC<TutorialModalProps> = ({ 
+  visible, 
+  onClose, 
+  languageCode, 
+  tutorialData = 'home',
   onVirtualAssistant
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const { width, height } = Dimensions.get('window');
+  const { width } = useWindowDimensions();
   const isWideScreen = width > 768;
 
-  // Get tutorial data based on type
-  let tutorialData;
-  switch (tutorialType) {
-    case 'ask-general':
-      tutorialData = askGeneralTutorialData;
-      break;
-    case 'ask':
-      tutorialData = askTutorialData;
-      break;
-    default:
-      tutorialData = indexTutorialData;
-  }
-  
-  const slides = tutorialData.slides;
-
-  useEffect(() => {
-    if (visible) {
-      setCurrentSlide(0);
-    }
-  }, [visible]);
+  // Different slide counts based on tutorial type
+  const totalSlides = tutorialData === 'index' ? 6 : 7;
 
   const nextSlide = () => {
-    if (currentSlide < slides.length - 1) {
+    if (currentSlide < totalSlides - 1) {
       setCurrentSlide(currentSlide + 1);
     }
   };
@@ -62,48 +41,60 @@ const TutorialModal: React.FC<TutorialModalProps> = ({
     }
   };
 
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
+  const handleClose = () => {
+    setCurrentSlide(0);
+    onClose();
   };
 
-  const handlePlayAudio = () => {
-    // Audio functionality can be implemented later
-    console.log('Play audio for slide:', currentSlide);
+  const playAudio = () => {
+    // TODO: Implement audio playback functionality
+    console.log('Play audio for current slide:', currentSlide);
   };
-
-  if (!visible) return null;
 
   return (
     <Modal
       visible={visible}
+      transparent={true}
       animationType="slide"
-      transparent={false}
-      statusBarTranslucent={Platform.OS === 'android'}
+      onRequestClose={handleClose}
     >
-      <View style={[styles.container, isWideScreen && styles.wideContainer]}>
-        <View style={[styles.content, isWideScreen && styles.wideContent]}>
-          <TutorialSlideContent
-            slide={slides[currentSlide]}
-            languageCode={languageCode}
-            tutorialType={tutorialType}
-            onVirtualAssistant={onVirtualAssistant}
-          />
-        </View>
-        
-        <View style={styles.footer}>
-          <TutorialIndicators
-            totalSlides={slides.length}
+      <View style={styles.modalOverlay}>
+        <View style={[styles.modalContent, isWideScreen && styles.modalContentWide]}>
+          {/* Header */}
+          <View style={styles.modalHeader}>
+            <Text style={styles.modalTitle}>
+              {getGlobalText('tutorial', languageCode)}
+            </Text>
+            <TouchableOpacity onPress={handleClose}>
+              <MaterialIcons name="close" size={24} color="#333" />
+            </TouchableOpacity>
+          </View>
+
+          {/* Slide Indicators */}
+          <TutorialIndicators 
+            totalSlides={totalSlides}
             currentSlide={currentSlide}
-            onSlidePress={goToSlide}
           />
-          
-          <TutorialNavigation
+
+          {/* Slide Content */}
+          <ScrollView style={styles.slideContainer} showsVerticalScrollIndicator={false}>
+            <TutorialSlideContent 
+              currentSlide={currentSlide}
+              languageCode={languageCode}
+              isWideScreen={isWideScreen}
+              tutorialData={tutorialData}
+              onVirtualAssistant={onVirtualAssistant}
+            />
+          </ScrollView>
+
+          {/* Navigation */}
+          <TutorialNavigation 
             currentSlide={currentSlide}
-            totalSlides={slides.length}
+            totalSlides={totalSlides}
+            onPrevious={prevSlide}
             onNext={nextSlide}
-            onPrev={prevSlide}
-            onPlayAudio={handlePlayAudio}
-            onDone={onClose}
+            onPlayAudio={playAudio}
+            onDone={handleClose}
             languageCode={languageCode}
           />
         </View>
@@ -113,34 +104,38 @@ const TutorialModal: React.FC<TutorialModalProps> = ({
 };
 
 const styles = StyleSheet.create({
-  container: {
+  modalOverlay: {
     flex: 1,
-    backgroundColor: '#fff',
-    paddingTop: Platform.OS === 'ios' ? 50 : 30,
-  },
-  wideContainer: {
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
     justifyContent: 'center',
     alignItems: 'center',
   },
-  content: {
-    flex: 1,
-    padding: 20,
-  },
-  wideContent: {
-    maxWidth: 800,
-    maxHeight: 600,
+  modalContent: {
+    width: '95%',
+    maxWidth: 600,
+    height: '85%',
     backgroundColor: '#fff',
-    borderRadius: 16,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.1,
-    shadowRadius: 8,
-    elevation: 8,
+    borderRadius: 12,
+    overflow: 'hidden',
   },
-  footer: {
-    padding: 20,
-    borderTopWidth: 1,
-    borderTopColor: '#e0e0e0',
+  modalContentWide: {
+    maxWidth: 900,
+    height: '90%',
+  },
+  modalHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: '#eee',
+  },
+  modalTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  slideContainer: {
+    flex: 1,
   },
 });
 
