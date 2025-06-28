@@ -11,7 +11,7 @@ interface TutorialModalProps {
   visible: boolean;
   onClose: () => void;
   languageCode: string;
-  tutorialData?: string; // 'home' or 'index'
+  tutorialData?: string; // 'home', 'index', or 'ask'
   onVirtualAssistant?: () => void;
 }
 
@@ -27,7 +27,18 @@ const TutorialModal: React.FC<TutorialModalProps> = ({
   const isWideScreen = width > 768;
 
   // Different slide counts based on tutorial type
-  const totalSlides = tutorialData === 'index' ? 6 : 7;
+  const getTotalSlides = () => {
+    switch (tutorialData) {
+      case 'index':
+        return 6;
+      case 'ask':
+        return 6; // Based on the ask.json structure
+      default:
+        return 7; // home tutorial
+    }
+  };
+
+  const totalSlides = getTotalSlides();
 
   const nextSlide = () => {
     if (currentSlide < totalSlides - 1) {

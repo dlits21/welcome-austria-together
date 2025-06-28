@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -5,6 +6,7 @@ import CategoryCard from './CategoryCard';
 import { GermanFlag } from './Flags';
 import homeTutorialData from '../data/tutorial/home.json';
 import indexTutorialData from '../data/tutorial/index.json';
+import askTutorialData from '../data/tutorial/ask.json';
 import { getGlobalText } from '../utils/languageUtils';
 
 interface TutorialSlideContentProps {
@@ -39,7 +41,19 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
   onVirtualAssistant
 }) => {
   const [currentLanguageIndex, setCurrentLanguageIndex] = useState(0);
-  const data = tutorialData === 'index' ? indexTutorialData : homeTutorialData;
+  
+  const getData = () => {
+    switch (tutorialData) {
+      case 'index':
+        return indexTutorialData;
+      case 'ask':
+        return askTutorialData;
+      default:
+        return homeTutorialData;
+    }
+  };
+  
+  const data = getData();
   const slide = data.slides.find(s => s.id === currentSlide);
 
   // Rotate all text every 5 seconds for the first slide
