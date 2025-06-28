@@ -5,33 +5,19 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 
 interface PageNavigationProps {
-  toggleSound?: () => void;
-  soundEnabled?: boolean;
   showLanguageModal: () => void;
-  showHelpModal?: () => void;
   showVirtualAssistant: () => void;
-  showTutorial?: () => void;
+  showTutorial: () => void;
   showBackButton?: boolean;
 }
 
 const PageNavigation: React.FC<PageNavigationProps> = ({
-  toggleSound,
-  soundEnabled,
   showLanguageModal,
-  showHelpModal,
   showVirtualAssistant,
   showTutorial,
   showBackButton = false
 }) => {
   const router = useRouter();
-
-  const handleHelpPress = () => {
-    if (showTutorial) {
-      showTutorial();
-    } else if (showHelpModal) {
-      showHelpModal();
-    }
-  };
 
   const handleBackPress = () => {
     router.back();
@@ -54,7 +40,7 @@ const PageNavigation: React.FC<PageNavigationProps> = ({
           <MaterialIcons name="language" size={24} color="#333" />
         </TouchableOpacity>
         
-        <TouchableOpacity onPress={handleHelpPress} style={styles.button}>
+        <TouchableOpacity onPress={showTutorial} style={styles.button}>
           <MaterialIcons name="help" size={24} color="#333" />
         </TouchableOpacity>
       </View>
