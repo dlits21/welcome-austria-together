@@ -15,13 +15,15 @@ interface TutorialModalProps {
   onClose: () => void;
   languageCode: string;
   tutorialType?: 'index' | 'ask' | 'ask-general';
+  onVirtualAssistant?: () => void;
 }
 
 const TutorialModal: React.FC<TutorialModalProps> = ({
   visible,
   onClose,
   languageCode,
-  tutorialType = 'index'
+  tutorialType = 'index',
+  onVirtualAssistant
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const { width, height } = Dimensions.get('window');
@@ -64,6 +66,11 @@ const TutorialModal: React.FC<TutorialModalProps> = ({
     setCurrentSlide(index);
   };
 
+  const handlePlayAudio = () => {
+    // Audio functionality can be implemented later
+    console.log('Play audio for slide:', currentSlide);
+  };
+
   if (!visible) return null;
 
   return (
@@ -79,7 +86,7 @@ const TutorialModal: React.FC<TutorialModalProps> = ({
             slide={slides[currentSlide]}
             languageCode={languageCode}
             tutorialType={tutorialType}
-            onVirtualAssistant={onClose}
+            onVirtualAssistant={onVirtualAssistant}
           />
         </View>
         
@@ -95,7 +102,8 @@ const TutorialModal: React.FC<TutorialModalProps> = ({
             totalSlides={slides.length}
             onNext={nextSlide}
             onPrev={prevSlide}
-            onClose={onClose}
+            onPlayAudio={handlePlayAudio}
+            onDone={onClose}
             languageCode={languageCode}
           />
         </View>
