@@ -139,22 +139,22 @@ const GeneralSupport: React.FC = () => {
           <ContactButton 
             title="WhatsApp" 
             iconPath={WhatsAppIcon}
-            onPress={() => handleContactClick('../assets/images/whatsapp.svg', true, language.code)}
+            onPress={() => handleContactClick('whatsapp', true, language.code)}
           />
           <ContactButton 
             title="Signal" 
             iconPath={SignalIcon}
-            onPress={() => handleContactClick('../assets/images/signal.svg', true, language.code)}
+            onPress={() => handleContactClick('signal', true, language.code)}
           />
           <ContactButton 
             title="Telegram" 
             iconPath={TelegramIcon}
-            onPress={() => handleContactClick('../assets/images/telegram.svg', true, language.code)}
+            onPress={() => handleContactClick('telegram', true, language.code)}
           />
           <ContactButton 
             title="Facebook" 
             iconPath={FacebookIcon}
-            onPress={() => handleContactClick('../assets/images/facebook.svg', true, language.code)}
+            onPress={() => handleContactClick('facebook', true, language.code)}
           />
           <ContactButton 
             title="Email" 
@@ -179,17 +179,17 @@ const GeneralSupport: React.FC = () => {
           <ContactButton 
             title="WhatsApp" 
             iconPath={WhatsAppIcon}
-            onPress={() => handleContactClick('../assets/images/whatsapp.svg', false, language.code)}
+            onPress={() => handleContactClick('whatsapp', false, language.code)}
           />
           <ContactButton 
             title="Signal" 
             iconPath={SignalIcon}
-            onPress={() => handleContactClick('../assets/images/signal.svg', false, language.code)}
+            onPress={() => handleContactClick('signal', false, language.code)}
           />
           <ContactButton 
             title="Telegram" 
             iconPath={TelegramIcon}
-            onPress={() => handleContactClick('../assets/images/telegram.svg', false, language.code)}
+            onPress={() => handleContactClick('telegram', false, language.code)}
           />
           <ContactButton 
             title="Forum" 
