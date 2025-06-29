@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { 
   StyleSheet, 
@@ -77,40 +76,23 @@ const GeneralSupport: React.FC = () => {
     { name: 'Burgenland', nameDe: 'Burgenland', address: 'Hauptstraße 31, 7000 Eisenstadt' },
   ];
 
-  // FAQ data
-  const faqData = language.code === 'de' ? [
+  // Multi-lingual FAQ data using translations
+  const faqData = [
     {
-      question: 'Wie kann ich einen Termin vereinbaren?',
-      answer: 'Sie können einen Termin über unsere Website, per Telefon oder direkt in einer unserer Filialen vereinbaren.'
+      question: getGeneralText('faqQuestion1', currentLanguage),
+      answer: getGeneralText('faqAnswer1', currentLanguage)
     },
     {
-      question: 'Welche Dokumente benötige ich?',
-      answer: 'Die benötigten Dokumente hängen von Ihrem Anliegen ab. Kontaktieren Sie uns für spezifische Informationen.'
+      question: getGeneralText('faqQuestion2', currentLanguage),
+      answer: getGeneralText('faqAnswer2', currentLanguage)
     },
     {
-      question: 'Gibt es Gebühren für die Beratung?',
-      answer: 'Die erste Beratung ist kostenlos. Weitere Dienstleistungen können kostenpflichtig sein.'
+      question: getGeneralText('faqQuestion3', currentLanguage),
+      answer: getGeneralText('faqAnswer3', currentLanguage)
     },
     {
-      question: 'In welchen Sprachen wird Unterstützung angeboten?',
-      answer: 'Wir bieten Unterstützung in Deutsch, Englisch und vielen anderen Sprachen an.'
-    }
-  ] : [
-    {
-      question: 'How can I schedule an appointment?',
-      answer: 'You can schedule an appointment through our website, by phone, or directly at one of our offices.'
-    },
-    {
-      question: 'What documents do I need?',
-      answer: 'Required documents depend on your specific needs. Contact us for specific information about your situation.'
-    },
-    {
-      question: 'Are there fees for consultation?',
-      answer: 'The first consultation is free. Additional services may have fees.'
-    },
-    {
-      question: 'What languages is support offered in?',
-      answer: 'We offer support in German, English, and many other languages.'
+      question: getGeneralText('faqQuestion4', currentLanguage),
+      answer: getGeneralText('faqAnswer4', currentLanguage)
     }
   ];
 

@@ -15,10 +15,17 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { languages } from '../../data/languages/common';
 import PageNavigation from '../../components/PageNavigation';
-import BaseQuizModal from '../../components/BaseQuizModal';
 import LanguageModal from '../../components/LanguageModal';
-import HelpModal from '../../components/HelpModal';
 import VirtualAssistantModal from '../../components/VirtualAssistantModal';
+import TutorialModal from '../../components/TutorialModal';
+
+// Import emergency translations
+import emergencyTranslations from '../../data/language/ask/emergency.json';
+
+const getEmergencyText = (key: string, languageCode: string): string => {
+  const translation = emergencyTranslations[key as keyof typeof emergencyTranslations];
+  return translation?.[languageCode as keyof typeof translation] || translation?.en || key;
+};
 
 interface EmergencyContact {
   name: { en: string; de: string };
@@ -39,10 +46,9 @@ const EmergencySupport: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
-  const [showHelpModal, setShowHelpModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
+  const [showTutorial, setShowTutorial] = useState(false);
 
-  const [showQuiz, setShowQuiz] = useState(true);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedEmergency, setSelectedEmergency] = useState<EmergencyContact | null>(null);
   const [showContactModal, setShowContactModal] = useState(false);
@@ -174,9 +180,6 @@ const EmergencySupport: React.FC = () => {
     if (category.contacts.length === 1) {
       setSelectedEmergency(category.contacts[0]);
       setShowContactModal(true);
-    } else {
-      // Show quiz for categories with multiple contacts
-      setShowQuiz(true);
     }
   };
 
@@ -211,7 +214,6 @@ const EmergencySupport: React.FC = () => {
   };
 
   const resetQuiz = () => {
-    setShowQuiz(true);
     setCurrentQuestion(0);
     setShowContactModal(false);
     setSelectedEmergency(null);
@@ -224,21 +226,17 @@ const EmergencySupport: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <PageNavigation 
-        toggleSound={toggleSound}
-        soundEnabled={soundEnabled}
         showLanguageModal={() => setShowLanguageModal(true)}
-        showHelpModal={() => setShowHelpModal(true)}
         showVirtualAssistant={() => setShowVirtualAssistant(true)}
+        showTutorial={() => setShowTutorial(true)}
       />
       
       <View style={styles.content}>
         <Text style={styles.title}>
-          {language.code === 'de' ? 'Notfall-Kontakte' : 'Emergency Contacts'}
+          {getEmergencyText('emergencyContacts', currentLanguage)}
         </Text>
         <Text style={styles.description}>
-          {language.code === 'de' 
-            ? 'Schneller Zugang zu wichtigen Notfall-Kontakten'
-            : 'Quick access to important emergency contacts'}
+          {getEmergencyText('quickAccess', currentLanguage)}
         </Text>
 
         <ScrollView style={styles.gridContainer} showsVerticalScrollIndicator={false}>
@@ -317,26 +315,25 @@ const EmergencySupport: React.FC = () => {
           </View>
         </Modal>
       </View>
-       {/* Language Modal */}
-        <LanguageModal
-          visible={showLanguageModal}
-          onClose={() => setShowLanguageModal(false)}
-          languageCode={language.code}
-        />
+       
+      <LanguageModal
+        visible={showLanguageModal}
+        onClose={() => setShowLanguageModal(false)}
+        languageCode={language.code}
+      />
 
-        {/* Help Modal */}
-        <HelpModal
-          visible={showHelpModal}
-          onClose={() => setShowHelpModal(false)}
-          languageCode={language.code}
-        />
+      <VirtualAssistantModal
+        visible={showVirtualAssistant}
+        onClose={() => setShowVirtualAssistant(false)}
+        languageCode={language.code}
+      />
 
-        {/* Virtual Assistant Modal */}
-        <VirtualAssistantModal
-          visible={showVirtualAssistant}
-          onClose={() => setShowVirtualAssistant(false)}
-          languageCode={language.code}
-        />
+      <TutorialModal
+        visible={showTutorial}
+        onClose={() => setShowTutorial(false)}
+        languageCode={language.code}
+        tutorialData="ask-emergency"
+      />
     </SafeAreaView>
   );
 };

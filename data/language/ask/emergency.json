@@ -1,0 +1,31 @@
+
+{
+  "emergencyContacts": {
+    "en": "Emergency Contacts",
+    "de": "Notfall-Kontakte",
+    "ru": "Экстренные контакты",
+    "ce": "Гӏайгӏа контакташ",
+    "prs": "مخاطبین اضطراری",
+    "ps": "بیړني اړیکې",
+    "fa": "تماس‌های اضطراری",
+    "ar": "جهات الاتصال الطارئة",
+    "ku": "پەیوەندییە لەناکاوەکان",
+    "so": "Xiriirka Degdegga ah",
+    "ka": "გადაუდებელი კონტაქტები",
+    "sq": "Kontaktet e urgjencës"
+  },
+  "quickAccess": {
+    "en": "Quick access to important emergency contacts",
+    "de": "Schneller Zugang zu wichtigen Notfall-Kontakten",
+    "ru": "Быстрый доступ к важным экстренным контактам",
+    "ce": "Мухlимма гӏайгӏа контакташна арахецар",
+    "prs": "دسترسی سریع به مخاطبین مهم اضطراری",
+    "ps": "مهمو بیړنیو اړیکو ته ګړندي لاسرسی",
+    "fa": "دسترسی سریع به تماس‌های مهم اضطراری",
+    "ar": "وصول سريع إلى جهات الاتصال الطارئة المهمة",
+    "ku": "دەستگەیشتنی خێرا بە پەیوەندییە گرنگە لەناکاوەکان",
+    "so": "Helid degdeg ah xiriirka degdegga muhiimka ah",
+    "ka": "სწრაფი წვდომა მნიშვნელოვან გადაუდებელ კონტაქტებზე",
+    "sq": "Qasje e shpejtë në kontaktet e rëndësishme të urgjencës"
+  }
+}

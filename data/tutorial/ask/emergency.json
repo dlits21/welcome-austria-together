@@ -1,0 +1,453 @@
+
+{
+  "slides": [
+    {
+      "id": 0,
+      "type": "welcome",
+      "title": {
+        "en": "Emergency Support Tutorial",
+        "de": "Notfall-Unterstützung Tutorial",
+        "ru": "Руководство по экстренной поддержке",
+        "ce": "Гӏайгӏа гӏо дешаран хаам",
+        "prs": "راهنمای حمایت اضطراری",
+        "ps": "د بیړني ملاتړ لارښود",
+        "fa": "راهنمای پشتیبانی اضطراری",
+        "ar": "دليل الدعم الطارئ",
+        "ku": "ڕێنمایی پشتگیری لەناکاو",
+        "so": "Hagaha Taageerada Degdegga",
+        "ka": "გადაუდებელი მხარდაჭერის სახელმძღვანელო",
+        "sq": "Udhëzuesi i Mbështetjes së Urgjencës"
+      },
+      "text": {
+        "en": "This tutorial will guide you through accessing emergency contacts quickly and effectively.",
+        "de": "Dieses Tutorial führt Sie durch den schnellen und effektiven Zugang zu Notfallkontakten.",
+        "ru": "Это руководство поможет вам быстро и эффективно получить доступ к экстренным контактам.",
+        "ce": "Хlара дешаран хаам хьуна белхалур ду гӏайгӏа контакташ арахецаран.",
+        "prs": "این راهنما شما را در دسترسی سریع و مؤثر به مخاطبین اضطراری راهنمایی می‌کند.",
+        "ps": "دا لارښود به تاسو ته د بیړنیو اړیکو ته ګړندي او اغیزمن لاسرسي کې مرسته وکړي.",
+        "fa": "این راهنما شما را در دسترسی سریع و مؤثر به تماس‌های اضطراری راهنمایی می‌کند.",
+        "ar": "سيرشدك هذا الدليل خلال الوصول إلى جهات الاتصال الطارئة بسرعة وفعالية.",
+        "ku": "ئەم ڕێنماییە ڕێنمایی دەکات بۆ دەستگەیشتنی خێرا و کاریگەر بە پەیوەندییە لەناکاوەکان.",
+        "so": "Hagahan wuxuu ku hagayaa helida xiriirka degdegga si dhaqso leh oo hufan.",
+        "ka": "ეს სახელმძღვანელო დაგეხმარებათ სწრაფად და ეფექტურად მიიღოთ გადაუდებელი კონტაქტები.",
+        "sq": "Ky udhëzues do t'ju drejtojë në qasjen e shpejtë dhe efektive të kontakteve të urgjencës."
+      }
+    },
+    {
+      "id": 1,
+      "type": "category",
+      "title": {
+        "en": "General Emergency",
+        "de": "Allgemeiner Notfall",
+        "ru": "Общая экстренная ситуация",
+        "ce": "Йалаш гӏайгӏа",
+        "prs": "اضطرار عمومی",
+        "ps": "عمومي بیړنۍ وضعیت",
+        "fa": "وضعیت اضطراری عمومی",
+        "ar": "حالة طوارئ عامة",
+        "ku": "لەناکاوی گشتی",
+        "so": "Degdeg Guud",
+        "ka": "ზოგადი გადაუდებელი მდგომარეობა",
+        "sq": "Urgjencë e përgjithshme"
+      },
+      "text": {
+        "en": "The universal emergency number 112 connects you to all emergency services across Europe.",
+        "de": "Die universelle Notrufnummer 112 verbindet Sie mit allen Rettungsdiensten in ganz Europa.",
+        "ru": "Универсальный номер экстренных служб 112 соединит вас со всеми службами экстренного реагирования по всей Европе.",
+        "ce": "Европехь массо гӏайгӏа службашца 112 номерца йоккхур ю.",
+        "prs": "شماره جهانی اضطراری 112 شما را به تمام خدمات اضطراری در سراسر اروپا متصل می‌کند.",
+        "ps": "د نړیوال بیړني شمیرې 112 تاسو د اروپا په ټوله کې د ټولو بیړنیو خدماتو سره وصلوي.",
+        "fa": "شماره جهانی اضطراری 112 شما را به تمام خدمات اضطراری در سراسر اروپا متصل می‌کند.",
+        "ar": "الرقم العالمي للطوارئ 112 يربطك بجميع خدمات الطوارئ في جميع أنحاء أوروبا.",
+        "ku": "ژمارەی جیهانی لەناکاو 112 تۆ بە هەموو خزمەتگوزارییە لەناکاوەکانەوە لە ئەوروپادا دەبەستێتەوە.",
+        "so": "Nambarka caalamiga ah ee degdegga 112 ayaa ku xidhaya dhammaan adeegyada degdegga Yurub oo dhan.",
+        "ka": "უნივერსალური გადაუდებელი ნომერი 112 გაგიერთებთ ევროპის ყველა გადაუდებელ სამსახურთან.",
+        "sq": "Numri universal i urgjencës 112 ju lidh me të gjitha shërbimet e urgjencës në të gjithë Evropën."
+      },
+      "category": {
+        "title": {
+          "en": "General Emergency",
+          "de": "Allgemeiner Notfall"
+        },
+        "description": {
+          "en": "Universal emergency number",
+          "de": "Universelle Notrufnummer"
+        },
+        "icon": "phone",
+        "color": "#dc2626"
+      }
+    },
+    {
+      "id": 2,
+      "type": "category",
+      "title": {
+        "en": "Fire Emergency",
+        "de": "Feuer-Notfall",
+        "ru": "Пожарная служба",
+        "ce": "Цlе гlайгlа",
+        "prs": "اضطرار آتش‌سوزی",
+        "ps": "د اور وژنې بیړنۍ وضعیت",
+        "fa": "اضطرار آتش‌سوزی",
+        "ar": "طوارئ الحريق",
+        "ku": "لەناکاوی ئاگر",
+        "so": "Degdegga Dabka",
+        "ka": "ხანძრის გადაუდებელი მდგომარეობა",
+        "sq": "Urgjencë zjarri"
+      },
+      "text": {
+        "en": "Call 122 for fires, explosions, and rescue operations throughout Austria.",
+        "de": "Rufen Sie 122 für Brände, Explosionen und Rettungsoperationen in ganz Österreich an.",
+        "ru": "Звоните 122 при пожарах, взрывах и спасательных операциях по всей Австрии.",
+        "ce": "Австрехь массо цlенаш, хелаш а гlоьнаш а хилла 122 номерца йохкавайла.",
+        "prs": "برای آتش‌سوزی، انفجار و عملیات نجات در سراسر اتریش با 122 تماس بگیرید.",
+        "ps": "د اتریش په ټوله کې د اور وژنې، چاودنې او د ژغورنې د عملیاتو لپاره 122 ته زنګ ووهئ.",
+        "fa": "برای آتش‌سوزی، انفجار و عملیات نجات در سراسر اتریش با 122 تماس بگیرید.",
+        "ar": "اتصل بـ 122 للحرائق والانفجارات وعمليات الإنقاذ في جميع أنحاء النمسا.",
+        "ku": "بۆ ئاگر، تەقینەوە و کارەکانی فریاکەوتن لە هەموو نەمساوە پەیوەندی بە 122 بکە.",
+        "so": "Wac 122 dab, qarax, iyo hawlaha badbaadinta Austria oo dhan.",
+        "ka": "დარეკეთ 122-ზე ხანძრის, აფეთქების და სამაშველო ოპერაციების შემთხვევაში მთელ ავსტრიაში.",
+        "sq": "Telefononi 122 për zjarret, shpërthimet dhe operacionet e shpëtimit në të gjithë Austrinë."
+      },
+      "category": {
+        "title": {
+          "en": "Fire Emergency",
+          "de": "Feuer-Notfall"
+        },
+        "description": {
+          "en": "Fires, explosions, rescue",
+          "de": "Brände, Explosionen, Rettung"
+        },
+        "icon": "local-fire-department",
+        "color": "#dc2626"
+      }
+    },
+    {
+      "id": 3,
+      "type": "category",
+      "title": {
+        "en": "Police Emergency",
+        "de": "Polizei-Notfall",
+        "ru": "Полицейская служба",
+        "ce": "Полици гlайгlа",
+        "prs": "اضطرار پولیس",
+        "ps": "د پولیسو بیړنۍ وضعیت",
+        "fa": "اضطرار پلیس",
+        "ar": "طوارئ الشرطة",
+        "ku": "لەناکاوی پۆلیس",
+        "so": "Degdegga Booliiska",
+        "ka": "პოლიციის გადაუდებელი მდგომარეობა",
+        "sq": "Urgjencë policie"
+      },
+      "text": {
+        "en": "Call 133 for crimes, accidents, and security emergencies.",
+        "de": "Rufen Sie 133 für Verbrechen, Unfälle und Sicherheitsnotfälle an.",
+        "ru": "Звоните 133 при преступлениях, авариях и чрезвычайных ситуациях безопасности.",
+        "ce": "Зулам, автобехк а хlоттина кхечера а 133 номерца йохкавайла.",
+        "prs": "برای جرائم، تصادفات و اضطرارات امنیتی با 133 تماس بگیرید.",
+        "ps": "د جرمونو، پیښو او امنیتي بیړنیو وضعیتونو لپاره 122 ته زنګ ووهئ.",
+        "fa": "برای جرائم، تصادفات و اضطرارات امنیتی با 133 تماس بگیرید.",
+        "ar": "اتصل بـ 133 للجرائم والحوادث وحالات الطوارئ الأمنية.",
+        "ku": "بۆ تاوان، ڕووداو و لەناکاوی ئاسایش پەیوەندی بە 133 بکە.",
+        "so": "Wac 133 dambiyada, shilalka, iyo degdegga amniga.",
+        "ka": "დარეკეთ 133-ზე დანაშაულის, ავარიის და უსაფრთხოების გადაუდებელი მდგომარეობის შემთხვევაში.",
+        "sq": "Telefononi 133 për krime, aksidente dhe urgjenca sigurie."
+      },
+      "category": {
+        "title": {
+          "en": "Police Emergency",
+          "de": "Polizei-Notfall"
+        },
+        "description": {
+          "en": "Crime, accidents, security",
+          "de": "Verbrechen, Unfälle, Sicherheit"
+        },
+        "icon": "local-police",
+        "color": "#dc2626"
+      }
+    },
+    {
+      "id": 4,
+      "type": "category",
+      "title": {
+        "en": "Medical Emergency",
+        "de": "Medizinischer Notfall",
+        "ru": "Медицинская помощь",
+        "ce": "Синдоктор гlайгlа",
+        "prs": "اضطرار طبی",
+        "ps": "د درملتون بیړنۍ وضعیت",
+        "fa": "اضطرار پزشکی",
+        "ar": "طوارئ طبية",
+        "ku": "لەناکاوی پزیشکی",
+        "so": "Degdegga Caafimaadka",
+        "ka": "სამედიცინო გადაუدებელი შემთხვევა",
+        "sq": "Urgjencë mjekësore"
+      },
+      "text": {
+        "en": "Call 144 for medical emergencies and ambulance services.",
+        "de": "Rufen Sie 144 für medizinische Notfälle und Krankenwagendienste an.",
+        "ru": "Звоните 144 при медицинских чрезвычайных ситуациях и для вызова скорой помощи.",
+        "ce": "Синдоктор гlайгlа а машен а 144 номерца йохкавайла.",
+        "prs": "برای اضطرارات طبی و خدمات آمبولانس با 144 تماس بگیرید.",
+        "ps": "د درملتون د بیړنیو وضعیتونو او د امبولانس د خدماتو لپاره 144 ته زنګ ووهئ.",
+        "fa": "برای اضطرارات پزشکی و خدمات آمبولانس با 144 تماس بگیرید.",
+        "ar": "اتصل بـ 144 للطوارئ الطبية وخدمات الإسعاف.",
+        "ku": "بۆ لەناکاوی پزیشکی و خزمەتگوزاری ئەمبولانس پەیوەندی بە 144 بکە.",
+        "so": "Wac 144 degdegga caafimaadka iyo adeegyada ambalaaska.",
+        "ka": "დარეკეთ 144-ზე სამედიცინო გადაუდებელი შემთხვევისა და სასწრაფო დახმარების სამსახურისთვის.",
+        "sq": "Telefononi 144 për urgjenca mjekësore dhe shërbime ambulance."
+      },
+      "category": {
+        "title": {
+          "en": "Medical Emergency",
+          "de": "Medizinischer Notfall"
+        },
+        "description": {
+          "en": "Health emergencies, ambulance",
+          "de": "Gesundheitsnotfälle, Krankenwagen"
+        },
+        "icon": "local-hospital",
+        "color": "#dc2626"
+      }
+    },
+    {
+      "id": 5,
+      "type": "category",
+      "title": {
+        "en": "Violence/Harassment Support",
+        "de": "Gewalt-/Belästigungsunterstützung",
+        "ru": "Поддержка при насилии/домогательствах",
+        "ce": "Зулам/докхаран гlо",
+        "prs": "حمایت از خشونت/آزار",
+        "ps": "د تاوتریخوالي/ورانولو ملاتړ",
+        "fa": "پشتیبانی از خشونت/آزار",
+        "ar": "دعم العنف/التحرش",
+        "ku": "پشتگیری توندوتیژی/ئازارکردن",
+        "so": "Taageero Rabshada/Dhibka",
+        "ka": "ძალადობის/შევიწროების მხარდაჭერა",
+        "sq": "Mbështetje dhune/ngacmim"
+      },
+      "text": {
+        "en": "Specialized support for domestic violence, assault, and harassment situations.",
+        "de": "Spezialisierte Unterstützung für häusliche Gewalt, Übergriffe und Belästigungssituationen.",
+        "ru": "Специализированная поддержка при домашнем насилии, нападении и домогательствах.",
+        "ce": "Доьзална зулам, докхар а кхечера а белхан гlо.",
+        "prs": "حمایت تخصصی برای خشونت خانگی، حمله و موقعیت‌های آزار.",
+        "ps": "د کورنۍ تاوتریخوالي، برید او ځورونې وضعیتونو لپاره ځانګړي ملاتړ.",
+        "fa": "پشتیبانی تخصصی برای خشونت خانگی، حمله و موقعیت‌های آزار.",
+        "ar": "دعم متخصص للعنف المنزلي والاعتداء ومواقف التحرش.",
+        "ku": "پشتگیری تایبەت بۆ توندوتیژی ماڵەوە، هێرش و دۆخی ئازارکردن.",
+        "so": "Taageero khaas ah rabshada guriga, weerarka iyo xaaladaha dhibka.",
+        "ka": "სპეციალიზებული მხარდაჭერა ოჯახური ძალადობის, თავდასხმისა და შევიწროების სიტუაციებისთვის.",
+        "sq": "Mbështetje e specializuar për dhunën në familje, sulmin dhe situatat e ngacmimit."
+      },
+      "category": {
+        "title": {
+          "en": "Violence/Harassment",
+          "de": "Gewalt/Belästigung"
+        },
+        "description": {
+          "en": "Domestic violence, assault",
+          "de": "Häusliche Gewalt, Übergriffe"
+        },
+        "icon": "security",
+        "color": "#dc2626"
+      }
+    },
+    {
+      "id": 6,
+      "type": "category",
+      "title": {
+        "en": "Mental Health Crisis",
+        "de": "Psychische Krise",
+        "ru": "Кризис психического здоровья",
+        "ce": "Психикин саьлламан кризис",
+        "prs": "بحران سلامت روانی",
+        "ps": "د ذهني روغتیا کړکېچ",
+        "fa": "بحران سلامت روان",
+        "ar": "أزمة الصحة النفسية",
+        "ku": "قەیرانی تەندروستی دەرونی",
+        "so": "Dhibaatada Caafimaadka Maskaxda",
+        "ka": "ფსიქიკური ჯანმრთელობის კრიზისი",
+        "sq": "Krizë e shëndetit mendor"
+      },
+      "text": {
+        "en": "Professional support for psychological crises and suicide prevention.",
+        "de": "Professionelle Unterstützung für psychische Krisen und Suizidprävention.",
+        "ru": "Профессиональная поддержка при психологических кризисах и предотвращении самоубийств.",
+        "ce": "Психологически кризисашна а шуьйра доцуш дlахьедарна а профессионала гlо.",
+        "prs": "حمایت حرفه‌ای برای بحران‌های روانی و پیشگیری از خودکشی.",
+        "ps": "د رواني کړکېچونو او د ځان وژنې د مخنیوي لپاره مسلکي ملاتړ.",
+        "fa": "پشتیبانی حرفه‌ای برای بحران‌های روانی و پیشگیری از خودکشی.",
+        "ar": "دعم مهني للأزمات النفسية ومنع الانتحار.",
+        "ku": "پشتگیری پیشەیی بۆ قەیرانی دەرونی و ڕێگریکردن لە خۆکوژی.",
+        "so": "Taageero xirfadeed dhibaatooyinka maskaxda iyo ka-hortagga is-dilka.",
+        "ka": "პროფესიონალური მხარდაჭერა ფსიქოლოგიური კრიზისებისა და თვითმკვლელობის პრევენციისთვის.",
+        "sq": "Mbështetje profesionale për kriza psikologjike dhe parandalimin e vetëvrasjes."
+      },
+      "category": {
+        "title": {
+          "en": "Mental Health Crisis",
+          "de": "Psychische Krise"
+        },
+        "description": {
+          "en": "Psychological crisis, suicide prevention",
+          "de": "Psychische Krise, Suizidprävention"
+        },
+        "icon": "psychology",
+        "color": "#dc2626"
+      }
+    },
+    {
+      "id": 7,
+      "type": "category",
+      "title": {
+        "en": "Spiritual Care",
+        "de": "Seelsorge",
+        "ru": "Духовная поддержка",
+        "ce": "Роьхlин кхерам",
+        "prs": "مراقبت معنوی",
+        "ps": "روحاني پاملرنه",
+        "fa": "مراقبت معنوی",
+        "ar": "الرعاية الروحية",
+        "ku": "چاودێری ڕۆحی",
+        "so": "Daryeelka Ruuxa",
+        "ka": "სულიერი მზრუნველობა",
+        "sq": "Kujdesi shpirtëror"
+      },
+      "text": {
+        "en": "Spiritual and emotional support through phone counseling services.",
+        "de": "Spirituelle und emotionale Unterstützung durch telefonische Beratungsdienste.",
+        "ru": "Духовная и эмоциональная поддержка через службы телефонного консультирования.",
+        "ce": "Роьхlин а, сенаlон а гlо телефонан консультацийн гlулакхашкахь.",
+        "prs": "حمایت معنوی و عاطفی از طریق خدمات مشاوره تلفنی.",
+        "ps": "د تلیفون د مشورې د خدماتو له لارې روحاني او احساساتي ملاتړ.",
+        "fa": "پشتیبانی معنوی و عاطفی از طریق خدمات مشاوره تلفنی.",
+        "ar": "الدعم الروحي والعاطفي من خلال خدمات الاستشارة الهاتفية.",
+        "ku": "پشتگیری ڕۆحی و سۆزداری لە ڕێگەی خزمەتگوزاری ڕاوێژکاری تەلەفۆنیەوە.",
+        "so": "Taageero ruux iyo dareen adeegyada la-talinta telefoonka.",
+        "ka": "სულიერი და ემოციური მხარდაჭერა ტელეფონური კონსულტაციის სერვისების მეშვეობით.",
+        "sq": "Mbështetje shpirtërore dhe emocionale përmes shërbimeve të këshillimit telefonik."
+      },
+      "category": {
+        "title": {
+          "en": "Care of Soul",
+          "de": "Seelsorge"
+        },
+        "description": {
+          "en": "Spiritual and emotional support",
+          "de": "Spirituelle und emotionale Unterstützung"
+        },
+        "icon": "favorite",
+        "color": "#dc2626"
+      }
+    },
+    {
+      "id": 8,
+      "type": "category",
+      "title": {
+        "en": "Youth Care",
+        "de": "Jugendbetreuung",
+        "ru": "Молодежная помощь",
+        "ce": "Берийн кхерам",
+        "prs": "مراقبت از جوانان",
+        "ps": "د ځوانانو پاملرنه",
+        "fa": "مراقبت از جوانان",
+        "ar": "رعاية الشباب",
+        "ku": "چاودێری گەنجان",
+        "so": "Daryeelka Dhallinyarada",
+        "ka": "ახალგაზრდული მზრუნველობა",
+        "sq": "Kujdesi për të rinjtë"
+      },
+      "text": {
+        "en": "Dedicated emergency support specifically designed for children and youth.",
+        "de": "Spezieller Notfall-Support, der speziell für Kinder und Jugendliche entwickelt wurde.",
+        "ru": "Специализированная экстренная поддержка, разработанная специально для детей и молодежи.",
+        "ce": "Берашна а, зударшна а йукъайоьхна кхиамца лаьцна гlайгlа гlо.",
+        "prs": "حمایت اضطراری اختصاصی که مخصوص کودکان و جوانان طراحی شده است.",
+        "ps": "د ماشومانو او ځوانانو لپاره په ځانګړي ډول ډیزاین شوي وقف شوي بیړني ملاتړ.",
+        "fa": "پشتیبانی اضطراری اختصاصی که مخصوص کودکان و جوانان طراحی شده است.",
+        "ar": "دعم طوارئ مخصص مصمم خصيصاً للأطفال والشباب.",
+        "ku": "پشتگیری لەناکاوی تایبەت کە بە تایبەتی بۆ منداڵان و گەنجان دیزاین کراوە.",
+        "so": "Taageero degdeg ah oo gaar ah oo si gaar ah loogu talagalay carruurta iyo dhallinyarada.",
+        "ka": "სპეციალური გადაუდებელი მხარდაჭერა, რომელიც სპეციალურად არის შექმნილი ბავშვებისა და ახალგაზრდებისთვის.",
+        "sq": "Mbështetje urgjente e dedikuar e dizajnuar posaçërisht për fëmijët dhe të rinjtë."
+      },
+      "category": {
+        "title": {
+          "en": "Youth Care",
+          "de": "Jugendbetreuung"
+        },
+        "description": {
+          "en": "Support for children and youth",
+          "de": "Unterstützung für Kinder und Jugendliche"
+        },
+        "icon": "child-care",
+        "color": "#dc2626"
+      }
+    },
+    {
+      "id": 9,
+      "type": "feature",
+      "title": {
+        "en": "Virtual Assistant",
+        "de": "Virtueller Assistent",
+        "ru": "Виртуальный помощник",
+        "ce": "Виртуала кхераме",
+        "prs": "دستیار مجازی",
+        "ps": "مجازي مرستیال",
+        "fa": "دستیار مجازی",
+        "ar": "المساعد الافتراضي",
+        "ku": "یاریدەدەری خەیاڵی",
+        "so": "Caawiye Farsamaysan",
+        "ka": "ვირტუალური ასისტენტი",
+        "sq": "Asistenti virtual"
+      },
+      "text": {
+        "en": "Access our AI-powered virtual assistant for immediate guidance and support in emergency situations.",
+        "de": "Greifen Sie auf unseren KI-gestützten virtuellen Assistenten für sofortige Anleitung und Unterstützung in Notfallsituationen zu.",
+        "ru": "Получите доступ к нашему виртуальному помощнику на базе ИИ для немедленного руководства и поддержки в чрезвычайных ситуациях.",
+        "ce": "Шуьга виртуала кхерамца лело гlайгlа хlоттинчохь коьрта белхо а гlо а.",
+        "prs": "به دستیار مجازی مبتنی بر هوش مصنوعی ما برای راهنمایی فوری و پشتیبانی در شرایط اضطراری دسترسی پیدا کنید.",
+        "ps": "زموږ د AI پر بنسټ مجازي مرستیال ته د بیړنیو وضعیتونو کې د سمدستي لارښوونې او ملاتړ لپاره لاسرسی ومومئ.",
+        "fa": "به دستیار مجازی مبتنی بر هوش مصنوعی ما برای راهنمایی فوری و پشتیبانی در شرایط اضطراری دسترسی پیدا کنید.",
+        "ar": "الوصول إلى مساعدنا الافتراضي المدعوم بالذكاء الاصطناعي للحصول على التوجيه والدعم الفوري في حالات الطوارئ.",
+        "ku": "دەستگەیشتن بە یاریدەدەری مجازیمان کە بە AI پشتگیری دەکرێت بۆ ڕێنمایی و پشتگیری بەپەلە لە دۆخی لەناکاودا.",
+        "so": "Hel caawiyahayaga farsamaysan ee AI-ku taageerayo si degdeg ah loo hago hagitaanka iyo taageerada xaaladdaha degdegga ah.",
+        "ka": "მიიღეთ წვდომა ჩვენს AI-ით მოძრავ ვირტუალურ ასისტენტთან დაუყოვნებელი სახელმძღვანელო და მხარდაჭერისთვის გადაუდებელ სიტუაციებში.",
+        "sq": "Aksesoni asistentin tonë virtual të mbështetur nga AI për udhëzim dhe mbështetje të menjëhershme në situata urgjente."
+      }
+    },
+    {
+      "id": 10,
+      "type": "feature",
+      "title": {
+        "en": "Language Selection",
+        "de": "Sprachauswahl",
+        "ru": "Выбор языка",
+        "ce": "Мотт хержа",
+        "prs": "انتخاب زبان",
+        "ps": "د ژبې غوره کول",
+        "fa": "انتخاب زبان",
+        "ar": "اختيار اللغة",
+        "ku": "هەڵبژاردنی زمان",
+        "so": "Doorashada Luqadda",
+        "ka": "ენის არჩევა",
+        "sq": "Zgjedhja e gjuhës"
+      },
+      "text": {
+        "en": "Switch between languages to access emergency information in your preferred language for better understanding.",
+        "de": "Wechseln Sie zwischen Sprachen, um Notfallinformationen in Ihrer bevorzugten Sprache für besseres Verständnis zu erhalten.",
+        "ru": "Переключайтесь между языками для доступа к экстренной информации на вашем предпочитаемом языке для лучшего понимания.",
+        "ce": "Меттанаш юкъе хийца гlайгlа хаамаша хьуна довзийтира меттахь дехьа дезаш долу.",
+        "prs": "بین زبان‌ها تغییر دهید تا به اطلاعات اضطراری به زبان مورد علاقه‌تان برای درک بهتر دسترسی پیدا کنید.",
+        "ps": "د ژبو ترمنځ بدلون وکړئ ترڅو ستاسو د غوره شوې ژبې د غوره پوهیدو لپاره د بیړني معلوماتو ته لاسرسی ومومئ.",
+        "fa": "بین زبان‌ها جابه‌جا شوید تا به اطلاعات اضطراری به زبان مورد علاقه‌تان برای درک بهتر دسترسی پیدا کنید.",
+        "ar": "قم بالتبديل بين اللغات للوصول إلى معلومات الطوارئ بلغتك المفضلة لفهم أفضل.",
+        "ku": "لە نێوان زمانەکاندا بگۆڕە بۆ دەستگەیشتن بە زانیاری لەناکاو بە زمانی دڵخوازت بۆ تێگەیشتنی باشتر.",
+        "so": "Ku beddelka luqadaha si aad ugu hesho macluumaadka degdegga luqaddaada door bidka ah si aad si fiican u fahamto.",
+        "ka": "გადაირთეთ ენებს შორის გადაუდებელი ინფორმაციის მისაღებად თქვენს სასურველ ენაზე უკეთესი გაგებისთვის.",
+        "sq": "Ndërroni midis gjuhëve për të aksesuar informacionin e urgjencës në gjuhën tuaj të preferuar për kuptim më të mirë."
+      }
+    }
+  ]
+}

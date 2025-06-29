@@ -7,7 +7,8 @@ import { GermanFlag } from './Flags';
 import homeTutorialData from '../data/tutorial/home.json';
 import indexTutorialData from '../data/tutorial/index.json';
 import askTutorialData from '../data/tutorial/ask.json';
-import askGeneralTutorial from '../data/tutorial/ask/general.json'
+import askGeneralTutorial from '../data/tutorial/ask/general.json';
+import askEmergencyTutorial from '../data/tutorial/ask/emergency.json';
 import { getGlobalText } from '../utils/languageUtils';
 
 interface TutorialSlideContentProps {
@@ -51,6 +52,8 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
         return askTutorialData;
       case 'ask-general':
         return askGeneralTutorial;
+      case 'ask-emergency':
+        return askEmergencyTutorial;
       default:
         return homeTutorialData;
     }
@@ -207,8 +210,10 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
       case 'icons':
         return 'help';
       case 'feature':
-        if (tutorialData === 'ask' || tutorialData === 'ask-general') {
-          return slideIndex === (tutorialData === 'ask' ? 10 : 6) ? 'language' : 'mic';
+        if (tutorialData === 'ask' || tutorialData === 'ask-general' || tutorialData === 'ask-emergency') {
+          const isLastSlide = slideIndex === (tutorialData === 'ask' ? 10 : tutorialData === 'ask-emergency' ? 10 : 6);
+          const isSecondLastSlide = slideIndex === (tutorialData === 'ask' ? 9 : tutorialData === 'ask-emergency' ? 9 : 5);
+          return isLastSlide ? 'language' : isSecondLastSlide ? 'record-voice-over' : 'mic';
         }
         return slideIndex === 4 ? 'record-voice-over' : slideIndex === 5 ? 'help' : 'mic';
       default:
@@ -227,8 +232,10 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
       case 'icons':
         return '#8B5CF6';
       case 'feature':
-        if (tutorialData === 'ask' || tutorialData === 'ask-general') {
-          return slideIndex === (tutorialData === 'ask' ? 10 : 6) ? '#10B981' : '#8B5CF6';
+        if (tutorialData === 'ask' || tutorialData === 'ask-general' || tutorialData === 'ask-emergency') {
+          const isLastSlide = slideIndex === (tutorialData === 'ask' ? 10 : tutorialData === 'ask-emergency' ? 10 : 6);
+          const isSecondLastSlide = slideIndex === (tutorialData === 'ask' ? 9 : tutorialData === 'ask-emergency' ? 9 : 5);
+          return isLastSlide ? '#10B981' : isSecondLastSlide ? '#8B5CF6' : '#10B981';
         }
         return slideIndex === 4 ? '#10B981' : slideIndex === 5 ? '#8B5CF6' : '#10B981';
       default:

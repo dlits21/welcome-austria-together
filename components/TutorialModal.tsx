@@ -11,7 +11,7 @@ interface TutorialModalProps {
   visible: boolean;
   onClose: () => void;
   languageCode: string;
-  tutorialData?: string; // 'home', 'index', or 'ask'
+  tutorialData?: string; // 'home', 'index', 'ask', 'ask-general', or 'ask-emergency'
   onVirtualAssistant?: () => void;
 }
 
@@ -35,6 +35,8 @@ const TutorialModal: React.FC<TutorialModalProps> = ({
         return 11; // 1 welcome + 8 categories + 1 virtual assistant + 1 language selection
       case 'ask-general':
         return 7; // 1 welcome + 4 categories + 1 FAQ + 1 virtual assistant + 1 language selection
+      case 'ask-emergency':
+        return 11; // 1 welcome + 8 categories + 1 virtual assistant + 1 language selection
       default:
         return 7; // home tutorial
     }
