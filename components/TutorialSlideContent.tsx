@@ -9,6 +9,7 @@ import indexTutorialData from '../data/tutorial/index.json';
 import askTutorialData from '../data/tutorial/ask.json';
 import askGeneralTutorial from '../data/tutorial/ask/general.json';
 import askEmergencyTutorial from '../data/tutorial/ask/emergency.json';
+import askLegalSupportTutorial from '../data/tutorial/ask/legal-support.json';
 import { getGlobalText } from '../utils/languageUtils';
 
 interface TutorialSlideContentProps {
@@ -54,6 +55,8 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
         return askGeneralTutorial;
       case 'ask-emergency':
         return askEmergencyTutorial;
+      case 'ask-legal-support':
+        return askLegalSupportTutorial;
       default:
         return homeTutorialData;
     }
@@ -215,6 +218,11 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
           const isSecondLastSlide = slideIndex === (tutorialData === 'ask' ? 9 : tutorialData === 'ask-emergency' ? 9 : 5);
           return isLastSlide ? 'language' : isSecondLastSlide ? 'record-voice-over' : 'mic';
         }
+        if (tutorialData === 'ask-legal-support') {
+          const isLastSlide = slideIndex === 7;
+          const isSecondLastSlide = slideIndex === 6;
+          return isLastSlide ? 'language' : isSecondLastSlide ? 'record-voice-over' : 'mic';
+        }
         return slideIndex === 4 ? 'record-voice-over' : slideIndex === 5 ? 'help' : 'mic';
       default:
         return 'info';
@@ -235,6 +243,11 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
         if (tutorialData === 'ask' || tutorialData === 'ask-general' || tutorialData === 'ask-emergency') {
           const isLastSlide = slideIndex === (tutorialData === 'ask' ? 10 : tutorialData === 'ask-emergency' ? 10 : 6);
           const isSecondLastSlide = slideIndex === (tutorialData === 'ask' ? 9 : tutorialData === 'ask-emergency' ? 9 : 5);
+          return isLastSlide ? '#10B981' : isSecondLastSlide ? '#8B5CF6' : '#10B981';
+        }
+        if (tutorialData === 'ask-legal-support') {
+          const isLastSlide = slideIndex === 7;
+          const isSecondLastSlide = slideIndex === 6;
           return isLastSlide ? '#10B981' : isSecondLastSlide ? '#8B5CF6' : '#10B981';
         }
         return slideIndex === 4 ? '#10B981' : slideIndex === 5 ? '#8B5CF6' : '#10B981';

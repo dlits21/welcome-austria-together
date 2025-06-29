@@ -15,7 +15,16 @@ import FilterSection from '../../components/FilterSection';
 import QuizControls from '../../components/QuizControls';
 import LegalSupportList from '../../components/LegalSupportList';
 import VirtualAssistantModal from '../../components/VirtualAssistantModal';
+import TutorialModal from '../../components/TutorialModal';
 import legalSupportEntitiesData from '../../data/courses/legal-support-entities.json';
+
+// Import legal support translations
+import legalSupportTranslations from '../../data/language/ask/legal-support.json';
+
+const getLegalSupportText = (key: string, languageCode: string): string => {
+  const translation = legalSupportTranslations[key as keyof typeof legalSupportTranslations];
+  return translation?.[languageCode as keyof typeof translation] || translation?.en || key;
+};
 
 interface LegalSupportEntity {
   id: string;
@@ -48,6 +57,7 @@ const LegalSupportPage: React.FC = () => {
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
+  const [showTutorial, setShowTutorial] = useState(false);
 
   // Convert JSON data to array format
   const legalSupportEntities: LegalSupportEntity[] = Object.values(legalSupportEntitiesData);
@@ -78,30 +88,26 @@ const LegalSupportPage: React.FC = () => {
     urgency: ''
   };
 
-  // Quiz questions
+  // Quiz questions with multi-lingual support
   const quizQuestions = [
     {
-      question: language.code === 'de' 
-        ? 'Wofür benötigen Sie Rechtsunterstützung?' 
-        : 'What do you need legal support for?',
+      question: getLegalSupportText('whatLegalSupportNeeded', currentLanguage),
       answers: [
-        { key: 'general', en: 'General', de: 'Allgemein' },
-        { key: 'asylum-procedures', en: 'Asylum Procedures', de: 'Asylverfahren' },
-        { key: 'appeals', en: 'Appeals', de: 'Berufungen' },
-        { key: 'residence-permits', en: 'Residence Permits', de: 'Aufenthaltstitel' },
-        { key: 'family-reunification', en: 'Family Reunification', de: 'Familienzusammenführung' },
-        { key: 'citizenship', en: 'Citizenship', de: 'Staatsbürgerschaft' },
-        { key: 'detention', en: 'Detention', de: 'Haft' },
-        { key: 'discrimination', en: 'Discrimination', de: 'Diskriminierung' },
-        { key: 'work-rights', en: 'Work Rights', de: 'Arbeitsrechte' },
-        { key: 'legal-representation', en: 'Legal Representation', de: 'Rechtsvertretung' }
+        { key: 'general', en: getLegalSupportText('general', 'en'), de: getLegalSupportText('general', 'de') },
+        { key: 'asylum-procedures', en: getLegalSupportText('asylumProcedures', 'en'), de: getLegalSupportText('asylumProcedures', 'de') },
+        { key: 'appeals', en: getLegalSupportText('appeals', 'en'), de: getLegalSupportText('appeals', 'de') },
+        { key: 'residence-permits', en: getLegalSupportText('residencePermits', 'en'), de: getLegalSupportText('residencePermits', 'de') },
+        { key: 'family-reunification', en: getLegalSupportText('familyReunification', 'en'), de: getLegalSupportText('familyReunification', 'de') },
+        { key: 'citizenship', en: getLegalSupportText('citizenship', 'en'), de: getLegalSupportText('citizenship', 'de') },
+        { key: 'detention', en: getLegalSupportText('detention', 'en'), de: getLegalSupportText('detention', 'de') },
+        { key: 'discrimination', en: getLegalSupportText('discrimination', 'en'), de: getLegalSupportText('discrimination', 'de') },
+        { key: 'work-rights', en: getLegalSupportText('workRights', 'en'), de: getLegalSupportText('workRights', 'de') },
+        { key: 'legal-representation', en: getLegalSupportText('legalRepresentation', 'en'), de: getLegalSupportText('legalRepresentation', 'de') }
       ],
       key: 'supportType' as keyof typeof quizAnswers
     },
     {
-      question: language.code === 'de' 
-        ? 'Wo befinden Sie sich?' 
-        : 'What is your location?',
+      question: getLegalSupportText('whereAreYouLocated', currentLanguage),
       answers: locations.map(location => ({ key: location.toLowerCase(), en: location, de: location })),
       key: 'location' as keyof typeof quizAnswers
     }
@@ -176,15 +182,13 @@ const LegalSupportPage: React.FC = () => {
     setSelectedLocations([]);
   };
 
-  const pageTitle = language.code === 'de' ? 'Rechtsunterstützung' : 'Legal Support';
-  const pageDescription = language.code === 'de' 
-    ? 'Finden Sie Rechtsberatung und Unterstützung in Ihrer Nähe.'
-    : 'Find legal counseling and support in your area.';
+  const pageTitle = getLegalSupportText('legalSupport', currentLanguage);
+  const pageDescription = getLegalSupportText('findLegalCounseling', currentLanguage);
 
-  // Filter groups for FilterSection
+  // Filter groups for FilterSection with multi-lingual labels
   const filterGroups = [
     {
-      title: language.code === 'de' ? 'Unterstützungstyp' : 'Support Type',
+      title: getLegalSupportText('supportType', currentLanguage),
       items: supportTypes,
       selectedItems: selectedSupportTypes,
       onToggle: toggleSupportType,
@@ -194,7 +198,7 @@ const LegalSupportPage: React.FC = () => {
       }), {})
     },
     {
-      title: language.code === 'de' ? 'Standort' : 'Location',
+      title: getLegalSupportText('location', currentLanguage),
       items: locations,
       selectedItems: selectedLocations,
       onToggle: toggleLocation
@@ -209,6 +213,7 @@ const LegalSupportPage: React.FC = () => {
         showLanguageModal={() => setShowLanguageModal(true)}
         showHelpModal={() => setShowHelpModal(true)}
         showVirtualAssistant={() => setShowVirtualAssistant(true)}
+        showTutorial={() => setShowTutorial(true)}
       />
       
       <View style={styles.content}>
@@ -220,10 +225,8 @@ const LegalSupportPage: React.FC = () => {
           currentQuestion={currentQuestion}
           questions={quizQuestions}
           languageCode={language.code}
-          title={language.code === 'de' ? 'Rechtshilfe-Assistent' : 'Legal Support Assistant'}
-          subtitle={language.code === 'de' 
-            ? 'Beantworten Sie ein paar Fragen, um passende Rechtsberatung zu finden.'
-            : 'Answer a few questions to find suitable legal counseling.'}
+          title={getLegalSupportText('legalSupportAssistant', currentLanguage)}
+          subtitle={getLegalSupportText('answerQuestionsForLegalCounseling', currentLanguage)}
           onAnswer={handleQuizAnswer}
           onSkip={handleSkipQuiz}
           onClose={handleCloseQuiz}
@@ -239,7 +242,7 @@ const LegalSupportPage: React.FC = () => {
 
         <FilterSection
           visible={!showQuiz && showFilters}
-          title={language.code === 'de' ? 'Filter' : 'Filters'}
+          title={getLegalSupportText('filters', currentLanguage)}
           languageCode={language.code}
           filterGroups={filterGroups}
           onClearFilters={clearFilters}
@@ -273,6 +276,14 @@ const LegalSupportPage: React.FC = () => {
         visible={showVirtualAssistant}
         onClose={() => setShowVirtualAssistant(false)}
         languageCode={language.code}
+      />
+
+      {/* Tutorial Modal */}
+      <TutorialModal
+        visible={showTutorial}
+        onClose={() => setShowTutorial(false)}
+        languageCode={language.code}
+        tutorialData="ask-legal-support"
       />
     </SafeAreaView>
   );

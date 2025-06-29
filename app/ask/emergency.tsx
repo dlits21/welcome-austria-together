@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { 
   StyleSheet, 
@@ -37,8 +38,8 @@ interface EmergencyContact {
 interface EmergencyCategory {
   key: string;
   emoji: string;
-  title: { en: string; de: string };
-  subtitle: { en: string; de: string };
+  titleKey: string;
+  subtitleKey: string;
   contacts: EmergencyContact[];
 }
 
@@ -59,8 +60,8 @@ const EmergencySupport: React.FC = () => {
     {
       key: 'general',
       emoji: '📞',
-      title: { en: 'General Emergency', de: 'Allgemeiner Notfall' },
-      subtitle: { en: 'Universal emergency number', de: 'Universelle Notrufnummer' },
+      titleKey: 'generalEmergency',
+      subtitleKey: 'universalEmergencyNumber',
       contacts: [
         {
           name: { en: 'European Emergency Number', de: 'Europäische Notrufnummer' },
@@ -73,8 +74,8 @@ const EmergencySupport: React.FC = () => {
     {
       key: 'fire',
       emoji: '🔥',
-      title: { en: 'Fire Emergency', de: 'Feuer-Notfall' },
-      subtitle: { en: 'Fires, explosions, rescue', de: 'Brände, Explosionen, Rettung' },
+      titleKey: 'fireEmergency',
+      subtitleKey: 'firesExplosionsRescue',
       contacts: [
         {
           name: { en: 'Fire Department', de: 'Feuerwehr' },
@@ -87,8 +88,8 @@ const EmergencySupport: React.FC = () => {
     {
       key: 'police',
       emoji: '🚔',
-      title: { en: 'Police Emergency', de: 'Polizei-Notfall' },
-      subtitle: { en: 'Crime, accidents, security', de: 'Verbrechen, Unfälle, Sicherheit' },
+      titleKey: 'policeEmergency',
+      subtitleKey: 'crimeAccidentsSecurity',
       contacts: [
         {
           name: { en: 'Police', de: 'Polizei' },
@@ -101,8 +102,8 @@ const EmergencySupport: React.FC = () => {
     {
       key: 'medical',
       emoji: '🚑',
-      title: { en: 'Medical Emergency', de: 'Medizinischer Notfall' },
-      subtitle: { en: 'Health emergencies, ambulance', de: 'Gesundheitsnotfälle, Krankenwagen' },
+      titleKey: 'medicalEmergency',
+      subtitleKey: 'healthEmergenciesAmbulance',
       contacts: [
         {
           name: { en: 'Emergency Medical Services', de: 'Rettungsdienst' },
@@ -115,8 +116,8 @@ const EmergencySupport: React.FC = () => {
     {
       key: 'violence',
       emoji: '🆘',
-      title: { en: 'Violence/Harassment', de: 'Gewalt/Belästigung' },
-      subtitle: { en: 'Domestic violence, assault', de: 'Häusliche Gewalt, Übergriffe' },
+      titleKey: 'violenceHarassment',
+      subtitleKey: 'domesticViolenceAssault',
       contacts: [
         {
           name: { en: 'Women\'s Emergency Hotline', de: 'Frauen-Notruf' },
@@ -135,8 +136,8 @@ const EmergencySupport: React.FC = () => {
     {
       key: 'mental',
       emoji: '🧠',
-      title: { en: 'Mental Health Crisis', de: 'Psychische Krise' },
-      subtitle: { en: 'Psychological crisis, suicide prevention', de: 'Psychische Krise, Suizidprävention' },
+      titleKey: 'mentalHealthCrisis',
+      subtitleKey: 'psychologicalCrisisSuicidePrevention',
       contacts: [
         {
           name: { en: 'Crisis Intervention Center', de: 'Kriseninterventionszentrum' },
@@ -149,8 +150,8 @@ const EmergencySupport: React.FC = () => {
     {
       key: 'soul-care',
       emoji: '🕊️',
-      title: { en: 'Care of Soul', de: 'Seelsorge' },
-      subtitle: { en: 'Spiritual and emotional support', de: 'Spirituelle und emotionale Unterstützung' },
+      titleKey: 'careOfSoul',
+      subtitleKey: 'spiritualEmotionalSupport',
       contacts: [
         {
           name: { en: 'Telefonseelsorge', de: 'Telefonseelsorge' },
@@ -163,8 +164,8 @@ const EmergencySupport: React.FC = () => {
     {
       key: 'youth',
       emoji: '👨‍👩‍👧‍👦',
-      title: { en: 'Youth Care', de: 'Jugendbetreuung' },
-      subtitle: { en: 'Support for children and youth', de: 'Unterstützung für Kinder und Jugendliche' },
+      titleKey: 'youthCare',
+      subtitleKey: 'supportForChildrenAndYouth',
       contacts: [
         {
           name: { en: 'Rat auf Draht', de: 'Rat auf Draht' },
@@ -249,10 +250,10 @@ const EmergencySupport: React.FC = () => {
               >
                 <Text style={styles.emergencyEmoji}>{category.emoji}</Text>
                 <Text style={styles.emergencyTitle}>
-                  {language.code === 'de' ? category.title.de : category.title.en}
+                  {getEmergencyText(category.titleKey, currentLanguage)}
                 </Text>
                 <Text style={styles.emergencySubtitle}>
-                  {language.code === 'de' ? category.subtitle.de : category.subtitle.en}
+                  {getEmergencyText(category.subtitleKey, currentLanguage)}
                 </Text>
               </TouchableOpacity>
             ))}
