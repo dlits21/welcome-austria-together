@@ -36,7 +36,38 @@
     {
       "type": "category",
       "id": 1,
-      "category": "general",
+      "category": {
+        "icon": "help",
+        "color": "#3B82F6",
+        "title": {
+          "en": "General Support",
+          "de": "Allgemeine Unterstützung",
+          "ru": "Общая поддержка",
+          "ce": "Йуьхь гlо",
+          "prs": "حمایت عمومی", 
+          "ps": "عمومي ملاتړ",
+          "fa": "پشتیبانی عمومی",
+          "ar": "الدعم العام",
+          "ku": "پشتگیری گشتی",
+          "so": "Taageero guud",
+          "ka": "ზოგადი მხარდაჭერა",
+          "sq": "Mbështetje e përgjithshme"
+        },
+        "description": {
+          "en": "Get general support and counseling for everyday needs",
+          "de": "Erhalten Sie allgemeine Unterstützung und Beratung für den Alltag",
+          "ru": "Получите общую поддержку и консультации для повседневных нужд",
+          "ce": "Йуьхь гlо а дешхьало а ло",
+          "prs": "حمایت عمومی و مشاوره برای نیازهای روزمره دریافت کنید",
+          "ps": "د ورځنیو اړتیاو لپاره عمومي ملاتړ او مشوره واخلئ",
+          "fa": "پشتیبانی عمومی و مشاوره برای نیازهای روزمره دریافت کنید",
+          "ar": "احصل على الدعم العام والاستشارة للاحتياجات اليومية",
+          "ku": "پشتگیری گشتی و ڕاوێژکاری بۆ پێداویستییە ڕۆژانەکان وەربگرە",
+          "so": "Hel taageero guud iyo la-talinta baahiyaha maalinlaha ah",
+          "ka": "მიიღეთ ზოგადი მხარდაჭერა და კონსულტაცია ყოველდღიური საჭიროებებისთვის",
+          "sq": "Merrni mbështetje të përgjithshme dhe këshillim për nevojat e përditshme"
+        }
+      },
       "title": {
         "en": "General Support",
         "de": "Allgemeine Unterstützung",
@@ -68,7 +99,39 @@
     },
     {
       "type": "category",
-      "category": "emergency",
+      "id": 2,
+      "category": {
+        "icon": "emergency",
+        "color": "#EF4444",
+        "title": {
+          "en": "Emergency Support",
+          "de": "Notfallunterstützung", 
+          "ru": "Экстренная поддержка",
+          "ce": "Тезара гlо",
+          "prs": "حمایت اضطراری",
+          "ps": "بیړني ملاتړ",
+          "fa": "پشتیبانی اضطراری",
+          "ar": "الدعم الطارئ",
+          "ku": "پشتگیری لەناکاو",
+          "so": "Taageero degdeg ah",
+          "ka": "საგანგებო მხარდაჭერა",
+          "sq": "Mbështetje emergjente"
+        },
+        "description": {
+          "en": "Get immediate help for urgent situations",
+          "de": "Sofortigen Hilfe für dringende Situationen",
+          "ru": "Получите немедленную помощь в срочных ситуациях",
+          "ce": "Тезара гlонах тlехьажа хlотталор",
+          "prs": "کمک فوری برای موقعیت‌های اضطراری",
+          "ps": "د بیړنیو حالاتو لپاره سمدستي مرسته",
+          "fa": "کمک فوری برای موقعیت‌های اضطراری",
+          "ar": "مساعدة فورية للمواقف العاجلة",
+          "ku": "یارمەتی خێرا بۆ حاڵەتە بەپەلەکان",
+          "so": "Caawimaad degdeg ah xaaladaha degdegga ah",
+          "ka": "დაუყოვნებელი დახმარება გადაუდებელ სიტუაციებში",
+          "sq": "Ndihmë të menjëhershme për situata urgjente"
+        }
+      },
       "title": {
         "en": "Emergency Support",
         "de": "Notfallunterstützung", 
@@ -99,8 +162,40 @@
       }
     },
     {
-      "type": "category", 
-      "category": "legal",
+      "type": "category",
+      "id": 3,
+      "category": {
+        "icon": "gavel",
+        "color": "#8B5CF6",
+        "title": {
+          "en": "Legal Support",
+          "de": "Rechtsunterstützung",
+          "ru": "Правовая поддержка",
+          "ce": "Бакъо гlо",
+          "prs": "حمایت حقوقی",
+          "ps": "قانوني ملاتړ",
+          "fa": "پشتیبانی حقوقی",
+          "ar": "الدعم القانوني",
+          "ku": "پشتگیری یاسایی",
+          "so": "Taageero sharci",
+          "ka": "იურიდიული მხარდაჭერა",
+          "sq": "Mbështetje ligjore"
+        },
+        "description": {
+          "en": "Access legal counseling and juridical help",
+          "de": "Zugang zu Rechtsberatung und juristischer Hilfe",
+          "ru": "Доступ к правовому консультированию и юридической помощи",
+          "ce": "Бакъо дешхьало а юкъе гlо а",
+          "prs": "دسترسی به مشاوره حقوقی و کمک قضایی",
+          "ps": "قانوني مشورې او قضایي مرستې ته لاسرسی",
+          "fa": "دسترسی به مشاوره حقوقی و کمک قضایی",
+          "ar": "الوصول إلى الاستشارة القانونية والمساعدة القضائية",
+          "ku": "دەستڕاگەیشتن بە ڕاوێژکاری یاسایی و یارمەتی دادوەری",
+          "so": "Helitaanka la-talinta sharciga iyo caawimaadda garsoorka",
+          "ka": "იურიდიული კონსულტაციისა და სამართლებრივი დახმარების მიღება",
+          "sq": "Qasja në këshillimin ligjor dhe ndihmën gjyqësore"
+        }
+      },
       "title": {
         "en": "Legal Support",
         "de": "Rechtsunterstützung",
@@ -132,8 +227,39 @@
     },
     {
       "type": "category",
-      "id": 2,
-      "category": "health", 
+      "id": 4,
+      "category": {
+        "icon": "local-hospital",
+        "color": "#10B981",
+        "title": {
+          "en": "Health & Mental Health",
+          "de": "Gesundheit & Psychische Gesundheit",
+          "ru": "Здоровье и психическое здоровье",
+          "ce": "Саламлакх а, психикан саламлакх а",
+          "prs": "سلامت و سلامت روان",
+          "ps": "روغتیا او رواني روغتیا",
+          "fa": "سلامت و سلامت روان",
+          "ar": "الصحة والصحة النفسية",
+          "ku": "تەندروستی و تەندروستی دەروونی",
+          "so": "Caafimaad iyo caafimaad maskax",
+          "ka": "ჯანმრთელობა და ფსიქიკური ჯანმრთელობა",
+          "sq": "Shëndeti dhe shëndeti mendor"
+        },
+        "description": {
+          "en": "Access medical and psychological support services",
+          "de": "Zugang zu medizinischen und psychologischen Unterstützungsleistungen",
+          "ru": "Доступ к медицинским и психологическим услугам поддержки",
+          "ce": "Доктораллин а, психологин а гlонах тlехьажа хlотталор",
+          "prs": "دسترسی به خدمات حمایت پزشکی و روانشناختی",
+          "ps": "طبي او رواني ملاتړ خدماتو ته لاسرسی",
+          "fa": "دسترسی به خدمات پشتیبانی پزشکی و روانشناختی",
+          "ar": "الوصول إلى خدمات الدعم الطبي والنفسي",
+          "ku": "دەستڕاگەیشتن بە خزمەتگوزارییەکانی پشتگیری پزیشکی و دەروونی",
+          "so": "Helitaanka adeegyada taageerada caafimaadka iyo maskaxda",
+          "ka": "სამედიცინო და ფსიქოლოგიური მხარდაჭერის სერვისებზე წვდომა",
+          "sq": "Qasja në shërbimet e mbështetjes mjekësore dhe psikologjike"
+        }
+      },
       "title": {
         "en": "Health & Mental Health",
         "de": "Gesundheit & Psychische Gesundheit",
@@ -164,8 +290,264 @@
       }
     },
     {
+      "type": "category",
+      "id": 5,
+      "category": {
+        "icon": "account-balance",
+        "color": "#F59E0B",
+        "title": {
+          "en": "Financial Literacy",
+          "de": "Finanzielle Bildung",
+          "ru": "Финансовая грамотность",
+          "ce": "Ахчан хаар",
+          "prs": "سواد مالی",
+          "ps": "مالي پوهاوی",
+          "fa": "سواد مالی",
+          "ar": "الثقافة المالية",
+          "ku": "خوێندنەوەی دارایی",
+          "so": "Aqoonta dhaqaale",
+          "ka": "ფინანსური წიგნიერება",
+          "sq": "Alfabetizmi financiar"
+        },
+        "description": {
+          "en": "Learn about banking, budgeting, and financial planning",
+          "de": "Lernen Sie über Banking, Budgetierung und Finanzplanung",
+          "ru": "Узнайте о банковском деле, бюджетировании и финансовом планировании",
+          "ce": "Банкашкахь, бюджетировашкахь, ахчан планаш йитташкахь хаа",
+          "prs": "در مورد بانکداری، بودجه‌بندی و برنامه‌ریزی مالی یاد بگیرید",
+          "ps": "د بانکداری، بودیجې، او مالي پلان جوړونې په اړه زده کړئ",
+          "fa": "درباره بانکداری، بودجه‌بندی و برنامه‌ریزی مالی یاد بگیرید",
+          "ar": "تعلم عن الخدمات المصرفية والميزانية والتخطيط المالي",
+          "ku": "فێربوون لەسەر بانکداری، بودجەسازی و پلاندانانی دارایی",
+          "so": "Baro bankilaynta, miisaaniyadda iyo qorshaynta dhaqaalaha",
+          "ka": "ისწავლეთ ბანკინგის, ბიუჯეტის და ფინანსური დაგეგმვის შესახებ",
+          "sq": "Mësoni për bankimin, buxhetimin dhe planifikimin financiar"
+        }
+      },
+      "title": {
+        "en": "Financial Literacy",
+        "de": "Finanzielle Bildung",
+        "ru": "Финансовая грамотность",
+        "ce": "Ахчан хаар",
+        "prs": "سواد مالی",
+        "ps": "مالي پوهاوی",
+        "fa": "سواد مالی",
+        "ar": "الثقافة المالية",
+        "ku": "خوێندنەوەی دارایی",
+        "so": "Aqoonta dhaqaale",
+        "ka": "ფინანსური წიგნიერება",
+        "sq": "Alfabetizmi financiar"
+      },
+      "text": {
+        "en": "Learn about banking, budgeting, taxes, and financial planning. Get help with opening bank accounts, understanding financial documents, and managing your money.",
+        "de": "Lernen Sie über Banking, Budgetierung, Steuern und Finanzplanung. Erhalten Sie Hilfe beim Eröffnen von Bankkonten, beim Verstehen von Finanzdokumenten und beim Verwalten Ihres Geldes.",
+        "ru": "Узнайте о банковском деле, бюджетировании, налогах и финансовом планировании. Получите помощь в открытии банковских счетов, понимании финансовых документов и управлении деньгами.",
+        "ce": "Банкашкахь, бюджетировашкахь, налогашкахь, ахчан планаш йитташкахь хаа. Банкан счеташ схьаелийташ, ахчан документаш гойту, ахча урхалла дехьашкахь гlо ло.",
+        "prs": "در مورد بانکداری، بودجه‌بندی، مالیات و برنامه‌ریزی مالی یاد بگیرید. کمک برای باز کردن حساب بانکی، درک اسناد مالی و مدیریت پول خود دریافت کنید.",
+        "ps": "د بانکداری، بودیجې، مالیاتو او مالي پلان جوړونې په اړه زده کړئ. د بانکي حسابونو پرانیستلو، د مالي اسنادو پوهیدو او د خپلو پیسو اداره کولو کې مرسته واخلئ.",
+        "fa": "درباره بانکداری، بودجه‌بندی، مالیات و برنامه‌ریزی مالی یاد بگیرید. برای باز کردن حساب بانکی، درک اسناد مالی و مدیریت پول خود کمک دریافت کنید.",
+        "ar": "تعلم عن الخدمات المصرفية والميزانية والضرائب والتخطيط المالي. احصل على المساعدة في فتح الحسابات المصرفية وفهم الوثائق المالية وإدارة أموالك.",
+        "ku": "فێربوون لەسەر بانکداری، بودجەسازی، باج و پلاندانانی دارایی. یارمەتی وەربگرە بۆ کردنەوەی هەژماری بانکی، تێگەیشتن لە بەڵگەنامە داراییەکان و بەڕێوەبردنی پارەکەت.",
+        "so": "Baro bankilaynta, miisaaniyadda, canshuuraha iyo qorshaynta dhaqaalaha. Hel caawimaad furitaanka akoonada bankiga, fahamka dukumentiyada dhaqaalaha iyo maaraynta lacagtaada.",
+        "ka": "ისწავლეთ ბანკინგის, ბიუჯეტის, გადასახადებისა და ფინანსური დაგეგმვის შესახებ. მიიღეთ დახმარება საბანკო ანგარიშების გახსნაში, ფინანსური დოკუმენტების გაგებაში და თქვენი ფულის მართვაში.",
+        "sq": "Mësoni për bankimin, buxhetimin, taksat dhe planifikimin financiar. Merrni ndihmë për hapjen e llogarive bankare, kuptimin e dokumenteve financiare dhe menaxhimin e parave tuaja."
+      }
+    },
+    {
+      "type": "category",
+      "id": 6,
+      "category": {
+        "icon": "groups",
+        "color": "#EC4899",
+        "title": {
+          "en": "Cultural Orientation",
+          "de": "Kulturelle Orientierung",
+          "ru": "Культурная ориентация",
+          "ce": "Культуран тlехьажар",
+          "prs": "جهت‌گیری فرهنگی",
+          "ps": "کلتوري لارښوونه",
+          "fa": "جهت‌گیری فرهنگی",
+          "ar": "التوجه الثقافي",
+          "ku": "ئاراستەکردنی کولتووری",
+          "so": "Hagaha dhaqanka",
+          "ka": "კულტურული ორიენტაცია",
+          "sq": "Orientimi kulturor"
+        },
+        "description": {
+          "en": "Learn about local customs, traditions, and social norms",
+          "de": "Lernen Sie über lokale Bräuche, Traditionen und soziale Normen",
+          "ru": "Узнайте о местных обычаях, традициях и социальных нормах",
+          "ce": "Меттигaн йолaлашкахь, aдaташкахь, жaмaн бакъонашкахь хаа",
+          "prs": "در مورد آداب و رسوم محلی، سنت‌ها و هنجارهای اجتماعی یاد بگیرید",
+          "ps": "د سیمه ایزو دودونو، دستورونو او ټولنیزو اصولو په اړه زده کړئ",
+          "fa": "درباره آداب و رسوم محلی، سنت‌ها و هنجارهای اجتماعی یاد بگیرید",
+          "ar": "تعلم عن العادات المحلية والتقاليد والأعراف الاجتماعية",
+          "ku": "فێربوون لەسەر نەریت و داب و نەریتە خۆماڵییەکانی ناوخۆیی",
+          "so": "Baro caadooyinka maxalliga ah, dhaqamada iyo hababka bulshada",
+          "ka": "ისწავლეთ ადგილობრივი ჩვეულებების, ტრადიციებისა და სოციალური ნორმების შესახებ",
+          "sq": "Mësoni për zakonet lokale, traditat dhe normat sociale"
+        }
+      },
+      "title": {
+        "en": "Cultural Orientation",
+        "de": "Kulturelle Orientierung",
+        "ru": "Культурная ориентация",
+        "ce": "Культуран тlехьажар",
+        "prs": "جهت‌گیری فرهنگی",
+        "ps": "کلتوري لارښوونه",
+        "fa": "جهت‌گیری فرهنگی",
+        "ar": "التوجه الثقافي",
+        "ku": "ئاراستەکردنی کولتووری",
+        "so": "Hagaha dhaqanka",
+        "ka": "კულტურული ორიენტაცია",
+        "sq": "Orientimi kulturor"
+      },
+      "text": {
+        "en": "Learn about local customs, traditions, and social norms. Understand cultural expectations, workplace etiquette, and community integration.",
+        "de": "Lernen Sie über lokale Bräuche, Traditionen und soziale Normen. Verstehen Sie kulturelle Erwartungen, Arbeitsplatz-Etikette und Gemeinschaftsintegration.",
+        "ru": "Узнайте о местных обычаях, традициях и социальных нормах. Поймите культурные ожидания, этикет на рабочем месте и интеграцию в сообщество.",
+        "ce": "Меттигaн йолaлашкахь, aдaташкахь, жaмaн бакъонашкахь хаа. Культуран боьршалла, болх беттан адабашкахь, жaмaтехь тlехьажарашкахь гойту.",
+        "prs": "در مورد آداب و رسوم محلی، سنت‌ها و هنجارهای اجتماعی یاد بگیرید. انتظارات فرهنگی، آداب محل کار و ادغام جامعه را درک کنید.",
+        "ps": "د سیمه ایزو دودونو، دستورونو او ټولنیزو اصولو په اړه زده کړئ. کلتوري هیلې، د کار ځای آداب، او د ټولنې یوالی پوه شئ.",
+        "fa": "درباره آداب و رسوم محلی، سنت‌ها و هنجارهای اجتماعی یاد بگیرید. انتظارات فرهنگی، آداب محل کار و ادغام جامعه را درک کنید.",
+        "ar": "تعلم عن العادات المحلية والتقاليد والأعراف الاجتماعية. افهم التوقعات الثقافية وآداب مكان العمل والاندماج المجتمعي.",
+        "ku": "فێربوون لەسەر نەریت و داب و نەریتە خۆماڵییەکانی ناوخۆیی. تێگەیشتن لە چاوەڕوانییە کولتوورییەکان، ئەدەبی شوێنی کار و یەکگرتنی کۆمەڵگا.",
+        "so": "Baro caadooyinka maxalliga ah, dhaqamada iyo hababka bulshada. Fahmo rajayaasha dhaqanka, edabka goobta shaqada iyo iskuduwayga bulshada.",
+        "ka": "ისწავლეთ ადგილობრივი ჩვეულებების, ტრადიციებისა და სოციალური ნორმების შესახებ. გაიგეთ კულტურული მოლოდდინები, სამუშაო ადგილის ეტიკეტი და საზოგადოებრივი ინტეგრაცია.",
+        "sq": "Mësoni për zakonet lokale, traditat dhe normat sociale. Kuptoni pritjet kulturore, etiketën e vendit të punës dhe integrimin në komunitet."
+      }
+    },
+    {
+      "type": "category",
+      "id": 7,
+      "category": {
+        "icon": "work",
+        "color": "#059669",
+        "title": {
+          "en": "Integration Pathways",
+          "de": "Integrationswege",
+          "ru": "Пути интеграции",
+          "ce": "Интеграцин некъаш",
+          "prs": "مسیرهای ادغام",
+          "ps": "د یوځای کیدو لارې",
+          "fa": "مسیرهای ادغام",
+          "ar": "مسارات التكامل",
+          "ku": "ڕێگاکانی یەکگرتن",
+          "so": "Wadooyinka is-dhexgalka",
+          "ka": "ინტეგრაციის გზები",
+          "sq": "Rrugët e integrimit"
+        },
+        "description": {
+          "en": "Find career guidance and job search assistance",
+          "de": "Finden Sie Karriereberatung und Jobsuch-Hilfe",
+          "ru": "Найдите карьерное руководство и помощь в поиске работы",
+          "ce": "Карьеран дешхьало а, болх лахар гlо а карийта",
+          "prs": "راهنمایی شغلی و کمک در جستجوی کار پیدا کنید",
+          "ps": "د مسلک لارښوونه او د کار لټون مرسته ومومئ",
+          "fa": "راهنمایی شغلی و کمک در جستجوی کار پیدا کنید",
+          "ar": "اعثر على التوجيه المهني والمساعدة في البحث عن عمل",
+          "ku": "ڕێنوێنی کاری و یارمەتی گەڕانی کار بدۆزەوە",
+          "so": "Hel hagaha xirfadaha iyo caawimaadda raadinta shaqada",
+          "ka": "მოძებნეთ კარიერული მითითებები და სამუშაოს ძიების დახმარება",
+          "sq": "Gjeni udhëzime për karrierën dhe ndihmë për kërkimin e punës"
+        }
+      },
+      "title": {
+        "en": "Integration Pathways",
+        "de": "Integrationswege",
+        "ru": "Пути интеграции",
+        "ce": "Интеграцин некъаш",
+        "prs": "مسیرهای ادغام",
+        "ps": "د یوځای کیدو لارې",
+        "fa": "مسیرهای ادغام",
+        "ar": "مسارات التكامل",
+        "ku": "ڕێگاکانی یەکگرتن",
+        "so": "Wadooyinka is-dhexgalka",
+        "ka": "ინტეგრაციის გზები",
+        "sq": "Rrugët e integrimit"
+      },
+      "text": {
+        "en": "Find career guidance, job search assistance, and professional development opportunities. Get help with resume writing, interview preparation, and skill recognition.",
+        "de": "Finden Sie Karriereberatung, Jobsuch-Hilfe und berufliche Entwicklungsmöglichkeiten. Erhalten Sie Hilfe beim Lebenslauf schreiben, Vorstellungsgespräch-Vorbereitung und Kompetenzanerkennung.",
+        "ru": "Найдите карьерное руководство, помощь в поиске работы и возможности профессионального развития. Получите помощь в написании резюме, подготовке к собеседованию и признании навыков.",
+        "ce": "Карьеран дешхьало, болх лахар гlо, профессионал сахьавалар карийта. Резюме йазар, интервьюн техьалла, мехаллаш довзийтар гlонаш карийта.",
+        "prs": "راهنمایی شغلی، کمک در جستجوی کار و فرصت‌های توسعه حرفه‌ای پیدا کنید. کمک برای نوشتن رزومه، آماده‌سازی مصاحبه و شناسایی مهارت دریافت کنید.",
+        "ps": "د مسلک لارښوونه، د کار لټون مرسته، او د مسلکي پرمختګ فرصتونه ومومئ. د بیوګرافۍ لیکلو، د مرکې چمتووالي، او د مهارتونو پیژندنې کې مرسته واخلئ.",
+        "fa": "راهنمایی شغلی، کمک در جستجوی کار و فرصت‌های توسعه حرفه‌ای پیدا کنید. برای نوشتن رزومه، آماده‌سازی مصاحبه و شناسایی مهارت کمک دریافت کنید.",
+        "ar": "اعثر على التوجيه المهني والمساعدة في البحث عن عمل وفرص التطوير المهني. احصل على المساعدة في كتابة السيرة الذاتية وإعداد المقابلة والاعتراف بالمهارات.",
+        "ku": "ڕێنوێنی کاری، یارمەتی گەڕانی کار و دەرفەتەکانی گەشەپێدانی پیشەیی بدۆزەوە. یارمەتی وەربگرە بۆ نووسینی سیڤی، ئامادەکردنی چاوپێکەوتن و ناسینەوەی شارەزایی.",
+        "so": "Hel hagaha xirfadaha, caawimaadda raadinta shaqada iyo fursadaha horumarinta xirfadaha. Hel caawimaad qorista taariikhdaaha, diyaarinta wareysiga iyo aqoonsiga xirfadaha.",
+        "ka": "მოძებნეთ კარიერული მითითებები, სამუშაოს ძიების დახმარება და პროფესიული განვითარების შესაძლებლობები. მიიღეთ დახმარება რეზიუმეს დაწერაში, ინტერვიუსთვის მომზადებაში და უნარების აღიარებაში.",
+        "sq": "Gjeni udhëzime për karrierën, ndihmë për kërkimin e punës dhe mundësi zhvillimi profesional. Merrni ndihmë për shkrim të CV-së, përgatitje për intervistë dhe njohje të aftësive."
+      }
+    },
+    {
+      "type": "category",
+      "id": 8,
+      "category": {
+        "icon": "description",
+        "color": "#DC2626",
+        "title": {
+          "en": "Document Certification",
+          "de": "Dokumentenzertifizierung",
+          "ru": "Сертификация документов",
+          "ce": "Документашан сертификаци",
+          "prs": "تصدیق اسناد",
+          "ps": "د اسنادو تصدیق",
+          "fa": "تصدیق اسناد",
+          "ar": "توثيق الوثائق",
+          "ku": "پشتڕاستکردنەوەی بەڵگەنامە",
+          "so": "Xaqiijinta dukumentiyada",
+          "ka": "დოკუმენტების სერტიფიკაცია",
+          "sq": "Certifikimi i dokumenteve"
+        },
+        "description": {
+          "en": "Get help with document translation and official certification",
+          "de": "Erhalten Sie Hilfe bei Dokumentenübersetzung und offizieller Zertifizierung",
+          "ru": "Получите помощь с переводом документов и официальной сертификацией",
+          "ce": "Документаш гочдар, оьпакъан сертификацин гlонаш ло",
+          "prs": "کمک برای ترجمه اسناد و تصدیق رسمی دریافت کنید",
+          "ps": "د اسنادو ژباړې او رسمي تصدیق لپاره مرسته واخلئ",
+          "fa": "برای ترجمه اسناد و تصدیق رسمی کمک دریافت کنید",
+          "ar": "احصل على المساعدة في ترجمة الوثائق والتوثيق الرسمي",
+          "ku": "یارمەتی وەربگرە بۆ وەرگێڕانی بەڵگەنامە و پشتڕاستکردنەوەی فەرمی",
+          "so": "Hel caawimaad turjumaadda dukumentiyada iyo xaqiijinta rasmiga ah",
+          "ka": "მიიღეთ დახმარება დოკუმენტების თარგმნასა და ოფიციალურ სერტიფიკაციაში",
+          "sq": "Merrni ndihmë për përkthimin e dokumenteve dhe certifikimin zyrtar"
+        }
+      },
+      "title": {
+        "en": "Document Certification",
+        "de": "Dokumentenzertifizierung",
+        "ru": "Сертификация документов",
+        "ce": "Документашан сертификаци",
+        "prs": "تصدیق اسناد",
+        "ps": "د اسنادو تصدیق",
+        "fa": "تصدیق اسناد",
+        "ar": "توثيق الوثائق",
+        "ku": "پشتڕاستکردنەوەی بەڵگەنامە",
+        "so": "Xaqiijinta dukumentiyada",
+        "ka": "დოკუმენტების სერტიფიკაცია",
+        "sq": "Certifikimi i dokumenteve"
+      },
+      "text": {
+        "en": "Get help with document translation, certification, and official recognition. Find services for educational credentials, professional qualifications, and legal documents.",
+        "de": "Erhalten Sie Hilfe bei Dokumentenübersetzung, Zertifizierung und offizieller Anerkennung. Finden Sie Dienstleistungen für Bildungsnachweise, berufliche Qualifikationen und juristische Dokumente.",
+        "ru": "Получите помощь с переводом документов, сертификацией и официальным признанием. Найдите услуги для образовательных документов, профессиональных квалификаций и юридических документов.",
+        "ce": "Документаш гочдар, сертификаци, оьпакъан довзийтар гlонаш ло. Дешаран документашна, профессионал квалификацешна, бакъонан документашна гlулакхаш карийта.",
+        "prs": "کمک برای ترجمه اسناد، تصدیق و شناسایی رسمی دریافت کنید. خدمات برای مدارک تحصیلی، صلاحیت‌های حرفه‌ای و اسناد حقوقی پیدا کنید.",
+        "ps": "د اسنادو ژباړې، تصدیق، او رسمي پیژندنې لپاره مرسته واخلئ. د زده کړو سندونو، مسلکي وړتیاو، او قانوني اسنادو لپاره خدمات ومومئ.",
+        "fa": "برای ترجمه اسناد، تصدیق و شناسایی رسمی کمک دریافت کنید. خدمات برای مدارک تحصیلی، صلاحیت‌های حرفه‌ای و اسناد حقوقی پیدا کنید.",
+        "ar": "احصل على المساعدة في ترجمة الوثائق والتوثيق والاعتراف الرسمي. ابحث عن الخدمات للشهادات التعليمية والمؤهلات المهنية والوثائق القانونية.",
+        "ku": "یارمەتی وەربگرە بۆ وەرگێڕانی بەڵگەنامە، پشتڕاستکردنەوە و ناسینەوەی فەرمی. خزمەتگوزاری بۆ بڕوانامەی پەروەردەیی، لایەنی پیشەیی و بەڵگەنامە یاساییەکان بدۆزەوە.",
+        "so": "Hel caawimaad turjumaadda dukumentiyada, xaqiijinta iyo aqoonsiga rasmiga ah. Hel adeegyada shahaadooyinka waxbarashada, aqoonyahanka xirfadaha iyo dukumentiyada sharciga.",
+        "ka": "მიიღეთ დახმარება დოკუმენტების თარგმნაში, სერტიფიკაციასა და ოფიციალურ აღიარებაში. იპოვეთ სერვისები განათლების სერტიფიკატებისთვის, პროფესიული კვალიფიკაციებისთვის და იურიდიული დოკუმენტებისთვის.",
+        "sq": "Merrni ndihmë për përkthimin e dokumenteve, certifikimin dhe njohjen zyrtare. Gjeni shërbime për kredencialet arsimore, kualifikimet profesionale dhe dokumentet ligjore."
+      }
+    },
+    {
       "type": "icons",
-      "id": 3,
+      "id": 9,
       "title": {
         "en": "Navigation Icons",
         "de": "Navigations-Symbole",

@@ -113,6 +113,7 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
       case 'welcome':
       case 'instruction':
       case 'feature':
+      case 'icons':
         return (
           <View style={styles.slideContent}>
             <View style={styles.centerContent}>
@@ -203,6 +204,8 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
         return 'touch-app';
       case 'confirmation':
         return 'check-circle';
+      case 'icons':
+        return 'help';
       case 'feature':
         return slideIndex === 4 ? 'record-voice-over' : slideIndex === 5 ? 'help' : 'mic';
       default:
@@ -218,6 +221,8 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
         return '#10B981';
       case 'confirmation':
         return '#F59E0B';
+      case 'icons':
+        return '#8B5CF6';
       case 'feature':
         return slideIndex === 4 ? '#10B981' : slideIndex === 5 ? '#8B5CF6' : '#10B981';
       default:
