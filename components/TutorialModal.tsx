@@ -32,7 +32,7 @@ const TutorialModal: React.FC<TutorialModalProps> = ({
       case 'index':
         return 6;
       case 'ask':
-        return 6; // Based on the ask.json structure
+        return 10; // 1 welcome + 8 categories + 1 icons
       default:
         return 7; // home tutorial
     }
