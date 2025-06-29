@@ -32,9 +32,9 @@ const TutorialModal: React.FC<TutorialModalProps> = ({
       case 'index':
         return 6;
       case 'ask':
-        return 10; // 1 welcome + 8 categories + 1 icons
+        return 11; // 1 welcome + 8 categories + 1 virtual assistant + 1 language selection
       case 'ask-general':
-        return 6;
+        return 7; // 1 welcome + 4 categories + 1 FAQ + 1 virtual assistant + 1 language selection
       default:
         return 7; // home tutorial
     }

@@ -36,7 +36,6 @@
     {
       "type": "category",
       "id": 1,
-      "category": "mentor",
       "title": {
         "en": "Talk to a Mentor",
         "de": "Mit einem Mentor sprechen",
@@ -64,12 +63,23 @@
         "so": "Hel taageero shaqsi ah oo ka timid macalimiinta khibradda leh iyada oo loo marayo wadooyinka kala duwan ee isgaadhsiinta oo ay ku jiraan WhatsApp, Signal, Telegram, Facebook, email, iyo telefoon.",
         "ka": "მიიღეთ ინდივიდუალური მხარდაჭერა გამოცდილი მენტორებისგან სხვადასხვა საკომუნიკაციო არხების საშუალებით, მათ შორის WhatsApp, Signal, Telegram, Facebook, ელექტრონული ფოსტა და ტელეფონი.",
         "sq": "Merrni mbështetje individuale nga mentorët me përvojë përmes kanaleve të ndryshme komunikimi duke përfshirë WhatsApp, Signal, Telegram, Facebook, email dhe telefon."
+      },
+      "category": {
+        "title": {
+          "en": "Talk to a mentor",
+          "de": "Mit einem Mentor sprechen"
+        },
+        "description": {
+          "en": "Get personal guidance",
+          "de": "Persönliche Beratung erhalten"
+        },
+        "icon": "question-answer",
+        "color": "#3B82F6"
       }
     },
     {
       "type": "category",
       "id": 2,
-      "category": "community",
       "title": {
         "en": "Ask the Community",
         "de": "Frage die Community",
@@ -95,14 +105,25 @@
         "ar": "تواصل مع الآخرين في مواقف مماثلة من خلال منصات المجتمع مثل مجموعات واتساب وسيجنال وتيليجرام والمنتديات حيث يمكنك مشاركة التجارب والحصول على المشورة.",
         "ku": "لە ڕێگای پلاتفۆرمی کۆمەڵایەتیەوە لەگەڵ کەسانی تری هاوشێوە پەیوەندی بکە وەک گرووپەکانی واتساپ، سیگناڵ، تیلیگرام و فۆرمەکان کە دەتوانیت ئەزموونەکانت بەشی بکەیت و ڕاوێژکاری وەربگریت.",
         "so": "Kula xiriir dadka kale ee xaaladaha la mid ah iyada oo loo marayo goobaha bulshada sida kooxaha WhatsApp, Signal, Telegram, iyo foramiinta halkaas oo aad wadaagi karto waayo-aragnimo oo heli karto talo.",
-        "ka": "დაუკავშირდით სხვებს მსგავს სიტუაციებში საზოგადოების პლატფորმების საშუალებით, როგორიცაა WhatsApp ჯგუფები, Signal, Telegram და ფორუმები, სადაც შეგიძლიათ გაუზიაროთ გამოცდილება და მიიღოთ რჩევები.",
+        "ka": "დაუკავშირდით სხვებს მსგავს სიტუაციებში საზოგადოების პლატფორმების საშუალებით, როგორიცაა WhatsApp ჯგუფები, Signal, Telegram და ფორუმები, სადაც შეგიძლიათ გაუზიაროთ გამოცდილება და მიიღოთ რჩევები.",
         "sq": "Lidhuni me të tjerët në situata të ngjashme përmes platformave të komunitetit si grupet e WhatsApp, Signal, Telegram dhe forumet ku mund të ndani përvojat dhe merrni këshilla."
+      },
+      "category": {
+        "title": {
+          "en": "Ask the community",
+          "de": "Frage die Community"
+        },
+        "description": {
+          "en": "Connect with others",
+          "de": "Mit anderen verbinden"
+        },
+        "icon": "people",
+        "color": "#10B981"
       }
     },
     {
       "type": "category",
       "id": 3,
-      "category": "visit",
       "title": {
         "en": "Visit Us in Person",
         "de": "Besuche uns persönlich",
@@ -130,38 +151,96 @@
         "so": "Hel meelahayaga jirka ah ee dhammaan gobollada Austria. Xafiis walba wuxuu bixiyaa adeegyada taageerada iyo la-talinta shakhsiga ah.",
         "ka": "იპოვეთ ჩვენი ფიზიკური მდებარეობები ავსტრიის ყველა შტატში. ყოველი ოფისი უზრუნველყოფს პირად მხარდაჭერას და საკონსულტაციო მომსახურებას.",
         "sq": "Gjeni vendet tona fizike në të gjitha shtetet e Austrisë. Çdo zyrë ofron shërbime mbështetjeje dhe këshillimi në person."
+      },
+      "category": {
+        "title": {
+          "en": "Visit us in person",
+          "de": "Besuche uns persönlich"
+        },
+        "description": {
+          "en": "Find our locations",
+          "de": "Unsere Standorte finden"
+        },
+        "icon": "location-on",
+        "color": "#8B5CF6"
       }
     },
     {
-      "type": "icons",
+      "type": "category",
       "id": 4,
       "title": {
-        "en": "Navigation Icons",
-        "de": "Navigations-Symbole",
-        "ru": "Значки навигации",
-        "ce": "Навигацин билгалонаш",
-        "prs": "نمادهای ناوبری",
-        "ps": "د لارښود نښېګانې",
-        "fa": "نمادهای ناوبری",
-        "ar": "رموز التنقل",
-        "ku": "نیشانەکانی ناوبری",
-        "so": "Calaamadaha dhaqdhaqaaqa",
-        "ka": "ნავიგაციის ხატულები",
-        "sq": "Ikonat e navigimit"
+        "en": "Frequently Asked Questions",
+        "de": "Häufig gestellte Fragen",
+        "ru": "Часто задаваемые вопросы",
+        "ce": "Дуккха хатторш",
+        "prs": "سوالات متداول",
+        "ps": "ډیری پوښتل شوې پوښتنې",
+        "fa": "سوالات متداول",
+        "ar": "الأسئلة الشائعة",
+        "ku": "پرسیارە دووبارەبووەکان",
+        "so": "Su'aalaha inta badan la is weydiiyo",
+        "ka": "ხშირად დასმული კითხვები",
+        "sq": "Pyetjet e shpeshta"
       },
       "text": {
-        "en": "Learn about the navigation icons: Sound toggle, Language selector, Help/Tutorial, and Virtual Assistant.",
-        "de": "Erfahren Sie mehr über die Navigationsymbole: Sound-Umschaltung, Sprachauswahl, Hilfe/Tutorial und Virtueller Assistent.",
-        "ru": "Узнайте о значках навигации: переключатель звука, выбор языка, помощь/руководство и виртуальный помощник.",
-        "ce": "Навигацин билгалонашкахь хаа: Аудионан товар, мотт харжар, гlо/дешаран хаам, виртуальни ассистент.",
-        "prs": "در مورد نمادهای ناوبری بیاموزید: تغییر صدا، انتخابگر زبان، راهنما/آموزش و دستیار مجازی.",
-        "ps": "د لارښود نښانګانو په اړه زده کړئ: د غږ بدلول، د ژبې ټاکونکی، مرسته/روزنه، او مجازی ملګری.",
-        "fa": "در مورد نمادهای ناوبری بیاموزید: تغییر صدا، انتخابگر زبان، راهنما/آموزش و دستیار مجازی.",
-        "ar": "تعرف على رموز التنقل: تبديل الصوت، منتقي اللغة، المساعدة/الدليل، والمساعد الافتراضي.",
-        "ku": "زانیاری لەسەر نیشانەکانی ناوبری: گۆڕانی دەنگ، هەڵبژاردنی زمان، یارمەتی/فێرکردن، و یاریدەدەری مەجازی.",
-        "so": "Baro calaamadaha dhaqdhaqaaqa: Beddelka codka, Doorashada luqadda, Caawimaadda/Tababarka, iyo Caawiyaha Farsamada ah.",
-        "ka": "გაიცანით ნავიგაციის ხატულები: ხმის გადართვა, ენის არჩევა, დახმარება/სახელმძღვანელო და ვირტუალური ასისტენტი.",
-        "sq": "Mësoni për ikonat e navigimit: Ndryshimi i zërit, Zgjedhësi i gjuhës, Ndihma/Udhëzuesi dhe Asistenti Virtual."
+        "en": "Find answers to common questions about appointments, required documents, consultation fees, and available languages.",
+        "de": "Finden Sie Antworten auf häufige Fragen zu Terminen, erforderlichen Dokumenten, Beratungsgebühren und verfügbaren Sprachen.",
+        "ru": "Найдите ответы на часто задаваемые вопросы о записи на прием, необходимых документах, платах за консультации и доступных языках.",
+        "ce": "Терминаш, хlокху йуьлу документаш, консультацин ахча а мотташ а йеткъам хаттарн жоьпаш карийта.",
+        "prs": "پاسخ سوالات رایج در مورد قرارها، اسناد مورد نیاز، هزینه مشاوره و زبان‌های موجود را پیدا کنید.",
+        "ps": "د ګډو پوښتنو ځوابونه ومومئ د ملاقاتونو، اړین اسنادو، د مشورې فیسونو، او شته ژبو په اړه.",
+        "fa": "پاسخ سوالات رایج در مورد قرارها، اسناد مورد نیاز، هزینه مشاوره و زبان‌های موجود را پیدا کنید.",
+        "ar": "ابحث عن إجابات للأسئلة الشائعة حول المواعيد والوثائق المطلوبة ورسوم الاستشارة واللغات المتاحة.",
+        "ku": "وەڵامی پرسیارە باوەکان بدۆزەوە دەربارەی چاوپێکەوتنەکان، بەڵگە پێویستەکان، کرێی ڕاوێژکاری، و زمانە بەردەستەکان.",
+        "so": "Hel jawaabaha su'aalaha caadiga ah ee ku saabsan ballamaha, dukumentiyada loo baahan yahay, lacagaha la-talinta, iyo afafka la heli karo.",
+        "ka": "იპოვეთ პასუხები ხშირად დასმულ კითხვებზე დანიშვნების, საჭირო დოკუმენტების, კონსულტაციის საფასურის და ხელმისაწვდომი ენების შესახებ.",
+        "sq": "Gjeni përgjigje për pyetje të zakonshme rreth takimeve, dokumenteve të kërkuara, tarifave të konsultimit dhe gjuhëve të disponueshme."
+      },
+      "category": {
+        "title": {
+          "en": "FAQ",
+          "de": "Häufig gestellte Fragen"
+        },
+        "description": {
+          "en": "Common questions",
+          "de": "Häufige Fragen"
+        },
+        "icon": "help",
+        "color": "#F59E0B"
+      }
+    },
+    {
+      "type": "assistant",
+      "id": 5,
+      "title": {
+        "en": "Hi! I'm here to help you navigate this app and find what you need!",
+        "de": "Hallo! Ich bin hier, um Ihnen bei der Navigation in dieser App zu helfen und zu finden, was Sie brauchen!"
+      },
+      "text": {
+        "en": "Use the virtual assistant to get instant help and guidance. Ask questions in your preferred language and get personalized support.",
+        "de": "Nutzen Sie den virtuellen Assistenten für sofortige Hilfe und Anleitung. Stellen Sie Fragen in Ihrer bevorzugten Sprache und erhalten Sie persönliche Unterstützung."
+      }
+    },
+    {
+      "type": "feature",
+      "id": 6,
+      "title": {
+        "en": "Language Selection",
+        "de": "Sprachauswahl",
+        "ru": "Выбор языка",
+        "ce": "Мотт харжар",
+        "prs": "انتخاب زبان",
+        "ps": "د ژبې ټاکنه",
+        "fa": "انتخاب زبان",
+        "ar": "اختيار اللغة",
+        "ku": "هەڵبژاردنی زمان",
+        "so": "Doorashada luqadda",
+        "ka": "ენის არჩევა",
+        "sq": "Zgjedhja e gjuhës"
+      },
+      "text": {
+        "en": "Switch between 12 different languages anytime. The app supports German, English, Russian, Chechen, Dari, Pashto, Farsi, Arabic, Kurdish, Somali, Georgian, and Albanian.",
+        "de": "Wechseln Sie jederzeit zwischen 12 verschiedenen Sprachen. Die App unterstützt Deutsch, Englisch, Russisch, Tschetschenisch, Dari, Paschtu, Farsi, Arabisch, Kurdisch, Somali, Georgisch und Albanisch."
       }
     }
   ]

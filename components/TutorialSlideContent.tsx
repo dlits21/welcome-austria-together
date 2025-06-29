@@ -207,6 +207,9 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
       case 'icons':
         return 'help';
       case 'feature':
+        if (tutorialData === 'ask' || tutorialData === 'ask-general') {
+          return slideIndex === (tutorialData === 'ask' ? 10 : 6) ? 'language' : 'mic';
+        }
         return slideIndex === 4 ? 'record-voice-over' : slideIndex === 5 ? 'help' : 'mic';
       default:
         return 'info';
@@ -224,6 +227,9 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
       case 'icons':
         return '#8B5CF6';
       case 'feature':
+        if (tutorialData === 'ask' || tutorialData === 'ask-general') {
+          return slideIndex === (tutorialData === 'ask' ? 10 : 6) ? '#10B981' : '#8B5CF6';
+        }
         return slideIndex === 4 ? '#10B981' : slideIndex === 5 ? '#8B5CF6' : '#10B981';
       default:
         return '#3B82F6';
