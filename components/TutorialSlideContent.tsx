@@ -7,6 +7,7 @@ import { GermanFlag } from './Flags';
 import homeTutorialData from '../data/tutorial/home.json';
 import indexTutorialData from '../data/tutorial/index.json';
 import askTutorialData from '../data/tutorial/ask.json';
+import askGeneralTutorial from '../data/tutorial/ask/general.json'
 import { getGlobalText } from '../utils/languageUtils';
 
 interface TutorialSlideContentProps {
@@ -48,6 +49,8 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
         return indexTutorialData;
       case 'ask':
         return askTutorialData;
+      case 'ask-general':
+        return askGeneralTutorial;
       default:
         return homeTutorialData;
     }

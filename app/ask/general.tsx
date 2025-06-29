@@ -252,7 +252,7 @@ const GeneralSupport: React.FC = () => {
         visible={showTutorial}
         onClose={() => setShowTutorial(false)}
         languageCode={language.code}
-        tutorialType="ask-general"
+        tutorialData="ask-general"
       />
     </SafeAreaView>
   );

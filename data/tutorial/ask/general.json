@@ -3,6 +3,7 @@
   "slides": [
     {
       "type": "welcome",
+      "id": 0,
       "title": {
         "en": "Welcome to General Support",
         "de": "Willkommen bei der allgemeinen Unterstützung",
@@ -17,7 +18,7 @@
         "ka": "კეთილი იყოს თქვენი მობრძანება ზოგად მხარდაჭერაში",
         "sq": "Mirësevini në mbështetjen e përgjithshme"
       },
-      "description": {
+      "text": {
         "en": "This section provides various ways to get help and support. Let's explore your options.",
         "de": "Dieser Bereich bietet verschiedene Möglichkeiten, Hilfe und Unterstützung zu erhalten. Lassen Sie uns Ihre Optionen erkunden.",
         "ru": "Этот раздел предоставляет различные способы получения помощи и поддержки. Давайте изучим ваши варианты.",
@@ -34,6 +35,7 @@
     },
     {
       "type": "category",
+      "id": 1,
       "category": "mentor",
       "title": {
         "en": "Talk to a Mentor",
@@ -49,7 +51,7 @@
         "ka": "ისაუბრეთ მენტორთან",
         "sq": "Flisni me një mentor"
       },
-      "description": {
+      "text": {
         "en": "Get one-on-one support from experienced mentors through various communication channels including WhatsApp, Signal, Telegram, Facebook, email, and phone.",
         "de": "Erhalten Sie individuelle Unterstützung von erfahrenen Mentoren über verschiedene Kommunikationskanäle wie WhatsApp, Signal, Telegram, Facebook, E-Mail und Telefon.",
         "ru": "Получите индивидуальную поддержку от опытных наставников через различные каналы связи, включая WhatsApp, Signal, Telegram, Facebook, электронную почту и телефон.",
@@ -66,6 +68,7 @@
     },
     {
       "type": "category",
+      "id": 2,
       "category": "community",
       "title": {
         "en": "Ask the Community",
@@ -81,7 +84,7 @@
         "ka": "ჰკითხეთ საზოგადოებას",
         "sq": "Pyesni komunitetin"
       },
-      "description": {
+      "text": {
         "en": "Connect with others in similar situations through community platforms like WhatsApp groups, Signal, Telegram, and forums where you can share experiences and get advice.",
         "de": "Verbinden Sie sich mit anderen in ähnlichen Situationen über Community-Plattformen wie WhatsApp-Gruppen, Signal, Telegram und Foren, wo Sie Erfahrungen teilen und Ratschläge erhalten können.",
         "ru": "Свяжитесь с другими людьми в похожих ситуациях через платформы сообщества, такие как группы WhatsApp, Signal, Telegram и форумы, где вы можете делиться опытом и получать советы.",
@@ -98,6 +101,7 @@
     },
     {
       "type": "category",
+      "id": 3,
       "category": "visit",
       "title": {
         "en": "Visit Us in Person",
@@ -113,7 +117,7 @@
         "ka": "ეწვიეთ ჩვენ პირადად",
         "sq": "Na vizitoni personalisht"
       },
-      "description": {
+      "text": {
         "en": "Find our physical locations across all Austrian states. Each office provides in-person support and counseling services.",
         "de": "Finden Sie unsere physischen Standorte in allen österreichischen Bundesländern. Jedes Büro bietet persönliche Unterstützung und Beratungsdienste.",
         "ru": "Найдите наши физические местоположения во всех австрийских землях. Каждый офис предоставляет личную поддержку и консультационные услуги.",
@@ -130,6 +134,7 @@
     },
     {
       "type": "icons",
+      "id": 4,
       "title": {
         "en": "Navigation Icons",
         "de": "Navigations-Symbole",
@@ -144,7 +149,7 @@
         "ka": "ნავიგაციის ხატულები",
         "sq": "Ikonat e navigimit"
       },
-      "description": {
+      "text": {
         "en": "Learn about the navigation icons: Sound toggle, Language selector, Help/Tutorial, and Virtual Assistant.",
         "de": "Erfahren Sie mehr über die Navigationsymbole: Sound-Umschaltung, Sprachauswahl, Hilfe/Tutorial und Virtueller Assistent.",
         "ru": "Узнайте о значках навигации: переключатель звука, выбор языка, помощь/руководство и виртуальный помощник.",
