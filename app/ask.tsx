@@ -146,7 +146,7 @@ const AskPage: React.FC = () => {
         visible={showTutorial}
         onClose={() => setShowTutorial(false)}
         languageCode={language.code}
-        tutorialType="ask"
+        tutorialData="ask"
       />
     </SafeAreaView>
   );

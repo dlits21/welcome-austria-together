@@ -3,6 +3,7 @@
   "slides": [
     {
       "type": "welcome",
+      "id": 0,
       "title": {
         "en": "Welcome to Ask for Help",
         "de": "Willkommen bei Hilfe anfragen",
@@ -17,7 +18,7 @@
         "ka": "კეთილი იყოს თქვენი მობრძანება დახმარების მოთხოვნის განყოფილებაში",
         "sq": "Mirësevini në seksionin e kërkimit të ndihmës"
       },
-      "description": {
+      "text": {
         "en": "This section helps you find the right support for your needs. Let's explore the different categories available.",
         "de": "Dieser Bereich hilft Ihnen, die richtige Unterstützung für Ihre Bedürfnisse zu finden. Lassen Sie uns die verschiedenen verfügbaren Kategorien erkunden.",
         "ru": "Этот раздел поможет вам найти подходящую поддержку для ваших потребностей. Давайте изучим различные доступные категории.",
@@ -34,6 +35,7 @@
     },
     {
       "type": "category",
+      "id": 1,
       "category": "general",
       "title": {
         "en": "General Support",
@@ -49,7 +51,7 @@
         "ka": "ზოგადი მხარდაჭერა",
         "sq": "Mbështetje e përgjithshme"
       },
-      "description": {
+      "text": {
         "en": "Get general support and counseling. Contact mentors, ask the community, visit offices, or find answers to common questions.",
         "de": "Erhalten Sie allgemeine Unterstützung und Beratung. Kontaktieren Sie Mentoren, fragen Sie die Community, besuchen Sie Büros oder finden Sie Antworten auf häufige Fragen.",
         "ru": "Получите общую поддержку и консультации. Свяжитесь с наставниками, спросите сообщество, посетите офисы или найдите ответы на часто задаваемые вопросы.",
@@ -81,7 +83,7 @@
         "ka": "საგანგებო მხარდაჭერა",
         "sq": "Mbështetje emergjente"
       },
-      "description": {
+      "text": {
         "en": "Access immediate help for emergencies. Find contact numbers for police, fire, medical, and other emergency services.",
         "de": "Sofortigen Zugang zu Nothilfe erhalten. Finden Sie Kontaktnummern für Polizei, Feuerwehr, Medizin und andere Notdienste.",
         "ru": "Получите немедленную помощь в чрезвычайных ситуациях. Найдите контактные номера полиции, пожарной службы, медицинских и других экстренных служб.",
@@ -113,7 +115,7 @@
         "ka": "იურიდიული მხარდაჭერა",
         "sq": "Mbështetje ligjore"
       },
-      "description": {
+      "text": {
         "en": "Get legal counseling and juridical help. Find support for asylum procedures, appeals, residence permits, and other legal matters.",
         "de": "Erhalten Sie Rechtsberatung und juristische Hilfe. Finden Sie Unterstützung für Asylverfahren, Berufungen, Aufenthaltstitel und andere Rechtsangelegenheiten.",
         "ru": "Получите юридическое консультирование и юридическую помощь. Найдите поддержку по процедурам предоставления убежища, апелляциям, видам на жительство и другим правовым вопросам.",
@@ -130,6 +132,7 @@
     },
     {
       "type": "category",
+      "id": 2,
       "category": "health", 
       "title": {
         "en": "Health & Mental Health",
@@ -145,7 +148,7 @@
         "ka": "ჯანმრთელობა და ფსიქიკური ჯანმრთელობა",
         "sq": "Shëndeti dhe shëndeti mendor"
       },
-      "description": {
+      "text": {
         "en": "Access medical and psychological support. Find healthcare services, mental health counseling, and emergency medical assistance.",
         "de": "Zugang zu medizinischer und psychologischer Unterstützung. Finden Sie Gesundheitsdienste, psychologische Beratung und medizinische Notfallhilfe.",
         "ru": "Получите медицинскую и психологическую поддержку. Найдите медицинские услуги, консультации по психическому здоровью и экстренную медицинскую помощь.",
@@ -162,6 +165,7 @@
     },
     {
       "type": "icons",
+      "id": 3,
       "title": {
         "en": "Navigation Icons",
         "de": "Navigations-Symbole",
@@ -176,7 +180,7 @@
         "ka": "ნავიგაციის ხატულები",
         "sq": "Ikonat e navigimit"
       },
-      "description": {
+      "text": {
         "en": "Learn about the navigation icons at the top of the screen. The back arrow takes you to the previous page, the robot icon opens the virtual assistant, the globe icon changes the language, and the help icon opens this tutorial.",
         "de": "Erfahren Sie mehr über die Navigationssymbole am oberen Bildschirmrand. Der Rückwärtspfeil führt Sie zur vorherigen Seite, das Roboter-Symbol öffnet den virtuellen Assistenten, das Globus-Symbol ändert die Sprache und das Hilfe-Symbol öffnet dieses Tutorial.",
         "ru": "Узнайте о значках навигации в верхней части экрана. Стрелка назад ведет на предыдущую страницу, значок робота открывает виртуального помощника, значок глобуса меняет язык, а значок справки открывает этот учебник.",

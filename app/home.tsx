@@ -81,12 +81,10 @@ const Home: React.FC = () => {
       <StatusBar barStyle="dark-content" />
       
       {/* Header with Logo and Icons */}
-      <Header 
-        toggleSound={toggleSound}
+      <Header
         showLanguageModal={() => setShowLanguageModal(true)}
         showHelpModal={() => setShowTutorialModal(true)}
         showVirtualAssistant={() => setShowVirtualAssistant(true)}
-        soundEnabled={soundEnabled}
       />
       
       {/* Main Content */}
