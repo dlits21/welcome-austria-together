@@ -2,19 +2,22 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { getGlobalText } from '../utils/languageUtils';
 
 interface ExpertCardProps {
   name: string;
   specialization: string;
   availableDays: string;
   isOnline: boolean;
+  languageCode: string;
 }
 
 const ExpertCard: React.FC<ExpertCardProps> = ({
   name,
   specialization,
   availableDays,
-  isOnline
+  isOnline,
+  languageCode
 }) => {
   return (
     <View style={styles.expertCard}>
@@ -32,7 +35,7 @@ const ExpertCard: React.FC<ExpertCardProps> = ({
       <View style={styles.statusContainer}>
         <View style={[styles.statusBadge, isOnline ? styles.onlineBadge : styles.offlineBadge]}>
           <Text style={[styles.statusText, isOnline ? styles.onlineText : styles.offlineText]}>
-            {isOnline ? 'Online' : 'Offline'}
+            {isOnline ? getGlobalText('online', languageCode) : getGlobalText('offline', languageCode)}
           </Text>
         </View>
       </View>

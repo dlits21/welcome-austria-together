@@ -34,8 +34,40 @@
       }
     },
     {
-      "type": "category",
+      "type": "assistant",
       "id": 1,
+      "title": {
+        "en": "Hi! I'm here to help you navigate this app and find what you need!",
+        "de": "Hallo! Ich bin hier, um Ihnen bei der Navigation in dieser App zu helfen und zu finden, was Sie brauchen!",
+        "ru": "Привет! Я здесь, чтобы помочь вам найти то, что вам нужно!",
+        "ce": "Салам! Аз сов хьуна гӏо долуш ву хlокху приложенехь некъа карайта а лаьцна хlун карийта а.",
+        "prs": "سلام! من اینجا هستم تا در استفاده از این برنامه کمکتان کنم!",
+        "ps": "سلام! زه دلته یم چې دغه اپ ته د لاسرسي کې ستاسو سره مرسته وکړم!",
+        "fa": "سلام! من اینجا هستم تا در استفاده از این برنامه کمکتان کنم!",
+        "ar": "مرحباً! أنا هنا لمساعدتك في التنقل في هذا التطبيق!",
+        "ku": "سڵاو! من لێرەم بۆ یارمەتیدانت لە بەکارهێنانی ئەم بەرنامەیە!",
+        "so": "Salaan! Waxaan halkan u joogaa in aan kaa caawiyo in aad isticmaasho barnaamijkan!",
+        "ka": "გამარჯობა! მე აქ ვარ, რომ დაგეხმაროთ ამ აპლიკაციის გამოყენებაში!",
+        "sq": "Përshëndetje! Unë jam këtu për t'ju ndihmuar të navigoni në këtë aplikacion!"
+      },
+      "text": {
+        "en": "Use the virtual assistant to get instant help and guidance. Ask questions in your preferred language and get personalized support.",
+        "de": "Nutzen Sie den virtuellen Assistenten für sofortige Hilfe und Anleitung. Stellen Sie Fragen in Ihrer bevorzugten Sprache und erhalten Sie persönliche Unterstützung.",
+        "ru": "Используйте виртуального помощника для получения мгновенной помощи и руководства. Задавайте вопросы на предпочитаемом языке.",
+        "ce": "Виртуальни гӏоялуш лелае тlаьхьа гӏулакх хlокхуш долу некъехь. Дуьйна маттахь хаттарш кхоьллинарг.",
+        "prs": "از دستیار مجازی برای دریافت کمک فوری استفاده کنید. سوالات خود را به زبان مورد علاقه‌تان بپرسید.",
+        "ps": "د سمدستي مرستې لپاره له مجازي مرستیال څخه کار واخلئ. په خپله غوره ژبه پوښتنې وکړئ.",
+        "fa": "از دستیار مجازی برای دریافت کمک فوری استفاده کنید. سوالات خود را به زبان مورد علاقه‌تان بپرسید.",
+        "ar": "استخدم المساعد الافتراضي للحصول على المساعدة الفورية. اطرح الأسئلة بلغتك المفضلة.",
+        "ku": "یاریدەدەری مەجازی بەکاربهێنە بۆ وەرگرتنی یارمەتی خێرا. پرسیارەکانت بە زمانی پەسەندکراوت بکە.",
+        "so": "Isticmaal kaaliyaha farsamada ah si aad u hesho caawimaad degdeg ah. Su'aalaha ku weydiinta luqadaada jecel.",
+        "ka": "გამოიყენეთ ვირტუალური ასისტენტი მყისიერი დახმარებისთვის. დაისვით კითხვები თქვენს სასურველ ენაზე.",
+        "sq": "Përdorni asistentin virtual për ndihmë të menjëhershme. Bëni pyetje në gjuhën tuaj të preferuar."
+      }
+    },
+    {
+      "type": "category",
+      "id": 2,
       "title": {
         "en": "Talk to a Mentor",
         "de": "Mit einem Mentor sprechen",
@@ -79,7 +111,7 @@
     },
     {
       "type": "category",
-      "id": 2,
+      "id": 3,
       "title": {
         "en": "Ask the Community",
         "de": "Frage die Community",
@@ -123,7 +155,51 @@
     },
     {
       "type": "category",
-      "id": 3,
+      "id": 4,
+      "title": {
+        "en": "Visit Us Online",
+        "de": "Besuchen Sie uns online",
+        "ru": "Посетите нас онлайн",
+        "ce": "Интернетехь шуьга хьажа де",
+        "prs": "آنلاین با ما ملاقات کنید",
+        "ps": "آنلاین موږ ته راشئ",
+        "fa": "به صورت آنلاین با ما ملاقات کنید",
+        "ar": "قم بزيارتنا عبر الإنترنت",
+        "ku": "بە ئۆنلاین سەردانمان بکە",
+        "so": "Naga booqo online",
+        "ka": "ეწვიეთ ჩვენ ონლაინ",
+        "sq": "Na vizitoni online"
+      },
+      "text": {
+        "en": "Connect with our online experts who specialize in different areas including legal support, migration experience, education counseling, healthcare, and job market guidance. Each expert shows their availability and online status.",
+        "de": "Verbinden Sie sich mit unseren Online-Experten, die sich auf verschiedene Bereiche spezialisiert haben, darunter Rechtsberatung, Migrationserfahrung, Bildungsberatung, Gesundheitswesen und Arbeitsmarktberatung. Jeder Experte zeigt seine Verfügbarkeit und Online-Status.",
+        "ru": "Свяжитесь с нашими онлайн-экспертами, которые специализируются в разных областях, включая правовую поддержку, опыт миграции, образовательное консультирование, здравоохранение и руководство по рынку труда.",
+        "ce": "Шуьга йоьлла интернет-экспертийн цуьнан къаьсттина дакъо: нийсо гlолор, кочанчунан тайп-тайпанчи, дешаран дешхьало, саламатан а болхан базаран дешхьало а.",
+        "prs": "با متخصصان آنلاین ما که در زمینه‌های مختلف تخصص دارند از جمله حمایت حقوقی، تجربه مهاجرت، مشاوره تحصیلی، مراقبت‌های بهداشتی و راهنمایی بازار کار، ارتباط برقرار کنید.",
+        "ps": "زموږ د آنلاین متخصصینو سره اړیکه ونیسئ چې په مختلفو برخو کې تخصص لري لکه قانوني ملاتړ، د کډوالۍ تجربه، د ښوونې مشوره، روغتیایی پاملرنه، او د کار بازار لارښود.",
+        "fa": "با متخصصان آنلاین ما که در زمینه‌های مختلف تخصص دارند از جمله پشتیبانی حقوقی، تجربه مهاجرت، مشاوره تحصیلی، مراقبت‌های بهداشتی و راهنمایی بازار کار، ارتباط برقرار کنید.",
+        "ar": "تواصل مع خبرائنا عبر الإنترنت المتخصصين في مجالات مختلفة بما في ذلك الدعم القانوني وخبرة الهجرة والاستشارة التعليمية والرعاية الصحية وإرشاد سوق العمل.",
+        "ku": "لەگەڵ پسپۆڕانی ئۆنلاینمان پەیوەندی بکە کە لە بوارە جۆراوجۆرەکاندا پسپۆڕن لەوانە پشتگیری یاسایی، ئەزموونی کۆچبەری، ڕاوێژکاری پەروەردەیی، چاودێری تەندروستی، و ڕێنمایی بازاڕی کار.",
+        "so": "Kala xiriir khubaradayada online ee ku takhasusay meelo kala duwan oo ay ku jiraan taageerka sharciga, waayo-aragnimada socdaalka, la-talinta waxbarashada, daryeelka caafimaadka, iyo hagaha suuqa shaqada.",
+        "ka": "დაუკავშირდით ჩვენს ონლაინ ექსპერტებს, რომლებიც სპეციალიზდებიან სხვადასხვა სფეროში, მათ შორის იურიდიული მხარდაჭერა, მიგრაციის გამოცდილება, საგანმანათლებლო კონსულტაცია, ჯანდაცვა და სამუშაო ბაზრის მიმართულება.",
+        "sq": "Lidhuni me ekspertët tanë online që specializohen në fusha të ndryshme duke përfshirë mbështetjen ligjore, përvojën e migrimit, këshillimin arsimor, kujdesin shëndetësor dhe udhëzimin e tregut të punës."
+      },
+      "category": {
+        "title": {
+          "en": "Visit us online",
+          "de": "Besuchen Sie uns online"
+        },
+        "description": {
+          "en": "Online expert support",
+          "de": "Online-Expertenunterstützung"
+        },
+        "icon": "computer",
+        "color": "#666"
+      }
+    },
+    {
+      "type": "category",
+      "id": 5,
       "title": {
         "en": "Visit Us in Person",
         "de": "Besuche uns persönlich",
@@ -167,7 +243,7 @@
     },
     {
       "type": "category",
-      "id": 4,
+      "id": 6,
       "title": {
         "en": "Frequently Asked Questions",
         "de": "Häufig gestellte Fragen",
@@ -207,40 +283,6 @@
         },
         "icon": "help",
         "color": "#F59E0B"
-      }
-    },
-    {
-      "type": "assistant",
-      "id": 5,
-      "title": {
-        "en": "Hi! I'm here to help you navigate this app and find what you need!",
-        "de": "Hallo! Ich bin hier, um Ihnen bei der Navigation in dieser App zu helfen und zu finden, was Sie brauchen!"
-      },
-      "text": {
-        "en": "Use the virtual assistant to get instant help and guidance. Ask questions in your preferred language and get personalized support.",
-        "de": "Nutzen Sie den virtuellen Assistenten für sofortige Hilfe und Anleitung. Stellen Sie Fragen in Ihrer bevorzugten Sprache und erhalten Sie persönliche Unterstützung."
-      }
-    },
-    {
-      "type": "feature",
-      "id": 6,
-      "title": {
-        "en": "Language Selection",
-        "de": "Sprachauswahl",
-        "ru": "Выбор языка",
-        "ce": "Мотт харжар",
-        "prs": "انتخاب زبان",
-        "ps": "د ژبې ټاکنه",
-        "fa": "انتخاب زبان",
-        "ar": "اختيار اللغة",
-        "ku": "هەڵبژاردنی زمان",
-        "so": "Doorashada luqadda",
-        "ka": "ენის არჩევა",
-        "sq": "Zgjedhja e gjuhës"
-      },
-      "text": {
-        "en": "Switch between 12 different languages anytime. The app supports German, English, Russian, Chechen, Dari, Pashto, Farsi, Arabic, Kurdish, Somali, Georgian, and Albanian.",
-        "de": "Wechseln Sie jederzeit zwischen 12 verschiedenen Sprachen. Die App unterstützt Deutsch, Englisch, Russisch, Tschetschenisch, Dari, Paschtu, Farsi, Arabisch, Kurdisch, Somali, Georgisch und Albanisch."
       }
     }
   ]

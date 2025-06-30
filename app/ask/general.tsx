@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { 
   StyleSheet, 
@@ -78,36 +77,36 @@ const GeneralSupport: React.FC = () => {
     { name: 'Burgenland', nameDe: 'Burgenland', address: 'Hauptstraße 31, 7000 Eisenstadt' },
   ];
 
-  // Online experts data
+  // Online experts data with multilingual support
   const onlineExperts = [
     {
       name: 'Dr. Sarah Mueller',
-      specialization: currentLanguage === 'de' ? 'Rechtsberatung' : 'Legal Support',
-      availableDays: currentLanguage === 'de' ? 'Mo-Fr 9-17 Uhr' : 'Mon-Fri 9-17',
+      specialization: getGeneralText('legalSupport', currentLanguage),
+      availableDays: getGeneralText('mondayFridaySchedule', currentLanguage),
       isOnline: true
     },
     {
       name: 'Ahmed Hassan',
-      specialization: currentLanguage === 'de' ? 'Migrationserfahrung' : 'Migration Experience',
-      availableDays: currentLanguage === 'de' ? 'Mo, Mi, Fr 14-18 Uhr' : 'Mon, Wed, Fri 14-18',
+      specialization: getGeneralText('migrationExperience', currentLanguage),
+      availableDays: getGeneralText('mondayWednesdayFridaySchedule', currentLanguage),
       isOnline: false
     },
     {
       name: 'Maria Gonzalez',
-      specialization: currentLanguage === 'de' ? 'Bildungsberatung' : 'Education Counseling',
-      availableDays: currentLanguage === 'de' ? 'Di, Do 10-16 Uhr' : 'Tue, Thu 10-16',
+      specialization: getGeneralText('educationCounseling', currentLanguage),
+      availableDays: getGeneralText('tuesdayThursdaySchedule', currentLanguage),
       isOnline: true
     },
     {
       name: 'Dr. Fatima Al-Rashid',
-      specialization: currentLanguage === 'de' ? 'Gesundheitswesen' : 'Healthcare',
-      availableDays: currentLanguage === 'de' ? 'Mo-Do 8-14 Uhr' : 'Mon-Thu 8-14',
+      specialization: getGeneralText('healthcare', currentLanguage),
+      availableDays: getGeneralText('mondayThursdaySchedule', currentLanguage),
       isOnline: true
     },
     {
       name: 'Viktor Petrov',
-      specialization: currentLanguage === 'de' ? 'Arbeitsmarkt' : 'Job Market',
-      availableDays: currentLanguage === 'de' ? 'Mi-Fr 13-19 Uhr' : 'Wed-Fri 13-19',
+      specialization: getGeneralText('jobMarket', currentLanguage),
+      availableDays: getGeneralText('wednesdayFridaySchedule', currentLanguage),
       isOnline: false
     }
   ];
@@ -218,7 +217,7 @@ const GeneralSupport: React.FC = () => {
 
         {/* Visit us online */}
         <AccordionItem
-          title={currentLanguage === 'de' ? 'Besuchen Sie uns online' : 'Visit us online'}
+          title={getGeneralText('visitUsOnline', currentLanguage)}
           icon="computer"
           iconColor="#666"
           expanded={expandedSection === 'online'}
@@ -231,6 +230,7 @@ const GeneralSupport: React.FC = () => {
               specialization={expert.specialization}
               availableDays={expert.availableDays}
               isOnline={expert.isOnline}
+              languageCode={currentLanguage}
             />
           ))}
         </AccordionItem>
