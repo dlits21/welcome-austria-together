@@ -5,7 +5,8 @@ import {
   Text,
   View, 
   ScrollView,
-  Pressable
+  Pressable,
+  useWindowDimensions,
 } from 'react-native';
 
 interface Language {
@@ -31,6 +32,9 @@ const LanguageSelectionGrid: React.FC<LanguageSelectionGridProps> = ({
   handleMouseEnter,
   handleMouseLeave
 }) => {
+  const { width } = useWindowDimensions();
+  const isWideScreen = width > 768;
+
   return (
     <ScrollView 
       contentContainerStyle={styles.scrollContainer}
@@ -50,7 +54,7 @@ const LanguageSelectionGrid: React.FC<LanguageSelectionGridProps> = ({
             <View style={styles.flagContainer}>
               <language.flag style={styles.flag} />
             </View>
-            <Text style={styles.languageName}>{language.name}</Text>
+            <Text style={styles.languageName, isWideScreen ? styles.wideScreenFont : styles.narrowScreenFont}>{language.name}</Text>
           </Pressable>
         ))}
       </View>
@@ -98,8 +102,13 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   languageName: {
-    fontSize: 25,
     textAlign: "center",
+  },
+  narrowScreenFont: {
+    fontSize: 20,
+  },
+  wideScreenFont: {
+    fontSize: 64,
   },
 });
 

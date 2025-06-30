@@ -31,7 +31,6 @@ import LanguageSelectionHeader from "../components/LanguageSelectionHeader";
 import LanguageSelectionGrid from "../components/LanguageSelectionGrid";
 import HoverTooltip from "../components/HoverTooltip";
 import LanguageConfirmation from "../components/LanguageConfirmation";
-import InfoModal from "../components/InfoModal";
 import VirtualAssistantModal from "../components/VirtualAssistantModal";
 import TutorialModal from "../components/TutorialModal";
 
@@ -302,20 +301,7 @@ export default function LanguageSelectionScreen() {
         </Pressable>
       </Modal>
 
-      {/* Tutorial Modal */}
-      <TutorialModal 
-        visible={showTutorial}
-        onClose={() => setShowTutorial(false)}
-        languageCode={currentLanguage}
-        tutorialData="index"
-        onVirtualAssistant={handleTutorialVirtualAssistant}
-      />
 
-      {/* Info Modal */}
-      <InfoModal
-        visible={showInfo}
-        onClose={() => setShowInfo(false)}
-      />
 
       {/* Virtual Assistant Modal - Default to voice mode from index */}
       <VirtualAssistantModal
@@ -324,6 +310,16 @@ export default function LanguageSelectionScreen() {
         languageCode={currentLanguage}
         defaultMode="voice"
       />
+
+      {/* Tutorial Modal */}
+        <TutorialModal
+          visible={showTutorial}
+          onClose={() => setShowTutorial(false)}
+          languageCode={currentLanguage}
+          tutorialData="index"
+          onVirtualAssistant={handleTutorialVirtualAssistant}
+        />
+
     </SafeAreaView>
   );
 }

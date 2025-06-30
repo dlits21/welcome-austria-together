@@ -29,18 +29,6 @@ const LanguageSelectionHeader: React.FC<LanguageSelectionHeaderProps> = ({
       />
       
       <View style={styles.headerButtons}>
-        {/* Tutorial Button - now left-most */}
-        <TouchableOpacity 
-          style={styles.iconButton} 
-          onPress={showTutorial}
-        >
-          <MaterialIcons 
-            name="help" 
-            size={24} 
-            color="#333" 
-          />
-        </TouchableOpacity>
-
         {/* Virtual Assistant Toggle - now right-most */}
         <TouchableOpacity 
           style={styles.iconButton} 
@@ -50,6 +38,18 @@ const LanguageSelectionHeader: React.FC<LanguageSelectionHeaderProps> = ({
             name="record-voice-over" 
             size={24} 
             color="#333" 
+          />
+        </TouchableOpacity>
+
+        {/* Tutorial Button - now left-most */}
+        <TouchableOpacity
+          style={styles.iconButton}
+          onPress={showTutorial}
+        >
+          <MaterialIcons
+            name="help"
+            size={24}
+            color="#333"
           />
         </TouchableOpacity>
       </View>
