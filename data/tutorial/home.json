@@ -35,6 +35,38 @@
     },
     {
       "id": 1,
+      "type": "assistant",
+      "title": {
+        "de": "Hallo! Ich bin hier, um Ihnen zu helfen.",
+        "en": "Hello! I'm here to help you.",
+        "ru": "Привет! Я здесь, чтобы помочь вам.",
+        "ce": "Салам! Аз сов хьуна гӏо долуш ву.",
+        "prs": "سلام! من اینجا هستم تا به شما کمک کنم.",
+        "ps": "سلام! زه دلته یم چې ستاسو سره مرسته وکړم.",
+        "fa": "سلام! من اینجا هستم تا به شما کمک کنم.",
+        "ar": "مرحباً! أنا هنا لمساعدتك.",
+        "ku": "سڵاو! من لێرەم بۆ یارمەتیدانت.",
+        "so": "Salaan! Waxaan halkan u joogaa in aan ku caawiyo.",
+        "ka": "გამარჯობა! მე აქ ვარ, რომ დაგეხმაროთ.",
+        "sq": "Përshëndetje! Unë jam këtu për t'ju ndihmuar."
+      },
+      "text": {
+        "de": "Ich bin Ihr virtueller Assistent und kann Ihnen bei der Navigation durch die Plattform helfen. Stellen Sie mir Fragen über Österreich, Integration, Sprache oder alles andere, womit ich Ihnen helfen kann. Verwenden Sie das Mikrofon-Symbol, um mit mir zu sprechen!",
+        "en": "I'm your virtual assistant and can help you navigate through the platform. Ask me questions about Austria, integration, language, or anything else I can help you with. Use the microphone icon to talk to me!",
+        "ru": "Я ваш виртуальный помощник и могу помочь вам с навигацией по платформе. Задавайте мне вопросы об Австрии, интеграции, языке или о чем-либо еще, с чем я могу помочь.",
+        "ce": "Аз хьан виртуальни гӏоялуш ву, платформе чохь йола некъа гӏо долуш. Австрин, интеграцин, маттан йа мукъа хьажа дийцар.",
+        "prs": "من دستیار مجازی شما هستم و می‌توانم در پیمایش پلت فارم به شما کمک کنم. از من در مورد اتریش، ادغام، زبان یا هر چیز دیگری که می‌توانم کمک کنم سوال بپرسید.",
+        "ps": "زه ستاسو مجازی مرستیال یم او کولی شم بې پلیټ فارم کې د خلاصون سره مرسته وکړم. له ما څخه د اتریش، ادغام، ژبې یا بل هر ډول پوښتنه وکړئ.",
+        "fa": "من دستیار مجازی شما هستم و می‌توانم در پیمایش پلتفرم به شما کمک کنم. از من در مورد اتریش، ادغام، زبان یا هر چیز دیگری سوال بپرسید.",
+        "ar": "أنا مساعدك الافتراضي ويمكنني مساعدتك في التنقل عبر المنصة. اسألني عن النمسا أو الاندماج أو اللغة أو أي شيء آخر يمكنني مساعدتك فيه.",
+        "ku": "من یاریدەدەری مەجازیی تۆم و دەتوانم لە گەڕان بە پلاتفۆرمەکەدا یارمەتیت بدەم. پرسیارم لێ بکە دەربارەی نەمسا، یەکگرتن، زمان یا هەر شتێکی تر.",
+        "so": "Waxaan ahay kaaliyahaaga farsamada ah waxaanan kaa caawin karaa mareegaha. Weydiinta i weydii wax ku saabsan Austria, isku dhafka, luqadda ama wax kale oo aan kugu caawin karo.",
+        "ka": "მე ვარ თქვენი ვირტუალური ასისტენტი და შემიძლია დაგეხმაროთ პლატფორმაზე ნავიგაციაში. მკითხეთ კითხვები ავსტრიის, ინტეგრაციის, ენის ან სხვა ნებისმიერი რამის შესახებ.",
+        "sq": "Unë jam asistenti juaj virtual dhe mund t'ju ndihmoj të navigoni nëpër platformë. Më bëni pyetje për Austrinë, integrimin, gjuhën ose çdo gjë tjetër me të cilën mund t'ju ndihmoj."
+      }
+    },
+    {
+      "id": 2,
       "type": "category",
       "title": {
         "de": "Fragen Bereich",
@@ -98,7 +130,7 @@
       }
     },
     {
-      "id": 2,
+      "id": 3,
       "type": "category",
       "title": {
         "de": "Informationen Bereich",
@@ -162,7 +194,7 @@
       }
     },
     {
-      "id": 3,
+      "id": 4,
       "type": "category",
       "title": {
         "de": "Lernen Bereich",
@@ -226,7 +258,7 @@
       }
     },
     {
-      "id": 4,
+      "id": 5,
       "type": "category",
       "title": {
         "de": "Community Bereich",
@@ -287,38 +319,6 @@
         },
         "icon": "people",
         "color": "#F97316"
-      }
-    },
-    {
-      "id": 5,
-      "type": "feature",
-      "title": {
-        "de": "Sprach-Assistent",
-        "en": "Voice Assistant",
-        "ru": "Голосовой помощник",
-        "ce": "Адaмийн гIo",
-        "prs": "دستیار صوتی",
-        "ps": "غږیز مرستیال",
-        "fa": "دستیار صوتی",
-        "ar": "المساعد الصوتي",
-        "ku": "یاریدەدەری دەنگی",
-        "so": "Kaaliye codka",
-        "ka": "ხმოვანი ასისტენტი",
-        "sq": "Asistenti zanor"
-      },
-      "text": {
-        "de": "Verwenden Sie das Mikrofon-Symbol oben rechts, um mit dem intelligenten Assistenten zu sprechen. Er kann Ihnen bei der Navigation durch die Plattform helfen, Fragen beantworten und Sie zu den richtigen Ressourcen weiterleiten. Sprechen Sie einfach Ihre Frage aus, und der Assistent wird Ihnen mit personalisierten Antworten und Empfehlungen helfen.",
-        "en": "Use the microphone icon in the top right to speak with the intelligent assistant. It can help you navigate through the platform, answer questions, and direct you to the right resources. Simply speak your question, and the assistant will help you with personalized answers and recommendations.",
-        "ru": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "ce": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "prs": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "ps": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "fa": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "ar": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "ku": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "so": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "ka": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "sq": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       }
     },
     {

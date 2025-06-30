@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { 
   StyleSheet, 
@@ -16,6 +17,7 @@ import AccordionItem from '../../components/AccordionItem';
 import ContactButton from '../../components/ContactButton';
 import StateCard from '../../components/StateCard';
 import FAQItem from '../../components/FAQItem';
+import ExpertCard from '../../components/ExpertCard';
 import { handleContactClick } from '../../utils/contactUtils';
 import FacebookIcon from '../../assets/images/facebook.svg';
 import SignalIcon from '../../assets/images/signal.svg';
@@ -74,6 +76,40 @@ const GeneralSupport: React.FC = () => {
     { name: 'Salzburg', nameDe: 'Salzburg', address: 'Getreidegasse 33, 5020 Salzburg' },
     { name: 'Vorarlberg', nameDe: 'Vorarlberg', address: 'Marktstraße 11, 6900 Bregenz' },
     { name: 'Burgenland', nameDe: 'Burgenland', address: 'Hauptstraße 31, 7000 Eisenstadt' },
+  ];
+
+  // Online experts data
+  const onlineExperts = [
+    {
+      name: 'Dr. Sarah Mueller',
+      specialization: currentLanguage === 'de' ? 'Rechtsberatung' : 'Legal Support',
+      availableDays: currentLanguage === 'de' ? 'Mo-Fr 9-17 Uhr' : 'Mon-Fri 9-17',
+      isOnline: true
+    },
+    {
+      name: 'Ahmed Hassan',
+      specialization: currentLanguage === 'de' ? 'Migrationserfahrung' : 'Migration Experience',
+      availableDays: currentLanguage === 'de' ? 'Mo, Mi, Fr 14-18 Uhr' : 'Mon, Wed, Fri 14-18',
+      isOnline: false
+    },
+    {
+      name: 'Maria Gonzalez',
+      specialization: currentLanguage === 'de' ? 'Bildungsberatung' : 'Education Counseling',
+      availableDays: currentLanguage === 'de' ? 'Di, Do 10-16 Uhr' : 'Tue, Thu 10-16',
+      isOnline: true
+    },
+    {
+      name: 'Dr. Fatima Al-Rashid',
+      specialization: currentLanguage === 'de' ? 'Gesundheitswesen' : 'Healthcare',
+      availableDays: currentLanguage === 'de' ? 'Mo-Do 8-14 Uhr' : 'Mon-Thu 8-14',
+      isOnline: true
+    },
+    {
+      name: 'Viktor Petrov',
+      specialization: currentLanguage === 'de' ? 'Arbeitsmarkt' : 'Job Market',
+      availableDays: currentLanguage === 'de' ? 'Mi-Fr 13-19 Uhr' : 'Wed-Fri 13-19',
+      isOnline: false
+    }
   ];
 
   // Multi-lingual FAQ data using translations
@@ -148,6 +184,25 @@ const GeneralSupport: React.FC = () => {
             icon="phone" 
             onPress={() => handleContactClick('phone', true, language.code)}
           />
+        </AccordionItem>
+        
+        {/* Visit us online */}
+        <AccordionItem
+          title={currentLanguage === 'de' ? 'Besuchen Sie uns online' : 'Visit us online'}
+          icon="computer"
+          iconColor="#8B5CF6"
+          expanded={expandedSection === 'online'}
+          onPress={() => toggleSection('online')}
+        >
+          {onlineExperts.map((expert, index) => (
+            <ExpertCard
+              key={index}
+              name={expert.name}
+              specialization={expert.specialization}
+              availableDays={expert.availableDays}
+              isOnline={expert.isOnline}
+            />
+          ))}
         </AccordionItem>
         
         {/* Ask the community */}
