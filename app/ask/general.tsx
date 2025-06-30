@@ -186,25 +186,6 @@ const GeneralSupport: React.FC = () => {
           />
         </AccordionItem>
         
-        {/* Visit us online */}
-        <AccordionItem
-          title={currentLanguage === 'de' ? 'Besuchen Sie uns online' : 'Visit us online'}
-          icon="computer"
-          iconColor="#8B5CF6"
-          expanded={expandedSection === 'online'}
-          onPress={() => toggleSection('online')}
-        >
-          {onlineExperts.map((expert, index) => (
-            <ExpertCard
-              key={index}
-              name={expert.name}
-              specialization={expert.specialization}
-              availableDays={expert.availableDays}
-              isOnline={expert.isOnline}
-            />
-          ))}
-        </AccordionItem>
-        
         {/* Ask the community */}
         <AccordionItem
           title={getGeneralText('askCommunity', currentLanguage)}
@@ -233,6 +214,25 @@ const GeneralSupport: React.FC = () => {
             icon="forum" 
             onPress={() => handleContactClick('community-forum', false, language.code)}
           />
+        </AccordionItem>
+
+        {/* Visit us online */}
+        <AccordionItem
+          title={currentLanguage === 'de' ? 'Besuchen Sie uns online' : 'Visit us online'}
+          icon="computer"
+          iconColor="#666"
+          expanded={expandedSection === 'online'}
+          onPress={() => toggleSection('online')}
+        >
+          {onlineExperts.map((expert, index) => (
+            <ExpertCard
+              key={index}
+              name={expert.name}
+              specialization={expert.specialization}
+              availableDays={expert.availableDays}
+              isOnline={expert.isOnline}
+            />
+          ))}
         </AccordionItem>
         
         {/* Visit in person */}
