@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { 
   StyleSheet, 
@@ -20,8 +19,9 @@ import LanguageModal from '../../components/LanguageModal';
 import VirtualAssistantModal from '../../components/VirtualAssistantModal';
 import TutorialModal from '../../components/TutorialModal';
 
-// Import emergency translations
+// Import emergency translations and data
 import emergencyTranslations from '../../data/language/ask/emergency.json';
+import emergencyData from '../../data/ask/emergency.json';
 
 const getEmergencyText = (key: string, languageCode: string): string => {
   const translation = emergencyTranslations[key as keyof typeof emergencyTranslations];
@@ -29,9 +29,9 @@ const getEmergencyText = (key: string, languageCode: string): string => {
 };
 
 interface EmergencyContact {
-  name: { en: string; de: string };
+  name: { [key: string]: string };
   phone: string;
-  description: { en: string; de: string };
+  description: { [key: string]: string };
   type: string;
 }
 
@@ -56,126 +56,8 @@ const EmergencySupport: React.FC = () => {
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
-  const emergencyCategories: EmergencyCategory[] = [
-    {
-      key: 'general',
-      emoji: '📞',
-      titleKey: 'generalEmergency',
-      subtitleKey: 'universalEmergencyNumber',
-      contacts: [
-        {
-          name: { en: 'European Emergency Number', de: 'Europäische Notrufnummer' },
-          phone: '112',
-          description: { en: 'Universal emergency number for all services', de: 'Universelle Notrufnummer für alle Dienste' },
-          type: 'general'
-        }
-      ]
-    },
-    {
-      key: 'fire',
-      emoji: '🔥',
-      titleKey: 'fireEmergency',
-      subtitleKey: 'firesExplosionsRescue',
-      contacts: [
-        {
-          name: { en: 'Fire Department', de: 'Feuerwehr' },
-          phone: '122',
-          description: { en: 'For fires, explosions, and rescue operations', de: 'Für Brände, Explosionen und Rettungsoperationen' },
-          type: 'fire'
-        }
-      ]
-    },
-    {
-      key: 'police',
-      emoji: '🚔',
-      titleKey: 'policeEmergency',
-      subtitleKey: 'crimeAccidentsSecurity',
-      contacts: [
-        {
-          name: { en: 'Police', de: 'Polizei' },
-          phone: '133',
-          description: { en: 'For crimes, accidents, and security emergencies', de: 'Für Verbrechen, Unfälle und Sicherheitsnotfälle' },
-          type: 'police'
-        }
-      ]
-    },
-    {
-      key: 'medical',
-      emoji: '🚑',
-      titleKey: 'medicalEmergency',
-      subtitleKey: 'healthEmergenciesAmbulance',
-      contacts: [
-        {
-          name: { en: 'Emergency Medical Services', de: 'Rettungsdienst' },
-          phone: '144',
-          description: { en: 'For medical emergencies and ambulance', de: 'Für medizinische Notfälle und Krankenwagen' },
-          type: 'medical'
-        }
-      ]
-    },
-    {
-      key: 'violence',
-      emoji: '🆘',
-      titleKey: 'violenceHarassment',
-      subtitleKey: 'domesticViolenceAssault',
-      contacts: [
-        {
-          name: { en: 'Women\'s Emergency Hotline', de: 'Frauen-Notruf' },
-          phone: '0800 222 555',
-          description: { en: 'For domestic violence and sexual assault', de: 'Für häusliche Gewalt und sexuelle Übergriffe' },
-          type: 'violence'
-        },
-        {
-          name: { en: 'Police', de: 'Polizei' },
-          phone: '133',
-          description: { en: 'For immediate danger situations', de: 'Für akute Gefahrensituationen' },
-          type: 'violence'
-        }
-      ]
-    },
-    {
-      key: 'mental',
-      emoji: '🧠',
-      titleKey: 'mentalHealthCrisis',
-      subtitleKey: 'psychologicalCrisisSuicidePrevention',
-      contacts: [
-        {
-          name: { en: 'Crisis Intervention Center', de: 'Kriseninterventionszentrum' },
-          phone: '01 406 95 95',
-          description: { en: 'For psychological crises and suicide prevention', de: 'Für psychische Krisen und Suizidprävention' },
-          type: 'mental'
-        }
-      ]
-    },
-    {
-      key: 'soul-care',
-      emoji: '🕊️',
-      titleKey: 'careOfSoul',
-      subtitleKey: 'spiritualEmotionalSupport',
-      contacts: [
-        {
-          name: { en: 'Telefonseelsorge', de: 'Telefonseelsorge' },
-          phone: '142',
-          description: { en: 'Spiritual care and emotional support', de: 'Seelsorge und emotionale Unterstützung' },
-          type: 'soul-care'
-        }
-      ]
-    },
-    {
-      key: 'youth',
-      emoji: '👨‍👩‍👧‍👦',
-      titleKey: 'youthCare',
-      subtitleKey: 'supportForChildrenAndYouth',
-      contacts: [
-        {
-          name: { en: 'Rat auf Draht', de: 'Rat auf Draht' },
-          phone: '147',
-          description: { en: 'Emergency hotline for children and youth', de: 'Notruf für Kinder und Jugendliche' },
-          type: 'youth'
-        }
-      ]
-    }
-  ];
+  // Load emergency categories from external data
+  const emergencyCategories: EmergencyCategory[] = emergencyData.emergencyCategories;
 
   const handleCategoryPress = (category: EmergencyCategory) => {
     if (category.contacts.length === 1) {
@@ -279,11 +161,11 @@ const EmergencySupport: React.FC = () => {
               {selectedEmergency && (
                 <>
                   <Text style={styles.contactTitle}>
-                    {currentLanguage === 'de' ? selectedEmergency.name.de : selectedEmergency.name.en}
+                    {selectedEmergency.name[currentLanguage] || selectedEmergency.name.en}
                   </Text>
                   
                   <Text style={styles.contactDescription}>
-                    {currentLanguage === 'de' ? selectedEmergency.description.de : selectedEmergency.description.en}
+                    {selectedEmergency.description[currentLanguage] || selectedEmergency.description.en}
                   </Text>
 
                   <TouchableOpacity 
