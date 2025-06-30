@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   Modal,
   FlatList,
-  Dimensions,
+  useWindowDimensions
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { languages } from '../data/languages/common';
@@ -15,9 +15,8 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { getGlobalText } from '../utils/languageUtils';
 
 const numColumns = 3;
-const screenWidth = Dimensions.get('window').width;
 const itemMargin = 12;
-const itemSize = (screenWidth * 0.9 - itemMargin * (numColumns + 1)) / numColumns;
+
 
 interface LanguageModalProps {
   visible: boolean;
@@ -27,6 +26,7 @@ interface LanguageModalProps {
 
 const LanguageModal: React.FC<LanguageModalProps> = ({ visible, onClose, languageCode }) => {
   const { setSelectedLanguage } = useLanguage();
+  const { width: screenWidth } = useWindowDimensions();
 
   const handleLanguageSelect = (code: string) => {
     setSelectedLanguage(code);
@@ -34,6 +34,7 @@ const LanguageModal: React.FC<LanguageModalProps> = ({ visible, onClose, languag
   };
 
   const renderItem = ({ item }) => {
+    const itemSize = (screenWidth * 0.9 - itemMargin * (numColumns + 1)) / numColumns;
     const isSelected = item.code === languageCode;
     return (
       <TouchableOpacity

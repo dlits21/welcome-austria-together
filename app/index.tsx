@@ -248,11 +248,6 @@ export default function LanguageSelectionScreen() {
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" />
 
-      {/* Welcome Title */}
-      <View style={styles.welcomeContainer}>
-        <Text style={styles.welcomeTitle}>{currentWelcomeMessage}</Text>
-      </View>
-
       {/* Header */}
       <LanguageSelectionHeader
         currentWelcomeMessage={currentWelcomeMessage}
@@ -262,6 +257,12 @@ export default function LanguageSelectionScreen() {
         showVirtualAssistant={() => setShowVirtualAssistant(true)}
         showTutorial={() => setShowTutorial(true)}
       />
+
+      {/* Welcome Title */}
+        <View style={styles.welcomeContainer}>
+          <Text style={styles.welcomeTitle}>{currentWelcomeMessage}</Text>
+        </View>
+
 
       {/* Language Grid with updated hover props */}
       <LanguageSelectionGrid
@@ -312,13 +313,13 @@ export default function LanguageSelectionScreen() {
       />
 
       {/* Tutorial Modal */}
-        <TutorialModal
-          visible={showTutorial}
-          onClose={() => setShowTutorial(false)}
-          languageCode={currentLanguage}
-          tutorialData="index"
-          onVirtualAssistant={handleTutorialVirtualAssistant}
-        />
+      <TutorialModal
+        visible={showTutorial}
+        onClose={() => setShowTutorial(false)}
+        languageCode={currentLanguage}
+        tutorialData="index"
+        onVirtualAssistant={handleTutorialVirtualAssistant}
+      />
 
     </SafeAreaView>
   );

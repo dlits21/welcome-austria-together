@@ -67,7 +67,7 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
 
   // Rotate all text every 5 seconds for the first slide
   useEffect(() => {
-    if (currentSlide === 0 && slide?.type === 'assistant') {
+    if (slide?.type === 'assistant') {
       const interval = setInterval(() => {
         setCurrentLanguageIndex((prevIndex) => (prevIndex + 1) % languages.length);
       }, 5000);
@@ -119,6 +119,7 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
       case 'welcome':
       case 'instruction':
       case 'feature':
+      case 'language':
       case 'icons':
         return (
           <View style={styles.slideContent}>
@@ -210,6 +211,8 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
         return 'touch-app';
       case 'confirmation':
         return 'check-circle';
+      case 'language':
+        return 'language';
       case 'icons':
         return 'help';
       case 'feature':
@@ -456,7 +459,8 @@ const styles = StyleSheet.create({
   slideTitle: {
     fontSize: 24,
     fontWeight: 'bold',
-    marginBottom: 16,
+    marginTop: 34,
+    marginBottom: 34,
     textAlign: 'center',
     color: '#333',
   },
