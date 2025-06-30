@@ -196,19 +196,19 @@ const EmergencySupport: React.FC = () => {
             Linking.openURL(phoneUrl);
           } else {
             Alert.alert(
-              language.code === 'de' ? 'Fehler' : 'Error',
-              language.code === 'de' 
+              getEmergencyText('error', currentLanguage) || (language.code === 'de' ? 'Fehler' : 'Error'),
+              getEmergencyText('phoneNotSupported', currentLanguage) || (language.code === 'de' 
                 ? 'Anrufe werden auf diesem Gerät nicht unterstützt'
-                : 'Phone calls are not supported on this device'
+                : 'Phone calls are not supported on this device')
             );
           }
         })
         .catch(() => {
           Alert.alert(
-            language.code === 'de' ? 'Fehler' : 'Error',
-            language.code === 'de' 
+            getEmergencyText('error', currentLanguage) || (language.code === 'de' ? 'Fehler' : 'Error'),
+            getEmergencyText('phoneError', currentLanguage) || (language.code === 'de' 
               ? 'Fehler beim Öffnen der Telefon-App'
-              : 'Error opening phone app'
+              : 'Error opening phone app')
           );
         });
     }
@@ -279,11 +279,11 @@ const EmergencySupport: React.FC = () => {
               {selectedEmergency && (
                 <>
                   <Text style={styles.contactTitle}>
-                    {language.code === 'de' ? selectedEmergency.name.de : selectedEmergency.name.en}
+                    {currentLanguage === 'de' ? selectedEmergency.name.de : selectedEmergency.name.en}
                   </Text>
                   
                   <Text style={styles.contactDescription}>
-                    {language.code === 'de' ? selectedEmergency.description.de : selectedEmergency.description.en}
+                    {currentLanguage === 'de' ? selectedEmergency.description.de : selectedEmergency.description.en}
                   </Text>
 
                   <TouchableOpacity 
@@ -297,9 +297,9 @@ const EmergencySupport: React.FC = () => {
                   </TouchableOpacity>
 
                   <Text style={styles.callInstruction}>
-                    {language.code === 'de' 
+                    {getEmergencyText('tapToCall', currentLanguage) || (currentLanguage === 'de' 
                       ? 'Tippen Sie auf die Nummer, um anzurufen'
-                      : 'Tap the number to call'}
+                      : 'Tap the number to call')}
                   </Text>
                 </>
               )}
@@ -309,7 +309,7 @@ const EmergencySupport: React.FC = () => {
                 onPress={resetQuiz}
               >
                 <Text style={styles.resetButtonText}>
-                  {language.code === 'de' ? 'Anderen Notfall wählen' : 'Choose Different Emergency'}
+                  {getEmergencyText('chooseDifferentEmergency', currentLanguage) || (currentLanguage === 'de' ? 'Anderen Notfall wählen' : 'Choose Different Emergency')}
                 </Text>
               </TouchableOpacity>
             </View>

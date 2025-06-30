@@ -2,6 +2,7 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { getGlobalText } from '../utils/languageUtils';
 
 interface QuizControlsProps {
   languageCode: string;
@@ -14,12 +15,30 @@ const QuizControls: React.FC<QuizControlsProps> = ({
   onResetQuiz,
   onToggleFilters
 }) => {
+  const getResetQuizText = () => {
+    const translations = {
+      'en': 'Reset Quiz',
+      'de': 'Quiz zurücksetzen',
+      'ru': 'Сбросить опрос',
+      'ce': 'Хаттарг дlадайасса',
+      'prs': 'بازنشانی آزمون',
+      'ps': 'ازموینه بیا تنظیمول',
+      'fa': 'بازنشانی آزمون',
+      'ar': 'إعادة تعيين الاختبار',
+      'ku': 'ڕێکخستنەوەی پرسیار',
+      'so': 'Dib-u-deji imtixaanka',
+      'ka': 'კითხვარის გადატვირთვა',
+      'sq': 'Rivendos testin'
+    };
+    return translations[languageCode as keyof typeof translations] || translations.en;
+  };
+
   return (
     <View style={styles.controlsContainer}>
       <TouchableOpacity style={styles.resetQuizButton} onPress={onResetQuiz}>
         <MaterialIcons name="refresh" size={20} color="#3B82F6" />
         <Text style={styles.resetQuizText}>
-          {languageCode === 'de' ? 'Quiz zurücksetzen' : 'Reset Quiz'}
+          {getResetQuizText()}
         </Text>
       </TouchableOpacity>
       

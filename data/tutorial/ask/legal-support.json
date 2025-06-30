@@ -24,7 +24,7 @@
         "ru": "Это руководство поможет вам найти юридическую консультацию и службы поддержки в вашем районе.",
         "ce": "Хlара дешаран хаам хьуна белхалур ду хьан меттигца бакъонан консультаци а гlо а карийтаран.",
         "prs": "این راهنما شما را در یافتن مشاوره حقوقی و خدمات حمایتی در منطقه‌تان راهنمایی می‌کند.",
-        "ps": "دا لارښود به تاسو ته ستاسو په سیمه کې د حقوقي مشورې او ملاتړ خدماتو موندلو کې مرسته وکړي.",
+        "ps": "دا لارښود به تاسو ته ستاسو په سیمه کې د حقوقي مشورې او ملاتړ خدماتო موندلو کې مرسته وکړي.",
         "fa": "این راهنما شما را در یافتن مشاوره حقوقی و خدمات پشتیبانی در منطقه‌تان راهنمایی می‌کند.",
         "ar": "سيرشدك هذا الدليل خلال العثور على الاستشارة القانونية وخدمات الدعم في منطقتك.",
         "ku": "ئەم ڕێنماییە ڕێنمایی دەکات بۆ دۆزینەوەی ڕاوێژکاری یاسایی و خزمەتگوزاری پشتگیری لە ناوچەکەتدا.",
@@ -35,6 +35,70 @@
     },
     {
       "id": 1,
+      "type": "feature",
+      "title": {
+        "en": "Quiz System",
+        "de": "Quiz-System",
+        "ru": "Система опроса",
+        "ce": "Хаттаран система",
+        "prs": "سیستم سوالات",
+        "ps": "د پوښتنو سیسټم",
+        "fa": "سیستم پرسش",
+        "ar": "نظام الأسئلة",
+        "ku": "سیستەمی پرسیار",
+        "so": "Nidaamka Su'aalaha",
+        "ka": "კითხვების სისტემა",
+        "sq": "Sistemi i pyetjeve"
+      },
+      "text": {
+        "en": "Answer guided questions to help us recommend the most relevant legal support services for your specific needs.",
+        "de": "Beantworten Sie geführte Fragen, um Ihnen die relevantesten Rechtsberatungsdienste für Ihre spezifischen Bedürfnisse zu empfehlen.",
+        "ru": "Отвечайте на направляемые вопросы, чтобы мы могли рекомендовать наиболее подходящие услуги правовой поддержки для ваших конкретных потребностей.",
+        "ce": "Белхан хаттарийн жоьпаш ло, шуна хьан леррина хlоттамашна лаьцна бакъонан гlон долу службаш тайина хlоттийча.",
+        "prs": "به سوالات راهنما پاسخ دهید تا ما مناسب‌ترین خدمات حمایت حقوقی را برای نیازهای خاص شما توصیه کنیم.",
+        "ps": "د لارښوونې پوښتنو ته ځواب ورکړئ ترڅو موږ ستاسو د ځانګړو اړتیاو لپاره ترټولو اړوند حقوقي ملاتړ خدمات وړاندیز کړو.",
+        "fa": "به سوالات راهنما پاسخ دهید تا ما مناسب‌ترین خدمات پشتیبانی حقوقی را برای نیازهای خاص شما توصیه کنیم.",
+        "ar": "أجب على الأسئلة الموجهة لمساعدتنا في التوصية بأنسب خدمات الدعم القانوني لاحتياجاتك المحددة.",
+        "ku": "وەڵامی پرسیارە ڕێنماییکراوەکان بدەرەوە بۆ یارمەتیدانمان لە پێشنیارکردنی گونجاوترین خزمەتگوزاری پشتگیری یاسایی بۆ پێداویستییە تایبەتەکانت.",
+        "so": "Ka jawaab su'aalaha hagitaanka ah si aad nagu caawiso inaan kuu soo jeedinno adeegyada taageerada sharciga ee ugu habboon baahiyahaaga gaarka ah.",
+        "ka": "უპასუხეთ მართვად კითხვებს, რომ დაგვეხმაროთ ყველაზე რელევანტური იურიდიული მხარდაჭერის სერვისების რეკომენდაციაში თქვენი კონკრეტული საჭიროებებისთვის.",
+        "sq": "Përgjigjuni pyetjeve të udhëzuara për të na ndihmuar të rekomandojmë shërbimet më të përshtatshme të mbështetjes ligjore për nevojat tuaja specifike."
+      }
+    },
+    {
+      "id": 2,
+      "type": "feature",
+      "title": {
+        "en": "Filter Options",
+        "de": "Filter-Optionen",
+        "ru": "Варианты фильтров",
+        "ce": "Хьажораган вариантал",
+        "prs": "گزینه‌های فیلتر",
+        "ps": "د فلټر اختیارونه",
+        "fa": "گزینه‌های فیلتر",
+        "ar": "خيارات المرشح",
+        "ku": "بژاردەکانی پاڵێوەر",
+        "so": "Doorashada Shaandhayaasha",
+        "ka": "ფილტრის ვარიანტები",
+        "sq": "Opsionet e filtrit"
+      },
+      "text": {
+        "en": "Use advanced filters to narrow down legal support options by type of assistance, location, and other criteria that matter to you.",
+        "de": "Verwenden Sie erweiterte Filter, um Rechtsberatungsoptionen nach Art der Hilfe, Standort und anderen für Sie wichtigen Kriterien einzugrenzen.",
+        "ru": "Используйте расширенные фильтры для сужения вариантов правовой поддержки по типу помощи, местоположению и другим важным для вас критериям.",
+        "ce": "Кхечу критерийшца, меттигца, гlон тlайпаца бакъонан гlон долу вариантал кlезиг даа хьажорагaш лело.",
+        "prs": "از فیلترهای پیشرفته استفاده کنید تا گزینه‌های حمایت حقوقی را بر اساس نوع کمک، موقعیت و معیارهای دیگر که برای شما مهم است محدود کنید.",
+        "ps": "د لرې پورتنیو فلټرونو څخه کار واخلئ ترڅو د مرستې د ډول، موقعیت او نورو هغو معیارونو له مخې د حقوقي ملاتړ اختیارونه محدود کړئ چې ستاسو لپاره مهم دي.",
+        "fa": "از فیلترهای پیشرفته استفاده کنید تا گزینه‌های پشتیبانی حقوقی را بر اساس نوع کمک، موقعیت و معیارهای دیگر که برای شما مهم است محدود کنید.",
+        "ar": "استخدم المرشحات المتقدمة لتضييق خيارات الدعم القانوني حسب نوع المساعدة والموقع والمعايير الأخرى المهمة بالنسبة لك.",
+        "ku": "پاڵێوەرە پێشکەوتووەکان بەکاربهێنە بۆ تەنگکردنەوەی هەڵبژاردەکانی پشتگیری یاسایی بەپێی جۆری یارمەتی، شوێن و پێوەرەکانی دیکە کە بۆ تۆ گرنگن.",
+        "so": "Isticmaal shaandhayaasha horumarsan si aad u yareeyo doorashada taageerada sharciga iyadoo lagu saleynayo nooca caawimaadda, goobta, iyo shuruudaha kale ee muhiimka kuu ah.",
+        "ka": "გამოიყენეთ გაფართოებული ფილტრები იურიდიული მხარდაჭერის ვარიანტების შესაზღუდავად დახმარების ტიპის, მდებარეობის და სხვა თქვენთვის მნიშვნელოვანი კრიტერიუმების მიხედვით.",
+        "sq": "Përdorni filtra të avancuar për të ngushtuar opsionet e mbështetjes ligjore sipas llojit të ndihmës, vendndodhjes dhe kritereve të tjera që janë të rëndësishme për ju."
+      }
+    },
+    {
+      "id": 3,
       "type": "category",
       "title": {
         "en": "Asylum Procedures",
@@ -51,18 +115,18 @@
         "sq": "Procedurat e azilit"
       },
       "text": {
-        "en": "Get specialized legal assistance for asylum applications, interviews, and appeal processes.",
-        "de": "Erhalten Sie spezialisierte Rechtsberatung für Asylanträge, Anhörungen und Berufungsverfahren.",
-        "ru": "Получите специализированную юридическую помощь по заявлениям на убежище, собеседованиям и процессам обжалования.",
-        "ce": "Пана даларан арзаш, жоьпехь латар а къобалдаккхаран а процессашна белхан бакъонан гlо лело.",
-        "prs": "کمک حقوقی تخصصی برای درخواست‌های پناهندگی، مصاحبه‌ها و فرآیندهای تجدیدنظر دریافت کنید.",
-        "ps": "د پناه غوښتنلیکونو، مرکو او د استیناف پروسو لپاره ځانګړي حقوقي مرسته واخلئ.",
-        "fa": "کمک حقوقی تخصصی برای درخواست‌های پناهندگی، مصاحبه‌ها و فرآیندهای تجدیدنظر دریافت کنید.",
-        "ar": "احصل على المساعدة القانونية المتخصصة لطلبات اللجوء والمقابلات وعمليات الاستئناف.",
-        "ku": "یارمەتی یاسایی تایبەت بۆ داواکاری پەناگیری، چاوپێکەوتن و پرۆسەی کۆتایی وەربگرە.",
-        "so": "Hel caawimaad sharci oo takhasussan oo loogu talagalay codsiyada magangalyo, wareysiyada, iyo hababka racfaanka.",
-        "ka": "მიიღეთ სპეციალიზებული იურიდიული დახმარება თავშესაფრის განაცხადებისთვის, გასაუბრებებისთვის და აპელაციის პროცესებისთვის.",
-        "sq": "Merrni ndihmë të specializuar ligjore për aplikime azili, intervista dhe procese ankimimi."
+        "en": "Get specialized legal assistance for asylum applications, interviews, and appeal processes to navigate complex immigration procedures.",
+        "de": "Erhalten Sie spezialisierte Rechtsberatung für Asylanträge, Anhörungen und Berufungsverfahren, um komplexe Einwanderungsverfahren zu bewältigen.",
+        "ru": "Получите специализированную юридическую помощь по заявлениям на убежище, собеседованиям и процессам обжалования для навигации по сложным иммиграционным процедурам.",
+        "ce": "Сложни миграционни процедурашца урхалла дан пана даларан арзаш, жоьпехь латар а къобалдаккхаран а процессашна белхан бакъонан гlо лело.",
+        "prs": "کمک حقوقی تخصصی برای درخواست‌های پناهندگی، مصاحبه‌ها و فرآیندهای تجدیدنظر برای هدایت در رویه‌های پیچیده مهاجرت دریافت کنید.",
+        "ps": "د پناه غوښتنلیکونو، مرکو او د استیناف پروسو لپاره ځانګړي حقوقي مرسته واخلئ ترڅو د پیچلو کډوالۍ پروسیجرونو څخه تیر شئ.",
+        "fa": "کمک حقوقی تخصصی برای درخواست‌های پناهندگی، مصاحبه‌ها و فرآیندهای تجدیدنظر برای هدایت در رویه‌های پیچیده مهاجرت دریافت کنید.",
+        "ar": "احصل على المساعدة القانونية المتخصصة لطلبات اللجوء والمقابلات وعمليات الاستئناف للتنقل في الإجراءات المعقدة للهجرة.",
+        "ku": "یارمەتی یاسایی تایبەت بۆ داواکاری پەناگیری، چاوپێکەوتن و پرۆسەی کۆتایی وەربگرە بۆ ڕێبەری کردنی پرۆسە ئاڵۆزەکانی کۆچکردن.",
+        "so": "Hel caawimaad sharci oo takhasussan oo loogu talagalay codsiyada magangalyo, wareysiyada, iyo hababka racfaanka si aad u hagto hababka aadka u adag ee socdaalka.",
+        "ka": "მიიღეთ სპეციალიზებული იურიდიული დახმარება თავშესაფრის განაცხადებისთვის, გასაუბრებებისთვის და აპელაციის პროცესებისთვის რთული იმიგრაციული პროცედურების ნავიგაციისთვის.",
+        "sq": "Merrni ndihmë të specializuar ligjore për aplikime azili, intervista dhe procese ankimimi për të naviguar procedurat e ndërlikuara të migrimit."
       },
       "category": {
         "title": {
@@ -78,7 +142,7 @@
       }
     },
     {
-      "id": 2,
+      "id": 4,
       "type": "category",
       "title": {
         "en": "Residence Permits",
@@ -95,18 +159,18 @@
         "sq": "Lejet e qëndrimit"
       },
       "text": {
-        "en": "Find legal assistance for residence permit applications, renewals, and related documentation.",
-        "de": "Finden Sie Rechtsberatung für Aufenthaltstitel-Anträge, Verlängerungen und verwandte Dokumentation.",
-        "ru": "Найдите юридическую помощь для заявлений на разрешение на проживание, продлений и связанной документации.",
-        "ce": "Йоккхе йолу баран арзаш, кхинчохь латар а шена документашна а бакъонан гlо карийта.",
-        "prs": "کمک حقوقی برای درخواست‌های مجوز اقامت، تمدید و اسناد مربوطه پیدا کنید.",
-        "ps": "د استوګنې د اجازو د غوښتنلیکونو، نوولو او اړوندو اسنادو لپاره حقوقي مرسته ومومئ.",
-        "fa": "کمک حقوقی برای درخواست‌های مجوز اقامت، تمدید و اسناد مربوطه پیدا کنید.",
-        "ar": "ابحث عن المساعدة القانونية لطلبات تصاريح الإقامة والتجديدات والوثائق ذات الصلة.",
-        "ku": "یارمەتی یاسایی بۆ داواکاری مۆڵەتی نیشتەجێبوون، نوێکردنەوە و بەڵگە پەیوەندیدارەکان بدۆزەرەوە.",
-        "so": "Ka hel caawimaad sharci oo loogu talagalay codsiyada ruqsadaha degenaanta, cusboonaysiinta, iyo dukumeentiyada la xiriira.",
-        "ka": "იპოვეთ იურიდიული დახმარება საცხოვრებელი ნებართვის განაცხადებისთვის, განახლებისთვის და დაკავშირებული დოკუმენტაციისთვის.",
-        "sq": "Gjeni ndihmë ligjore për aplikime lejesh qëndrimi, rinovime dhe dokumentacion të lidhur."
+        "en": "Find legal assistance for residence permit applications, renewals, and related documentation to secure your legal status.",
+        "de": "Finden Sie Rechtsberatung für Aufenthaltstitel-Anträge, Verlängerungen und verwandte Dokumentation, um Ihren rechtlichen Status zu sichern.",
+        "ru": "Найдите юридическую помощь для заявлений на разрешение на проживание, продлений и связанной документации для обеспечения вашего правового статуса.",
+        "ce": "Хьан бакъонан статус даржийта йоккхе йолу баран арзаш, кхинчохь латар а шена документашна а бакъонан гlо карийта.",
+        "prs": "کمک حقوقی برای درخواست‌های مجوز اقامت، تمدید و اسناد مربوطه برای تضمین وضعیت قانونی‌تان پیدا کنید.",
+        "ps": "د استوګنې د اجازو د غوښتنلیکونو، نوولو او اړوندو اسنادو لپاره حقوقي مرسته ومومئ ترڅو خپل قانوني حالت خوندي کړئ.",
+        "fa": "کمک حقوقی برای درخواست‌های مجوز اقامت، تمدید و اسناد مربوطه برای تضمین وضعیت قانونی‌تان پیدا کنید.",
+        "ar": "ابحث عن المساعدة القانونية لطلبات تصاريح الإقامة والتجديدات والوثائق ذات الصلة لتأمين وضعك القانوني.",
+        "ku": "یارمەتی یاسایی بۆ داواکاری مۆڵەتی نیشتەجێبوون، نوێکردنەوە و بەڵگە پەیوەندیدارەکان بدۆزەرەوە بۆ پارێزگاری لە دۆخی یاسایی خۆت.",
+        "so": "Ka hel caawimaad sharci oo loogu talagalay codsiyada ruqsadaha degenaanta, cusboonaysiinta, iyo dukumeentiyada la xiriira si aad u xaqiijiso xaaladaada sharciga ah.",
+        "ka": "იპოვეთ იურიდიული დახმარება საცხოვრებელი ნებართვის განაცხადებისთვის, განახლებისთვის და დაკავშირებული დოკუმენტაციისთვის თქვენი იურიდიული სტატუსის უზრუნველსაყოფად.",
+        "sq": "Gjeni ndihmë ligjore për aplikime lejesh qëndrimi, rinovime dhe dokumentacion të lidhur për të siguruar statusin tuaj ligjor."
       },
       "category": {
         "title": {
@@ -122,7 +186,7 @@
       }
     },
     {
-      "id": 3,
+      "id": 5,
       "type": "category",
       "title": {
         "en": "Family Reunification",
@@ -139,18 +203,18 @@
         "sq": "Ribashkimi familjar"
       },
       "text": {
-        "en": "Get support for bringing family members to join you through legal reunification processes.",
-        "de": "Erhalten Sie Unterstützung, um Familienangehörige durch rechtliche Zusammenführungsverfahren zu Ihnen zu bringen.",
-        "ru": "Получите поддержку для воссоединения с членами семьи через законные процессы воссоединения.",
-        "ce": "Доьзали чухулхой хьуна йукъе хийцаран бакъонан процессашца гlо лело.",
-        "prs": "برای آوردن اعضای خانواده از طریق فرآیندهای قانونی تجمیع حمایت دریافت کنید.",
-        "ps": "د حقوقي یوځای کولو پروسو له لارې د کورنۍ د غړو د راوړلو لپاره ملاتړ واخلئ.",
-        "fa": "برای آوردن اعضای خانواده از طریق فرآیندهای قانونی تجمیع حمایت دریافت کنید.",
-        "ar": "احصل على الدعم لجلب أفراد الأسرة للانضمام إليك من خلال عمليات لم الشمل القانونية.",
-        "ku": "پشتگیری بۆ هێنانی ئەندامانی خێزان بۆ پێکەوە بوون لە ڕێگەی پرۆسەی یاسایی یەکخستنەوەوە بەدەست بهێنە.",
-        "so": "Hel taageero si aad u keento xubnaha qoyska inay kugu biiraan iyagoo maraya hababka dib-u-midowga sharciga.",
-        "ka": "მიიღეთ მხარდაჭერა ოჯახის წევრების მოსაყვანად იურიდიული გაერთიანების პროცესების მეშვეობით.",
-        "sq": "Merrni mbështetje për të sjellë anëtarët e familjes t'ju bashkohen përmes proceseve ligjore të ribashkimit."
+        "en": "Get support for bringing family members to join you through legal reunification processes and navigate complex family immigration law.",
+        "de": "Erhalten Sie Unterstützung, um Familienangehörige durch rechtliche Zusammenführungsverfahren zu Ihnen zu bringen und komplexe Familien-Einwanderungsgesetze zu bewältigen.",
+        "ru": "Получите поддержку для воссоединения с членами семьи через законные процессы воссоединения и навигацию по сложному семейному иммиграционному праву.",
+        "ce": "Доьзали чухулхой хьуна йукъе хийцаран бакъонан процессашца а сложни доьзали миграционни бакъонца а урхалла дан гlо лело.",
+        "prs": "برای آوردن اعضای خانواده از طریق فرآیندهای قانونی تجمیع و راهیابی در قوانین پیچیده مهاجرت خانوادگی حمایت دریافت کنید.",
+        "ps": "د حقوقي یوځای کولو پروسو له لارې د کورنۍ د غړو د راوړلو او د پیچلو کورنۍ د کډوالۍ قانون د څرنګوالي لپاره ملاتړ واخلئ.",
+        "fa": "برای آوردن اعضای خانواده از طریق فرآیندهای قانونی تجمیع و مسیریابی در قوانین پیچیده مهاجرت خانوادگی حمایت دریافت کنید.",
+        "ar": "احصل على الدعم لجلب أفراد الأسرة للانضمام إليك من خلال عمليات لم الشمل القانونية والتنقل في قوانين الهجرة العائلية المعقدة.",
+        "ku": "پشتگیری بۆ هێنانی ئەندامانی خێزان بۆ پێکەوە بوون لە ڕێگەی پرۆسەی یاسایی یەکخستنەوەوە و ڕێبەری کردنی یاسای ئاڵۆزی کۆچکردنی خێزانی بەدەست بهێنە.",
+        "so": "Hel taageero si aad u keento xubnaha qoyska inay kugu biiraan iyagoo maraya hababka dib-u-midowga sharciga ah oo aad ku hagto sharciga aadka u adag ee socdaalka qoyska.",
+        "ka": "მიიღეთ მხარდაჭერა ოჯახის წევრების მოსაყვანად იურიდიული გაერთიანების პროცესების მეშვეობით და ნავიგაციისთვის რთულ ოჯახურ საიმიგრაციო სამართალში.",
+        "sq": "Merrni mbështetje për të sjellë anëtarët e familjes t'ju bashkohen përmes proceseve ligjore të ribashkimit dhe navigoni ligjin e ndërlikuar të migrimit familjar."
       },
       "category": {
         "title": {
@@ -163,94 +227,6 @@
         },
         "icon": "family-restroom",
         "color": "#8B5CF6"
-      }
-    },
-    {
-      "id": 4,
-      "type": "category",
-      "title": {
-        "en": "Work Rights",
-        "de": "Arbeitsrechte",
-        "ru": "Трудовые права",
-        "ce": "Болхан бакъо",
-        "prs": "حقوق کار",
-        "ps": "د کار حقونه",
-        "fa": "حقوق کار",
-        "ar": "حقوق العمل",
-        "ku": "مافی کار",
-        "so": "Xuquuqda shaqada",
-        "ka": "სამუშაო უფლებები",
-        "sq": "Të drejtat e punës"
-      },
-      "text": {
-        "en": "Learn about your employment rights, work permits, and workplace protections under Austrian law.",
-        "de": "Erfahren Sie mehr über Ihre Arbeitsrechte, Arbeitserlaubnisse und Arbeitsplatzschutz nach österreichischem Recht.",
-        "ru": "Узнайте о ваших трудовых правах, разрешениях на работу и защите на рабочем месте по австрийскому законодательству.",
-        "ce": "Австрин бакъонца хьан болхан бакъо, болх бар а болхан меттан пассив а хаам бу.",
-        "prs": "درباره حقوق شغلی، مجوزهای کار و حمایت‌های محل کار تحت قانون اتریش بیاموزید.",
-        "ps": "د اتریش د قانون له مخې ستاسو د دندې حقونه، د کار اجازې او د کار ځای خونديتوب زده کړئ.",
-        "fa": "درباره حقوق شغلی، مجوزهای کار و حمایت‌های محل کار تحت قانون اتریش بیاموزید.",
-        "ar": "تعلم عن حقوقك في العمل وتصاريح العمل وحماية مكان العمل تحت القانون النمساوي.",
-        "ku": "دەربارەی مافی کارکردن، مۆڵەتی کارکردن و پاراستنی شوێنی کار لە ژێر یاسای نەمساوە زانیاری وەربگرە.",
-        "so": "Baro xuquuqda shaqadaada, ruqsadaha shaqada, iyo badbaadinta goobta shaqo ee hoos yimaadda sharciga Austria.",
-        "ka": "გაიგეთ თქვენი დასაქმების უფლებები, სამუშაო ნებართვები და სამუშაო ადგილის დაცვა ავსტრიის კანონის მიხედვით.",
-        "sq": "Mësoni për të drejtat tuaja të punësimit, lejet e punës dhe mbrojtjet e vendit të punës sipas ligjit austriak."
-      },
-      "category": {
-        "title": {
-          "en": "Work Rights",
-          "de": "Arbeitsrechte"
-        },
-        "description": {
-          "en": "Employment and workplace rights",
-          "de": "Beschäftigungs- und Arbeitsplatzrechte"
-        },
-        "icon": "work",
-        "color": "#EC4899"
-      }
-    },
-    {
-      "id": 5,
-      "type": "category",
-      "title": {
-        "en": "Discrimination",
-        "de": "Diskriminierung",
-        "ru": "Дискриминация",
-        "ce": "Башхо доцуш дуьхьал",
-        "prs": "تبعیض",
-        "ps": "تبعیض",
-        "fa": "تبعیض",
-        "ar": "التمييز",
-        "ku": "جیاکاری",
-        "so": "Takooriga",
-        "ka": "დისკრიმინაცია",
-        "sq": "Diskriminimi"
-      },
-      "text": {
-        "en": "Find legal support if you experience discrimination based on nationality, religion, or other factors.",
-        "de": "Finden Sie Rechtsberatung, wenn Sie Diskriminierung aufgrund der Nationalität, Religion oder anderer Faktoren erleben.",
-        "ru": "Найдите правовую поддержку, если вы сталкиваетесь с дискриминацией по национальности, религии или другим факторам.",
-        "ce": "Пачахьалкх, дин я кхечу хIоттамашкахь башхо доцуш дуьхьал дуьйцуш делахь бакъонан гlо карийта.",
-        "prs": "اگر بر اساس ملیت، مذهب یا عوامل دیگر تبعیض تجربه می‌کنید، حمایت حقوقی پیدا کنید.",
-        "ps": "که تاسو د ملیت، مذهب یا نورو فکتورونو پر بنسټ تبعیض تجربه کوئ، حقوقي ملاتړ ومومئ.",
-        "fa": "اگر بر اساس ملیت، مذهب یا عوامل دیگر تبعیض تجربه می‌کنید، پشتیبانی حقوقی پیدا کنید.",
-        "ar": "ابحث عن الدعم القانوني إذا كنت تواجه التمييز بناءً على الجنسية أو الدين أو عوامل أخرى.",
-        "ku": "ئەگەر جیاکاری بەپێی نەتەوە، ئایین یان فاکتەری دیکە ڕووبەڕووی دەبیتەوە، پشتگیری یاسایی بدۆزەرەوە.",
-        "so": "Ka hel taageerada sharciga haddii aad la kulanto takoor loo sameeyay dalka aad ka timid, diinta, ama arrimo kale.",
-        "ka": "იპოვეთ იურიდიული მხარდაჭერა, თუ განიცდით დისკრიმინაციას ეროვნების, რელიგიის ან სხვა ფაქტორების საფუძველზე.",
-        "sq": "Gjeni mbështetje ligjore nëse përjetoni diskriminim bazuar në kombësi, fe ose faktorë të tjerë."
-      },
-      "category": {
-        "title": {
-          "en": "Discrimination",
-          "de": "Diskriminierung"
-        },
-        "description": {
-          "en": "Fighting unfair treatment",
-          "de": "Gegen unfaire Behandlung kämpfen"
-        },
-        "icon": "balance",
-        "color": "#059669"
       }
     },
     {
@@ -271,18 +247,18 @@
         "sq": "Asistenti virtual"
       },
       "text": {
-        "en": "Get instant legal guidance through our AI-powered virtual assistant for common legal questions.",
-        "de": "Erhalten Sie sofortige Rechtsberatung durch unseren KI-gestützten virtuellen Assistenten für häufige Rechtsfragen.",
-        "ru": "Получите мгновенную юридическую консультацию через нашего виртуального помощника на базе ИИ для общих правовых вопросов.",
-        "ce": "Йаьлла дуьйцу бакъонан хаттарашна шуьга виртуала кхерамца йоккхунца бакъонан белхо лело.",
-        "prs": "راهنمایی فوری حقوقی را از طریق دستیار مجازی مبتنی بر هوش مصنوعی ما برای سوالات حقوقی متداول دریافت کنید.",
-        "ps": "زموږ د AI پر بنسټ مجازي مرستیال له لارې د عامو حقوقي پوښتنو لپاره سمدستي حقوقي لارښوونه واخلئ.",
-        "fa": "راهنمایی فوری حقوقی را از طریق دستیار مجازی مبتنی بر هوش مصنوعی ما برای سوالات حقوقی متداول دریافت کنید.",
-        "ar": "احصل على التوجيه القانوني الفوري من خلال مساعدنا الافتراضي المدعوم بالذكاء الاصطناعي للأسئلة القانونية الشائعة.",
-        "ku": "ڕاستەوخۆ ڕێنمایی یاسایی لە ڕێگەی یاریدەدەری مجازیمانەوە کە بە AI پشتگیری دەکرێت بۆ پرسیارە یاسایی باوەکان وەربگرە.",
-        "so": "Hel hagitaanka sharciga degdegga ah iyada oo loo marayo caawiyahayaga farsamaysan ee AI-ku taageerayo su'aalaha sharciga caadiga ah.",
-        "ka": "მიიღეთ დაუყოვნებელი იურიდიული მითითებები ჩვენი AI-ით მოძრავი ვირტუალური ასისტენტის მეშვეობით ზოგადი იურიდიული კითხვებისთვის.",
-        "sq": "Merrni udhëzime të menjëhershme ligjore përmes asistentit tonë virtual të mbështetur nga AI për pyetje të zakonshme ligjore."
+        "en": "Get instant legal guidance through our AI-powered virtual assistant for common legal questions and initial advice.",
+        "de": "Erhalten Sie sofortige Rechtsberatung durch unseren KI-gestützten virtuellen Assistenten für häufige Rechtsfragen und erste Beratung.",
+        "ru": "Получите мгновенную юридическую консультацию через нашего виртуального помощника на базе ИИ для общих правовых вопросов и первоначальной консультации.",
+        "ce": "Йаьлла дуьйцу бакъонан хаттарашна а хьалхара консультацийна а шуьга виртуала кхерамца йоккхунца бакъонан белхо лело.",
+        "prs": "راهنمایی فوری حقوقی را از طریق دستیار مجازی مبتنی بر هوش مصنوعی ما برای سوالات حقوقی متداول و مشاوره اولیه دریافت کنید.",
+        "ps": "زموږ د AI پر بنسټ مجازي مرستیال له لارې د عامو حقوقي پوښتنو او لومړنیو مشورو لپاره سمدستي حقوقي لارښوونه واخلئ.",
+        "fa": "راهنمایی فوری حقوقی را از طریق دستیار مجازی مبتنی بر هوش مصنوعی ما برای سوالات حقوقی متداول و مشاوره اولیه دریافت کنید.",
+        "ar": "احصل على التوجيه القانوني الفوري من خلال مساعدنا الافتراضي المدعوم بالذكاء الاصطناعي للأسئلة القانونية الشائعة والمشورة الأولية.",
+        "ku": "ڕاستەوخۆ ڕێنمایی یاسایی لە ڕێگەی یاریدەدەری مجازیمানەوە کە بە AI پشتگیری دەکرێت بۆ پرسیارە یاسایی باوەکان و ڕاوێژی سەرەتایی وەربگرە.",
+        "so": "Hel hagitaanka sharciga degdegga ah iyada oo loo marayo caawiyahayaga farsamaysan ee AI-ku taageerayo su'aalaha sharciga caadiga ah iyo la-talinta bilowga ah.",
+        "ka": "მიიღეთ დაუყოვნებელი იურიდიული მითითებები ჩვენი AI-ით მოძრავი ვირტუალური ასისტენტის მეშვეობით ზოგადი იურიდიული კითხვებისთვის და საწყისი რჩევებისთვის.",
+        "sq": "Merrni udhëzime të menjëhershme ligjore përmes asistentit tonë virtual të mbështetur nga AI për pyetje të zakonshme ligjore dhe këshilla fillestare."
       }
     },
     {

@@ -280,6 +280,34 @@
     "ka": "გამოტოვება",
     "sq": "Kapërce"
   },
+  "resetQuiz": {
+    "en": "Reset Quiz",
+    "de": "Quiz zurücksetzen",
+    "ru": "Сбросить опрос",
+    "ce": "Хаттарг дlадайасса",
+    "prs": "بازنشانی آزمون",
+    "ps": "ازموینه بیا تنظیمول",
+    "fa": "بازنشانی آزمون",
+    "ar": "إعادة تعيين الاختبار",
+    "ku": "ڕێکخستنەوەی پرسیار",
+    "so": "Dib-u-deji imtixaanka",
+    "ka": "კითხვარის გადატვირთვა",
+    "sq": "Rivendos testin"
+  },
+  "clearFilters": {
+    "en": "Clear Filters",
+    "de": "Filter löschen",
+    "ru": "Очистить фильтры",
+    "ce": "Хьажорагaш дlаяккха",
+    "prs": "پاک کردن فیلترها",
+    "ps": "فلټرونه پاکول",
+    "fa": "پاک کردن فیلترها",
+    "ar": "مسح المرشحات",
+    "ku": "پاکردنەوەی پاڵێوەرەکان",
+    "so": "Nadiifi shaandhayaasha",
+    "ka": "ფილტრების გასუფთავება",
+    "sq": "Pastro filtrat"
+  },
   "noLegalSupportEntitiesFound": {
     "en": "No legal support entities found.",
     "de": "Keine Rechtsberatungsstellen gefunden.",
