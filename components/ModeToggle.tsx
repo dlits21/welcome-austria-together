@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -77,26 +78,30 @@ const styles = StyleSheet.create({
   mobileModeToggle: {
     flexDirection: 'row',
     backgroundColor: '#f0f0f0',
-    borderRadius: 16,
-    padding: 2,
-    alignSelf: 'flex-start',
-    marginLeft: 16,
-    marginTop: 8,
+    borderRadius: 20,
+    padding: 4,
+    alignSelf: 'center',
+    width: '70%',
+    marginHorizontal: 16,
+    marginVertical: 12,
   },
   mobileModeButton: {
+    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    borderRadius: 12,
+    justifyContent: 'center',
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderRadius: 16,
   },
   activeMobileModeButton: {
     backgroundColor: '#3B82F6',
   },
   mobileModeButtonText: {
-    marginLeft: 3,
-    fontSize: 11,
+    marginLeft: 4,
+    fontSize: 12,
     color: '#666',
+    fontWeight: '500',
   },
   activeMobileModeButtonText: {
     color: '#fff',
