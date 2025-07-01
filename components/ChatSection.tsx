@@ -1,4 +1,3 @@
-
 import React, { useRef } from 'react';
 import {
   View,
@@ -12,6 +11,7 @@ import {
 import { MaterialIcons } from '@expo/vector-icons';
 import ChatBubble from './ChatBubble';
 import VoiceSection from './VoiceSection';
+import ModeToggle from './ModeToggle';
 
 interface Message {
   id: string;
@@ -30,6 +30,9 @@ interface ChatSectionProps {
   onToggleVoice: () => void;
   languageCode: string;
   isWideScreen: boolean;
+  avatar?: string;
+  showModeToggle?: boolean;
+  onModeChange?: (mode: 'text' | 'voice') => void;
 }
 
 const ChatSection: React.FC<ChatSectionProps> = ({
@@ -43,6 +46,8 @@ const ChatSection: React.FC<ChatSectionProps> = ({
   languageCode,
   isWideScreen,
   avatar,
+  showModeToggle = false,
+  onModeChange,
 }) => {
   const textInputRef = useRef<TextInput>(null);
   const scrollViewRef = useRef<ScrollView>(null);
@@ -69,6 +74,9 @@ const ChatSection: React.FC<ChatSectionProps> = ({
         <View style={styles.inputContainer}>
           {chatMode === 'text' ? (
             <>
+              <TouchableOpacity style={styles.uploadButton}>
+                <MaterialIcons name="more-horiz" size={24} color="#666" />
+              </TouchableOpacity>
               <TextInput
                 ref={textInputRef}
                 style={styles.textInput}
@@ -112,8 +120,21 @@ const ChatSection: React.FC<ChatSectionProps> = ({
         </View>
       ) : (
         <>
+          {showModeToggle && onModeChange && (
+            <View style={styles.mobileToggleContainer}>
+              <ModeToggle
+                chatMode={chatMode}
+                onModeChange={onModeChange}
+                languageCode={languageCode}
+                isWideScreen={isWideScreen}
+              />
+            </View>
+          )}
           {chatMode === 'text' && (
             <View style={[styles.inputContainer, styles.mobileInputContainer]}>
+              <TouchableOpacity style={styles.uploadButton}>
+                <MaterialIcons name="more-horiz" size={20} color="#666" />
+              </TouchableOpacity>
               <TextInput
                 ref={textInputRef}
                 style={styles.textInput}
@@ -187,6 +208,22 @@ const styles = StyleSheet.create({
   mobileInputContainer: {
     paddingBottom: 30,
     marginBottom: 10,
+  },
+  mobileToggleContainer: {
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    backgroundColor: '#fff',
+    borderTopWidth: 1,
+    borderTopColor: '#e0e0e0',
+  },
+  uploadButton: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: '#f0f0f0',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 8,
   },
   textInput: {
     flex: 1,
