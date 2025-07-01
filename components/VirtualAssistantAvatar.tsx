@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 import { getAssistantText } from '../utils/languageUtils';
+import { getCharacterImage } from '../utils/assistantUtils';
 
 interface AssistantData {
   name: string;
@@ -14,16 +15,14 @@ interface VirtualAssistantAvatarProps {
   assistantData?: AssistantData | null;
 }
 
+
 const VirtualAssistantAvatar: React.FC<VirtualAssistantAvatarProps> = ({
   languageCode,
   isWideScreen,
   assistantData,
 }) => {
   const getImageSource = () => {
-    if (assistantData?.imagePath) {
-      return { uri: `/assets/images/${assistantData.imagePath}` };
-    }
-    return require('../assets/images/assistant.jpg');
+    return getCharacterImage(assistantData?.name || 'default')
   };
 
   const getDisplayName = () => {

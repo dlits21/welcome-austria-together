@@ -2,6 +2,7 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { getCharacterImage } from '../utils/assistantUtils';
 
 interface Message {
   id: string;
@@ -14,7 +15,9 @@ interface ChatBubbleProps {
   message: Message;
 }
 
-const ChatBubble: React.FC<ChatBubbleProps> = ({ message }) => {
+const ChatBubble: React.FC<ChatBubbleProps> = ({ message, avatar }) => {
+  console.warn("Avatar is ", avatar)
+  const safeAvatar = avatar ? avatar.toLowerCase() : 'fatima';
   return (
     <View style={[
       styles.messageContainer,
@@ -23,7 +26,7 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({ message }) => {
       {!message.isUser && (
         <View style={styles.characterAvatar}>
           <Image
-            source={require('../assets/images/assistant.jpg')}
+            source={getCharacterImage(safeAvatar)}
             style={styles.avatarImage}
             resizeMode="cover"
           />

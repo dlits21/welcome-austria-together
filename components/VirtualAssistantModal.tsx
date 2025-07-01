@@ -15,6 +15,7 @@ import ModeToggle from './ModeToggle';
 import ChatSection from './ChatSection';
 import LanguageModal from './LanguageModal';
 import { getAssistantText } from '../utils/languageUtils';
+import { getCharacterImage } from '../utils/assistantUtils';
 import { languages } from '../data/languages/common';
 
 interface Message {
@@ -38,6 +39,22 @@ interface AssistantData {
   imagePath: string;
 }
 
+const fileMap = {
+    'de': require('../data/virtualAssistant/fatima.json'), // Abdul (native German speaker)
+    'en': require('../data/virtualAssistant/maryam.json'), // Maryam (native English speaker)
+    'ru': require('../data/virtualAssistant/nino.json'), // Julia (native Russian speaker)
+    'ce': require('../data/virtualAssistant/fatima.json'), // Fatima (native Chechen speaker)
+    'fa': require('../data/virtualAssistant/rustam.json'), // Rustam (native Persian speaker)
+    'prs': require('../data/virtualAssistant/leila.json'), // Leila (native Pashto speaker)
+    'ps': require('../data/virtualAssistant/leila.json'), // Leila (native Pashto speaker)
+    'ar': require('../data/virtualAssistant/omar.json'), // Omar (native Arabic speaker)
+    'ku': require('../data/virtualAssistant/zainab.json'), // Zainab (native Kurdish speaker)
+    'so': require('../data/virtualAssistant/amina.json'), // Amina (native Somali speaker)
+    'ka': require('../data/virtualAssistant/nino.json'), // Nino (native Georgian speaker)
+    'sq': require('../data/virtualAssistant/arlinda.json'), // Sara (native Albanian speaker)
+  };
+
+
 const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
   visible,
   onClose,
@@ -59,25 +76,31 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
   // Load assistant data based on language and gender
   const loadAssistantData = useCallback(async (lang: string, gender: 'male' | 'female') => {
     try {
-      const response = await fetch(`/data/virtualAssistant/${lang}/${gender}.json`);
-      if (response.ok) {
-        const data = await response.json();
+
+      // Try to load the assistant data based on language and gender
+      const data = fileMap[lang];
+
+      if (data) {
+        console.log('Loaded assistant data:', data);
         setAssistantData(data);
       } else {
-        // Fallback to English if language not found
-        const fallbackResponse = await fetch(`/data/virtualAssistant/en/${gender}.json`);
-        if (fallbackResponse.ok) {
-          const fallbackData = await fallbackResponse.json();
-          setAssistantData(fallbackData);
-        }
+        // Fallback to Fatima's data if nothing else is found
+        const fallbackData = require('../data/virtualAssistant/fatima.json');
+        console.log('Loaded fallback data:', fallbackData);
+        setAssistantData(fallbackData);
       }
+
+      console.log('Successfully loaded assistant data:', assistantData);
     } catch (error) {
-      console.error('Failed to load assistant data:', error);
-      // Use default data
+      console.error('Failed to load assistant data:', error, lang, gender);
+
+      // In case of an error, fall back to Fatima's data
       setAssistantData({
-        name: 'Assistant',
-        firstLine: getAssistantText('greeting', lang),
-        imagePath: 'assistant.jpg'
+        name: 'Fatima',
+        firstLine: 'Hallo! Ich bin Fatima, Ihre virtuelle Assistentin. Womit kann ich Ihnen behilflich sein?',
+        imagePath: 'fatima.png',
+        languages: 'Chechen, Russian, German',
+        background: 'Fatima is from Chechnya and came to Austria as a child. She now works as a healthcare assistant in a Viennese hospital.',
       });
     }
   }, []);
@@ -181,10 +204,7 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
             <View style={styles.headerContent}>
               <View style={styles.headerAvatar}>
                 <Image
-                  source={assistantData ? 
-                    { uri: `/assets/images/${assistantData.imagePath}` } : 
-                    require('../assets/images/assistant.jpg')
-                  }
+                  source={getCharacterImage(assistantData?.name || 'default')}
                   style={styles.headerAvatarImage}
                   resizeMode="cover"
                 />
@@ -229,6 +249,7 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
                 onToggleVoice={toggleVoiceMode}
                 languageCode={languageCode}
                 isWideScreen={isWideScreen}
+                avatar={assistantData?.name || 'fatima'}
               />
             </>
           ) : (
