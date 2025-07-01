@@ -13,7 +13,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import VirtualAssistantAvatar from './VirtualAssistantAvatar';
 import ModeToggle from './ModeToggle';
 import ChatSection from './ChatSection';
-import LanguageModal from './LanguageModal';
+import AvatarSelectionModal from './AvatarSelectionModal';
 import { getAssistantText } from '../utils/languageUtils';
 import { getCharacterImage } from '../utils/assistantUtils';
 import { languages } from '../data/languages/common';
@@ -37,6 +37,8 @@ interface AssistantData {
   name: string;
   firstLine: string;
   imagePath: string;
+  languages: string;
+  background: string;
 }
 
 const fileMap = {
@@ -54,7 +56,6 @@ const fileMap = {
     'sq': require('../data/virtualAssistant/arlinda.json'), // Sara (native Albanian speaker)
   };
 
-
 const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
   visible,
   onClose,
@@ -66,14 +67,12 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
   const [inputText, setInputText] = useState('');
   const [isListening, setIsListening] = useState(false);
   const [chatMode, setChatMode] = useState<'text' | 'voice'>(defaultMode);
-  const [showLanguageModal, setShowLanguageModal] = useState(false);
+  const [showAvatarModal, setShowAvatarModal] = useState(false);
   const [assistantData, setAssistantData] = useState<AssistantData | null>(null);
-  const [assistantGender, setAssistantGender] = useState<'male' | 'female'>('female');
 
   const { width } = Dimensions.get('window');
   const isWideScreen = width >= 768;
 
-  // Load assistant data based on language and gender
   const loadAssistantData = useCallback(async (lang: string, gender: 'male' | 'female') => {
     try {
 
@@ -107,9 +106,9 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
 
   useEffect(() => {
     if (visible) {
-      loadAssistantData(languageCode, assistantGender);
+      loadAssistantData(languageCode, 'female');
     }
-  }, [visible, languageCode, assistantGender, loadAssistantData]);
+  }, [visible, languageCode, loadAssistantData]);
 
   useEffect(() => {
     if (visible && assistantData) {
@@ -184,9 +183,17 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
     setChatMode(mode);
   }, []);
 
-  // Get current language flag
-  const currentLanguage = languages.find(lang => lang.code === languageCode);
-  const languageFlag = currentLanguage?.flag || '🌐';
+  const handleSelectAssistant = useCallback((assistant: AssistantData) => {
+    setAssistantData(assistant);
+    // Reset messages with new assistant's welcome message
+    const welcomeMessage: Message = {
+      id: '1',
+      text: assistant.firstLine,
+      isUser: false,
+      timestamp: new Date(),
+    };
+    setMessages([welcomeMessage]);
+  }, []);
 
   return (
     <Modal
@@ -216,10 +223,10 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
           )}
 
           <TouchableOpacity 
-            style={styles.languageButton} 
-            onPress={() => setShowLanguageModal(true)}
+            style={styles.avatarButton} 
+            onPress={() => setShowAvatarModal(true)}
           >
-            <Text style={styles.languageFlag}>{languageFlag}</Text>
+            <MaterialIcons name="people" size={24} color="#333" />
           </TouchableOpacity>
         </View>
 
@@ -254,19 +261,6 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
             </>
           ) : (
             <View style={styles.mobileLayout}>
-              <View style={styles.mobileTopContainer}>
-                <VirtualAssistantAvatar 
-                  languageCode={languageCode}
-                  isWideScreen={isWideScreen}
-                  assistantData={assistantData}
-                />
-                <ModeToggle
-                  chatMode={chatMode}
-                  onModeChange={handleModeChange}
-                  languageCode={languageCode}
-                  isWideScreen={isWideScreen}
-                />
-              </View>
               <ChatSection
                 messages={messages}
                 inputText={inputText}
@@ -277,15 +271,19 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
                 onToggleVoice={toggleVoiceMode}
                 languageCode={languageCode}
                 isWideScreen={isWideScreen}
+                avatar={assistantData?.name || 'fatima'}
+                showModeToggle={true}
+                onModeChange={handleModeChange}
               />
             </View>
           )}
         </View>
       </SafeAreaView>
 
-      <LanguageModal
-        visible={showLanguageModal}
-        onClose={() => setShowLanguageModal(false)}
+      <AvatarSelectionModal
+        visible={showAvatarModal}
+        onClose={() => setShowAvatarModal(false)}
+        onSelectAssistant={handleSelectAssistant}
         languageCode={languageCode}
       />
     </Modal>
@@ -366,6 +364,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderBottomWidth: 1,
     borderBottomColor: '#e0e0e0',
+  },
+  avatarButton: {
+    padding: 8,
+    borderRadius: 20,
+    backgroundColor: '#f0f0f0',
   },
 });
 
