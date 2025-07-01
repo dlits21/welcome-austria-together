@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import {
   View,
   ScrollView,
@@ -12,6 +12,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import ChatBubble from './ChatBubble';
 import VoiceSection from './VoiceSection';
 import ModeToggle from './ModeToggle';
+import UploadModal from './UploadModal';
 
 interface Message {
   id: string;
@@ -51,6 +52,22 @@ const ChatSection: React.FC<ChatSectionProps> = ({
 }) => {
   const textInputRef = useRef<TextInput>(null);
   const scrollViewRef = useRef<ScrollView>(null);
+  const [showUploadModal, setShowUploadModal] = useState(false);
+
+  const handleTakePhoto = () => {
+    console.log('Taking photo...');
+    // TODO: Implement camera functionality
+  };
+
+  const handleChooseFromGallery = () => {
+    console.log('Choosing from gallery...');
+    // TODO: Implement gallery functionality
+  };
+
+  const handleUploadDocument = () => {
+    console.log('Uploading document...');
+    // TODO: Implement document upload functionality
+  };
 
   return (
     <KeyboardAvoidingView
@@ -74,7 +91,10 @@ const ChatSection: React.FC<ChatSectionProps> = ({
         <View style={styles.inputContainer}>
           {chatMode === 'text' ? (
             <>
-              <TouchableOpacity style={styles.uploadButton}>
+              <TouchableOpacity 
+                style={styles.uploadButton}
+                onPress={() => setShowUploadModal(true)}
+              >
                 <MaterialIcons name="more-horiz" size={24} color="#666" />
               </TouchableOpacity>
               <TextInput
@@ -121,18 +141,19 @@ const ChatSection: React.FC<ChatSectionProps> = ({
       ) : (
         <>
           {showModeToggle && onModeChange && (
-            <View style={styles.mobileToggleContainer}>
-              <ModeToggle
-                chatMode={chatMode}
-                onModeChange={onModeChange}
-                languageCode={languageCode}
-                isWideScreen={isWideScreen}
-              />
-            </View>
+            <ModeToggle
+              chatMode={chatMode}
+              onModeChange={onModeChange}
+              languageCode={languageCode}
+              isWideScreen={isWideScreen}
+            />
           )}
           {chatMode === 'text' && (
             <View style={[styles.inputContainer, styles.mobileInputContainer]}>
-              <TouchableOpacity style={styles.uploadButton}>
+              <TouchableOpacity 
+                style={styles.uploadButton}
+                onPress={() => setShowUploadModal(true)}
+              >
                 <MaterialIcons name="more-horiz" size={20} color="#666" />
               </TouchableOpacity>
               <TextInput
@@ -178,6 +199,15 @@ const ChatSection: React.FC<ChatSectionProps> = ({
           )}
         </>
       )}
+
+      <UploadModal
+        visible={showUploadModal}
+        onClose={() => setShowUploadModal(false)}
+        onTakePhoto={handleTakePhoto}
+        onChooseFromGallery={handleChooseFromGallery}
+        onUploadDocument={handleUploadDocument}
+        languageCode={languageCode}
+      />
     </KeyboardAvoidingView>
   );
 };

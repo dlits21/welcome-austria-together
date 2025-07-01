@@ -9,7 +9,11 @@
     "interestingQuestion": "Das ist eine interessante Frage! Ich helfe Ihnen gerne weiter.",
     "selectAssistant": "Assistent auswählen",
     "languages": "Sprachen",
-    "background": "Hintergrund"
+    "background": "Hintergrund",
+    "uploadOptions": "Upload-Optionen",
+    "takePhoto": "Foto aufnehmen",
+    "chooseFromGallery": "Aus Galerie wählen",
+    "uploadDocument": "Dokument hochladen"
   },
   "en": {
     "virtualAssistant": "Virtual Assistant",
@@ -20,7 +24,11 @@
     "interestingQuestion": "That's an interesting question! I'm happy to help you.",
     "selectAssistant": "Select Assistant",
     "languages": "Languages",
-    "background": "Background"
+    "background": "Background",
+    "uploadOptions": "Upload Options",
+    "takePhoto": "Take Photo",
+    "chooseFromGallery": "Choose from Gallery",
+    "uploadDocument": "Upload Document"
   },
   "ru": {
     "virtualAssistant": "Виртуальный помощник",
@@ -31,7 +39,11 @@
     "interestingQuestion": "Это интересный вопрос! Я буду рад помочь вам.",
     "selectAssistant": "Выбрать помощника",
     "languages": "Языки",
-    "background": "Справочная информация"
+    "background": "Справочная информация",
+    "uploadOptions": "Параметры загрузки",
+    "takePhoto": "Сделать фото",
+    "chooseFromGallery": "Выбрать из галереи",
+    "uploadDocument": "Загрузить документ"
   },
   "ce": {
     "virtualAssistant": "Виртуални помощник",
@@ -42,7 +54,11 @@
     "interestingQuestion": "Хӏара шайн хаттар ду! Аз хьан гӀо дан гӀерта ву.",
     "selectAssistant": "Помощник харжа",
     "languages": "Меттанаш",
-    "background": "Хьалха меттиг"
+    "background": "Хьалха меттиг",
+    "uploadOptions": "Чуяхарна параметраш",
+    "takePhoto": "Сурт дан",
+    "chooseFromGallery": "Галерейтаьра харжа",
+    "uploadDocument": "Документ чуяха"
   },
   "fa": {
     "virtualAssistant": "دستیار مجازی",
@@ -53,7 +69,11 @@
     "interestingQuestion": "این سؤال جالبی است! خوشحالم که می‌توانم به شما کمک کنم.",
     "selectAssistant": "انتخاب دستیار",
     "languages": "زبان‌ها",
-    "background": "پیشینه"
+    "background": "پیشینه",
+    "uploadOptions": "گزینه‌های آپلود",
+    "takePhoto": "عکس گرفتن",
+    "chooseFromGallery": "انتخاب از گالری",
+    "uploadDocument": "آپلود سند"
   },
   "prs": {
     "virtualAssistant": "مرستیال مجازی",
@@ -64,7 +84,11 @@
     "interestingQuestion": "دا یوه زړه راښکونکې پوښتنه ده! زه خوښ یم چې ستاسو سره مرسته وکړم.",
     "selectAssistant": "مرستیال غوره کړئ",
     "languages": "ژبې",
-    "background": "شالید"
+    "background": "شالید",
+    "uploadOptions": "د اپ لوډ اختیارونه",
+    "takePhoto": "انځور واخلئ",
+    "chooseFromGallery": "د ګالرۍ څخه غوره کړئ",
+    "uploadDocument": "سند اپ لوډ کړئ"
   },
   "ps": {
     "virtualAssistant": "مجازی مرستیال",
@@ -75,7 +99,11 @@
     "interestingQuestion": "دا یوه زړه راښکونکې پوښتنه ده! زه خوښ یم چې ستاسو سره مرسته وکړم.",
     "selectAssistant": "مرستیال غوره کړئ",
     "languages": "ژبې",
-    "background": "شالید"
+    "background": "شالید",
+    "uploadOptions": "د اپ لوډ اختیارونه",
+    "takePhoto": "انځور واخلئ",
+    "chooseFromGallery": "د ګالرۍ څخه غوره کړئ",
+    "uploadDocument": "سند اپ لوډ کړئ"
   },
   "ar": {
     "virtualAssistant": "المساعد الافتراضي",
@@ -86,7 +114,11 @@
     "interestingQuestion": "هذا سؤال مثير للاهتمام! أنا سعيد لمساعدتك.",
     "selectAssistant": "اختر المساعد",
     "languages": "اللغات",
-    "background": "الخلفية"
+    "background": "الخلفية",
+    "uploadOptions": "خيارات الرفع",
+    "takePhoto": "التقط صورة",
+    "chooseFromGallery": "اختر من المعرض",
+    "uploadDocument": "ارفع مستند"
   },
   "ku": {
     "virtualAssistant": "Alîkarê Virtual",
@@ -97,7 +129,11 @@
     "interestingQuestion": "Ev pirsek balkêş e! Ez kêfxweş im ku alîkariya we bikim.",
     "selectAssistant": "Alîkar hilbijêre",
     "languages": "Ziman",
-    "background": "Paşxane"
+    "background": "Paşxane",
+    "uploadOptions": "Vebijarkên barkirinê",
+    "takePhoto": "Wêne bikişîne",
+    "chooseFromGallery": "Ji galerîyê hilbijêre",
+    "uploadDocument": "Belge bar bike"
   },
   "so": {
     "virtualAssistant": "Kaaliyaha Virtual-ka",
@@ -108,7 +144,11 @@
     "interestingQuestion": "Taasi waa su'aal xiiso leh! Waan ku faraxsanahay inaan ku caawiyo.",
     "selectAssistant": "Kaaliye dooro",
     "languages": "Luqadaha",
-    "background": "Asalka"
+    "background": "Asalka",
+    "uploadOptions": "Doorashada soo galinta",
+    "takePhoto": "Sawir qaad",
+    "chooseFromGallery": "Ka dooro maqaayada",
+    "uploadDocument": "Warqad soo geli"
   },
   "ka": {
     "virtualAssistant": "ვირტუალური ასისტენტი",
@@ -119,7 +159,11 @@
     "interestingQuestion": "ეს საინტერესო კითხვაა! მხიარულია რომ დაგეხმაროთ.",
     "selectAssistant": "ასისტენტის არჩევა",
     "languages": "ენები",
-    "background": "ფონი"
+    "background": "ფონი",
+    "uploadOptions": "ატვირთვის ოფციები",
+    "takePhoto": "ფოტოს გადაღება",
+    "chooseFromGallery": "გალერეიდან არჩევა",
+    "uploadDocument": "დოკუმენტის ატვირთვა"
   },
   "sq": {
     "virtualAssistant": "Asistenti Virtual",
@@ -130,6 +174,10 @@
     "interestingQuestion": "Kjo është një pyetje interesante! Jam i lumtur t'ju ndihmoj.",
     "selectAssistant": "Zgjidh Asistentin",
     "languages": "Gjuhët",
-    "background": "Sfondi"
+    "background": "Sfondi",
+    "uploadOptions": "Opsionet e ngarkimit",
+    "takePhoto": "Bëj foto",
+    "chooseFromGallery": "Zgjidh nga galeria",
+    "uploadDocument": "Ngarko dokument"
   }
 }
