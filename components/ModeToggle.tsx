@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -22,7 +21,7 @@ const ModeToggle: React.FC<ModeToggleProps> = ({
   const activeButtonStyle = isWideScreen ? styles.activeModeButton : styles.activeMobileModeButton;
   const textStyle = isWideScreen ? styles.modeText : styles.mobileModeButtonText;
   const activeTextStyle = isWideScreen ? styles.activeModeText : styles.activeMobileModeButtonText;
-  const iconSize = isWideScreen ? 20 : 18;
+  const iconSize = isWideScreen ? 20 : 16;
 
   return (
     <View style={containerStyle}>
@@ -78,25 +77,25 @@ const styles = StyleSheet.create({
   mobileModeToggle: {
     flexDirection: 'row',
     backgroundColor: '#f0f0f0',
-    borderRadius: 20,
-    padding: 3,
-    alignSelf: 'flex-end',
-    marginRight: 16,
-    marginBottom: 12,
+    borderRadius: 16,
+    padding: 2,
+    alignSelf: 'flex-start',
+    marginLeft: 16,
+    marginTop: 8,
   },
   mobileModeButton: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 16,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 12,
   },
   activeMobileModeButton: {
     backgroundColor: '#3B82F6',
   },
   mobileModeButtonText: {
-    marginLeft: 4,
-    fontSize: 12,
+    marginLeft: 3,
+    fontSize: 11,
     color: '#666',
   },
   activeMobileModeButtonText: {

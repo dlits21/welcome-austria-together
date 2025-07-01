@@ -13,7 +13,9 @@ import { MaterialIcons } from '@expo/vector-icons';
 import VirtualAssistantAvatar from './VirtualAssistantAvatar';
 import ModeToggle from './ModeToggle';
 import ChatSection from './ChatSection';
+import LanguageModal from './LanguageModal';
 import { getAssistantText } from '../utils/languageUtils';
+import { languages } from '../data/languages/common';
 
 interface Message {
   id: string;
@@ -30,6 +32,12 @@ interface VirtualAssistantModalProps {
   defaultMode?: 'text' | 'voice';
 }
 
+interface AssistantData {
+  name: string;
+  firstLine: string;
+  imagePath: string;
+}
+
 const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
   visible,
   onClose,
@@ -41,17 +49,52 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
   const [inputText, setInputText] = useState('');
   const [isListening, setIsListening] = useState(false);
   const [chatMode, setChatMode] = useState<'text' | 'voice'>(defaultMode);
+  const [showLanguageModal, setShowLanguageModal] = useState(false);
+  const [assistantData, setAssistantData] = useState<AssistantData | null>(null);
+  const [assistantGender, setAssistantGender] = useState<'male' | 'female'>('female');
 
   const { width } = Dimensions.get('window');
   const isWideScreen = width >= 768;
 
+  // Load assistant data based on language and gender
+  const loadAssistantData = useCallback(async (lang: string, gender: 'male' | 'female') => {
+    try {
+      const response = await fetch(`/data/virtualAssistant/${lang}/${gender}.json`);
+      if (response.ok) {
+        const data = await response.json();
+        setAssistantData(data);
+      } else {
+        // Fallback to English if language not found
+        const fallbackResponse = await fetch(`/data/virtualAssistant/en/${gender}.json`);
+        if (fallbackResponse.ok) {
+          const fallbackData = await fallbackResponse.json();
+          setAssistantData(fallbackData);
+        }
+      }
+    } catch (error) {
+      console.error('Failed to load assistant data:', error);
+      // Use default data
+      setAssistantData({
+        name: 'Assistant',
+        firstLine: getAssistantText('greeting', lang),
+        imagePath: 'assistant.jpg'
+      });
+    }
+  }, []);
+
   useEffect(() => {
     if (visible) {
+      loadAssistantData(languageCode, assistantGender);
+    }
+  }, [visible, languageCode, assistantGender, loadAssistantData]);
+
+  useEffect(() => {
+    if (visible && assistantData) {
       setChatMode(defaultMode);
       console.log('Rendering');
       const welcomeMessage: Message = {
         id: '1',
-        text: getAssistantText('greeting', languageCode),
+        text: assistantData.firstLine,
         isUser: false,
         timestamp: new Date(),
       };
@@ -78,7 +121,7 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
         setMessages(newMessages);
       }
     }
-  }, [visible, initialMessage, languageCode, defaultMode]);
+  }, [visible, initialMessage, languageCode, defaultMode, assistantData]);
 
   const handleInputChange = useCallback((text: string) => {
     console.log('Rendering2');
@@ -118,6 +161,10 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
     setChatMode(mode);
   }, []);
 
+  // Get current language flag
+  const currentLanguage = languages.find(lang => lang.code === languageCode);
+  const languageFlag = currentLanguage?.flag || '🌐';
+
   return (
     <Modal
       visible={visible}
@@ -134,18 +181,26 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
             <View style={styles.headerContent}>
               <View style={styles.headerAvatar}>
                 <Image
-                  source={require('../assets/images/assistant.jpg')}
+                  source={assistantData ? 
+                    { uri: `/assets/images/${assistantData.imagePath}` } : 
+                    require('../assets/images/assistant.jpg')
+                  }
                   style={styles.headerAvatarImage}
                   resizeMode="cover"
                 />
               </View>
               <Text style={styles.headerTitle}>
-                {getAssistantText('virtualAssistant', languageCode)}
+                {assistantData?.name || getAssistantText('virtualAssistant', languageCode)}
               </Text>
             </View>
           )}
 
-          <View style={styles.placeholder} />
+          <TouchableOpacity 
+            style={styles.languageButton} 
+            onPress={() => setShowLanguageModal(true)}
+          >
+            <Text style={styles.languageFlag}>{languageFlag}</Text>
+          </TouchableOpacity>
         </View>
 
         <View style={[styles.mainContent, isWideScreen && styles.mainContentWide]}>
@@ -155,6 +210,7 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
                 <VirtualAssistantAvatar 
                   languageCode={languageCode}
                   isWideScreen={isWideScreen}
+                  assistantData={assistantData}
                 />
                 <ModeToggle
                   chatMode={chatMode}
@@ -181,6 +237,7 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
                 <VirtualAssistantAvatar 
                   languageCode={languageCode}
                   isWideScreen={isWideScreen}
+                  assistantData={assistantData}
                 />
                 <ModeToggle
                   chatMode={chatMode}
@@ -204,6 +261,12 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
           )}
         </View>
       </SafeAreaView>
+
+      <LanguageModal
+        visible={showLanguageModal}
+        onClose={() => setShowLanguageModal(false)}
+        languageCode={languageCode}
+      />
     </Modal>
   );
 };
@@ -252,8 +315,13 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: '#333',
   },
-  placeholder: {
-    width: 40,
+  languageButton: {
+    padding: 8,
+    borderRadius: 20,
+    backgroundColor: '#f0f0f0',
+  },
+  languageFlag: {
+    fontSize: 20,
   },
   mainContent: {
     flex: 1,

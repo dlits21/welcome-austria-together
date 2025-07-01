@@ -2,27 +2,46 @@ import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 import { getAssistantText } from '../utils/languageUtils';
 
+interface AssistantData {
+  name: string;
+  firstLine: string;
+  imagePath: string;
+}
+
 interface VirtualAssistantAvatarProps {
   languageCode: string;
   isWideScreen: boolean;
+  assistantData?: AssistantData | null;
 }
 
 const VirtualAssistantAvatar: React.FC<VirtualAssistantAvatarProps> = ({
   languageCode,
   isWideScreen,
+  assistantData,
 }) => {
+  const getImageSource = () => {
+    if (assistantData?.imagePath) {
+      return { uri: `/assets/images/${assistantData.imagePath}` };
+    }
+    return require('../assets/images/assistant.jpg');
+  };
+
+  const getDisplayName = () => {
+    return assistantData?.name || getAssistantText('virtualAssistant', languageCode);
+  };
+
   if (isWideScreen) {
     return (
       <View style={styles.avatarContainer}>
         <View style={styles.largeAvatarContainer}>
           <Image
-            source={require('../assets/images/assistant.jpg')}
+            source={getImageSource()}
             style={styles.assistantImage}
             resizeMode="contain"
           />
         </View>
         <Text style={styles.avatarTitle}>
-          {getAssistantText('virtualAssistant', languageCode)}
+          {getDisplayName()}
         </Text>
         <Text style={styles.avatarSubtitle}>
           {getAssistantText('helpMessage', languageCode)}
@@ -35,14 +54,14 @@ const VirtualAssistantAvatar: React.FC<VirtualAssistantAvatarProps> = ({
     <View style={styles.mobileTopSection}>
       <View style={styles.mobileAssistantContainer}>
         <Image
-          source={require('../assets/images/assistant.jpg')}
+          source={getImageSource()}
           style={styles.mobileAssistantImage}
           resizeMode="contain"
         />
       </View>
       <View style={styles.mobileRightSection}>
         <Text style={styles.mobileTitle}>
-          {getAssistantText('virtualAssistant', languageCode)}
+          {getDisplayName()}
         </Text>
       </View>
     </View>
