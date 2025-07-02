@@ -7,18 +7,23 @@ import {
   KeyboardAvoidingView,
   Platform,
   StyleSheet,
+  Image,
+  Text,
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import ChatBubble from './ChatBubble';
 import VoiceSection from './VoiceSection';
 import ModeToggle from './ModeToggle';
 import UploadModal from './UploadModal';
+import * as ImagePicker from 'expo-image-picker';
+import * as DocumentPicker from 'expo-document-picker';
 
 interface Message {
   id: string;
   text: string;
   isUser: boolean;
   timestamp: Date;
+  fileUri?: string; // Added for file preview
 }
 
 interface ChatSectionProps {
@@ -53,20 +58,70 @@ const ChatSection: React.FC<ChatSectionProps> = ({
   const textInputRef = useRef<TextInput>(null);
   const scrollViewRef = useRef<ScrollView>(null);
   const [showUploadModal, setShowUploadModal] = useState(false);
+  const [fileUri, setFileUri] = useState<string | null>(null); // Store uploaded file URI
 
-  const handleTakePhoto = () => {
-    console.log('Taking photo...');
-    // TODO: Implement camera functionality
+  // Updated handleTakePhoto with new MediaType
+  const handleTakePhoto = async () => {
+    const result = await ImagePicker.launchCameraAsync({
+      allowsEditing: true,
+      quality: 1,
+      mediaTypes: ImagePicker.MediaTypeOptions.Images, // Updated usage of mediaTypes
+    });
+
+    if (!result.canceled && result.uri) {
+      setFileUri(result.uri);
+    } else {
+      console.warn("No image selected");
+    }
   };
 
-  const handleChooseFromGallery = () => {
-    console.log('Choosing from gallery...');
-    // TODO: Implement gallery functionality
+  // Updated handleChooseFromGallery with new MediaType
+  const handleChooseFromGallery = async () => {
+    const result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images, // Updated usage of mediaTypes
+      allowsEditing: true,
+      quality: 1,
+    });
+
+    if (!result.canceled && result.uri) {
+      setFileUri(result.uri);
+    } else {
+      console.warn("No image selected");
+    }
   };
 
-  const handleUploadDocument = () => {
-    console.log('Uploading document...');
-    // TODO: Implement document upload functionality
+  const handleUploadDocument = async () => {
+    const result = await DocumentPicker.getDocumentAsync({
+      type: '*/*',
+    });
+
+    if (result.type === 'success' && result.uri) {
+      setFileUri(result.uri);
+    } else {
+      console.warn("No document selected");
+    }
+  };
+
+  const handleSendMessage = () => {
+    if (fileUri) {
+      const newMessage: Message = {
+        id: Date.now().toString(),
+        text: 'Uploaded file', // You can customize this based on the file type
+        isUser: true,
+        timestamp: new Date(),
+        fileUri,
+      };
+      onSendMessage(newMessage);
+      setFileUri(null); // Reset after sending
+    } else if (inputText.trim()) {
+      const newMessage: Message = {
+        id: Date.now().toString(),
+        text: inputText,
+        isUser: true,
+        timestamp: new Date(),
+      };
+      onSendMessage(newMessage);
+    }
   };
 
   return (
@@ -83,122 +138,60 @@ const ChatSection: React.FC<ChatSectionProps> = ({
         keyboardShouldPersistTaps="handled"
       >
         {messages.map((message) => (
-          <ChatBubble key={message.id} message={message} avatar={avatar}/>
+          <ChatBubble key={message.id} message={message} avatar={avatar} />
         ))}
+
+        {fileUri && (
+          <View style={styles.previewContainer}>
+            <Text style={styles.previewText}>Preview:</Text>
+            {fileUri.endsWith('.jpg') || fileUri.endsWith('.png') ? (
+              <Image
+                source={{ uri: fileUri }}
+                style={styles.previewImage}
+                resizeMode="contain"
+              />
+            ) : (
+              <Text style={styles.documentPreview}>Document attached</Text>
+            )}
+          </View>
+        )}
       </ScrollView>
 
-      {isWideScreen ? (
-        <View style={styles.inputContainer}>
-          {chatMode === 'text' ? (
-            <>
-              <TouchableOpacity 
-                style={styles.uploadButton}
-                onPress={() => setShowUploadModal(true)}
-              >
-                <MaterialIcons name="more-horiz" size={24} color="#666" />
-              </TouchableOpacity>
-              <TextInput
-                ref={textInputRef}
-                style={styles.textInput}
-                value={inputText}
-                onChangeText={onInputChange}
-                placeholder={
-                  languageCode === 'de'
-                    ? 'Schreibe eine Nachricht...'
-                    : 'Type a message...'
-                }
-                maxLength={500}
-                returnKeyType="send"
-                onSubmitEditing={onSendMessage}
-                blurOnSubmit={false}
-                autoCorrect={false}
-                autoCapitalize="sentences"
-              />
-              <TouchableOpacity
-                style={[
-                  styles.sendButton,
-                  !inputText.trim() && styles.sendButtonDisabled
-                ]}
-                onPress={onSendMessage}
-                disabled={!inputText.trim()}
-              >
-                <MaterialIcons
-                  name="send"
-                  size={20}
-                  color={inputText.trim() ? "#fff" : "#ccc"}
-                />
-              </TouchableOpacity>
-            </>
-          ) : (
-            <VoiceSection
-              isListening={isListening}
-              onToggleVoice={onToggleVoice}
-              languageCode={languageCode}
-              isWideScreen={isWideScreen}
-            />
-          )}
-        </View>
-      ) : (
-        <>
-          {showModeToggle && onModeChange && (
-            <ModeToggle
-              chatMode={chatMode}
-              onModeChange={onModeChange}
-              languageCode={languageCode}
-              isWideScreen={isWideScreen}
-            />
-          )}
-          {chatMode === 'text' && (
-            <View style={[styles.inputContainer, styles.mobileInputContainer]}>
-              <TouchableOpacity 
-                style={styles.uploadButton}
-                onPress={() => setShowUploadModal(true)}
-              >
-                <MaterialIcons name="more-horiz" size={20} color="#666" />
-              </TouchableOpacity>
-              <TextInput
-                ref={textInputRef}
-                style={styles.textInput}
-                value={inputText}
-                onChangeText={onInputChange}
-                placeholder={
-                  languageCode === 'de'
-                    ? 'Schreibe eine Nachricht...'
-                    : 'Type a message...'
-                }
-                maxLength={500}
-                returnKeyType="send"
-                onSubmitEditing={onSendMessage}
-                blurOnSubmit={false}
-                autoCorrect={false}
-                autoCapitalize="sentences"
-              />
-              <TouchableOpacity
-                style={[
-                  styles.sendButton,
-                  !inputText.trim() && styles.sendButtonDisabled
-                ]}
-                onPress={onSendMessage}
-                disabled={!inputText.trim()}
-              >
-                <MaterialIcons
-                  name="send"
-                  size={20}
-                  color={inputText.trim() ? "#fff" : "#ccc"}
-                />
-              </TouchableOpacity>
-            </View>
-          )}
-          {chatMode === 'voice' && (
-            <VoiceSection
-              isListening={isListening}
-              onToggleVoice={onToggleVoice}
-              languageCode={languageCode}
-              isWideScreen={isWideScreen}
-            />
-          )}
-        </>
-      )}
+      <View style={styles.inputContainer}>
+        <TouchableOpacity
+          style={styles.uploadButton}
+          onPress={() => setShowUploadModal(true)}
+        >
+          <MaterialIcons name="more-horiz" size={24} color="#666" />
+        </TouchableOpacity>
+
+        <TextInput
+          ref={textInputRef}
+          style={styles.textInput}
+          value={inputText}
+          onChangeText={onInputChange}
+          placeholder={
+            languageCode === 'de' ? 'Schreibe eine Nachricht...' : 'Type a message...'
+          }
+          maxLength={500}
+          returnKeyType="send"
+          onSubmitEditing={handleSendMessage}
+          blurOnSubmit={false}
+          autoCorrect={false}
+          autoCapitalize="sentences"
+        />
+        <TouchableOpacity
+          style={[styles.sendButton, !inputText.trim() && styles.sendButtonDisabled]}
+          onPress={handleSendMessage}
+          disabled={!inputText.trim() && !fileUri}
+        >
+          <MaterialIcons
+            name="send"
+            size={20}
+            color={inputText.trim() || fileUri ? "#fff" : "#ccc"}
+          />
+        </TouchableOpacity>
+      </View>
 
       <UploadModal
         visible={showUploadModal}
@@ -235,16 +228,27 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderTopColor: '#e0e0e0',
   },
-  mobileInputContainer: {
-    paddingBottom: 30,
+  previewContainer: {
+    padding: 10,
+    backgroundColor: '#f9f9f9',
+    borderRadius: 10,
     marginBottom: 10,
+    alignItems: 'center',
   },
-  mobileToggleContainer: {
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    backgroundColor: '#fff',
-    borderTopWidth: 1,
-    borderTopColor: '#e0e0e0',
+  previewText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#333',
+    marginBottom: 8,
+  },
+  previewImage: {
+    width: 100,
+    height: 100,
+    borderRadius: 10,
+  },
+  documentPreview: {
+    fontSize: 14,
+    color: '#333',
   },
   uploadButton: {
     width: 40,

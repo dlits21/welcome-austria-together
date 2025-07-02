@@ -16,7 +16,6 @@ interface ChatBubbleProps {
 }
 
 const ChatBubble: React.FC<ChatBubbleProps> = ({ message, avatar }) => {
-  console.warn("Avatar is ", avatar)
   const safeAvatar = avatar ? avatar.toLowerCase() : 'fatima';
   return (
     <View style={[

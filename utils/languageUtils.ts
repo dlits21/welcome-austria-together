@@ -32,6 +32,6 @@ export const getIndexText = (key: string, languageCode: string): string => {
 };
 
 export const getAssistantText = (key: string, languageCode: string): string => {
-  const translation = assistantTranslations[key as keyof typeof assistantTranslations];
-  return translation?.[languageCode as keyof typeof translation] || translation?.en || key;
+  const translation = assistantTranslations?.[languageCode as keyof typeof assistantTranslations] || assistantTranslations?.en
+  return translation?.[key as keyof typeof translation] || key;
 };
