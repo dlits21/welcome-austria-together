@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "c25c92ad-ac36-4ee4-81f7-5e642179b4ff"
+      }
+    },
+    "android": {
+      "package": "com.dlits.willkompass"
+    },
+    "ios": {
+      "bundleIdentifier": "com.yourapp.bundle",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app needs access to the camera to take photos.",
+        "NSPhotoLibraryUsageDescription": "This app needs access to your photo library to select images."
+      }
+    }
+  }
+}
