@@ -94,7 +94,7 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
           <View style={styles.slideContent}>
             <View style={styles.assistantContainer}>
               <Image 
-                source={require('../assets/images/assistant.jpg')}
+                source={require('../assets/images/fatima.png')}
                 style={styles.assistantImage}
                 resizeMode="cover"
               />
