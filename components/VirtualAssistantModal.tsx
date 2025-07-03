@@ -242,18 +242,18 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
           )}
 
           <View style={styles.headerRightButtons}>
-            <TouchableOpacity 
-              style={styles.tutorialButton} 
-              onPress={() => setShowTutorialModal(true)}
-            >
-              <MaterialIcons name="help" size={24} color="#333" />
-            </TouchableOpacity>
-            
-            <TouchableOpacity 
+            <TouchableOpacity
               style={styles.avatarButton} 
               onPress={() => setShowAvatarModal(true)}
             >
               <MaterialIcons name="people" size={24} color="#333" />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.tutorialButton}
+              onPress={() => setShowTutorialModal(true)}
+            >
+              <MaterialIcons name="help" size={24} color="#333" />
             </TouchableOpacity>
           </View>
         </View>
@@ -318,6 +318,7 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
       <TutorialModal
         visible={showTutorialModal}
         onClose={() => setShowTutorialModal(false)}
+        currentSlide={0}
         languageCode={languageCode}
         tutorialData="virtualAssistant"
       />
