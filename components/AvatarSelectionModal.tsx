@@ -95,31 +95,33 @@ const AvatarSelectionModal: React.FC<AvatarSelectionModalProps> = ({
         onClose();
       }}
     >
-      <View style={styles.cardHeader}>
-        <View style={styles.assistantImageContainer}>
-          <Image
-            source={getCharacterImage(assistant.name)}
-            style={styles.assistantImage}
-            resizeMode="cover"
-          />
+      <View style={styles.cardContent}>
+        <View style={styles.cardHeader}>
+          <View style={styles.assistantImageContainer}>
+            <Image
+              source={getCharacterImage(assistant.name)}
+              style={styles.assistantImage}
+              resizeMode="cover"
+            />
+          </View>
+          <View style={styles.assistantNameContainer}>
+            <Text style={styles.assistantName}>{assistant.name}</Text>
+          </View>
         </View>
-        <View style={styles.assistantNameContainer}>
-          <Text style={styles.assistantName}>{assistant.name}</Text>
+        
+        <View style={styles.assistantInfo}>
+          <Text style={styles.assistantBackground} numberOfLines={isWideScreen ? 4 : 3}>
+            {assistant.background}
+          </Text>
         </View>
       </View>
       
-      <View style={styles.assistantInfo}>
-        <Text style={styles.assistantBackground} numberOfLines={isWideScreen ? 4 : 3}>
-          {assistant.background}
+      <View style={styles.languagesContainer}>
+        <Text style={styles.languagesLabel}>
+          {getAssistantText('languages', languageCode)}:
         </Text>
-        
-        <View style={styles.languagesContainer}>
-          <Text style={styles.languagesLabel}>
-            {getAssistantText('languages', languageCode)}:
-          </Text>
-          <View style={styles.flagsContainer}>
-            {renderLanguageFlags(assistant.languages)}
-          </View>
+        <View style={styles.flagsContainer}>
+          {renderLanguageFlags(assistant.languages)}
         </View>
       </View>
     </TouchableOpacity>
@@ -209,9 +211,14 @@ const styles = StyleSheet.create({
     elevation: 4,
     borderWidth: 1,
     borderColor: '#f1f3f4',
+    justifyContent: 'space-between',
+    minHeight: 280,
   },
   assistantCardGrid: {
     marginHorizontal: '1%',
+  },
+  cardContent: {
+    flex: 1,
   },
   cardHeader: {
     alignItems: 'center',
@@ -241,17 +248,21 @@ const styles = StyleSheet.create({
   },
   assistantInfo: {
     alignItems: 'center',
+    flex: 1,
   },
   assistantBackground: {
     fontSize: 14,
     color: '#6b7280',
     textAlign: 'center',
     lineHeight: 20,
-    marginBottom: 16,
   },
   languagesContainer: {
     alignItems: 'center',
     width: '100%',
+    marginTop: 16,
+    paddingTop: 16,
+    borderTopWidth: 1,
+    borderTopColor: '#e5e7eb',
   },
   languagesLabel: {
     fontSize: 14,
