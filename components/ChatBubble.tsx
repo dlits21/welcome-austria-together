@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { getCharacterImage } from '../utils/assistantUtils';
 
@@ -10,6 +10,10 @@ interface Message {
   timestamp: Date;
   fileUri?: string;
   fileType?: 'image' | 'document';
+  attachments?: Array<{
+    uri: string;
+    type: 'image' | 'document';
+  }>;
 }
 
 interface ChatBubbleProps {
@@ -39,7 +43,32 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({ message, avatar }) => {
         styles.messageBubble,
         message.isUser ? styles.userBubble : styles.assistantBubble
       ]}>
-        {message.fileUri && (
+        {/* Handle multiple attachments */}
+        {message.attachments && message.attachments.length > 0 && (
+          <View style={styles.attachmentsContainer}>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+              {message.attachments.map((attachment, index) => (
+                <View key={index} style={styles.attachmentItem}>
+                  {attachment.type === 'image' ? (
+                    <Image
+                      source={{ uri: attachment.uri }}
+                      style={styles.attachedImage}
+                      resizeMode="cover"
+                    />
+                  ) : (
+                    <View style={styles.attachedDocument}>
+                      <MaterialIcons name="insert-drive-file" size={24} color="#666" />
+                      <Text style={styles.documentText}>Document</Text>
+                    </View>
+                  )}
+                </View>
+              ))}
+            </ScrollView>
+          </View>
+        )}
+
+        {/* Handle legacy single file attachment */}
+        {message.fileUri && !message.attachments && (
           <View style={styles.attachmentContainer}>
             {message.fileType === 'image' ? (
               <Image
@@ -138,9 +167,15 @@ const styles = StyleSheet.create({
   attachmentContainer: {
     marginBottom: 8,
   },
+  attachmentsContainer: {
+    marginBottom: 8,
+  },
+  attachmentItem: {
+    marginRight: 8,
+  },
   attachedImage: {
-    width: 200,
-    height: 150,
+    width: 150,
+    height: 100,
     borderRadius: 8,
   },
   attachedDocument: {
@@ -149,10 +184,11 @@ const styles = StyleSheet.create({
     padding: 12,
     backgroundColor: '#f3f4f6',
     borderRadius: 8,
+    width: 120,
   },
   documentText: {
     marginLeft: 8,
-    fontSize: 14,
+    fontSize: 12,
     color: '#374151',
   },
 });

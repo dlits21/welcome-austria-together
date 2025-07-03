@@ -1,4 +1,3 @@
-
 import React, { useRef, useState, useEffect } from 'react';
 import {
   View,
@@ -24,6 +23,10 @@ interface Message {
   timestamp: Date;
   fileUri?: string;
   fileType?: 'image' | 'document';
+  attachments?: Array<{
+    uri: string;
+    type: 'image' | 'document';
+  }>;
 }
 
 interface ChatSectionProps {
@@ -58,54 +61,59 @@ const ChatSection: React.FC<ChatSectionProps> = ({
   const textInputRef = useRef<TextInput>(null);
   const scrollViewRef = useRef<ScrollView>(null);
   const [showUploadModal, setShowUploadModal] = useState(false);
-  const [fileUri, setFileUri] = useState<string | null>(null);
-  const [fileType, setFileType] = useState<'image' | 'document' | null>(null);
+  const [attachments, setAttachments] = useState<Array<{
+    uri: string;
+    type: 'image' | 'document';
+  }>>([]);
+  const [inputHeight, setInputHeight] = useState(40);
 
   // Auto-scroll to bottom when new messages are added
   useEffect(() => {
     if (scrollViewRef.current) {
-      scrollViewRef.current.scrollToEnd({ animated: true });
+      setTimeout(() => {
+        scrollViewRef.current?.scrollToEnd({ animated: true });
+      }, 100);
     }
   }, [messages]);
 
   const handleImagePicked = (uri: string) => {
-    setFileUri(uri);
-    setFileType('image');
+    setAttachments(prev => [...prev, { uri, type: 'image' }]);
   };
 
   const handleDocumentPicked = (uri: string) => {
-    setFileUri(uri);
-    setFileType('document');
+    setAttachments(prev => [...prev, { uri, type: 'document' }]);
   };
 
   const handleSendMessage = () => {
-    if (fileUri && fileType) {
+    if (attachments.length > 0 || inputText.trim()) {
       const newMessage: Message = {
         id: Date.now().toString(),
-        text: inputText.trim() || (fileType === 'image' ? 'Image attached' : 'Document attached'),
+        text: inputText.trim() || (attachments.length > 0 ? `${attachments.length} file(s) attached` : ''),
         isUser: true,
         timestamp: new Date(),
-        fileUri,
-        fileType,
+        attachments: attachments.length > 0 ? attachments : undefined,
       };
       onSendMessage(newMessage);
-      setFileUri(null);
-      setFileType(null);
+      setAttachments([]);
       onInputChange('');
-    } else if (inputText.trim()) {
-      onSendMessage();
+      setInputHeight(40);
     }
   };
 
-  const clearAttachment = () => {
-    setFileUri(null);
-    setFileType(null);
+  const removeAttachment = (index: number) => {
+    setAttachments(prev => prev.filter((_, i) => i !== index));
+  };
+
+  const handleContentSizeChange = (event: any) => {
+    const { height } = event.nativeEvent.contentSize;
+    const newHeight = Math.min(Math.max(height, 40), 100);
+    setInputHeight(newHeight);
   };
 
   const renderInputSection = () => {
     if (chatMode === 'voice') {
       return (
-        <View style={styles.voiceInputContainer}>
+        <View style={styles.inputContainer}>
           <TouchableOpacity
             style={styles.uploadButton}
             onPress={() => setShowUploadModal(true)}
@@ -130,15 +138,15 @@ const ChatSection: React.FC<ChatSectionProps> = ({
           <TouchableOpacity
             style={[
               styles.sendButton, 
-              !fileUri && styles.sendButtonDisabled
+              (attachments.length === 0) && styles.sendButtonDisabled
             ]}
             onPress={handleSendMessage}
-            disabled={!fileUri}
+            disabled={attachments.length === 0}
           >
             <MaterialIcons
               name="send"
               size={20}
-              color={fileUri ? "#fff" : "#ccc"}
+              color={attachments.length > 0 ? "#fff" : "#ccc"}
             />
           </TouchableOpacity>
         </View>
@@ -155,26 +163,37 @@ const ChatSection: React.FC<ChatSectionProps> = ({
         </TouchableOpacity>
 
         <View style={styles.textInputContainer}>
-          {fileUri && (
-            <View style={styles.attachmentPreview}>
-              <View style={styles.previewHeader}>
-                <TouchableOpacity onPress={clearAttachment} style={styles.removeButton}>
-                  <MaterialIcons name="close" size={16} color="#666" />
-                </TouchableOpacity>
-              </View>
-              
-              {fileType === 'image' ? (
-                <Image
-                  source={{ uri: fileUri }}
-                  style={styles.previewImage}
-                  resizeMode="cover"
-                />
-              ) : (
-                <View style={styles.documentPreviewContainer}>
-                  <MaterialIcons name="insert-drive-file" size={24} color="#666" />
-                  <Text style={styles.documentPreview}>Document</Text>
-                </View>
-              )}
+          {attachments.length > 0 && (
+            <View style={styles.attachmentsContainer}>
+              <ScrollView 
+                horizontal 
+                showsHorizontalScrollIndicator={false}
+                style={styles.attachmentsScrollView}
+              >
+                {attachments.map((attachment, index) => (
+                  <View key={index} style={styles.attachmentItem}>
+                    <TouchableOpacity 
+                      onPress={() => removeAttachment(index)} 
+                      style={styles.removeAttachmentButton}
+                    >
+                      <MaterialIcons name="close" size={16} color="#666" />
+                    </TouchableOpacity>
+                    
+                    {attachment.type === 'image' ? (
+                      <Image
+                        source={{ uri: attachment.uri }}
+                        style={styles.attachmentImage}
+                        resizeMode="cover"
+                      />
+                    ) : (
+                      <View style={styles.attachmentDocument}>
+                        <MaterialIcons name="insert-drive-file" size={20} color="#666" />
+                        <Text style={styles.documentText}>Doc</Text>
+                      </View>
+                    )}
+                  </View>
+                ))}
+              </ScrollView>
             </View>
           )}
           
@@ -182,10 +201,12 @@ const ChatSection: React.FC<ChatSectionProps> = ({
             ref={textInputRef}
             style={[
               styles.textInput,
-              fileUri && styles.textInputWithAttachment
+              { height: inputHeight },
+              attachments.length > 0 && styles.textInputWithAttachments
             ]}
             value={inputText}
             onChangeText={onInputChange}
+            onContentSizeChange={handleContentSizeChange}
             placeholder={
               languageCode === 'de' ? 'Schreibe eine Nachricht...' : 'Type a message...'
             }
@@ -202,15 +223,15 @@ const ChatSection: React.FC<ChatSectionProps> = ({
         <TouchableOpacity
           style={[
             styles.sendButton, 
-            (!inputText.trim() && !fileUri) && styles.sendButtonDisabled
+            (!inputText.trim() && attachments.length === 0) && styles.sendButtonDisabled
           ]}
           onPress={handleSendMessage}
-          disabled={!inputText.trim() && !fileUri}
+          disabled={!inputText.trim() && attachments.length === 0}
         >
           <MaterialIcons
             name="send"
             size={20}
-            color={(inputText.trim() || fileUri) ? "#fff" : "#ccc"}
+            color={(inputText.trim() || attachments.length > 0) ? "#fff" : "#ccc"}
           />
         </TouchableOpacity>
       </View>
@@ -229,6 +250,11 @@ const ChatSection: React.FC<ChatSectionProps> = ({
         contentContainerStyle={styles.messagesContent}
         showsVerticalScrollIndicator={false}
         keyboardShouldPersistTaps="handled"
+        onContentSizeChange={() => {
+          setTimeout(() => {
+            scrollViewRef.current?.scrollToEnd({ animated: true });
+          }, 100);
+        }}
       >
         {messages.map((message) => (
           <ChatBubble key={message.id} message={message} avatar={avatar} />
@@ -299,50 +325,60 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     paddingHorizontal: 16,
     paddingVertical: 12,
-    maxHeight: 100,
     fontSize: 16,
     backgroundColor: '#f9f9f9',
+    textAlignVertical: 'top',
   },
-  textInputWithAttachment: {
+  textInputWithAttachments: {
     borderTopLeftRadius: 0,
     borderTopRightRadius: 0,
     borderTopWidth: 0,
   },
-  attachmentPreview: {
+  attachmentsContainer: {
     backgroundColor: '#f8fafc',
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     borderWidth: 1,
     borderBottomWidth: 0,
     borderColor: '#e0e0e0',
-    padding: 12,
-  },
-  previewHeader: {
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    marginBottom: 8,
-  },
-  removeButton: {
-    padding: 4,
-    borderRadius: 12,
-    backgroundColor: '#f3f4f6',
-  },
-  previewImage: {
-    width: 80,
-    height: 80,
-    borderRadius: 8,
-    alignSelf: 'center',
-  },
-  documentPreviewContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
     padding: 8,
   },
-  documentPreview: {
-    fontSize: 14,
+  attachmentsScrollView: {
+    flexDirection: 'row',
+  },
+  attachmentItem: {
+    position: 'relative',
+    marginRight: 8,
+  },
+  removeAttachmentButton: {
+    position: 'absolute',
+    top: -6,
+    right: -6,
+    width: 20,
+    height: 20,
+    borderRadius: 10,
+    backgroundColor: '#f3f4f6',
+    justifyContent: 'center',
+    alignItems: 'center',
+    zIndex: 1,
+  },
+  attachmentImage: {
+    width: 60,
+    height: 60,
+    borderRadius: 8,
+  },
+  attachmentDocument: {
+    width: 60,
+    height: 60,
+    borderRadius: 8,
+    backgroundColor: '#f3f4f6',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  documentText: {
+    fontSize: 10,
     color: '#6b7280',
-    marginLeft: 8,
+    marginTop: 2,
   },
   sendButton: {
     width: 40,
@@ -354,15 +390,6 @@ const styles = StyleSheet.create({
   },
   sendButtonDisabled: {
     backgroundColor: '#f0f0f0',
-  },
-  voiceInputContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    backgroundColor: '#fff',
-    borderTopWidth: 1,
-    borderTopColor: '#e0e0e0',
   },
   voiceButton: {
     flex: 1,
