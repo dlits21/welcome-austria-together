@@ -40,6 +40,8 @@ const TutorialModal: React.FC<TutorialModalProps> = ({
   // Different slide counts based on tutorial type
   const getTotalSlides = () => {
     switch (tutorialData) {
+      case 'virtualAssistant':
+        return 6;
       case 'index':
         return 6;
       case 'ask':
