@@ -34,7 +34,39 @@
       }
     },
     {
+      "type": "assistant",
       "id": 1,
+      "title": {
+        "en": "Hi! I'm here to help you navigate this app and find what you need!",
+        "de": "Hallo! Ich bin hier, um Ihnen bei der Navigation in dieser App zu helfen und zu finden, was Sie brauchen!",
+        "ru": "Привет! Я здесь, чтобы помочь вам навигировать по этому приложению и найти то, что вам нужно!",
+        "ce": "Салам! Со кхузахь ву хlуна хlокху приложенин чохь некъ карийта а хlунга хlокху дӀаделира а.",
+        "prs": "سلام! من اینجا هستم تا به شما کمک کنم در این برنامه حرکت کنید و آنچه نیاز دارید پیدا کنید!",
+        "ps": "سلام! زه دلته یم چې ستاسو سره د دغه اپلیکیشن کې د لارښوونې کولو او هغه څه موندلو کې مرسته وکړم چې تاسو یې غواړئ!",
+        "fa": "سلام! من اینجا هستم تا به شما کمک کنم در این برنامه حرکت کنید و آنچه نیاز دارید پیدا کنید!",
+        "ar": "مرحباً! أنا هنا لمساعدتك في التنقل في هذا التطبيق والعثور على ما تحتاجه!",
+        "ku": "سڵاو! من لێرەم بۆ ئەوەی یارمەتیت بدەم لەم ئەپەدا بگەڕێیت و ئەوە بدۆزیتەوە کە پێویستتە!",
+        "so": "Salaam! Waxaan halkan u joogaa inaan kaa caawiyo aad u dhaqdhaqaaqdo appkan oo aad hesho waxa aad u baahan tahay!",
+        "ka": "გამარჯობა! მე აქ ვარ, რომ დაგეხმაროთ ამ აპლიკაციაში ნავიგაციაში და იპოვოთ ის, რაც გჭირდებათ!",
+        "sq": "Përshëndetje! Unë jam këtu për t'ju ndihmuar të navigoni në këtë aplikacion dhe të gjeni atë që ju nevojitet!"
+      },
+      "text": {
+        "en": "Use the virtual assistant to get instant help and guidance. Ask questions in your preferred language and get personalized support.",
+        "de": "Nutzen Sie den virtuellen Assistenten für sofortige Hilfe und Anleitung. Stellen Sie Fragen in Ihrer bevorzugten Sprache und erhalten Sie persönliche Unterstützung.",
+        "ru": "Используйте виртуального помощника, чтобы получить мгновенную помощь и руководство. Задавайте вопросы на предпочитаемом языке и получайте персонализированную поддержку.",
+        "ce": "Виртуальни ассистенто лелае тlаьхьара гlо а хаам а лорна. Хlунна йиш йуьлу меттана хаттар дайте а шуна латта гlо лийте.",
+        "prs": "از دستیار مجازی برای دریافت کمک و راهنمایی فوری استفاده کنید. سوالات را به زبان ترجیحی خود بپرسید و پشتیبانی شخصی دریافت کنید.",
+        "ps": "د سمدستي مرستې او لارښوونې لپاره د مجازي مالي ملګري څخه کار واخلئ. په خپله غوره ژبه پوښتنې وکړئ او شخصي ملاتړ واخلئ.",
+        "fa": "از دستیار مجازی برای دریافت کمک و راهنمایی فوری استفاده کنید. سوالات را به زبان ترجیحی خود بپرسید و پشتیبانی شخصی دریافت کنید.",
+        "ar": "استخدم المساعد الافتراضي للحصول على المساعدة والإرشاد الفوري. اطرح الأسئلة بلغتك المفضلة واحصل على دعم شخصي.",
+        "ku": "یاریدەدەری مەجازی بەکاربهێنە بۆ وەرگرتنی یارمەتی و ڕێنمایی خێرا. پرسیار بکە بە زمانی خۆت و پشتگیری کەسی وەربگرە.",
+        "so": "Isticmaal caawiyaha farsamada ah si aad u hesho caawimaad iyo hagid degdeg ah. Su'aalo ku weydii luqadda aad door bidayso oo hel taageero shakhsi ah.",
+        "ka": "გამოიყენეთ ვირტუალური ასისტენტი მყისიერი დახმარებისა და მითითებების მისაღებად. დასვით კითხვები თქვენს სასურველ ენაზე და მიიღეთ პერსონალიზებული მხარდაჭერა.",
+        "sq": "Përdorni asistentin virtual për të marrë ndihmë dhe udhëzime të menjëhershme. Bëni pyetje në gjuhën tuaj të preferuar dhe merrni mbështetje të personalizuar."
+      }
+    },
+    {
+      "id": 2,
       "type": "category",
       "title": {
         "en": "General Emergency",
@@ -65,20 +97,14 @@
         "sq": "Numri universal i urgjencës 112 ju lidh me të gjitha shërbimet e urgjencës në të gjithë Evropën."
       },
       "category": {
-        "title": {
-          "en": "General Emergency",
-          "de": "Allgemeiner Notfall"
-        },
-        "description": {
-          "en": "Universal emergency number",
-          "de": "Universelle Notrufnummer"
-        },
+        "title": "generalEmergency",
+        "description": "universalEmergencyNumber",
         "icon": "phone",
         "color": "#dc2626"
       }
     },
     {
-      "id": 2,
+      "id": 3,
       "type": "category",
       "title": {
         "en": "Fire Emergency",
@@ -109,20 +135,14 @@
         "sq": "Telefononi 122 për zjarret, shpërthimet dhe operacionet e shpëtimit në të gjithë Austrinë."
       },
       "category": {
-        "title": {
-          "en": "Fire Emergency",
-          "de": "Feuer-Notfall"
-        },
-        "description": {
-          "en": "Fires, explosions, rescue",
-          "de": "Brände, Explosionen, Rettung"
-        },
+        "title": "fireEmergency",
+        "description": "firesExplosionsRescue",
         "icon": "local-fire-department",
         "color": "#dc2626"
       }
     },
     {
-      "id": 3,
+      "id": 4,
       "type": "category",
       "title": {
         "en": "Police Emergency",
@@ -153,20 +173,14 @@
         "sq": "Telefononi 133 për krime, aksidente dhe urgjenca sigurie."
       },
       "category": {
-        "title": {
-          "en": "Police Emergency",
-          "de": "Polizei-Notfall"
-        },
-        "description": {
-          "en": "Crime, accidents, security",
-          "de": "Verbrechen, Unfälle, Sicherheit"
-        },
+        "title": "policeEmergency",
+        "description": "crimeAccidentsSecurity",
         "icon": "local-police",
         "color": "#dc2626"
       }
     },
     {
-      "id": 4,
+      "id": 5,
       "type": "category",
       "title": {
         "en": "Medical Emergency",
@@ -197,20 +211,14 @@
         "sq": "Telefononi 144 për urgjenca mjekësore dhe shërbime ambulance."
       },
       "category": {
-        "title": {
-          "en": "Medical Emergency",
-          "de": "Medizinischer Notfall"
-        },
-        "description": {
-          "en": "Health emergencies, ambulance",
-          "de": "Gesundheitsnotfälle, Krankenwagen"
-        },
+        "title": "medicalEmergency",
+        "description": "healthEmergenciesAmbulance",
         "icon": "local-hospital",
         "color": "#dc2626"
       }
     },
     {
-      "id": 5,
+      "id": 6,
       "type": "category",
       "title": {
         "en": "Violence/Harassment Support",
@@ -241,20 +249,14 @@
         "sq": "Mbështetje e specializuar për dhunën në familje, sulmin dhe situatat e ngacmimit."
       },
       "category": {
-        "title": {
-          "en": "Violence/Harassment",
-          "de": "Gewalt/Belästigung"
-        },
-        "description": {
-          "en": "Domestic violence, assault",
-          "de": "Häusliche Gewalt, Übergriffe"
-        },
+        "title": "violenceHarassment",
+        "description": "domesticViolenceAssault",
         "icon": "security",
         "color": "#dc2626"
       }
     },
     {
-      "id": 6,
+      "id": 7,
       "type": "category",
       "title": {
         "en": "Mental Health Crisis",
@@ -285,20 +287,14 @@
         "sq": "Mbështetje profesionale për kriza psikologjike dhe parandalimin e vetëvrasjes."
       },
       "category": {
-        "title": {
-          "en": "Mental Health Crisis",
-          "de": "Psychische Krise"
-        },
-        "description": {
-          "en": "Psychological crisis, suicide prevention",
-          "de": "Psychische Krise, Suizidprävention"
-        },
+        "title": "mentalHealthCrisis",
+        "description": "psychologicalCrisisSuicidePrevention",
         "icon": "psychology",
         "color": "#dc2626"
       }
     },
     {
-      "id": 7,
+      "id": 8,
       "type": "category",
       "title": {
         "en": "Spiritual Care",
@@ -329,20 +325,14 @@
         "sq": "Mbështetje shpirtërore dhe emocionale përmes shërbimeve të këshillimit telefonik."
       },
       "category": {
-        "title": {
-          "en": "Care of Soul",
-          "de": "Seelsorge"
-        },
-        "description": {
-          "en": "Spiritual and emotional support",
-          "de": "Spirituelle und emotionale Unterstützung"
-        },
+        "title": "careOfSoul",
+        "description": "spiritualEmotionalSupport",
         "icon": "favorite",
         "color": "#dc2626"
       }
     },
     {
-      "id": 8,
+      "id": 9,
       "type": "category",
       "title": {
         "en": "Youth Care",
@@ -373,80 +363,74 @@
         "sq": "Mbështetje urgjente e dedikuar e dizajnuar posaçërisht për fëmijët dhe të rinjtë."
       },
       "category": {
-        "title": {
-          "en": "Youth Care",
-          "de": "Jugendbetreuung"
-        },
-        "description": {
-          "en": "Support for children and youth",
-          "de": "Unterstützung für Kinder und Jugendliche"
-        },
+        "title": "youthCare",
+        "description": "supportForChildrenAndYouth",
         "icon": "child-care",
         "color": "#dc2626"
       }
     },
     {
-      "id": 9,
-      "type": "feature",
-      "title": {
-        "en": "Virtual Assistant",
-        "de": "Virtueller Assistent",
-        "ru": "Виртуальный помощник",
-        "ce": "Виртуала кхераме",
-        "prs": "دستیار مجازی",
-        "ps": "مجازي مرستیال",
-        "fa": "دستیار مجازی",
-        "ar": "المساعد الافتراضي",
-        "ku": "یاریدەدەری خەیاڵی",
-        "so": "Caawiye Farsamaysan",
-        "ka": "ვირტუალური ასისტენტი",
-        "sq": "Asistenti virtual"
-      },
-      "text": {
-        "en": "Access our AI-powered virtual assistant for immediate guidance and support in emergency situations.",
-        "de": "Greifen Sie auf unseren KI-gestützten virtuellen Assistenten für sofortige Anleitung und Unterstützung in Notfallsituationen zu.",
-        "ru": "Получите доступ к нашему виртуальному помощнику на базе ИИ для немедленного руководства и поддержки в чрезвычайных ситуациях.",
-        "ce": "Шуьга виртуала кхерамца лело гlайгlа хlоттинчохь коьрта белхо а гlо а.",
-        "prs": "به دستیار مجازی مبتنی بر هوش مصنوعی ما برای راهنمایی فوری و پشتیبانی در شرایط اضطراری دسترسی پیدا کنید.",
-        "ps": "زموږ د AI پر بنسټ مجازي مرستیال ته د بیړنیو وضعیتونو کې د سمدستي لارښوونې او ملاتړ لپاره لاسرسی ومومئ.",
-        "fa": "به دستیار مجازی مبتنی بر هوش مصنوعی ما برای راهنمایی فوری و پشتیبانی در شرایط اضطراری دسترسی پیدا کنید.",
-        "ar": "الوصول إلى مساعدنا الافتراضي المدعوم بالذكاء الاصطناعي للحصول على التوجيه والدعم الفوري في حالات الطوارئ.",
-        "ku": "دەستگەیشتن بە یاریدەدەری مجازیمان کە بە AI پشتگیری دەکرێت بۆ ڕێنمایی و پشتگیری بەپەلە لە دۆخی لەناکاودا.",
-        "so": "Hel caawiyahayaga farsamaysan ee AI-ku taageerayo si degdeg ah loo hago hagitaanka iyo taageerada xaaladdaha degdegga ah.",
-        "ka": "მიიღეთ წვდომა ჩვენს AI-ით მოძრავ ვირტუალურ ასისტენტთან დაუყოვნებელი სახელმძღვანელო და მხარდაჭერისთვის გადაუდებელ სიტუაციებში.",
-        "sq": "Aksesoni asistentin tonë virtual të mbështetur nga AI për udhëzim dhe mbështetje të menjëhershme në situata urgjente."
-      }
-    },
-    {
+      "type": "language",
       "id": 10,
-      "type": "feature",
       "title": {
         "en": "Language Selection",
         "de": "Sprachauswahl",
         "ru": "Выбор языка",
-        "ce": "Мотт хержа",
+        "ce": "Мотт харжар",
         "prs": "انتخاب زبان",
-        "ps": "د ژبې غوره کول",
+        "ps": "د ژبې ټاکنه",
         "fa": "انتخاب زبان",
         "ar": "اختيار اللغة",
         "ku": "هەڵبژاردنی زمان",
-        "so": "Doorashada Luqadda",
+        "so": "Doorashada luqadda",
         "ka": "ენის არჩევა",
         "sq": "Zgjedhja e gjuhës"
       },
       "text": {
-        "en": "Switch between languages to access emergency information in your preferred language for better understanding.",
-        "de": "Wechseln Sie zwischen Sprachen, um Notfallinformationen in Ihrer bevorzugten Sprache für besseres Verständnis zu erhalten.",
-        "ru": "Переключайтесь между языками для доступа к экстренной информации на вашем предпочитаемом языке для лучшего понимания.",
-        "ce": "Меттанаш юкъе хийца гlайгlа хаамаша хьуна довзийтира меттахь дехьа дезаш долу.",
-        "prs": "بین زبان‌ها تغییر دهید تا به اطلاعات اضطراری به زبان مورد علاقه‌تان برای درک بهتر دسترسی پیدا کنید.",
-        "ps": "د ژبو ترمنځ بدلون وکړئ ترڅو ستاسو د غوره شوې ژبې د غوره پوهیدو لپاره د بیړني معلوماتو ته لاسرسی ومومئ.",
-        "fa": "بین زبان‌ها جابه‌جا شوید تا به اطلاعات اضطراری به زبان مورد علاقه‌تان برای درک بهتر دسترسی پیدا کنید.",
-        "ar": "قم بالتبديل بين اللغات للوصول إلى معلومات الطوارئ بلغتك المفضلة لفهم أفضل.",
-        "ku": "لە نێوان زمانەکاندا بگۆڕە بۆ دەستگەیشتن بە زانیاری لەناکاو بە زمانی دڵخوازت بۆ تێگەیشتنی باشتر.",
-        "so": "Ku beddelka luqadaha si aad ugu hesho macluumaadka degdegga luqaddaada door bidka ah si aad si fiican u fahamto.",
-        "ka": "გადაირთეთ ენებს შორის გადაუდებელი ინფორმაციის მისაღებად თქვენს სასურველ ენაზე უკეთესი გაგებისთვის.",
-        "sq": "Ndërroni midis gjuhëve për të aksesuar informacionin e urgjencës në gjuhën tuaj të preferuar për kuptim më të mirë."
+        "en": "Switch between 12 different languages anytime. The app supports German, English, Russian, Chechen, Dari, Pashto, Farsi, Arabic, Kurdish, Somali, Georgian, and Albanian.",
+        "de": "Wechseln Sie jederzeit zwischen 12 verschiedenen Sprachen. Die App unterstützt Deutsch, Englisch, Russisch, Tschetschenisch, Dari, Paschtu, Farsi, Arabisch, Kurdisch, Somali, Georgisch und Albanisch.",
+        "ru": "Переключайтесь между 12 различными языками в любое время. Приложение поддерживает немецкий, английский, русский, чеченский, дари, пушту, фарси, арабский, курдский, сомалийский, грузинский и албанский.",
+        "ce": "12 башха меттанаш юкъе мукъамехь хийца йиш ю. Приложенин немцойн, ингалсан, оьрсийн, нохчийн, дари, пашто, фарси, lарабийн, курдийн, сомалийн, гуржийн, албанийн меттанаш ловш ю.",
+        "prs": "در هر زمان بین 12 زبان مختلف تغییر دهید. این برنامه از آلمانی، انگلیسی، روسی، چچنی، دری، پشتو، فارسی، عربی، کردی، سومالیایی، گرجی و آلبانیایی پشتیبانی می‌کند.",
+        "ps": "په هر وخت کې د 12 مختلفو ژبو تر منځ بدلون وکړئ. دا اپلیکیشن د آلماني، انګلیسي، روسي، چیچني، دري، پښتو، فارسي، عربي، کردي، سومالي، جورجیایي، او البانیایي ملاتړ کوي.",
+        "fa": "در هر زمان بین 12 زبان مختلف تغییر دهید. این برنامه از آلمانی، انگلیسی، روسی، چچنی، دری، پشتو، فارسی، عربی، کردی، سومالیایی، گرجی و آلبانیایی پشتیبانی می‌کند.",
+        "ar": "تبديل بين 12 لغة مختلفة في أي وقت. يدعم التطبيق الألمانية والإنجليزية والروسية والشيشانية والداري والبشتو والفارسية والعربية والكردية والصومالية والجورجية والألبانية.",
+        "ku": "لە هەر کاتێکدا لە نێوان 12 زمانی جۆراوجۆردا بگۆڕە. ئەم ئەپە پشتگیری ئەڵمانی، ئینگلیزی، ڕووسی، چیچێنی، دەری، پەشتوو، فارسی، عەرەبی، کوردی، سۆمالی، گورجی و ئەڵبانی دەکات.",
+        "so": "Ku bedel 12 luqadood oo kala duwan marwalba ah. Appku wuxuu taageeraa Jarmal, Ingiriis, Ruush, Chechen, Dari, Pashto, Farsi, Carabi, Kurdish, Soomaali, Georgian, iyo Albanian.",
+        "ka": "ნებისმიერ დროს გადართეთ 12 სხვადასხვა ენას შორის. აპლიკაცია მხარს უჭერს გერმანულს, ინგლისურს, რუსულს, ჩეჩნურს, დარის, პაშტოს, ფარსს, არაბულს, ქურთულს, სომალიურს, ქართულს და ალბანურს.",
+        "sq": "Ndryshoni midis 12 gjuhëve të ndryshme në çdo kohë. Aplikacioni mbështet gjermanishten, anglishten, rusishten, çeçenishten, dari, pashto, farsishten, arabishten, kurdishten, somalisht, gjeorgjishten dhe shqipen."
+      }
+    },
+    {
+      "id": 11,
+      "type": "icons",
+      "title": {
+        "de": "Brauchen Sie mehr Hilfe?",
+        "en": "Need More Help?",
+        "ru": "Нужна дополнительная помощь?",
+        "ce": "Кхин гӏо хьуна?",
+        "prs": "به کمک بیشتر نیاز دارید؟",
+        "ps": "نورو مرستو ته اړتیا لرئ؟",
+        "fa": "به کمک بیشتر نیاز دارید؟",
+        "ar": "هل تحتاج المزيد من المساعدة؟",
+        "ku": "پێویستیت بە یارمەتی زیاتر هەیە؟",
+        "so": "Ma u baahan tahay caawimo dheeraad ah?",
+        "ka": "გჭირდებათ მეტი დახმარება?",
+        "sq": "Keni nevojë për më shumë ndihmë?"
+      },
+      "text": {
+        "de": "Sie können jederzeit das Hilfe/Tutorial-Symbol auf jeder Seite drücken, um mehr Informationen über die Funktionen dieser Seite und deren effektive Nutzung zu erhalten.",
+        "en": "You can always press the help/tutorial icon on any page to get more information about that page's features and how to use them effectively.",
+        "ru": "Вы всегда можете нажать на значок справки/обучения на любой странице, чтобы получить больше информации о функциях этой страницы.",
+        "ce": "Хьо даиман латта тайна гӏо/дешаран тамгӏа могӏа агӏона хьажа.",
+        "prs": "شما همیشه می‌توانید روی نماد کمک/آموزش در هر صفحه کلیک کنید.",
+        "ps": "تاسو تل کولی شئ د مرستې/درسي نښې په هر پاڼه کې کلیک وکړئ.",
+        "fa": "شما همیشه می‌توانید روی نماد کمک/آموزش در هر صفحه کلیک کنید.",
+        "ar": "يمكنك دائماً الضغط على رمز المساعدة/التعليم في أي صفحة للحصول على مزيد من المعلومات.",
+        "ku": "تۆ هەمیشە دەتوانی کلیک لە نیشانی یارمەتی/فێرکردن بکەیت لە هەر پەڕەیەکدا.",
+        "so": "Waxaad had iyo jeer riiri kartaa calaamadda caawinta/tababarka bogga kasta.",
+        "ka": "ყოველთვის შეგიძლიათ დააწკაპუნოთ დახმარების/ტუტორიალის ნიშანზე ნებისმიერ გვერდზე.",
+        "sq": "Gjithmonë mund të shtypni ikonën e ndihmës/tutorialit në çdo faqe për të marrë më shumë informacion."
       }
     }
   ]

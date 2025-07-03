@@ -42,6 +42,20 @@
     "ka": "ისაუბრეთ მენტორთან",
     "sq": "Flisni me një mentor"
   },
+  "talkToMentorDescription": {
+    "en": "Lorem Ipsum",
+    "de": "Lorem Ipsum",
+    "ru": "Lorem Ipsum",
+    "ce": "Lorem Ipsum",
+    "prs": "Lorem Ipsum",
+    "ps": "Lorem Ipsum",
+    "fa": "Lorem Ipsum",
+    "ar": "Lorem Ipsum",
+    "ku": "Lorem Ipsum",
+    "so": "Lorem Ipsum",
+    "ka": "Lorem Ipsum",
+    "sq": "Lorem Ipsum"
+  },
   "askCommunity": {
     "en": "Ask the community",
     "de": "Frage die Community",
@@ -55,6 +69,20 @@
     "so": "Weydiiso bulshada",
     "ka": "ჰკითხეთ საზოგადოებას",
     "sq": "Pyesni komunitetin"
+  },
+  "askCommunityDescription": {
+    "en": "Lorem Ipsum",
+    "de": "Lorem Ipsum",
+    "ru": "Lorem Ipsum",
+    "ce": "Lorem Ipsum",
+    "prs": "Lorem Ipsum",
+    "ps": "Lorem Ipsum",
+    "fa": "Lorem Ipsum",
+    "ar": "Lorem Ipsum",
+    "ku": "Lorem Ipsum",
+    "so": "Lorem Ipsum",
+    "ka": "Lorem Ipsum",
+    "sq": "Lorem Ipsum"
   },
   "visitUsOnline": {
     "en": "Visit us online",
@@ -70,6 +98,20 @@
     "ka": "ეწვიეთ ჩვენ ონლაინ",
     "sq": "Na vizitoni online"
   },
+  "visitUsOnlineDescription": {
+    "en": "Lorem Ipsum",
+    "de": "Lorem Ipsum",
+    "ru": "Lorem Ipsum",
+    "ce": "Lorem Ipsum",
+    "prs": "Lorem Ipsum",
+    "ps": "Lorem Ipsum",
+    "fa": "Lorem Ipsum",
+    "ar": "Lorem Ipsum",
+    "ku": "Lorem Ipsum",
+    "so": "Lorem Ipsum",
+    "ka": "Lorem Ipsum",
+    "sq": "Lorem Ipsum"
+  },
   "visitInPerson": {
     "en": "Visit us in person",
     "de": "Besuche uns persönlich",
@@ -83,6 +125,20 @@
     "so": "Naga booqo si gaar ah",
     "ka": "ეწვიეთ ჩვენ პირადად",
     "sq": "Na vizitoni personalisht"
+  },
+  "visitInPersonDescription": {
+    "en": "Lorem Ipsum",
+    "de": "Lorem Ipsum",
+    "ru": "Lorem Ipsum",
+    "ce": "Lorem Ipsum",
+    "prs": "Lorem Ipsum",
+    "ps": "Lorem Ipsum",
+    "fa": "Lorem Ipsum",
+    "ar": "Lorem Ipsum",
+    "ku": "Lorem Ipsum",
+    "so": "Lorem Ipsum",
+    "ka": "Lorem Ipsum",
+    "sq": "Lorem Ipsum"
   },
   "online": {
     "en": "Online",

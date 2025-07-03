@@ -11,7 +11,13 @@ import askTutorialData from '../data/tutorial/ask.json';
 import askGeneralTutorial from '../data/tutorial/ask/general.json';
 import askEmergencyTutorial from '../data/tutorial/ask/emergency.json';
 import askLegalSupportTutorial from '../data/tutorial/ask/legal-support.json';
-import { getGlobalText } from '../utils/languageUtils';
+import {
+    getGlobalText,
+    getAskText,
+    getAskGeneralText,
+    getAskEmergencyText,
+    getAskLegalText,
+    getHomeText} from '../utils/languageUtils';
 
 interface TutorialSlideContentProps {
   currentSlide: number;
@@ -64,6 +70,23 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
         return homeTutorialData;
     }
   };
+
+  const getCategoryHelper = (key: string, languageCode: string) => {
+      switch (tutorialData) {
+        case 'ask':
+          return getAskText(key, languageCode);
+        case 'ask-general':
+          return getAskGeneralText(key, languageCode);
+        case 'ask-emergency':
+          return getAskEmergencyText(key, languageCode);
+        case 'ask-legal-support':
+          return getAskLegalText(key, languageCode);
+        case 'virtualAssistant':
+          return virtualAssistantTutorialData;
+        default:
+          return getHomeText(key, languageCode);
+      }
+    };
   
   const data = getData();
   const slide = data.slides.find(s => s.id === currentSlide);
@@ -181,8 +204,8 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
             <View style={[styles.tileShowcase, isWideScreen && styles.tileShowcaseWide]}>
               <View style={[styles.categoryCardContainer, isWideScreen && styles.categoryCardContainerWide]}>
                 <CategoryCard 
-                  title={slide.category!.title[languageCode] || slide.category!.title.en}
-                  description={slide.category!.description[languageCode] || slide.category!.description.en}
+                  title={getCategoryHelper(slide.category!.title, languageCode)}
+                  description={getCategoryHelper(slide.category!.description, languageCode)}
                   icon={slide.category!.icon as keyof typeof MaterialIcons.glyphMap}
                   color={slide.category!.color}
                   onPress={() => {}}

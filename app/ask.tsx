@@ -10,14 +10,8 @@ import PageNavigation from '../components/PageNavigation';
 import LanguageModal from '../components/LanguageModal';
 import VirtualAssistantModal from '../components/VirtualAssistantModal';
 import TutorialModal from '../components/TutorialModal';
+import { getAskText } from '../utils/languageUtils';
 
-// Import ask translations
-import askTranslations from '../data/language/ask.json';
-
-const getAskText = (key: string, languageCode: string): string => {
-  const translation = askTranslations[key as keyof typeof askTranslations];
-  return translation?.[languageCode as keyof typeof translation] || translation?.en || key;
-};
 
 const AskPage: React.FC = () => {
   const { currentLanguage } = useLanguage();

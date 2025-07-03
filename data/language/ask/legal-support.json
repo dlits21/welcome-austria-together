@@ -98,6 +98,20 @@
     "ka": "ზოგადი",
     "sq": "I përgjithshëm"
   },
+  "generalDescription": {
+    "en": "General legal services and information to assist individuals with common legal concerns.",
+    "de": "Allgemeine Rechtsdienstleistungen und Informationen, die Einzelpersonen bei allgemeinen rechtlichen Anliegen unterstützen.",
+    "ru": "Общие юридические услуги и информация, помогающие людям с общими юридическими проблемами.",
+    "ce": "Йалаш бакъонан гlо хlолсийн кхерамал дехьоха ю.",
+    "prs": "خدمات حقوقی عمومی و اطلاعاتی برای کمک به افراد با نگرانی‌های حقوقی عمومی.",
+    "ps": "خدمات حقوقي عمومي او معلومات چې د افرادو سره د عامو حقوقي مسلو کې مرسته کوي.",
+    "fa": "خدمات حقوقی عمومی و اطلاعاتی برای کمک به افراد با نگرانی‌های حقوقی عمومی.",
+    "ar": "الخدمات القانونية العامة والمعلومات لمساعدة الأفراد في القضايا القانونية العامة.",
+    "ku": "خدمات یاسایی گشتی و زانیاریەکان بۆ یارمەتی بە فردەکان لە بابەتی کێشە یاسایی گشتی.",
+    "so": "Adeegyada sharciga guud iyo macluumaad kaa caawinaya dadka xaaladaha sharciga guud.",
+    "ka": "ზოგადი იურიდიული მომსახურება და ინფორმაცია, რომელიც ეხმარება პირებს საერთო იურიდიულ საკითხებში.",
+    "sq": "Shërbime dhe informacion juridik të përgjithshëm për të ndihmuar individët me shqetësime të zakonshme juridike."
+  },
   "asylumProcedures": {
     "en": "Asylum Procedures",
     "de": "Asylverfahren",
@@ -111,6 +125,20 @@
     "so": "Hababka magangalyo",
     "ka": "თავშესაფრის პროცედურები",
     "sq": "Procedurat e azilit"
+  },
+  "asylumProceduresDescription": {
+    "en": "Procedures and guidelines for individuals seeking asylum, including how to apply for asylum, what to expect, and the process of approval.",
+    "de": "Verfahren und Richtlinien für Personen, die Asyl suchen, einschließlich der Antragstellung, was zu erwarten ist und des Genehmigungsprozesses.",
+    "ru": "Процедуры и рекомендации для людей, ищущих убежище, включая как подать заявку на убежище, чего ожидать и процесс одобрения.",
+    "ce": "Пана даларан меттигца кхетал мич кхерам.",
+    "prs": "روش‌ها و دستورالعمل‌هایی برای افرادی که به پناهندگی درخواست داده‌اند، از جمله نحوه درخواست پناهندگی، انتظارات و فرایند تایید.",
+    "ps": "پروسیجرونه او لارښوونې د هغو کسانو لپاره چې د پناه غوښتنې کوي، په دې کې څنګه پناه غوښتنه کول، څه تمه کول او د تصویب پروسه.",
+    "fa": "فرآیندها و دستورالعمل‌ها برای افرادی که در جستجوی پناهندگی هستند، از جمله نحوه درخواست پناهندگی، چه انتظاری باید داشت و فرایند تأیید.",
+    "ar": "إجراءات وإرشادات للأشخاص الذين يسعون للحصول على اللجوء، بما في ذلك كيفية التقديم للحصول على اللجوء، وما يمكن توقعه، وعملية الموافقة.",
+    "ku": "پروژەکان و رێنماییەکان بۆ کەسانی کە فەرمیەکان پەناگرتن داوایان کردووە، لەگەڵ ڕوونکردنەوەی ئەم داوایە و شێوەی تایبەتمەندی.",
+    "so": "Nidaamyada iyo tilmaamaha dadka raadinaya magangalyo, oo ay ku jiraan sida loo dalbado magangalyo, waxa laga filan karo, iyo habka ansixinta.",
+    "ka": "პროცედურები და რეკომენდაციები იმ ადამიანებისთვის, რომლებიც თავშესაფარს ეძებენ, მათ შორის, როგორ მოვძებნოთ თავშესაფარი, რა ელოდება და დამტკიცების პროცესი.",
+    "sq": "Procedurat dhe udhëzimet për individët që kërkojnë azil, duke përfshirë si të aplikoni për azil, çfarë mund të prisni, dhe procesin e miratimit."
   },
   "appeals": {
     "en": "Appeals",
@@ -126,6 +154,20 @@
     "ka": "აპელაციები",
     "sq": "Apelet"
   },
+  "appealsDescription": {
+    "en": "Specialized legal assistance for challenging a legal decision or ruling.",
+    "de": "Rechtsberatung für die Anfechtung einer rechtlichen Entscheidung.",
+    "ru": "Юридическая помощь по оспариванию юридического решения.",
+    "ce": "Юристкин бакъонан консультаци гlо хлока къобал.",
+    "prs": "مشاوره حقوقی برای چالش در برابر تصمیمات حقوقی.",
+    "ps": "مشوره قانوني د حقوقي پریکړو یا فیصلو سره د چلنج لپاره.",
+    "fa": "مشاوره حقوقی برای اعتراض به تصمیمات قانونی.",
+    "ar": "المساعدة القانونية المتخصصة للطعن في قرار قانوني.",
+    "ku": "پشتگیری یاسایی بۆ چالش کردنی فەیصلەی یاسایی.",
+    "so": "Caawimaad sharci ah oo ku saabsan cawaaqibka go'aamada sharciga.",
+    "ka": "იურიდიული დახმარება სამართლებრივი გადაწყვეტილების გასაჩივრებისთვის.",
+    "sq": "Ndihma ligjore e specializuar për sfidimin e vendimeve ligjore."
+  },
   "residencePermits": {
     "en": "Residence Permits",
     "de": "Aufenthaltstitel",
@@ -139,6 +181,20 @@
     "so": "Ruqsadaha degenaanta",
     "ka": "საცხოვრებელი ნებართვები",
     "sq": "Lejet e qëndrimit"
+  },
+  "residencePermitsDescription": {
+    "en": "Legal support for obtaining permission to live and work in a country.",
+    "de": "Rechtliche Unterstützung bei der Beantragung von Aufenthaltserlaubnissen.",
+    "ru": "Юридическая помощь в получении разрешения на проживание.",
+    "ce": "Юристкин консультаци барои бекерметараш хлока.",
+    "prs": "مشاوره حقوقی برای دریافت مجوز اقامت.",
+    "ps": "مشوره قانوني د استوګنې جواز ترلاسه کولو لپاره.",
+    "fa": "مشاوره حقوقی برای دریافت مجوز اقامت.",
+    "ar": "الدعم القانوني للحصول على تصريح الإقامة في البلد.",
+    "ku": "پشتیوانی یاسایی بۆ گرتنی مۆڵەتی نیشتەجێبوون.",
+    "so": "La-talin sharci ah oo ku saabsan helitaanka ruqsad degenaansho.",
+    "ka": "იურიდიული მხარდაჭერა ქვეყნის ტერიტორიაზე ცხოვრების და მუშაობის ნებართვის მიღებისთვის.",
+    "sq": "Ndihma ligjore për marrjen e lejes së qëndrimit."
   },
   "familyReunification": {
     "en": "Family Reunification",
@@ -154,6 +210,20 @@
     "ka": "ოჯახის გაერთიანება",
     "sq": "Ribashkimi familjar"
   },
+  "familyReunificationDescription": {
+    "en": "Get Legal support for Family Reunification.",
+    "de": "Holen Sie sich rechtliche Unterstützung für die Familienzusammenführung.",
+    "ru": "Получите юридическую помощь по вопросам воссоединения семьи.",
+    "ce": "Получите юридическую помощь для семейного воссоединения.",
+    "prs": "دریافت حمایت حقوقی برای پیوستن به خانواده.",
+    "ps": "د ترلاسه کولو لپاره د کورنۍ یوځای کولو لپاره حقوقي ملاتړ.",
+    "fa": "دریافت حمایت حقوقی برای پیوستن به خانواده.",
+    "ar": "الحصول على الدعم القانوني لدمج الأسرة.",
+    "ku": "پشتیوانی یاسایی بۆ گرتنی مۆڵەتی نیشتەجێبوون بە شێوەی یاسایی.",
+    "so": "Heshiisyada sharci ah ee ku saabsan ka mid noqoshada qoyska.",
+    "ka": "იურიდიული დახმარება ოჯახის გაერთიანებისათვის.",
+    "sq": "Merrni mbështetje ligjore për bashkimin familjar."
+  },
   "citizenship": {
     "en": "Citizenship",
     "de": "Staatsbürgerschaft",
@@ -167,6 +237,20 @@
     "so": "Dhalashada",
     "ka": "მოქალაქეობა",
     "sq": "Shtetësia"
+  },
+  "citizenshipDescription": {
+    "en": "Support for acquiring or claiming the legal status of a country's citizen.",
+    "de": "Rechtsberatung zur Erlangung oder Beantragung der Staatsbürgerschaft.",
+    "ru": "Юридическая помощь в получении гражданства.",
+    "ce": "Юристкин консультаци бакъонан, хлока дацехцчуш.",
+    "prs": "مشاوره حقوقی برای به دست آوردن یا درخواست تابعیت.",
+    "ps": "مشوره قانوني د تابعیت ترلاسه کولو یا غوښتنه.",
+    "fa": "مشاوره حقوقی برای به دست آوردن یا درخواست تابعیت.",
+    "ar": "الدعم القانوني للحصول على أو المطالبة بجنسية دولة معينة.",
+    "ku": "پشتیوانی یاسایی بۆ گرتنی هاوڵاتیتیا کۆنترۆڵ کردنەوە.",
+    "so": "Caawimaad sharci ah oo ku saabsan helitaanka ama sheegashada dhalashada dalka.",
+    "ka": "იურიდიული დახმარება ქვეყნის მოქალაქეობის მიღების ან მოთხოვნისთვის.",
+    "sq": "Ndihma ligjore për marrjen ose kërkimin e shtetësisë."
   },
   "detention": {
     "en": "Detention",
@@ -182,6 +266,20 @@
     "ka": "დაკავება",
     "sq": "Paraburgimi"
   },
+  "detentionDescription": {
+    "en": "Legal assistance for individuals facing detention or custody by authorities.",
+    "de": "Rechtsberatung für Personen, die in Haft oder Polizeigewahrsam sind.",
+    "ru": "Юридическая помощь для людей, находящихся под арестом или в заключении.",
+    "ce": "Юристкин консультаци дацехцчуш баьнхан глонач.",
+    "prs": "مشاوره حقوقی برای افرادی که تحت بازداشت یا بازجویی هستند.",
+    "ps": "مشوره قانوني د هغه کسانو لپاره چې د توقیف یا حراست سره مخ دي.",
+    "fa": "مشاوره حقوقی برای افرادی که تحت بازداشت یا نگهداری هستند.",
+    "ar": "الدعم القانوني للأفراد الذين يواجهون الاحتجاز أو الحبس من قبل السلطات.",
+    "ku": "پشتیوانی یاسایی بۆ کەسانی کە پەیوەندیدارن بە گرتن یان دامەزراندنەوە.",
+    "so": "Caawimaad sharci ah oo ku saabsan dadka wajahaya xidhashada ama gacanta lagu hayo.",
+    "ka": "იურიდიული დახმარება მათთვის, ვინც დააპატიმრეს ან ჰყავთ დაკავებული ხელისუფლების მიერ.",
+    "sq": "Ndihma ligjore për individët që përballen me ndalim ose arrestim nga autoritetet."
+  },
   "discrimination": {
     "en": "Discrimination",
     "de": "Diskriminierung",
@@ -195,6 +293,20 @@
     "so": "Takooriga",
     "ka": "დისკრიმინაცია",
     "sq": "Diskriminimi"
+  },
+  "discriminationDescription": {
+    "en": "Legal support for individuals facing discrimination based on race, gender, religion, or other factors.",
+    "de": "Rechtsberatung für Personen, die aufgrund von Rasse, Geschlecht, Religion oder anderen Faktoren Diskriminierung erfahren.",
+    "ru": "Юридическая помощь для людей, сталкивающихся с дискриминацией на основе расы, пола, религии или других факторов.",
+    "ce": "Юристкин консультаци дец хlокхуш и зоьр.",
+    "prs": "مشاوره حقوقی برای افرادی که با تبعیض بر اساس نژاد، جنسیت، مذهب یا سایر عوامل مواجه هستند.",
+    "ps": "مشوره قانوني د هغو کسانو لپاره چې د نژاد، جنس، مذهب یا نورو عواملو پراساس تبعیض سره مخ دي.",
+    "fa": "مشاوره حقوقی برای افرادی که بر اساس نژاد، جنسیت، مذهب یا عوامل دیگر تبعیض می‌بینند.",
+    "ar": "الدعم القانوني للأفراد الذين يواجهون التمييز بناءً على العرق أو الجنس أو الدين أو عوامل أخرى.",
+    "ku": "پشتیوانی یاسایی بۆ کەسانی کە جیاکاری دەکرێت لە ڕووی تایبەتمەندیەکان.",
+    "so": "Caawimaad sharci ah oo ku saabsan dadka wajahaya takoorid oo ku saleysan qowmiyadda, jinsiga, diinta, ama arrimo kale.",
+    "ka": "იურიდიული დახმარება ადამიანებისთვის, რომლებიც განიცდიან დისკრიმინაციას რასის, სქესის, რელიგიის ან სხვა ფაქტორების მიხედვით.",
+    "sq": "Ndihma ligjore për individët që përballen me diskriminim bazuar në racë, gjini, fe ose faktorë të tjerë."
   },
   "workRights": {
     "en": "Work Rights",
@@ -210,6 +322,20 @@
     "ka": "სამუშაო უფლებები",
     "sq": "Të drejtat e punës"
   },
+  "workRightsDescription": {
+    "en": "Legal assistance to ensure individuals' rights to work are protected and upheld.",
+    "de": "Rechtsberatung zur Sicherstellung der Arbeitsrechte von Einzelpersonen.",
+    "ru": "Юридическая помощь в защите трудовых прав людей.",
+    "ce": "Юристкин консультаци болх бакъо.",
+    "prs": "مشاوره حقوقی برای حفاظت از حقوق کاری افراد.",
+    "ps": "مشوره قانوني د کار حقوقو د ساتنې لپاره.",
+    "fa": "مشاوره حقوقی برای حفاظت از حقوق کاری افراد.",
+    "ar": "الدعم القانوني لضمان حقوق الأفراد في العمل.",
+    "ku": "پشتیوانی یاسایی بۆ پاراستنی مافەکان کار.",
+    "so": "Caawimaad sharci ah oo ku saabsan xaqiijinta xuquuqda shaqada.",
+    "ka": "იურიდიული დახმარება სამუშაოს უფლებების დასაცავად.",
+    "sq": "Ndihma ligjore për sigurinë e të drejtave të punës."
+  },
   "legalRepresentation": {
     "en": "Legal Representation",
     "de": "Rechtsvertretung",
@@ -223,6 +349,20 @@
     "so": "Matalaabashada sharciga",
     "ka": "იურიდიული წარმომადგენლობა",
     "sq": "Përfaqësimi ligjor"
+  },
+  "legalRepresentationDescription": {
+    "en": "Assistance with obtaining legal representation in court or other legal matters.",
+    "de": "Unterstützung bei der Erlangung von Rechtsvertretung vor Gericht oder in anderen rechtlichen Angelegenheiten.",
+    "ru": "Помощь в получении юридического представительства в суде или в других юридических вопросах.",
+    "ce": "Юристкин консультаци вахлан вакил.",
+    "prs": "کمک برای به دست آوردن نمایندگی حقوقی در دادگاه یا مسائل حقوقی دیگر.",
+    "ps": "د قانوني استازیتوب ترلاسه کولو لپاره مرسته په محکمې یا نورو قانوني چارو کې.",
+    "fa": "کمک برای گرفتن نمایندگی حقوقی در دادگاه یا سایر مسائل حقوقی.",
+    "ar": "الدعم في الحصول على تمثيل قانوني في المحكمة أو مسائل قانونية أخرى.",
+    "ku": "پشتیوانی یاسایی بۆ نوێنەرایەتی یاسایی لە دادگاکان یان کێشەیەکان یاسایی.",
+    "so": "Caawimaad sharci ah oo ku saabsan helitaanka matalaad sharci ah maxkamadda ama arrimo kale.",
+    "ka": "იურიდიული დახმარება სასამართლოში ან სხვა სამართლებრივ საკითხებში წარმომადგენლობის მისაღებად.",
+    "sq": "Ndihma ligjore për të marrë përfaqësim ligjor në gjykatë ose çështje të tjera ligjore."
   },
   "supportType": {
     "en": "Support Type",
@@ -266,6 +406,20 @@
     "ka": "ფილტრები",
     "sq": "Filtrat"
   },
+  "filtersDescription": {
+    "en": "Use filters to narrow down your search for legal support based on location, specialization, or other criteria.",
+    "de": "Verwenden Sie Filter, um Ihre Suche nach rechtlicher Unterstützung basierend auf Standort, Spezialisierung oder anderen Kriterien einzugrenzen.",
+    "ru": "Используйте фильтры, чтобы сузить поиск юридической помощи по местоположению, специализации или другим критериям.",
+    "ce": "Используйте фильтры для уточнения поиска юридической поддержки по местоположению, специализации или другим критериям.",
+    "prs": "از فیلترها برای محدود کردن جستجوی حمایت حقوقی بر اساس موقعیت مکانی، تخصص یا سایر معیارها استفاده کنید.",
+    "ps": "د فلټرونو څخه استفاده وکړئ ترڅو خپل حقوقي ملاتړ د موقعیت، تخصص یا نورو معیارونو پراساس محدود کړئ.",
+    "fa": "از فیلترها برای محدود کردن جستجوی حمایت حقوقی بر اساس موقعیت، تخصص یا سایر معیارها استفاده کنید.",
+    "ar": "استخدم الفلاتر لتقليص بحثك عن الدعم القانوني بناءً على الموقع أو التخصص أو معايير أخرى.",
+    "ku": "فیلترەکان بۆ نیشاندانی یاسا دەستنیشانی و ئەم سیستەمە، بەرەوە نوێیەکان بە کوردی بەھەڵەکانەوە.",
+    "so": "Isticmaal shaandhayn si aad ugu xaddido raadinta taageerada sharciga iyadoo lagu saleynayo goobtaada, khibradda, ama shuruudo kale.",
+    "ka": "გამოიყენეთ ფილტრები, რათა შეამციროთ სამართლებრივი მხარდაჭერის ძიება თქვენს მდებარეობაზე, სპეციალიზაციაზე ან სხვა კრიტერიუმებზე დაყრდნობით.",
+    "sq": "Përdorni filtrat për të ngushtuar kërkimin tuaj për mbështetje ligjore bazuar në vendndodhjen, specializimin ose kritere të tjera."
+  },
   "skip": {
     "en": "Skip",
     "de": "Überspringen",
@@ -279,6 +433,34 @@
     "so": "Iska dhaaf",
     "ka": "გამოტოვება",
     "sq": "Kapërce"
+  },
+  "quiz": {
+    "en": "Quiz",
+    "de": "Quiz",
+    "ru": "Опрос",
+    "ce": "Тест",
+    "prs": "آزمون",
+    "ps": "ازموینه",
+    "fa": "آزمون",
+    "ar": "اختبار",
+    "ku": "پرسەسەر",
+    "so": "Imtixaan",
+    "ka": "კითხვარი",
+    "sq": "Kuiz"
+  },
+  "quizDescription": {
+    "en": "Take the quiz to quickly narrow down your search for legal support that matches your specific needs.",
+    "de": "Machen Sie das Quiz, um Ihre Suche nach rechtlicher Unterstützung, die Ihren spezifischen Bedürfnissen entspricht, schnell einzugrenzen.",
+    "ru": "Пройдите опрос, чтобы быстро сузить поиск юридической помощи, соответствующей вашим потребностям.",
+    "ce": "Са боксорашье тест ка гlонах бакъонан консультаци, кхум цхьар хьом шуьйца.",
+    "prs": "آزمون را انجام دهید تا جستجوی حمایت حقوقی که با نیازهای خاص شما مطابقت دارد، به سرعت محدود شود.",
+    "ps": "د ازموینې اخیستل ترڅو ستاسو د ځانګړو اړتیاو سره سم د حقوقي ملاتړ لټونه ژر محدوده کړي.",
+    "fa": "آزمون را انجام دهید تا جستجوی حمایت حقوقی که با نیازهای خاص شما مطابقت دارد، به سرعت محدود شود.",
+    "ar": "قم بإجراء الاختبار لتحديد الدعم القانوني الذي يتناسب مع احتياجاتك المحددة بسرعة.",
+    "ku": "پرسەسەر بۆ چەند پرسیارەکانی نوێ دا بەرەوە بەرنامەیەکی پەیوەندیدانی بە شەقەتی دەق بەپێی بەرنامەی فەرمی.",
+    "so": "Qaado imtixaan si aad si deg deg ah u xaddiddo raadinta taageerada sharciga ee ku habboon baahiyahaaga gaarka ah.",
+    "ka": "გამოიყენეთ კითხვარი, რომ სწრაფად შეამციროთ სამართლებრივი მხარდაჭერის ძიება, რომელიც შეესაბამება თქვენს კონკრეტულ საჭიროებებს.",
+    "sq": "Përgjigjuni kuizit për të ngushtuar shpejt kërkimin tuaj për mbështetje ligjore që përputhet me nevojat tuaja specifike."
   },
   "resetQuiz": {
     "en": "Reset Quiz",

@@ -96,34 +96,8 @@
         "sq": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       },
       "category": {
-        "title": {
-          "de": "Fragen",
-          "en": "Ask",
-          "ru": "Спросить",
-          "ce": "Хаттар",
-          "prs": "پرسیدن",
-          "ps": "پوښتنه",
-          "fa": "پرسش",
-          "ar": "اسأل",
-          "ku": "پرسیار",
-          "so": "Weydiinta",
-          "ka": "კითხვა",
-          "sq": "Pyet"
-        },
-        "description": {
-          "de": "Stellen Sie Fragen",
-          "en": "Ask questions",
-          "ru": "Задавайте вопросы",
-          "ce": "Хаттарш кхоьлла",
-          "prs": "سوال بپرسید",
-          "ps": "پوښتنې وکړئ",
-          "fa": "سوال بپرسید",
-          "ar": "اطرح الأسئلة",
-          "ku": "پرسیار بکە",
-          "so": "Su'aalo weydii",
-          "ka": "დასვით კითხვები",
-          "sq": "Bëni pyetje"
-        },
+        "title": "categories.ask.title",
+        "description": "categories.ask.description",
         "icon": "question-answer",
         "color": "#3B82F6"
       }
@@ -160,34 +134,8 @@
         "sq": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       },
       "category": {
-        "title": {
-          "de": "Informationen",
-          "en": "Information",
-          "ru": "Информация",
-          "ce": "Хаам",
-          "prs": "معلومات",
-          "ps": "معلومات",
-          "fa": "اطلاعات",
-          "ar": "معلومات",
-          "ku": "زانیاری",
-          "so": "Macluumaad",
-          "ka": "ინფორმაცია",
-          "sq": "Informacion"
-        },
-        "description": {
-          "de": "Wichtige Informationen",
-          "en": "Important information",
-          "ru": "Важная информация",
-          "ce": "Къинхетам хаам",
-          "prs": "معلومات مهم",
-          "ps": "مهم معلومات",
-          "fa": "اطلاعات مهم",
-          "ar": "معلومات مهمة",
-          "ku": "زانیاری گرنگ",
-          "so": "Macluumaad muhiim ah",
-          "ka": "მნიშვნელოვანი ინფორმაცია",
-          "sq": "Informacion i rëndësishëm"
-        },
+        "title": "categories.information.title",
+        "description": "categories.information.description",
         "icon": "info",
         "color": "#10B981"
       }
@@ -224,34 +172,8 @@
         "sq": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       },
       "category": {
-        "title": {
-          "de": "Lernen",
-          "en": "Learn",
-          "ru": "Учиться",
-          "ce": "Дешار",
-          "prs": "یادگیری",
-          "ps": "زده کړه",
-          "fa": "یادگیری",
-          "ar": "تعلم",
-          "ku": "فێربوون",
-          "so": "Barashada",
-          "ka": "სწავლა",
-          "sq": "Mëso"
-        },
-        "description": {
-          "de": "Lernmaterialien",
-          "en": "Learning materials",
-          "ru": "Учебные материалы",
-          "ce": "Дешаран хаамаш",
-          "prs": "مواد آموزشی",
-          "ps": "د زده کړې مواد",
-          "fa": "مواد آموزشی",
-          "ar": "مواد التعلم",
-          "ku": "مادەی فێربوون",
-          "so": "Agabka waxbarashada",
-          "ka": "სასწავლო მასალები",
-          "sq": "Materiale mësimore"
-        },
+        "title": "categories.learn.title",
+        "description": "categories.learn.description",
         "icon": "menu-book",
         "color": "#8B5CF6"
       }
@@ -288,34 +210,8 @@
         "sq": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       },
       "category": {
-        "title": {
-          "de": "Community",
-          "en": "Community",
-          "ru": "Сообщество",
-          "ce": "Жамагlат",
-          "prs": "جامعه",
-          "ps": "ټولنه",
-          "fa": "جامعه",
-          "ar": "المجتمع",
-          "ku": "کۆمەڵگە",
-          "so": "Bulshada",
-          "ka": "საზოგადოება",
-          "sq": "Komuniteti"
-        },
-        "description": {
-          "de": "Gemeinschaftsressourcen",
-          "en": "Community resources",
-          "ru": "Ресурсы сообщества",
-          "ce": "Жамагlатан ресурсаш",
-          "prs": "منابع جامعه",
-          "ps": "د ټولنې سرچینې",
-          "fa": "منابع جامعه",
-          "ar": "موارد المجتمع",
-          "ku": "سەرچاوەکانی کۆمەڵگە",
-          "so": "Kheyraadka bulshada",
-          "ka": "საზოგადოების რესურსები",
-          "sq": "Burimet e komunitetit"
-        },
+        "title": "categories.community.title",
+        "description": "categories.community.description",
         "icon": "people",
         "color": "#F97316"
       }

@@ -34,8 +34,40 @@
       }
     },
     {
+      "type": "assistant",
       "id": 1,
-      "type": "feature",
+      "title": {
+        "en": "Hi! I'm here to help you navigate this app and find what you need!",
+        "de": "Hallo! Ich bin hier, um Ihnen bei der Navigation in dieser App zu helfen und zu finden, was Sie brauchen!",
+        "ru": "Привет! Я здесь, чтобы помочь вам навигировать по этому приложению и найти то, что вам нужно!",
+        "ce": "Салам! Со кхузахь ву хlуна хlокху приложенин чохь некъ карийта а хlунга хlокху дӀаделира а.",
+        "prs": "سلام! من اینجا هستم تا به شما کمک کنم در این برنامه حرکت کنید و آنچه نیاز دارید پیدا کنید!",
+        "ps": "سلام! زه دلته یم چې ستاسو سره د دغه اپلیکیشن کې د لارښوونې کولو او هغه څه موندلو کې مرسته وکړم چې تاسو یې غواړئ!",
+        "fa": "سلام! من اینجا هستم تا به شما کمک کنم در این برنامه حرکت کنید و آنچه نیاز دارید پیدا کنید!",
+        "ar": "مرحباً! أنا هنا لمساعدتك في التنقل في هذا التطبيق والعثور على ما تحتاجه!",
+        "ku": "سڵاو! من لێرەم بۆ ئەوەی یارمەتیت بدەم لەم ئەپەدا بگەڕێیت و ئەوە بدۆزیتەوە کە پێویستتە!",
+        "so": "Salaam! Waxaan halkan u joogaa inaan kaa caawiyo aad u dhaqdhaqaaqdo appkan oo aad hesho waxa aad u baahan tahay!",
+        "ka": "გამარჯობა! მე აქ ვარ, რომ დაგეხმაროთ ამ აპლიკაციაში ნავიგაციაში და იპოვოთ ის, რაც გჭირდებათ!",
+        "sq": "Përshëndetje! Unë jam këtu për t'ju ndihmuar të navigoni në këtë aplikacion dhe të gjeni atë që ju nevojitet!"
+      },
+      "text": {
+        "en": "Use the virtual assistant to get instant help and guidance. Ask questions in your preferred language and get personalized support.",
+        "de": "Nutzen Sie den virtuellen Assistenten für sofortige Hilfe und Anleitung. Stellen Sie Fragen in Ihrer bevorzugten Sprache und erhalten Sie persönliche Unterstützung.",
+        "ru": "Используйте виртуального помощника, чтобы получить мгновенную помощь и руководство. Задавайте вопросы на предпочитаемом языке и получайте персонализированную поддержку.",
+        "ce": "Виртуальни ассистенто лелае тlаьхьара гlо а хаам а лорна. Хlунна йиш йуьлу меттана хаттар дайте а шуна латта гlо лийте.",
+        "prs": "از دستیار مجازی برای دریافت کمک و راهنمایی فوری استفاده کنید. سوالات را به زبان ترجیحی خود بپرسید و پشتیبانی شخصی دریافت کنید.",
+        "ps": "د سمدستي مرستې او لارښوونې لپاره د مجازي مالي ملګري څخه کار واخلئ. په خپله غوره ژبه پوښتنې وکړئ او شخصي ملاتړ واخلئ.",
+        "fa": "از دستیار مجازی برای دریافت کمک و راهنمایی فوری استفاده کنید. سوالات را به زبان ترجیحی خود بپرسید و پشتیبانی شخصی دریافت کنید.",
+        "ar": "استخدم المساعد الافتراضي للحصول على المساعدة والإرشاد الفوري. اطرح الأسئلة بلغتك المفضلة واحصل على دعم شخصي.",
+        "ku": "یاریدەدەری مەجازی بەکاربهێنە بۆ وەرگرتنی یارمەتی و ڕێنمایی خێرا. پرسیار بکە بە زمانی خۆت و پشتگیری کەسی وەربگرە.",
+        "so": "Isticmaal caawiyaha farsamada ah si aad u hesho caawimaad iyo hagid degdeg ah. Su'aalo ku weydii luqadda aad door bidayso oo hel taageero shakhsi ah.",
+        "ka": "გამოიყენეთ ვირტუალური ასისტენტი მყისიერი დახმარებისა და მითითებების მისაღებად. დასვით კითხვები თქვენს სასურველ ენაზე და მიიღეთ პერსონალიზებული მხარდაჭერა.",
+        "sq": "Përdorni asistentin virtual për të marrë ndihmë dhe udhëzime të menjëhershme. Bëni pyetje në gjuhën tuaj të preferuar dhe merrni mbështetje të personalizuar."
+      }
+    },
+    {
+      "id": 2,
+      "type": "category",
       "title": {
         "en": "Quiz System",
         "de": "Quiz-System",
@@ -63,11 +95,17 @@
         "so": "Ka jawaab su'aalaha hagitaanka ah si aad nagu caawiso inaan kuu soo jeedinno adeegyada taageerada sharciga ee ugu habboon baahiyahaaga gaarka ah.",
         "ka": "უპასუხეთ მართვად კითხვებს, რომ დაგვეხმაროთ ყველაზე რელევანტური იურიდიული მხარდაჭერის სერვისების რეკომენდაციაში თქვენი კონკრეტული საჭიროებებისთვის.",
         "sq": "Përgjigjuni pyetjeve të udhëzuara për të na ndihmuar të rekomandojmë shërbimet më të përshtatshme të mbështetjes ligjore për nevojat tuaja specifike."
+      },
+      "category": {
+        "title": "filters",
+        "description": "filtersDescription",
+        "icon": "filterList",
+        "color": "#3B82F6"
       }
     },
     {
-      "id": 2,
-      "type": "feature",
+      "id": 3,
+      "type": "category",
       "title": {
         "en": "Filter Options",
         "de": "Filter-Optionen",
@@ -95,10 +133,54 @@
         "so": "Isticmaal shaandhayaasha horumarsan si aad u yareeyo doorashada taageerada sharciga iyadoo lagu saleynayo nooca caawimaadda, goobta, iyo shuruudaha kale ee muhiimka kuu ah.",
         "ka": "გამოიყენეთ გაფართოებული ფილტრები იურიდიული მხარდაჭერის ვარიანტების შესაზღუდავად დახმარების ტიპის, მდებარეობის და სხვა თქვენთვის მნიშვნელოვანი კრიტერიუმების მიხედვით.",
         "sq": "Përdorni filtra të avancuar për të ngushtuar opsionet e mbështetjes ligjore sipas llojit të ndihmës, vendndodhjes dhe kritereve të tjera që janë të rëndësishme për ju."
+      },
+      "category": {
+        "title": "quiz",
+        "description": "quizDescription",
+        "icon": "quiz",
+        "color": "#3B82F6"
       }
     },
     {
-      "id": 3,
+      "id": 4,
+      "type": "category",
+      "title": {
+        "en": "General Support",
+        "de": "Allgemeine Unterstützung",
+        "ru": "Общая поддержка",
+        "ce": "Йуьхь гlо",
+        "prs": "حمایت عمومی",
+        "ps": "عمومي ملاتړ",
+        "fa": "پشتیبانی عمومی",
+        "ar": "الدعم العام",
+        "ku": "پشتگیری گشتی",
+        "so": "Taageero guud",
+        "ka": "ზოგადი მხარდაჭერა",
+        "sq": "Mbështetje e përgjithshme"
+      },
+      "text": {
+        "en": "If you have general legal questions or need advice on common legal matters, this section provides guidance on how to get help. Whether you need assistance with contracts, disputes, or other legal concerns, we are here to point you in the right direction. Get the support you need to understand your rights and options.",
+        "de": "Wenn Sie allgemeine rechtliche Fragen haben oder Beratung zu häufigen rechtlichen Angelegenheiten benötigen, bietet dieser Abschnitt Unterstützung, wie Sie Hilfe erhalten können. Ob Sie Hilfe bei Verträgen, Streitigkeiten oder anderen rechtlichen Problemen benötigen, wir sind hier, um Ihnen den richtigen Weg zu zeigen. Erhalten Sie die Unterstützung, die Sie benötigen, um Ihre Rechte und Optionen zu verstehen.",
+        "ru": "Если у вас есть общие юридические вопросы или вам нужна консультация по распространенным юридическим вопросам, этот раздел предоставляет информацию о том, как получить помощь. Независимо от того, нужна ли вам помощь в вопросах контрактов, споров или других юридических проблемах, мы готовы помочь вам найти правильное решение. Получите необходимую помощь, чтобы понять свои права и варианты.",
+        "ce": "Хьуна муьлшца бакъонан гlо хlокхуш ву? Гlон ларш ву ба гlаха во ву лица къобалудаккха-би? Бакъонан консультаци сииш ваетахар?",
+        "prs": "اگر سوالات عمومی حقوقی دارید یا نیاز به مشاوره در مسائل حقوقی رایج دارید، این بخش راهنمایی هایی در مورد نحوه دریافت کمک ارائه می دهد. چه برای مسائل قراردادی، اختلافات یا مشکلات حقوقی دیگر به کمک نیاز داشته باشید، ما اینجا هستیم تا شما را به سمت مسیر درست هدایت کنیم. حمایت مورد نیاز خود را برای درک حقوق و گزینه های خود دریافت کنید.",
+        "ps": "که که تاسو د عمومي حقوقي پوښتنې لرئ یا د عادي حقوقي مسلو په اړه مشورې ته اړتیا لرئ، نو دا برخه تاسو ته لارښوونه کوي چې څنګه مرسته ترلاسه کړئ. که تاسو د قراردادونو، شخړو یا نورو حقوقي مسلو په اړه مرستې ته اړتیا لرئ، موږ دلته یو ترڅو تاسو د سمې لارې لوری در وښیو. هغه ملاتړ ترلاسه کړئ چې تاسو ته اړتیا لرئ ترڅو خپلې حقوق او انتخابونه پوه شئ.",
+        "fa": "اگر سوالات عمومی حقوقی دارید یا نیاز به مشاوره در مسائل حقوقی رایج دارید، این بخش راهنمایی‌هایی در مورد نحوه دریافت کمک ارائه می‌دهد. چه برای مسائل قراردادی، اختلافات یا مشکلات حقوقی دیگر به کمک نیاز داشته باشید، ما اینجا هستیم تا شما را به سمت مسیر درست هدایت کنیم. حمایت مورد نیاز خود را برای درک حقوق و گزینه‌های خود دریافت کنید.",
+        "ar": "إذا كانت لديك أسئلة قانونية عامة أو تحتاج إلى استشارة بشأن القضايا القانونية الشائعة، يوفر لك هذا القسم الإرشادات حول كيفية الحصول على المساعدة. سواء كنت بحاجة إلى مساعدة بشأن العقود أو النزاعات أو القضايا القانونية الأخرى، نحن هنا لإرشادك إلى الطريق الصحيح. احصل على الدعم الذي تحتاجه لفهم حقوقك وخياراتك.",
+        "ku": "Heke hûn pirsên giştî yên yasal hene an jî pêdivî ye ku li ser meseleyên yasal yên giştî alîkarî bistînin, ev beş piştgiriya li ser çawa alîkariya wergirtinê pêşkêş dike. Ger hûn pêdivî ye bi peymanan, şerên an jî meseleyên yasal yên din re alîkariyê bixwazin, em li vir in da ku hûn di rêya rast de nîşan bikin. Piştgirîya ku hûn pêdivî ne ji bo fêmkirina maf û vebijarkên xwe bistînin.",
+        "so": "Haddii aad qabto su'aalo guud oo sharciga ah ama aad u baahan tahay talooyin ku saabsan arrimaha sharciga ee guud, qaybtaan waxay bixisaa hagitaan ku saabsan sida loo helo caawimaad. Haddii aad u baahan tahay caawimaad ku saabsan heshiisyada, khilaafaadka, ama arrimaha sharciga ee kale, waxaan halkan u joognaa inaan ku tusno jidka saxda ah. Hel taageerada aad u baahan tahay si aad u fahamto xuquuqdaada iyo ikhtiyaaradaada.",
+        "ka": "თუ გქონიათ საერთო სამართლებრივი კითხვები ან საჭიროა რჩევა საერთო სამართლებრივი საკითხების შესახებ, ეს განყოფილება გთავაზობთ დახმარების მიღების გზას. იქნება ეს ხელშეკრულებებთან, დავებთან თუ სხვა სამართლებრივ საკითხებთან დაკავშირებით დახმარება, ჩვენ აქ ვართ, რათა სწორ გზაზე დაგარჩევინოთ. მიიღეთ მხარდაჭერა, რომელიც დაგჭირდებათ თქვენი უფლებებისა და ვარიანტების გასაგებად.",
+        "sq": "Nëse keni pyetje të përgjithshme ligjore ose keni nevojë për këshilla për çështje të zakonshme ligjore, ky seksion ofron udhëzime për të marrë ndihmë. Pavarësisht nëse keni nevojë për ndihmë me kontrata, mosmarrëveshje, ose çështje të tjera ligjore, ne jemi këtu për t'ju udhëzuar në drejtimin e duhur. Merrni mbështetjen që ju nevojitet për të kuptuar të drejtat dhe opsionet tuaja."
+      },
+      "category": {
+        "title": "general",
+        "description": "generalDescription",
+        "icon": "help",
+        "color": "#3B82F6"
+      }
+    },
+    {
+      "id": 5,
       "type": "category",
       "title": {
         "en": "Asylum Procedures",
@@ -115,34 +197,66 @@
         "sq": "Procedurat e azilit"
       },
       "text": {
-        "en": "Get specialized legal assistance for asylum applications, interviews, and appeal processes to navigate complex immigration procedures.",
-        "de": "Erhalten Sie spezialisierte Rechtsberatung für Asylanträge, Anhörungen und Berufungsverfahren, um komplexe Einwanderungsverfahren zu bewältigen.",
-        "ru": "Получите специализированную юридическую помощь по заявлениям на убежище, собеседованиям и процессам обжалования для навигации по сложным иммиграционным процедурам.",
-        "ce": "Сложни миграционни процедурашца урхалла дан пана даларан арзаш, жоьпехь латар а къобалдаккхаран а процессашна белхан бакъонан гlо лело.",
-        "prs": "کمک حقوقی تخصصی برای درخواست‌های پناهندگی، مصاحبه‌ها و فرآیندهای تجدیدنظر برای هدایت در رویه‌های پیچیده مهاجرت دریافت کنید.",
-        "ps": "د پناه غوښتنلیکونو، مرکو او د استیناف پروسو لپاره ځانګړي حقوقي مرسته واخلئ ترڅو د پیچلو کډوالۍ پروسیجرونو څخه تیر شئ.",
-        "fa": "کمک حقوقی تخصصی برای درخواست‌های پناهندگی، مصاحبه‌ها و فرآیندهای تجدیدنظر برای هدایت در رویه‌های پیچیده مهاجرت دریافت کنید.",
-        "ar": "احصل على المساعدة القانونية المتخصصة لطلبات اللجوء والمقابلات وعمليات الاستئناف للتنقل في الإجراءات المعقدة للهجرة.",
-        "ku": "یارمەتی یاسایی تایبەت بۆ داواکاری پەناگیری، چاوپێکەوتن و پرۆسەی کۆتایی وەربگرە بۆ ڕێبەری کردنی پرۆسە ئاڵۆزەکانی کۆچکردن.",
-        "so": "Hel caawimaad sharci oo takhasussan oo loogu talagalay codsiyada magangalyo, wareysiyada, iyo hababka racfaanka si aad u hagto hababka aadka u adag ee socdaalka.",
-        "ka": "მიიღეთ სპეციალიზებული იურიდიული დახმარება თავშესაფრის განაცხადებისთვის, გასაუბრებებისთვის და აპელაციის პროცესებისთვის რთული იმიგრაციული პროცედურების ნავიგაციისთვის.",
-        "sq": "Merrni ndihmë të specializuar ligjore për aplikime azili, intervista dhe procese ankimimi për të naviguar procedurat e ndërlikuara të migrimit."
+        "en": "Asylum procedures involve specific legal support and advice for individuals seeking asylum in a new country. This section provides guidance on the asylum application process, rights, and steps needed to apply. Whether you're just starting or need help with your case, this is where you can find the relevant legal support.",
+        "de": "Asylverfahren beinhalten spezielle rechtliche Unterstützung und Beratung für Personen, die in einem neuen Land Asyl suchen. Dieser Abschnitt bietet eine Orientierung zum Asylverfahren, zu den Rechten und den Schritten, die für die Beantragung erforderlich sind. Ob Sie gerade erst anfangen oder Hilfe bei Ihrem Fall benötigen, hier finden Sie die passende Unterstützung.",
+        "ru": "Процедуры предоставления убежища включают в себя специфическую юридическую поддержку и консультации для людей, ищущих убежище в новой стране. Этот раздел предоставляет информацию о процессе подачи на убежище, правах и шагах, которые необходимо предпринять. Независимо от того, начинаете ли вы или вам нужна помощь по вашему делу, здесь вы найдете соответствующую юридическую помощь.",
+        "ce": "Панала дала ражккхо ларшин иргаш туьйцуш лаьцна укъонан. Хьо дикумр суьйр цхьоца ва гаштыг.",
+        "prs": "فرآیند پناهندگی شامل مشاوره حقوقی و حمایت خاص برای افرادی است که به دنبال پناهندگی در یک کشور جدید هستند. این بخش راهنمایی‌هایی درباره فرآیند درخواست پناهندگی، حقوق و مراحل لازم را برای درخواست فراهم می‌کند. چه شما تازه وارد هستید یا به کمک در پرونده‌تان نیاز دارید، اینجا می‌توانید پشتیبانی قانونی مرتبط پیدا کنید.",
+        "ps": "د پناه ورکولو پروسیجرونه د هغو کسانو لپاره ځانګړې حقوقي ملاتړ او مشوره لري چې په یوه نوي هیواد کې پناه غواړي. دا برخه د پناه غوښتنې پروسه، حقوق او اړین مراحل وړاندې کوي. که تاسو د پناه غوښتنې نوی یاست یا د خپلې قضیې لپاره مرستې ته اړتیا لرئ، دلته اړینه حقوقي مرسته موندلای شئ.",
+        "fa": "فرآیند پناهندگی شامل حمایت حقوقی و مشاوره خاص برای افرادی است که به دنبال پناهندگی در یک کشور جدید هستند. این بخش راهنمایی‌هایی در مورد فرآیند درخواست پناهندگی، حقوق و مراحل لازم را برای درخواست فراهم می‌کند. چه شما تازه وارد هستید یا به کمک در پرونده‌تان نیاز دارید، اینجا می‌توانید پشتیبانی قانونی مرتبط پیدا کنید.",
+        "ar": "إجراءات اللجوء تشمل الدعم القانوني والمشورة الخاصة للأشخاص الذين يسعون للحصول على اللجوء في دولة جديدة. يوفر هذا القسم إرشادات حول عملية تقديم اللجوء، الحقوق، والخطوات التي يجب اتباعها. سواء كنت قد بدأت للتو أو كنت بحاجة للمساعدة في قضيتك، هنا ستجد الدعم القانوني اللازم.",
+        "ku": "بەرنامەکان پەناگرتنە بە نوێ بە پشتیوانەی یاسایی تایبەتی و ڕاهێنانی ئەوانەی کە فەرمی پەناگرتن لە پارێزگاکە نوێ دەکەون. ئەم بەشە ڕاهێنانی بەشێویەکانی ڕووتن، ئەو پارەدانەی ئەنجام بەھێنەند و فەرمیەکان پەناگرتنە ئەنجام بەھێنە. بەرەوە ئەرکەیانەکان داگراندن یان پەیوەندیدانی زانیاری تێیدەبین ئێمە لە هەمان بەرەوەدیمە.",
+        "so": "Hababka magangalyo waxay bixiyaan taageero iyo talooyin gaar ah dadka raadinaya magangalyo dal cusub. Qaybtan waxay bixisaa tilmaamo ku saabsan geeddi-socodka, xuquuqda, iyo tallaabooyinka ay tahay in la qaado marka la codsanayo magangalyo. Haddii aad ku cusub tahay habraaca magangalyo ama aad u baahan tahay caawimaad kiiskaaga, halkan ka hel xogta aad u baahan tahay.",
+        "ka": "თავშესაფრის პროცედურები მოიცავს კონკრეტულ იურიდიულ მხარდაჭერასა და რჩევებს ახალ ქვეყანაში თავშესაფრის მაძიებელი პირებისთვის. ეს განყოფილება იძლევა რჩევებს თავშესაფრის მოთხოვნის პროცესის, უფლებებისა და განაცხადის შესატანად საჭირო ნაბიჯების შესახებ. მიუხედავად იმისა, ახლა იწყებთ თუ გჭირდებათ დახმარება თქვენს საქმეში, აქ შეგიძლიათ იპოვოთ შესაბამისი იურიდიული მხარდაჭერა.",
+        "sq": "Procedurat e azilit përfshijnë mbështetje dhe këshilla specifike ligjore për individët që kërkojnë azil në një vend të ri. Ky seksion ofron udhëzime mbi procesin e aplikimit për azil, të drejtat dhe hapat e nevojshëm për të aplikuar. Nëse sapo keni filluar apo keni nevojë për ndihmë me rastin tuaj, këtu mund të gjeni mbështetjen përkatëse ligjore."
       },
       "category": {
-        "title": {
-          "en": "Asylum Procedures",
-          "de": "Asylverfahren"
-        },
-        "description": {
-          "en": "Legal help for asylum applications",
-          "de": "Rechtshilfe für Asylanträge"
-        },
+        "title": "asylumProcedures",
+        "description": "asylumProceduresDescription",
         "icon": "gavel",
         "color": "#3B82F6"
       }
     },
     {
-      "id": 4,
+      "id": 6,
+      "type": "category",
+      "title": {
+        "en": "Appeals",
+        "de": "Berufungen",
+        "ru": "Апелляции",
+        "ce": "Къобалдаккхар",
+        "prs": "درخواست‌های تجدیدنظر",
+        "ps": "استیناف",
+        "fa": "درخواست‌های تجدیدنظر",
+        "ar": "الطعون",
+        "ku": "داواکاری",
+        "so": "Racfaanada",
+        "ka": "აპელაციები",
+        "sq": "Apelet"
+      },
+      "text": {
+        "en": "Lorem Ipsum",
+        "de": "Lorem Ipsum",
+        "ru": "Lorem Ipsum",
+        "ce": "Lorem Ipsum",
+        "prs": "Lorem Ipsum",
+        "ps": "Lorem Ipsum",
+        "fa": "Lorem Ipsum",
+        "ar": "Lorem Ipsum",
+        "ku": "Lorem Ipsum",
+        "so": "Lorem Ipsum",
+        "ka": "Lorem Ipsum",
+        "sq": "Lorem Ipsum"
+      },
+      "category": {
+        "title": "appeals",
+        "description": "appealsDescription",
+        "icon": "gavel",
+        "color": "#3B82F6"
+      }
+    },
+    {
+      "id": 7,
       "type": "category",
       "title": {
         "en": "Residence Permits",
@@ -173,20 +287,14 @@
         "sq": "Gjeni ndihmë ligjore për aplikime lejesh qëndrimi, rinovime dhe dokumentacion të lidhur për të siguruar statusin tuaj ligjor."
       },
       "category": {
-        "title": {
-          "en": "Residence Permits",
-          "de": "Aufenthaltstitel"
-        },
-        "description": {
-          "en": "Permits and residency status",
-          "de": "Genehmigungen und Aufenthaltsstatus"
-        },
+        "title": "residencePermits",
+        "description": "residencePermitsDescription",
         "icon": "assignment",
         "color": "#10B981"
       }
     },
     {
-      "id": 5,
+      "id": 8,
       "type": "category",
       "title": {
         "en": "Family Reunification",
@@ -217,80 +325,264 @@
         "sq": "Merrni mbështetje për të sjellë anëtarët e familjes t'ju bashkohen përmes proceseve ligjore të ribashkimit dhe navigoni ligjin e ndërlikuar të migrimit familjar."
       },
       "category": {
-        "title": {
-          "en": "Family Reunification",
-          "de": "Familienzusammenführung"
-        },
-        "description": {
-          "en": "Bringing family together",
-          "de": "Familie zusammenführen"
-        },
+        "title": "familyReunification",
+        "description": "familyReunificationDescription",
         "icon": "family-restroom",
         "color": "#8B5CF6"
       }
     },
     {
-      "id": 6,
-      "type": "feature",
+      "id": 9,
+      "type": "category",
       "title": {
-        "en": "Virtual Assistant",
-        "de": "Virtueller Assistent",
-        "ru": "Виртуальный помощник",
-        "ce": "Виртуала кхераме",
-        "prs": "دستیار مجازی",
-        "ps": "مجازي مرستیال",
-        "fa": "دستیار مجازی",
-        "ar": "المساعد الافتراضي",
-        "ku": "یاریدەدەری خەیاڵی",
-        "so": "Caawiye Farsamaysan",
-        "ka": "ვირტუალური ასისტენტი",
-        "sq": "Asistenti virtual"
+        "en": "Citizenship",
+        "de": "Staatsbürgerschaft",
+        "ru": "Гражданство",
+        "ce": "Пачахьалкхин тlе даккхар",
+        "prs": "تابعیت",
+        "ps": "تابعیت",
+        "fa": "تابعیت",
+        "ar": "الجنسية",
+        "ku": "هاوڵاتیتی",
+        "so": "Dhalashada",
+        "ka": "მოქალაქეობა",
+        "sq": "Shtetësia"
       },
       "text": {
-        "en": "Get instant legal guidance through our AI-powered virtual assistant for common legal questions and initial advice.",
-        "de": "Erhalten Sie sofortige Rechtsberatung durch unseren KI-gestützten virtuellen Assistenten für häufige Rechtsfragen und erste Beratung.",
-        "ru": "Получите мгновенную юридическую консультацию через нашего виртуального помощника на базе ИИ для общих правовых вопросов и первоначальной консультации.",
-        "ce": "Йаьлла дуьйцу бакъонан хаттарашна а хьалхара консультацийна а шуьга виртуала кхерамца йоккхунца бакъонан белхо лело.",
-        "prs": "راهنمایی فوری حقوقی را از طریق دستیار مجازی مبتنی بر هوش مصنوعی ما برای سوالات حقوقی متداول و مشاوره اولیه دریافت کنید.",
-        "ps": "زموږ د AI پر بنسټ مجازي مرستیال له لارې د عامو حقوقي پوښتنو او لومړنیو مشورو لپاره سمدستي حقوقي لارښوونه واخلئ.",
-        "fa": "راهنمایی فوری حقوقی را از طریق دستیار مجازی مبتنی بر هوش مصنوعی ما برای سوالات حقوقی متداول و مشاوره اولیه دریافت کنید.",
-        "ar": "احصل على التوجيه القانوني الفوري من خلال مساعدنا الافتراضي المدعوم بالذكاء الاصطناعي للأسئلة القانونية الشائعة والمشورة الأولية.",
-        "ku": "ڕاستەوخۆ ڕێنمایی یاسایی لە ڕێگەی یاریدەدەری مجازیمানەوە کە بە AI پشتگیری دەکرێت بۆ پرسیارە یاسایی باوەکان و ڕاوێژی سەرەتایی وەربگرە.",
-        "so": "Hel hagitaanka sharciga degdegga ah iyada oo loo marayo caawiyahayaga farsamaysan ee AI-ku taageerayo su'aalaha sharciga caadiga ah iyo la-talinta bilowga ah.",
-        "ka": "მიიღეთ დაუყოვნებელი იურიდიული მითითებები ჩვენი AI-ით მოძრავი ვირტუალური ასისტენტის მეშვეობით ზოგადი იურიდიული კითხვებისთვის და საწყისი რჩევებისთვის.",
-        "sq": "Merrni udhëzime të menjëhershme ligjore përmes asistentit tonë virtual të mbështetur nga AI për pyetje të zakonshme ligjore dhe këshilla fillestare."
+        "en": "Lorem Ipsum",
+        "de": "Lorem Ipsum",
+        "ru": "Lorem Ipsum",
+        "ce": "Lorem Ipsum",
+        "prs":"Lorem Ipsum",
+        "ps": "Lorem Ipsum",
+        "fa": "Lorem Ipsum",
+        "ar": "Lorem Ipsum",
+        "ku": "Lorem Ipsum",
+        "so": "Lorem Ipsum",
+        "ka": "Lorem Ipsum",
+        "sq": "Lorem Ipsum"
+      },
+      "category": {
+        "title": "citizenship",
+        "description": "citizenshipDescription",
+        "icon": "family-restroom",
+        "color": "#8B5CF6"
       }
     },
     {
-      "id": 7,
-      "type": "feature",
+      "id": 10,
+      "type": "category",
+      "title": {
+        "en": "Detention",
+        "de": "Haft",
+        "ru": "Задержание",
+        "ce": "Даьхна долу хlал",
+        "prs": "بازداشت",
+        "ps": "توقیف",
+        "fa": "بازداشت",
+        "ar": "الاحتجاز",
+        "ku": "گرتن",
+        "so": "Xidhashada",
+        "ka": "დაკავება",
+        "sq": "Paraburgimi"
+      },
+      "text": {
+        "en": "Lorem Ipsum",
+        "de": "Lorem Ipsum",
+        "ru": "Lorem Ipsum",
+        "ce": "Lorem Ipsum",
+        "prs":"Lorem Ipsum",
+        "ps": "Lorem Ipsum",
+        "fa": "Lorem Ipsum",
+        "ar": "Lorem Ipsum",
+        "ku": "Lorem Ipsum",
+        "so": "Lorem Ipsum",
+        "ka": "Lorem Ipsum",
+        "sq": "Lorem Ipsum"
+      },
+      "category": {
+        "title": "detention",
+        "description": "detentionDescription",
+        "icon": "family-restroom",
+        "color": "#8B5CF6"
+      }
+    },
+    {
+      "id": 11,
+      "type": "category",
+      "title": {
+        "en": "Discrimination",
+        "de": "Diskriminierung",
+        "ru": "Дискриминация",
+        "ce": "Башхо доцуш дуьхьал",
+        "prs": "تبعیض",
+        "ps": "تبعیض",
+        "fa": "تبعیض",
+        "ar": "التمييز",
+        "ku": "جیاکاری",
+        "so": "Takooriga",
+        "ka": "დისკრიმინაცია",
+        "sq": "Diskriminimi"
+      },
+      "text": {
+        "en": "Lorem Ipsum",
+        "de": "Lorem Ipsum",
+        "ru": "Lorem Ipsum",
+        "ce": "Lorem Ipsum",
+        "prs":"Lorem Ipsum",
+        "ps": "Lorem Ipsum",
+        "fa": "Lorem Ipsum",
+        "ar": "Lorem Ipsum",
+        "ku": "Lorem Ipsum",
+        "so": "Lorem Ipsum",
+        "ka": "Lorem Ipsum",
+        "sq": "Lorem Ipsum"
+      },
+      "category": {
+        "title": "discrimination",
+        "description": "discriminationDescription",
+        "icon": "family-restroom",
+        "color": "#8B5CF6"
+      }
+    },
+    {
+      "id": 12,
+      "type": "category",
+      "title": {
+        "en": "Work Rights",
+        "de": "Arbeitsrechte",
+        "ru": "Трудовые права",
+        "ce": "Болхан бакъо",
+        "prs": "حقوق کار",
+        "ps": "د کار حقونه",
+        "fa": "حقوق کار",
+        "ar": "حقوق العمل",
+        "ku": "مافی کار",
+        "so": "Xuquuqda shaqada",
+        "ka": "სამუშაო უფლებები",
+        "sq": "Të drejtat e punës"
+      },
+      "text": {
+        "en": "Lorem Ipsum",
+        "de": "Lorem Ipsum",
+        "ru": "Lorem Ipsum",
+        "ce": "Lorem Ipsum",
+        "prs":"Lorem Ipsum",
+        "ps": "Lorem Ipsum",
+        "fa": "Lorem Ipsum",
+        "ar": "Lorem Ipsum",
+        "ku": "Lorem Ipsum",
+        "so": "Lorem Ipsum",
+        "ka": "Lorem Ipsum",
+        "sq": "Lorem Ipsum"
+      },
+      "category": {
+        "title": "workRights",
+        "description": "workRightsDescription",
+        "icon": "family-restroom",
+        "color": "#8B5CF6"
+      }
+    },
+    {
+      "id": 13,
+      "type": "category",
+      "title": {
+        "en": "Legal Representation",
+        "de": "Rechtsvertretung",
+        "ru": "Правовое представительство",
+        "ce": "Бакъонан вакил",
+        "prs": "نمایندگی حقوقی",
+        "ps": "حقوقي استازیتوب",
+        "fa": "نمایندگی حقوقی",
+        "ar": "التمثيل القانوني",
+        "ku": "نوێنەرایەتی یاسایی",
+        "so": "Matalaabashada sharciga",
+        "ka": "იურიდიული წარმომადგენლობა",
+        "sq": "Përfaqësimi ligjor"
+      },
+      "text": {
+        "en": "Lorem Ipsum",
+        "de": "Lorem Ipsum",
+        "ru": "Lorem Ipsum",
+        "ce": "Lorem Ipsum",
+        "prs":"Lorem Ipsum",
+        "ps": "Lorem Ipsum",
+        "fa": "Lorem Ipsum",
+        "ar": "Lorem Ipsum",
+        "ku": "Lorem Ipsum",
+        "so": "Lorem Ipsum",
+        "ka": "Lorem Ipsum",
+        "sq": "Lorem Ipsum"
+      },
+      "category": {
+        "title": "legalRepresentation",
+        "description": "legalRepresentationDescription",
+        "icon": "family-restroom",
+        "color": "#8B5CF6"
+      }
+    },
+    {
+      "type": "language",
+      "id": 14,
       "title": {
         "en": "Language Selection",
         "de": "Sprachauswahl",
         "ru": "Выбор языка",
-        "ce": "Мотт хержа",
+        "ce": "Мотт харжар",
         "prs": "انتخاب زبان",
-        "ps": "د ژبې غوره کول",
+        "ps": "د ژبې ټاکنه",
         "fa": "انتخاب زبان",
         "ar": "اختيار اللغة",
         "ku": "هەڵبژاردنی زمان",
-        "so": "Doorashada Luqadda",
+        "so": "Doorashada luqadda",
         "ka": "ენის არჩევა",
         "sq": "Zgjedhja e gjuhës"
       },
       "text": {
-        "en": "Access legal information in your preferred language to ensure you fully understand your rights and options.",
-        "de": "Greifen Sie auf Rechtsinformationen in Ihrer bevorzugten Sprache zu, um sicherzustellen, dass Sie Ihre Rechte und Optionen vollständig verstehen.",
-        "ru": "Получите доступ к правовой информации на вашем предпочитаемом языке, чтобы полностью понимать ваши права и возможности.",
-        "ce": "Хьан бакъо а йукъарчу вариантал а дика хууш долуш хьуна довзийтира меттахь бакъонан хаам лело.",
-        "prs": "به اطلاعات حقوقی به زبان مورد علاقه‌تان دسترسی پیدا کنید تا اطمینان حاصل کنید که حقوق و گزینه‌هایتان را به طور کامل درک می‌کنید.",
-        "ps": "خپلې غوره ژبې ته د حقوقي معلوماتو لاسرسی ومومئ ترڅو ډاډ ترلاسه کړئ چې تاسو خپل حقونه او اختیارونه په بشپړ ډول پوهیږئ.",
-        "fa": "به اطلاعات حقوقی به زبان مورد علاقه‌تان دسترسی پیدا کنید تا اطمینان حاصل کنید که حقوق و گزینه‌هایتان را به طور کامل درک می‌کنید.",
-        "ar": "الوصول إلى المعلومات القانونية بلغتك المفضلة للتأكد من فهمك الكامل لحقوقك وخياراتك.",
-        "ku": "دەستگەیشتن بە زانیاری یاسایی بە زمانی دڵخوازت بۆ دڵنیابوون لەوەی کە بە تەواوی تێگەیشتوویت لە مافەکانت و هەڵبژاردەکانت.",
-        "so": "Hel macluumaadka sharciga luqaddaada door bidka ah si aad u hubiso inaad si buuxda u fahamto xuquuqdaada iyo doorashadaada.",
-        "ka": "მიიღეთ წვდომა იურიდიულ ინფორმაციაზე თქვენს სასურველ ენაზე, რომ დარწმუნდეთ, რომ სრულად ესმით თქვენი უფლებები და ვარიანტები.",
-        "sq": "Aksesoni informacionin ligjor në gjuhën tuaj të preferuar për t'u siguruar që kuptoni plotësisht të drejtat dhe opsionet tuaja."
+        "en": "Switch between 12 different languages anytime. The app supports German, English, Russian, Chechen, Dari, Pashto, Farsi, Arabic, Kurdish, Somali, Georgian, and Albanian.",
+        "de": "Wechseln Sie jederzeit zwischen 12 verschiedenen Sprachen. Die App unterstützt Deutsch, Englisch, Russisch, Tschetschenisch, Dari, Paschtu, Farsi, Arabisch, Kurdisch, Somali, Georgisch und Albanisch.",
+        "ru": "Переключайтесь между 12 различными языками в любое время. Приложение поддерживает немецкий, английский, русский, чеченский, дари, пушту, фарси, арабский, курдский, сомалийский, грузинский и албанский.",
+        "ce": "12 башха меттанаш юкъе мукъамехь хийца йиш ю. Приложенин немцойн, ингалсан, оьрсийн, нохчийн, дари, пашто, фарси, lарабийн, курдийн, сомалийн, гуржийн, албанийн меттанаш ловш ю.",
+        "prs": "در هر زمان بین 12 زبان مختلف تغییر دهید. این برنامه از آلمانی، انگلیسی، روسی، چچنی، دری، پشتو، فارسی، عربی، کردی، سومالیایی، گرجی و آلبانیایی پشتیبانی می‌کند.",
+        "ps": "په هر وخت کې د 12 مختلفو ژبو تر منځ بدلون وکړئ. دا اپلیکیشن د آلماني، انګلیسي، روسي، چیچني، دري، پښتو، فارسي، عربي، کردي، سومالي، جورجیایي، او البانیایي ملاتړ کوي.",
+        "fa": "در هر زمان بین 12 زبان مختلف تغییر دهید. این برنامه از آلمانی، انگلیسی، روسی، چچنی، دری، پشتو، فارسی، عربی، کردی، سومالیایی، گرجی و آلبانیایی پشتیبانی می‌کند.",
+        "ar": "تبديل بين 12 لغة مختلفة في أي وقت. يدعم التطبيق الألمانية والإنجليزية والروسية والشيشانية والداري والبشتو والفارسية والعربية والكردية والصومالية والجورجية والألبانية.",
+        "ku": "لە هەر کاتێکدا لە نێوان 12 زمانی جۆراوجۆردا بگۆڕە. ئەم ئەپە پشتگیری ئەڵمانی، ئینگلیزی، ڕووسی، چیچێنی، دەری، پەشتوو، فارسی، عەرەبی، کوردی، سۆمالی، گورجی و ئەڵبانی دەکات.",
+        "so": "Ku bedel 12 luqadood oo kala duwan marwalba ah. Appku wuxuu taageeraa Jarmal, Ingiriis, Ruush, Chechen, Dari, Pashto, Farsi, Carabi, Kurdish, Soomaali, Georgian, iyo Albanian.",
+        "ka": "ნებისმიერ დროს გადართეთ 12 სხვადასხვა ენას შორის. აპლიკაცია მხარს უჭერს გერმანულს, ინგლისურს, რუსულს, ჩეჩნურს, დარის, პაშტოს, ფარსს, არაბულს, ქურთულს, სომალიურს, ქართულს და ალბანურს.",
+        "sq": "Ndryshoni midis 12 gjuhëve të ndryshme në çdo kohë. Aplikacioni mbështet gjermanishten, anglishten, rusishten, çeçenishten, dari, pashto, farsishten, arabishten, kurdishten, somalisht, gjeorgjishten dhe shqipen."
+      }
+    },
+    {
+      "id": 15,
+      "type": "icons",
+      "title": {
+        "de": "Brauchen Sie mehr Hilfe?",
+        "en": "Need More Help?",
+        "ru": "Нужна дополнительная помощь?",
+        "ce": "Кхин гӏо хьуна?",
+        "prs": "به کمک بیشتر نیاز دارید؟",
+        "ps": "نورو مرستو ته اړتیا لرئ؟",
+        "fa": "به کمک بیشتر نیاز دارید؟",
+        "ar": "هل تحتاج المزيد من المساعدة؟",
+        "ku": "پێویستیت بە یارمەتی زیاتر هەیە؟",
+        "so": "Ma u baahan tahay caawimo dheeraad ah?",
+        "ka": "გჭირდებათ მეტი დახმარება?",
+        "sq": "Keni nevojë për më shumë ndihmë?"
+      },
+      "text": {
+        "de": "Sie können jederzeit das Hilfe/Tutorial-Symbol auf jeder Seite drücken, um mehr Informationen über die Funktionen dieser Seite und deren effektive Nutzung zu erhalten.",
+        "en": "You can always press the help/tutorial icon on any page to get more information about that page's features and how to use them effectively.",
+        "ru": "Вы всегда можете нажать на значок справки/обучения на любой странице, чтобы получить больше информации о функциях этой страницы.",
+        "ce": "Хьо даиман латта тайна гӏо/дешаран тамгӏа могӏа агӏона хьажа.",
+        "prs": "شما همیشه می‌توانید روی نماد کمک/آموزش در هر صفحه کلیک کنید.",
+        "ps": "تاسو تل کولی شئ د مرستې/درسي نښې په هر پاڼه کې کلیک وکړئ.",
+        "fa": "شما همیشه می‌توانید روی نماد کمک/آموزش در هر صفحه کلیک کنید.",
+        "ar": "يمكنك دائماً الضغط على رمز المساعدة/التعليم في أي صفحة للحصول على مزيد من المعلومات.",
+        "ku": "تۆ هەمیشە دەتوانی کلیک لە نیشانی یارمەتی/فێرکردن بکەیت لە هەر پەڕەیەکدا.",
+        "so": "Waxaad had iyo jeer riiri kartaa calaamadda caawinta/tababarka bogga kasta.",
+        "ka": "ყოველთვის შეგიძლიათ დააწკაპუნოთ დახმარების/ტუტორიალის ნიშანზე ნებისმიერ გვერდზე.",
+        "sq": "Gjithmonë mund të shtypni ikonën e ndihmës/tutorialit në çdo faqe për të marrë më shumë informacion."
       }
     }
   ]
