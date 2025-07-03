@@ -1,6 +1,17 @@
 
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Modal, ScrollView, useWindowDimensions } from 'react-native';
+import { 
+  StyleSheet, 
+  Text, 
+  View, 
+  TouchableOpacity, 
+  Modal, 
+  ScrollView, 
+  useWindowDimensions,
+  PanGestureHandler,
+  GestureHandlerRootView,
+  State
+} from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import TutorialSlideContent from './TutorialSlideContent';
 import TutorialIndicators from './TutorialIndicators';
@@ -11,7 +22,7 @@ interface TutorialModalProps {
   visible: boolean;
   onClose: () => void;
   languageCode: string;
-  tutorialData?: string; // 'home', 'index', 'ask', 'ask-general', 'ask-emergency', or 'ask-legal-support'
+  tutorialData?: string;
   onVirtualAssistant?: () => void;
 }
 
@@ -32,15 +43,15 @@ const TutorialModal: React.FC<TutorialModalProps> = ({
       case 'index':
         return 6;
       case 'ask':
-        return 11; // 1 welcome + 8 categories + 1 virtual assistant + 1 language selection
+        return 11;
       case 'ask-general':
-        return 7; // 1 welcome + 4 categories + 1 FAQ + 1 virtual assistant + 1 language selection
+        return 7;
       case 'ask-emergency':
-        return 11; // 1 welcome + 8 categories + 1 virtual assistant + 1 language selection
+        return 11;
       case 'ask-legal-support':
-        return 8; // 1 welcome + 5 categories + 1 virtual assistant + 1 language selection
+        return 8;
       default:
-        return 7; // home tutorial
+        return 7;
     }
   };
 
@@ -68,6 +79,64 @@ const TutorialModal: React.FC<TutorialModalProps> = ({
     console.log('Play audio for current slide:', currentSlide);
   };
 
+  const onSwipeGesture = (event: any) => {
+    if (!isWideScreen) {
+      const { translationX, state } = event.nativeEvent;
+      
+      if (state === State.END) {
+        if (translationX > 50 && currentSlide > 0) {
+          // Swipe right - go to previous slide
+          prevSlide();
+        } else if (translationX < -50 && currentSlide < totalSlides - 1) {
+          // Swipe left - go to next slide
+          nextSlide();
+        }
+      }
+    }
+  };
+
+  const modalContent = (
+    <View style={[styles.modalContent, isWideScreen && styles.modalContentWide]}>
+      {/* Header */}
+      <View style={styles.modalHeader}>
+        <Text style={styles.modalTitle}>
+          {getGlobalText('tutorial', languageCode)}
+        </Text>
+        <TouchableOpacity onPress={handleClose}>
+          <MaterialIcons name="close" size={24} color="#333" />
+        </TouchableOpacity>
+      </View>
+
+      {/* Slide Indicators */}
+      <TutorialIndicators 
+        totalSlides={totalSlides}
+        currentSlide={currentSlide}
+      />
+
+      {/* Slide Content */}
+      <ScrollView style={styles.slideContainer} showsVerticalScrollIndicator={false}>
+        <TutorialSlideContent 
+          currentSlide={currentSlide}
+          languageCode={languageCode}
+          isWideScreen={isWideScreen}
+          tutorialData={tutorialData}
+          onVirtualAssistant={onVirtualAssistant}
+        />
+      </ScrollView>
+
+      {/* Navigation */}
+      <TutorialNavigation 
+        currentSlide={currentSlide}
+        totalSlides={totalSlides}
+        onPrevious={prevSlide}
+        onNext={nextSlide}
+        onPlayAudio={playAudio}
+        onDone={handleClose}
+        languageCode={languageCode}
+      />
+    </View>
+  );
+
   return (
     <Modal
       visible={visible}
@@ -76,45 +145,15 @@ const TutorialModal: React.FC<TutorialModalProps> = ({
       onRequestClose={handleClose}
     >
       <View style={styles.modalOverlay}>
-        <View style={[styles.modalContent, isWideScreen && styles.modalContentWide]}>
-          {/* Header */}
-          <View style={styles.modalHeader}>
-            <Text style={styles.modalTitle}>
-              {getGlobalText('tutorial', languageCode)}
-            </Text>
-            <TouchableOpacity onPress={handleClose}>
-              <MaterialIcons name="close" size={24} color="#333" />
-            </TouchableOpacity>
-          </View>
-
-          {/* Slide Indicators */}
-          <TutorialIndicators 
-            totalSlides={totalSlides}
-            currentSlide={currentSlide}
-          />
-
-          {/* Slide Content */}
-          <ScrollView style={styles.slideContainer} showsVerticalScrollIndicator={false}>
-            <TutorialSlideContent 
-              currentSlide={currentSlide}
-              languageCode={languageCode}
-              isWideScreen={isWideScreen}
-              tutorialData={tutorialData}
-              onVirtualAssistant={onVirtualAssistant}
-            />
-          </ScrollView>
-
-          {/* Navigation */}
-          <TutorialNavigation 
-            currentSlide={currentSlide}
-            totalSlides={totalSlides}
-            onPrevious={prevSlide}
-            onNext={nextSlide}
-            onPlayAudio={playAudio}
-            onDone={handleClose}
-            languageCode={languageCode}
-          />
-        </View>
+        {isWideScreen ? (
+          modalContent
+        ) : (
+          <GestureHandlerRootView style={styles.gestureContainer}>
+            <PanGestureHandler onGestureEvent={onSwipeGesture}>
+              {modalContent}
+            </PanGestureHandler>
+          </GestureHandlerRootView>
+        )}
       </View>
     </Modal>
   );
@@ -126,6 +165,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  gestureContainer: {
+    width: '95%',
+    height: '85%',
   },
   modalContent: {
     width: '95%',

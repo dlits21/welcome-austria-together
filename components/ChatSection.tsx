@@ -1,4 +1,5 @@
-import React, { useRef, useState } from 'react';
+
+import React, { useRef, useState, useEffect } from 'react';
 import {
   View,
   ScrollView,
@@ -60,6 +61,13 @@ const ChatSection: React.FC<ChatSectionProps> = ({
   const [fileUri, setFileUri] = useState<string | null>(null);
   const [fileType, setFileType] = useState<'image' | 'document' | null>(null);
 
+  // Auto-scroll to bottom when new messages are added
+  useEffect(() => {
+    if (scrollViewRef.current) {
+      scrollViewRef.current.scrollToEnd({ animated: true });
+    }
+  }, [messages]);
+
   const handleImagePicked = (uri: string) => {
     setFileUri(uri);
     setFileType('image');
@@ -74,7 +82,7 @@ const ChatSection: React.FC<ChatSectionProps> = ({
     if (fileUri && fileType) {
       const newMessage: Message = {
         id: Date.now().toString(),
-        text: fileType === 'image' ? 'Image attached' : 'Document attached',
+        text: inputText.trim() || (fileType === 'image' ? 'Image attached' : 'Document attached'),
         isUser: true,
         timestamp: new Date(),
         fileUri,
@@ -83,6 +91,7 @@ const ChatSection: React.FC<ChatSectionProps> = ({
       onSendMessage(newMessage);
       setFileUri(null);
       setFileType(null);
+      onInputChange('');
     } else if (inputText.trim()) {
       onSendMessage();
     }
@@ -145,21 +154,50 @@ const ChatSection: React.FC<ChatSectionProps> = ({
           <MaterialIcons name="more-horiz" size={24} color="#666" />
         </TouchableOpacity>
 
-        <TextInput
-          ref={textInputRef}
-          style={styles.textInput}
-          value={inputText}
-          onChangeText={onInputChange}
-          placeholder={
-            languageCode === 'de' ? 'Schreibe eine Nachricht...' : 'Type a message...'
-          }
-          maxLength={500}
-          returnKeyType="send"
-          onSubmitEditing={handleSendMessage}
-          blurOnSubmit={false}
-          autoCorrect={false}
-          autoCapitalize="sentences"
-        />
+        <View style={styles.textInputContainer}>
+          {fileUri && (
+            <View style={styles.attachmentPreview}>
+              <View style={styles.previewHeader}>
+                <TouchableOpacity onPress={clearAttachment} style={styles.removeButton}>
+                  <MaterialIcons name="close" size={16} color="#666" />
+                </TouchableOpacity>
+              </View>
+              
+              {fileType === 'image' ? (
+                <Image
+                  source={{ uri: fileUri }}
+                  style={styles.previewImage}
+                  resizeMode="cover"
+                />
+              ) : (
+                <View style={styles.documentPreviewContainer}>
+                  <MaterialIcons name="insert-drive-file" size={24} color="#666" />
+                  <Text style={styles.documentPreview}>Document</Text>
+                </View>
+              )}
+            </View>
+          )}
+          
+          <TextInput
+            ref={textInputRef}
+            style={[
+              styles.textInput,
+              fileUri && styles.textInputWithAttachment
+            ]}
+            value={inputText}
+            onChangeText={onInputChange}
+            placeholder={
+              languageCode === 'de' ? 'Schreibe eine Nachricht...' : 'Type a message...'
+            }
+            maxLength={500}
+            returnKeyType="send"
+            onSubmitEditing={handleSendMessage}
+            blurOnSubmit={false}
+            autoCorrect={false}
+            autoCapitalize="sentences"
+            multiline
+          />
+        </View>
         
         <TouchableOpacity
           style={[
@@ -195,30 +233,6 @@ const ChatSection: React.FC<ChatSectionProps> = ({
         {messages.map((message) => (
           <ChatBubble key={message.id} message={message} avatar={avatar} />
         ))}
-
-        {fileUri && (
-          <View style={styles.previewContainer}>
-            <View style={styles.previewHeader}>
-              <Text style={styles.previewText}>Preview:</Text>
-              <TouchableOpacity onPress={clearAttachment} style={styles.removeButton}>
-                <MaterialIcons name="close" size={16} color="#666" />
-              </TouchableOpacity>
-            </View>
-            
-            {fileType === 'image' ? (
-              <Image
-                source={{ uri: fileUri }}
-                style={styles.previewImage}
-                resizeMode="cover"
-              />
-            ) : (
-              <View style={styles.documentPreviewContainer}>
-                <MaterialIcons name="insert-drive-file" size={32} color="#666" />
-                <Text style={styles.documentPreview}>Document attached</Text>
-              </View>
-            )}
-          </View>
-        )}
       </ScrollView>
 
       {!isWideScreen && showModeToggle && onModeChange && (
@@ -275,8 +289,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginRight: 8,
   },
-  textInput: {
+  textInputContainer: {
     flex: 1,
+    marginRight: 8,
+  },
+  textInput: {
     borderWidth: 1,
     borderColor: '#e0e0e0',
     borderRadius: 20,
@@ -286,36 +303,24 @@ const styles = StyleSheet.create({
     fontSize: 16,
     backgroundColor: '#f9f9f9',
   },
-  sendButton: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    backgroundColor: '#3B82F6',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginLeft: 8,
+  textInputWithAttachment: {
+    borderTopLeftRadius: 0,
+    borderTopRightRadius: 0,
+    borderTopWidth: 0,
   },
-  sendButtonDisabled: {
-    backgroundColor: '#f0f0f0',
-  },
-  previewContainer: {
-    padding: 12,
+  attachmentPreview: {
     backgroundColor: '#f8fafc',
-    borderRadius: 12,
-    marginBottom: 12,
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
     borderWidth: 1,
-    borderColor: '#e5e7eb',
+    borderBottomWidth: 0,
+    borderColor: '#e0e0e0',
+    padding: 12,
   },
   previewHeader: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    justifyContent: 'flex-end',
     marginBottom: 8,
-  },
-  previewText: {
-    fontSize: 14,
-    fontWeight: '600',
-    color: '#374151',
   },
   removeButton: {
     padding: 4,
@@ -323,19 +328,32 @@ const styles = StyleSheet.create({
     backgroundColor: '#f3f4f6',
   },
   previewImage: {
-    width: 120,
-    height: 120,
+    width: 80,
+    height: 80,
     borderRadius: 8,
     alignSelf: 'center',
   },
   documentPreviewContainer: {
+    flexDirection: 'row',
     alignItems: 'center',
-    padding: 16,
+    justifyContent: 'center',
+    padding: 8,
   },
   documentPreview: {
     fontSize: 14,
     color: '#6b7280',
-    marginTop: 8,
+    marginLeft: 8,
+  },
+  sendButton: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: '#3B82F6',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  sendButtonDisabled: {
+    backgroundColor: '#f0f0f0',
   },
   voiceInputContainer: {
     flexDirection: 'row',
