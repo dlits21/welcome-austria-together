@@ -1,4 +1,3 @@
-
 {
   "slides": [
     {
@@ -229,7 +228,7 @@
           "de": "Lernen",
           "en": "Learn",
           "ru": "Учиться",
-          "ce": "Дешар",
+          "ce": "Дешار",
           "prs": "یادگیری",
           "ps": "زده کړه",
           "fa": "یادگیری",
@@ -351,6 +350,38 @@
         "so": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "ka": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "sq": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      }
+    },
+    {
+      "id": 7,
+      "type": "icons",
+      "title": {
+        "de": "Brauchen Sie mehr Hilfe?",
+        "en": "Need More Help?",
+        "ru": "Нужна дополнительная помощь?",
+        "ce": "Кхин гӏо хьуна?",
+        "prs": "به کمک بیشتر نیاز دارید؟",
+        "ps": "نورو مرستو ته اړتیا لرئ؟",
+        "fa": "به کمک بیشتر نیاز دارید؟",
+        "ar": "هل تحتاج المزيد من المساعدة؟",
+        "ku": "پێویستیت بە یارمەتی زیاتر هەیە؟",
+        "so": "Ma u baahan tahay caawimo dheeraad ah?",
+        "ka": "გჭირდებათ მეტი დახმარება?",
+        "sq": "Keni nevojë për më shumë ndihmë?"
+      },
+      "text": {
+        "de": "Sie können jederzeit das Hilfe/Tutorial-Symbol auf jeder Seite drücken, um mehr Informationen über die Funktionen dieser Seite und deren effektive Nutzung zu erhalten.",
+        "en": "You can always press the help/tutorial icon on any page to get more information about that page's features and how to use them effectively.",
+        "ru": "Вы всегда можете нажать на значок справки/обучения на любой странице, чтобы получить больше информации о функциях этой страницы.",
+        "ce": "Хьо даиман латта тайна гӏо/дешаран тамгӏа могӏа агӏона хьажа.",
+        "prs": "شما همیشه می‌توانید روی نماد کمک/آموزش در هر صفحه کلیک کنید.",
+        "ps": "تاسو تل کولی شئ د مرستې/درسي نښې په هر پاڼه کې کلیک وکړئ.",
+        "fa": "شما همیشه می‌توانید روی نماد کمک/آموزش در هر صفحه کلیک کنید.",
+        "ar": "يمكنك دائماً الضغط على رمز المساعدة/التعليم في أي صفحة للحصول على مزيد من المعلومات.",
+        "ku": "تۆ هەمیشە دەتوانی کلیک لە نیشانی یارمەتی/فێرکردن بکەیت لە هەر پەڕەیەکدا.",
+        "so": "Waxaad had iyo jeer riiri kartaa calaamadda caawinta/tababarka bogga kasta.",
+        "ka": "ყოველთვის შეგიძლიათ დააწკაپუნოთ დახმარების/ტუტორიალის ნიშანზე ნებისმიერ გვერდზე.",
+        "sq": "Gjithmonë mund të shtypni ikonën e ndihmës/tutorialit në çdo faqe për të marrë më shumë informacion."
       }
     }
   ]
