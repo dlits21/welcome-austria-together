@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { getCharacterImage } from '../utils/assistantUtils';
 
@@ -9,14 +8,18 @@ interface Message {
   text: string;
   isUser: boolean;
   timestamp: Date;
+  fileUri?: string;
+  fileType?: 'image' | 'document';
 }
 
 interface ChatBubbleProps {
   message: Message;
+  avatar?: string;
 }
 
 const ChatBubble: React.FC<ChatBubbleProps> = ({ message, avatar }) => {
   const safeAvatar = avatar ? avatar.toLowerCase() : 'fatima';
+  
   return (
     <View style={[
       styles.messageContainer,
@@ -36,6 +39,23 @@ const ChatBubble: React.FC<ChatBubbleProps> = ({ message, avatar }) => {
         styles.messageBubble,
         message.isUser ? styles.userBubble : styles.assistantBubble
       ]}>
+        {message.fileUri && (
+          <View style={styles.attachmentContainer}>
+            {message.fileType === 'image' ? (
+              <Image
+                source={{ uri: message.fileUri }}
+                style={styles.attachedImage}
+                resizeMode="cover"
+              />
+            ) : (
+              <View style={styles.attachedDocument}>
+                <MaterialIcons name="insert-drive-file" size={24} color="#666" />
+                <Text style={styles.documentText}>Document</Text>
+              </View>
+            )}
+          </View>
+        )}
+        
         <Text style={[
           styles.messageText,
           message.isUser ? styles.userMessageText : styles.assistantMessageText
@@ -114,6 +134,26 @@ const styles = StyleSheet.create({
   },
   assistantMessageText: {
     color: '#333',
+  },
+  attachmentContainer: {
+    marginBottom: 8,
+  },
+  attachedImage: {
+    width: 200,
+    height: 150,
+    borderRadius: 8,
+  },
+  attachedDocument: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 12,
+    backgroundColor: '#f3f4f6',
+    borderRadius: 8,
+  },
+  documentText: {
+    marginLeft: 8,
+    fontSize: 14,
+    color: '#374151',
   },
 });
 

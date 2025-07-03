@@ -15,22 +15,21 @@ import ChatBubble from './ChatBubble';
 import VoiceSection from './VoiceSection';
 import ModeToggle from './ModeToggle';
 import UploadModal from './UploadModal';
-import * as ImagePicker from 'expo-image-picker';
-import * as DocumentPicker from 'expo-document-picker';
 
 interface Message {
   id: string;
   text: string;
   isUser: boolean;
   timestamp: Date;
-  fileUri?: string; // Added for file preview
+  fileUri?: string;
+  fileType?: 'image' | 'document';
 }
 
 interface ChatSectionProps {
   messages: Message[];
   inputText: string;
   onInputChange: (text: string) => void;
-  onSendMessage: () => void;
+  onSendMessage: (message?: Message) => void;
   chatMode: 'text' | 'voice';
   isListening: boolean;
   onToggleVoice: () => void;
@@ -58,70 +57,40 @@ const ChatSection: React.FC<ChatSectionProps> = ({
   const textInputRef = useRef<TextInput>(null);
   const scrollViewRef = useRef<ScrollView>(null);
   const [showUploadModal, setShowUploadModal] = useState(false);
-  const [fileUri, setFileUri] = useState<string | null>(null); // Store uploaded file URI
+  const [fileUri, setFileUri] = useState<string | null>(null);
+  const [fileType, setFileType] = useState<'image' | 'document' | null>(null);
 
-  // Updated handleTakePhoto with new MediaType
-  const handleTakePhoto = async () => {
-    const result = await ImagePicker.launchCameraAsync({
-      allowsEditing: true,
-      quality: 1,
-      mediaTypes: ImagePicker.MediaTypeOptions.Images, // Updated usage of mediaTypes
-    });
-
-    if (!result.canceled && result.uri) {
-      setFileUri(result.uri);
-    } else {
-      console.warn("No image selected");
-    }
+  const handleImagePicked = (uri: string) => {
+    setFileUri(uri);
+    setFileType('image');
   };
 
-  // Updated handleChooseFromGallery with new MediaType
-  const handleChooseFromGallery = async () => {
-    const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images, // Updated usage of mediaTypes
-      allowsEditing: true,
-      quality: 1,
-    });
-
-    if (!result.canceled && result.uri) {
-      setFileUri(result.uri);
-    } else {
-      console.warn("No image selected");
-    }
-  };
-
-  const handleUploadDocument = async () => {
-    const result = await DocumentPicker.getDocumentAsync({
-      type: '*/*',
-    });
-
-    if (result.type === 'success' && result.uri) {
-      setFileUri(result.uri);
-    } else {
-      console.warn("No document selected");
-    }
+  const handleDocumentPicked = (uri: string) => {
+    setFileUri(uri);
+    setFileType('document');
   };
 
   const handleSendMessage = () => {
-    if (fileUri) {
+    if (fileUri && fileType) {
       const newMessage: Message = {
         id: Date.now().toString(),
-        text: 'Uploaded file', // You can customize this based on the file type
+        text: fileType === 'image' ? 'Image attached' : 'Document attached',
         isUser: true,
         timestamp: new Date(),
         fileUri,
+        fileType,
       };
       onSendMessage(newMessage);
-      setFileUri(null); // Reset after sending
+      setFileUri(null);
+      setFileType(null);
     } else if (inputText.trim()) {
-      const newMessage: Message = {
-        id: Date.now().toString(),
-        text: inputText,
-        isUser: true,
-        timestamp: new Date(),
-      };
-      onSendMessage(newMessage);
+      onSendMessage();
     }
+  };
+
+  const clearAttachment = () => {
+    setFileUri(null);
+    setFileType(null);
   };
 
   return (
@@ -143,19 +112,37 @@ const ChatSection: React.FC<ChatSectionProps> = ({
 
         {fileUri && (
           <View style={styles.previewContainer}>
-            <Text style={styles.previewText}>Preview:</Text>
-            {fileUri.endsWith('.jpg') || fileUri.endsWith('.png') ? (
+            <View style={styles.previewHeader}>
+              <Text style={styles.previewText}>Preview:</Text>
+              <TouchableOpacity onPress={clearAttachment} style={styles.removeButton}>
+                <MaterialIcons name="close" size={16} color="#666" />
+              </TouchableOpacity>
+            </View>
+            
+            {fileType === 'image' ? (
               <Image
                 source={{ uri: fileUri }}
                 style={styles.previewImage}
-                resizeMode="contain"
+                resizeMode="cover"
               />
             ) : (
-              <Text style={styles.documentPreview}>Document attached</Text>
+              <View style={styles.documentPreviewContainer}>
+                <MaterialIcons name="insert-drive-file" size={32} color="#666" />
+                <Text style={styles.documentPreview}>Document attached</Text>
+              </View>
             )}
           </View>
         )}
       </ScrollView>
+
+      {!isWideScreen && showModeToggle && onModeChange && (
+        <ModeToggle
+          chatMode={chatMode}
+          onModeChange={onModeChange}
+          languageCode={languageCode}
+          isWideScreen={isWideScreen}
+        />
+      )}
 
       <View style={styles.inputContainer}>
         <TouchableOpacity
@@ -180,15 +167,19 @@ const ChatSection: React.FC<ChatSectionProps> = ({
           autoCorrect={false}
           autoCapitalize="sentences"
         />
+        
         <TouchableOpacity
-          style={[styles.sendButton, !inputText.trim() && styles.sendButtonDisabled]}
+          style={[
+            styles.sendButton, 
+            (!inputText.trim() && !fileUri) && styles.sendButtonDisabled
+          ]}
           onPress={handleSendMessage}
           disabled={!inputText.trim() && !fileUri}
         >
           <MaterialIcons
             name="send"
             size={20}
-            color={inputText.trim() || fileUri ? "#fff" : "#ccc"}
+            color={(inputText.trim() || fileUri) ? "#fff" : "#ccc"}
           />
         </TouchableOpacity>
       </View>
@@ -196,9 +187,8 @@ const ChatSection: React.FC<ChatSectionProps> = ({
       <UploadModal
         visible={showUploadModal}
         onClose={() => setShowUploadModal(false)}
-        onTakePhoto={handleTakePhoto}
-        onChooseFromGallery={handleChooseFromGallery}
-        onUploadDocument={handleUploadDocument}
+        onImagePicked={handleImagePicked}
+        onDocumentPicked={handleDocumentPicked}
         languageCode={languageCode}
       />
     </KeyboardAvoidingView>
@@ -227,28 +217,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderTopWidth: 1,
     borderTopColor: '#e0e0e0',
-  },
-  previewContainer: {
-    padding: 10,
-    backgroundColor: '#f9f9f9',
-    borderRadius: 10,
-    marginBottom: 10,
-    alignItems: 'center',
-  },
-  previewText: {
-    fontSize: 14,
-    fontWeight: '600',
-    color: '#333',
-    marginBottom: 8,
-  },
-  previewImage: {
-    width: 100,
-    height: 100,
-    borderRadius: 10,
-  },
-  documentPreview: {
-    fontSize: 14,
-    color: '#333',
   },
   uploadButton: {
     width: 40,
@@ -281,6 +249,45 @@ const styles = StyleSheet.create({
   },
   sendButtonDisabled: {
     backgroundColor: '#f0f0f0',
+  },
+  previewContainer: {
+    padding: 12,
+    backgroundColor: '#f8fafc',
+    borderRadius: 12,
+    marginBottom: 12,
+    borderWidth: 1,
+    borderColor: '#e5e7eb',
+  },
+  previewHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 8,
+  },
+  previewText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#374151',
+  },
+  removeButton: {
+    padding: 4,
+    borderRadius: 12,
+    backgroundColor: '#f3f4f6',
+  },
+  previewImage: {
+    width: 120,
+    height: 120,
+    borderRadius: 8,
+    alignSelf: 'center',
+  },
+  documentPreviewContainer: {
+    alignItems: 'center',
+    padding: 16,
+  },
+  documentPreview: {
+    fontSize: 14,
+    color: '#6b7280',
+    marginTop: 8,
   },
 });
 

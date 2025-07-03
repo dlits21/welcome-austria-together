@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   SafeAreaView,
   Alert,
-  Image,
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import * as ImagePicker from 'expo-image-picker';
@@ -30,7 +29,6 @@ const UploadModal: React.FC<UploadModalProps> = ({
   onDocumentPicked,
 }) => {
   const [loading, setLoading] = useState(false);
-  const [image, setImage] = useState<string | null>(null);
 
   // Request permissions for camera and gallery
   useEffect(() => {
@@ -39,70 +37,75 @@ const UploadModal: React.FC<UploadModalProps> = ({
       const { status: libraryStatus } = await ImagePicker.requestMediaLibraryPermissionsAsync();
 
       if (cameraStatus !== 'granted') {
-        alert('Camera permission is required to take photos.');
+        console.warn('Camera permission not granted');
       }
       if (libraryStatus !== 'granted') {
-        alert('Gallery permission is required to select photos.');
+        console.warn('Gallery permission not granted');
       }
     };
 
-    requestPermissions();
-  }, []);
+    if (visible) {
+      requestPermissions();
+    }
+  }, [visible]);
 
-  // Function to pick an image
-  const openImagePicker = async (type: 'camera' | 'gallery') => {
+  const handleTakePhoto = async () => {
     try {
       setLoading(true);
-      let result;
+      const result = await ImagePicker.launchCameraAsync({
+        allowsEditing: true,
+        quality: 0.8,
+        mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      });
 
-      // Open camera or gallery based on the type passed
-      if (type === 'camera') {
-        result = await ImagePicker.launchCameraAsync({
-          allowsEditing: true,
-          quality: 1,
-          mediaTypes: ImagePicker.MediaTypeOptions.Images,  // Correct usage
-        });
-      } else {
-        result = await ImagePicker.launchImageLibraryAsync({
-          mediaTypes: ['images'],
-          quality: 0,
-        });
-      }
-
-      console.log(result)
-
-      // Check if the user has selected an image and if there is a URI
-      if (!result.canceled && result.assets[0].uri) {
+      if (!result.canceled && result.assets[0]?.uri) {
         onImagePicked(result.assets[0].uri);
-      } else {
-        console.error('No image selected', result.canceled, result.assets[0].uri);
-        Alert.alert('No image selected', result.canceled, result.assets[0].uri);
+        onClose();
       }
     } catch (error) {
-      console.error('Error picking image:', error);
-      Alert.alert('Error', 'Failed to pick an image');
+      console.error('Error taking photo:', error);
+      Alert.alert('Error', 'Failed to take photo');
     } finally {
       setLoading(false);
     }
   };
 
-  // Function to pick a document
-  const openDocumentPicker = async () => {
+  const handleChooseFromGallery = async () => {
+    try {
+      setLoading(true);
+      const result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.Images,
+        allowsEditing: true,
+        quality: 0.8,
+      });
+
+      if (!result.canceled && result.assets[0]?.uri) {
+        onImagePicked(result.assets[0].uri);
+        onClose();
+      }
+    } catch (error) {
+      console.error('Error choosing from gallery:', error);
+      Alert.alert('Error', 'Failed to select image');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleUploadDocument = async () => {
     try {
       setLoading(true);
       const result = await DocumentPicker.getDocumentAsync({
-        type: '*/*', // Accept all document types
+        type: '*/*',
+        copyToCacheDirectory: true,
       });
 
-      // Check if the document was successfully selected
-      if (result.type === 'success' && result.uri) {
-        onDocumentPicked(result.uri);
-      } else {
-        Alert.alert('No document selected');
+      if (!result.canceled && result.assets[0]?.uri) {
+        onDocumentPicked(result.assets[0].uri);
+        onClose();
       }
     } catch (error) {
       console.error('Error picking document:', error);
-      Alert.alert('Error', 'Failed to pick a document');
+      Alert.alert('Error', 'Failed to pick document');
     } finally {
       setLoading(false);
     }
@@ -134,7 +137,7 @@ const UploadModal: React.FC<UploadModalProps> = ({
             <View style={styles.options}>
               <TouchableOpacity
                 style={styles.option}
-                onPress={() => openImagePicker('camera')}
+                onPress={handleTakePhoto}
                 disabled={loading}
               >
                 <MaterialIcons name="camera-alt" size={24} color="#3B82F6" />
@@ -145,7 +148,7 @@ const UploadModal: React.FC<UploadModalProps> = ({
 
               <TouchableOpacity
                 style={styles.option}
-                onPress={() => openImagePicker('gallery')}
+                onPress={handleChooseFromGallery}
                 disabled={loading}
               >
                 <MaterialIcons name="photo-library" size={24} color="#3B82F6" />
@@ -156,7 +159,7 @@ const UploadModal: React.FC<UploadModalProps> = ({
 
               <TouchableOpacity
                 style={styles.option}
-                onPress={openDocumentPicker}
+                onPress={handleUploadDocument}
                 disabled={loading}
               >
                 <MaterialIcons name="insert-drive-file" size={24} color="#3B82F6" />

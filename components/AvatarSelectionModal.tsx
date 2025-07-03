@@ -9,6 +9,7 @@ import {
   SafeAreaView,
   ScrollView,
   Image,
+  useWindowDimensions,
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { getCharacterImage } from '../utils/assistantUtils';
@@ -50,7 +51,7 @@ const languageFlags: { [key: string]: string } = {
   'German': '🇩🇪',
   'English': '🇺🇸',
   'Arabic': '🇸🇦',
-  'Kurdish': '🟡', // Kurdish flag alternative
+  'Kurdish': '🟡',
   'Persian': '🇮🇷',
   'Dari': '🇦🇫',
   'Pashto': '🇦🇫',
@@ -67,14 +68,62 @@ const AvatarSelectionModal: React.FC<AvatarSelectionModalProps> = ({
   onSelectAssistant,
   languageCode,
 }) => {
+  const { width } = useWindowDimensions();
+  const isWideScreen = width >= 768;
+  const numColumns = isWideScreen ? (width >= 1200 ? 3 : 2) : 1;
+
   const renderLanguageFlags = (languages: string) => {
     const langList = languages.split(', ').map(lang => lang.trim());
     return langList.map((lang, index) => (
-      <Text key={index} style={styles.flagText}>
-        {languageFlags[lang] || '🌐'} {lang}
-      </Text>
+      <View key={index} style={styles.flagItem}>
+        <Text style={styles.flagEmoji}>{languageFlags[lang] || '🌐'}</Text>
+        <Text style={styles.flagText}>{lang}</Text>
+      </View>
     ));
   };
+
+  const renderAssistantCard = (assistant: AssistantData, index: number) => (
+    <TouchableOpacity
+      key={index}
+      style={[
+        styles.assistantCard,
+        isWideScreen && styles.assistantCardGrid,
+        { width: isWideScreen ? `${100 / numColumns - 2}%` : '100%' }
+      ]}
+      onPress={() => {
+        onSelectAssistant(assistant);
+        onClose();
+      }}
+    >
+      <View style={styles.cardHeader}>
+        <View style={styles.assistantImageContainer}>
+          <Image
+            source={getCharacterImage(assistant.name)}
+            style={styles.assistantImage}
+            resizeMode="cover"
+          />
+        </View>
+        <View style={styles.assistantNameContainer}>
+          <Text style={styles.assistantName}>{assistant.name}</Text>
+        </View>
+      </View>
+      
+      <View style={styles.assistantInfo}>
+        <Text style={styles.assistantBackground} numberOfLines={isWideScreen ? 4 : 3}>
+          {assistant.background}
+        </Text>
+        
+        <View style={styles.languagesContainer}>
+          <Text style={styles.languagesLabel}>
+            {getAssistantText('languages', languageCode)}:
+          </Text>
+          <View style={styles.flagsContainer}>
+            {renderLanguageFlags(assistant.languages)}
+          </View>
+        </View>
+      </View>
+    </TouchableOpacity>
+  );
 
   return (
     <Modal
@@ -93,41 +142,11 @@ const AvatarSelectionModal: React.FC<AvatarSelectionModalProps> = ({
         </View>
 
         <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
-          <View style={styles.assistantGrid}>
-            {assistants.map((assistant, index) => (
-              <TouchableOpacity
-                key={index}
-                style={styles.assistantCard}
-                onPress={() => {
-                  onSelectAssistant(assistant);
-                  onClose();
-                }}
-              >
-                <View style={styles.assistantImageContainer}>
-                  <Image
-                    source={getCharacterImage(assistant.name)}
-                    style={styles.assistantImage}
-                    resizeMode="cover"
-                  />
-                </View>
-                
-                <View style={styles.assistantInfo}>
-                  <Text style={styles.assistantName}>{assistant.name}</Text>
-                  <Text style={styles.assistantBackground} numberOfLines={3}>
-                    {assistant.background}
-                  </Text>
-                  
-                  <View style={styles.languagesContainer}>
-                    <Text style={styles.languagesLabel}>
-                      {getAssistantText('languages', languageCode)}:
-                    </Text>
-                    <View style={styles.flagsContainer}>
-                      {renderLanguageFlags(assistant.languages)}
-                    </View>
-                  </View>
-                </View>
-              </TouchableOpacity>
-            ))}
+          <View style={[
+            styles.assistantGrid,
+            isWideScreen && styles.assistantGridWide
+          ]}>
+            {assistants.map((assistant, index) => renderAssistantCard(assistant, index))}
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -138,27 +157,34 @@ const AvatarSelectionModal: React.FC<AvatarSelectionModalProps> = ({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#f8fafc',
   },
   header: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingHorizontal: 16,
-    paddingVertical: 12,
+    paddingHorizontal: 20,
+    paddingVertical: 16,
     backgroundColor: '#fff',
     borderBottomWidth: 1,
-    borderBottomColor: '#e0e0e0',
+    borderBottomColor: '#e5e7eb',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
+    elevation: 2,
   },
   headerTitle: {
-    fontSize: 18,
-    fontWeight: '600',
-    color: '#333',
+    fontSize: 20,
+    fontWeight: '700',
+    color: '#1f2937',
     flex: 1,
     textAlign: 'center',
   },
   closeButton: {
     padding: 8,
+    borderRadius: 20,
+    backgroundColor: '#f3f4f6',
   },
   scrollView: {
     flex: 1,
@@ -166,54 +192,72 @@ const styles = StyleSheet.create({
   assistantGrid: {
     padding: 16,
   },
+  assistantGridWide: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+  },
   assistantCard: {
     backgroundColor: '#fff',
-    borderRadius: 12,
-    padding: 16,
+    borderRadius: 16,
+    padding: 20,
     marginBottom: 16,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.08,
+    shadowRadius: 12,
+    elevation: 4,
+    borderWidth: 1,
+    borderColor: '#f1f3f4',
+  },
+  assistantCardGrid: {
+    marginHorizontal: '1%',
+  },
+  cardHeader: {
+    alignItems: 'center',
+    marginBottom: 16,
   },
   assistantImageContainer: {
-    alignSelf: 'center',
     width: 80,
     height: 80,
     borderRadius: 40,
     overflow: 'hidden',
     marginBottom: 12,
+    borderWidth: 3,
+    borderColor: '#3b82f6',
   },
   assistantImage: {
     width: '100%',
     height: '100%',
   },
-  assistantInfo: {
+  assistantNameContainer: {
     alignItems: 'center',
   },
   assistantName: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#333',
-    marginBottom: 8,
+    fontSize: 20,
+    fontWeight: '700',
+    color: '#1f2937',
+    textAlign: 'center',
+  },
+  assistantInfo: {
+    alignItems: 'center',
   },
   assistantBackground: {
     fontSize: 14,
-    color: '#666',
+    color: '#6b7280',
     textAlign: 'center',
     lineHeight: 20,
-    marginBottom: 12,
+    marginBottom: 16,
   },
   languagesContainer: {
     alignItems: 'center',
     width: '100%',
   },
   languagesLabel: {
-    fontSize: 12,
+    fontSize: 14,
     fontWeight: '600',
-    color: '#333',
-    marginBottom: 4,
+    color: '#374151',
+    marginBottom: 8,
   },
   flagsContainer: {
     flexDirection: 'row',
@@ -221,14 +265,24 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 8,
   },
+  flagItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#f8fafc',
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: '#e5e7eb',
+  },
+  flagEmoji: {
+    fontSize: 16,
+    marginRight: 6,
+  },
   flagText: {
     fontSize: 12,
-    color: '#555',
-    backgroundColor: '#f0f0f0',
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    borderRadius: 12,
-    textAlign: 'center',
+    color: '#374151',
+    fontWeight: '500',
   },
 });
 
