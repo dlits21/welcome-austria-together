@@ -1,428 +1,171 @@
-
 {
   "slides": [
     {
-      "type": "welcome",
       "id": 0,
+      "type": "welcome",
       "title": {
-        "en": "Welcome to Support Categories",
-        "de": "Willkommen bei den Unterstützungskategorien",
-        "ru": "Добро пожаловать в категории поддержки",
-        "ce": "Марша вогӏийла гӀулакх хӀокхуш йуьлу категореш",
-        "prs": "به دسته‌های پشتیبانی خوش آمدید",
-        "ps": "د ملاتړ کټګوریو ته ښه راغلاست",
-        "fa": "به دسته‌های پشتیبانی خوش آمدید",
-        "ar": "مرحباً بك في فئات الدعم",
-        "ku": "بەخێربێن بۆ پۆلەکانی پشتگیری",
-        "so": "Ku soo dhawow noocyada taageerka",
-        "ka": "კეთილი იყოს თქვენი მობრძანება მხარდაჭერის კატეგორიებში",
-        "sq": "Mirësevini në kategoritë e mbështetjes"
+        "de": "Willkommen im Fragen-Bereich!",
+        "en": "Welcome to the Ask Section!",
+        "ru": "Добро пожаловать в раздел вопросов!",
+        "ce": "Марша вогӏийла хатташан декъаме!",
+        "prs": "به بخش پرسش خوش آمدید!",
+        "ps": "د پوښتنو برخې ته ښه راغلاست!",
+        "fa": "به بخش پرسش خوش آمدید!",
+        "ar": "مرحباً بكم في قسم الأسئلة!",
+        "ku": "بەخێر بێن بۆ بەشی پرسیار!",
+        "so": "Ku soo dhawoow Qaybta Weydiinta!",
+        "ka": "კეთილი იყოს თქვენი მობრძანება კითხვების განყოფილებაში!",
+        "sq": "Mirësevini në seksionin e pyetjeve!"
       },
       "text": {
-        "en": "Here you'll find specialized support for different areas of life in Austria. Each category offers tailored help and resources.",
-        "de": "Hier finden Sie spezialisierte Unterstützung für verschiedene Lebensbereiche in Österreich. Jede Kategorie bietet maßgeschneiderte Hilfe und Ressourcen.",
-        "ru": "Здесь вы найдете специализированную поддержку для различных сфер жизни в Австрии. Каждая категория предлагает персонализированную помощь и ресурсы.",
-        "ce": "Кхузахь хьо Австрин гӀиллакхехь башха сферашна йуьхь хӀокхуш карийта. Дукхаза категорех латийна гӀо а ресурсаш а ю.",
-        "prs": "در اینجا شما پشتیبانی تخصصی برای حوزه‌های مختلف زندگی در اتریش خواهید یافت. هر دسته کمک و منابع سفارشی ارائه می‌دهد.",
-        "ps": "دلته تاسو به د اتریش د ژوند د بیلابیلو برخو لپاره ځانګړی ملاتړ ومومئ. هره کټګورۍ ځانګړې مرستę او سرچینې وړاندې کوي.",
-        "fa": "در اینجا شما پشتیبانی تخصصی برای حوزه‌های مختلف زندگی در اتریش خواهید یافت. هر دسته کمک و منابع سفارشی ارائه می‌دهد.",
-        "ar": "ستجد هنا دعماً متخصصاً لمجالات مختلفة من الحياة في النمسا. تقدم كل فئة مساعدة وموارد مخصصة.",
-        "ku": "لێرە پشتگیری تایبەت بۆ بوارە جۆراوجۆرەکانی ژیان لە نەمسا دەدۆزیتەوە. هەر پۆلێک یارمەتی و سەرچاوەی تایبەت پێشکەش دەکات.",
-        "so": "Halkan waxaad ka heli doontaa taageero gaar ah oo loogu talagalay meelaha kala duwan ee nolosha Austria. Qaybba waxay bixisaa caawimaad iyo kheyraad gaar ah.",
-        "ka": "აქ თქვენ იპოვით სპეციალიზებულ მხარდაჭერას ავსტრიაში ცხოვრების სხვადასხვა სფეროებისთვის. ყოველი კატეგორია გთავაზობთ მორგებულ დახმარებას და რესურსებს.",
-        "sq": "Këtu do të gjeni mbështetje të specializuar për fusha të ndryshme të jetës në Austri. Çdo kategori ofron ndihmë dhe burime të përshtatura."
+        "de": "Hier können Sie Fragen zu verschiedenen Themen stellen und erhalten Antworten von Experten. Egal ob es um Karriere, Integration, Dokumente, Finanzen, Gesundheit oder Recht geht, wir sind für Sie da.",
+        "en": "Here you can ask questions on various topics and receive answers from experts. Whether it's about career, integration, documents, finance, health, or law, we are here for you.",
+        "ru": "Здесь вы можете задавать вопросы по различным темам и получать ответы от экспертов. Независимо от того, касается ли это карьеры, интеграции, документов, финансов, здоровья или права, мы здесь для вас.",
+        "ce": "Хӏокхузахь шуьга хаттарш дала мега тайп-тайпан долчу хӏумнаш тӏехь, эксперташ жоьпаш лур ду. Муьлхха хӏума далахь а - болх, интеграци, документаш, ахча, могушалла йа бакъо - тхо шуна гӏо деш ду.",
+        "prs": "در اینجا می توانید سوالات خود را در مورد موضوعات مختلف بپرسید و پاسخ هایی را از کارشناسان دریافت کنید. چه در مورد شغل، ادغام، اسناد، امور مالی، بهداشت یا قانون باشد، ما اینجا هستیم تا به شما کمک کنیم.",
+        "ps": "دلته تاسو کولی شئ د مختلفو موضوعاتو په اړه پوښتنې وکړئ او د متخصصینو څخه ځوابونه ترلاسه کړئ. که دا د مسلک، ادغام، اسنادو، مالي، روغتیا یا قانون په اړه وي، موږ دلته ستاسو لپاره یو.",
+        "fa": "در اینجا می توانید سوالات خود را در مورد موضوعات مختلف بپرسید و پاسخ هایی را از کارشناسان دریافت کنید. چه در مورد شغل، ادغام، اسناد، امور مالی، بهداشت یا قانون باشد، ما اینجا هستیم تا به شما کمک کنیم.",
+        "ar": "هنا يمكنك طرح أسئلة حول مواضيع مختلفة وتلقي إجابات من الخبراء. سواء كان الأمر يتعلق بالوظيفة أو الاندماج أو المستندات أو الشؤون المالية أو الصحة أو القانون، فنحن هنا لمساعدتك.",
+        "ku": "لێرەدا دەتوانیت پرسیار لەسەر بابەتە جۆراوجۆرەکان بکەیت و وەڵام لە شارەزایان وەربگریت. چ ئەگەر دەربارەی کار، یەکگرتن، بەڵگەنامە، دارایی، تەندروستی، یان یاسا بێت، ئێمە لێرەین بۆ یارمەتیدانی تۆ.",
+        "so": "Halkan waxaad ka weydiin kartaa su'aalo ku saabsan mawduucyo kala duwan waxaadna ka heli kartaa jawaabo khabiiro ah. Haddii ay ku saabsan tahay shaqo, isdhexgal, dukumeenti, maaliyadeed, caafimaad, ama sharciga, waxaan halkan u joognaa inaan ku caawinno.",
+        "ka": "აქ შეგიძლიათ დასვათ კითხვები სხვადასხვა თემებზე და მიიღოთ პასუხები ექსპერტებისგან. იქნება ეს კარიერა, ინტეგრაცია, დოკუმენტები, ფინანსები, ჯანმრთელობა თუ სამართალი, ჩვენ აქ ვართ თქვენთვის.",
+        "sq": "Këtu mund të bëni pyetje mbi tema të ndryshme dhe të merrni përgjigje nga ekspertë. Pavarësisht nëse bëhet fjalë për karrierën, integrimin, dokumentet, financat, shëndetin ose ligjin, ne jemi këtu për ju."
       }
     },
     {
-      "type": "category",
       "id": 1,
+      "type": "instruction",
       "title": {
-        "en": "Legal Support",
-        "de": "Rechtsbeistand",
-        "ru": "Юридическая поддержка",
-        "ce": "Юкъарчу гlо",
-        "prs": "حمایت حقوقی",
-        "ps": "حقوقي ملاتړ",
-        "fa": "پشتیبانی حقوقی",
-        "ar": "الدعم القانوني",
-        "ku": "پشتگیری یاسایی",
-        "so": "Taageerka sharci",
-        "ka": "იურიდიული მხარდაჭერა",
-        "sq": "Mbështetje ligjore"
+        "de": "Wie es funktioniert",
+        "en": "How it Works",
+        "ru": "Как это работает",
+        "ce": "Мухаллаж болх бе",
+        "prs": "چگونه کار می کند",
+        "ps": "دا څنګه کار کوی",
+        "fa": "چگونه کار می کند",
+        "ar": "كيف يعمل",
+        "ku": "ئەمە چۆن کار دەکات",
+        "so": "Sidee u shaqeeyaa",
+        "ka": "როგორ მუშაობს",
+        "sq": "Si punon"
       },
       "text": {
-        "en": "Get legal advice and support for various legal matters including asylum procedures, family law, and civil rights.",
-        "de": "Erhalten Sie Rechtsberatung und Unterstützung für verschiedene rechtliche Angelegenheiten einschließlich Asylverfahren, Familienrecht und Bürgerrechte.",
-        "ru": "Получите юридические консультации и поддержку по различным правовым вопросам, включая процедуры получения убежища, семейное право и гражданские права.",
-        "ce": "Башха юкъарчу масlалашкахь юкъарчу хаам а гlо а ло - пӀаьнан процедураш, г1усйоьллан право, граждански бакъонаш а.",
-        "prs": "مشاوره حقوقی و حمایت برای مسائل مختلف حقوقی از جمله روند‌های پناهندگی، حقوق خانواده و حقوق مدنی دریافت کنید.",
-        "ps": "د مختلفو حقوقي مسایلو لپاره حقوقي مشورې او ملاتړ واخلئ په شمول د پناه ورکولو پروسې، د کورنۍ حقوق، او مدني حقونه.",
-        "fa": "مشاوره حقوقی و پشتیبانی برای مسائل مختلف حقوقی از جمله روندهای پناهندگی، حقوق خانواده و حقوق مدنی دریافت کنید.",
-        "ar": "احصل على المشورة القانونية والدعم لمختلف المسائل القانونية بما في ذلك إجراءات اللجوء وقانون الأسرة والحقوق المدنية.",
-        "ku": "ڕاوێژکاری یاسایی و پشتگیری بەدەست بهێنە بۆ بابەتە یاسایییە جۆراوجۆرەکان لەوانە کارپێکردنی پەناهندەیی، یاسای خێزان، و مافە مەدەنییەکان.",
-        "so": "Hel talo sharci iyo taageero arrimaha kala duwan ee sharciga ah oo ay ku jiraan hababka magangalyo, sharciga qoyska, iyo xuquuqda madaniga ah.",
-        "ka": "მიიღეთ იურიდიული რჩევა და მხარდაჭერა სხვადასხვა სამართლებრივ საკითხებზე, მათ შორის თავშესაფრის პროცედურები, ოჯახის სამართალი და სამოქალაქო უფლებები.",
-        "sq": "Merrni këshilla ligjore dhe mbështetje për çështje të ndryshme ligjore duke përfshirë procedurat e azilit, të drejtën familjare dhe të drejtat civile."
-      },
-      "category": {
-        "title": {
-          "en": "Legal Support",
-          "de": "Rechtsbeistand"
-        },
-        "description": {
-          "en": "Legal advice and representation",
-          "de": "Rechtsberatung und Vertretung"
-        },
-        "icon": "gavel",
-        "color": "#DC2626"
+        "de": "Wählen Sie eine Kategorie, die Ihrem Anliegen entspricht, und formulieren Sie Ihre Frage so präzise wie möglich. Unsere Experten werden sich bemühen, Ihnen zeitnah und kompetent zu antworten.",
+        "en": "Select a category that matches your concern and formulate your question as precisely as possible. Our experts will endeavor to answer you promptly and competently.",
+        "ru": "Выберите категорию, соответствующую вашему запросу, и сформулируйте свой вопрос как можно точнее. Наши эксперты постараются ответить вам оперативно и компетентно.",
+        "ce": "Хьайн балхахь маьӏна долу категори харжа, хаттар билгалдаккха мел луъу дика ду. Тхан эксперташ сихха жоп дала хьожур бу.",
+        "prs": "دسته ای را انتخاب کنید که با نگرانی شما مطابقت دارد و سوال خود را تا حد امکان دقیق فرموله کنید. کارشناسان ما تلاش خواهند کرد تا به سرعت و با شایستگی به شما پاسخ دهند.",
+        "ps": "هغه کټګورۍ غوره کړئ چې ستاسو د اندیښنې سره سمون لري او خپله پوښتنه د امکان تر حده دقیق جوړه کړئ. زموږ کارپوهان به هڅه وکړي چې تاسو ته ژر تر ژره او په سمه توګه ځواب ووایی.",
+        "fa": "دسته ای را انتخاب کنید که با نگرانی شما مطابقت دارد و سوال خود را تا حد امکان دقیق فرموله کنید. کارشناسان ما تلاش خواهند کرد تا به سرعت و با شایستگی به شما پاسخ دهند.",
+        "ar": "حدد فئة تطابق اهتمامك وصِغ سؤالك بأكبر قدر ممكن من الدقة. سيسعى خبراؤنا للإجابة عليك على الفور وبكفاءة.",
+        "ku": "ئەو بەشە هەڵبژێرە کە لەگەڵ نیگەرانی تۆدا دەگونجێت و پرسیارەکەت بە وردترین شێوە دابڕێژە. شارەزایانمان هەوڵ دەدەن بە زووترین کات وەڵامت بدەنەوە.",
+        "so": "Dooro qaybta ku habboon welwelkaaga oo samee su'aashaada sida ugu saxsan ee suurtogalka ah. Khubaradayadu waxay ku dadaali doonaan inay si degdeg ah oo karti leh kuugu jawaabaan.",
+        "ka": "აირჩიეთ კატეგორია, რომელიც შეესაბამება თქვენს შეკითხვას და ჩამოაყალიბეთ თქვენი შეკითხვა რაც შეიძლება ზუსტად. ჩვენი ექსპერტები შეეცდებიან გიპასუხონ სწრაფად და კომპეტენტურად.",
+        "sq": "Zgjidhni një kategori që përputhet me shqetësimin tuaj dhe formuloni pyetjen tuaj sa më saktë që të jetë e mundur. Ekspertët tanë do të përpiqen t'ju përgjigjen shpejt dhe me kompetencë."
       }
     },
     {
-      "type": "category",
       "id": 2,
-      "title": {
-        "en": "Health Support",
-        "de": "Gesundheitsunterstützung",
-        "ru": "Поддержка здоровья",
-        "ce": "Саламатан гlо",
-        "prs": "حمایت سلامت",
-        "ps": "د روغتیا ملاتړ",
-        "fa": "پشتیبانی سلامت",
-        "ar": "دعم الصحة",
-        "ku": "پشتگیری تەندروستی",
-        "so": "Taageerka caafimaadka",
-        "ka": "ჯანმრთელობის მხარდაჭერა",
-        "sq": "Mbështetje shëndetësore"
-      },
-      "text": {
-        "en": "Access healthcare services, find doctors, understand insurance, and get mental health support in Austria.",
-        "de": "Zugang zu Gesundheitsdiensten, Ärzte finden, Versicherung verstehen und psychische Gesundheitsunterstützung in Österreich erhalten.",
-        "ru": "Получите доступ к медицинским услугам, найдите врачей, поймите страхование и получите поддержку психического здоровья в Австрии.",
-        "ce": "Австрин саламатан гlуллакхаш лело, лекархой карийта, страхованин масlала гойта, психикин саламатан гlо ло.",
-        "prs": "به خدمات بهداشتی دسترسی پیدا کنید، دکتران را پیدا کنید، بیمه را درک کنید و حمایت سلامت روان را در اتریش دریافت کنید.",
-        "ps": "د روغتیا خدماتو ته لاسرسی ومومئ، ډاکټران ومومئ، بیمه پوه شئ، او په اتریش کې د رواني روغتیا ملاتړ واخلئ.",
-        "fa": "به خدمات بهداشتی دسترسی پیدا کنید، پزشکان را پیدا کنید، بیمه را درک کنید و پشتیبانی سلامت روان را در اتریش دریافت کنید.",
-        "ar": "احصل على خدمات الرعاية الصحية، واعثر على الأطباء، وافهم التأمين، واحصل على دعم الصحة النفسية في النمسا.",
-        "ku": "دەستگەیشتن بە خزمەتگوزاری تەندروستی، دۆکتۆر بدۆزەرەوە، بیمە تێبگە، و پشتگیری تەندروستی دەروونی لە نەمسا بەدەست بهێنە.",
-        "so": "Hel adeegyada caafimaadka, doktoro soo raadi, garashada caymiska, iyo hel taageero caafimaadka maskaxda Austria.",
-        "ka": "მიიღეთ წვდომა ჯანდაცვის სერვისებზე, იპოვეთ ექიმები, გაიგეთ დაზღვევა და მიიღეთ ფსიქიკური ჯანმრთელობის მხარდაჭერა ავსტრიაში.",
-        "sq": "Aksesoni shërbimet e kujdesit shëndetësor, gjeni mjekë, kuptoni sigurimet dhe merrni mbështetje për shëndetin mendor në Austri."
-      },
-      "category": {
-        "title": {
-          "en": "Health Support",
-          "de": "Gesundheitsunterstützung"
-        },
-        "description": {
-          "en": "Healthcare services and support",
-          "de": "Gesundheitsdienste und Unterstützung"
-        },
-        "icon": "local-hospital",
-        "color": "#059669"
-      }
-    },
-    {
-      "type": "category",
-      "id": 3,
-      "title": {
-        "en": "Financial Support",
-        "de": "Finanzielle Unterstützung",
-        "ru": "Финансовая поддержка",
-        "ce": "Ахча гlо",
-        "prs": "حمایت مالی",
-        "ps": "مالي ملاتړ",
-        "fa": "پشتیبانی مالی",
-        "ar": "الدعم المالي",
-        "ku": "پشتگیری دارایی",
-        "so": "Taageerka maaliyadda",
-        "ka": "ფინანსური მხარდაჭერა",
-        "sq": "Mbështetje financiare"
-      },
-      "text": {
-        "en": "Learn about social benefits, emergency financial aid, budgeting help, and financial assistance programs available in Austria.",
-        "de": "Erfahren Sie mehr über Sozialleistungen, finanzielle Nothilfe, Budgetierungshilfe und Finanzhilfeprogramme, die in Österreich verfügbar sind.",
-        "ru": "Узнайте о социальных пособиях, экстренной финансовой помощи, помощи в составлении бюджета и программах финансовой помощи, доступных в Австрии.",
-        "ce": "Социальни льготаш, экстренни ахча гlо, бюджет хlокхуш гlо, Австрин ахча гlуллакхийн программашкахь хаа.",
-        "prs": "در مورد مزایای اجتماعی، کمک مالی اضطراری، کمک بودجه‌بندی و برنامه‌های کمک مالی موجود در اتریش بیاموزید.",
-        "ps": "د ټولنیزو ګټو، بیړني مالي مرستو، د بودیجې مرستو، او د اتریش کې شته د مالي مرستو برنامو په اړه زده کړئ.",
-        "fa": "در مورد مزایای اجتماعی، کمک مالی اضطراری، کمک بودجه‌بندی و برنامه‌های کمک مالی موجود در اتریش بیاموزید.",
-        "ar": "تعرف على المزايا الاجتماعية والمساعدة المالية الطارئة ومساعدة الميزانية وبرامج المساعدة المالية المتاحة في النمسا.",
-        "ku": "فێربە لەسەر سوودە کۆمەڵایەتییەکان، یارمەتی دارایی لە کاتی پێویستدا، یارمەتی بودجە، و بەرنامەکانی یارمەتی دارایی کە لە نەمسا بەردەستن.",
-        "so": "Baro faa'iidooyinka bulshada, gargaarka maaliyadda degdegga ah, caawinta miisaaniyadda, iyo barnaamijyada gargaarka maaliyadda ee la heli karo Austria.",
-        "ka": "გაიგეთ სოციალური შემწეობების, საგანგებო ფინანსური დახმარების, ბიუჯეტის დაგეგმვის დახმარების და ფინანსური დახმარების პროგრამების შესახებ, რომლებიც ხელმისაწვდომია ავსტრიაში.",
-        "sq": "Mësoni për përfitimet sociale, ndihmën financiare urgjente, ndihmën për buxhetin dhe programet e ndihmës financiare të disponueshme në Austri."
-      },
-      "category": {
-        "title": {
-          "en": "Financial Support",
-          "de": "Finanzielle Unterstützung"
-        },
-        "description": {
-          "en": "Financial aid and guidance",
-          "de": "Finanzielle Hilfe und Beratung"
-        },
-        "icon": "account-balance",
-        "color": "#7C3AED"
-      }
-    },
-    {
-      "type": "category",
-      "id": 4,
-      "title": {
-        "en": "Career Support",
-        "de": "Berufsunterstützung",
-        "ru": "Поддержка карьеры",
-        "ce": "Корматийн гlо",
-        "prs": "حمایت شغلی",
-        "ps": "د کسب ملاتړ",
-        "fa": "پشتیبانی شغلی",
-        "ar": "دعم المهنة",
-        "ku": "پشتگیری پیشەیی",
-        "so": "Taageerka xirfadda",
-        "ka": "კარიერის მხარდაჭერა",
-        "sq": "Mbështetje për karrierën"
-      },
-      "text": {
-        "en": "Find job opportunities, get career counseling, learn about professional training, and understand work rights in Austria.",
-        "de": "Finden Sie Jobmöglichkeiten, erhalten Sie Berufsberatung, lernen Sie über berufliche Weiterbildung und verstehen Sie Arbeitsrechte in Österreich.",
-        "ru": "Найдите возможности трудоустройства, получите карьерное консультирование, узнайте о профессиональном обучении и поймите трудовые права в Австрии.",
-        "ce": "Корматийн меттигаш карийта, корматийн хаам ло, профессиональни дешар хаа, Австрин корматийн бакъонаш гойта.",
-        "prs": "فرصت‌های شغلی پیدا کنید، مشاوره شغلی دریافت کنید، در مورد آموزش حرفه‌ای یاد بگیرید و حقوق کار را در اتریش درک کنید.",
-        "ps": "د دندو فرصتونه ومومئ، د کسب مشورې واخلئ، د مسلکي روزنې په اړه زده کړئ، او په اتریش کې د کار حقونه پوه شئ.",
-        "fa": "فرصت‌های شغلی پیدا کنید، مشاوره شغلی دریافت کنید، در مورد آموزش حرفه‌ای یاد بگیرید و حقوق کار را در اتریش درک کنید.",
-        "ar": "ابحث عن فرص العمل، احصل على الاستشارة المهنية، تعلم عن التدريب المهني، وافهم حقوق العمل في النمسا.",
-        "ku": "دەرفەتی کار بدۆزەرەوە، ڕاوێژکاری پیشەیی وەربگرە، فێربە لەسەر ڕاهێنانی پیشەیی، و مافەکانی کار لە نەمسا تێبگە.",
-        "so": "Hel fursado shaqo, hel la-talinta xirfadda, baro tababarka xirfadda, oo faham xuquuqda shaqada Austria.",
-        "ka": "იპოვეთ სამუშაო შესაძლებლობები, მიიღეთ კარიერული კონსულტაცია, გაიგეთ პროფესიული ტრენინგის შესახებ და გაიგეთ სამუშაო უფლებები ავსტრიაში.",
-        "sq": "Gjeni mundësi pune, merrni këshillim për karrierën, mësoni për trajnimin profesional dhe kuptoni të drejtat e punës në Austri."
-      },
-      "category": {
-        "title": {
-          "en": "Career Support",
-          "de": "Berufsunterstützung"
-        },
-        "description": {
-          "en": "Job search and career guidance",
-          "de": "Jobsuche und Karriereberatung"
-        },
-        "icon": "work",
-        "color": "#0891B2"
-      }
-    },
-    {
-      "type": "category",
-      "id": 5,
-      "title": {
-        "en": "Cultural Integration",
-        "de": "Kulturelle Integration",
-        "ru": "Культурная интеграция",
-        "ce": "Культурин интеграци",
-        "prs": "ادغام فرهنگی",
-        "ps": "کلتوري ادغام",
-        "fa": "ادغام فرهنگی",
-        "ar": "التكامل الثقافي",
-        "ku": "یەکخستنی کولتووری",
-        "so": "Isku-dhafka dhaqanka",
-        "ka": "კულტურული ინტეგრაცია",
-        "sq": "Integrimi kulturor"
-      },
-      "text": {
-        "en": "Learn about Austrian culture, participate in cultural events, find community groups, and build social connections.",
-        "de": "Lernen Sie die österreichische Kultur kennen, nehmen Sie an kulturellen Veranstaltungen teil, finden Sie Gemeinschaftsgruppen und bauen Sie soziale Verbindungen auf.",
-        "ru": "Изучайте австрийскую культуру, участвуйте в культурных мероприятиях, находите общественные группы и устанавливайте социальные связи.",
-        "ce": "Австрин культура хаа, культурни чулацамашкахь дlахьош ле, жамlатин тобанаш карийта, социальни элпаш хlотта.",
-        "prs": "در مورد فرهنگ اتریش بیاموزید، در رویدادهای فرهنگی شرکت کنید، گروه‌های اجتماعی پیدا کنید و ارتباطات اجتماعی برقرار کنید.",
-        "ps": "د اتریش د کلتور په اړه زده کړئ، په کلتوري پیښو کې برخه واخلئ، د ټولنې ډلې ومومئ، او ټولنیز اړیکې جوړې کړئ.",
-        "fa": "در مورد فرهنگ اتریش بیاموزید، در رویدادهای فرهنگی شرکت کنید، گروه‌های اجتماعی پیدا کنید و ارتباطات اجتماعی برقرار کنید.",
-        "ar": "تعرف على الثقافة النمساوية، شارك في الأحداث الثقافية، ابحث عن مجموعات المجتمع، وابن روابط اجتماعية.",
-        "ku": "فێری کولتووری نەمسا ببە، لە ڕووداوە کولتوورییەکاندا بەشداری بکە، گرووپی کۆمەڵگا بدۆزەوە، و پەیوەندی کۆمەڵایەتی دروست بکە.",
-        "so": "Baro dhaqanka Austria, ka qaybgal dhacdooyinka dhaqanka, hel kooxaha bulsho, oo dhis xidhiidh bulsheed.",
-        "ka": "გაიცანით ავსტრიული კულტურა, მონაწილეობა მიიღეთ კულტურულ ღონისძიებებში, იპოვეთ საზოგადოებრივი ჯგუფები და შექმენით სოციალური კავშირები.",
-        "sq": "Mësoni për kulturën austriake, merrni pjesë në ngjarje kulturore, gjeni grupe komunitare dhe ndërtoni lidhje sociale."
-      },
-      "category": {
-        "title": {
-          "en": "Cultural Integration",
-          "de": "Kulturelle Integration"
-        },
-        "description": {
-          "en": "Culture and community connections",
-          "de": "Kultur- und Gemeinschaftsverbindungen"
-        },
-        "icon": "groups",
-        "color": "#DC2626"
-      }
-    },
-    {
-      "type": "category",
-      "id": 6,
-      "title": {
-        "en": "Document Certification",
-        "de": "Dokumentenbeglaubigung",
-        "ru": "Заверение документов",
-        "ce": "Документаш бакъдар",
-        "prs": "تصدیق اسناد",
-        "ps": "د اسنادو تصدیق",
-        "fa": "تصدیق اسناد",
-        "ar": "توثيق الوثائق",
-        "ku": "بڕواپێدانی بەڵگەنامە",
-        "so": "Xaqiijinta dukumentiyada",
-        "ka": "დოკუმენტების დამოწმება",
-        "sq": "Certifikimi i dokumenteve"
-      },
-      "text": {
-        "en": "Get help with document translation, certification, apostille services, and understanding official procedures in Austria.",
-        "de": "Erhalten Sie Hilfe bei Dokumentenübersetzung, Beglaubigung, Apostille-Diensten und dem Verständnis offizieller Verfahren in Österreich.",
-        "ru": "Получите помощь с переводом документов, заверением, апостилированием и пониманием официальных процедур в Австрии.",
-        "ce": "Документаш гочдар, бакъдар, апостиль гlуллакх, Австрин оьздангалла процедураш гойтуш гlо ло.",
-        "prs": "کمک برای ترجمه اسناد، تصدیق، خدمات مهر آپوستیل و درک روند‌های رسمی در اتریش دریافت کنید.",
-        "ps": "د اسنادو د ژباړې، تصدیق، د اپوسټیل خدماتو او په اتریش کې د رسمي پروسیجرونو د پوهیدو لپاره مرسته واخلئ.",
-        "fa": "کمک برای ترجمه اسناد، تصدیق، خدمات مهر آپوستیل و درک روندهای رسمی در اتریش دریافت کنید.",
-        "ar": "احصل على المساعدة في ترجمة الوثائق والتصديق وخدمات الأبوستيل وفهم الإجراءات الرسمية في النمسا.",
-        "ku": "یارمەتی وەربگرە لە وەرگێڕانی بەڵگەنامە، بڕواپێدان، خزمەتگوزاری ئەپۆستیل، و تێگەیشتن لە کارپێکردنە فەرمییەکانی نەمسا.",
-        "so": "Hel caawimaad turjumaadda dukumentiyada, xaqiijinta, adeegyada apostille, iyo fahamka hababka rasmiga ah ee Austria.",
-        "ka": "მიიღეთ დახმარება დოკუმენტების თარგმნაში, დამოწმებაში, აპოსტილის სერვისებში და ავსტრიის ოფიციალური პროცედურების გაგებაში.",
-        "sq": "Merrni ndihmë për përkthimin e dokumenteve, certifikimin, shërbimet e apostilles dhe kuptimin e procedurave zyrtare në Austri."
-      },
-      "category": {
-        "title": {
-          "en": "Document Certification",
-          "de": "Dokumentenbeglaubigung"
-        },
-        "description": {
-          "en": "Document services and certification",
-          "de": "Dokumentendienste und Beglaubigung"
-        },
-        "icon": "description",
-        "color": "#059669"
-      }
-    },
-    {
-      "type": "category",
-      "id": 7,
-      "title": {
-        "en": "Emergency Support",
-        "de": "Notfallunterstützung",
-        "ru": "Экстренная поддержка",
-        "ce": "Экстренни гlо",
-        "prs": "حمایت اضطراری",
-        "ps": "بیړني ملاتړ",
-        "fa": "پشتیبانی اضطراری",
-        "ar": "الدعم الطارئ",
-        "ku": "پشتگیری لە کاتی پێویستدا",
-        "so": "Taageerka degdegga ah",
-        "ka": "საგანგებო მხარდაჭერა",
-        "sq": "Mbështetje emergjente"
-      },
-      "text": {
-        "en": "Access emergency services, crisis hotlines, temporary housing, and immediate support when you need help urgently.",
-        "de": "Zugang zu Notdiensten, Krisen-Hotlines, vorübergehender Unterkunft und sofortiger Unterstützung, wenn Sie dringend Hilfe benötigen.",
-        "ru": "Получите доступ к экстренным службам, кризисным горячим линиям, временному жилью и немедленной поддержке, когда вам срочно нужна помощь.",
-        "ce": "Тlаьхьа хила мала экстренни службаш, кризисни телефонаш, хlинца цlенйина меттиг, тlаьхьара гlо лело.",
-        "prs": "به خدمات اضطراری، خطوط تماس بحران، مسکن موقت و حمایت فوری زمانی که فوراً به کمک نیاز دارید دسترسی پیدا کنید.",
-        "ps": "د بیړنیو خدماتو، بحرانونو ټیلفونونو، لنډمهاله کورونو او سمدستي ملاتړ ته لاسرسی ومومئ کله چې تاسو په بیړه مرستې ته اړتیا لرئ.",
-        "fa": "به خدمات اضطراری، خطوط تماس بحران، مسکن موقت و پشتیبانی فوری زمانی که فوراً به کمک نیاز دارید دسترسی پیدا کنید.",
-        "ar": "احصل على خدمات الطوارئ وخطوط الأزمات الساخنة والسكن المؤقت والدعم الفوري عندما تحتاج إلى المساعدة بشكل عاجل.",
-        "ku": "دەستگەیشتن بە خزمەتگوزاری لە کاتی پێویستدا، هێڵی گەرمی قەیران، نیشتەجێبوونی کاتی، و پشتگیری خێرا کاتێک بە پەلە پێویستیت بە یارمەتی هەیە.",
-        "so": "Hel adeegyada degdegga ah, khadka kulul ee mashaakilka, guryo ku meel gaar ah, iyo taageero degdeg ah markaad u baahan tahay caawimaad degdeg ah.",
-        "ka": "მიიღეთ წვდომა საგანგებო სამსახურებზე, კრიზისულ ცხელ ხაზებზე, დროებით საცხოვრებელზე და დაუყოვნებელ მხარდაჭერაზე, როცა გჭირდებათ გადაუდებელი დახმარება.",
-        "sq": "Aksesoni shërbimet e emergjencës, linjat e krizës, strehimin e përkohshëm dhe mbështetjen e menjëhershme kur keni nevojë për ndihmë urgjente."
-      },
-      "category": {
-        "title": {
-          "en": "Emergency Support",
-          "de": "Notfallunterstützung"
-        },
-        "description": {
-          "en": "Crisis support and emergency services",
-          "de": "Krisenunterstützung und Notdienste"
-        },
-        "icon": "emergency",
-        "color": "#DC2626"
-      }
-    },
-    {
-      "type": "category",
-      "id": 8,
-      "title": {
-        "en": "General Support",
-        "de": "Allgemeine Unterstützung",
-        "ru": "Общая поддержка",
-        "ce": "Йуьхь гlо",
-        "prs": "حمایت عمومی",
-        "ps": "عمومي ملاتړ",
-        "fa": "پشتیبانی عمومی",
-        "ar": "الدعم العام",
-        "ku": "پشتگیری گشتی",
-        "so": "Taageero guud",
-        "ka": "ზოგადი მხარდაჭერა",
-        "sq": "Mbështetje e përgjithshme"
-      },
-      "text": {
-        "en": "Get general information and support for questions that don't fit into specific categories. Reach out for any help you need.",
-        "de": "Erhalten Sie allgemeine Informationen und Unterstützung für Fragen, die nicht in spezifische Kategorien passen. Wenden Sie sich für jede Hilfe, die Sie benötigen.",
-        "ru": "Получите общую информацию и поддержку по вопросам, которые не попадают в конкретные категории. Обращайтесь за любой необходимой помощью.",
-        "ce": "Конкретни категореш тlе хьоьшуш доцу хаттарашна йуьхь хаам а гlо а ло. Хlокху хила мала гlо далийта.",
-        "prs": "اطلاعات کلی و حمایت برای سوالاتی که در دسته‌های خاص قرار نمی‌گیرند دریافت کنید. برای هر کمکی که نیاز دارید تماس بگیرید.",
-        "ps": "د هغو پوښتنو لپاره عمومي معلومات او ملاتړ واخلئ چې په ځانګړو کټګوریو کې نه راځي. د هر هغه مرستې لپاره چې تاسو ورته اړتیا لرئ موږ ته راورسیږئ.",
-        "fa": "اطلاعات کلی و پشتیبانی برای سوالاتی که در دسته‌های خاص قرار نمی‌گیرند دریافت کنید. برای هر کمکی که نیاز دارید تماس بگیرید.",
-        "ar": "احصل على معلومات عامة ودعم للأسئلة التي لا تناسب فئات محددة. تواصل للحصول على أي مساعدة تحتاجها.",
-        "ku": "زانیاری گشتی و پشتگیری بۆ پرسیارەکان وەربگرە کە لە پۆلە تایبەتەکاندا نایەن. بۆ هەر یارمەتییەک کە پێویستت پەیوەندیمان پێوە بکە.",
-        "so": "Hel macluumaad guud iyo taageero su'aalaha aan ku habboonayn qaybaha gaarka ah. Noogu soo wac wixii caawimaad ah ee aad u baahan tahay.",
-        "ka": "მიიღეთ ზოგადი ინფორმაცია და მხარდაჭერა კითხვებისთვის, რომლებიც არ ვარგება კონკრეტულ კატეგორიებში. მიმართეთ ნებისმიერი საჭირო დახმარებისთვის.",
-        "sq": "Merrni informacion të përgjithshëm dhe mbështetje për pyetje që nuk përshtaten në kategori specifike. Kontaktoni për çdo ndihmë që ju nevojitet."
-      },
-      "category": {
-        "title": {
-          "en": "General Support",
-          "de": "Allgemeine Unterstützung"
-        },
-        "description": {
-          "en": "General questions and support",
-          "de": "Allgemeine Fragen und Unterstützung"
-        },
-        "icon": "help",
-        "color": "#059669"
-      }
-    },
-    {
-      "type": "assistant",
-      "id": 9,
-      "title": {
-        "en": "Hi! I'm here to help you navigate this app and find what you need!",
-        "de": "Hallo! Ich bin hier, um Ihnen bei der Navigation in dieser App zu helfen und zu finden, was Sie brauchen!",
-        "ru": "Привет! Я здесь, чтобы помочь вам навигировать по этому приложению и найти то, что вам нужно!",
-        "ce": "Салам! Со кхузахь ву хlуна хlокху приложенин чохь некъ карийта а хlунга хlокху дӀаделира а.",
-        "prs": "سلام! من اینجا هستم تا به شما کمک کنم در این برنامه حرکت کنید و آنچه نیاز دارید پیدا کنید!",
-        "ps": "سلام! زه دلته یم چې ستاسو سره د دغه اپلیکیشن کې د لارښوونې کولو او هغه څه موندلو کې مرسته وکړم چې تاسو یې غواړئ!",
-        "fa": "سلام! من اینجا هستم تا به شما کمک کنم در این برنامه حرکت کنید و آنچه نیاز دارید پیدا کنید!",
-        "ar": "مرحباً! أنا هنا لمساعدتك في التنقل في هذا التطبيق والعثور على ما تحتاجه!",
-        "ku": "سڵاو! من لێرەم بۆ ئەوەی یارمەتیت بدەم لەم ئەپەدا بگەڕێیت و ئەوە بدۆزیتەوە کە پێویستتە!",
-        "so": "Salaam! Waxaan halkan u joogaa inaan kaa caawiyo aad u dhaqdhaqaaqdo appkan oo aad hesho waxa aad u baahan tahay!",
-        "ka": "გამარჯობა! მე აქ ვარ, რომ დაგეხმაროთ ამ აპლიკაციაში ნავიგაციაში და იპოვოთ ის, რაც გჭირდებათ!",
-        "sq": "Përshëndetje! Unë jam këtu për t'ju ndihmuar të navigoni në këtë aplikacion dhe të gjeni atë që ju nevojitet!"
-      },
-      "text": {
-        "en": "Use the virtual assistant to get instant help and guidance. Ask questions in your preferred language and get personalized support.",
-        "de": "Nutzen Sie den virtuellen Assistenten für sofortige Hilfe und Anleitung. Stellen Sie Fragen in Ihrer bevorzugten Sprache und erhalten Sie persönliche Unterstützung.",
-        "ru": "Используйте виртуального помощника, чтобы получить мгновенную помощь и руководство. Задавайте вопросы на предпочитаемом языке и получайте персонализированную поддержку.",
-        "ce": "Виртуальни ассистенто лелае тlаьхьара гlо а хаам а лорна. Хlунна йиш йуьлу меттана хаттар дайте а шуна латта гlо лийте.",
-        "prs": "از دستیار مجازی برای دریافت کمک و راهنمایی فوری استفاده کنید. سوالات را به زبان ترجیحی خود بپرسید و پشتیبانی شخصی دریافت کنید.",
-        "ps": "د سمدستي مرستې او لارښوونې لپاره د مجازي مالي ملګري څخه کار واخلئ. په خپله غوره ژبه پوښتنې وکړئ او شخصي ملاتړ واخلئ.",
-        "fa": "از دستیار مجازی برای دریافت کمک و راهنمایی فوری استفاده کنید. سوالات را به زبان ترجیحی خود بپرسید و پشتیبانی شخصی دریافت کنید.",
-        "ar": "استخدم المساعد الافتراضي للحصول على المساعدة والإرشاد الفوري. اطرح الأسئلة بلغتك المفضلة واحصل على دعم شخصي.",
-        "ku": "یاریدەدەری مەجازی بەکاربهێنە بۆ وەرگرتنی یارمەتی و ڕێنمایی خێرا. پرسیار بکە بە زمانی خۆت و پشتگیری کەسی وەربگرە.",
-        "so": "Isticmaal caawiyaha farsamada ah si aad u hesho caawimaad iyo hagid degdeg ah. Su'aalo ku weydii luqadda aad door bidayso oo hel taageero shakhsi ah.",
-        "ka": "გამოიყენეთ ვირტუალური ასისტენტი მყისიერი დახმარებისა და მითითებების მისაღებად. დასვით კითხვები თქვენს სასურველ ენაზე და მიიღეთ პერსონალიზებული მხარდაჭერა.",
-        "sq": "Përdorni asistentin virtual për të marrë ndihmë dhe udhëzime të menjëhershme. Bëni pyetje në gjuhën tuaj të preferuar dhe merrni mbështetje të personalizuar."
-      }
-    },
-    {
       "type": "feature",
-      "id": 10,
       "title": {
-        "en": "Language Selection",
+        "de": "Kategorien",
+        "en": "Categories",
+        "ru": "Категории",
+        "ce": "Категореш",
+        "prs": "دسته بندی ها",
+        "ps": "کتګوری",
+        "fa": "دسته بندی ها",
+        "ar": "الفئات",
+        "ku": "پۆلەکان",
+        "so": "Qaybaha",
+        "ka": "კატეგორიები",
+        "sq": "Kategoritë"
+      },
+      "text": {
+        "de": "Wählen Sie aus einer Vielzahl von Kategorien, um Ihre Frage gezielt zu platzieren.",
+        "en": "Choose from a variety of categories to place your question in a targeted manner.",
+        "ru": "Выберите одну из множества категорий, чтобы точно разместить свой вопрос.",
+        "ce": "Дукха категореш юкъара цхьаъ харжа, хьайн хаттар цхьана меттахь дIатардан.",
+        "prs": "از بین انواع دسته بندی ها انتخاب کنید تا سوال خود را به صورت هدفمند قرار دهید.",
+        "ps": "د مختلفو کټګوریو څخه غوره کړئ ترڅو خپله پوښتنه په نښه شوي ډول ځای په ځای کړئ.",
+        "fa": "از بین انواع دسته بندی ها انتخاب کنید تا سوال خود را به صورت هدفمند قرار دهید.",
+        "ar": "اختر من بين مجموعة متنوعة من الفئات لوضع سؤالك بطريقة مستهدفة.",
+        "ku": "لەناو جۆرەها پۆلێکدا هەڵبژێرە بۆ ئەوەی پرسیارەکەت بەشێوەیەکی ئامانجدار دابنێیت.",
+        "so": "Ka dooro qaybo kala duwan si aad su'aashaada u dhigto si bartilmaameed leh.",
+        "ka": "აირჩიეთ სხვადასხვა კატეგორიიდან, რათა თქვენი შეკითხვა მიზანმიმართულად განათავსოთ.",
+        "sq": "Zgjidhni nga një sërë kategorish për ta vendosur pyetjen tuaj në mënyrë të synuar."
+      }
+    },
+    {
+      "id": 3,
+      "type": "feature",
+      "title": {
+        "de": "Frage stellen",
+        "en": "Ask a Question",
+        "ru": "Задать вопрос",
+        "ce": "Хаттар дала",
+        "prs": "پرسیدن سوال",
+        "ps": "پوښتنه کول",
+        "fa": "پرسیدن سوال",
+        "ar": "طرح سؤال",
+        "ku": "پرسیار کردن",
+        "so": "Su'aal weydii",
+        "ka": "კითხვის დასმა",
+        "sq": "Bëni një pyetje"
+      },
+      "text": {
+        "de": "Formulieren Sie Ihre Frage klar und präzise, um eine bestmögliche Antwort zu erhalten.",
+        "en": "Formulate your question clearly and precisely to receive the best possible answer.",
+        "ru": "Сформулируйте свой вопрос четко и точно, чтобы получить наилучший ответ.",
+        "ce": "Хьайн хаттар дика а, нийса а кхолла, уггаре дика жоп эца.",
+        "prs": "سوال خود را واضح و دقیق فرموله کنید تا بهترین پاسخ ممکن را دریافت کنید.",
+        "ps": "خپله پوښتنه په واضح او دقیقه توګه جوړه کړئ ترڅو غوره ممکنه ځواب ترلاسه کړئ.",
+        "fa": "سوال خود را واضح و دقیق فرموله کنید تا بهترین پاسخ ممکن را دریافت کنید.",
+        "ar": "صِغ سؤالك بوضوح ودقة لتلقي أفضل إجابة ممكنة.",
+        "ku": "پرسیارەکەت بە ڕوونی و دروستی دابڕێژە بۆ ئەوەی باشترین وەڵام وەربگریت.",
+        "so": "Samee su'aashaada si cad oo sax ah si aad u hesho jawaabta ugu fiican ee suurtogalka ah.",
+        "ka": "ჩამოაყალიბეთ თქვენი შეკითხვა მკაფიოდ და ზუსტად, რათა მიიღოთ საუკეთესო შესაძლო პასუხი.",
+        "sq": "Formuloni pyetjen tuaj qartë dhe saktësisht për të marrë përgjigjen më të mirë të mundshme."
+      }
+    },
+    {
+      "id": 4,
+      "type": "feature",
+      "title": {
+        "de": "Antwort erhalten",
+        "en": "Receive Answer",
+        "ru": "Получить ответ",
+        "ce": "Жоп эца",
+        "prs": "دریافت پاسخ",
+        "ps": "ځواب ترلاسه کړئ",
+        "fa": "دریافت پاسخ",
+        "ar": "تلقي الإجابة",
+        "ku": "وەڵام وەرگرتن",
+        "so": "Jawaab hel",
+        "ka": "პასუხის მიღება",
+        "sq": "Merrni përgjigje"
+      },
+      "text": {
+        "de": "Unsere Experten werden Ihre Frage prüfen und Ihnen so schnell wie möglich eine fundierte Antwort geben.",
+        "en": "Our experts will review your question and provide you with a well-founded answer as quickly as possible.",
+        "ru": "Наши эксперты рассмотрят ваш вопрос и предоставят вам обоснованный ответ как можно скорее.",
+        "ce": "Тхан эксперташ хьан хаттарна хьовсур бу, сихха жоп дала хьожур бу.",
+        "prs": "کارشناسان ما سوال شما را بررسی کرده و در اسرع وقت پاسخ مستدلی را به شما ارائه می دهند.",
+        "ps": "زموږ کارپوهان به ستاسو پوښتنه وڅیړي او ژر تر ژره به تاسو ته یو ښه ځواب درکړي.",
+        "fa": "کارشناسان ما سوال شما را بررسی کرده و در اسرع وقت پاسخ مستدلی را به شما ارائه می دهند.",
+        "ar": "سيراجع خبراؤنا سؤالك وسيزودونك بإجابة مستنيرة في أسرع وقت ممكن.",
+        "ku": "شارەزایانمان پرسیارەکەت دەبینن و بە زووترین کات وەڵامێکی دروستت دەدەنەوە.",
+        "so": "Khubaradayadu waxay dib u eegi doonaan su'aashaada waxayna ku siin doonaan jawaab wanaagsan sida ugu dhakhsaha badan.",
+        "ka": "ჩვენი ექსპერტები გადახედავენ თქვენს შეკითხვას და მოგაწვდიან საფუძვლიან პასუხს რაც შეიძლება სწრაფად.",
+        "sq": "Ekspertët tanë do ta shqyrtojnë pyetjen tuaj dhe do t'ju ofrojnë një përgjigje të bazuar sa më shpejt të jetë e mundur."
+      }
+    },
+    {
+      "id": 5,
+      "type": "feature",
+      "title": {
         "de": "Sprachauswahl",
+        "en": "Language Selection",
         "ru": "Выбор языка",
         "ce": "Мотт харжар",
         "prs": "انتخاب زبان",
@@ -430,23 +173,215 @@
         "fa": "انتخاب زبان",
         "ar": "اختيار اللغة",
         "ku": "هەڵبژاردنی زمان",
-        "so": "Doorashada luqadda",
+        "so": "Xulashada Luuqadda",
         "ka": "ენის არჩევა",
-        "sq": "Zgjedhja e gjuhës"
+        "sq": "Përzgjedhja e gjuhës"
       },
       "text": {
-        "en": "Switch between 12 different languages anytime. The app supports German, English, Russian, Chechen, Dari, Pashto, Farsi, Arabic, Kurdish, Somali, Georgian, and Albanian.",
-        "de": "Wechseln Sie jederzeit zwischen 12 verschiedenen Sprachen. Die App unterstützt Deutsch, Englisch, Russisch, Tschetschenisch, Dari, Paschtu, Farsi, Arabisch, Kurdisch, Somali, Georgisch und Albanisch.",
-        "ru": "Переключайтесь между 12 различными языками в любое время. Приложение поддерживает немецкий, английский, русский, чеченский, дари, пушту, фарси, арабский, курдский, сомалийский, грузинский и албанский.",
-        "ce": "12 башха меттанаш юкъе мукъамехь хийца йиш ю. Приложенин немцойн, ингалсан, оьрсийн, нохчийн, дари, пашто, фарси, lарабийн, курдийн, сомалийн, гуржийн, албанийн меттанаш ловш ю.",
-        "prs": "در هر زمان بین 12 زبان مختلف تغییر دهید. این برنامه از آلمانی، انگلیسی، روسی، چچنی، دری، پشتو، فارسی، عربی، کردی، سومالیایی، گرجی و آلبانیایی پشتیبانی می‌کند.",
-        "ps": "په هر وخت کې د 12 مختلفو ژبو تر منځ بدلون وکړئ. دا اپلیکیشن د آلماني، انګلیسي، روسي، چیچني، دري، پښتو، فارسي، عربي، کردي، سومالي، جورجیایي، او البانیایي ملاتړ کوي.",
-        "fa": "در هر زمان بین 12 زبان مختلف تغییر دهید. این برنامه از آلمانی، انگلیسی، روسی، چچنی، دری، پشتو، فارسی، عربی، کردی، سومالیایی، گرجی و آلبانیایی پشتیبانی می‌کند.",
-        "ar": "تبديل بين 12 لغة مختلفة في أي وقت. يدعم التطبيق الألمانية والإنجليزية والروسية والشيشانية والداري والبشتو والفارسية والعربية والكردية والصومالية والجورجية والألبانية.",
-        "ku": "لە هەر کاتێکدا لە نێوان 12 زمانی جۆراوجۆردا بگۆڕە. ئەم ئەپە پشتگیری ئەڵمانی، ئینگلیزی، ڕووسی، چیچێنی، دەری، پەشتوو، فارسی، عەرەبی، کوردی، سۆمالی، گورجی و ئەڵبانی دەکات.",
-        "so": "Ku bedel 12 luqadood oo kala duwan marwalba ah. Appku wuxuu taageeraa Jarmal, Ingiriis, Ruush, Chechen, Dari, Pashto, Farsi, Carabi, Kurdish, Soomaali, Georgian, iyo Albanian.",
-        "ka": "ნებისმიერ დროს გადართეთ 12 სხვადასხვა ენას შორის. აპლიკაცია მხარს უჭერს გერმანულს, ინგლისურს, რუსულს, ჩეჩნურს, დარის, პაშტოს, ფარსს, არაბულს, ქურთულს, სომალიურს, ქართულს და ალბანურს.",
-        "sq": "Ndryshoni midis 12 gjuhëve të ndryshme në çdo kohë. Aplikacioni mbështet gjermanishten, anglishten, rusishten, çeçenishten, dari, pashto, farsishten, arabishten, kurdishten, somalisht, gjeorgjishten dhe shqipen."
+        "de": "Wählen Sie Ihre bevorzugte Sprache, um die Plattform optimal nutzen zu können.",
+        "en": "Select your preferred language to make the most of the platform.",
+        "ru": "Выберите предпочитаемый язык, чтобы максимально эффективно использовать платформу.",
+        "ce": "Хьайн луъу мотт харжа, платформе дика болх бан.",
+        "prs": "زبان مورد نظر خود را انتخاب کنید تا از پلتفرم نهایت استفاده را ببرید.",
+        "ps": "خپله غوره شوې ژبه غوره کړئ ترڅو د پلیټ فارم څخه ډیره ګټه پورته کړئ.",
+        "fa": "زبان مورد نظر خود را انتخاب کنید تا از پلتفرم نهایت استفاده را ببرید.",
+        "ar": "حدد لغتك المفضلة لتحقيق أقصى استفادة من المنصة.",
+        "ku": "زمانی دڵخوازی خۆت هەڵبژێرە بۆ ئەوەی زۆرترین سوود لە پلاتفۆرمەکە وەربگریت.",
+        "so": "Dooro luqadda aad doorbidayso si aad uga faa'iidaysato madasha.",
+        "ka": "აირჩიეთ თქვენთვის სასურველი ენა, რათა მაქსიმალურად გამოიყენოთ პლატფორმა.",
+        "sq": "Zgjidhni gjuhën tuaj të preferuar për të përfituar sa më shumë nga platforma."
+      }
+    },
+    {
+      "id": 6,
+      "type": "feature",
+      "title": {
+        "de": "Sprachnachrichten",
+        "en": "Voice Messages",
+        "ru": "Голосовые сообщения",
+        "ce": "Озан хаамаш",
+        "prs": "پیام های صوتی",
+        "ps": "غږیز پیغامونه",
+        "fa": "پیام های صوتی",
+        "ar": "الرسائل الصوتية",
+        "ku": "نامە دەنگییەکان",
+        "so": "Farriimaha Codka",
+        "ka": "ხმოვანი შეტყობინებები",
+        "sq": "Mesazhet zanore"
+      },
+      "text": {
+        "de": "Nutzen Sie die Sprachnachrichten-Funktion, um Ihre Fragen mündlich zu übermitteln.",
+        "en": "Use the voice message feature to submit your questions verbally.",
+        "ru": "Используйте функцию голосовых сообщений, чтобы задавать вопросы устно.",
+        "ce": "Озан хаамаш болх бе хьайн хаттарш багахь дIаала.",
+        "prs": "از ویژگی پیام صوتی برای ارسال سوالات خود به صورت شفاهی استفاده کنید.",
+        "ps": "د غږیز پیغام فیچر وکاروئ ترڅو خپلې پوښتنې په لفظي توګه وسپارئ.",
+        "fa": "از ویژگی پیام صوتی برای ارسال سوالات خود به صورت شفاهی استفاده کنید.",
+        "ar": "استخدم ميزة الرسائل الصوتية لإرسال أسئلتك شفهيًا.",
+        "ku": "تایبەتمەندی نامە دەنگییەکان بەکاربهێنە بۆ ئەوەی پرسیارەکانت بە زارەکی پێشکەش بکەیت.",
+        "so": "Isticmaal muuqaalka farriinta codka si aad su'aalahaaga afka uga gudbiso.",
+        "ka": "გამოიყენეთ ხმოვანი შეტყობინებების ფუნქცია თქვენი შეკითხვების სიტყვიერად წარმოსადგენად.",
+        "sq": "Përdorni funksionin e mesazheve zanore për të paraqitur pyetjet tuaja me gojë."
+      }
+    },
+    {
+      "id": 7,
+      "type": "feature",
+      "title": {
+        "de": "Dateianhänge",
+        "en": "File Attachments",
+        "ru": "Прикрепление файлов",
+        "ce": "Файлаш тIетохар",
+        "prs": "پیوست فایل",
+        "ps": "د فایل ضمیمې",
+        "fa": "پیوست فایل",
+        "ar": "مرفقات الملف",
+        "ku": "پێوەلکردنی فایل",
+        "so": "Lifaaqyada Faylka",
+        "ka": "ფაილების მიმაგრება",
+        "sq": "Bashkëngjitja e skedarëve"
+      },
+      "text": {
+        "de": "Fügen Sie relevante Dateien hinzu, um Ihre Frage besser zu veranschaulichen.",
+        "en": "Add relevant files to better illustrate your question.",
+        "ru": "Добавьте соответствующие файлы, чтобы лучше проиллюстрировать свой вопрос.",
+        "ce": "Муьлхха файлаш тIетоха, хаттар дика гайта.",
+        "prs": "فایل های مربوطه را اضافه کنید تا سوال خود را بهتر نشان دهید.",
+        "ps": "اړوند فایلونه اضافه کړئ ترڅو خپله پوښتنه ښه روښانه کړئ.",
+        "fa": "فایل های مربوطه را اضافه کنید تا سوال خود را بهتر نشان دهید.",
+        "ar": "أضف الملفات ذات الصلة لتوضيح سؤالك بشكل أفضل.",
+        "ku": "فایلە پەیوەندیدارەکان زیاد بکە بۆ ئەوەی باشتر پرسیارەکەت ڕوون بکەیتەوە.",
+        "so": "Ku dar faylal khuseeya si aad si fiican u muujiso su'aashaada.",
+        "ka": "დაამატეთ შესაბამისი ფაილები თქვენი შეკითხვის უკეთ საილუსტრაციოდ.",
+        "sq": "Shtoni skedarë të rëndësishëm për të ilustruar më mirë pyetjen tuaj."
+      }
+    },
+    {
+      "id": 8,
+      "type": "feature",
+      "title": {
+        "de": "Community-Unterstützung",
+        "en": "Community Support",
+        "ru": "Поддержка сообщества",
+        "ce": "Юкъараллин гIо",
+        "prs": "پشتیبانی انجمن",
+        "ps": "د ټولنې ملاتړ",
+        "fa": "پشتیبانی انجمن",
+        "ar": "دعم المجتمع",
+        "ku": "پشتیوانی کۆمەڵگە",
+        "so": "Taageerada Bulshada",
+        "ka": "თემის მხარდაჭერა",
+        "sq": "Mbështetja e komunitetit"
+      },
+      "text": {
+        "de": "Profitieren Sie von der Unterstützung und dem Wissen der Community-Mitglieder.",
+        "en": "Benefit from the support and knowledge of community members.",
+        "ru": "Воспользуйтесь поддержкой и знаниями членов сообщества.",
+        "ce": "Юкъараллин декъашхойн гIо а, хаарш а пайда эца.",
+        "prs": "از پشتیبانی و دانش اعضای انجمن بهره مند شوید.",
+        "ps": "د ټولنې د غړو له ملاتړ او پوهې څخه ګټه واخلئ.",
+        "fa": "از پشتیبانی و دانش اعضای انجمن بهره مند شوید.",
+        "ar": "استفد من دعم ومعرفة أعضاء المجتمع.",
+        "ku": "سوود لە پشتگیری و زانیاری ئەندامانی کۆمەڵگە وەربگرە.",
+        "so": "Ka faa'iidayso taageerada iyo aqoonta xubnaha bulshada.",
+        "ka": "ისარგებლეთ საზოგადოების წევრების მხარდაჭერითა და ცოდნით.",
+        "sq": "Përfitoni nga mbështetja dhe njohuritë e anëtarëve të komunitetit."
+      }
+    },
+    {
+      "id": 9,
+      "type": "feature",
+      "title": {
+        "de": "Expertenrat",
+        "en": "Expert Advice",
+        "ru": "Совет эксперта",
+        "ce": "Экспертан хьехам",
+        "prs": "توصیه های تخصصی",
+        "ps": "د ماهر مشوره",
+        "fa": "توصیه های تخصصی",
+        "ar": "نصيحة الخبراء",
+        "ku": "ئامۆژگاری شارەزایان",
+        "so": "Talo khabiir",
+        "ka": "ექსპერტის რჩევა",
+        "sq": "Këshilla e ekspertit"
+      },
+      "text": {
+        "de": "Erhalten Sie fundierte Ratschläge von unseren erfahrenen Experten.",
+        "en": "Receive well-founded advice from our experienced experts.",
+        "ru": "Получите обоснованные советы от наших опытных экспертов.",
+        "ce": "Тхан говза эксперташ дика хьехамаш лур бу.",
+        "prs": "توصیه های مستدلی را از کارشناسان مجرب ما دریافت کنید.",
+        "ps": "زموږ د تجربه لرونکو متخصصینو څخه ښه مشوره ترلاسه کړئ.",
+        "fa": "توصیه های مستدلی را از کارشناسان مجرب ما دریافت کنید.",
+        "ar": "تلقي نصائح مستنيرة من خبرائنا المتمرسين.",
+        "ku": "ئامۆژگاری دروست لە شارەزایانی بەئەزموونی ئێمە وەربگرە.",
+        "so": "Ka hel talo wanaagsan khubaradayada khibrada leh.",
+        "ka": "მიიღეთ კარგად დასაბუთებული რჩევა ჩვენი გამოცდილი ექსპერტებისგან.",
+        "sq": "Merrni këshilla të bazuara mirë nga ekspertët tanë me përvojë."
+      }
+    },
+    {
+      "id": 10,
+      "type": "language",
+      "title": {
+        "de": "Sprache wechseln",
+        "en": "Change Language",
+        "ru": "Изменить язык",
+        "ce": "Мотт хийца",
+        "prs": "تغییر زبان",
+        "ps": "د ژبې بدلون",
+        "fa": "تغییر زبان",
+        "ar": "تغيير اللغة",
+        "ku": "گۆڕینی زمان",
+        "so": "Bedel luqada",
+        "ka": "ენის შეცვლა",
+        "sq": "Ndrysho gjuhën"
+      },
+      "text": {
+        "de": "Verwenden Sie das Sprach-Symbol oben rechts, um zwischen Deutsch und Englisch zu wechseln. Die gesamte Plattform wird in Ihrer bevorzugten Sprache angezeigt.",
+        "en": "Use the language icon in the top right to switch between German and English. The entire platform will be displayed in your preferred language.",
+        "ru": "Используйте значок языка в правом верхнем углу, чтобы переключаться между немецким и английским языками. Вся платформа будет отображаться на выбранном вами языке.",
+        "ce": "Моттан тамга лакхара аьтту агIор пайда эца немцойн а, ингалсан а меттанашна юкъахь хийцамаш бан. Шаерриге платформа хьайн хаьржинчу маттахь гойтур ю.",
+        "prs": "از نماد زبان در بالا سمت راست استفاده کنید تا بین آلمانی و انگلیسی جابجا شوید. کل پلتفرم به زبان دلخواه شما نمایش داده می شود.",
+        "ps": "په پورتنۍ ښي خوا کې د ژبې نښه وکاروئ ترڅو د آلمان او انګلیسي ترمنځ تیر شئ. ټوله پلیټ فارم به ستاسو په غوره شوې ژبه ښودل کیږي.",
+        "fa": "از نماد زبان در بالا سمت راست استفاده کنید تا بین آلمانی و انگلیسی جابجا شوید. کل پلتفرم به زبان دلخواه شما نمایش داده می شود.",
+        "ar": "استخدم رمز اللغة في أعلى اليمين للتبديل بين الألمانية والإنجليزية. سيتم عرض النظام الأساسي بأكمله بلغتك المفضلة.",
+        "ku": "نیشانەی زمان لە سەرەوەی لای ڕاست بەکاربهێنە بۆ گۆڕینی نێوان ئەڵمانی و ئینگلیزی. تەواوی پلاتفۆرمەکە بە زمانی هەڵبژێردراوی تۆ دەردەکەوێت.",
+        "so": "Isticmaal astaanta luqadda ee dhinaca sare ee midig si aad ugu kala beddesho Jarmal iyo Ingiriis. Madasha oo dhan waxaa lagu soo bandhigi doonaa luqadda aad dooratay.",
+        "ka": "გამოიყენეთ ენის ხატულა ზედა მარჯვენა კუთხეში გერმანულ და ინგლისურ ენებს შორის გადასართავად. მთელი პლატფორმა გამოჩნდება თქვენს მიერ არჩეულ ენაზე.",
+        "sq": "Përdorni ikonën e gjuhës në pjesën e sipërme djathtas për të kaluar midis gjermanishtes dhe anglishtes. E gjithë platforma do të shfaqet në gjuhën tuaj të preferuar."
+      }
+    },
+    {
+      "id": 11,
+      "type": "icons",
+      "title": {
+        "de": "Brauchen Sie mehr Hilfe?",
+        "en": "Need More Help?",
+        "ru": "Нужна дополнительная помощь?",
+        "ce": "Кхин гӏо хьуна?",
+        "prs": "به کمک بیشتر نیاز دارید؟",
+        "ps": "نورو مرستو ته اړتیا لرئ؟",
+        "fa": "به کمک بیشتر نیاز دارید؟",
+        "ar": "هل تحتاج المزيد من المساعدة؟",
+        "ku": "پێویستیت بە یارمەتی زیاتر هەیە؟",
+        "so": "Ma u baahan tahay caawimo dheeraad ah?",
+        "ka": "გჭირდებათ მეტი დახმარება?",
+        "sq": "Keni nevojë për më shumë ndihmë?"
+      },
+      "text": {
+        "de": "Sie können jederzeit das Hilfe/Tutorial-Symbol auf jeder Seite drücken, um mehr Informationen über die Funktionen dieser Seite und deren effektive Nutzung zu erhalten.",
+        "en": "You can always press the help/tutorial icon on any page to get more information about that page's features and how to use them effectively.",
+        "ru": "Вы всегда можете нажать на значок справки/обучения на любой странице, чтобы получить больше информации о функциях этой страницы.",
+        "ce": "Хьо даиман латта тайна гӏо/дешаран тамгӏа могӏа агӏона хьажа.",
+        "prs": "شما همیشه می‌توانید روی نماد کمک/آموزش در هر صفحه کلیک کنید.",
+        "ps": "تاسو تل کولی شئ د مرستې/درسي نښې په هر پاڼه کې کلیک وکړئ.",
+        "fa": "شما همیشه می‌توانید روی نماد کمک/آموزش در هر صفحه کلیک کنید.",
+        "ar": "يمكنك دائماً الضغط على رمز المساعدة/التعليم في أي صفحة للحصول على مزيد من المعلومات.",
+        "ku": "تۆ هەمیشە دەتوانی کلیک لە نیشانی یارمەتی/فێرکردن بکەیت لە هەر پەڕەیەکدا.",
+        "so": "Waxaad had iyo jeer riiri kartaa calaamadda caawinta/tababarka bogga kasta.",
+        "ka": "ყოველთვის შეგიძლიათ დააწკაპუნოთ დახმარების/ტუტორიალის ნიშანზე ნებისმიერ გვერდზე.",
+        "sq": "Gjithmonë mund të shtypni ikonën e ndihmës/tutorialit në çdo faqe për të marrë më shumë informacion."
       }
     }
   ]
