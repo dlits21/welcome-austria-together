@@ -93,6 +93,92 @@ const ChatSection: React.FC<ChatSectionProps> = ({
     setFileType(null);
   };
 
+  const renderInputSection = () => {
+    if (chatMode === 'voice') {
+      return (
+        <View style={styles.voiceInputContainer}>
+          <TouchableOpacity
+            style={styles.uploadButton}
+            onPress={() => setShowUploadModal(true)}
+          >
+            <MaterialIcons name="more-horiz" size={24} color="#666" />
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={[
+              styles.voiceButton,
+              isListening && styles.voiceButtonActive
+            ]}
+            onPress={onToggleVoice}
+          >
+            <MaterialIcons
+              name={isListening ? "mic" : "mic-none"}
+              size={24}
+              color="#fff"
+            />
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={[
+              styles.sendButton, 
+              !fileUri && styles.sendButtonDisabled
+            ]}
+            onPress={handleSendMessage}
+            disabled={!fileUri}
+          >
+            <MaterialIcons
+              name="send"
+              size={20}
+              color={fileUri ? "#fff" : "#ccc"}
+            />
+          </TouchableOpacity>
+        </View>
+      );
+    }
+
+    return (
+      <View style={styles.inputContainer}>
+        <TouchableOpacity
+          style={styles.uploadButton}
+          onPress={() => setShowUploadModal(true)}
+        >
+          <MaterialIcons name="more-horiz" size={24} color="#666" />
+        </TouchableOpacity>
+
+        <TextInput
+          ref={textInputRef}
+          style={styles.textInput}
+          value={inputText}
+          onChangeText={onInputChange}
+          placeholder={
+            languageCode === 'de' ? 'Schreibe eine Nachricht...' : 'Type a message...'
+          }
+          maxLength={500}
+          returnKeyType="send"
+          onSubmitEditing={handleSendMessage}
+          blurOnSubmit={false}
+          autoCorrect={false}
+          autoCapitalize="sentences"
+        />
+        
+        <TouchableOpacity
+          style={[
+            styles.sendButton, 
+            (!inputText.trim() && !fileUri) && styles.sendButtonDisabled
+          ]}
+          onPress={handleSendMessage}
+          disabled={!inputText.trim() && !fileUri}
+        >
+          <MaterialIcons
+            name="send"
+            size={20}
+            color={(inputText.trim() || fileUri) ? "#fff" : "#ccc"}
+          />
+        </TouchableOpacity>
+      </View>
+    );
+  };
+
   return (
     <KeyboardAvoidingView
       style={[styles.chatSection, isWideScreen && styles.chatSectionWide]}
@@ -144,45 +230,7 @@ const ChatSection: React.FC<ChatSectionProps> = ({
         />
       )}
 
-      <View style={styles.inputContainer}>
-        <TouchableOpacity
-          style={styles.uploadButton}
-          onPress={() => setShowUploadModal(true)}
-        >
-          <MaterialIcons name="more-horiz" size={24} color="#666" />
-        </TouchableOpacity>
-
-        <TextInput
-          ref={textInputRef}
-          style={styles.textInput}
-          value={inputText}
-          onChangeText={onInputChange}
-          placeholder={
-            languageCode === 'de' ? 'Schreibe eine Nachricht...' : 'Type a message...'
-          }
-          maxLength={500}
-          returnKeyType="send"
-          onSubmitEditing={handleSendMessage}
-          blurOnSubmit={false}
-          autoCorrect={false}
-          autoCapitalize="sentences"
-        />
-        
-        <TouchableOpacity
-          style={[
-            styles.sendButton, 
-            (!inputText.trim() && !fileUri) && styles.sendButtonDisabled
-          ]}
-          onPress={handleSendMessage}
-          disabled={!inputText.trim() && !fileUri}
-        >
-          <MaterialIcons
-            name="send"
-            size={20}
-            color={(inputText.trim() || fileUri) ? "#fff" : "#ccc"}
-          />
-        </TouchableOpacity>
-      </View>
+      {renderInputSection()}
 
       <UploadModal
         visible={showUploadModal}
@@ -288,6 +336,27 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#6b7280',
     marginTop: 8,
+  },
+  voiceInputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    backgroundColor: '#fff',
+    borderTopWidth: 1,
+    borderTopColor: '#e0e0e0',
+  },
+  voiceButton: {
+    flex: 1,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: '#10B981',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginHorizontal: 8,
+  },
+  voiceButtonActive: {
+    backgroundColor: '#EF4444',
   },
 });
 
