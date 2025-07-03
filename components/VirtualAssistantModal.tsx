@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useCallback } from 'react';
 import {
   StyleSheet,
@@ -23,6 +24,8 @@ interface Message {
   text: string;
   isUser: boolean;
   timestamp: Date;
+  fileUri?: string;
+  fileType?: 'image' | 'document';
 }
 
 interface VirtualAssistantModalProps {
@@ -150,9 +153,24 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
     setInputText(text);
   }, []);
 
-  const sendMessage = useCallback(() => {
+  const sendMessage = useCallback((message?: Message) => {
     console.log('Rendering3');
-    if (inputText.trim()) {
+    if (message) {
+      // Handle file attachment message
+      setMessages(prevMessages => [...prevMessages, message]);
+      
+      setTimeout(() => {
+        const assistantResponse: Message = {
+          id: (Date.now() + 1).toString(),
+          text: message.fileType === 'image' 
+            ? getAssistantText('imageReceived', languageCode)
+            : getAssistantText('documentReceived', languageCode),
+          isUser: false,
+          timestamp: new Date(),
+        };
+        setMessages(prev => [...prev, assistantResponse]);
+      }, 1000);
+    } else if (inputText.trim()) {
       const newMessage: Message = {
         id: Date.now().toString(),
         text: inputText,
