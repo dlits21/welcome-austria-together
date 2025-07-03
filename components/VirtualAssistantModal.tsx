@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import {
   StyleSheet,
@@ -15,6 +14,7 @@ import VirtualAssistantAvatar from './VirtualAssistantAvatar';
 import ModeToggle from './ModeToggle';
 import ChatSection from './ChatSection';
 import AvatarSelectionModal from './AvatarSelectionModal';
+import TutorialModal from './TutorialModal';
 import { getAssistantText } from '../utils/languageUtils';
 import { getCharacterImage } from '../utils/assistantUtils';
 import { languages } from '../data/languages/common';
@@ -71,6 +71,7 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
   const [isListening, setIsListening] = useState(false);
   const [chatMode, setChatMode] = useState<'text' | 'voice'>(defaultMode);
   const [showAvatarModal, setShowAvatarModal] = useState(false);
+  const [showTutorialModal, setShowTutorialModal] = useState(false);
   const [assistantData, setAssistantData] = useState<AssistantData | null>(null);
 
   const { width } = Dimensions.get('window');
@@ -240,12 +241,21 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
             </View>
           )}
 
-          <TouchableOpacity 
-            style={styles.avatarButton} 
-            onPress={() => setShowAvatarModal(true)}
-          >
-            <MaterialIcons name="people" size={24} color="#333" />
-          </TouchableOpacity>
+          <View style={styles.headerRightButtons}>
+            <TouchableOpacity 
+              style={styles.tutorialButton} 
+              onPress={() => setShowTutorialModal(true)}
+            >
+              <MaterialIcons name="help" size={24} color="#333" />
+            </TouchableOpacity>
+            
+            <TouchableOpacity 
+              style={styles.avatarButton} 
+              onPress={() => setShowAvatarModal(true)}
+            >
+              <MaterialIcons name="people" size={24} color="#333" />
+            </TouchableOpacity>
+          </View>
         </View>
 
         <View style={[styles.mainContent, isWideScreen && styles.mainContentWide]}>
@@ -303,6 +313,13 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
         onClose={() => setShowAvatarModal(false)}
         onSelectAssistant={handleSelectAssistant}
         languageCode={languageCode}
+      />
+
+      <TutorialModal
+        visible={showTutorialModal}
+        onClose={() => setShowTutorialModal(false)}
+        languageCode={languageCode}
+        tutorialData="virtualAssistant"
       />
     </Modal>
   );
@@ -384,6 +401,15 @@ const styles = StyleSheet.create({
     borderBottomColor: '#e0e0e0',
   },
   avatarButton: {
+    padding: 8,
+    borderRadius: 20,
+    backgroundColor: '#f0f0f0',
+  },
+  headerRightButtons: {
+    flexDirection: 'row',
+    gap: 8,
+  },
+  tutorialButton: {
     padding: 8,
     borderRadius: 20,
     backgroundColor: '#f0f0f0',

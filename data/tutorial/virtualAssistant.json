@@ -1,0 +1,59 @@
+
+{
+  "en": {
+    "slides": [
+      {
+        "title": "Welcome to Virtual Assistant",
+        "content": "Meet your personal AI assistant! Choose from different avatars, each with their own background and language expertise to help you with your questions."
+      },
+      {
+        "title": "Select Your Avatar",
+        "content": "Tap the people icon in the top right to browse available assistants. Each assistant speaks multiple languages and has unique cultural backgrounds."
+      },
+      {
+        "title": "Text Chat",
+        "content": "Type your questions in the text box at the bottom. You can ask about housing, health, legal support, or any other topic you need help with."
+      },
+      {
+        "title": "Voice Chat",
+        "content": "Switch to voice mode using the toggle. Hold the microphone button to speak your questions aloud - your assistant will understand and respond."
+      },
+      {
+        "title": "File Attachments",
+        "content": "Upload images or documents by tapping the menu button (⋯) next to the input field. Your assistant can help explain documents or answer questions about images."
+      },
+      {
+        "title": "Need More Help?",
+        "content": "You can always press the help/tutorial icon on any page to get more information about that page's features and how to use them effectively."
+      }
+    ]
+  },
+  "de": {
+    "slides": [
+      {
+        "title": "Willkommen beim Virtuellen Assistenten",
+        "content": "Lernen Sie Ihren persönlichen KI-Assistenten kennen! Wählen Sie aus verschiedenen Avataren, jeder mit eigenem Hintergrund und Sprachkenntnissen, um Ihnen bei Ihren Fragen zu helfen."
+      },
+      {
+        "title": "Avatar Auswählen",
+        "content": "Tippen Sie auf das Personen-Symbol oben rechts, um verfügbare Assistenten zu durchsuchen. Jeder Assistent spricht mehrere Sprachen und hat einen einzigartigen kulturellen Hintergrund."
+      },
+      {
+        "title": "Text-Chat",
+        "content": "Geben Sie Ihre Fragen in das Textfeld unten ein. Sie können nach Wohnen, Gesundheit, Rechtsberatung oder jedem anderen Thema fragen, bei dem Sie Hilfe benötigen."
+      },
+      {
+        "title": "Sprach-Chat",
+        "content": "Wechseln Sie mit dem Umschalter in den Sprachmodus. Halten Sie die Mikrofon-Taste gedrückt, um Ihre Fragen laut zu sprechen - Ihr Assistent wird verstehen und antworten."
+      },
+      {
+        "title": "Datei-Anhänge",
+        "content": "Laden Sie Bilder oder Dokumente hoch, indem Sie auf die Menü-Taste (⋯) neben dem Eingabefeld tippen. Ihr Assistent kann dabei helfen, Dokumente zu erklären oder Fragen zu Bildern zu beantworten."
+      },
+      {
+        "title": "Brauchen Sie mehr Hilfe?",
+        "content": "Sie können jederzeit das Hilfe/Tutorial-Symbol auf jeder Seite drücken, um mehr Informationen über die Funktionen dieser Seite und deren effektive Nutzung zu erhalten."
+      }
+    ]
+  }
+}
