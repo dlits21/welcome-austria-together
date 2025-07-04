@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image } from 'react-native';
 import { useRouter } from 'expo-router';
 import { MaterialIcons } from '@expo/vector-icons';
+import { getGlobalText, getAskLegalText } from '../utils/languageUtils';
 
 interface Entity {
   id: string;
@@ -41,9 +42,9 @@ interface GenericSupportListProps {
   onResetFilters: () => void;
   routePrefix: string;
   categoryConfig: Record<string, CategoryConfig>;
-  noResultsText: { en: string; de: string };
-  resetFiltersText: { en: string; de: string };
-  resultsFoundText: { en: string; de: string };
+  noResultsText: string;
+  resetFiltersText: string;
+  resultsFoundText: string;
 }
 
 const GenericSupportList: React.FC<GenericSupportListProps> = ({
@@ -94,19 +95,19 @@ const GenericSupportList: React.FC<GenericSupportListProps> = ({
 
   const getEntityTitle = (entity: Entity): string => {
     if (entity.name) {
-      return languageCode === 'de' ? entity.name.de : entity.name.en;
+      return entity.name[languageCode] || entity.name['de'];
     }
     if (entity.title) {
-      return languageCode === 'de' ? entity.title.de : entity.title.en;
+      return entity.title[languageCode] || entity.title['de'];
     }
     return '';
   };
 
   const getEntitySubtitle = (entity: Entity): string => {
     if (entity.subtitle) {
-      return languageCode === 'de' ? entity.subtitle.de : entity.subtitle.en;
+      return entity.subtitle[languageCode] || entity.subtitle['de'];
     }
-    return languageCode === 'de' ? entity.description.de : entity.description.en;
+    return entity.description[languageCode] || entity.description['de'];
   };
 
   const renderIcon = (category: string) => {
@@ -134,11 +135,11 @@ const GenericSupportList: React.FC<GenericSupportListProps> = ({
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.resultsText}>
-          {`${filteredEntities.length} ${languageCode === 'de' ? resultsFoundText.de : resultsFoundText.en}`}
+          {`${filteredEntities.length} ${resultsFoundText}`}
         </Text>
         <TouchableOpacity style={styles.resetButton} onPress={onResetFilters}>
           <Text style={styles.resetButtonText}>
-            {languageCode === 'de' ? resetFiltersText.de : resetFiltersText.en}
+            {resetFiltersText}
           </Text>
         </TouchableOpacity>
       </View>
@@ -162,8 +163,8 @@ const GenericSupportList: React.FC<GenericSupportListProps> = ({
                   <View style={[styles.urgencyBadge, { backgroundColor: getUrgencyColor(entity.urgency) }]}>
                     <Text style={styles.badgeText}>
                       {entity.urgency === 'urgent' 
-                        ? (languageCode === 'de' ? 'Dringend' : 'Urgent')
-                        : (languageCode === 'de' ? 'Nicht dringend' : 'Non-urgent')}
+                        ? (getGlobalText('urgent', languageCode))
+                        : (getGlobalText('nonUrgent', languageCode))}
                     </Text>
                   </View>
                 </View>
@@ -175,14 +176,13 @@ const GenericSupportList: React.FC<GenericSupportListProps> = ({
             </Text>
 
             <View style={styles.tagsContainer}>
+              {entity.supportTypes.map((spec, index) => (
+                <View key={index} style={styles.tag}>
+                  <Text style={styles.tagText}>{getAskLegalText(spec, languageCode)}</Text>
+                </View>
+              ))}
               <View style={styles.tag}>
-                <Text style={styles.tagText}>{entity.category}</Text>
-              </View>
-              <View style={styles.tag}>
-                <Text style={styles.tagText}>{entity.supportType}</Text>
-              </View>
-              <View style={styles.tag}>
-                <Text style={styles.tagText}>{entity.location}</Text>
+                <Text style={styles.tagText}>{getGlobalText(entity.location.replace(" ", "").toLowerCase(), languageCode)}</Text>
               </View>
               {entity.cost && (
                 <View style={styles.tag}>
@@ -195,12 +195,12 @@ const GenericSupportList: React.FC<GenericSupportListProps> = ({
             {entity.specializations && entity.specializations.length > 0 && (
               <View style={styles.specializationsContainer}>
                 <Text style={styles.specializationsTitle}>
-                  {languageCode === 'de' ? 'Spezialisierungen:' : 'Specializations:'}
+                  {getGlobalText('specializations', languageCode)}
                 </Text>
                 <View style={styles.specializationTags}>
                   {entity.specializations.map((spec, index) => (
                     <View key={index} style={styles.specializationTag}>
-                      <Text style={styles.specializationTagText}>{spec}</Text>
+                      <Text style={styles.specializationTagText}>{getAskLegalText(spec.charAt(0).toLowerCase()+ spec.slice(1).replace(" ", "").replace("-",""), languageCode)}</Text>
                     </View>
                   ))}
                 </View>
@@ -218,7 +218,7 @@ const GenericSupportList: React.FC<GenericSupportListProps> = ({
           <View style={styles.noResults}>
             <MaterialIcons name="search-off" size={48} color="#D1D5DB" />
             <Text style={styles.noResultsText}>
-              {languageCode === 'de' ? noResultsText.de : noResultsText.en}
+              {noResultsText}
             </Text>
           </View>
         )}

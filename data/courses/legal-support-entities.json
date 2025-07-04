@@ -11,7 +11,7 @@
       "de": "Kostenlose Rechtsberatung für Asylsuchende, einschließlich Berufungen und Haftfälle."
     },
     "location": "Nationwide",
-    "supportTypes": ["asylum-procedures", "appeals", "detention"],
+    "supportTypes": ["asylumProcedures", "appeals", "detention"],
     "specializations": ["Asylum Law", "Appeals Process", "Detention Rights"],
     "description": {
       "en": "BBU provides comprehensive legal support for asylum seekers throughout Austria. Our experienced legal advisors help with asylum procedures, appeals, and other legal matters.",
@@ -49,7 +49,7 @@
       "de": "Spezialisierte Rechtsberatung für Aufenthaltstitel und Familienzusammenführung."
     },
     "location": "Vienna",
-    "supportTypes": ["residence-permits", "family-reunification", "general"],
+    "supportTypes": ["residencePermits", "familyReunification", "general"],
     "specializations": ["Immigration Law", "Family Law", "Residence Permits"],
     "description": {
       "en": "Providing expert legal guidance for immigration matters in Vienna. Our team specializes in residence permits, family reunification, and general immigration law.",
@@ -86,7 +86,7 @@
       "en": "Assistance with citizenship applications and procedures.",
       "de": "Unterstützung bei Staatsbürgerschaftsanträgen und -verfahren."
     },
-    "location": "Graz",
+    "location": "Styria",
     "supportTypes": ["citizenship", "general"],
     "specializations": ["Citizenship Law", "Naturalization Process"],
     "description": {
@@ -124,8 +124,8 @@
       "en": "Legal support for work permits and employment rights.",
       "de": "Rechtsunterstützung für Arbeitserlaubnisse und Arbeitsrechte."
     },
-    "location": "Linz",
-    "supportTypes": ["work-rights", "general"],
+    "location": "Upper Austria",
+    "supportTypes": ["workRights", "general"],
     "specializations": ["Employment Law", "Work Permits", "Labor Rights"],
     "description": {
       "en": "Expert advice on work permits and employment law for migrants. We help navigate the complex Austrian employment system and protect your rights as a worker.",
@@ -163,7 +163,7 @@
       "de": "Rechtsvertretung bei Diskriminierungsfällen."
     },
     "location": "Vienna",
-    "supportTypes": ["discrimination", "legal-representation"],
+    "supportTypes": ["discrimination", "legalRepresentation"],
     "specializations": ["Anti-Discrimination Law", "Equal Rights", "Legal Representation"],
     "description": {
       "en": "Specialized legal service for cases of discrimination and equal rights. We provide comprehensive legal representation and fight for justice in discrimination cases.",

@@ -2,10 +2,11 @@
 import React from 'react';
 import { Modal, View, Text, TouchableOpacity, StyleSheet, ScrollView, Platform, Dimensions } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { getGlobalText } from '../utils/languageUtils';
 
 interface BaseQuizQuestion {
   question: string;
-  answers: (string | { key: string; en: string; de: string })[];
+  answers: (string | { key: string; value: string})[];
   key: string;
 }
 
@@ -16,7 +17,7 @@ interface BaseQuizModalProps {
   languageCode: string;
   title: string;
   subtitle: string;
-  onAnswer: (answer: string | { key: string; en: string; de: string }) => void;
+  onAnswer: (answer: string | { key: string; value: string }) => void;
   onSkip: () => void;
   onClose: () => void;
   getLevelDescription?: (level: string) => string;
@@ -70,7 +71,7 @@ const BaseQuizModal: React.FC<BaseQuizModalProps> = ({
             >
               {currentQ.answers.map((answer, index) => {
                 const isStringAnswer = typeof answer === 'string';
-                let displayText = isStringAnswer ? answer : (languageCode === 'de' ? answer.de : answer.en);
+                let displayText = isStringAnswer ? answer : (answer.value);
 
                 // Add description for level answers if function provided
                 if (currentQ.key === 'level' && isStringAnswer && getLevelDescription) {
@@ -94,7 +95,7 @@ const BaseQuizModal: React.FC<BaseQuizModalProps> = ({
           <View style={styles.modalFooter}>
             <TouchableOpacity style={styles.skipButton} onPress={onSkip}>
               <Text style={[styles.skipButtonText, isSmallScreen && styles.skipButtonTextSmall]}>
-                {languageCode === 'de' ? 'Überspringen' : 'Skip'}
+                {getGlobalText('skip', languageCode)}
               </Text>
             </TouchableOpacity>
             
