@@ -1,7 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
 import GenericSupportList from './GenericSupportList';
 import culturalEntities from '../data/courses/cultural-integration-entities.json';
+import { getAskCulturalText } from '../utils/languageUtils';
 
 interface CulturalEntity {
   id: string;
@@ -52,18 +52,10 @@ const CulturalSupportList: React.FC<CulturalSupportListProps> = ({
       onResetFilters={onResetFilters}
       routePrefix="/ask/cultural"
       categoryConfig={categoryConfig}
-      noResultsText={{
-        en: 'No results found. Try adjusting your filters.',
-        de: 'Keine Ergebnisse gefunden. Versuchen Sie, Ihre Filter anzupassen.'
-      }}
-      resetFiltersText={{
-        en: 'Reset filters',
-        de: 'Filter zurücksetzen'
-      }}
-      resultsFoundText={{
-        en: 'results found',
-        de: 'Ergebnisse gefunden'
-      }}
+      getTranslation={getAskCulturalText}
+      noResultsText={getAskCulturalText('noResultsFound', languageCode)}
+      resetFiltersText={getAskCulturalText('resetFilters', languageCode)}
+      resultsFoundText={getAskCulturalText('resultsFound', languageCode)}
     />
   );
 };

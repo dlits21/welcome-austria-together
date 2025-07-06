@@ -16,6 +16,7 @@ import QuizControls from '../../components/QuizControls';
 import CulturalSupportList from '../../components/CulturalSupportList';
 import VirtualAssistantModal from '../../components/VirtualAssistantModal';
 import culturalIntegrationEntitiesData from '../../data/courses/cultural-integration-entities.json';
+import { getAskCulturalText, getGlobalText } from '../../utils/languageUtils';
 
 interface CulturalIntegrationEntity {
   id: string;
@@ -93,39 +94,36 @@ const CulturalSupportPage: React.FC = () => {
     location: selectedLocations.length > 0 ? selectedLocations[0] : quizAnswers.location
   };
 
-  // Updated quiz questions for cultural integration
+  // Updated quiz questions with multi-lingual support
   const quizQuestions = [
     {
-      question: language.code === 'de' 
-        ? 'Wie dringend benötigen Sie Unterstützung bei der kulturellen Integration?' 
-        : 'How urgently do you need cultural integration support?',
+      question: getAskCulturalText('howUrgentlyNeedSupport', currentLanguage),
       answers: [
-        { key: 'immediate', en: 'Immediate/Emergency', de: 'Sofort/Notfall' },
-        { key: 'soon', en: 'Within a few weeks', de: 'Innerhalb weniger Wochen' },
-        { key: 'planning', en: 'Planning ahead', de: 'Vorausplanung' }
+        { key: 'immediate', value: getGlobalText('immediate', currentLanguage) },
+        { key: 'soon', value: getGlobalText('soon', currentLanguage) },
+        { key: 'planning', value: getGlobalText('planning', currentLanguage) }
       ],
       key: 'urgency' as keyof typeof quizAnswers
     },
     {
-      question: language.code === 'de' 
-        ? 'Welche Art von Unterstützung benötigen Sie?' 
-        : 'What type of support do you need?',
+      question: getAskCulturalText('whatTypeIntegrationSupport', currentLanguage),
       answers: [
-        { key: 'language-courses', en: 'Language courses', de: 'Sprachkurse' },
-        { key: 'legal-advice', en: 'Legal advice', de: 'Rechtsberatung' },
-        { key: 'cultural-workshops', en: 'Cultural workshops', de: 'Kulturworkshops' },
-        { key: 'networking-events', en: 'Networking events', de: 'Networking-Veranstaltungen' },
-        { key: 'translation-services', en: 'Translation services', de: 'Übersetzungsdienste' },
-        { key: 'orientation-programs', en: 'Orientation programs', de: 'Orientierungsprogramme' },
-        { key: 'community-support', en: 'Community support', de: 'Gemeinschaftliche Unterstützung' }
+        { key: 'language-courses', value: getAskCulturalText('languageCourses', currentLanguage) },
+        { key: 'legal-advice', value: getAskCulturalText('legalAdvice', currentLanguage) },
+        { key: 'cultural-workshops', value: getAskCulturalText('culturalWorkshops', currentLanguage) },
+        { key: 'networking-events', value: getAskCulturalText('networkingEvents', currentLanguage) },
+        { key: 'translation-services', value: getAskCulturalText('translationServices', currentLanguage) },
+        { key: 'orientation-programs', value: getAskCulturalText('orientationPrograms', currentLanguage) },
+        { key: 'community-support', value: getAskCulturalText('communitySupport', currentLanguage) }
       ],
       key: 'supportType' as keyof typeof quizAnswers
     },
     {
-      question: language.code === 'de' 
-        ? 'Wo befinden Sie sich?' 
-        : 'What is your location?',
-      answers: finalLocations.map(location => ({ key: location.toLowerCase(), en: location, de: location })),
+      question: getAskCulturalText('whereAreYouLocated', currentLanguage),
+      answers: finalLocations.map(location => ({ 
+        key: location.toLowerCase(), 
+        value: getGlobalText(location.toLowerCase().replace(" ", ""), currentLanguage) 
+      })),
       key: 'location' as keyof typeof quizAnswers
     }
   ];
@@ -134,7 +132,7 @@ const CulturalSupportPage: React.FC = () => {
     setSoundEnabled(!soundEnabled);
   };
 
-  const handleQuizAnswer = (answer: string | { key: string, en: string, de: string }) => {
+  const handleQuizAnswer = (answer: string | { key: string, value: string }) => {
     const answerValue = typeof answer === 'string' ? answer : answer.key;
     const questionKey = quizQuestions[currentQuestion].key;
     
@@ -199,25 +197,23 @@ const CulturalSupportPage: React.FC = () => {
     setSelectedLocations([]);
   };
 
-  const pageTitle = language.code === 'de' ? 'Kulturelle Integration' : 'Cultural Integration';
-  const pageDescription = language.code === 'de' 
-    ? 'Finden Sie Unterstützung für die kulturelle Integration in Ihrer Nähe.'
-    : 'Find cultural integration support services in your area.';
+  const pageTitle = getAskCulturalText('culturalIntegration', currentLanguage);
+  const pageDescription = getAskCulturalText('findCulturalIntegrationServices', currentLanguage);
 
-  // Filter groups for FilterSection
+  // Filter groups for FilterSection with multi-lingual labels
   const filterGroups = [
     {
-      title: language.code === 'de' ? 'Unterstützungstyp' : 'Support Type',
+      title: getAskCulturalText('supportType', currentLanguage),
       items: supportTypes,
       selectedItems: selectedSupportTypes,
       onToggle: toggleSupportType,
       displayLabels: supportTypes.reduce((acc, type) => ({
         ...acc,
-        [type]: type.replace('-', ' ')
+        [type]: getAskCulturalText(type.replace('-', '').replace(' ', ''), currentLanguage)
       }), {})
     },
     {
-      title: language.code === 'de' ? 'Standort' : 'Location',
+      title: getGlobalText('location', currentLanguage),
       items: finalLocations,
       selectedItems: selectedLocations,
       onToggle: toggleLocation
@@ -243,10 +239,8 @@ const CulturalSupportPage: React.FC = () => {
           currentQuestion={currentQuestion}
           questions={quizQuestions}
           languageCode={language.code}
-          title={language.code === 'de' ? 'Integrations-Assistent' : 'Cultural Integration Assistant'}
-          subtitle={language.code === 'de' 
-            ? 'Beantworten Sie ein paar Fragen, um passende Integrationsdienste zu finden.'
-            : 'Answer a few questions to find suitable integration services.'}
+          title={getAskCulturalText('culturalIntegrationAssistant', currentLanguage)}
+          subtitle={getAskCulturalText('answerQuestionsForIntegrationServices', currentLanguage)}
           onAnswer={handleQuizAnswer}
           onSkip={handleSkipQuiz}
           onClose={handleCloseQuiz}
@@ -262,7 +256,7 @@ const CulturalSupportPage: React.FC = () => {
 
         <FilterSection
           visible={!showQuiz && showFilters}
-          title={language.code === 'de' ? 'Filter' : 'Filters'}
+          title={getGlobalText('filters', currentLanguage)}
           languageCode={language.code}
           filterGroups={filterGroups}
           onClearFilters={clearFilters}
