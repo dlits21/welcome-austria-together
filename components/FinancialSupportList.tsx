@@ -2,6 +2,7 @@
 import React from 'react';
 import GenericSupportList from './GenericSupportList';
 import financialEntities from '../data/courses/financial-literacy-entities.json';
+import { getAskFinancialText, getGlobalText } from '../utils/languageUtils';
 
 interface FinancialSupportListProps {
   filters: Record<string, string>;
@@ -35,20 +36,12 @@ const FinancialSupportList: React.FC<FinancialSupportListProps> = ({ filters, la
       filters={filters}
       languageCode={languageCode}
       onResetFilters={onResetFilters}
+      getTranslation={getAskFinancialText}
       routePrefix="/ask/financial"
       categoryConfig={categoryConfig}
-      noResultsText={{
-        en: 'No financial services found.',
-        de: 'Keine Finanzdienstleistungen gefunden.'
-      }}
-      resetFiltersText={{
-        en: 'Reset filters',
-        de: 'Filter zurücksetzen'
-      }}
-      resultsFoundText={{
-        en: 'results found',
-        de: 'Ergebnisse gefunden'
-      }}
+      noResultsText={getAskFinancialText('noFinancialSupportEntitiesFound', languageCode)}
+      resetFiltersText={getGlobalText('resetFilters', languageCode)}
+      resultsFoundText={getGlobalText('resultsFound', languageCode)}
     />
   );
 };

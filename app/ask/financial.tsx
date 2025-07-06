@@ -9,13 +9,14 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import { languages } from '../../data/languages/common';
 import PageNavigation from '../../components/PageNavigation';
 import LanguageModal from '../../components/LanguageModal';
-import HelpModal from '../../components/HelpModal';
 import BaseQuizModal from '../../components/BaseQuizModal';
 import FilterSection from '../../components/FilterSection';
 import QuizControls from '../../components/QuizControls';
 import FinancialSupportList from '../../components/FinancialSupportList';
 import VirtualAssistantModal from '../../components/VirtualAssistantModal';
+import TutorialModal from '../../components/TutorialModal';
 import financialLiteracyEntitiesData from '../../data/courses/financial-literacy-entities.json';
+import { getAskFinancialText, getGlobalText } from '../../utils/languageUtils';
 
 interface FinancialSupportEntity {
   id: string;
@@ -44,10 +45,9 @@ interface FinancialSupportEntity {
 
 const FinancialSupportPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
-  const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
-  const [showHelpModal, setShowHelpModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
+  const [showTutorial, setShowTutorial] = useState(false);
   
   // Convert JSON data to array format
   const financialSupportEntities: FinancialSupportEntity[] = Object.values(financialLiteracyEntitiesData);
@@ -79,48 +79,38 @@ const FinancialSupportPage: React.FC = () => {
     location: selectedLocations.length > 0 ? selectedLocations[0] : quizAnswers.location
   };
 
-  // Updated quiz questions for financial literacy
+  // Quiz questions with multi-lingual support
   const quizQuestions = [
     {
-      question: language.code === 'de' 
-        ? 'Wie dringend benötigen Sie finanzielle Unterstützung?' 
-        : 'How urgently do you need financial support?',
+      question: getAskFinancialText('howUrgentlyNeedSupport', currentLanguage),
       answers: [
-        { key: 'immediate', en: 'Immediate/Emergency', de: 'Sofort/Notfall' },
-        { key: 'soon', en: 'Within a few weeks', de: 'Innerhalb weniger Wochen' },
-        { key: 'planning', en: 'Planning ahead', de: 'Vorausplanung' }
+        { key: 'immediate', value: getAskFinancialText('immediate', currentLanguage) },
+        { key: 'soon', value: getAskFinancialText('soon', currentLanguage) },
+        { key: 'planning', value: getAskFinancialText('planning', currentLanguage) }
       ],
       key: 'urgency' as keyof typeof quizAnswers
     },
     {
-      question: language.code === 'de' 
-        ? 'Welche Art von finanzieller Unterstützung benötigen Sie?' 
-        : 'What type of financial support do you need?',
+      question: getAskFinancialText('whatTypeFinancialSupport', currentLanguage),
       answers: [
-        { key: 'budgeting', en: 'Help with budgeting and money management', de: 'Hilfe bei Budgetierung und Geldverwaltung' },
-        { key: 'debt-counseling', en: 'Debt counseling and restructuring', de: 'Schuldnerberatung und Umschuldung' },
-        { key: 'financial-planning', en: 'Long-term financial planning', de: 'Langfristige Finanzplanung' },
-        { key: 'investment-courses', en: 'Investment and savings guidance', de: 'Investitions- und Sparanleitung' },
-        { key: 'banking-basics', en: 'Basic banking services', de: 'Grundlegende Bankdienstleistungen' },
-        { key: 'emergency-aid', en: 'Emergency financial assistance', de: 'Finanzielle Nothilfe' },
-        { key: 'financial-education', en: 'Financial literacy courses', de: 'Finanzbildungskurse' }
+        { key: 'budgeting', value: getAskFinancialText('budgeting', currentLanguage) },
+        { key: 'debt-counseling', value: getAskFinancialText('debtCounseling', currentLanguage) },
+        { key: 'financial-planning', value: getAskFinancialText('financialPlanning', currentLanguage) },
+        { key: 'investment-courses', value: getAskFinancialText('investmentCourses', currentLanguage) },
+        { key: 'banking-basics', value: getAskFinancialText('bankingBasics', currentLanguage) },
+        { key: 'emergency-aid', value: getAskFinancialText('emergencyAid', currentLanguage) },
+        { key: 'financial-education', value: getAskFinancialText('financialEducation', currentLanguage) }
       ],
       key: 'supportType' as keyof typeof quizAnswers
     },
     {
-      question: language.code === 'de' 
-        ? 'Wo befinden Sie sich?' 
-        : 'What is your location?',
-      answers: locations.map(location => ({ key: location.toLowerCase(), en: location, de: location })),
+      question: getAskFinancialText('whereAreYouLocated', currentLanguage),
+      answers: locations.map(location => ({ key: location.toLowerCase(), value: getGlobalText(location.toLowerCase().replace(" ", ""), currentLanguage) })),
       key: 'location' as keyof typeof quizAnswers
     }
   ];
 
-  const toggleSound = () => {
-    setSoundEnabled(!soundEnabled);
-  };
-
-  const handleQuizAnswer = (answer: string | { key: string, en: string, de: string }) => {
+  const handleQuizAnswer = (answer: string | { key: string, value: string }) => {
     const answerValue = typeof answer === 'string' ? answer : answer.key;
     const questionKey = quizQuestions[currentQuestion].key;
     
@@ -185,15 +175,13 @@ const FinancialSupportPage: React.FC = () => {
     setSelectedLocations([]);
   };
 
-  const pageTitle = language.code === 'de' ? 'Finanzielle Bildung' : 'Financial Literacy';
-  const pageDescription = language.code === 'de' 
-    ? 'Finden Sie finanzielle Bildungsdienste und Beratung in Ihrer Nähe.'
-    : 'Find financial education services and counseling in your area.';
+  const pageTitle = getAskFinancialText('financialSupport', currentLanguage);
+  const pageDescription = getAskFinancialText('findFinancialServices', currentLanguage);
 
-  // Filter groups for FilterSection
+  // Filter groups for FilterSection with multi-lingual labels
   const filterGroups = [
     {
-      title: language.code === 'de' ? 'Unterstützungstyp' : 'Support Type',
+      title: getAskFinancialText('supportType', currentLanguage),
       items: supportTypes,
       selectedItems: selectedSupportTypes,
       onToggle: toggleSupportType,
@@ -203,7 +191,7 @@ const FinancialSupportPage: React.FC = () => {
       }), {})
     },
     {
-      title: language.code === 'de' ? 'Standort' : 'Location',
+      title: getGlobalText('location', currentLanguage),
       items: locations,
       selectedItems: selectedLocations,
       onToggle: toggleLocation
@@ -212,12 +200,10 @@ const FinancialSupportPage: React.FC = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <PageNavigation 
-        toggleSound={toggleSound}
-        soundEnabled={soundEnabled}
+      <PageNavigation
         showLanguageModal={() => setShowLanguageModal(true)}
-        showHelpModal={() => setShowHelpModal(true)}
         showVirtualAssistant={() => setShowVirtualAssistant(true)}
+        showTutorial={() => setShowTutorial(true)}
       />
       
       <View style={styles.content}>
@@ -229,10 +215,8 @@ const FinancialSupportPage: React.FC = () => {
           currentQuestion={currentQuestion}
           questions={quizQuestions}
           languageCode={language.code}
-          title={language.code === 'de' ? 'Finanz-Assistent' : 'Financial Support Assistant'}
-          subtitle={language.code === 'de' 
-            ? 'Beantworten Sie ein paar Fragen, um passende Finanzdienstleistungen zu finden.'
-            : 'Answer a few questions to find suitable financial services.'}
+          title={getAskFinancialText('financialSupportAssistant', currentLanguage)}
+          subtitle={getAskFinancialText('answerQuestionsForFinancialServices', currentLanguage)}
           onAnswer={handleQuizAnswer}
           onSkip={handleSkipQuiz}
           onClose={handleCloseQuiz}
@@ -248,10 +232,11 @@ const FinancialSupportPage: React.FC = () => {
 
         <FilterSection
           visible={!showQuiz && showFilters}
-          title={language.code === 'de' ? 'Filter' : 'Filters'}
+          title={getGlobalText('filters', currentLanguage)}
           languageCode={language.code}
           filterGroups={filterGroups}
           onClearFilters={clearFilters}
+          getTranslation={getAskFinancialText}
         />
         
         {!showQuiz && (
@@ -270,18 +255,19 @@ const FinancialSupportPage: React.FC = () => {
         languageCode={language.code}
       />
 
-      {/* Help Modal */}
-      <HelpModal
-        visible={showHelpModal}
-        onClose={() => setShowHelpModal(false)}
-        languageCode={language.code}
-      />
-      
       {/* Virtual Assistant Modal */}
       <VirtualAssistantModal
         visible={showVirtualAssistant}
         onClose={() => setShowVirtualAssistant(false)}
         languageCode={language.code}
+      />
+
+      {/* Tutorial Modal */}
+      <TutorialModal
+        visible={showTutorial}
+        onClose={() => setShowTutorial(false)}
+        languageCode={language.code}
+        tutorialData="ask-financial"
       />
     </SafeAreaView>
   );

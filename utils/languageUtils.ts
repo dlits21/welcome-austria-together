@@ -1,3 +1,4 @@
+
 import globalTranslations from '../data/language/global.json';
 import homeTranslations from '../data/language/home.json';
 import indexTranslations from '../data/language/index.json';
@@ -7,6 +8,7 @@ import askGeneralTranslations from '../data/language/ask/general.json';
 import askEmergencyTranslations from '../data/language/ask/emergency.json';
 import askLegalTranslations from '../data/language/ask/legal-support.json';
 import askHealthTranslations from '../data/language/ask/health.json';
+import askFinancialTranslations from '../data/language/ask/financial-support.json';
 
 export const getGlobalText = (key: string, languageCode: string): string => {
   const translation = globalTranslations[key as keyof typeof globalTranslations];
@@ -62,5 +64,10 @@ export const getAskLegalText = (key: string, languageCode: string): string => {
 
 export const getAskHealthText = (key: string, languageCode: string): string => {
   const translation = askHealthTranslations[key as keyof typeof askHealthTranslations];
+  return translation?.[languageCode as keyof typeof translation] || translation?.en || key;
+};
+
+export const getAskFinancialText = (key: string, languageCode: string): string => {
+  const translation = askFinancialTranslations[key as keyof typeof askFinancialTranslations];
   return translation?.[languageCode as keyof typeof translation] || translation?.en || key;
 };
