@@ -20,21 +20,12 @@ import healthEntitiesData from '../../data/courses/health-support-entities.json'
 
 interface HealthSupportEntity {
   id: string;
-  title: {
-    en: string;
-    de: string;
-  };
-  subtitle: {
-    en: string;
-    de: string;
-  };
+  title: any;
+  subtitle: any;
   location: string;
   supportTypes: string[];
   specializations: string[];
-  description: {
-    en: string;
-    de: string;
-  };
+  description: any;
   contact: {
     phone?: string;
     email?: string;
