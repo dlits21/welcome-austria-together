@@ -9,10 +9,10 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import { languages } from '../../data/languages/common';
 import PageNavigation from '../../components/PageNavigation';
 import LanguageModal from '../../components/LanguageModal';
-import HelpModal from '../../components/HelpModal';
 import BaseQuizModal from '../../components/BaseQuizModal';
 import FilterSection from '../../components/FilterSection';
 import QuizControls from '../../components/QuizControls';
+import TutorialModal from '../../components/TutorialModal';
 import CulturalSupportList from '../../components/CulturalSupportList';
 import VirtualAssistantModal from '../../components/VirtualAssistantModal';
 import culturalIntegrationEntitiesData from '../../data/courses/cultural-integration-entities.json';
@@ -20,21 +20,12 @@ import { getAskCulturalText, getGlobalText } from '../../utils/languageUtils';
 
 interface CulturalIntegrationEntity {
   id: string;
-  title: {
-    en: string;
-    de: string;
-  };
-  subtitle: {
-    en: string;
-    de: string;
-  };
+  title: any;
+  subtitle: any;
   location: string;
   supportTypes: string[];
   specializations: string[];
-  description: {
-    en: string;
-    de: string;
-  };
+  description: any;
   contact: {
     phone?: string;
     email?: string;
@@ -45,10 +36,9 @@ interface CulturalIntegrationEntity {
 
 const CulturalSupportPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
-  const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
-  const [showHelpModal, setShowHelpModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
+  const [showTutorial, setShowTutorial] = useState(false);
   
   // Convert JSON data to array format - handle both structures
   const culturalIntegrationEntities: CulturalIntegrationEntity[] = culturalIntegrationEntitiesData.entities ? 
@@ -127,10 +117,6 @@ const CulturalSupportPage: React.FC = () => {
       key: 'location' as keyof typeof quizAnswers
     }
   ];
-
-  const toggleSound = () => {
-    setSoundEnabled(!soundEnabled);
-  };
 
   const handleQuizAnswer = (answer: string | { key: string, value: string }) => {
     const answerValue = typeof answer === 'string' ? answer : answer.key;
@@ -222,12 +208,10 @@ const CulturalSupportPage: React.FC = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <PageNavigation 
-        toggleSound={toggleSound}
-        soundEnabled={soundEnabled}
+      <PageNavigation
         showLanguageModal={() => setShowLanguageModal(true)}
-        showHelpModal={() => setShowHelpModal(true)}
         showVirtualAssistant={() => setShowVirtualAssistant(true)}
+        showTutorial={() => setShowTutorial(true)}
       />
       
       <View style={styles.content}>
@@ -278,18 +262,19 @@ const CulturalSupportPage: React.FC = () => {
         languageCode={language.code}
       />
 
-      {/* Help Modal */}
-      <HelpModal
-        visible={showHelpModal}
-        onClose={() => setShowHelpModal(false)}
-        languageCode={language.code}
-      />
-
       {/* Virtual Assistant Modal */}
       <VirtualAssistantModal
         visible={showVirtualAssistant}
         onClose={() => setShowVirtualAssistant(false)}
         languageCode={language.code}
+      />
+
+      {/* Tutorial Modal */}
+      <TutorialModal
+        visible={showTutorial}
+        onClose={() => setShowTutorial(false)}
+        languageCode={language.code}
+        tutorialData="home"
       />
     </SafeAreaView>
   );

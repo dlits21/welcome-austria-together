@@ -75,9 +75,9 @@ const FinancialSupportPage: React.FC = () => {
     {
       question: getAskFinancialText('howUrgentlyNeedSupport', currentLanguage),
       answers: [
-        { key: 'immediate', value: getAskFinancialText('immediate', currentLanguage) },
-        { key: 'soon', value: getAskFinancialText('soon', currentLanguage) },
-        { key: 'planning', value: getAskFinancialText('planning', currentLanguage) }
+        { key: 'immediate', value: getGlobalText('immediate', currentLanguage) },
+        { key: 'soon', value: getGlobalText('soon', currentLanguage) },
+        { key: 'planning', value: getGlobalText('planning', currentLanguage) }
       ],
       key: 'urgency' as keyof typeof quizAnswers
     },

@@ -1,28 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import GenericSupportList from './GenericSupportList';
 import culturalEntities from '../data/courses/cultural-integration-entities.json';
-import { getAskCulturalText } from '../utils/languageUtils';
-
-interface CulturalEntity {
-  id: string;
-  name: { en: string; de: string };
-  category: string;
-  urgency: string;
-  supportType: string;
-  location: string;
-  description: { en: string; de: string };
-  services: string[];
-  contact: {
-    phone: string;
-    email: string;
-    website: string;
-    address: string;
-  };
-  languages: string[];
-  eligibility: string;
-  cost: string;
-  openingHours: string;
-}
+import { getAskCulturalText, getGlobalText } from '../utils/languageUtils';
 
 interface CulturalSupportListProps {
   filters: Record<string, string>;
@@ -35,6 +14,13 @@ const CulturalSupportList: React.FC<CulturalSupportListProps> = ({
   languageCode,
   onResetFilters
 }) => {
+  const entitiesArray = Object.values(culturalEntities).map(entity => ({
+      ...entity,
+      category: entity.supportTypes[0] || 'cultural-support',
+      urgency: 'non-urgent',
+      supportType: entity.supportTypes[0] || 'general'
+    }));
+
   const categoryConfig = {
     'language-culture': { icon: 'translate', color: '#8B5CF6' },
     'social-integration': { icon: 'groups', color: '#10B981' },
@@ -46,16 +32,16 @@ const CulturalSupportList: React.FC<CulturalSupportListProps> = ({
 
   return (
     <GenericSupportList
-      entities={culturalEntities.entities as CulturalEntity[]}
+      entities={entitiesArray}
       filters={filters}
       languageCode={languageCode}
       onResetFilters={onResetFilters}
+      getTranslation={getAskCulturalText}
       routePrefix="/ask/cultural"
       categoryConfig={categoryConfig}
-      getTranslation={getAskCulturalText}
       noResultsText={getAskCulturalText('noResultsFound', languageCode)}
-      resetFiltersText={getAskCulturalText('resetFilters', languageCode)}
-      resultsFoundText={getAskCulturalText('resultsFound', languageCode)}
+      resetFiltersText={getGlobalText('resetFilters', languageCode)}
+      resultsFoundText={getGlobalText('resultsFound', languageCode)}
     />
   );
 };

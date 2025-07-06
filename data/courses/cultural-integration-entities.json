@@ -10,7 +10,8 @@
       "category": "language-culture",
       "urgency": "non-urgent",
       "supportType": "integration-courses",
-      "location": "all-austria",
+      "supportTypes": ["integration-courses"],
+      "location": "nationwide",
       "description": {
         "en": "Official integration courses combining German language learning with Austrian values and orientation knowledge.",
         "de": "Offizielle Integrationskurse mit Deutschlernen und österreichischen Werten und Orientierungswissen."
@@ -41,6 +42,7 @@
       "category": "social-integration",
       "urgency": "urgent",
       "supportType": "comprehensive-integration",
+      "supportTypes": ["comprehensive-integration"],
       "location": "vienna",
       "description": {
         "en": "Comprehensive integration support including language courses, cultural orientation, and social counseling.",
@@ -73,6 +75,7 @@
       "category": "cultural-exchange",
       "urgency": "non-urgent",
       "supportType": "cultural-orientation",
+      "supportTypes": ["cultural-orientation"],
       "location": "vienna",
       "description": {
         "en": "Promoting intercultural dialogue and providing cultural orientation programs for newcomers.",
@@ -105,7 +108,8 @@
       "category": "education",
       "urgency": "non-urgent",
       "supportType": "cultural-education",
-      "location": "all-austria",
+      "supportTypes": ["cultural-education"],
+      "location": "nationwide",
       "description": {
         "en": "Adult education courses focusing on Austrian culture, language, and social integration.",
         "de": "Erwachsenenbildungskurse mit Fokus auf österreichische Kultur, Sprache und soziale Integration."
@@ -137,7 +141,8 @@
       "category": "humanitarian",
       "urgency": "urgent",
       "supportType": "refugee-integration",
-      "location": "all-austria",
+      "supportTypes": ["refugee-integration"],
+      "location": "nationwide",
       "description": {
         "en": "Specialized integration support for refugees and asylum seekers, including cultural orientation and practical life skills.",
         "de": "Spezialisierte Integrationshilfe für Flüchtlinge und Asylsuchende mit kultureller Orientierung und praktischen Lebenskompetenzen."
@@ -169,7 +174,8 @@
       "category": "community",
       "urgency": "non-urgent",
       "supportType": "community-integration",
-      "location": "all-austria",
+      "supportTypes": ["community-integration"],
+      "location": "nationwide",
       "description": {
         "en": "National integration initiative promoting dialogue between people with and without migration background.",
         "de": "Nationale Integrationsinitiative zur Förderung des Dialogs zwischen Menschen mit und ohne Migrationshintergrund."

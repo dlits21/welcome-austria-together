@@ -70,48 +70,6 @@
     "tr": "Mali desteğe ne kadar acil ihtiyacınız var?",
     "so": "Sidee baad ugu baahan tahay taageero dhaqaale degdeg ah?"
   },
-  "immediate": {
-    "en": "Immediate/Emergency",
-    "de": "Sofort/Notfall",
-    "fr": "Immédiat/Urgence",
-    "es": "Inmediato/Emergencia",
-    "it": "Immediato/Emergenza",
-    "pl": "Natychmiastowe/Nagłe",
-    "uk": "Негайно/Екстрено",
-    "ru": "Немедленно/Экстренно",
-    "ar": "فوري/طارئ",
-    "fa": "فوری/اضطراری",
-    "tr": "Acil/Acil Durum",
-    "so": "Degdeg/Xaalad deg deg ah"
-  },
-  "soon": {
-    "en": "Within a few weeks",
-    "de": "Innerhalb weniger Wochen",
-    "fr": "Dans quelques semaines",
-    "es": "En unas pocas semanas",
-    "it": "Entro poche settimane",
-    "pl": "W ciągu kilku tygodni",
-    "uk": "Протягом кількох тижнів",
-    "ru": "В течение нескольких недель",
-    "ar": "خلال بضعة أسابيع",
-    "fa": "در عرض چند هفته",
-    "tr": "Birkaç hafta içinde",
-    "so": "Muddo dhowr todobaad ah gudahood"
-  },
-  "planning": {
-    "en": "Planning ahead",
-    "de": "Vorausplanung",
-    "fr": "Planification à l'avance",
-    "es": "Planificación anticipada",
-    "it": "Pianificazione anticipata",
-    "pl": "Planowanie z wyprzedzeniem",
-    "uk": "Планування наперед",
-    "ru": "Планирование наперед",
-    "ar": "التخطيط المسبق",
-    "fa": "برنامه‌ریزی از قبل",
-    "tr": "Önceden planlama",
-    "so": "Qorshe hore"
-  },
   "whatTypeFinancialSupport": {
     "en": "What type of financial support do you need?",
     "de": "Welche Art von finanzieller Unterstützung benötigen Sie?",
