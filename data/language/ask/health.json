@@ -1,0 +1,83 @@
+
+{
+  "healthSupport": {
+    "en": "Health Support",
+    "de": "Gesundheitsunterstützung"
+  },
+  "findHealthServices": {
+    "en": "Find health services and medical support in your area.",
+    "de": "Finden Sie Gesundheitsdienste und medizinische Unterstützung in Ihrer Nähe."
+  },
+  "healthSupportAssistant": {
+    "en": "Health Support Assistant",
+    "de": "Gesundheits-Assistent"
+  },
+  "answerQuestionsForHealthServices": {
+    "en": "Answer a few questions to find suitable health services.",
+    "de": "Beantworten Sie ein paar Fragen, um passende Gesundheitsdienste zu finden."
+  },
+  "howUrgentlyNeedSupport": {
+    "en": "How urgently do you need health support?",
+    "de": "Wie dringend benötigen Sie Gesundheitsunterstützung?"
+  },
+  "whatTypeHealthSupport": {
+    "en": "What type of health support do you need?",
+    "de": "Welche Art von Gesundheitsunterstützung benötigen Sie?"
+  },
+  "whereAreYouLocated": {
+    "en": "What is your location?",
+    "de": "Wo befinden Sie sich?"
+  },
+  "immediate": {
+    "en": "Immediate/Emergency",
+    "de": "Sofort/Notfall"
+  },
+  "soon": {
+    "en": "Within a few days",
+    "de": "Innerhalb weniger Tage"
+  },
+  "routine": {
+    "en": "Routine checkup",
+    "de": "Routineuntersuchung"
+  },
+  "generalPractice": {
+    "en": "General Practice",
+    "de": "Allgemeinmedizin"
+  },
+  "mentalHealth": {
+    "en": "Mental Health Support",
+    "de": "Psychische Gesundheit"
+  },
+  "specializedCare": {
+    "en": "Specialized Medical Care",
+    "de": "Spezialisierte medizinische Versorgung"
+  },
+  "emergency": {
+    "en": "Emergency Services",
+    "de": "Notfalldienstleistungen"
+  },
+  "womenHealth": {
+    "en": "Women's Health",
+    "de": "Frauengesundheit"
+  },
+  "dental": {
+    "en": "Dental Care",
+    "de": "Zahnmedizin"
+  },
+  "pharmacy": {
+    "en": "Pharmacy Services",
+    "de": "Apothekendienstleistungen"
+  },
+  "community": {
+    "en": "Community Health Programs",
+    "de": "Gemeinschaftsgesundheitsprogramme"
+  },
+  "supportType": {
+    "en": "Support Type",
+    "de": "Unterstützungstyp"
+  },
+  "noHealthSupportEntitiesFound": {
+    "en": "No health support services found.",
+    "de": "Keine Gesundheitsdienste gefunden."
+  }
+}

@@ -2,6 +2,7 @@
 import React from 'react';
 import GenericSupportList from './GenericSupportList';
 import healthEntities from '../data/courses/health-support-entities.json';
+import { getAskHealthText, getGlobalText } from '../utils/languageUtils';
 
 interface HealthSupportListProps {
   filters: Record<string, string>;
@@ -29,18 +30,9 @@ const HealthSupportList: React.FC<HealthSupportListProps> = ({ filters, language
       onResetFilters={onResetFilters}
       routePrefix="/ask/health"
       categoryConfig={categoryConfig}
-      noResultsText={{
-        en: 'No health support services found.',
-        de: 'Keine Gesundheitsdienste gefunden.'
-      }}
-      resetFiltersText={{
-        en: 'Reset filters',
-        de: 'Filter zurücksetzen'
-      }}
-      resultsFoundText={{
-        en: 'results found',
-        de: 'Ergebnisse gefunden'
-      }}
+      noResultsText={getAskHealthText('noHealthSupportEntitiesFound', languageCode)}
+      resetFiltersText={getGlobalText('resetFilters', languageCode)}
+      resultsFoundText={getGlobalText('resultsFound', languageCode)}
     />
   );
 };
