@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
-import { getGlobalText, getAskLegalText } from '../utils/languageUtils';
+import { getGlobalText } from '../utils/languageUtils';
 
 interface FilterGroup {
   title: string;
@@ -17,6 +17,7 @@ interface FilterSectionProps {
   filterGroups: FilterGroup[];
   additionalFilters?: React.ReactNode;
   onClearFilters: () => void;
+  getTranslation: () => void;
   scrollable?: boolean;
 }
 
@@ -27,6 +28,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({
   filterGroups,
   additionalFilters,
   onClearFilters,
+  getTranslation,
   scrollable = false
 }) => {
   if (!visible) return null;
@@ -52,7 +54,7 @@ const FilterSection: React.FC<FilterSectionProps> = ({
                   styles.filterChipText,
                   group.selectedItems.includes(item) && styles.activeFilterChipText
                 ]}>
-                  {getAskLegalText(group.displayLabels?.[item], languageCode) || getGlobalText(item.replace(" ","").toLowerCase(), languageCode)}
+                  {getTranslation(group.displayLabels?.[item], languageCode) || getGlobalText(item.replace(" ","").toLowerCase(), languageCode)}
                 </Text>
               </TouchableOpacity>
             ))}

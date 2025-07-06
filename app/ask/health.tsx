@@ -10,7 +10,6 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import { languages } from '../../data/languages/common';
 import PageNavigation from '../../components/PageNavigation';
 import LanguageModal from '../../components/LanguageModal';
-import HelpModal from '../../components/HelpModal';
 import BaseQuizModal from '../../components/BaseQuizModal';
 import FilterSection from '../../components/FilterSection';
 import QuizControls from '../../components/QuizControls';
@@ -38,9 +37,7 @@ interface HealthSupportEntity {
 
 const HealthSupportPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
-  const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
-  const [showHelpModal, setShowHelpModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
   const [showTutorial, setShowTutorial] = useState(false);
 
@@ -88,11 +85,11 @@ const HealthSupportPage: React.FC = () => {
     {
       question: getAskHealthText('whatTypeHealthSupport', currentLanguage),
       answers: [
-        { key: 'general-practice', value: getAskHealthText('generalPractice', currentLanguage) },
-        { key: 'mental-health', value: getAskHealthText('mentalHealth', currentLanguage) },
-        { key: 'specialized-care', value: getAskHealthText('specializedCare', currentLanguage) },
+        { key: 'generalPractice', value: getAskHealthText('generalPractice', currentLanguage) },
+        { key: 'mentalHealth', value: getAskHealthText('mentalHealth', currentLanguage) },
+        { key: 'specializedCare', value: getAskHealthText('specializedCare', currentLanguage) },
         { key: 'emergency', value: getAskHealthText('emergency', currentLanguage) },
-        { key: 'women-health', value: getAskHealthText('womenHealth', currentLanguage) },
+        { key: 'womenHealth', value: getAskHealthText('womenHealth', currentLanguage) },
         { key: 'dental', value: getAskHealthText('dental', currentLanguage) },
         { key: 'pharmacy', value: getAskHealthText('pharmacy', currentLanguage) },
         { key: 'community', value: getAskHealthText('community', currentLanguage) }
@@ -105,10 +102,6 @@ const HealthSupportPage: React.FC = () => {
       key: 'location' as keyof typeof quizAnswers
     }
   ];
-
-  const toggleSound = () => {
-    setSoundEnabled(!soundEnabled);
-  };
 
   const handleQuizAnswer = (answer: string | { key: string, value: string }) => {
     const answerValue = typeof answer === 'string' ? answer : answer.key;
@@ -200,11 +193,8 @@ const HealthSupportPage: React.FC = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <PageNavigation 
-        toggleSound={toggleSound}
-        soundEnabled={soundEnabled}
+      <PageNavigation
         showLanguageModal={() => setShowLanguageModal(true)}
-        showHelpModal={() => setShowHelpModal(true)}
         showVirtualAssistant={() => setShowVirtualAssistant(true)}
         showTutorial={() => setShowTutorial(true)}
       />
@@ -239,6 +229,7 @@ const HealthSupportPage: React.FC = () => {
           languageCode={language.code}
           filterGroups={filterGroups}
           onClearFilters={clearFilters}
+          getTranslation={getAskHealthText}
         />
         
         {!showQuiz && (
@@ -254,13 +245,6 @@ const HealthSupportPage: React.FC = () => {
       <LanguageModal
         visible={showLanguageModal}
         onClose={() => setShowLanguageModal(false)}
-        languageCode={language.code}
-      />
-
-      {/* Help Modal */}
-      <HelpModal
-        visible={showHelpModal}
-        onClose={() => setShowHelpModal(false)}
         languageCode={language.code}
       />
 

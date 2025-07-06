@@ -26,7 +26,7 @@
         "Health education workshops",
         "Disaster response"
       ],
-      "supportTypes": ["emergency", "first-aid", "health-education"],
+      "supportTypes": ["emergency", "firstAid", "healthEducation"],
       "specializations": ["Emergency Response", "First Aid Training", "Blood Donation", "Disaster Relief"],
       "contact": {
         "phone": "+43 1 58900",
@@ -51,9 +51,9 @@
         "en": "Mental health counseling and psychological support",
         "de": "Psychische Gesundheitsberatung und psychologische Unterstützung"
       },
-      "category": "mental-health",
+      "category": "mentalHealth",
       "urgency": "non-urgent",
-      "supportType": "mental-health",
+      "supportType": "mentalHealth",
       "location": "Vienna",
       "description": {
         "en": "Caritas provides comprehensive mental health services including counseling, therapy, and crisis intervention for individuals and families.",
@@ -66,7 +66,7 @@
         "Family and couples therapy",
         "Addiction counseling"
       ],
-      "supportTypes": ["mental-health", "counseling", "therapy"],
+      "supportTypes": ["mentalHealth", "counseling", "therapy"],
       "specializations": ["Depression", "Anxiety", "Trauma", "Addiction", "Family Counseling"],
       "contact": {
         "phone": "+43 1 878 12",
@@ -91,9 +91,9 @@
         "en": "Comprehensive healthcare and specialized medical services",
         "de": "Umfassende Gesundheitsversorgung und spezialisierte medizinische Dienste"
       },
-      "category": "specialized-care",
+      "category": "specializedCare",
       "urgency": "non-urgent",
-      "supportType": "medical-care",
+      "supportType": "medicalCare",
       "location": "Vienna",
       "description": {
         "en": "A major healthcare facility providing comprehensive medical services including psychiatry, neurology, and rehabilitation programs.",
@@ -106,7 +106,7 @@
         "Physical rehabilitation",
         "Outpatient clinics"
       ],
-      "supportTypes": ["medical-care", "specialized-treatment", "rehabilitation"],
+      "supportTypes": ["medicalCare", "specializedTreatment", "rehabilitation"],
       "specializations": ["Psychiatry", "Neurology", "Geriatrics", "Physical Medicine", "Rehabilitation"],
       "contact": {
         "phone": "+43 1 91060",
@@ -133,7 +133,7 @@
       },
       "category": "community",
       "urgency": "non-urgent",
-      "supportType": "community-health",
+      "supportType": "communityHealth",
       "location": "Nationwide",
       "description": {
         "en": "A network of organizations providing community-based health and social services throughout Austria, focusing on home care and support for vulnerable populations.",
@@ -146,7 +146,7 @@
         "Disability care coordination",
         "Community health programs"
       ],
-      "supportTypes": ["community-health", "elderly-care", "home-care"],
+      "supportTypes": ["communityHealth", "elderlyCare", "homeCare"],
       "specializations": ["Home Care", "Elderly Support", "Family Services", "Disability Support"],
       "contact": {
         "phone": "+43 1 40400",
@@ -173,7 +173,7 @@
       },
       "category": "emergency",
       "urgency": "urgent",
-      "supportType": "crisis-support",
+      "supportType": "crisisSupport",
       "location": "Nationwide",
       "description": {
         "en": "A free, anonymous 24/7 telephone counseling service providing emotional support and crisis intervention for people in distress.",
@@ -186,7 +186,7 @@
         "Online chat support",
         "Email counseling"
       ],
-      "supportTypes": ["crisis-support", "emotional-counseling", "suicide-prevention"],
+      "supportTypes": ["crisisSupport", "emotionalCounseling", "suicidePrevention"],
       "specializations": ["Crisis Intervention", "Suicide Prevention", "Emotional Support", "Anonymous Counseling"],
       "contact": {
         "phone": "142",

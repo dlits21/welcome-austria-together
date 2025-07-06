@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image } from 'react-native';
 import { useRouter } from 'expo-router';
 import { MaterialIcons } from '@expo/vector-icons';
-import { getGlobalText, getAskLegalText } from '../utils/languageUtils';
+import { getGlobalText } from '../utils/languageUtils';
 
 interface Entity {
   id: string;
@@ -40,6 +40,7 @@ interface GenericSupportListProps {
   filters: Record<string, string>;
   languageCode: string;
   onResetFilters: () => void;
+  getTranslation: () => void;
   routePrefix: string;
   categoryConfig: Record<string, CategoryConfig>;
   noResultsText: string;
@@ -52,6 +53,7 @@ const GenericSupportList: React.FC<GenericSupportListProps> = ({
   filters,
   languageCode,
   onResetFilters,
+  getTranslation,
   routePrefix,
   categoryConfig,
   noResultsText,
@@ -177,10 +179,11 @@ const GenericSupportList: React.FC<GenericSupportListProps> = ({
               {getEntitySubtitle(entity)}
             </Text>
 
+            {/* Show all specializations */}
             <View style={styles.tagsContainer}>
               {entity.supportTypes.map((spec, index) => (
                 <View key={index} style={styles.tag}>
-                  <Text style={styles.tagText}>{getAskLegalText(spec, languageCode)}</Text>
+                  <Text style={styles.tagText}>{getTranslation(spec, languageCode)}</Text>
                 </View>
               ))}
               <View style={styles.tag}>
@@ -202,7 +205,7 @@ const GenericSupportList: React.FC<GenericSupportListProps> = ({
                 <View style={styles.specializationTags}>
                   {entity.specializations.map((spec, index) => (
                     <View key={index} style={styles.specializationTag}>
-                      <Text style={styles.specializationTagText}>{getAskLegalText(spec.charAt(0).toLowerCase()+ spec.slice(1).replace(" ", "").replace("-",""), languageCode)}</Text>
+                      <Text style={styles.specializationTagText}>{getTranslation(spec.charAt(0).toLowerCase()+ spec.slice(1).replace(" ", "").replace("-",""), languageCode)}</Text>
                     </View>
                   ))}
                 </View>

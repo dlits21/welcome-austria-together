@@ -38,6 +38,7 @@ const LegalSupportList: React.FC<LegalSupportListProps> = ({ filters, languageCo
       filters={filters}
       languageCode={languageCode}
       onResetFilters={onResetFilters}
+      getTranslation={getAskLegalText}
       routePrefix="/ask/legal-support"
       categoryConfig={categoryConfig}
       noResultsText={getAskLegalText('noLegalSupportEntitiesFound', languageCode)}

@@ -9,7 +9,6 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import { languages } from '../../data/languages/common';
 import PageNavigation from '../../components/PageNavigation';
 import LanguageModal from '../../components/LanguageModal';
-import HelpModal from '../../components/HelpModal';
 import BaseQuizModal from '../../components/BaseQuizModal';
 import FilterSection from '../../components/FilterSection';
 import QuizControls from '../../components/QuizControls';
@@ -38,9 +37,7 @@ interface LegalSupportEntity {
 
 const LegalSupportPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
-  const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
-  const [showHelpModal, setShowHelpModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
   const [showTutorial, setShowTutorial] = useState(false);
 
@@ -97,10 +94,6 @@ const LegalSupportPage: React.FC = () => {
       key: 'location' as keyof typeof quizAnswers
     }
   ];
-
-  const toggleSound = () => {
-    setSoundEnabled(!soundEnabled);
-  };
 
   const handleQuizAnswer = (answer: string | { key: string, en: string, de: string }) => {
     const answerValue = typeof answer === 'string' ? answer : answer.key;
@@ -192,11 +185,8 @@ const LegalSupportPage: React.FC = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <PageNavigation 
-        toggleSound={toggleSound}
-        soundEnabled={soundEnabled}
+      <PageNavigation
         showLanguageModal={() => setShowLanguageModal(true)}
-        showHelpModal={() => setShowHelpModal(true)}
         showVirtualAssistant={() => setShowVirtualAssistant(true)}
         showTutorial={() => setShowTutorial(true)}
       />
@@ -231,6 +221,7 @@ const LegalSupportPage: React.FC = () => {
           languageCode={language.code}
           filterGroups={filterGroups}
           onClearFilters={clearFilters}
+          getTranslation={getAskLegalText}
         />
         
         {!showQuiz && (
@@ -246,13 +237,6 @@ const LegalSupportPage: React.FC = () => {
       <LanguageModal
         visible={showLanguageModal}
         onClose={() => setShowLanguageModal(false)}
-        languageCode={language.code}
-      />
-
-      {/* Help Modal */}
-      <HelpModal
-        visible={showHelpModal}
-        onClose={() => setShowHelpModal(false)}
         languageCode={language.code}
       />
 

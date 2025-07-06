@@ -12,9 +12,9 @@ interface HealthSupportListProps {
 
 const HealthSupportList: React.FC<HealthSupportListProps> = ({ filters, languageCode, onResetFilters }) => {
   const categoryConfig = {
-    'general-practice': { icon: 'local-hospital', color: '#3B82F6' },
-    'mental-health': { icon: 'psychology', color: '#8B5CF6' },
-    'specialized-care': { icon: 'medical-services', color: '#10B981' },
+    'generalPractice': { icon: 'local-hospital', color: '#3B82F6' },
+    'mentalHealth': { icon: 'psychology', color: '#8B5CF6' },
+    'specializedCare': { icon: 'medical-services', color: '#10B981' },
     'emergency': { icon: 'emergency', color: '#EF4444' },
     'women-health': { icon: 'pregnant-woman', color: '#EC4899' },
     'dental': { icon: 'dentistry', color: '#06B6D4' },
@@ -28,6 +28,7 @@ const HealthSupportList: React.FC<HealthSupportListProps> = ({ filters, language
       filters={filters}
       languageCode={languageCode}
       onResetFilters={onResetFilters}
+      getTranslation={getAskHealthText}
       routePrefix="/ask/health"
       categoryConfig={categoryConfig}
       noResultsText={getAskHealthText('noHealthSupportEntitiesFound', languageCode)}
