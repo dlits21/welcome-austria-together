@@ -205,7 +205,7 @@ const GenericSupportList: React.FC<GenericSupportListProps> = ({
                 <View style={styles.specializationTags}>
                   {entity.specializations.map((spec, index) => (
                     <View key={index} style={styles.specializationTag}>
-                      <Text style={styles.specializationTagText}>{getTranslation(spec.charAt(0).toLowerCase()+ spec.slice(1).replace(" ", "").replace("-",""), languageCode)}</Text>
+                      <Text style={styles.specializationTagText}>{getTranslation(spec.charAt(0).toLowerCase()+ spec.replace(" ", "").replace("-","").slice(1), languageCode)}</Text>
                     </View>
                   ))}
                 </View>

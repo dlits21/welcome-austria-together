@@ -27,7 +27,7 @@
         "Disaster response"
       ],
       "supportTypes": ["emergency", "firstAid", "healthEducation"],
-      "specializations": ["Emergency Response", "First Aid Training", "Blood Donation", "Disaster Relief"],
+      "specializations": ["Emergency Response", "FirstAidTraining", "Blood Donation", "Disaster Relief"],
       "contact": {
         "phone": "+43 1 58900",
         "email": "info@roteskreuz.at",

@@ -12,7 +12,7 @@
     },
     "provider": "City of Vienna",
     "location": "Vienna",
-    "supportTypes": ["budgeting", "financial-planning", "debt-counseling"],
+    "supportTypes": ["budgeting", "financialPlanning", "debtCounseling"],
     "specializations": ["Personal Budgeting", "Debt Management", "Savings Planning", "Investment Basics"],
     "description": {
       "en": "Provides free financial planning services, budgeting workshops, and debt counseling for individuals and families.",
@@ -49,7 +49,7 @@
     },
     "provider": "ASB Schuldnerberatungen GmbH",
     "location": "Vienna",
-    "supportTypes": ["debt-counseling", "financial-rehabilitation", "legal-support"],
+    "supportTypes": ["debtCounseling", "financialRehabilitation", "legalSupport"],
     "specializations": ["Debt Restructuring", "Insolvency Procedures", "Financial Mediation", "Legal Advice"],
     "description": {
       "en": "Specialized debt counseling service helping individuals overcome financial difficulties and rebuild their financial stability.",
@@ -86,7 +86,7 @@
     },
     "provider": "Erste Bank und Sparkasse",
     "location": "Vienna",
-    "supportTypes": ["financial-education", "banking-basics", "investment-courses"],
+    "supportTypes": ["financialEducation", "bankingBasics", "investmentCourses"],
     "specializations": ["Banking Services", "Investment Planning", "Retirement Planning", "Insurance Products"],
     "description": {
       "en": "Offers comprehensive financial education programs covering banking, investments, and personal finance management.",
@@ -123,8 +123,8 @@
     },
     "provider": "Caritas Austria",
     "location": "Vienna",
-    "supportTypes": ["social-counseling", "emergency-aid", "budgeting"],
-    "specializations": ["Emergency Financial Aid", "Family Budgeting", "Social Support", "Crisis Intervention"],
+    "supportTypes": ["socialCounseling", "emergencyAid", "budgeting"],
+    "specializations": ["Emergency FinancialAid", "Family Budgeting", "Social Support", "Crisis Intervention"],
     "description": {
       "en": "Provides financial counseling and emergency aid for families and individuals facing financial hardship.",
       "de": "Bietet Finanzberatung und Nothilfe für Familien und Einzelpersonen in finanziellen Notlagen."
@@ -160,7 +160,7 @@
     },
     "provider": "Financial Market Authority (FMA)",
     "location": "Nationwide",
-    "supportTypes": ["online-courses", "self-study", "financial-education"],
+    "supportTypes": ["onlineCourses", "selfStudy", "financialEducation"],
     "specializations": ["Consumer Protection", "Investment Risks", "Financial Products", "Money Management"],
     "description": {
       "en": "Comprehensive online platform offering free financial education courses and resources for all levels.",
