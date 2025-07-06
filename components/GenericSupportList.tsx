@@ -69,7 +69,9 @@ const GenericSupportList: React.FC<GenericSupportListProps> = ({
     }
 
     if (filters.supportType) {
-      filtered = filtered.filter(entity => entity.supportType === filters.supportType);
+      filtered = filtered.filter(entity =>
+          entity.supportTypes && entity.supportTypes.includes(filters.supportType)
+        );
     }
 
     if (filters.location && filters.location !== 'all-austria') {
