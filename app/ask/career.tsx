@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { 
   StyleSheet, 
@@ -16,6 +17,7 @@ import QuizControls from '../../components/QuizControls';
 import CareerSupportList from '../../components/CareerSupportList';
 import VirtualAssistantModal from '../../components/VirtualAssistantModal';
 import careerCounselingEntitiesData from '../../data/courses/career-counseling-entities.json';
+import { getAskCareerText, getGlobalText } from '../../utils/languageUtils';
 
 interface CareerCounselingEntity {
   id: string;
@@ -93,39 +95,36 @@ const CareerSupportPage: React.FC = () => {
     location: selectedLocations.length > 0 ? selectedLocations[0] : quizAnswers.location
   };
 
-  // Updated quiz questions for career counseling
+  // Updated quiz questions with multi-lingual support
   const quizQuestions = [
     {
-      question: language.code === 'de' 
-        ? 'Wie dringend benötigen Sie Karriereberatung?' 
-        : 'How urgently do you need career counseling?',
+      question: getAskCareerText('howUrgentlyNeedSupport', currentLanguage),
       answers: [
-        { key: 'immediate', en: 'Immediate/Emergency', de: 'Sofort/Notfall' },
-        { key: 'soon', en: 'Within a few weeks', de: 'Innerhalb weniger Wochen' },
-        { key: 'planning', en: 'Planning ahead', de: 'Vorausplanung' }
+        { key: 'immediate', value: getGlobalText('immediate', currentLanguage) },
+        { key: 'soon', value: getGlobalText('soon', currentLanguage) },
+        { key: 'planning', value: getGlobalText('planning', currentLanguage) }
       ],
       key: 'urgency' as keyof typeof quizAnswers
     },
     {
-      question: language.code === 'de' 
-        ? 'Welche Art von Karriereunterstützung benötigen Sie?' 
-        : 'What type of career support do you need?',
+      question: getAskCareerText('whatTypeCareerSupport', currentLanguage),
       answers: [
-        { key: 'resume-writing', en: 'Resume and cover letter writing', de: 'Lebenslauf- und Anschreiben-Erstellung' },
-        { key: 'interview-skills', en: 'Interview skills training', de: 'Bewerbungsgesprächstraining' },
-        { key: 'career-guidance', en: 'Career guidance and planning', de: 'Karriereberatung und -planung' },
-        { key: 'job-search', en: 'Job search strategies', de: 'Strategien zur Jobsuche' },
-        { key: 'skill-development', en: 'Skill development and training', de: 'Kompetenzentwicklung und Schulung' },
-        { key: 'networking', en: 'Networking opportunities', de: 'Networking-Möglichkeiten' },
-        { key: 'career-change', en: 'Career change advice', de: 'Beratung zum Karrierewechsel' }
+        { key: 'resume-writing', value: getAskCareerText('resumeWriting', currentLanguage) },
+        { key: 'interview-skills', value: getAskCareerText('interviewSkills', currentLanguage) },
+        { key: 'career-guidance', value: getAskCareerText('careerGuidance', currentLanguage) },
+        { key: 'job-search', value: getAskCareerText('jobSearch', currentLanguage) },
+        { key: 'skill-development', value: getAskCareerText('skillDevelopment', currentLanguage) },
+        { key: 'networking', value: getAskCareerText('networking', currentLanguage) },
+        { key: 'career-change', value: getAskCareerText('careerChange', currentLanguage) }
       ],
       key: 'supportType' as keyof typeof quizAnswers
     },
     {
-      question: language.code === 'de' 
-        ? 'Wo befinden Sie sich?' 
-        : 'What is your location?',
-      answers: finalLocations.map(location => ({ key: location.toLowerCase(), en: location, de: location })),
+      question: getAskCareerText('whereAreYouLocated', currentLanguage),
+      answers: finalLocations.map(location => ({ 
+        key: location.toLowerCase(), 
+        value: getGlobalText(location.toLowerCase().replace(" ", ""), currentLanguage) 
+      })),
       key: 'location' as keyof typeof quizAnswers
     }
   ];
@@ -134,7 +133,7 @@ const CareerSupportPage: React.FC = () => {
     setSoundEnabled(!soundEnabled);
   };
 
-  const handleQuizAnswer = (answer: string | { key: string, en: string, de: string }) => {
+  const handleQuizAnswer = (answer: string | { key: string, value: string }) => {
     const answerValue = typeof answer === 'string' ? answer : answer.key;
     const questionKey = quizQuestions[currentQuestion].key;
     
@@ -199,25 +198,23 @@ const CareerSupportPage: React.FC = () => {
     setSelectedLocations([]);
   };
 
-  const pageTitle = language.code === 'de' ? 'Karriereberatung' : 'Career Counseling';
-  const pageDescription = language.code === 'de' 
-    ? 'Finden Sie Karriereberatungsdienste und Unterstützung in Ihrer Nähe.'
-    : 'Find career counseling services and support in your area.';
+  const pageTitle = getAskCareerText('careerCounseling', currentLanguage);
+  const pageDescription = getAskCareerText('findCareerServices', currentLanguage);
 
-  // Filter groups for FilterSection
+  // Filter groups for FilterSection with multi-lingual labels
   const filterGroups = [
     {
-      title: language.code === 'de' ? 'Unterstützungstyp' : 'Support Type',
+      title: getAskCareerText('supportType', currentLanguage),
       items: supportTypes,
       selectedItems: selectedSupportTypes,
       onToggle: toggleSupportType,
       displayLabels: supportTypes.reduce((acc, type) => ({
         ...acc,
-        [type]: type.replace('-', ' ')
+        [type]: getAskCareerText(type.replace('-', '').replace(' ', ''), currentLanguage)
       }), {})
     },
     {
-      title: language.code === 'de' ? 'Standort' : 'Location',
+      title: getGlobalText('location', currentLanguage),
       items: finalLocations,
       selectedItems: selectedLocations,
       onToggle: toggleLocation
@@ -243,10 +240,8 @@ const CareerSupportPage: React.FC = () => {
           currentQuestion={currentQuestion}
           questions={quizQuestions}
           languageCode={language.code}
-          title={language.code === 'de' ? 'Karriere-Assistent' : 'Career Support Assistant'}
-          subtitle={language.code === 'de' 
-            ? 'Beantworten Sie ein paar Fragen, um passende Karriereberatungsdienste zu finden.'
-            : 'Answer a few questions to find suitable career counseling services.'}
+          title={getAskCareerText('careerSupportAssistant', currentLanguage)}
+          subtitle={getAskCareerText('answerQuestionsForCareerServices', currentLanguage)}
           onAnswer={handleQuizAnswer}
           onSkip={handleSkipQuiz}
           onClose={handleCloseQuiz}
@@ -262,7 +257,7 @@ const CareerSupportPage: React.FC = () => {
 
         <FilterSection
           visible={!showQuiz && showFilters}
-          title={language.code === 'de' ? 'Filter' : 'Filters'}
+          title={getGlobalText('filters', currentLanguage)}
           languageCode={language.code}
           filterGroups={filterGroups}
           onClearFilters={clearFilters}

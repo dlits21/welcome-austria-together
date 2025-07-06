@@ -7,6 +7,14 @@
         "en": "ÖIF Integration Courses",
         "de": "ÖIF Integrationskurse"
       },
+      "title": {
+        "en": "ÖIF Integration Courses",
+        "de": "ÖIF Integrationskurse"
+      },
+      "subtitle": {
+        "en": "Official integration courses combining German language learning with Austrian values and orientation knowledge.",
+        "de": "Offizielle Integrationskurse mit Deutschlernen und österreichischen Werten und Orientierungswissen."
+      },
       "category": "language-culture",
       "urgency": "non-urgent",
       "supportType": "integration-courses",
@@ -31,13 +39,28 @@
       "languages": ["German", "English", "Arabic", "Farsi"],
       "eligibility": "Third-country nationals with residence permits",
       "cost": "€750 per course, refundable upon completion",
-      "openingHours": "Monday-Friday 8:00-17:00"
+      "openingHours": "Monday-Friday 8:00-17:00",
+      "provider": "Österreichischer Integrationsfonds",
+      "hasMap": true,
+      "coordinates": {
+        "lat": 48.2082,
+        "lng": 16.3738
+      },
+      "specializations": ["Integration Courses", "Values Training", "Cultural Orientation"]
     },
     {
       "id": "diakonie-integration-center",
       "name": {
         "en": "Diakonie Integration Center",
         "de": "Diakonie Integrationszentrum"
+      },
+      "title": {
+        "en": "Diakonie Integration Center",
+        "de": "Diakonie Integrationszentrum"
+      },
+      "subtitle": {
+        "en": "Comprehensive integration support including language courses, cultural orientation, and social counseling.",
+        "de": "Umfassende Integrationshilfe mit Sprachkursen, kultureller Orientierung und Sozialberatung."
       },
       "category": "social-integration",
       "urgency": "urgent",
@@ -64,13 +87,28 @@
       "languages": ["German", "English", "Arabic", "Farsi", "Turkish"],
       "eligibility": "Refugees, asylum seekers, and migrants",
       "cost": "Free for eligible participants",
-      "openingHours": "Monday-Thursday 9:00-17:00, Friday 9:00-14:00"
+      "openingHours": "Monday-Thursday 9:00-17:00, Friday 9:00-14:00",
+      "provider": "Diakonie Austria",
+      "hasMap": true,
+      "coordinates": {
+        "lat": 48.2243,
+        "lng": 16.3351
+      },
+      "specializations": ["Social Integration", "Language Support", "Counseling"]
     },
     {
       "id": "intercultural-center",
       "name": {
         "en": "Intercultural Center",
         "de": "Interkulturelles Zentrum"
+      },
+      "title": {
+        "en": "Intercultural Center",
+        "de": "Interkulturelles Zentrum"
+      },
+      "subtitle": {
+        "en": "Promoting intercultural dialogue and providing cultural orientation programs for newcomers.",
+        "de": "Förderung des interkulturellen Dialogs und kulturelle Orientierungsprogramme für Neuankömmlinge."
       },
       "category": "cultural-exchange",
       "urgency": "non-urgent",
@@ -97,13 +135,28 @@
       "languages": ["German", "English", "Multiple languages"],
       "eligibility": "Open to all interested in intercultural exchange",
       "cost": "Most programs free, some workshops have fees",
-      "openingHours": "Monday-Friday 9:00-17:00"
+      "openingHours": "Monday-Friday 9:00-17:00",
+      "provider": "Intercultural Center",
+      "hasMap": true,
+      "coordinates": {
+        "lat": 48.1944,
+        "lng": 16.3598
+      },
+      "specializations": ["Cultural Exchange", "Community Integration", "Mentoring"]
     },
     {
       "id": "vhs-integration-courses",
       "name": {
         "en": "VHS Integration and Culture Courses",
         "de": "VHS Integrations- und Kulturkurse"
+      },
+      "title": {
+        "en": "VHS Integration and Culture Courses",
+        "de": "VHS Integrations- und Kulturkurse"
+      },
+      "subtitle": {
+        "en": "Adult education courses focusing on Austrian culture, language, and social integration.",
+        "de": "Erwachsenenbildungskurse mit Fokus auf österreichische Kultur, Sprache und soziale Integration."
       },
       "category": "education",
       "urgency": "non-urgent",
@@ -130,13 +183,28 @@
       "languages": ["German", "English"],
       "eligibility": "Open to all adults",
       "cost": "Varies by course, subsidies available",
-      "openingHours": "Monday-Friday 8:00-20:00, Saturday 9:00-13:00"
+      "openingHours": "Monday-Friday 8:00-20:00, Saturday 9:00-13:00",
+      "provider": "Volkshochschule Austria",
+      "hasMap": true,
+      "coordinates": {
+        "lat": 48.2098,
+        "lng": 16.3951
+      },
+      "specializations": ["Adult Education", "Cultural Training", "Civic Education"]
     },
     {
       "id": "red-cross-integration",
       "name": {
         "en": "Red Cross Integration Services",
         "de": "Rotes Kreuz Integrationsdienste"
+      },
+      "title": {
+        "en": "Red Cross Integration Services",
+        "de": "Rotes Kreuz Integrationsdienste"
+      },
+      "subtitle": {
+        "en": "Specialized integration support for refugees and asylum seekers, including cultural orientation and practical life skills.",
+        "de": "Spezialisierte Integrationshilfe für Flüchtlinge und Asylsuchende mit kultureller Orientierung und praktischen Lebenskompetenzen."
       },
       "category": "humanitarian",
       "urgency": "urgent",
@@ -163,13 +231,28 @@
       "languages": ["German", "English", "Arabic", "Farsi", "Somali"],
       "eligibility": "Refugees, asylum seekers, and vulnerable migrants",
       "cost": "Free",
-      "openingHours": "Monday-Friday 8:00-17:00"
+      "openingHours": "Monday-Friday 8:00-17:00",
+      "provider": "Austrian Red Cross",
+      "hasMap": true,
+      "coordinates": {
+        "lat": 48.2082,
+        "lng": 16.3738
+      },
+      "specializations": ["Refugee Support", "Life Skills Training", "Community Integration"]
     },
     {
       "id": "zusammen-osterreich",
       "name": {
         "en": "Zusammen Österreich Integration Initiative",
         "de": "Zusammen Österreich Integrationsinitiative"
+      },
+      "title": {
+        "en": "Zusammen Österreich Integration Initiative",
+        "de": "Zusammen Österreich Integrationsinitiative"
+      },
+      "subtitle": {
+        "en": "National integration initiative promoting dialogue between people with and without migration background.",
+        "de": "Nationale Integrationsinitiative zur Förderung des Dialogs zwischen Menschen mit und ohne Migrationshintergrund."
       },
       "category": "community",
       "urgency": "non-urgent",
@@ -196,7 +279,14 @@
       "languages": ["German", "English", "Multiple languages"],
       "eligibility": "Open to all community members",
       "cost": "Free",
-      "openingHours": "Monday-Friday 9:00-16:00"
+      "openingHours": "Monday-Friday 9:00-16:00",
+      "provider": "Federal Ministry of Interior",
+      "hasMap": true,
+      "coordinates": {
+        "lat": 48.2082,
+        "lng": 16.3738
+      },
+      "specializations": ["Community Dialogue", "Integration Events", "Success Story Sharing"]
     }
   ]
 }

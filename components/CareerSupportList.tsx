@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import GenericSupportList from './GenericSupportList';
 import careerEntities from '../data/courses/career-counseling-entities.json';
+import { getAskCareerText, getGlobalText } from '../utils/languageUtils';
 
 interface CareerEntity {
   id: string;
@@ -48,20 +49,12 @@ const CareerSupportList: React.FC<CareerSupportListProps> = ({
       filters={filters}
       languageCode={languageCode}
       onResetFilters={onResetFilters}
+      getTranslation={getAskCareerText}
       routePrefix="/ask/career"
       categoryConfig={categoryConfig}
-      noResultsText={{
-        en: 'No results found. Try adjusting your filters.',
-        de: 'Keine Ergebnisse gefunden. Versuchen Sie, Ihre Filter anzupassen.'
-      }}
-      resetFiltersText={{
-        en: 'Reset filters',
-        de: 'Filter zurücksetzen'
-      }}
-      resultsFoundText={{
-        en: 'results found',
-        de: 'Ergebnisse gefunden'
-      }}
+      noResultsText={getAskCareerText('noResultsFound', languageCode)}
+      resetFiltersText={getGlobalText('resetFilters', languageCode)}
+      resultsFoundText={getGlobalText('resultsFound', languageCode)}
     />
   );
 };
