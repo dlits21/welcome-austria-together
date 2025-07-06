@@ -16,7 +16,9 @@ import FilterSection from '../../components/FilterSection';
 import QuizControls from '../../components/QuizControls';
 import HealthSupportList from '../../components/HealthSupportList';
 import VirtualAssistantModal from '../../components/VirtualAssistantModal';
+import TutorialModal from '../../components/TutorialModal';
 import healthEntitiesData from '../../data/courses/health-support-entities.json';
+import { getAskHealthText, getGlobalText } from '../../utils/languageUtils';
 
 interface HealthSupportEntity {
   id: string;
@@ -40,6 +42,7 @@ const HealthSupportPage: React.FC = () => {
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
+  const [showTutorial, setShowTutorial] = useState(false);
 
   // Convert JSON data to array format
   const healthSupportEntities: HealthSupportEntity[] = healthEntitiesData.entities;
@@ -71,40 +74,34 @@ const HealthSupportPage: React.FC = () => {
     location: selectedLocations.length > 0 ? selectedLocations[0] : quizAnswers.location
   };
 
-  // Updated quiz questions for health support
+  // Quiz questions with multi-lingual support
   const quizQuestions = [
     {
-      question: language.code === 'de' 
-        ? 'Wie dringend benötigen Sie Gesundheitsunterstützung?' 
-        : 'How urgently do you need health support?',
+      question: getAskHealthText('howUrgentlyNeedSupport', currentLanguage),
       answers: [
-        { key: 'immediate', en: 'Immediate/Emergency', de: 'Sofort/Notfall' },
-        { key: 'soon', en: 'Within a few days', de: 'Innerhalb weniger Tage' },
-        { key: 'routine', en: 'Routine checkup', de: 'Routineuntersuchung' }
+        { key: 'immediate', value: getAskHealthText('immediate', currentLanguage) },
+        { key: 'soon', value: getAskHealthText('soon', currentLanguage) },
+        { key: 'routine', value: getAskHealthText('routine', currentLanguage) }
       ],
       key: 'urgency' as keyof typeof quizAnswers
     },
     {
-      question: language.code === 'de' 
-        ? 'Welche Art von Gesundheitsunterstützung benötigen Sie?' 
-        : 'What type of health support do you need?',
+      question: getAskHealthText('whatTypeHealthSupport', currentLanguage),
       answers: [
-        { key: 'general-practice', en: 'General Practice', de: 'Allgemeinmedizin' },
-        { key: 'mental-health', en: 'Mental Health Support', de: 'Psychische Gesundheit' },
-        { key: 'specialized-care', en: 'Specialized Medical Care', de: 'Spezialisierte medizinische Versorgung' },
-        { key: 'emergency', en: 'Emergency Services', de: 'Notfalldienstleistungen' },
-        { key: 'women-health', en: 'Women\'s Health', de: 'Frauengesundheit' },
-        { key: 'dental', en: 'Dental Care', de: 'Zahnmedizin' },
-        { key: 'pharmacy', en: 'Pharmacy Services', de: 'Apothekendienstleistungen' },
-        { key: 'community', en: 'Community Health Programs', de: 'Gemeinschaftsgesundheitsprogramme' }
+        { key: 'general-practice', value: getAskHealthText('generalPractice', currentLanguage) },
+        { key: 'mental-health', value: getAskHealthText('mentalHealth', currentLanguage) },
+        { key: 'specialized-care', value: getAskHealthText('specializedCare', currentLanguage) },
+        { key: 'emergency', value: getAskHealthText('emergency', currentLanguage) },
+        { key: 'women-health', value: getAskHealthText('womenHealth', currentLanguage) },
+        { key: 'dental', value: getAskHealthText('dental', currentLanguage) },
+        { key: 'pharmacy', value: getAskHealthText('pharmacy', currentLanguage) },
+        { key: 'community', value: getAskHealthText('community', currentLanguage) }
       ],
       key: 'supportType' as keyof typeof quizAnswers
     },
     {
-      question: language.code === 'de' 
-        ? 'Wo befinden Sie sich?' 
-        : 'What is your location?',
-      answers: locations.map(location => ({ key: location.toLowerCase(), en: location, de: location })),
+      question: getAskHealthText('whereAreYouLocated', currentLanguage),
+      answers: locations.map(location => ({ key: location.toLowerCase(), value: getGlobalText(location.toLowerCase().replace(" ", ""), currentLanguage) })),
       key: 'location' as keyof typeof quizAnswers
     }
   ];
@@ -113,7 +110,7 @@ const HealthSupportPage: React.FC = () => {
     setSoundEnabled(!soundEnabled);
   };
 
-  const handleQuizAnswer = (answer: string | { key: string, en: string, de: string }) => {
+  const handleQuizAnswer = (answer: string | { key: string, value: string }) => {
     const answerValue = typeof answer === 'string' ? answer : answer.key;
     const questionKey = quizQuestions[currentQuestion].key;
     
@@ -178,15 +175,13 @@ const HealthSupportPage: React.FC = () => {
     setSelectedLocations([]);
   };
 
-  const pageTitle = language.code === 'de' ? 'Gesundheitsunterstützung' : 'Health Support';
-  const pageDescription = language.code === 'de' 
-    ? 'Finden Sie Gesundheitsdienste und medizinische Unterstützung in Ihrer Nähe.'
-    : 'Find health services and medical support in your area.';
+  const pageTitle = getAskHealthText('healthSupport', currentLanguage);
+  const pageDescription = getAskHealthText('findHealthServices', currentLanguage);
 
-  // Filter groups for FilterSection
+  // Filter groups for FilterSection with multi-lingual labels
   const filterGroups = [
     {
-      title: language.code === 'de' ? 'Unterstützungstyp' : 'Support Type',
+      title: getAskHealthText('supportType', currentLanguage),
       items: supportTypes,
       selectedItems: selectedSupportTypes,
       onToggle: toggleSupportType,
@@ -196,7 +191,7 @@ const HealthSupportPage: React.FC = () => {
       }), {})
     },
     {
-      title: language.code === 'de' ? 'Standort' : 'Location',
+      title: getGlobalText('location', currentLanguage),
       items: locations,
       selectedItems: selectedLocations,
       onToggle: toggleLocation
@@ -211,6 +206,7 @@ const HealthSupportPage: React.FC = () => {
         showLanguageModal={() => setShowLanguageModal(true)}
         showHelpModal={() => setShowHelpModal(true)}
         showVirtualAssistant={() => setShowVirtualAssistant(true)}
+        showTutorial={() => setShowTutorial(true)}
       />
       
       <View style={styles.content}>
@@ -222,10 +218,8 @@ const HealthSupportPage: React.FC = () => {
           currentQuestion={currentQuestion}
           questions={quizQuestions}
           languageCode={language.code}
-          title={language.code === 'de' ? 'Gesundheits-Assistent' : 'Health Support Assistant'}
-          subtitle={language.code === 'de' 
-            ? 'Beantworten Sie ein paar Fragen, um passende Gesundheitsdienste zu finden.'
-            : 'Answer a few questions to find suitable health services.'}
+          title={getAskHealthText('healthSupportAssistant', currentLanguage)}
+          subtitle={getAskHealthText('answerQuestionsForHealthServices', currentLanguage)}
           onAnswer={handleQuizAnswer}
           onSkip={handleSkipQuiz}
           onClose={handleCloseQuiz}
@@ -241,7 +235,7 @@ const HealthSupportPage: React.FC = () => {
 
         <FilterSection
           visible={!showQuiz && showFilters}
-          title={language.code === 'de' ? 'Filter' : 'Filters'}
+          title={getGlobalText('filters', currentLanguage)}
           languageCode={language.code}
           filterGroups={filterGroups}
           onClearFilters={clearFilters}
@@ -275,6 +269,14 @@ const HealthSupportPage: React.FC = () => {
         visible={showVirtualAssistant}
         onClose={() => setShowVirtualAssistant(false)}
         languageCode={language.code}
+      />
+
+      {/* Tutorial Modal */}
+      <TutorialModal
+        visible={showTutorial}
+        onClose={() => setShowTutorial(false)}
+        languageCode={language.code}
+        tutorialData="ask-health"
       />
     </SafeAreaView>
   );
