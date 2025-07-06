@@ -2,82 +2,282 @@
 {
   "healthSupport": {
     "en": "Health Support",
-    "de": "Gesundheitsunterstützung"
+    "de": "Gesundheitsunterstützung",
+    "ru": "Поддержка здоровья",
+    "ce": "Сагlохьа гlо",
+    "prs": "حمایت سلامت",
+    "ps": "د روغتیا ملاتړ",
+    "fa": "حمایت سلامت",
+    "ar": "الدعم الصحي",
+    "ku": "پشتگیری تەندروستی",
+    "so": "Taageerada Caafimaadka",
+    "ka": "ჯანმრთელობის მხარდაჭერა",
+    "sq": "Mbështetja Shëndetësore"
   },
   "findHealthServices": {
     "en": "Find health services and medical support in your area.",
-    "de": "Finden Sie Gesundheitsdienste und medizinische Unterstützung in Ihrer Nähe."
+    "de": "Finden Sie Gesundheitsdienste und medizinische Unterstützung in Ihrer Nähe.",
+    "ru": "Найдите медицинские услуги и поддержку в вашем районе.",
+    "ce": "Хьан кlоштан сагlохьан гlуллакх карийта.",
+    "prs": "خدمات صحی و حمایت طبی را در منطقه خود پیدا کنید.",
+    "ps": "په خپله سیمه کې د روغتیا خدماتو او طبي ملاتړ ومومئ.",
+    "fa": "خدمات بهداشتی و پشتیبانی پزشکی را در منطقه خود پیدا کنید.",
+    "ar": "ابحث عن الخدمات الصحية والدعم الطبي في منطقتك.",
+    "ku": "خزمەتگوزاری تەندروستی و پشتگیری پزیشکی لە ناوچەکەتان بدۆزنەوە.",
+    "so": "Ka hel adeegyada caafimaadka iyo taageerada caafimaadka ee aagaaga.",
+    "ka": "იპოვეთ ჯანდაცვის სერვისები და სამედიცინო მხარდაჭერა თქვენს რაიონში.",
+    "sq": "Gjeni shërbimet shëndetësore dhe mbështetjen mjekësore në zonën tuaj."
   },
   "healthSupportAssistant": {
     "en": "Health Support Assistant",
-    "de": "Gesundheits-Assistent"
+    "de": "Gesundheits-Assistent",
+    "ru": "Помощник по здоровью",
+    "ce": "Сагlохьан гlуллакхан хlокхург",
+    "prs": "دستیار حمایت سلامت",
+    "ps": "د روغتیا ملاتړ مرستندوی",
+    "fa": "دستیار پشتیبانی سلامت",
+    "ar": "مساعد الدعم الصحي",
+    "ku": "یاریدەدەری پشتگیری تەندروستی",
+    "so": "Kaaliyaha Taageerada Caafimaadka",
+    "ka": "ჯანმრთელობის მხარდაჭერის ასისტენტი",
+    "sq": "Asistenti i Mbështetjes Shëndetësore"
   },
   "answerQuestionsForHealthServices": {
     "en": "Answer a few questions to find suitable health services.",
-    "de": "Beantworten Sie ein paar Fragen, um passende Gesundheitsdienste zu finden."
+    "de": "Beantworten Sie ein paar Fragen, um passende Gesundheitsdienste zu finden.",
+    "ru": "Ответьте на несколько вопросов, чтобы найти подходящие медицинские услуги.",
+    "ce": "МаьIна хаттарна жоп делахь, лаьцна сагlохьан гlуллакх карийта.",
+    "prs": "به چند سوال پاسخ دهید تا خدمات صحی مناسب پیدا کنید.",
+    "ps": "د مناسبو روغتیایي خدماتو د موندلو لپاره یو څو پوښتنو ته ځواب ورکړئ.",
+    "fa": "برای یافتن خدمات بهداشتی مناسب، به چند سوال پاسخ دهید.",
+    "ar": "أجب على بعض الأسئلة للعثور على الخدمات الصحية المناسبة.",
+    "ku": "وەڵامی چەند پرسیارێک بدەنەوە بۆ دۆزینەوەی خزمەتگوزاری تەندروستی گونجاو.",
+    "so": "Ka jawaab dhowr su'aalood si aad u hesho adeegyada caafimaadka ee ku habboon.",
+    "ka": "უპასუხეთ რამდენიმე კითხვას შესაფერისი ჯანდაცვის სერვისების საპოვნელად.",
+    "sq": "Përgjigjuni disa pyetjeve për të gjetur shërbimet shëndetësore të përshtatshme."
   },
   "howUrgentlyNeedSupport": {
     "en": "How urgently do you need health support?",
-    "de": "Wie dringend benötigen Sie Gesundheitsunterstützung?"
+    "de": "Wie dringend benötigen Sie Gesundheitsunterstützung?",
+    "ru": "Насколько срочно вам нужна медицинская помощь?",
+    "ce": "Хьуна муха йуьззина йу сагlохьан гlо?",
+    "prs": "چقدر فوری به حمایت صحی نیاز دارید؟",
+    "ps": "تاسو د روغتیا ملاتړ ته څومره بیړني اړتیا لرئ؟",
+    "fa": "چقدر فوری به حمایت سلامت نیاز دارید؟",
+    "ar": "ما مدى حاجتك العاجلة للدعم الصحي؟",
+    "ku": "چەندە پەلە پێویستیتان بە پشتگیری تەندروستی هەیە؟",
+    "so": "Intee baad si degdeg ah ugu baahan tahay taageerada caafimaadka?",
+    "ka": "რამდენად გჭირდებათ ჯანმრთელობის მხარდაჭერა?",
+    "sq": "Sa urgjent keni nevojë për mbështetje shëndetësore?"
   },
   "whatTypeHealthSupport": {
     "en": "What type of health support do you need?",
-    "de": "Welche Art von Gesundheitsunterstützung benötigen Sie?"
+    "de": "Welche Art von Gesundheitsunterstützung benötigen Sie?",
+    "ru": "Какой тип медицинской помощи вам нужен?",
+    "ce": "Мила тайпан сагlохьан гlо хьуна йуьззина ю?",
+    "prs": "به چه نوع حمایت صحی نیاز دارید؟",
+    "ps": "تاسو د کوم ډول روغتیا ملاتړ ته اړتیا لرئ؟",
+    "fa": "به چه نوعی از حمایت سلامت نیاز دارید؟",
+    "ar": "ما نوع الدعم الصحي الذي تحتاجه؟",
+    "ku": "پێویستیتان بە چ جۆرە پشتگیری تەندروستییەک هەیە؟",
+    "so": "Waa maxay nooca taageerada caafimaadka ee aad u baahan tahay?",
+    "ka": "რა ტიპის ჯანმრთელობის მხარდაჭერა გჭირდებათ?",
+    "sq": "Çfarë lloji mbështetjeje shëndetësore ju nevojitet?"
   },
   "whereAreYouLocated": {
     "en": "What is your location?",
-    "de": "Wo befinden Sie sich?"
+    "de": "Wo befinden Sie sich?",
+    "ru": "Где вы находитесь?",
+    "ce": "Хьо муьлхха ву?",
+    "prs": "موقعیت شما کجاست؟",
+    "ps": "ستاسو موقعیت چیرته دی؟",
+    "fa": "موقعیت شما کجاست؟",
+    "ar": "أين تقع؟",
+    "ku": "ئێوە لە کوێ دانیشتوون؟",
+    "so": "Meesha aad joogto waa maxay?",
+    "ka": "სად იმყოფებით?",
+    "sq": "Ku ndodheni?"
   },
   "immediate": {
     "en": "Immediate/Emergency",
-    "de": "Sofort/Notfall"
+    "de": "Sofort/Notfall",
+    "ru": "Немедленно/Экстренно",
+    "ce": "Тlехула/Алсаман",
+    "prs": "فوری/اضطراری",
+    "ps": "سمدستي/بیړني",
+    "fa": "فوری/اورژانسی",
+    "ar": "فوري/طارئ",
+    "ku": "یەکسەر/لەناکاو",
+    "so": "Degdeg/Xaalad degdeg ah",
+    "ka": "დაუყოვნებლივ/საგანგებო",
+    "sq": "Menjëherë/Urgjencë"
   },
   "soon": {
     "en": "Within a few days",
-    "de": "Innerhalb weniger Tage"
+    "de": "Innerhalb weniger Tage",
+    "ru": "В течение нескольких дней",
+    "ce": "МаьIна денан чулацахь",
+    "prs": "در طی چند روز",
+    "ps": "د څو ورځو په اوږدو کې",
+    "fa": "در عرض چند روز",
+    "ar": "خلال بضعة أيام",
+    "ku": "لە ماوەی چەند ڕۆژێکدا",
+    "so": "Muddo dhowr maalmood ah",
+    "ka": "რამდენიმე დღეში",
+    "sq": "Brenda disa ditësh"
   },
   "routine": {
     "en": "Routine checkup",
-    "de": "Routineuntersuchung"
+    "de": "Routineuntersuchung",
+    "ru": "Плановый осмотр",
+    "ce": "Йуьззина хьажар",
+    "prs": "معاینه معمول",
+    "ps": "منظم ګورنه",
+    "fa": "معاینه معمول",
+    "ar": "فحص روتيني",
+    "ku": "پشکنینی ئاسایی",
+    "so": "Baadhis caadi ah",
+    "ka": "რუტინული შემოწმება",
+    "sq": "Kontroll rutinor"
   },
   "generalPractice": {
     "en": "General Practice",
-    "de": "Allgemeinmedizin"
+    "de": "Allgemeinmedizin",
+    "ru": "Общая практика",
+    "ce": "Массанехан табиб",
+    "prs": "طب عمومی",
+    "ps": "عمومي طب",
+    "fa": "پزشکی عمومی",
+    "ar": "الطب العام",
+    "ku": "پزیشکی گشتی",
+    "so": "Dhakhtarka Guud",
+    "ka": "ზოგადი პრაქტიკა",
+    "sq": "Praktika e Përgjithshme"
   },
   "mentalHealth": {
     "en": "Mental Health Support",
-    "de": "Psychische Gesundheit"
+    "de": "Psychische Gesundheit",
+    "ru": "Поддержка психического здоровья",
+    "ce": "Психикин сагlохь",
+    "prs": "حمایت سلامت روانی",
+    "ps": "د رواني روغتیا ملاتړ",
+    "fa": "حمایت سلامت روان",
+    "ar": "دعم الصحة النفسية",
+    "ku": "پشتگیری تەندروستی دەروونی",
+    "so": "Taageerada Caafimaadka Maskaxda",
+    "ka": "ფსიქიკური ჯანმრთელობის მხარდაჭერა",
+    "sq": "Mbështetja e Shëndetit Mendor"
   },
   "specializedCare": {
     "en": "Specialized Medical Care",
-    "de": "Spezialisierte medizinische Versorgung"
+    "de": "Spezialisierte medizinische Versorgung",
+    "ru": "Специализированная медицинская помощь",
+    "ce": "Махка сагlохьан гlо",
+    "prs": "مراقبت طبی تخصصی",
+    "ps": "ځانګړي طبي پاملرنه",
+    "fa": "مراقبت پزشکی تخصصی",
+    "ar": "الرعاية الطبية المتخصصة",
+    "ku": "چاودێری پزیشکی تایبەت",
+    "so": "Daryeelka Caafimaadka Takhasuska ah",
+    "ka": "სპეციალიზებული სამედიცინო მოვლა",
+    "sq": "Kujdesi Mjekësor i Specializuar"
   },
   "emergency": {
     "en": "Emergency Services",
-    "de": "Notfalldienstleistungen"
+    "de": "Notfalldienstleistungen",
+    "ru": "Экстренные службы",
+    "ce": "Алсаман гlуллакх",
+    "prs": "خدمات اضطراری",
+    "ps": "بیړني خدمات",
+    "fa": "خدمات اورژانسی",
+    "ar": "الخدمات الطارئة",
+    "ku": "خزمەتگوزاری فریاکەوتن",
+    "so": "Adeegyada Degdegga ah",
+    "ka": "საგანგებო სამსახურები",
+    "sq": "Shërbimet e Urgjencës"
   },
   "womenHealth": {
     "en": "Women's Health",
-    "de": "Frauengesundheit"
+    "de": "Frauengesundheit",
+    "ru": "Женское здоровье",
+    "ce": "Зудчун сагlохь",
+    "prs": "سلامت زنان",
+    "ps": "د میرمنو روغتیا",
+    "fa": "سلامت زنان",
+    "ar": "صحة المرأة",
+    "ku": "تەندروستی ژن",
+    "so": "Caafimaadka Haweenka",
+    "ka": "ქალთა ჯანმრთელობა",
+    "sq": "Shëndeti i Gruas"
   },
   "dental": {
     "en": "Dental Care",
-    "de": "Zahnmedizin"
+    "de": "Zahnmedizin",
+    "ru": "Стоматологическая помощь",
+    "ce": "Бергаш сагlохь",
+    "prs": "مراقبت دندان",
+    "ps": "د غاښونو پاملرنه",
+    "fa": "مراقبت دندان",
+    "ar": "رعاية الأسنان",
+    "ku": "چاودێری ددان",
+    "so": "Daryeelka Ilkaha",
+    "ka": "კბილების მკურნალობა",
+    "sq": "Kujdesi Dentar"
   },
   "pharmacy": {
     "en": "Pharmacy Services",
-    "de": "Apothekendienstleistungen"
+    "de": "Apothekendienstleistungen",
+    "ru": "Аптечные услуги",
+    "ce": "Аптекан гlуллакх",
+    "prs": "خدمات داروخانه",
+    "ps": "د درملتون خدمات",
+    "fa": "خدمات داروخانه",
+    "ar": "خدمات الصيدلية",
+    "ku": "خزمەتگوزاری دەرمانخانە",
+    "so": "Adeegyada Farmashiga",
+    "ka": "აფთიაქის სერვისები",
+    "sq": "Shërbimet e Farmacisë"
   },
   "community": {
     "en": "Community Health Programs",
-    "de": "Gemeinschaftsgesundheitsprogramme"
+    "de": "Gemeinschaftsgesundheitsprogramme",
+    "ru": "Программы общественного здравоохранения",
+    "ce": "Жамlaтан сагlохьан программеш",
+    "prs": "برنامه های سلامت اجتماعی",
+    "ps": "د ټولنې د روغتیا پروګرامونه",
+    "fa": "برنامه‌های بهداشت جامعه",
+    "ar": "برامج الصحة المجتمعية",
+    "ku": "بەرنامەکانی تەندروستی کۆمەڵایەتی",
+    "so": "Barnaamijyada Caafimaadka Bulshada",
+    "ka": "საზოგადოებრივი ჯანმრთელობის პროგრამები",
+    "sq": "Programet e Shëndetit të Komunitetit"
   },
   "supportType": {
     "en": "Support Type",
-    "de": "Unterstützungstyp"
+    "de": "Unterstützungstyp",
+    "ru": "Тип поддержки",
+    "ce": "Гlон тайп",
+    "prs": "نوع حمایت",
+    "ps": "د ملاتړ ډول",
+    "fa": "نوع حمایت",
+    "ar": "نوع الدعم",
+    "ku": "جۆری پشتگیری",
+    "so": "Nooca Taageerada",
+    "ka": "მხარდაჭერის ტიპი",
+    "sq": "Lloji i Mbështetjes"
   },
   "noHealthSupportEntitiesFound": {
     "en": "No health support services found.",
-    "de": "Keine Gesundheitsdienste gefunden."
+    "de": "Keine Gesundheitsdienste gefunden.",
+    "ru": "Службы поддержки здоровья не найдены.",
+    "ce": "Сагlохьан гlуллакх ца карийна.",
+    "prs": "هیچ خدمات حمایت صحی یافت نشد.",
+    "ps": "د روغتیا د ملاتړ خدمات ونه موندل شول.",
+    "fa": "هیچ خدمات پشتیبانی سلامت یافت نشد.",
+    "ar": "لم يتم العثور على خدمات الدعم الصحي.",
+    "ku": "هیچ خزمەتگوزاری پشتگیری تەندروستی نەدۆزرایەوە.",
+    "so": "Lama helin adeegyo taageero caafimaad ah.",
+    "ka": "ჯანმრთელობის მხარდაჭერის სერვისები ვერ მოიძებნა.",
+    "sq": "Nuk u gjetën shërbime mbështetjeje shëndetësore."
   }
 }
