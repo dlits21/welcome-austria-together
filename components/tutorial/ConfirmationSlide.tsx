@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   slideContent: {
     flex: 1,
     padding: 24,
-    minHeight: 400,
+    justifyContent: 'center',
   },
   slideContentWide: {
     flexDirection: 'row',
@@ -62,7 +62,9 @@ const styles = StyleSheet.create({
   },
   confirmationDemo: {
     alignItems: 'center',
-    marginBottom: 24,
+    marginBottom: 32,
+    justifyContent: 'center',
+    flex: 0.6,
   },
   confirmationDemoWide: {
     flex: 1,
@@ -76,8 +78,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 12,
     padding: 20,
-    minWidth: 250,
-    maxWidth: 300,
+    width: '90%',
+    maxWidth: 280,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -142,7 +144,8 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   slideInfo: {
-    flex: 1,
+    flex: 0.4,
+    justifyContent: 'center',
   },
   slideInfoWide: {
     flex: 1,
@@ -153,8 +156,7 @@ const styles = StyleSheet.create({
   slideTitle: {
     fontSize: 24,
     fontWeight: 'bold',
-    marginTop: 34,
-    marginBottom: 34,
+    marginBottom: 16,
     textAlign: 'center',
     color: '#333',
   },

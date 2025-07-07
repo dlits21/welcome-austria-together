@@ -1,4 +1,3 @@
-
 {
   "emergencyCategories": [
     {
@@ -162,10 +161,10 @@
       ]
     },
     {
-      "key": "violence",
-      "emoji": "🆘",
-      "titleKey": "violenceHarassment",
-      "subtitleKey": "domesticViolenceAssault",
+      "key": "domestic-violence",
+      "emoji": "💜",
+      "titleKey": "domesticViolence",
+      "subtitleKey": "domesticViolenceSupport",
       "contacts": [
         {
           "name": {
@@ -184,52 +183,20 @@
           },
           "phone": "0800 222 555",
           "description": {
-            "en": "For domestic violence and sexual assault",
-            "de": "Für häusliche Gewalt und sexuelle Übergriffe",
-            "ru": "Для домашнего насилия и сексуального принуждения",
-            "ce": "Доьзална зулам а, жимчу докхар а",
-            "prs": "برای خشونت خانگی و تجاوز جنسی",
-            "ps": "د کورنۍ تاوتریخوالی او جنسي تیری لپاره",
-            "fa": "برای خشونت خانگی و تعرض جنسی",
-            "ar": "للعنف المنزلي والاعتداء الجنسي",
-            "ku": "بۆ توندوتیژی ماڵەوە و هێرشی سێکسی",
-            "so": "Rabshada guriga iyo kufsi",
-            "ka": "ოჯახური ძალადობისა და სექსუალური თავდასხმისთვის",
-            "sq": "Për dhunën në familje dhe sulmin seksual"
+            "en": "24/7 support for domestic violence victims",
+            "de": "24/7 Unterstützung für Opfer häuslicher Gewalt",
+            "ru": "Круглосуточная поддержка жертв домашнего насилия",
+            "ce": "Доьзална зулам хийцарш 24/7 гlо",
+            "prs": "حمایت ۲۴/۷ برای قربانیان خشونت خانگی",
+            "ps": "د کورنۍ تاوتریخوالۍ د قربانیانو لپاره ۲۴/۷ ملاتړ",
+            "fa": "پشتیبانی ۲۴/۷ برای قربانیان خشونت خانگی",
+            "ar": "دعم على مدار الساعة لضحايا العنف المنزلي",
+            "ku": "پشتگیری ۲۴/۷ بۆ قوربانیانی توندوتیژی ماڵەوە",
+            "so": "Taageero 24/7 dhibanayaasha rabshada guriga",
+            "ka": "24/7 მხარდაჭერა ოჯახური ძალადობის მსხვერპლთათვის",
+            "sq": "Mbështetje 24/7 për viktimat e dhunës në familje"
           },
-          "type": "violence"
-        },
-        {
-          "name": {
-            "en": "Police",
-            "de": "Polizei",
-            "ru": "Полиция",
-            "ce": "Полици",
-            "prs": "پولیس",
-            "ps": "پولیس",
-            "fa": "پلیس",
-            "ar": "الشرطة",
-            "ku": "پۆلیس",
-            "so": "Booliska",
-            "ka": "პოლიცია",
-            "sq": "Policia"
-          },
-          "phone": "133",
-          "description": {
-            "en": "For immediate danger situations",
-            "de": "Für akute Gefahrensituationen",
-            "ru": "Для ситуаций непосредственной опасности",
-            "ce": "Спорехь хlеттийна уьш",
-            "prs": "برای موقعیت‌های خطر فوری",
-            "ps": "د سمدستي خطر وضعیتونو لپاره",
-            "fa": "برای موقعیت‌های خطر فوری",
-            "ar": "لحالات الخطر الفوري",
-            "ku": "بۆ دۆخی مەترسی خێرا",
-            "so": "Xaaladaha halista degdegga ah",
-            "ka": "დაუყოვნებელი საფრთხის სიტუაციებისთვის",
-            "sq": "Për situata rreziku të menjëhershëm"
-          },
-          "type": "violence"
+          "type": "domestic-violence"
         }
       ]
     },

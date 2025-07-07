@@ -1,4 +1,3 @@
-
 {
   "emergencyContacts": {
     "en": "Emergency Contacts",
@@ -139,6 +138,34 @@
     "so": "Degdegga caafimaadka, ambalaaska",
     "ka": "ჯანმრთელობის გადაუდებელი შემთხვევები, სასწრაფო დახმარება",
     "sq": "Urgjenca shëndetësore, ambulancë"
+  },
+  "domesticViolence": {
+    "en": "Domestic Violence",
+    "de": "Häusliche Gewalt",
+    "ru": "Домашнее насилие",
+    "ce": "Доьзална зулам",
+    "prs": "خشونت خانگی",
+    "ps": "کورنۍ تاوتریخوالی",
+    "fa": "خشونت خانگی",
+    "ar": "العنف المنزلي",
+    "ku": "توندوتیژی ماڵەوە",
+    "so": "Rabshada Guriga",
+    "ka": "ოჯახური ძალადობა",
+    "sq": "Dhuna në familje"
+  },
+  "domesticViolenceSupport": {
+    "en": "24/7 confidential support",
+    "de": "24/7 vertrauliche Unterstützung",
+    "ru": "Круглосуточная конфиденциальная поддержка",
+    "ce": "24/7 къайла гlо",
+    "prs": "حمایت محرمانه ۲۴/۷",
+    "ps": "۲۴/۷ پټ ملاتړ",
+    "fa": "پشتیبانی محرمانه ۲۴/۷",
+    "ar": "دعم سري على مدار الساعة",
+    "ku": "پشتگیری نهێنی ۲۴/۷",
+    "so": "Taageero qarsoodi 24/7",
+    "ka": "24/7 კონფიდენციალური მხარდაჭერა",
+    "sq": "Mbështetje konfidenciale 24/7"
   },
   "violenceHarassment": {
     "en": "Violence/Harassment",
@@ -321,5 +348,33 @@
     "so": "Qalad lagu fureynayo abka telefoonka",
     "ka": "შეცდომა ტელეფონის აპის გახსნისას",
     "sq": "Gabim në hapjen e aplikacionit të telefonit"
+  },
+  "domesticViolence": {
+    "en": "Domestic Violence",
+    "de": "Häusliche Gewalt",
+    "ru": "Домашнее насилие",
+    "ce": "Доьзална зулам",
+    "prs": "خشونت خانگی",
+    "ps": "کورنۍ تاوتریخوالی",
+    "fa": "خشونت خانگی",
+    "ar": "العنف المنزلي",
+    "ku": "توندوتیژی ماڵەوە",
+    "so": "Rabshada Guriga",
+    "ka": "ოჯახური ძალადობა",
+    "sq": "Dhuna në familje"
+  },
+  "domesticViolenceSupport": {
+    "en": "24/7 confidential support",
+    "de": "24/7 vertrauliche Unterstützung",
+    "ru": "Круглосуточная конфиденциальная поддержка",
+    "ce": "24/7 къайла гlо",
+    "prs": "حمایت محرمانه ۲۴/۷",
+    "ps": "۲۴/۷ پټ ملاتړ",
+    "fa": "پشتیبانی محرمانه ۲۴/۷",
+    "ar": "دعم سري على مدار الساعة",
+    "ku": "پشتگیری نهێنی ۲۴/۷",
+    "so": "Taageero qarsoodi 24/7",
+    "ka": "24/7 კონფიდენციალური მხარდაჭერა",
+    "sq": "Mbështetje konfidenciale 24/7"
   }
 }
