@@ -1,156 +1,42 @@
 
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, SafeAreaView, ScrollView, TouchableOpacity, Linking } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
-import { MaterialIcons } from '@expo/vector-icons';
-import { useLanguage } from '../../../contexts/LanguageContext';
-import { languages } from '../../../data/languages/common';
-import PageNavigation from '../../../components/PageNavigation';
-import LanguageModal from '../../../components/LanguageModal';
-import HelpModal from '../../../components/HelpModal';
-import culturalEntities from '../../../data/courses/cultural-integration-entities.json';
+import { View, Text, StyleSheet } from 'react-native';
+import GenericGermanCoursePage from '../../../components/GenericGermanCoursePage';
+import culturalEntitiesData from '../../../data/courses/cultural-integration-entities.json';
 
-const CulturalEntityDetail: React.FC = () => {
+const DynamicCulturalSupportPage: React.FC = () => {
   const { entityId } = useLocalSearchParams();
-  const { currentLanguage } = useLanguage();
-  const [soundEnabled, setSoundEnabled] = useState(true);
-  const [showLanguageModal, setShowLanguageModal] = useState(false);
-  const [showHelpModal, setShowHelpModal] = useState(false);
-  
-  const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
-  const entity = culturalEntities.entities.find(e => e.id === entityId);
+  const selectedEntityId = Array.isArray(entityId) ? entityId[0] : entityId;
 
-  if (!entity) {
+  if (!selectedEntityId) {
     return (
-      <SafeAreaView style={styles.container}>
-        <PageNavigation 
-          toggleSound={() => setSoundEnabled(!soundEnabled)}
-          soundEnabled={soundEnabled}
-          showLanguageModal={() => setShowLanguageModal(true)}
-          showHelpModal={() => setShowHelpModal(true)}
-        />
-        <View style={styles.errorContainer}>
-          <Text style={styles.errorText}>
-            {language.code === 'de' ? 'Entität nicht gefunden' : 'Entity not found'}
-          </Text>
-        </View>
-      </SafeAreaView>
+      <View style={styles.centered}>
+        <Text style={styles.title}>Invalid entity</Text>
+        <Text style={styles.subtitle}>No entity ID provided.</Text>
+      </View>
     );
   }
 
-  const handleCall = () => {
-    Linking.openURL(`tel:${entity.contact.phone}`);
-  };
-
-  const handleEmail = () => {
-    Linking.openURL(`mailto:${entity.contact.email}`);
-  };
-
-  const handleWebsite = () => {
-    Linking.openURL(entity.contact.website);
-  };
-
-  return (
-    <SafeAreaView style={styles.container}>
-      <PageNavigation 
-        toggleSound={() => setSoundEnabled(!soundEnabled)}
-        soundEnabled={soundEnabled}
-        showLanguageModal={() => setShowLanguageModal(true)}
-        showHelpModal={() => setShowHelpModal(true)}
-      />
-      
-      <ScrollView style={styles.content}>
-        <Text style={styles.title}>
-          {language.code === 'de' ? entity.name.de : entity.name.en}
-        </Text>
-        
-        <Text style={styles.description}>
-          {language.code === 'de' ? entity.description.de : entity.description.en}
-        </Text>
-
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>
-            {language.code === 'de' ? 'Dienstleistungen' : 'Services'}
-          </Text>
-          {entity.services.map((service, index) => (
-            <View key={index} style={styles.serviceItem}>
-              <MaterialIcons name="check-circle" size={20} color="#10B981" />
-              <Text style={styles.serviceText}>{service}</Text>
-            </View>
-          ))}
-        </View>
-
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>
-            {language.code === 'de' ? 'Kontaktinformationen' : 'Contact Information'}
-          </Text>
-          
-          <TouchableOpacity style={styles.contactItem} onPress={handleCall}>
-            <MaterialIcons name="phone" size={24} color="#3B82F6" />
-            <Text style={styles.contactText}>{entity.contact.phone}</Text>
-          </TouchableOpacity>
-          
-          <TouchableOpacity style={styles.contactItem} onPress={handleEmail}>
-            <MaterialIcons name="email" size={24} color="#3B82F6" />
-            <Text style={styles.contactText}>{entity.contact.email}</Text>
-          </TouchableOpacity>
-          
-          <TouchableOpacity style={styles.contactItem} onPress={handleWebsite}>
-            <MaterialIcons name="language" size={24} color="#3B82F6" />
-            <Text style={styles.contactText}>{entity.contact.website}</Text>
-          </TouchableOpacity>
-          
-          <View style={styles.contactItem}>
-            <MaterialIcons name="location-on" size={24} color="#6B7280" />
-            <Text style={styles.contactText}>{entity.contact.address}</Text>
-          </View>
-        </View>
-
-        <View style={styles.infoGrid}>
-          <View style={styles.infoItem}>
-            <Text style={styles.infoLabel}>
-              {language.code === 'de' ? 'Sprachen' : 'Languages'}
-            </Text>
-            <Text style={styles.infoValue}>{entity.languages.join(', ')}</Text>
-          </View>
-          
-          <View style={styles.infoItem}>
-            <Text style={styles.infoLabel}>
-              {language.code === 'de' ? 'Berechtigung' : 'Eligibility'}
-            </Text>
-            <Text style={styles.infoValue}>{entity.eligibility}</Text>
-          </View>
-          
-          <View style={styles.infoItem}>
-            <Text style={styles.infoLabel}>
-              {language.code === 'de' ? 'Kosten' : 'Cost'}
-            </Text>
-            <Text style={styles.infoValue}>{entity.cost}</Text>
-          </View>
-          
-          <View style={styles.infoItem}>
-            <Text style={styles.infoLabel}>
-              {language.code === 'de' ? 'Öffnungszeiten' : 'Opening Hours'}
-            </Text>
-            <Text style={styles.infoValue}>{entity.openingHours}</Text>
-          </View>
-        </View>
-      </ScrollView>
-
-      <LanguageModal
-        visible={showLanguageModal}
-        onClose={() => setShowLanguageModal(false)}
-        languageCode={language.code}
-      />
-
-      <HelpModal
-        visible={showHelpModal}
-        onClose={() => setShowHelpModal(false)}
-        languageCode={language.code}
-      />
-    </SafeAreaView>
+  const entity = culturalEntitiesData.entities.find(
+    entity => entity.id === selectedEntityId
   );
+
+  if (!entity) {
+    return (
+      <View style={styles.centered}>
+        <Text style={styles.title}>Entity not found</Text>
+        <Text style={styles.subtitle}>
+          The document support entity "{selectedEntityId}" could not be found.
+        </Text>
+      </View>
+    );
+  }
+
+  return <GenericGermanCoursePage courseData={entity} />;
 };
+
+export default DynamicCulturalSupportPage;
 
 const styles = StyleSheet.create({
   container: {
@@ -233,5 +119,3 @@ const styles = StyleSheet.create({
     color: '#6B7280',
   },
 });
-
-export default CulturalEntityDetail;
