@@ -14,13 +14,6 @@ const CulturalSupportList: React.FC<CulturalSupportListProps> = ({
   languageCode,
   onResetFilters
 }) => {
-  const entitiesArray = Object.values(culturalEntities).map(entity => ({
-      ...entity,
-      category: entity.supportTypes[0] || 'cultural-support',
-      urgency: 'non-urgent',
-      supportType: entity.supportTypes[0] || 'general'
-    }));
-
   const categoryConfig = {
     'language-culture': { icon: 'translate', color: '#8B5CF6' },
     'social-integration': { icon: 'groups', color: '#10B981' },
@@ -32,7 +25,7 @@ const CulturalSupportList: React.FC<CulturalSupportListProps> = ({
 
   return (
     <GenericSupportList
-      entities={entitiesArray}
+      entities={culturalEntities.entities}
       filters={filters}
       languageCode={languageCode}
       onResetFilters={onResetFilters}

@@ -191,7 +191,7 @@ const GenericSupportList: React.FC<GenericSupportListProps> = ({
               </View>
               {entity.cost && (
                 <View style={styles.tag}>
-                  <Text style={styles.tagText}>{entity.cost}</Text>
+                  <Text style={styles.tagText}>{getGlobalText(entity.cost.toLowerCase(), languageCode)}</Text>
                 </View>
               )}
             </View>

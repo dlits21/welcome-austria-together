@@ -503,5 +503,33 @@
     "fa": "برنامه‌ریزی از قبل",
     "tr": "Önceden planlama",
     "so": "Qorshe hore"
+  },
+  "freeForEligibleParticipants": {
+    "en": "Free for eligible participants",
+    "de": "Kostenlos für berechtigte Teilnehmer",
+    "ru": "Бесплатно для подходящих участников",
+    "ce": "Бесплатно для подходящих участников",
+    "prs": "رایگان برای شرکت‌کنندگان واجد شرایط",
+    "ps": "د وړیا لپاره د شایسته ګډونوالو",
+    "fa": "رایگان برای شرکت‌کنندگان واجد شرایط",
+    "ar": "مجانًا للمشاركين المؤهلين",
+    "ku": "فری بۆ ئەو پەیوەندیدارانی کە پەیوەندیدارەکانن",
+    "so": "Bilaash u ah ka qaybgalayaasha ku haboon",
+    "ka": "უფასო შესატყვის მონაწილეებისთვის",
+    "sq": "Falas për pjesëmarrësit e kualifikuar"
+  },
+  "free": {
+    "en": "Free",
+    "de": "Kostenlos",
+    "ru": "Бесплатно",
+    "ce": "Хlелхо",
+    "prs": "رایگان",
+    "ps": "مفت",
+    "fa": "رایگان",
+    "ar": "مجاني",
+    "ku": "بە رایگان",
+    "so": "Bilaash",
+    "ka": "უფასო",
+    "sq": "Falas"
   }
 }

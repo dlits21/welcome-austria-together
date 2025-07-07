@@ -3,10 +3,6 @@
   "entities": [
     {
       "id": "oif-integration-courses",
-      "name": {
-        "en": "ÖIF Integration Courses",
-        "de": "ÖIF Integrationskurse"
-      },
       "title": {
         "en": "ÖIF Integration Courses",
         "de": "ÖIF Integrationskurse"
@@ -18,7 +14,7 @@
       "category": "language-culture",
       "urgency": "non-urgent",
       "supportType": "integration-courses",
-      "supportTypes": ["integration-courses"],
+      "supportTypes": ["integrationCourses"],
       "location": "nationwide",
       "description": {
         "en": "Official integration courses combining German language learning with Austrian values and orientation knowledge.",
@@ -38,7 +34,7 @@
       },
       "languages": ["German", "English", "Arabic", "Farsi"],
       "eligibility": "Third-country nationals with residence permits",
-      "cost": "€750 per course, refundable upon completion",
+      "cost": "€750",
       "openingHours": "Monday-Friday 8:00-17:00",
       "provider": "Österreichischer Integrationsfonds",
       "hasMap": true,
@@ -50,10 +46,6 @@
     },
     {
       "id": "diakonie-integration-center",
-      "name": {
-        "en": "Diakonie Integration Center",
-        "de": "Diakonie Integrationszentrum"
-      },
       "title": {
         "en": "Diakonie Integration Center",
         "de": "Diakonie Integrationszentrum"
@@ -65,7 +57,7 @@
       "category": "social-integration",
       "urgency": "urgent",
       "supportType": "comprehensive-integration",
-      "supportTypes": ["comprehensive-integration"],
+      "supportTypes": ["comprehensiveIntegration"],
       "location": "vienna",
       "description": {
         "en": "Comprehensive integration support including language courses, cultural orientation, and social counseling.",
@@ -86,7 +78,7 @@
       },
       "languages": ["German", "English", "Arabic", "Farsi", "Turkish"],
       "eligibility": "Refugees, asylum seekers, and migrants",
-      "cost": "Free for eligible participants",
+      "cost": "freeForEligibleParticipants",
       "openingHours": "Monday-Thursday 9:00-17:00, Friday 9:00-14:00",
       "provider": "Diakonie Austria",
       "hasMap": true,
@@ -98,10 +90,6 @@
     },
     {
       "id": "intercultural-center",
-      "name": {
-        "en": "Intercultural Center",
-        "de": "Interkulturelles Zentrum"
-      },
       "title": {
         "en": "Intercultural Center",
         "de": "Interkulturelles Zentrum"
@@ -113,7 +101,7 @@
       "category": "cultural-exchange",
       "urgency": "non-urgent",
       "supportType": "cultural-orientation",
-      "supportTypes": ["cultural-orientation"],
+      "supportTypes": ["culturalOrientation"],
       "location": "vienna",
       "description": {
         "en": "Promoting intercultural dialogue and providing cultural orientation programs for newcomers.",
@@ -146,10 +134,6 @@
     },
     {
       "id": "vhs-integration-courses",
-      "name": {
-        "en": "VHS Integration and Culture Courses",
-        "de": "VHS Integrations- und Kulturkurse"
-      },
       "title": {
         "en": "VHS Integration and Culture Courses",
         "de": "VHS Integrations- und Kulturkurse"
@@ -161,7 +145,7 @@
       "category": "education",
       "urgency": "non-urgent",
       "supportType": "cultural-education",
-      "supportTypes": ["cultural-education"],
+      "supportTypes": ["culturalEducation"],
       "location": "nationwide",
       "description": {
         "en": "Adult education courses focusing on Austrian culture, language, and social integration.",
@@ -194,10 +178,6 @@
     },
     {
       "id": "red-cross-integration",
-      "name": {
-        "en": "Red Cross Integration Services",
-        "de": "Rotes Kreuz Integrationsdienste"
-      },
       "title": {
         "en": "Red Cross Integration Services",
         "de": "Rotes Kreuz Integrationsdienste"
@@ -209,7 +189,7 @@
       "category": "humanitarian",
       "urgency": "urgent",
       "supportType": "refugee-integration",
-      "supportTypes": ["refugee-integration"],
+      "supportTypes": ["refugeeIntegration"],
       "location": "nationwide",
       "description": {
         "en": "Specialized integration support for refugees and asylum seekers, including cultural orientation and practical life skills.",
@@ -238,14 +218,10 @@
         "lat": 48.2082,
         "lng": 16.3738
       },
-      "specializations": ["Refugee Support", "Life Skills Training", "Community Integration"]
+      "specializations": ["Refugee Support", "lifeskillTraining", "Community Integration"]
     },
     {
       "id": "zusammen-osterreich",
-      "name": {
-        "en": "Zusammen Österreich Integration Initiative",
-        "de": "Zusammen Österreich Integrationsinitiative"
-      },
       "title": {
         "en": "Zusammen Österreich Integration Initiative",
         "de": "Zusammen Österreich Integrationsinitiative"
@@ -257,7 +233,7 @@
       "category": "community",
       "urgency": "non-urgent",
       "supportType": "community-integration",
-      "supportTypes": ["community-integration"],
+      "supportTypes": ["communityIntegration"],
       "location": "nationwide",
       "description": {
         "en": "National integration initiative promoting dialogue between people with and without migration background.",
@@ -286,7 +262,7 @@
         "lat": 48.2082,
         "lng": 16.3738
       },
-      "specializations": ["Community Dialogue", "Integration Events", "Success Story Sharing"]
+      "specializations": ["Community Dialogue", "Integration Events", "successStorySharing"]
     }
   ]
 }

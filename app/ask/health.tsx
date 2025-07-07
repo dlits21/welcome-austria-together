@@ -76,8 +76,8 @@ const HealthSupportPage: React.FC = () => {
     {
       question: getAskHealthText('howUrgentlyNeedSupport', currentLanguage),
       answers: [
-        { key: 'immediate', value: getAskHealthText('immediate', currentLanguage) },
-        { key: 'soon', value: getAskHealthText('soon', currentLanguage) },
+        { key: 'immediate', value: getGlobalText('immediate', currentLanguage) },
+        { key: 'soon', value: getGlobalText('soon', currentLanguage) },
         { key: 'routine', value: getAskHealthText('routine', currentLanguage) }
       ],
       key: 'urgency' as keyof typeof quizAnswers

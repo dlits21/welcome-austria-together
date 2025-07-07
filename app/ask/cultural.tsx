@@ -244,6 +244,7 @@ const CulturalSupportPage: React.FC = () => {
           languageCode={language.code}
           filterGroups={filterGroups}
           onClearFilters={clearFilters}
+          getTranslation={getAskCulturalText}
         />
         
         {!showQuiz && (

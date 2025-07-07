@@ -72,7 +72,7 @@
       "category": "integration",
       "urgency": "urgent",
       "supportType": "comprehensive-support",
-      "location": "all-austria",
+      "location": "nationwide",
       "description": {
         "en": "Holistic integration support including housing, education, and career guidance for refugees and migrants.",
         "de": "Ganzheitliche Integrationshilfe mit Wohnen, Bildung und Berufsberatung für Flüchtlinge und Migranten."
@@ -104,7 +104,7 @@
       "category": "education",
       "urgency": "non-urgent",
       "supportType": "professional-development",
-      "location": "all-austria",
+      "location": "nationwide",
       "description": {
         "en": "Professional development courses and certification programs for career advancement.",
         "de": "Berufliche Weiterbildungskurse und Zertifizierungsprogramme für den Karrierefortschritt."
@@ -166,7 +166,7 @@
       "category": "education",
       "urgency": "urgent",
       "supportType": "language-integration",
-      "location": "all-austria",
+      "location": "nationwide",
       "description": {
         "en": "Comprehensive integration courses combining language learning with cultural orientation and job preparation.",
         "de": "Umfassende Integrationskurse mit Sprachlernen, kultureller Orientierung und Jobvorbereitung."
