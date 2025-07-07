@@ -3,7 +3,7 @@
   "entities": [
     {
       "id": "ams-career-guidance",
-      "name": {
+      "title": {
         "en": "AMS Career Guidance",
         "de": "AMS Berufsberatung"
       },
@@ -35,7 +35,7 @@
     },
     {
       "id": "waff-integration-support",
-      "name": {
+      "title": {
         "en": "WAFF Integration Support",
         "de": "WAFF Integrationshilfe"
       },
@@ -67,7 +67,7 @@
     },
     {
       "id": "caritas-integration-center",
-      "name": {
+      "title": {
         "en": "Caritas Integration Center",
         "de": "Caritas Integrationszentrum"
       },
@@ -100,7 +100,7 @@
     },
     {
       "id": "wifi-career-academy",
-      "name": {
+      "title": {
         "en": "WIFI Career Academy",
         "de": "WIFI Karriere Akademie"
       },
@@ -132,7 +132,7 @@
     },
     {
       "id": "mentor-immigrant-network",
-      "name": {
+      "title": {
         "en": "Mentor Immigrant Professional Network",
         "de": "Mentor Migrant*innen Netzwerk"
       },
@@ -164,7 +164,7 @@
     },
     {
       "id": "bfi-integration-courses",
-      "name": {
+      "title": {
         "en": "BFI Integration Courses",
         "de": "BFI Integrationskurse"
       },
