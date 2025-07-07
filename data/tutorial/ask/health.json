@@ -1,0 +1,437 @@
+
+{
+  "slides": [
+    {
+      "id": 0,
+      "type": "welcome",
+      "title": {
+        "en": "Welcome to Health Support",
+        "de": "Willkommen bei der Gesundheitsunterstützung",
+        "ru": "Добро пожаловать в службу поддержки здоровья",
+        "ce": "Марша догӀийла саламатан кӀоргалун",
+        "prs": "به پشتیبانی صحت خوش آمدید",
+        "ps": "د روغتیایي مرستې ته ښه راغلاست",
+        "fa": "به پشتیبانی سلامت خوش آمدید",
+        "ar": "مرحبا بكم في دعم الصحة",
+        "ku": "Bi xêr hatin piştgiriya tendirustiyê",
+        "so": "Ku soo dhawaada taageerada caafimaadka",
+        "ka": "კეთილი იყოს თქვენი მობრძანება ჯანმრთელობის მხარდაჭერაში",
+        "sq": "Mirë se vini në mbështetjen e shëndetit"
+      },
+      "text": {
+        "en": "This tutorial will guide you through finding health support services in Austria.",
+        "de": "Dieses Tutorial führt Sie durch die Suche nach Gesundheitsdiensten in Österreich.",
+        "ru": "Это руководство поможет вам найти медицинские услуги в Австрии.",
+        "ce": "Хlара дешар хьуна Австрин саламатан кӀоргалун лахар",
+        "prs": "این آموزش شما را در یافتن خدمات صحی در اتریش راهنمایی می‌کند.",
+        "ps": "دا لارښود به ستاسو سره د اتریش کې د روغتیایي خدماتو د موندلو کې مرسته وکړي.",
+        "fa": "این آموزش شما را در یافتن خدمات بهداشتی در اتریش راهنمایی می‌کند.",
+        "ar": "سيرشدك هذا الدليل خلال العثور على خدمات الدعم الصحي في النمسا.",
+        "ku": "Ev dersxane dê we di dîtina karûbarên piştgiriya tendirustiyê ya Awistiriyayê de alîkar bike.",
+        "so": "Tababarkan ayaa ku hagi doona helitaanka adeegyada taageerada caafimaadka ee Austria.",
+        "ka": "ეს გაკვეთილი გაგიწყობთ ხელს ავსტრიაში ჯანმრთელობის მხარდაჭერის სერვისების პოვნაში.",
+        "sq": "Ky tutorial do t'ju udhëzojë në gjetjen e shërbimeve të mbështetjes së shëndetit në Austri."
+      }
+    },
+    {
+      "id": 1,
+      "type": "instruction",
+      "title": {
+        "en": "How to Use This Feature",
+        "de": "Wie Sie diese Funktion nutzen",
+        "ru": "Как использовать эту функцию",
+        "ce": "Муха лелош ю хlара функци",
+        "prs": "چگونه از این ویژگی استفاده کنیم",
+        "ps": "دغه ځانګړتیا څنګه وکاروو",
+        "fa": "چگونه از این ویژگی استفاده کنیم",
+        "ar": "كيفية استخدام هذه الميزة",
+        "ku": "Meriv çawa vê taybetiyê bikar tîne",
+        "so": "Sida loo isticmaalo qorshahan",
+        "ka": "როგორ გამოვიყენოთ ეს ფუნქცია",
+        "sq": "Si ta përdorni këtë veçori"
+      },
+      "text": {
+        "en": "Answer a few questions to get personalized health service recommendations based on your needs.",
+        "de": "Beantworten Sie einige Fragen, um personalisierte Empfehlungen für Gesundheitsdienste zu erhalten.",
+        "ru": "Ответьте на несколько вопросов, чтобы получить персонализированные рекомендации медицинских услуг.",
+        "ce": "Жоп делахь цхьаъ хьажораш, хьан безаман кхетта саламатан кӀоргалун хаамаш длахь оцунна",
+        "prs": "به چند سوال پاسخ دهید تا توصیه‌های شخصی‌سازی شده خدمات صحی دریافت کنید.",
+        "ps": "د یو څو پوښتنو ځواب ورکړئ ترڅو ستاسو د اړتیاو پراساس د روغتیایي خدماتو وړاندیزونه ترلاسه کړئ.",
+        "fa": "به چند سوال پاسخ دهید تا توصیه‌های شخصی‌سازی شده خدمات بهداشتی دریافت کنید.",
+        "ar": "أجب على بعض الأسئلة للحصول على توصيات مخصصة لخدمات الصحة بناءً على احتياجاتك.",
+        "ku": "Bersiva çend pirsan bidin da ku pêşniyarên kesane yên karûbarên tendirustiyê li gorî hewcedariyên we bistînin.",
+        "so": "Ka jawaab su'aalo dhowr ah si aad u hesho talo gaar ah oo ku saabsan adeegyada caafimaadka iyadoo ku saleysan baahiyahaaga.",
+        "ka": "უპასუხეთ რამდენიმე კითხვას, რათა მიიღოთ პერსონალიზებული ჯანმრთელობის სერვისების რეკომენდაციები თქვენი საჭიროებების მიხედვით.",
+        "sq": "Përgjigjuni në disa pyetje për të marrë rekomandime të personalizuara të shërbimeve shëndetësore bazuar në nevojat tuaja."
+      }
+    },
+    {
+      "id": 2,
+      "type": "category",
+      "category": {
+        "title": "generalPractice",
+        "description": "generalPracticeDescription",
+        "icon": "local-hospital",
+        "color": "#3B82F6"
+      },
+      "title": {
+        "en": "General Practice Services",
+        "de": "Allgemeinmedizinische Dienste",
+        "ru": "Услуги общей практики",
+        "ce": "Гlуьллакха практикан кӀоргалун хidmamаш",
+        "prs": "خدمات طب عمومی",
+        "ps": "د عمومي طبابت خدمات",
+        "fa": "خدمات پزشکی عمومی",
+        "ar": "خدمات الطب العام",
+        "ku": "Karûbarên tiba giştî",
+        "so": "Adeegyada dhaqtarka guud",
+        "ka": "ზოგადი პრაქტიკის სერვისები",
+        "sq": "Shërbimet e mjekësisë së përgjithshme"
+      },
+      "text": {
+        "en": "Find general practitioners and primary care physicians for routine health needs.",
+        "de": "Finden Sie Allgemeinärzte und Hausärzte für routinemäßige Gesundheitsbedürfnisse.",
+        "ru": "Найдите врачей общей практики и терапевтов для рутинных медицинских потребностей.",
+        "ce": "Ма елахь гlуьллакха практикан докторш а, йуьхьанцара саламатан безаман кӀоргалучаш а",
+        "prs": "دکتوران طب عمومی و مراقبت‌های اولیه را برای نیازهای معمول صحی پیدا کنید.",
+        "ps": "د معمولو روغتیایي اړتیاو لپاره د عمومي ډاکټرانو او لومړنۍ پاملرنې ډاکټرانو موندنه.",
+        "fa": "پزشکان عمومی و مراقبت‌های اولیه را برای نیازهای معمول سلامت پیدا کنید.",
+        "ar": "ابحث عن أطباء عامين وأطباء رعاية أولية للاحتياجات الصحية الروتينية.",
+        "ku": "Ji bo hewcedariyên tendirustiyê yên asayî bijîşkên giştî û bijîşkên mîna yekem bibînin.",
+        "so": "Hel dhaqaatiirta guud iyo dhaqaatiirta daryeelka koobaad ee baahiyaha caafimaadka caadiga ah.",
+        "ka": "იპოვეთ ზოგადი პრაქტიკის ექიმები და პირველადი მოვლის ექიმები ჩვეულებრივი ჯანმრთელობის საჭიროებებისთვის.",
+        "sq": "Gjeni mjekë të përgjithshëm dhe mjekë të kujdesit primar për nevojat rutinore shëndetësore."
+      }
+    },
+    {
+      "id": 3,
+      "type": "category",
+      "category": {
+        "title": "mentalHealth",
+        "description": "mentalHealthDescription",
+        "icon": "psychology",
+        "color": "#8B5CF6"
+      },
+      "title": {
+        "en": "Mental Health Support",
+        "de": "Unterstützung für psychische Gesundheit",
+        "ru": "Поддержка психического здоровья",
+        "ce": "Психикан саламатан кӀоргалун",
+        "prs": "حمایت از سلامت روانی",
+        "ps": "د رواني روغتیا ملاتړ",
+        "fa": "حمایت از سلامت روان",
+        "ar": "دعم الصحة النفسية",
+        "ku": "Piştgiriya tendirustiya derûnî",
+        "so": "Taageerada caafimaadka maskaxda",
+        "ka": "ფსიქიკური ჯანმრთელობის მხარდაჭერა",
+        "sq": "Mbështetja e shëndetit mendor"
+      },
+      "text": {
+        "en": "Access mental health professionals, counselors, and therapy services.",
+        "de": "Zugang zu psychischen Gesundheitsfachkräften, Beratern und Therapiediensten.",
+        "ru": "Доступ к специалистам по психическому здоровью, консультантам и терапевтическим услугам.",
+        "ce": "Психикан саламатан экспертийн, консультантийн а, терапин кӀоргалун а хlокхалдар",
+        "prs": "دسترسی به متخصصان سلامت روانی، مشاوران و خدمات درمانی.",
+        "ps": "د رواني روغتیا کارپوهانو، مشاورانو او د درملنې خدماتو ته لاسرسی.",
+        "fa": "دسترسی به متخصصان سلامت روان، مشاوران و خدمات درمانی.",
+        "ar": "الوصول إلى أخصائيي الصحة النفسية والمستشارين وخدمات العلاج.",
+        "ku": "Gihîştina pisporan tendirustiya derûnî, şêwirmendaran û karûbarên dermankirinê.",
+        "so": "Helitaanka takhaasusyada caafimaadka maskaxda, la-taliyayaasha iyo adeegyada daawaynta.",
+        "ka": "ფსიქიკური ჯანმრთელობის სპეციალისტებზე, კონსულტანტებსა და თერაპიის სერვისებზე წვდომა.",
+        "sq": "Qasja në profesionistët e shëndetit mendor, këshilltarët dhe shërbimet e terapisë."
+      }
+    },
+    {
+      "id": 4,
+      "type": "category",
+      "category": {
+        "title": "specializedCare",
+        "description": "specializedCareDescription",
+        "icon": "medical-services",
+        "color": "#10B981"
+      },
+      "title": {
+        "en": "Specialized Medical Care",
+        "de": "Spezialisierte medizinische Versorgung",
+        "ru": "Специализированная медицинская помощь",
+        "ce": "Мутталла медицинан кӀоргалун",
+        "prs": "مراقبت‌های طبی تخصصی",
+        "ps": "ځانګړي طبي پاملرنه",
+        "fa": "مراقبت‌های پزشکی تخصصی",
+        "ar": "الرعاية الطبية المتخصصة",
+        "ku": "Lêçûna tib ya taybet",
+        "so": "Daryeelka caafimaadka takhasuska ah",
+        "ka": "სპეციალიზებული სამედიცინო მოვლა",
+        "sq": "Kujdesi mjekësor i specializuar"
+      },
+      "text": {
+        "en": "Find specialist doctors and specialized treatment centers for specific health conditions.",
+        "de": "Finden Sie Fachärzte und spezialisierte Behandlungszentren für bestimmte Gesundheitszustände.",
+        "ru": "Найдите врачей-специалистов и специализированные лечебные центры для конкретных заболеваний.",
+        "ce": "Ма елахь экспертийн докторш а, мутталла дохалларан центраш а леррина саламатан мукъамийн",
+        "prs": "دکتوران متخصص و مراکز درمانی تخصصی را برای شرایط خاص صحی پیدا کنید.",
+        "ps": "د ځانګړو روغتیایي شرایطو لپاره ماهر ډاکټران او ځانګړي درملنې مرکزونه ومومئ.",
+        "fa": "پزشکان متخصص و مراکز درمانی تخصصی را برای شرایط خاص سلامت پیدا کنید.",
+        "ar": "ابحث عن أطباء متخصصين ومراكز علاج متخصصة لحالات صحية محددة.",
+        "ku": "Ji bo rewşên tendirustiyê yên taybetî bijîşkên pîsporî û navendên dermankirina taybet bibînin.",
+        "so": "Hel dhaqaatiirta takhasuska ah iyo xarumaha daawaynta takhasuska ah ee xaaladaha caafimaadka gaarka ah.",
+        "ka": "იპოვეთ სპეციალისტი ექიმები და სპეციალიზებული სამკურნალო ცენტრები კონკრეტული ჯანმრთელობის მდგომარეობებისთვის.",
+        "sq": "Gjeni mjekë specialistë dhe qendra të specializuara të trajtimit për kushtet specifike të shëndetit."
+      }
+    },
+    {
+      "id": 5,
+      "type": "category",
+      "category": {
+        "title": "emergency",
+        "description": "emergencyDescription",
+        "icon": "emergency",
+        "color": "#EF4444"
+      },
+      "title": {
+        "en": "Emergency Services",
+        "de": "Notdienste",
+        "ru": "Экстренные службы",
+        "ce": "Экстреннойн кӀоргалун",
+        "prs": "خدمات اضطراری",
+        "ps": "بیړنۍ خدمات",
+        "fa": "خدمات اورژانس",
+        "ar": "خدمات الطوارئ",
+        "ku": "Karûbarên acîl",
+        "so": "Adeegyada degdegga ah",
+        "ka": "საგანგებო სამსახურები",
+        "sq": "Shërbimet e urgjencës"
+      },
+      "text": {
+        "en": "Access emergency medical services and urgent care facilities when you need immediate help.",
+        "de": "Zugang zu medizinischen Notdiensten und Notfallversorgung, wenn Sie sofortige Hilfe benötigen.",
+        "ru": "Доступ к службам скорой медицинской помощи и неотложной помощи, когда вам нужна немедленная помощь.",
+        "ce": "Шира кхиамца хlуна хила экстреннойн медицинан кӀоргалуш а, экстреннойн кӀоргалун учрежденишта а",
+        "prs": "هنگامی که به کمک فوری نیاز دارید، به خدمات طبی اضطراری و مراکز مراقبت‌های فوری دسترسی داشته باشید.",
+        "ps": "کله چې تاسو ته سمدستي مرستې ته اړتیا وي د بیړنیو طبي خدماتو او بیړنۍ پاملرنې اسانتیاوو ته لاسرسی.",
+        "fa": "زمانی که به کمک فوری نیاز دارید، به خدمات پزشکی اورژانس و مراکز مراقبت فوری دسترسی داشته باشید.",
+        "ar": "الوصول إلى خدمات الطوارئ الطبية ومرافق الرعاية العاجلة عندما تحتاج إلى مساعدة فورية.",
+        "ku": "Dema ku hûn hewcedariya alîkariya bilez in, bigihînin karûbarên tib acîl û avakarên lêçûna acîl.",
+        "so": "Hel adeegyada caafimaadka degdegga ah iyo goobaha daryeelka degdegga ah marka aad u baahato caawimo degdeg ah.",
+        "ka": "წვდომა საგანგებო სამედიცინო მომსახურებასა და გადაუდებელი დახმარების დაწესებულებებზე, როდესაც დაუყოვნებელი დახმარება გჭირდებათ.",
+        "sq": "Qasja në shërbimet mjekësore të urgjencës dhe objektet e kujdesit urgjent kur keni nevojë për ndihmë të menjëhershme."
+      }
+    },
+    {
+      "id": 6,
+      "type": "category",
+      "category": {
+        "title": "womenHealth",
+        "description": "womenHealthDescription",
+        "icon": "pregnant-woman",
+        "color": "#EC4899"
+      },
+      "title": {
+        "en": "Women's Health Services",
+        "de": "Gesundheitsdienste für Frauen",
+        "ru": "Услуги женского здоровья",
+        "ce": "ЗудчуьнийĦ саламатан кӀоргалун",
+        "prs": "خدمات صحی زنان",
+        "ps": "د ښځو د روغتیا خدمات",
+        "fa": "خدمات سلامت زنان",
+        "ar": "خدمات صحة المرأة",
+        "ku": "Karûbarên tendirustiya jinan",
+        "so": "Adeegyada caafimaadka haweenka",
+        "ka": "ქალთა ჯანმრთელობის სერვისები",
+        "sq": "Shërbimet e shëndetit të grave"
+      },
+      "text": {
+        "en": "Find gynecologists, maternity care, and specialized women's health services.",
+        "de": "Finden Sie Gynäkologen, Schwangerschaftsbetreuung und spezialisierte Gesundheitsdienste für Frauen.",
+        "ru": "Найдите гинекологов, услуги по беременности и родам, а также специализированные услуги женского здоровья.",
+        "ce": "Ма елахь гинекологаш, дайиман кӀоргалун а, зудчуьнийн саламатан мутталла кӀоргалун а",
+        "prs": "متخصصان زنان، مراقبت‌های بارداری و خدمات تخصصی صحی زنان را پیدا کنید.",
+        "ps": "د ښځو د ناروغیو ډاکټران، د ماشومتوب پاملرنه، او د ښځو د روغتیا ځانګړي خدمات ومومئ.",
+        "fa": "متخصصان زنان، مراقبت‌های بارداری و خدمات تخصصی سلامت زنان را پیدا کنید.",
+        "ar": "ابحث عن أطباء أمراض النساء ورعاية الأمومة وخدمات صحة المرأة المتخصصة.",
+        "ku": "Jinekolog, lêçûna dayikbûnê û karûbarên tendirustiya jinan ên taybet bibînin.",
+        "so": "Hel dhaqaatiirta haweenka, daryeelka uurka, iyo adeegyada caafimaadka haweenka ee takhasuska ah.",
+        "ka": "იპოვეთ გინეკოლოგები, დედობის მოვლა და ქალთა ჯანმრთელობის სპეციალიზებული სერვისები.",
+        "sq": "Gjeni gjinekologë, kujdes të amësisë dhe shërbime të specializuara të shëndetit të grave."
+      }
+    },
+    {
+      "id": 7,
+      "type": "category",
+      "category": {
+        "title": "dental",
+        "description": "dentalDescription",
+        "icon": "dentistry",
+        "color": "#06B6D4"
+      },
+      "title": {
+        "en": "Dental Care Services",
+        "de": "Zahnpflegedienste",
+        "ru": "Стоматологические услуги",
+        "ce": "Бerjийн кӀоргалун",
+        "prs": "خدمات مراقبت از دندان",
+        "ps": "د غاښونو د پاملرنې خدمات",
+        "fa": "خدمات مراقبت از دندان",
+        "ar": "خدمات رعاية الأسنان",
+        "ku": "Karûbarên lêçûna diran",
+        "so": "Adeegyada daryeelka ilkaha",
+        "ka": "კბილების მოვლის სერვისები",
+        "sq": "Shërbimet e kujdesit dentar"
+      },
+      "text": {
+        "en": "Access dental clinics, orthodontists, and oral health services.",
+        "de": "Zugang zu Zahnkliniken, Kieferorthopäden und Mundgesundheitsdiensten.",
+        "ru": "Доступ к стоматологическим клиникам, ортодонтам и услугам по здоровью полости рта.",
+        "ce": "Бerjийн клиникийн, ортодонтийн а, баккан саламатан кӀоргалун а хlокхам",
+        "prs": "دسترسی به کلینیک‌های دندانپزشکی، ارتودنتیست‌ها و خدمات سلامت دهان.",
+        "ps": "د غاښونو کلینیکونو، د غاښونو د سمولو ډاکټرانو، او د خولې د روغتیا خدماتو ته لاسرسی.",
+        "fa": "دسترسی به کلینیک‌های دندانپزشکی، ارتودنتیست‌ها و خدمات سلامت دهان.",
+        "ar": "الوصول إلى عيادات الأسنان وأطباء تقويم الأسنان وخدمات صحة الفم.",
+        "ku": "Gihîştina klînîkên diran, ortodontan û karûbarên tendirustiya devê.",
+        "so": "Helitaanka kiliinikada ilkaha, takhaasusyada hagaajinta ilkaha, iyo adeegyada caafimaadka afka.",
+        "ka": "კბილების კლინიკებზე, ორთოდონტებსა და პირის ღრუს ჯანმრთელობის სერვისებზე წვდომა.",
+        "sq": "Qasja në klinika dentare, ortodontë dhe shërbime të shëndetit oral."
+      }
+    },
+    {
+      "id": 8,
+      "type": "category",
+      "category": {
+        "title": "pharmacy",
+        "description": "pharmacyDescription",
+        "icon": "local-pharmacy",
+        "color": "#F59E0B"
+      },
+      "title": {
+        "en": "Pharmacy Services",
+        "de": "Apothekendienste",
+        "ru": "Аптечные услуги",
+        "ce": "Аптекан кӀоргалун",
+        "prs": "خدمات داروخانه",
+        "ps": "د درملتون خدمات",
+        "fa": "خدمات داروخانه",
+        "ar": "خدمات الصيدلة",
+        "ku": "Karûbarên dermalpaze",
+        "so": "Adeegyada farmashiga",
+        "ka": "ფარმაციის სერვისები",
+        "sq": "Shërbimet e farmacisë"
+      },
+      "text": {
+        "en": "Find pharmacies, medication information, and pharmaceutical services.",
+        "de": "Finden Sie Apotheken, Medikamenteninformationen und pharmazeutische Dienstleistungen.",
+        "ru": "Найдите аптеки, информацию о лекарствах и фармацевтические услуги.",
+        "ce": "Ма елахь аптекаш, дорийн хаамаш а, фармацевтийн кӀоргалуш а",
+        "prs": "داروخانه‌ها، اطلاعات داروها و خدمات دارویی را پیدا کنید.",
+        "ps": "درملتونونه، د درملو معلومات، او درمل پېژندنې خدمات ومومئ.",
+        "fa": "داروخانه‌ها، اطلاعات دارو و خدمات دارویی را پیدا کنید.",
+        "ar": "ابحث عن الصيدليات ومعلومات الأدوية والخدمات الصيدلانية.",
+        "ku": "Dermalpaze, agahdariyên dermalên û karûbarên dermalsaziyê bibînin.",
+        "so": "Hel farmasiyada, macluumaadka daawooyinka, iyo adeegyada farmashiga.",
+        "ka": "იპოვეთ ფარმაციები, მედიკამენტების ინფორმაცია და ფარმაცევტული სერვისები.",
+        "sq": "Gjeni farmaci, informacion për medikamentet dhe shërbime farmaceutike."
+      }
+    },
+    {
+      "id": 9,
+      "type": "category",
+      "category": {
+        "title": "community",
+        "description": "communityDescription",
+        "icon": "people",
+        "color": "#059669"
+      },
+      "title": {
+        "en": "Community Health Support",
+        "de": "Gemeinschaftliche Gesundheitsunterstützung",
+        "ru": "Общественная поддержка здоровья",
+        "ce": "Юкъараллин саламатан кӀоргалун",
+        "prs": "حمایت از سلامت جامعه",
+        "ps": "د ټولنې د روغتیا ملاتړ",
+        "fa": "حمایت از سلامت جامعه",
+        "ar": "دعم صحة المجتمع",
+        "ku": "Piştgiriya tendirustiya civakê",
+        "so": "Taageerada caafimaadka bulshada",
+        "ka": "საზოგადოების ჯანმრთელობის მხარდაჭერა",
+        "sq": "Mbështetja e shëndetit të komunitetit"
+      },
+      "text": {
+        "en": "Access community health programs, support groups, and health education resources.",
+        "de": "Zugang zu gemeinschaftlichen Gesundheitsprogrammen, Selbsthilfegruppen und Gesundheitsbildungsressourcen.",
+        "ru": "Доступ к программам общественного здравоохранения, группам поддержки и ресурсам медицинского образования.",
+        "ce": "Юкъараллин саламатан программийн, кӀоргалун тобийн а, саламатан дешаран ресурсийн а хlокхам",
+        "prs": "دسترسی به برنامه‌های سلامت جامعه، گروه‌های حمایتی و منابع آموزش سلامت.",
+        "ps": "د ټولنې د روغتیا پروګرامونو، د ملاتړ ډلو، او د روغتیا د زده کړې سرچینو ته لاسرسی.",
+        "fa": "دسترسی به برنامه‌های سلامت جامعه، گروه‌های حمایتی و منابع آموزش سلامت.",
+        "ar": "الوصول إلى برامج صحة المجتمع ومجموعات الدعم وموارد التعليم الصحي.",
+        "ku": "Gihîştina bernameyên tendirustiya civakê, komên piştgiriyê û çavkaniyên perwerdehiya tendirustiyê.",
+        "so": "Helitaanka barnaamijyada caafimaadka bulshada, kooxaha taageerada, iyo ilaha waxbarashada caafimaadka.",
+        "ka": "საზოგადოების ჯანმრთელობის პროგრამებზე, მხარდაჭერის ჯგუფებსა და ჯანმრთელობის განათლების რესურსებზე წვდომა.",
+        "sq": "Qasja në programet e shëndetit të komunitetit, grupet e mbështetjes dhe burimet e edukimit shëndetësor."
+      }
+    },
+    {
+      "id": 10,
+      "type": "feature",
+      "title": {
+        "en": "Virtual Assistant",
+        "de": "Virtueller Assistent",
+        "ru": "Виртуальный помощник",
+        "ce": "Виртуальни кӀоргйилла",
+        "prs": "دستیار مجازی",
+        "ps": "مجازی مرستندوی",
+        "fa": "دستیار مجازی",
+        "ar": "المساعد الافتراضي",
+        "ku": "Alîkarê virtual",
+        "so": "Kaaliyaha maya ah",
+        "ka": "ვირტუალური ასისტენტი",
+        "sq": "Asistenti virtual"
+      },
+      "text": {
+        "en": "Get personalized help from our AI assistant trained specifically for health support questions.",
+        "de": "Erhalten Sie personalisierte Hilfe von unserem KI-Assistenten, der speziell für Fragen zur Gesundheitsunterstützung trainiert wurde.",
+        "ru": "Получите персонализированную помощь от нашего ИИ-помощника, специально обученного для вопросов поддержки здоровья.",
+        "ce": "Хьан саламатан кӀоргалун хьажоран мутталла дешина хьайн AI кӀоргйиллера персонализованна кӀоргалун ма елахь",
+        "prs": "از دستیار هوش مصنوعی ما که مخصوص سوالات پشتیبانی صحی آموزش دیده است، کمک شخصی‌سازی شده دریافت کنید.",
+        "ps": "زموږ د AI مرستندوي څخه د شخصي مرستې ترلاسه کړئ چې په ځانګړي توګه د روغتیایي ملاتړ پوښتنو لپاره روزل شوی دی.",
+        "fa": "از دستیار هوش مصنوعی ما که به طور خاص برای سوالات پشتیبانی سلامت آموزش دیده است، کمک شخصی‌سازی شده دریافت کنید.",
+        "ar": "احصل على مساعدة شخصية من مساعد الذكاء الاصطناعي المدرب خصيصاً لأسئلة دعم الصحة.",
+        "ku": "Ji alîkarê me yê AI yê ku bi taybetî ji bo pirsên piştgiriya tendirustiyê hatiye perwerdekirin, alîkariya kesane bistînin.",
+        "so": "Hel caawimo shaqsi ah oo ka timid kaaliyahayaga AI ee si gaar ah loogu tababaray su'aalaha taageerada caafimaadka.",
+        "ka": "მიიღეთ პერსონალიზებული დახმარება ჩვენი AI ასისტენტისგან, რომელიც სპეციალურად არის მომზადებული ჯანმრთელობის მხარდაჭერის კითხვებისთვის.",
+        "sq": "Merrni ndihmë të personalizuar nga asistenti ynë AI i trajnuar posaçërisht për pyetjet e mbështetjes së shëndetit."
+      }
+    },
+    {
+      "id": 11,
+      "type": "feature",
+      "title": {
+        "en": "Language Support",
+        "de": "Sprachunterstützung",
+        "ru": "Языковая поддержка",
+        "ce": "Мottийn кӀоргалун",
+        "prs": "پشتیبانی زبان",
+        "ps": "د ژبې ملاتړ",
+        "fa": "پشتیبانی زبان",
+        "ar": "دعم اللغة",
+        "ku": "Piştgiriya ziman",
+        "so": "Taageerada luqadda",
+        "ka": "ენის მხარდაჭერა",
+        "sq": "Mbështetja e gjuhës"
+      },
+      "text": {
+        "en": "Access health information and services in multiple languages to better understand your options.",
+        "de": "Greifen Sie auf Gesundheitsinformationen und -dienste in mehreren Sprachen zu, um Ihre Optionen besser zu verstehen.",
+        "ru": "Получайте доступ к медицинской информации и услугам на нескольких языках, чтобы лучше понимать ваши возможности.",
+        "ce": "Дуккха мottаца саламатан хаамаш а, кӀоргалуш а ма елахь, хьан харжамаш яхь хаа оцунна",
+        "prs": "به اطلاعات و خدمات صحی به زبان‌های مختلف دسترسی داشته باشید تا گزینه‌های خود را بهتر درک کنید.",
+        "ps": "په مختلفو ژبو کې د روغتیایي معلوماتو او خدماتو ته لاسرسی ولرئ ترڅو خپل انتخابونه ښه پوه شئ.",
+        "fa": "به اطلاعات و خدمات بهداشتی به زبان‌های مختلف دسترسی داشته باشید تا گزینه‌های خود را بهتر درک کنید.",
+        "ar": "الوصول إلى المعلومات والخدمات الصحية بلغات متعددة لفهم خياراتك بشكل أفضل.",
+        "ku": "Bi gelek zimanan agahdarî û karûbarên tendirustiyê bistînin da ku vebijarkên xwe çêtir fêm bikin.",
+        "so": "Hel macluumaadka caafimaadka iyo adeegyada luqado badan si aad si fiican u fahamto doorashadaada.",
+        "ka": "მიიღეთ წვდომა ჯანმრთელობის ინფორმაციასა და სერვისებზე მრავალ ენაზე, რათა უკეთ გაიგოთ თქვენი არჩევანი.",
+        "sq": "Qasni në informacionin dhe shërbimet shëndetësore në gjuhë të shumta për të kuptuar më mirë opsionet tuaja."
+      }
+    }
+  ]
+}
