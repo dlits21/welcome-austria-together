@@ -129,21 +129,22 @@
         "sq": "Konfirmoni zgjedhjen tuaj"
       },
       "text": {
-        "en": "After selecting a language, you'll see a confirmation window like this. You can accept or decline the selection. Don't worry - you can always change your language preference later in the app settings. Choose the language you feel most comfortable reading and understanding.",
-        "de": "Nach der Auswahl einer Sprache sehen Sie ein Bestätigungsfenster wie dieses. Sie können die Auswahl annehmen oder ablehnen. Keine Sorge - Sie können Ihre Spracheinstellung später in den App-Einstellungen jederzeit ändern. Wählen Sie die Sprache, die Sie am besten lesen und verstehen können.",
-        "ru": "После выбора языка вы увидите окно подтверждения, подобное этому. Вы можете принять или отклонить выбор. Не волнуйтесь - вы всегда можете изменить языковые настройки позже в настройках приложения. Выберите язык, который вам наиболее комфортно читать и понимать.",
-        "ce": "Мотт харжийначохь хьуна хаам гайта бакъдеран кор кхузахь. Хьо и бакъде йиш ю я дlаяккха. Мукъа ма деза - хьо хlинц а хьан мотт хийца йиш ю приложенин параметраш чохь. Иза мотт харжа, муьлхха хьо лаьий а, гойтуш а ма-дарра.",
-        "prs": "پس از انتخاب زبان، پنجره تأیید مانند این را خواهید دید. می‌توانید انتخاب را بپذیرید یا رد کنید. نگران نباشید - همیشه می‌توانید ترجیحات زبان خود را بعداً در تنظیمات برنامه تغییر دهید. زبانی را انتخاب کنید که در خواندن و درک آن راحت‌تر هستید.",
-        "ps": "د ژبې له انتخاب وروسته، تاسو به د تایید کړکۍ ددې په څېر وګورئ. تاسو کولی شئ انتخاب ومنئ یا رد یې کړئ. اندېښنه مه کوئ - تاسو کولی شئ خپل د ژبې غوراوی وروسته د اپلیکیشن په ترتیباتو کې تل بدل کړئ. هغه ژبه وټاکئ چې تاسو یې په لوستلو او پوهېدو کې ډېر اسان یاست.",
-        "fa": "پس از انتخاب زبان، پنجره تأیید مانند این را خواهید دید. می‌توانید انتخاب را بپذیرید یا رد کنید. نگران نباشید - همیشه می‌توانید ترجیحات زبان خود را بعداً در تنظیمات برنامه تغییر دهید. زبانی را انتخاب کنید که در خواندن و درک آن راحت‌تر هستید.",
-        "ar": "بعد اختيار اللغة، ستشاهد نافذة تأكيد مثل هذه. يمكنك قبول أو رفض الاختيار. لا تقلق - يمكنك دائماً تغيير تفضيلات اللغة لاحقاً في إعدادات التطبيق. اختر اللغة التي تشعر بالراحة أكثر في قراءتها وفهمها.",
-        "ku": "Piştî hilbijartina zimanekî, hûn ê paceyeke piştrastkirinê mîna vê bibînin. Hûn dikarin hilbijartinê qebûl bikin an red bikin. Nîgeran nebin - hûn her dem dikarin vebijarkên zimên xwe paşê di mîhengên sepanê de biguherînin. Ew ziman hilbijêrin ku hûn pê xwendin û têgihiştinê rehet in.",
-        "so": "Ka dib doorashada luqadda, waxaad arki doontaa daaqad xaqiijin sidan oo kale. Waad aqbali kartaa ama diidi kartaa doorashada. Ha welwelin - had iyo jeer waad bedeli kartaa doorashada luqaddaada markii dambe goobaha barnaamijka. Dooro luqadda aad ugu faraxsan tahay akhris iyo fahamka.",
-        "ka": "ენის არჩევის შემდეგ თქვენ ნახავთ დადასტურების ფანჯარას ამგვარს. შეგიძლიათ მიღება ან უარყოფა. ნუ ინერვიულებთ - ყოველთვის შეგიძლიათ შეცვალოთ ენის პარამეტრები მოგვიანებით აპლიკაციის პარამეტრებში. აირჩიეთ ის ენა, რომელის კითხვა და გაგება ყველაზე კომფორტულია.",
-        "sq": "Pas zgjedhjes së një gjuhe, do të shihni një dritare konfirmimi si kjo. Mund ta pranoni ose refuzoni zgjedhjen. Mos u shqetësoni - gjithmonë mund të ndryshoni preferencat e gjuhës më vonë në cilësimet e aplikacionit. Zgjidhni gjuhën me të cilën ndiheni më rehat në lexim dhe kuptim."
+        "en": "After selecting a language, you'll see a confirmation window with a smaller flag border like this. You can accept or decline the selection. Don't worry - you can always change your language preference later in the app settings. Choose the language you feel most comfortable reading and understanding.",
+        "de": "Nach der Auswahl einer Sprache sehen Sie ein Bestätigungsfenster mit einem kleineren Flaggenrand wie dieses. Sie können die Auswahl annehmen oder ablehnen. Keine Sorge - Sie können Ihre Spracheinstellung später in den App-Einstellungen jederzeit ändern. Wählen Sie die Sprache, die Sie am besten lesen und verstehen können.",
+        "ru": "После выбора языка вы увидите окно подтверждения с меньшей границей флага, подобное этому. Вы можете принять или отклонить выбор. Не волнуйтесь - вы всегда можете изменить языковые настройки позже в настройках приложения. Выберите язык, который вам наиболее комфортно читать и понимать.",
+        "ce": "Мотт харжийначохь хьуна хаам гайта бакъдеран кор жимчохь байракан доза дукха кlант ду. Хьо и бакъде йиш ю я дlаяккха. Мукъа ма деза - хьо хlинц а хьан мотт хийца йиш ю приложенин параметраш чохь. Иза мотт харжа, муьлхха хьо лаьий а, гойтуш а ма-дарра.",
+        "prs": "پس از انتخاب زبان، پنجره تأیید با حاشیه کوچک‌تر پرچم مانند این را خواهید دید. می‌توانید انتخاب را بپذیرید یا رد کنید. نگران نباشید - همیشه می‌توانید ترجیحات زبان خود را بعداً در تنظیمات برنامه تغییر دهید. زبانی را انتخاب کنید که در خواندن و درک آن راحت‌تر هستید.",
+        "ps": "د ژبې له انتخاب وروسته، تاسو به د تایید کړکۍ د کشر بیرغ د پولې سره ددې په څېر وګورئ. تاسو کولی شئ انتخاب ومنئ یا رد یې کړئ. اندېښنه مه کوئ - تاسو کولی شئ خپل د ژبې غوراوی وروسته د اپلیکیشن په ترتیباتو کې تل بدل کړئ. هغه ژبه وټاکئ چې تاسو یې په لوستلو او پوهېدو کې ډېر اسان یاست.",
+        "fa": "پس از انتخاب زبان، پنجره تأیید با حاشیه کوچک‌تر پرچم مانند این را خواهید دید. می‌توانید انتخاب را بپذیرید یا رد کنید. نگران نباشید - همیشه می‌توانید ترجیحات زبان خود را بعداً در تنظیمات برنامه تغییر دهید. زبانی را انتخاب کنید که در خواندن و درک آن راحت‌تر هستید.",
+        "ar": "بعد اختيار اللغة، ستشاهد نافذة تأكيد مع حدود علم أصغر مثل هذه. يمكنك قبول أو رفض الاختيار. لا تقلق - يمكنك دائماً تغيير تفضيلات اللغة لاحقاً في إعدادات التطبيق. اختر اللغة التي تشعر بالراحة أكثر في قراءتها وفهمها.",
+        "ku": "Piştî hilbijartina zimanekî, hûn ê paceyeke piştrastkirinê bi sînoreke alayê biçûktir mîna vê bibînin. Hûn dikarin hilbijartinê qebûl bikin an red bikin. Nîgeran nebin - hûn her dem dikarin vebijarkên zimên xwe paşê di mîhengên sepanê de biguherînin. Ew ziman hilbijêrin ku hûn pê xwendin û têgihiştinê rehet in.",
+        "so": "Ka dib doorashada luqadda, waxaad arki doontaa daaqad xaqiijin oo leh xudud calan yar sidan oo kale. Waad aqbali kartaa ama diidi kartaa doorashada. Ha welwelin - had iyo jeer waad bedeli kartaa doorashada luqaddaada markii dambe goobaha barnaamijka. Dooro luqadda aad ugu faraxsan tahay akhris iyo fahamka.",
+        "ka": "ენის არჩევის შემდეგ თქვენ ნახავთ დადასტურების ფანჯარას უფრო მცირე დროშის საზღვრით ამგვარს. შეგიძლიათ მიღება ან უარყოფა. ნუ ინერვიულებთ - ყოველთვის შეგიძლიათ შეცვალოთ ენის პარამეტრები მოგვიანებით აპლიკაციის პარამეტრებში. აირჩიეთ ის ენა, რომელის კითხვა და გაგება ყველაზე კომფორტულია.",
+        "sq": "Pas zgjedhjes së një gjuhe, do të shihni një dritare konfirmimi me një kufi më të vogël flamuri si kjo. Mund ta pranoni ose refuzoni zgjedhjen. Mos u shqetësoni - gjithmonë mund të ndryshoni preferencat e gjuhës më vonë në cilësimet e aplikacionit. Zgjidhni gjuhën me të cilën ndiheni më rehat në lexim dhe kuptim."
       },
       "showConfirmation": true,
-      "showFlag": true
+      "showFlag": true,
+      "smallFlag": true
     },
     {
       "id": 4,

@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { 
   StyleSheet, 
@@ -99,7 +100,8 @@ const TutorialModal: React.FC<TutorialModalProps> = ({
         }
         else if (translationX < -50) {
             console.log("Swipe Close")
-            handleClose()}
+            handleClose();
+        }
       }
     }
   };
@@ -174,18 +176,22 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     justifyContent: 'center',
     alignItems: 'center',
+    paddingHorizontal: 10,
   },
   gestureContainer: {
-    width: '95%',
-    height: '85%',
+    width: '100%',
+    maxWidth: 400,
+    height: '80%',
+    alignSelf: 'center',
   },
   modalContent: {
-    width: '95%',
-    maxWidth: 600,
-    height: '85%',
+    width: '100%',
+    maxWidth: 400,
+    height: '80%',
     backgroundColor: '#fff',
     borderRadius: 12,
     overflow: 'hidden',
+    alignSelf: 'center',
   },
   modalContentWide: {
     maxWidth: 900,
