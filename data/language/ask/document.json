@@ -2,138 +2,478 @@
 {
   "documentsAndCertification": {
     "en": "Documents & Certification",
-    "de": "Dokumente & Zertifizierung"
+    "de": "Dokumente & Zertifizierung",
+    "ar": "الوثائق والشهادات",
+    "fa": "اسناد و گواهی",
+    "ru": "Документы и сертификация",
+    "tr": "Belgeler ve Sertifikasyon",
+    "fr": "Documents et certification",
+    "es": "Documentos y certificación",
+    "pt": "Documentos e certificação",
+    "it": "Documenti e certificazione",
+    "pl": "Dokumenty i certyfikacja",
+    "uk": "Документи та сертифікація"
   },
   "findDocumentServices": {
     "en": "Find support for document translation, recognition and certification services.",
-    "de": "Finden Sie Unterstützung bei Dokumentenübersetzung, Anerkennung und Zertifizierung."
+    "de": "Finden Sie Unterstützung bei Dokumentenübersetzung, Anerkennung und Zertifizierung.",
+    "ar": "ابحث عن الدعم لخدمات ترجمة الوثائق والاعتراف والشهادات.",
+    "fa": "پشتیبانی برای خدمات ترجمه اسناد، شناسایی و گواهی پیدا کنید.",
+    "ru": "Найдите поддержку для услуг перевода, признания и сертификации документов.",
+    "tr": "Belge çevirisi, tanıma ve sertifikasyon hizmetleri için destek bulun.",
+    "fr": "Trouvez du soutien pour les services de traduction, reconnaissance et certification de documents.",
+    "es": "Encuentra apoyo para servicios de traducción, reconocimiento y certificación de documentos.",
+    "pt": "Encontre suporte para serviços de tradução, reconhecimento e certificação de documentos.",
+    "it": "Trova supporto per servizi di traduzione, riconoscimento e certificazione documenti.",
+    "pl": "Znajdź wsparcie dla usług tłumaczenia, uznawania i certyfikacji dokumentów.",
+    "uk": "Знайдіть підтримку для послуг перекладу, визнання та сертифікації документів."
   },
   "documentSupportAssistant": {
     "en": "Document Support Assistant",
-    "de": "Dokumenten-Assistent"
+    "de": "Dokumenten-Assistent",
+    "ar": "مساعد دعم الوثائق",
+    "fa": "دستیار پشتیبانی اسناد",
+    "ru": "Помощник по документам",
+    "tr": "Belge Destek Asistanı",
+    "fr": "Assistant de support documentaire",
+    "es": "Asistente de soporte de documentos",
+    "pt": "Assistente de suporte de documentos",
+    "it": "Assistente supporto documenti",
+    "pl": "Asystent wsparcia dokumentów",
+    "uk": "Помічник підтримки документів"
   },
   "answerQuestionsForDocumentServices": {
     "en": "Answer a few questions to find suitable document services.",
-    "de": "Beantworten Sie ein paar Fragen, um passende Dokumentendienste zu finden."
+    "de": "Beantworten Sie ein paar Fragen, um passende Dokumentendienste zu finden.",
+    "ar": "أجب على بعض الأسئلة للعثور على خدمات الوثائق المناسبة.",
+    "fa": "برای یافتن خدمات مناسب اسناد، به چند سوال پاسخ دهید.",
+    "ru": "Ответьте на несколько вопросов, чтобы найти подходящие документальные услуги.",
+    "tr": "Uygun belge hizmetlerini bulmak için birkaç soruya cevap verin.",
+    "fr": "Répondez à quelques questions pour trouver des services documentaires appropriés.",
+    "es": "Responde algunas preguntas para encontrar servicios de documentos adecuados.",
+    "pt": "Responda algumas perguntas para encontrar serviços de documentos adequados.",
+    "it": "Rispondi ad alcune domande per trovare servizi documentali adatti.",
+    "pl": "Odpowiedz na kilka pytań, aby znaleźć odpowiednie usługi dokumentowe.",
+    "uk": "Дайте відповіді на кілька запитань, щоб знайти відповідні документальні послуги."
   },
   "howUrgentlyNeedDocumentAssistance": {
     "en": "How urgently do you need document assistance?",
-    "de": "Wie dringend benötigen Sie Dokumentenhilfe?"
+    "de": "Wie dringend benötigen Sie Dokumentenhilfe?",
+    "ar": "ما مدى إلحاحك في الحاجة إلى مساعدة الوثائق؟",
+    "fa": "چقدر فوری به کمک اسناد نیاز دارید؟",
+    "ru": "Насколько срочно вам нужна помощь с документами?",
+    "tr": "Belge yardımına ne kadar acilen ihtiyacınız var?",
+    "fr": "Dans quelle urgence avez-vous besoin d'aide documentaire?",
+    "es": "¿Qué tan urgente necesitas asistencia con documentos?",
+    "pt": "Quão urgente você precisa de assistência com documentos?",
+    "it": "Quanto urgentemente hai bisogno di assistenza con i documenti?",
+    "pl": "Jak pilnie potrzebujesz pomocy z dokumentami?",
+    "uk": "Наскільки терміново вам потрібна допомога з документами?"
   },
   "whatTypeDocumentAssistance": {
     "en": "What type of document assistance do you need?",
-    "de": "Welche Art von Dokumentenhilfe benötigen Sie?"
+    "de": "Welche Art von Dokumentenhilfe benötigen Sie?",
+    "ar": "ما نوع مساعدة الوثائق التي تحتاجها؟",
+    "fa": "به چه نوع کمک اسنادی نیاز دارید؟",
+    "ru": "Какой тип помощи с документами вам нужен?",
+    "tr": "Ne tür belge yardımına ihtiyacınız var?",
+    "fr": "Quel type d'aide documentaire avez-vous besoin?",
+    "es": "¿Qué tipo de asistencia con documentos necesitas?",
+    "pt": "Que tipo de assistência com documentos você precisa?",
+    "it": "Che tipo di assistenza con i documenti ti serve?",
+    "pl": "Jakiego rodzaju pomocy z dokumentami potrzebujesz?",
+    "uk": "Який тип допомоги з документами вам потрібен?"
   },
   "documentTranslation": {
     "en": "Document Translation",
-    "de": "Dokumentenübersetzung"
+    "de": "Dokumentenübersetzung",
+    "ar": "ترجمة الوثائق",
+    "fa": "ترجمه اسناد",
+    "ru": "Перевод документов",
+    "tr": "Belge Çevirisi",
+    "fr": "Traduction de documents",
+    "es": "Traducción de documentos",
+    "pt": "Tradução de documentos",
+    "it": "Traduzione documenti",
+    "pl": "Tłumaczenie dokumentów",
+    "uk": "Переклад документів"
   },
   "credentialRecognition": {
     "en": "Credential Recognition",
-    "de": "Anerkennung von Qualifikationen"
+    "de": "Anerkennung von Qualifikationen",
+    "ar": "الاعتراف بالمؤهلات",
+    "fa": "تشخیص مدرک",
+    "ru": "Признание квалификации",
+    "tr": "Kimlik Belgesi Tanıma",
+    "fr": "Reconnaissance des qualifications",
+    "es": "Reconocimiento de credenciales",
+    "pt": "Reconhecimento de credenciais",
+    "it": "Riconoscimento delle credenziali",
+    "pl": "Uznawanie kwalifikacji",
+    "uk": "Визнання кваліфікацій"
   },
   "legalTranslation": {
     "en": "Legal Document Translation",
-    "de": "Rechtsdokumentenübersetzung"
+    "de": "Rechtsdokumentenübersetzung",
+    "ar": "ترجمة الوثائق القانونية",
+    "fa": "ترجمه اسناد حقوقی",
+    "ru": "Перевод юридических документов",
+    "tr": "Hukuki Belge Çevirisi",
+    "fr": "Traduction de documents juridiques",
+    "es": "Traducción de documentos legales",
+    "pt": "Tradução de documentos legais",
+    "it": "Traduzione documenti legali",
+    "pl": "Tłumaczenie dokumentów prawnych",
+    "uk": "Переклад юридичних документів"
   },
   "professionalCertification": {
     "en": "Professional Certification",
-    "de": "Berufliche Zertifizierung"
+    "de": "Berufliche Zertifizierung",
+    "ar": "الشهادة المهنية",
+    "fa": "گواهی حرفه‌ای",
+    "ru": "Профессиональная сертификация",
+    "tr": "Mesleki Sertifikasyon",
+    "fr": "Certification professionnelle",
+    "es": "Certificación profesional",
+    "pt": "Certificação profissional",
+    "it": "Certificazione professionale",
+    "pl": "Certyfikacja zawodowa",
+    "uk": "Професійна сертифікація"
   },
   "documentAssistance": {
     "en": "General Document Assistance",
-    "de": "Allgemeine Dokumentenhilfe"
+    "de": "Allgemeine Dokumentenhilfe",
+    "ar": "المساعدة العامة في الوثائق",
+    "fa": "کمک عمومی اسناد",
+    "ru": "Общая помощь с документами",
+    "tr": "Genel Belge Yardımı",
+    "fr": "Assistance générale aux documents",
+    "es": "Asistencia general con documentos",
+    "pt": "Assistência geral com documentos",
+    "it": "Assistenza generale documenti",
+    "pl": "Ogólna pomoc z dokumentami",
+    "uk": "Загальна допомога з документами"
   },
   "applicationSupport": {
     "en": "Application Support",
-    "de": "Antragsunterstützung"
+    "de": "Antragsunterstützung",
+    "ar": "دعم التطبيق",
+    "fa": "پشتیبانی درخواست",
+    "ru": "Поддержка заявок",
+    "tr": "Başvuru Desteği",
+    "fr": "Support d'application",
+    "es": "Soporte de aplicación",
+    "pt": "Suporte de aplicação",
+    "it": "Supporto applicazione",
+    "pl": "Wsparcie aplikacji",
+    "uk": "Підтримка заявок"
   },
   "academicEvaluation": {
     "en": "Academic Evaluation",
-    "de": "Akademische Bewertung"
+    "de": "Akademische Bewertung",
+    "ar": "التقييم الأكاديمي",
+    "fa": "ارزیابی تحصیلی",
+    "ru": "Академическая оценка",
+    "tr": "Akademik Değerlendirme",
+    "fr": "Évaluation académique",
+    "es": "Evaluación académica",
+    "pt": "Avaliação acadêmica",
+    "it": "Valutazione accademica",
+    "pl": "Ocena akademicka",
+    "uk": "Академічна оцінка"
   },
   "employmentDocuments": {
     "en": "Employment Documents",
-    "de": "Beschäftigungsdokumente"
+    "de": "Beschäftigungsdokumente",
+    "ar": "وثائق التوظيف",
+    "fa": "اسناد اشتغال",
+    "ru": "Документы о трудоустройстве",
+    "tr": "İstihdam Belgeleri",
+    "fr": "Documents d'emploi",
+    "es": "Documentos de empleo",
+    "pt": "Documentos de emprego",
+    "it": "Documenti di lavoro",
+    "pl": "Dokumenty zatrudnienia",
+    "uk": "Документи про працевлаштування"
   },
   "educationalCertificates": {
     "en": "Educational Certificates",
-    "de": "Bildungszertifikate"
+    "de": "Bildungszertifikate",
+    "ar": "الشهادات التعليمية",
+    "fa": "گواهی‌های تحصیلی",
+    "ru": "Образовательные сертификаты",
+    "tr": "Eğitim Sertifikaları",
+    "fr": "Certificats éducatifs",
+    "es": "Certificados educativos",
+    "pt": "Certificados educacionais",
+    "it": "Certificati educativi",
+    "pl": "Certyfikaty edukacyjne",
+    "uk": "Освітні сертифікати"
   },
   "professionalQualifications": {
     "en": "Professional Qualifications",
-    "de": "Berufliche Qualifikationen"
+    "de": "Berufliche Qualifikationen",
+    "ar": "المؤهلات المهنية",
+    "fa": "صلاحیت‌های حرفه‌ای",
+    "ru": "Профессиональные квалификации",
+    "tr": "Mesleki Yeterlilikler",
+    "fr": "Qualifications professionnelles",
+    "es": "Calificaciones profesionales",
+    "pt": "Qualificações profissionais",
+    "it": "Qualifiche professionali",
+    "pl": "Kwalifikacje zawodowe",
+    "uk": "Професійні кваліфікації"
   },
   "legalDocuments": {
     "en": "Legal Documents",
-    "de": "Rechtsdokumente"
+    "de": "Rechtsdokumente",
+    "ar": "الوثائق القانونية",
+    "fa": "اسناد حقوقی",
+    "ru": "Юридические документы",
+    "tr": "Hukuki Belgeler",
+    "fr": "Documents juridiques",
+    "es": "Documentos legales",
+    "pt": "Documentos legais",
+    "it": "Documenti legali",
+    "pl": "Dokumenty prawne",
+    "uk": "Юридичні документи"
   },
   "immigrationPapers": {
     "en": "Immigration Papers",
-    "de": "Einwanderungsdokumente"
+    "de": "Einwanderungsdokumente",
+    "ar": "أوراق الهجرة",
+    "fa": "اسناد مهاجرت",
+    "ru": "Иммиграционные документы",
+    "tr": "Göçmenlik Belgeleri",
+    "fr": "Papiers d'immigration",
+    "es": "Documentos de inmigración",
+    "pt": "Documentos de imigração",
+    "it": "Documenti di immigrazione",
+    "pl": "Dokumenty imigracyjne",
+    "uk": "Імміграційні документи"
   },
   "birthMarriageCertificates": {
     "en": "Birth/Marriage Certificates",
-    "de": "Geburts-/Heiratsurkunden"
+    "de": "Geburts-/Heiratsurkunden",
+    "ar": "شهادات الميلاد/الزواج",
+    "fa": "گواهی تولد/ازدواج",
+    "ru": "Свидетельства о рождении/браке",
+    "tr": "Doğum/Evlilik Sertifikaları",
+    "fr": "Certificats de naissance/mariage",
+    "es": "Certificados de nacimiento/matrimonio",
+    "pt": "Certidões de nascimento/casamento",
+    "it": "Certificati di nascita/matrimonio",
+    "pl": "Akty urodzenia/małżeństwa",
+    "uk": "Свідоцтва про народження/шлюб"
   },
   "courtProceedings": {
     "en": "Court Proceedings",
-    "de": "Gerichtsverfahren"
+    "de": "Gerichtsverfahren",
+    "ar": "إجراءات المحكمة",
+    "fa": "روند دادگاه",
+    "ru": "Судебные разбирательства",
+    "tr": "Mahkeme İşlemleri",
+    "fr": "Procédures judiciaires",
+    "es": "Procedimientos judiciales",
+    "pt": "Procedimentos judiciais",
+    "it": "Procedimenti giudiziari",
+    "pl": "Postępowania sądowe",
+    "uk": "Судові процедури"
   },
   "tradeQualifications": {
     "en": "Trade Qualifications",
-    "de": "Handelsqualifikationen"
+    "de": "Handelsqualifikationen",
+    "ar": "مؤهلات التجارة",
+    "fa": "صلاحیت‌های تجاری",
+    "ru": "Торговые квалификации",
+    "tr": "Ticaret Yeterlilikleri",
+    "fr": "Qualifications commerciales",
+    "es": "Calificaciones comerciales",
+    "pt": "Qualificações comerciais",
+    "it": "Qualifiche commerciali",
+    "pl": "Kwalifikacje handlowe",
+    "uk": "Торгові кваліфікації"
   },
   "businessCertifications": {
     "en": "Business Certifications",
-    "de": "Geschäftszertifikate"
+    "de": "Geschäftszertifikate",
+    "ar": "شهادات الأعمال",
+    "fa": "گواهی‌های تجاری",
+    "ru": "Бизнес-сертификации",
+    "tr": "İş Sertifikaları",
+    "fr": "Certifications d'entreprise",
+    "es": "Certificaciones empresariales",
+    "pt": "Certificações empresariais",
+    "it": "Certificazioni aziendali",
+    "pl": "Certyfikacje biznesowe",
+    "uk": "Бізнес-сертифікації"
   },
   "professionalSkills": {
     "en": "Professional Skills",
-    "de": "Berufliche Fähigkeiten"
+    "de": "Berufliche Fähigkeiten",
+    "ar": "المهارات المهنية",
+    "fa": "مهارت‌های حرفه‌ای",
+    "ru": "Профессиональные навыки",
+    "tr": "Mesleki Beceriler",
+    "fr": "Compétences professionnelles",
+    "es": "Habilidades profesionales",
+    "pt": "Habilidades profissionais",
+    "it": "Competenze professionali",
+    "pl": "Umiejętności zawodowe",
+    "uk": "Професійні навички"
   },
   "vocationalTraining": {
     "en": "Vocational Training",
-    "de": "Berufsausbildung"
+    "de": "Berufsausbildung",
+    "ar": "التدريب المهني",
+    "fa": "آموزش حرفه‌ای",
+    "ru": "Профессиональное обучение",
+    "tr": "Mesleki Eğitim",
+    "fr": "Formation professionnelle",
+    "es": "Formación profesional",
+    "pt": "Formação profissional",
+    "it": "Formazione professionale",
+    "pl": "Szkolenie zawodowe",
+    "uk": "Професійне навчання"
   },
   "refugeeDocuments": {
     "en": "Refugee Documents",
-    "de": "Flüchtlingsdokumente"
+    "de": "Flüchtlingsdokumente",
+    "ar": "وثائق اللاجئين",
+    "fa": "اسناد پناهندگان",
+    "ru": "Документы беженцев",
+    "tr": "Mülteci Belgeleri",
+    "fr": "Documents de réfugié",
+    "es": "Documentos de refugiado",
+    "pt": "Documentos de refugiado",
+    "it": "Documenti di rifugiato",
+    "pl": "Dokumenty uchodźcy",
+    "uk": "Документи біженців"
   },
   "integrationSupport": {
     "en": "Integration Support",
-    "de": "Integrationshilfe"
+    "de": "Integrationshilfe",
+    "ar": "دعم الاندماج",
+    "fa": "پشتیبانی ادغام",
+    "ru": "Поддержка интеграции",
+    "tr": "Entegrasyon Desteği",
+    "fr": "Soutien à l'intégration",
+    "es": "Apoyo a la integración",
+    "pt": "Apoio à integração",
+    "it": "Supporto all'integrazione",
+    "pl": "Wsparcie integracji",
+    "uk": "Підтримка інтеграції"
   },
   "documentGuidance": {
     "en": "Document Guidance",
-    "de": "Dokumentenberatung"
+    "de": "Dokumentenberatung",
+    "ar": "إرشادات الوثائق",
+    "fa": "راهنمایی اسناد",
+    "ru": "Руководство по документам",
+    "tr": "Belge Rehberliği",
+    "fr": "Orientation documentaire",
+    "es": "Orientación de documentos",
+    "pt": "Orientação de documentos",
+    "it": "Guida ai documenti",
+    "pl": "Wskazówki dotyczące dokumentów",
+    "uk": "Керівництво з документів"
   },
   "universityDegrees": {
     "en": "University Degrees",
-    "de": "Universitätsabschlüsse"
+    "de": "Universitätsabschlüsse",
+    "ar": "الدرجات الجامعية",
+    "fa": "مدارک دانشگاهی",
+    "ru": "Университетские степени",
+    "tr": "Üniversite Dereceleri",
+    "fr": "Diplômes universitaires",
+    "es": "Grados universitarios",
+    "pt": "Graus universitários",
+    "it": "Lauree universitarie",
+    "pl": "Stopnie uniwersyteckie",
+    "uk": "Університетські ступені"
   },
   "vocationalQualifications": {
     "en": "Vocational Qualifications",
-    "de": "Berufliche Qualifikationen"
+    "de": "Berufliche Qualifikationen",
+    "ar": "المؤهلات المهنية",
+    "fa": "صلاحیت‌های حرفه‌ای",
+    "ru": "Профессиональные квалификации",
+    "tr": "Mesleki Yeterlilikler",
+    "fr": "Qualifications professionnelles",
+    "es": "Calificaciones profesionales",
+    "pt": "Qualificações profissionais",
+    "it": "Qualifiche professionali",
+    "pl": "Kwalifikacje zawodowe",
+    "uk": "Професійні кваліфікації"
   },
   "professionalCertifications": {
     "en": "Professional Certifications",
-    "de": "Berufszertifikate"
+    "de": "Berufszertifikate",
+    "ar": "الشهادات المهنية",
+    "fa": "گواهی‌های حرفه‌ای",
+    "ru": "Профессиональные сертификаты",
+    "tr": "Mesleki Sertifikalar",
+    "fr": "Certifications professionnelles",
+    "es": "Certificaciones profesionales",
+    "pt": "Certificações profissionais",
+    "it": "Certificazioni professionali",
+    "pl": "Certyfikaty zawodowe",
+    "uk": "Професійні сертифікати"
   },
   "schoolDiplomas": {
     "en": "School Diplomas",
-    "de": "Schuldiplome"
+    "de": "Schuldiplome",
+    "ar": "دبلومات المدرسة",
+    "fa": "دیپلم‌های مدرسه",
+    "ru": "Школьные дипломы",
+    "tr": "Okul Diplomları",
+    "fr": "Diplômes scolaires",
+    "es": "Diplomas escolares",
+    "pt": "Diplomas escolares",
+    "it": "Diplomi scolastici",
+    "pl": "Dyplomy szkolne",
+    "uk": "Шкільні дипломи"
   },
   "noDocumentServicesFound": {
     "en": "No document services found.",
-    "de": "Keine Dokumentendienste gefunden."
+    "de": "Keine Dokumentendienste gefunden.",
+    "ar": "لم يتم العثور على خدمات الوثائق.",
+    "fa": "هیچ خدمات اسنادی یافت نشد.",
+    "ru": "Документальные услуги не найдены.",
+    "tr": "Belge hizmeti bulunamadı.",
+    "fr": "Aucun service documentaire trouvé.",
+    "es": "No se encontraron servicios de documentos.",
+    "pt": "Nenhum serviço de documentos encontrado.",
+    "it": "Nessun servizio documenti trovato.",
+    "pl": "Nie znaleziono usług dokumentowych.",
+    "uk": "Документальних послуг не знайдено."
   },
   "resetFilters": {
     "en": "Reset filters",
-    "de": "Filter zurücksetzen"
+    "de": "Filter zurücksetzen",
+    "ar": "إعادة تعيين المرشحات",
+    "fa": "بازنشانی فیلترها",
+    "ru": "Сбросить фильтры",
+    "tr": "Filtreleri sıfırla",
+    "fr": "Réinitialiser les filtres",
+    "es": "Restablecer filtros",
+    "pt": "Redefinir filtros",
+    "it": "Reimposta filtri",
+    "pl": "Zresetuj filtry",
+    "uk": "Скинути фільтри"
   },
   "resultsFound": {
     "en": "results found",
-    "de": "Ergebnisse gefunden"
+    "de": "Ergebnisse gefunden",
+    "ar": "النتائج الموجودة",
+    "fa": "نتایج یافت شده",
+    "ru": "результатов найдено",
+    "tr": "sonuç bulundu",
+    "fr": "résultats trouvés",
+    "es": "resultados encontrados",
+    "pt": "resultados encontrados",
+    "it": "risultati trovati",
+    "pl": "wyników znaleziono",
+    "uk": "результатів знайдено"
   }
 }
