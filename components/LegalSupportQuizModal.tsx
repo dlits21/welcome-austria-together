@@ -57,22 +57,30 @@ const LegalSupportQuizModal: React.FC<LegalSupportQuizModalProps> = ({
           <View style={styles.questionContainer}>
             <Text style={styles.questionText}>{currentQ.question}</Text>
             
-            <ScrollView style={styles.answersScrollView} contentContainerStyle={styles.answersContainer}>
-              {currentQ.answers.map((answer, index) => {
-                const isStringAnswer = typeof answer === 'string';
-                const displayText = isStringAnswer ? answer : (languageCode === 'de' ? answer.de : answer.en);
-                
-                return (
-                  <TouchableOpacity
-                    key={index}
-                    style={styles.answerButton}
-                    onPress={() => onAnswer(answer)}
-                  >
-                    <Text style={styles.answerText}>{displayText}</Text>
-                  </TouchableOpacity>
-                );
-              })}
-            </ScrollView>
+            <View style={styles.answersScrollContainer}>
+              <ScrollView 
+                style={styles.answersScrollView} 
+                contentContainerStyle={styles.answersContainer}
+                showsVerticalScrollIndicator={true}
+                scrollEnabled={true}
+                nestedScrollEnabled={true}
+              >
+                {currentQ.answers.map((answer, index) => {
+                  const isStringAnswer = typeof answer === 'string';
+                  const displayText = isStringAnswer ? answer : (languageCode === 'de' ? answer.de : answer.en);
+                  
+                  return (
+                    <TouchableOpacity
+                      key={index}
+                      style={styles.answerButton}
+                      onPress={() => onAnswer(answer)}
+                    >
+                      <Text style={styles.answerText}>{displayText}</Text>
+                    </TouchableOpacity>
+                  );
+                })}
+              </ScrollView>
+            </View>
           </View>
 
           <View style={styles.modalFooter}>
@@ -109,6 +117,8 @@ const styles = StyleSheet.create({
     maxHeight: '80%',
     alignItems: 'center',
     position: 'relative',
+    display: 'flex',
+    flexDirection: 'column',
   },
   closeButton: {
     position: 'absolute',
@@ -136,6 +146,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 24,
     flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
   },
   questionText: {
     fontSize: 18,
@@ -144,13 +156,20 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     textAlign: 'center',
   },
+  answersScrollContainer: {
+    width: '100%',
+    flex: 1,
+    minHeight: 200,
+    maxHeight: 300,
+  },
   answersScrollView: {
     width: '100%',
-    maxHeight: 300,
+    flex: 1,
   },
   answersContainer: {
     width: '100%',
     gap: 12,
+    paddingBottom: 20,
   },
   answerButton: {
     backgroundColor: '#f8fafc',
@@ -173,6 +192,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     width: '100%',
+    paddingTop: 16,
   },
   skipButton: {
     paddingVertical: 8,
