@@ -261,6 +261,7 @@ const CareerSupportPage: React.FC = () => {
           languageCode={language.code}
           filterGroups={filterGroups}
           onClearFilters={clearFilters}
+          getTranslation={getAskCareerText}
         />
         
         {!showQuiz && (

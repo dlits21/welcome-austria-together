@@ -10,6 +10,7 @@
       "category": "employment",
       "urgency": "non-urgent",
       "supportType": "career-planning",
+      "supportTypes": ["careerPlanning"],
       "location": "vienna",
       "description": {
         "en": "Professional career counseling and job placement services by the Austrian Employment Service.",
@@ -41,6 +42,7 @@
       "category": "integration",
       "urgency": "non-urgent",
       "supportType": "integration-programs",
+      "supportTypes": ["integrationPrograms"],
       "location": "vienna",
       "description": {
         "en": "Comprehensive integration programs including language courses, job training, and social orientation.",
@@ -72,6 +74,7 @@
       "category": "integration",
       "urgency": "urgent",
       "supportType": "comprehensive-support",
+      "supportTypes": ["comprehensiveSupport"],
       "location": "nationwide",
       "description": {
         "en": "Holistic integration support including housing, education, and career guidance for refugees and migrants.",
@@ -104,6 +107,7 @@
       "category": "education",
       "urgency": "non-urgent",
       "supportType": "professional-development",
+      "supportTypes": ["professionalDevelopment"],
       "location": "nationwide",
       "description": {
         "en": "Professional development courses and certification programs for career advancement.",
@@ -135,6 +139,7 @@
       "category": "networking",
       "urgency": "non-urgent",
       "supportType": "mentoring",
+      "supportTypes": ["mentoring"],
       "location": "vienna",
       "description": {
         "en": "Professional mentoring network connecting skilled immigrants with Austrian professionals in their field.",
@@ -166,6 +171,7 @@
       "category": "education",
       "urgency": "urgent",
       "supportType": "language-integration",
+      "supportTypes": ["languageIntegration"],
       "location": "nationwide",
       "description": {
         "en": "Comprehensive integration courses combining language learning with cultural orientation and job preparation.",
