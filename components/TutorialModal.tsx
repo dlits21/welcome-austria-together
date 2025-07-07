@@ -99,7 +99,6 @@ const TutorialModal: React.FC<TutorialModalProps> = ({
           nextSlide();
         }
         else if (translationX < -50) {
-            console.log("Swipe Close")
             handleClose();
         }
       }
@@ -187,7 +186,7 @@ const styles = StyleSheet.create({
   modalContent: {
     width: '100%',
     maxWidth: 400,
-    height: '80%',
+    height: '100%',
     backgroundColor: '#fff',
     borderRadius: 12,
     overflow: 'hidden',
