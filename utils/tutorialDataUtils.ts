@@ -9,6 +9,7 @@ import askLegalSupportTutorial from '../data/tutorial/ask/legal-support.json';
 import askHealthTutorial from '../data/tutorial/ask/health.json';
 import askFinancialTutorial from '../data/tutorial/ask/financial.json';
 import askCulturalTutorial from '../data/tutorial/ask/cultural.json';
+import askDocumentTutorial from '../data/tutorial/ask/document.json';
 import {
   getGlobalText,
   getAskText,
@@ -18,6 +19,7 @@ import {
   getAskHealthText,
   getAskFinancialText,
   getAskCulturalText,
+  getAskDocumentText,
   getHomeText
 } from './languageUtils';
 
@@ -39,6 +41,8 @@ export const getTutorialData = (tutorialData: string) => {
       return askFinancialTutorial;
     case 'ask-cultural':
       return askCulturalTutorial;
+    case 'ask-document':
+      return askDocumentTutorial;
     case 'virtualAssistant':
       return virtualAssistantTutorialData;
     default:
@@ -62,6 +66,8 @@ export const getCategoryHelper = (key: string, languageCode: string, tutorialDat
       return getAskFinancialText(key, languageCode);
     case 'ask-cultural':
       return getAskCulturalText(key, languageCode);
+    case 'ask-document':
+      return getAskDocumentText(key, languageCode);
     case 'virtualAssistant':
       return virtualAssistantTutorialData;
     default:

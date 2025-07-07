@@ -22,6 +22,12 @@
       },
       "supportTypes": ["documentTranslation", "employmentDocuments"],
       "specializations": ["Employment Documents", "Educational Certificates", "Professional Qualifications"],
+      "services": [
+        "Certified document translation",
+        "Employment document processing",
+        "Educational certificate translation",
+        "Professional qualification assessment"
+      ],
       "contact": {
         "phone": "+43 50 904",
         "email": "info@ams.at",
@@ -50,6 +56,12 @@
       },
       "supportTypes": ["credentialRecognition", "academicEvaluation"],
       "specializations": ["University Degrees", "Vocational Qualifications", "Professional Certifications", "School Diplomas"],
+      "services": [
+        "Academic credential recognition",
+        "Qualification assessment",
+        "Educational validation",
+        "Diploma equivalency evaluation"
+      ],
       "contact": {
         "phone": "+43 1 534 08",
         "email": "recognition@oead.at",
@@ -78,6 +90,12 @@
       },
       "supportTypes": ["legalTranslation", "courtInterpretation"],
       "specializations": ["Legal Documents", "Immigration Papers", "Birth/Marriage Certificates", "Court Proceedings"],
+      "services": [
+        "Sworn document translation",
+        "Court interpretation services",
+        "Legal document certification",
+        "Immigration document processing"
+      ],
       "contact": {
         "phone": "+43 1 521 55",
         "email": "info@gerichtsdolmetscher.at",
@@ -106,6 +124,12 @@
       },
       "supportTypes": ["professionalCertification", "tradeRecognition"],
       "specializations": ["Trade Qualifications", "Business Certifications", "Professional Skills", "Vocational Training"],
+      "services": [
+        "Professional qualification recognition",
+        "Trade certification services",
+        "Business credential validation",
+        "Vocational training assessment"
+      ],
       "contact": {
         "phone": "+43 5 90 900",
         "email": "service@wko.at",
@@ -134,6 +158,12 @@
       },
       "supportTypes": ["documentAssistance", "applicationSupport"],
       "specializations": ["Refugee Documents", "Integration Support", "Application Assistance", "Document Guidance"],
+      "services": [
+        "Document processing assistance",
+        "Application form completion",
+        "Administrative guidance",
+        "Integration document support"
+      ],
       "contact": {
         "phone": "+43 1 878 12",
         "email": "beratung@caritas-wien.at",

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { 
   StyleSheet, 
@@ -57,7 +56,9 @@ const TutorialModal: React.FC<TutorialModalProps> = ({
       case 'ask-financial':
         return 12;
       case 'ask-cultural':
-        return 10; // New case for cultural tutorial
+        return 10;
+      case 'ask-document':
+        return 9; // New case for document tutorial
       default:
         return 8;
     }

@@ -15,9 +15,9 @@ export const getSlideIconAndColor = (type: string, slideIndex: number, tutorialD
       case 'icons':
         return 'help';
       case 'feature':
-        if (tutorialData === 'ask' || tutorialData === 'ask-general' || tutorialData === 'ask-emergency' || tutorialData === 'ask-health' || tutorialData === 'ask-financial' || tutorialData === 'ask-cultural') {
-          const isLastSlide = slideIndex === (tutorialData === 'ask' ? 10 : tutorialData === 'ask-emergency' ? 10 : tutorialData === 'ask-health' ? 10 : tutorialData === 'ask-financial' ? 9 : tutorialData === 'ask-cultural' ? 8 : 6);
-          const isSecondLastSlide = slideIndex === (tutorialData === 'ask' ? 9 : tutorialData === 'ask-emergency' ? 9 : tutorialData === 'ask-health' ? 9 : tutorialData === 'ask-financial' ? 8 : tutorialData === 'ask-cultural' ? 7 : 5);
+        if (tutorialData === 'ask' || tutorialData === 'ask-general' || tutorialData === 'ask-emergency' || tutorialData === 'ask-health' || tutorialData === 'ask-financial' || tutorialData === 'ask-cultural' || tutorialData === 'ask-document') {
+          const isLastSlide = slideIndex === (tutorialData === 'ask' ? 10 : tutorialData === 'ask-emergency' ? 10 : tutorialData === 'ask-health' ? 10 : tutorialData === 'ask-financial' ? 9 : tutorialData === 'ask-cultural' ? 8 : tutorialData === 'ask-document' ? 8 : 6);
+          const isSecondLastSlide = slideIndex === (tutorialData === 'ask' ? 9 : tutorialData === 'ask-emergency' ? 9 : tutorialData === 'ask-health' ? 9 : tutorialData === 'ask-financial' ? 8 : tutorialData === 'ask-cultural' ? 7 : tutorialData === 'ask-document' ? 7 : 5);
           return isLastSlide ? 'language' : isSecondLastSlide ? 'record-voice-over' : 'mic';
         }
         if (tutorialData === 'ask-legal-support') {
@@ -42,9 +42,9 @@ export const getSlideIconAndColor = (type: string, slideIndex: number, tutorialD
       case 'icons':
         return '#8B5CF6';
       case 'feature':
-        if (tutorialData === 'ask' || tutorialData === 'ask-general' || tutorialData === 'ask-emergency' || tutorialData === 'ask-health' || tutorialData === 'ask-financial' || tutorialData === 'ask-cultural') {
-          const isLastSlide = slideIndex === (tutorialData === 'ask' ? 10 : tutorialData === 'ask-emergency' ? 10 : tutorialData === 'ask-health' ? 10 : tutorialData === 'ask-financial' ? 9 : tutorialData === 'ask-cultural' ? 8 : 6);
-          const isSecondLastSlide = slideIndex === (tutorialData === 'ask' ? 9 : tutorialData === 'ask-emergency' ? 9 : tutorialData === 'ask-health' ? 9 : tutorialData === 'ask-financial' ? 8 : tutorialData === 'ask-cultural' ? 7 : 5);
+        if (tutorialData === 'ask' || tutorialData === 'ask-general' || tutorialData === 'ask-emergency' || tutorialData === 'ask-health' || tutorialData === 'ask-financial' || tutorialData === 'ask-cultural' || tutorialData === 'ask-document') {
+          const isLastSlide = slideIndex === (tutorialData === 'ask' ? 10 : tutorialData === 'ask-emergency' ? 10 : tutorialData === 'ask-health' ? 10 : tutorialData === 'ask-financial' ? 9 : tutorialData === 'ask-cultural' ? 8 : tutorialData === 'ask-document' ? 8 : 6);
+          const isSecondLastSlide = slideIndex === (tutorialData === 'ask' ? 9 : tutorialData === 'ask-emergency' ? 9 : tutorialData === 'ask-health' ? 9 : tutorialData === 'ask-financial' ? 8 : tutorialData === 'ask-cultural' ? 7 : tutorialData === 'ask-document' ? 7 : 5);
           return isLastSlide ? '#10B981' : isSecondLastSlide ? '#8B5CF6' : '#10B981';
         }
         if (tutorialData === 'ask-legal-support') {

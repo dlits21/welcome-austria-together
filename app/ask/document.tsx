@@ -272,6 +272,7 @@ const DocumentSupportPage: React.FC = () => {
         visible={showHelpModal}
         onClose={() => setShowHelpModal(false)}
         languageCode={language.code}
+        tutorialData="ask-document"
       />
 
       {/* Virtual Assistant Modal */}

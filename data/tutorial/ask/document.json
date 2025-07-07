@@ -1,0 +1,143 @@
+
+{
+  "slides": [
+    {
+      "id": 0,
+      "type": "welcome",
+      "title": {
+        "en": "Document & Certification Support",
+        "de": "Dokument- und Zertifizierungsunterstützung"
+      },
+      "text": {
+        "en": "Welcome to the document and certification support section. Here you can find help with document translation, credential recognition, and certification services.",
+        "de": "Willkommen im Bereich Dokument- und Zertifizierungsunterstützung. Hier finden Sie Hilfe bei Dokumentenübersetzung, Anerkennungsverfahren und Zertifizierungsdiensten."
+      }
+    },
+    {
+      "id": 1,
+      "type": "instruction",
+      "title": {
+        "en": "How to Use This Section",
+        "de": "So nutzen Sie diesen Bereich"
+      },
+      "text": {
+        "en": "Browse through different document support services by category. You can filter by location, urgency, and type of assistance needed.",
+        "de": "Durchsuchen Sie verschiedene Dokumentenunterstützungsdienste nach Kategorien. Sie können nach Standort, Dringlichkeit und Art der benötigten Hilfe filtern."
+      }
+    },
+    {
+      "id": 2,
+      "type": "category",
+      "title": {
+        "en": "Document Translation Services",
+        "de": "Dokumentenübersetzungsdienste"
+      },
+      "text": {
+        "en": "Get your important documents translated by certified professionals. Essential for employment, education, and legal purposes.",
+        "de": "Lassen Sie Ihre wichtigen Dokumente von zertifizierten Fachkräften übersetzen. Unerlässlich für Beschäftigung, Bildung und rechtliche Zwecke."
+      },
+      "category": {
+        "title": "documentTranslation",
+        "description": "certifiedTranslationServices",
+        "icon": "translate",
+        "color": "#3B82F6"
+      }
+    },
+    {
+      "id": 3,
+      "type": "category",
+      "title": {
+        "en": "Credential Recognition",
+        "de": "Anerkennungsverfahren"
+      },
+      "text": {
+        "en": "Get your foreign qualifications recognized in Austria. Important for professional licensing and employment opportunities.",
+        "de": "Lassen Sie Ihre ausländischen Qualifikationen in Österreich anerkennen. Wichtig für berufliche Zulassung und Beschäftigungsmöglichkeiten."
+      },
+      "category": {
+        "title": "credentialRecognition",
+        "description": "academicProfessionalRecognition",
+        "icon": "verified",
+        "color": "#10B981"
+      }
+    },
+    {
+      "id": 4,
+      "type": "category",
+      "title": {
+        "en": "Legal Document Services",
+        "de": "Rechtsdokumentendienste"
+      },
+      "text": {
+        "en": "Professional services for legal document translation and certification. Required for court proceedings and official applications.",
+        "de": "Professionelle Dienstleistungen für Rechtsdokumentenübersetzung und -beglaubigung. Erforderlich für Gerichtsverfahren und amtliche Anträge."
+      },
+      "category": {
+        "title": "legalTranslation",
+        "description": "swornTranslationServices",
+        "icon": "gavel",
+        "color": "#EF4444"
+      }
+    },
+    {
+      "id": 5,
+      "type": "category",
+      "title": {
+        "en": "Professional Certification",
+        "de": "Berufszertifizierung"
+      },
+      "text": {
+        "en": "Validate your professional skills and qualifications. Essential for entering the Austrian job market in regulated professions.",
+        "de": "Validieren Sie Ihre beruflichen Fähigkeiten und Qualifikationen. Unerlässlich für den Einstieg in den österreichischen Arbeitsmarkt in reglementierten Berufen."
+      },
+      "category": {
+        "title": "professionalCertification",
+        "description": "skillsValidationServices",
+        "icon": "work",
+        "color": "#06B6D4"
+      }
+    },
+    {
+      "id": 6,
+      "type": "category",
+      "title": {
+        "en": "Document Assistance",
+        "de": "Dokumentenhilfe"
+      },
+      "text": {
+        "en": "Comprehensive support with document processing, applications, and administrative procedures. Get help navigating bureaucracy.",
+        "de": "Umfassende Unterstützung bei der Dokumentenbearbeitung, Anträgen und Verwaltungsverfahren. Erhalten Sie Hilfe beim Navigieren durch die Bürokratie."
+      },
+      "category": {
+        "title": "documentAssistance",
+        "description": "applicationProcessingSupport",
+        "icon": "support-agent",
+        "color": "#8B5CF6"
+      }
+    },
+    {
+      "id": 7,
+      "type": "feature",
+      "title": {
+        "en": "Voice Search Available",
+        "de": "Sprachsuche verfügbar"
+      },
+      "text": {
+        "en": "Use voice search to quickly find document services. Simply tap the microphone button and describe what you need.",
+        "de": "Nutzen Sie die Sprachsuche, um schnell Dokumentendienste zu finden. Tippen Sie einfach auf das Mikrofon und beschreiben Sie, was Sie benötigen."
+      }
+    },
+    {
+      "id": 8,
+      "type": "feature",
+      "title": {
+        "en": "Multi-Language Support",
+        "de": "Mehrsprachige Unterstützung"
+      },
+      "text": {
+        "en": "Access information in multiple languages. Switch languages anytime using the language selector in the top navigation.",
+        "de": "Zugriff auf Informationen in mehreren Sprachen. Wechseln Sie jederzeit die Sprache über die Sprachauswahl in der oberen Navigation."
+      }
+    }
+  ]
+}
