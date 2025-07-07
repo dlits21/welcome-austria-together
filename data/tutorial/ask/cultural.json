@@ -1,0 +1,317 @@
+
+{
+  "slides": [
+    {
+      "id": 0,
+      "type": "welcome",
+      "title": {
+        "en": "Cultural Integration Support",
+        "de": "Kulturelle Integrationshilfe",
+        "ru": "Поддержка культурной интеграции",
+        "ce": "Культурни интеграцехь гӀо",
+        "prs": "حمایت از ادغام فرهنگی",
+        "ps": "د کلتوري ادغام ملاتړ",
+        "fa": "حمایت از ادغام فرهنگی",
+        "ar": "دعم الاندماج الثقافي",
+        "ku": "Piştgiriya Yekbûna Çandî",
+        "so": "Taageerada Isku dhafka Dhaqanka",
+        "ka": "კულტურული ინტეგრაციის მხარდაჭერა",
+        "sq": "Mbështetja e Integrimit Kulturor"
+      },
+      "text": {
+        "en": "Welcome to the cultural integration support section. Here you can find organizations that help with language learning, cultural workshops, and community integration.",
+        "de": "Willkommen im Bereich der kulturellen Integrationshilfe. Hier finden Sie Organisationen, die beim Sprachenlernen, bei kulturellen Workshops und bei der Gemeinschaftsintegration helfen.",
+        "ru": "Добро пожаловать в раздел поддержки культурной интеграции. Здесь вы найдете организации, которые помогают с изучением языка, культурными мастерскими и интеграцией в сообщество.",
+        "ce": "Марша догӀийла культурни интеграцехь гӀо кхетаме. Кхузахь хьуна муьлхха мотт дешаран, культурни семинаршкахь а, коьртан интеграцехь а гӀо йолу организацеш.",
+        "prs": "به بخش حمایت از ادغام فرهنگی خوش آمدید. در اینجا می‌توانید سازمان‌هایی را پیدا کنید که در یادگیری زبان، کارگاه‌های فرهنگی و ادغام اجتماعی کمک می‌کنند.",
+        "ps": "د کلتوري ادغام د ملاتړ برخې ته ښه راغلاست. دلته تاسو کولی شئ هغه سازمانونه ومومئ چې د ژبې زده کړې، کلتوري ورکشاپونو او د ټولنې د ادغام سره مرسته کوي.",
+        "fa": "به بخش حمایت از ادغام فرهنگی خوش آمدید. در اینجا می‌توانید سازمان‌هایی پیدا کنید که در یادگیری زبان، کارگاه‌های فرهنگی و ادغام اجتماعی کمک می‌کنند.",
+        "ar": "مرحباً بكم في قسم دعم الاندماج الثقافي. هنا يمكنكم العثور على المنظمات التي تساعد في تعلم اللغة وورش العمل الثقافية والاندماج المجتمعي.",
+        "ku": "Bi xêr hatin beşa piştgiriya yekbûna çandî. Li vir hûn dikarin rêxistinên ku di fêrbûna ziman, atölyeyên çandî û yekbûya civakî de alîkarî dikin bibînin.",
+        "so": "Ku soo dhawow qaybta taageerada isku dhafka dhaqanka. Halkan waxaad ka heli kartaa ururo kaa caawiya barashada luuqadda, aqoon isweydaarsiga dhaqanka iyo isku dhafka bulshada.",
+        "ka": "კეთილი იყოს თქვენი მობრძანება კულტურული ინტეგრაციის მხარდაჭერის განყოფილებაში. აქ შეგიძლიათ იპოვოთ ორგანიზაციები, რომლებიც დაგეხმარებათ ენის სწავლაში, კულტურულ სემინარებსა და საზოგადოებრივ ინტეგრაციაში.",
+        "sq": "Mirë se vini në seksionin e mbështetjes së integrimit kulturor. Këtu mund të gjeni organizata që ndihmojnë me mësimin e gjuhës, punëtori kulturore dhe integrimin në komunitet."
+      }
+    },
+    {
+      "id": 1,
+      "type": "instruction",
+      "title": {
+        "en": "Finding Your Support",
+        "de": "Ihre Unterstützung finden",
+        "ru": "Поиск поддержки",
+        "ce": "Хьан гӀо карар",
+        "prs": "پیدا کردن حمایت شما",
+        "ps": "ستاسو د ملاتړ موندل",
+        "fa": "یافتن حمایت شما",
+        "ar": "العثور على الدعم الخاص بك",
+        "ku": "Piştgiriya Xwe Dîtin",
+        "so": "Helitaanka Taageeradaada",
+        "ka": "თქვენი მხარდაჭერის პოვნა",
+        "sq": "Gjetja e Mbështetjes Suaj"
+      },
+      "text": {
+        "en": "Answer a few questions to get personalized recommendations for cultural integration services in your area.",
+        "de": "Beantworten Sie einige Fragen, um personalisierte Empfehlungen für kulturelle Integrationsdienste in Ihrer Region zu erhalten.",
+        "ru": "Ответьте на несколько вопросов, чтобы получить персонализированные рекомендации по услугам культурной интеграции в вашем районе.",
+        "ce": "Жоп елахь дукха хаттарш, хьан регионехь культурни интеграцин гӀидамашкахь персонализированни рекомендацеш дехарца.",
+        "prs": "به چند سؤال پاسخ دهید تا توصیه‌های شخصی‌سازی شده برای خدمات ادغام فرهنگی در منطقه شما دریافت کنید.",
+        "ps": "د یو څو پوښتنو ته ځواب ورکړئ ترڅو ستاسو په سیمه کې د کلتوري ادغام د خدماتو لپاره شخصي وړاندیزونه واخلئ.",
+        "fa": "به چند سؤال پاسخ دهید تا توصیه‌های شخصی برای خدمات ادغام فرهنگی در منطقه‌تان دریافت کنید.",
+        "ar": "أجيبوا على بعض الأسئلة للحصول على توصيات مخصصة لخدمات الاندماج الثقافي في منطقتكم.",
+        "ku": "Li çend pirsan bersiv bidin da ku tavsiyeyên kesane yên karûbarên yekbûna çandî yên li herêma we bistînin.",
+        "so": "Ka jawaab bixin su'aalo dhowr ah si aad u hesho talo gaara ah oo ku saabsan adeegyada isku dhafka dhaqanka ee aagaaga.",
+        "ka": "უპასუხეთ რამდენიმე კითხვას, რათა მიიღოთ პერსონალიზებული რეკომენდაციები თქვენს რეგიონში კულტურული ინტეგრაციის სერვისებისთვის.",
+        "sq": "Përgjigjuni disa pyetjeve për të marrë rekomandime të personalizuara për shërbimet e integrimit kulturor në zonën tuaj."
+      }
+    },
+    {
+      "id": 2,
+      "type": "category",
+      "title": {
+        "en": "Language Courses",
+        "de": "Sprachkurse",
+        "ru": "Языковые курсы",
+        "ce": "Мотт дешаран курсаш",
+        "prs": "دوره‌های زبان",
+        "ps": "د ژبې کورسونه",
+        "fa": "دوره‌های زبان",
+        "ar": "دورات اللغة",
+        "ku": "Qursên Ziman",
+        "so": "Koorsooyin Luuqad",
+        "ka": "ენის კურსები",
+        "sq": "Kurse Gjuhe"
+      },
+      "text": {
+        "en": "Find German language courses and conversation groups to improve your communication skills.",
+        "de": "Finden Sie deutsche Sprachkurse und Gesprächsgruppen, um Ihre Kommunikationsfähigkeiten zu verbessern.",
+        "ru": "Найдите курсы немецкого языка и разговорные группы для улучшения навыков общения.",
+        "ce": "Нийслойн мотт дешаран курсаш а, дувцаран тобаш а карийта, нагахь хьуна дувцаран навыкаш лаьцна.",
+        "prs": "دوره‌های زبان آلمانی و گروه‌های مکالمه را برای بهبود مهارت‌های ارتباطی خود پیدا کنید.",
+        "ps": "د آلماني ژبې کورسونه او د خبرو اترو ډلې ومومئ ترڅو ستاسو د اړیکو مهارتونه ښه کړئ.",
+        "fa": "دوره‌های زبان آلمانی و گروه‌های مکالمه را برای بهبود مهارت‌های ارتباطی خود پیدا کنید.",
+        "ar": "اعثروا على دورات اللغة الألمانية ومجموعات المحادثة لتحسين مهارات التواصل لديكم.",
+        "ku": "Qursên zimanê elmانی û komên axaftinê bibînin da ku jêhatîbûna xwe ya ragihandinê baştir bikin.",
+        "so": "Ka hel koorsooyin luuqadda Jarmalka ah iyo kooxaha wada hadalka si aad u hagaajiso xirfadahaaga isgaarsiinta.",
+        "ka": "იპოვეთ გერმანული ენის კურსები და საუბრის ჯგუფები კომუნიკაციის უნარების გასაუმჯობესებლად.",
+        "sq": "Gjeni kurse të gjuhës gjermane dhe grupe bisedash për të përmirësuar aftësitë tuaja të komunikimit."
+      },
+      "category": {
+        "title": "languageCourses",
+        "description": "germanLanguageCoursesAndConversation",
+        "icon": "translate",
+        "color": "#8B5CF6"
+      }
+    },
+    {
+      "id": 3,
+      "type": "category",
+      "title": {
+        "en": "Cultural Workshops",
+        "de": "Kulturelle Workshops",
+        "ru": "Культурные мастерские",
+        "ce": "Культурни семинарш",
+        "prs": "کارگاه‌های فرهنگی",
+        "ps": "کلتوري ورکشاپونه",
+        "fa": "کارگاه‌های فرهنگی",
+        "ar": "ورش العمل الثقافية",
+        "ku": "Atölyeyên Çandî",
+        "so": "Aqoon isweydaarsiga Dhaqanka",
+        "ka": "კულტურული სემინარები",
+        "sq": "Punëtori Kulturore"
+      },
+      "text": {
+        "en": "Participate in workshops that teach Austrian culture, traditions, and social norms.",
+        "de": "Nehmen Sie an Workshops teil, die österreichische Kultur, Traditionen und soziale Normen vermitteln.",
+        "ru": "Участвуйте в мастерских, которые обучают австрийской культуре, традициям и социальным нормам.",
+        "ce": "Австрин культура, традицеш, социальни нормаш дешархой семинаршкахь дакъалацар.",
+        "prs": "در کارگاه‌هایی که فرهنگ، سنت‌ها و هنجارهای اجتماعی اتریش را آموزش می‌دهند، شرکت کنید.",
+        "ps": "په هغو ورکشاپونو کې برخه واخلئ چې د اتریش کلتور، دودونه او ټولنیز معیارونه زده کوي.",
+        "fa": "در کارگاه‌هایی شرکت کنید که فرهنگ، سنت‌ها و هنجارهای اجتماعی اتریش را آموزش می‌دهند.",
+        "ar": "شاركوا في ورش العمل التي تعلم الثقافة النمساوية والتقاليد والأعراف الاجتماعية.",
+        "ku": "Di atölyeyên ku çanda Awistûryayê, kevneşopî û normên civakî fêr dikin de beşdar bibin.",
+        "so": "Ka qaybgal aqoon isweydaarsiga dhaqanka Austriga, caadooyinka iyo xeerarka bulshada.",
+        "ka": "მიიღეთ მონაწილეობა სემინარებში, რომლებიც ასწავლიან ავსტრიულ კულტურას, ტრადიციებსა და სოციალურ ნორმებს.",
+        "sq": "Merrni pjesë në punëtori që mësojnë kulturën austriake, traditat dhe normat sociale."
+      },
+      "category": {
+        "title": "culturalWorkshops",
+        "description": "learningAustrianCultureAndTraditions",
+        "icon": "school",
+        "color": "#10B981"
+      }
+    },
+    {
+      "id": 4,
+      "type": "category",
+      "title": {
+        "en": "Community Support",
+        "de": "Gemeinschaftsunterstützung",
+        "ru": "Поддержка сообщества",
+        "ce": "Коьртан гӀо",
+        "prs": "حمایت اجتماعی",
+        "ps": "د ټولنې ملاتړ",
+        "fa": "حمایت اجتماعی",
+        "ar": "الدعم المجتمعي",
+        "ku": "Piştgiriya Civakî",
+        "so": "Taageerada Bulshada",
+        "ka": "საზოგადოებრივი მხარდაჭერა",
+        "sq": "Mbështetja e Komunitetit"
+      },
+      "text": {
+        "en": "Connect with community groups and mentorship programs for social integration.",
+        "de": "Verbinden Sie sich mit Gemeinschaftsgruppen und Mentoring-Programmen für soziale Integration.",
+        "ru": "Свяжитесь с общественными группами и программами наставничества для социальной интеграции.",
+        "ce": "Социальни интеграцин гӀо коьртан тобаш а, наставническин программаш а тӀетоха хилар.",
+        "prs": "با گروه‌های اجتماعی و برنامه‌های مربیگری برای ادغام اجتماعی ارتباط برقرار کنید.",
+        "ps": "د ټولنیز ادغام لپاره د ټولنیزو ډلو او د لارښودونې پروګرامونو سره اړیکه ونیسئ.",
+        "fa": "با گروه‌های اجتماعی و برنامه‌های مربیگری برای ادغام اجتماعی ارتباط برقرار کنید.",
+        "ar": "تواصلوا مع المجموعات المجتمعية وبرامج الإرشاد للاندماج الاجتماعي.",
+        "ku": "Bi komên civakî û bernameyên rêberiyê yên ji bo yekbûna civakî re têkilî daynin.",
+        "so": "Ku xiriirar kooxaha bulshada iyo barnaamijyada hagaha ee isku dhafka bulshada.",
+        "ka": "დაუკავშირდით საზოგადოებრივ ჯგუფებსა და მენტორობის პროგრამებს სოციალური ინტეგრაციისთვის.",
+        "sq": "Lidhuni me grupet e komunitetit dhe programet e mentorimit për integrim social."
+      },
+      "category": {
+        "title": "communitySupport",
+        "description": "socialIntegrationAndMentorship",
+        "icon": "people",
+        "color": "#06B6D4"
+      }
+    },
+    {
+      "id": 5,
+      "type": "category",
+      "title": {
+        "en": "Translation Services",
+        "de": "Übersetzungsdienste",
+        "ru": "Услуги перевода",
+        "ce": "Гочдаран гӀидамаш",
+        "prs": "خدمات ترجمه",
+        "ps": "د ژباړې خدمات",
+        "fa": "خدمات ترجمه",
+        "ar": "خدمات الترجمة",
+        "ku": "Karûbarên Wergerê",
+        "so": "Adeegyada Turjumaada",
+        "ka": "თარგმნის სერვისები",
+        "sq": "Shërbime Përkthimi"
+      },
+      "text": {
+        "en": "Access professional translation and interpretation services for official documents.",
+        "de": "Zugang zu professionellen Übersetzungs- und Dolmetscherdiensten für offizielle Dokumente.",
+        "ru": "Доступ к профессиональным услугам перевода и интерпретации для официальных документов.",
+        "ce": "Официальни документашкахь гӀо профессиональни гочдаран а, интерпретацин гӀидамашкахь а дехар дар.",
+        "prs": "دسترسی به خدمات حرفه‌ای ترجمه و تفسیر برای اسناد رسمی.",
+        "ps": "د رسمي اسنادو لپاره د ژباړې او تفسیر مسلکي خدماتو ته لاسرسی.",
+        "fa": "دسترسی به خدمات حرفه‌ای ترجمه و تفسیر برای اسناد رسمی.",
+        "ar": "الوصول إلى خدمات الترجمة والتفسير المهنية للوثائق الرسمية.",
+        "ku": "Gihîştina karûbarên werger û şîrovekirina profesyonel ji bo belgeyên fermî.",
+        "so": "Helitaanka adeegyada turjumaada iyo fasiraadda xirfadeed ee dukumeentiyada rasmiga ah.",
+        "ka": "წვდომა პროფესიონალურ თარგმნისა და ინტერპრეტაციის სერვისებზე ოფიციალური დოკუმენტებისთვის.",
+        "sq": "Qasja në shërbimet profesionale të përkthimit dhe interpretimit për dokumente zyrtare."
+      },
+      "category": {
+        "title": "translationServices",
+        "description": "professionalTranslationAndInterpretation",
+        "icon": "g_translate",
+        "color": "#F59E0B"
+      }
+    },
+    {
+      "id": 6,
+      "type": "feature",
+      "title": {
+        "en": "Voice Input",
+        "de": "Spracheingabe",
+        "ru": "Голосовой ввод",
+        "ce": "Аз чудалар",
+        "prs": "ورودی صوتی",
+        "ps": "د غږ ننوتل",
+        "fa": "ورودی صوتی",
+        "ar": "الإدخال الصوتي",
+        "ku": "Ketina Dengî",
+        "so": "Galinta Codka",
+        "ka": "ხმოვანი შეყვანა",
+        "sq": "Hyrja me Zë"
+      },
+      "text": {
+        "en": "Use voice input to describe your needs - our system will understand and help you find the right cultural support services.",
+        "de": "Verwenden Sie Spracheingabe, um Ihre Bedürfnisse zu beschreiben - unser System wird verstehen und Ihnen helfen, die richtigen kulturellen Unterstützungsdienste zu finden.",
+        "ru": "Используйте голосовой ввод для описания ваших потребностей - наша система поймет и поможет найти подходящие услуги культурной поддержки.",
+        "ce": "Хьан эхташ ац чуяккхар лело - хьан система гийча а хьуна лаьцна культурни гӀидамаш карийта а.",
+        "prs": "از ورودی صوتی برای توصیف نیازهای خود استفاده کنید - سیستم ما درک خواهد کرد و به شما کمک می‌کند خدمات حمایت فرهنگی مناسب را پیدا کنید.",
+        "ps": "د خپلو اړتیاوو د تشریح لپاره د غږ ننوتل وکاروئ - زموږ سیستم به پوه شي او ستاسو سره به د کلتوري ملاتړ سمې خدمات موندلو کې مرسته وکړي.",
+        "fa": "از ورودی صوتی برای توصیف نیازهایتان استفاده کنید - سیستم ما درک خواهد کرد و کمکتان می‌کند خدمات حمایت فرهنگی مناسب پیدا کنید.",
+        "ar": "استخدموا الإدخال الصوتي لوصف احتياجاتكم - سيفهم نظامنا ويساعدكم في العثور على خدمات الدعم الثقافي المناسبة.",
+        "ku": "Ketina dengî bikar bînin da ku hewcedariyên xwe rave bikin - pergala me dê fam bike û alîkariya we bike ku karûbarên piştgiriya çandî yên guncan bibînin.",
+        "so": "Isticmaal galinta codka si aad u sharaxdo baahiyahaaga - nidaamkayagu wuu fahmi doonaa wuxuuna kaa caawin doonaa inaad hesho adeegyada taageerada dhaqanka ee ku habboon.",
+        "ka": "გამოიყენეთ ხმოვანი შეყვანა თქვენი საჭიროებების აღსაწერად - ჩვენი სისტემა გაიგებს და დაგეხმარებათ სწორი კულტურული მხარდაჭერის სერვისების პოვნაში.",
+        "sq": "Përdorni hyrjen me zë për të përshkruar nevojat tuaja - sistemi ynë do të kuptojë dhe do t'ju ndihmojë të gjeni shërbimet e duhura të mbështetjes kulturore."
+      }
+    },
+    {
+      "id": 7,
+      "type": "feature",
+      "title": {
+        "en": "Virtual Assistant",
+        "de": "Virtueller Assistent",
+        "ru": "Виртуальный помощник",
+        "ce": "Виртуальни гӀо йолу",
+        "prs": "دستیار مجازی",
+        "ps": "مجازي مرستیال",
+        "fa": "دستیار مجازی",
+        "ar": "المساعد الافتراضي",
+        "ku": "Alîkarê Xeyalî",
+        "so": "Kaaliyaha Farsamada",
+        "ka": "ვირტუალური ასისტენტი",
+        "sq": "Asistenti Virtual"
+      },
+      "text": {
+        "en": "Chat with our virtual assistant who can guide you through the cultural integration process and answer your questions in your language.",
+        "de": "Chatten Sie mit unserem virtuellen Assistenten, der Sie durch den kulturellen Integrationsprozess führen und Ihre Fragen in Ihrer Sprache beantworten kann.",
+        "ru": "Общайтесь с нашим виртуальным помощником, который может провести вас через процесс культурной интеграции и ответить на ваши вопросы на вашем языке.",
+        "ce": "Хьан виртуальни гӀо йолучо тешна хаар, иза хьуна культурни интеграцин процессехь хьайна а, хьан мотт тӀехь хьан хаттаршна жоп делла а.",
+        "prs": "با دستیار مجازی ما گفتگو کنید که می‌تواند شما را در فرآیند ادغام فرهنگی راهنمایی کند و به سؤالات شما به زبان شما پاسخ دهد.",
+        "ps": "زموږ د مجازي مرستیال سره خبرې وکړئ چې کولی شي ستاسو د کلتوري ادغام په پروسه کې لارښوونه وکړي او ستاسو ته د خپلې ژبې په ډول ځواب ورکړي.",
+        "fa": "با دستیار مجازی ما گفتگو کنید که می‌تواند شما را در فرآیند ادغام فرهنگی راهنمایی کرده و به سؤالاتتان به زبان شما پاسخ دهد.",
+        "ar": "تحدثوا مع مساعدنا الافتراضي الذي يمكنه إرشادكم خلال عملية الاندماج الثقافي والإجابة على أسئلتكم بلغتكم.",
+        "ku": "Bi alîkarê me yê xeyalî re axivin ku dikare we di pêvajoya yekbûna çandî de rêber bike û pirsên we bi zimanê we bersiv bide.",
+        "so": "Kala hadal kaaliyaheenna farsamada ah kaas oo kuu hagi kara habka isku dhafka dhaqanka una ka jawaabi kara su'aalahaaga luqaddaada.",
+        "ka": "ესაუბრეთ ჩვენს ვირტუალურ ასისტენტს, რომელსაც შეუძლია გაგიწიოთ კულტურული ინტეგრაციის პროცესი და უპასუხოს თქვენს კითხვებს თქვენს ენაზე.",
+        "sq": "Bisedoni me asistentin tonë virtual që mund t'ju udhëzojë përmes procesit të integrimit kulturor dhe t'ju përgjigjet pyetjeve tuaja në gjuhën tuaj."
+      }
+    },
+    {
+      "id": 8,
+      "type": "feature",
+      "title": {
+        "en": "Language Support",
+        "de": "Sprachunterstützung",
+        "ru": "Языковая поддержка",
+        "ce": "Мотт гӀо",
+        "prs": "پشتیبانی زبان",
+        "ps": "د ژبې ملاتړ",
+        "fa": "پشتیبانی زبان",
+        "ar": "الدعم اللغوي",
+        "ku": "Piştgiriya Ziman",
+        "so": "Taageerada Luuqadda",
+        "ka": "ენობრივი მხარდაჭერა",
+        "sq": "Mbështetja Gjuhësore"
+      },
+      "text": {
+        "en": "Our platform supports 12 languages including German, English, Russian, Chechen, Dari, Pashto, Persian, Arabic, Kurdish, Somali, Georgian, and Albanian to serve you better.",
+        "de": "Unsere Plattform unterstützt 12 Sprachen, darunter Deutsch, Englisch, Russisch, Tschetschenisch, Dari, Paschtu, Persisch, Arabisch, Kurdisch, Somali, Georgisch und Albanisch, um Sie besser zu bedienen.",
+        "ru": "Наша платформа поддерживает 12 языков, включая немецкий, английский, русский, чеченский, дари, пушту, персидский, арабский, курдский, сомалийский, грузинский и албанский, чтобы лучше обслуживать вас.",
+        "ce": "Хьан платформа 12 мотт дӀаяхийта, цуьнан юкъахь гӀалгӀа Нийслойн, ингалсан, оьрсийн, нохчийн, дари, пушту, гӀажарийн, Ӏарбийн, курдийн, сомалийн, гуржийн, албанийн мотташ, хьуна хилча лаьцна гӀо дийхар.",
+        "prs": "پلتفرم ما از ۱۲ زبان از جمله آلمانی، انگلیسی، روسی، چچنی، دری، پشتو، فارسی، عربی، کردی، سومالیایی، گرجی و آلبانیایی پشتیبانی می‌کند تا بهتر خدمت‌رسانی کند.",
+        "ps": "زموږ پالتفارم د ۱۲ ژبو ملاتړ کوي پشمول د آلماني، انګلیسي، روسي، چچني، دري، پښتو، فارسي، عربي، کردي، سومالي، ګرجي، او البانیایي ترڅو بهتر خدمات وړاندې کړي.",
+        "fa": "پلتفرم ما از ۱۲ زبان شامل آلمانی، انگلیسی، روسی، چچنی، دری، پشتو، فارسی، عربی، کردی، سومالیایی، گرجی و آلبانیایی پشتیبانی می‌کند تا بهتر خدمت‌رسانی کنیم.",
+        "ar": "تدعم منصتنا ١٢ لغة بما في ذلك الألمانية والإنجليزية والروسية والشيشانية والداري والبشتونية والفارسية والعربية والكردية والصومالية والجورجية والألبانية لخدمتكم بشكل أفضل.",
+        "ku": "Platforma me piştgiriya 12 zimanan dike di nav de almanî, îngilîzî, rûsî, çeçenî, darî, peştûnî, farisî, erebî, kurdî, somalî, gurcî û albanî da ku baştir karûbar bike.",
+        "so": "Barnaameejkayagu waxa uu taageeraa 12 luqadood oo ay ka mid yihiin Jarmal, Ingiriis, Ruush, Chechen, Dari, Pashto, Faaris, Carabi, Kurdi, Soomaali, Georgian, iyo Albanian si loo adeego si fiican.",
+        "ka": "ჩვენი პლატფორმა მხარს უჭერს 12 ენას მათ შორის გერმანულს, ინგლისურს, რუსულს, ჩეჩნურს, დარის, პუშტუს, სპარსულს, არაბულს, ქურთულს, სომალიურს, ქართულს და ალბანურს უკეთესი მომსახურებისთვის.",
+        "sq": "Platforma jonë mbështet 12 gjuhë përfshirë gjermanishten, anglishten, rusishten, çeçenishten, dari, pashto, persishten, arabishten, kurdishten, somalisht, gjeorgjishten dhe shqipen për t'ju shërbyer më mirë."
+      }
+    }
+  ]
+}

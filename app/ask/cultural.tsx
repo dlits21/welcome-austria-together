@@ -275,7 +275,7 @@ const CulturalSupportPage: React.FC = () => {
         visible={showTutorial}
         onClose={() => setShowTutorial(false)}
         languageCode={language.code}
-        tutorialData="home"
+        tutorialData="ask-cultural"
       />
     </SafeAreaView>
   );
