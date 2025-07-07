@@ -6,15 +6,14 @@ import {
   TouchableOpacity, 
   Modal, 
   ScrollView, 
-  useWindowDimensions,
-  State
+  useWindowDimensions
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import TutorialSlideContent from './TutorialSlideContent';
 import TutorialIndicators from './TutorialIndicators';
 import TutorialNavigation from './TutorialNavigation';
 import { getGlobalText } from '../utils/languageUtils';
-import { PanGestureHandler, GestureHandlerRootView } from 'react-native-gesture-handler';
+import { PanGestureHandler, GestureHandlerRootView, State } from 'react-native-gesture-handler';
 
 interface TutorialModalProps {
   visible: boolean;
@@ -87,11 +86,9 @@ const TutorialModal: React.FC<TutorialModalProps> = ({
     console.log('Play audio for current slide:', currentSlide);
   };
 
-  const onSwipeGesture = (event: any) => {
-    console.log("Error Swipe Gesture", event)
+  const onSwipeGestureStateChange = (event: any) => {
     if (!isWideScreen) {
       const { translationX, state } = event.nativeEvent;
-      
       if (state === State.END) {
         if (translationX > 50 && currentSlide > 0) {
           // Swipe right - go to previous slide
@@ -100,6 +97,9 @@ const TutorialModal: React.FC<TutorialModalProps> = ({
           // Swipe left - go to next slide
           nextSlide();
         }
+        else if (translationX < -50) {
+            console.log("Swipe Close")
+            handleClose}
       }
     }
   };
@@ -158,7 +158,7 @@ const TutorialModal: React.FC<TutorialModalProps> = ({
           modalContent
         ) : (
           <GestureHandlerRootView style={styles.gestureContainer}>
-            <PanGestureHandler onGestureEvent={onSwipeGesture}>
+            <PanGestureHandler onHandlerStateChange={onSwipeGestureStateChange}>
               {modalContent}
             </PanGestureHandler>
           </GestureHandlerRootView>
