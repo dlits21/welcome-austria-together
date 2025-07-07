@@ -1,0 +1,361 @@
+
+{
+  "slides": [
+    {
+      "id": 0,
+      "type": "welcome",
+      "title": {
+        "en": "Welcome to Financial Support",
+        "de": "Willkommen bei der Finanzberatung",
+        "ru": "Добро пожаловать в финансовую поддержку",
+        "ce": "Марша догӀийла молхан гӀо",
+        "prs": "به مالی مرسته ښه راغلاست",
+        "ps": "مالي مرستې ته ښه راغلاست",
+        "fa": "به کمک مالی خوش آمدید",
+        "ar": "مرحباً بكم في الدعم المالي",
+        "ku": "Bi xêr hatin alîkariya darayî",
+        "so": "Ku soo dhawoow taageerada maaliyadeed",
+        "ka": "კეთილი იყოს თქვენი მობრძანება ფინანსურ მხარდაჭერაში",
+        "sq": "Mirë se vini në mbështetjen financiare"
+      },
+      "text": {
+        "en": "Find professional financial counseling, budgeting assistance, and debt management services to help you achieve financial stability.",
+        "de": "Finden Sie professionelle Finanzberatung, Budgetierungshilfe und Schuldenverwaltungsdienste, um finanzielle Stabilität zu erreichen.",
+        "ru": "Найдите профессиональное финансовое консультирование, помощь в составлении бюджета и услуги по управлению долгами для достижения финансовой стабильности.",
+        "ce": "Карийна молхан кхетам, бюджет кхолларан гӀо а, берийн урхалла дарах гӀо а муха ду.",
+        "prs": "د مالي ثبات د ترلاسه کولو لپاره د مسلکي مالي مشورو، بودیجه جوړونې مرسته، او د پور مدیریت خدماتو ومومئ.",
+        "ps": "د مالي ثبات د ترلاسه کولو لپاره د مسلکي مالي مشورو، بودیجه جوړونې مرسته، او د پور مدیریت خدماتو ومومئ.",
+        "fa": "مشاوره مالی حرفه‌ای، کمک تهیه بودجه و خدمات مدیریت بدهی برای دستیابی به ثبات مالی پیدا کنید.",
+        "ar": "اعثر على الاستشارات المالية المهنية ومساعدة الميزانية وخدمات إدارة الديون لمساعدتك في تحقيق الاستقرار المالي.",
+        "ku": "Şêwaza darayî ya profesyonel, alîkariya budçeyê û karûbarên rêveberiya deynê bibînin da ku stabilîteya darayî bidest bixin.",
+        "so": "Hel talo maaliyadeed oo xirfad leh, caawimo miisaaniyadeed, iyo adeegyo maaraynta deynta si aad u gaarto degenaanta maaliyadeed.",
+        "ka": "იპოვეთ პროფესიონალური ფინანსური კონსულტაცია, ბიუჯეტის დახმარება და ვალების მართვის სერვისები ფინანსური სტაბილურობის მისაღწევად.",
+        "sq": "Gjeni këshillimin financiar profesional, ndihmën e buxhetit dhe shërbimet e menaxhimit të borxheve për të arritur stabilitetin financiar."
+      }
+    },
+    {
+      "id": 1,
+      "type": "category",
+      "title": {
+        "en": "Budgeting Services",
+        "de": "Budgetierungsdienstleistungen",
+        "ru": "Услуги по составлению бюджета",
+        "ce": "Бюджет кхоллар",
+        "prs": "د بودیجې خدمات",
+        "ps": "د بودیجې خدمات",
+        "fa": "خدمات بودجه‌بندی",
+        "ar": "خدمات الميزانية",
+        "ku": "Karûbarên budçeyê",
+        "so": "Adeegyada miisaaniyadda",
+        "ka": "ბიუჯეტის სერვისები",
+        "sq": "Shërbimet e buxhetit"
+      },
+      "text": {
+        "en": "Learn how to create and manage personal budgets, track expenses, and plan for financial goals with professional guidance.",
+        "de": "Lernen Sie, wie Sie persönliche Budgets erstellen und verwalten, Ausgaben verfolgen und finanzielle Ziele mit professioneller Anleitung planen.",
+        "ru": "Узнайте, как создавать и управлять личными бюджетами, отслеживать расходы и планировать финансовые цели с профессиональным руководством.",
+        "ce": "Шайн бюджет кхолла, харжийн тергал дар, молхан бертарш а планировать ца хилар дешар ду.",
+        "prs": "زده کړئ چې څنګه شخصي بودیجه جوړه کړئ، لګښتونه تعقیب کړئ، او د مسلکي لارښوونې سره د مالي اهدافو لپاره پلان جوړ کړئ.",
+        "ps": "زده کړئ چې څنګه شخصي بودیجه جوړه کړئ، لګښتونه تعقیب کړئ، او د مسلکي لارښوونې سره د مالي اهدافو لپاره پلان جوړ کړئ.",
+        "fa": "یاد بگیرید چگونه بودجه شخصی ایجاد و مدیریت کنید، هزینه‌ها را رهگیری کنید و برای اهداف مالی با راهنمایی حرفه‌ای برنامه‌ریزی کنید.",
+        "ar": "تعلم كيفية إنشاء وإدارة الميزانيات الشخصية وتتبع النفقات والتخطيط للأهداف المالية بإرشاد مهني.",
+        "ku": "Fêr bibin ku çawa budçeyên takekesî biafirînin û birêve bibin, mesrefan bişopînin û ji bo armancên darayî bi rêberiya profesyonel plan bikin.",
+        "so": "Baro sida loo abuuro oo loo maamulo miisaaniyadaha shakhsi ahaaneed, la raacdo kharashyada, iyo in la qorsheynayo yoolalka maaliyadeed ee hagayaasha xirfadeed.",
+        "ka": "ისწავლეთ როგორ შექმნათ და მართოთ პირადი ბიუჯეტები, თვალყური ადევნოთ ხარჯებს და დაგეგმოთ ფინანსური მიზნები პროფესიონალური ხელმძღვანელობით.",
+        "sq": "Mësoni se si të krijoni dhe menaxhoni buxhetet personale, të ndiqni shpenzimet dhe të planifikoni për qëllimet financiare me udhëzime profesionale."
+      },
+      "category": {
+        "title": "budgeting",
+        "description": "budgetingDescription",
+        "icon": "account-balance-wallet",
+        "color": "#3B82F6"
+      }
+    },
+    {
+      "id": 2,
+      "type": "category",
+      "title": {
+        "en": "Debt Counseling",
+        "de": "Schuldnerberatung",
+        "ru": "Консультирование по долгам",
+        "ce": "Берийн кхетам",
+        "prs": "د پور مشوره",
+        "ps": "د پور مشوره",
+        "fa": "مشاوره بدهی",
+        "ar": "استشارة الديون",
+        "ku": "Şêwaza deynê",
+        "so": "Talo deynta",
+        "ka": "ვალების კონსულტაცია",
+        "sq": "Këshillimi i borxheve"
+      },
+      "text": {
+        "en": "Get professional help with debt management, restructuring payment plans, and finding solutions to overcome financial difficulties.",
+        "de": "Erhalten Sie professionelle Hilfe bei der Schuldenverwaltung, der Umstrukturierung von Zahlungsplänen und der Suche nach Lösungen zur Überwindung finanzieller Schwierigkeiten.",
+        "ru": "Получите профессиональную помощь в управлении долгами, реструктуризации планов платежей и поиске решений для преодоления финансовых трудностей.",
+        "ce": "Молхан жигархой кхетам, дукхий планш хийцар, берийн куьгташ дар а гӀо ма.",
+        "prs": "د پور مدیریت، د تادیاتو پلانونو بیا جوړولو، او د مالي ستونزو د ماتولو لپاره د حلونو موندلو کې مسلکي مرسته واخلئ.",
+        "ps": "د پور مدیریت، د تادیاتو پلانونو بیا جوړولو، او د مالي ستونزو د ماتولو لپاره د حلونو موندلو کې مسلکي مرسته واخلئ.",
+        "fa": "کمک حرفه‌ای در مدیریت بدهی، بازسازی طرح‌های پرداخت و یافتن راه‌حل‌هایی برای غلبه بر مشکلات مالی دریافت کنید.",
+        "ar": "احصل على مساعدة مهنية في إدارة الديون وإعادة هيكلة خطط الدفع والعثور على حلول للتغلب على الصعوبات المالية.",
+        "ku": "Alîkariya profesyonel a rêveberiya deynê, plansaziya dîsa avakirin a dravdan û dîtina çareseriyên ji bo serborûnê li dijwariyên darayî bistînin.",
+        "so": "Hel caawimaad xirfad leh oo ku saabsan maaraynta deynta, dib-u-habeynta qorshayaasha lacag bixinta, iyo helitaanka xalulka lagu adkeysan karo dhibaatooyinka maaliyadeed.",
+        "ka": "მიიღეთ პროფესიონალური დახმარება ვალების მართვაში, გადახდის გეგმების რესტრუქტურიზაციასა და ფინანსური სირთულეების დასაძლევად გადაწყვეტების მოძებნაში.",
+        "sq": "Merrni ndihmë profesionale me menaxhimin e borxheve, ristrukturimin e planeve të pagesave dhe gjetjen e zgjidhjeve për të kapërcyer vështirësitë financiare."
+      },
+      "category": {
+        "title": "debtCounseling",
+        "description": "debtCounselingDescription",
+        "icon": "support-agent",
+        "color": "#EF4444"
+      }
+    },
+    {
+      "id": 3,
+      "type": "category",
+      "title": {
+        "en": "Financial Planning",
+        "de": "Finanzplanung",
+        "ru": "Финансовое планирование",
+        "ce": "Молхан планировать",
+        "prs": "مالي پلان جوړول",
+        "ps": "مالي پلان جوړول",
+        "fa": "برنامه‌ریزی مالی",
+        "ar": "التخطيط المالي",
+        "ku": "Plansaziya darayî",
+        "so": "Qorsheynta maaliyadeed",
+        "ka": "ფინანსური დაგეგმვა",
+        "sq": "Planifikimi financiar"
+      },
+      "text": {
+        "en": "Develop comprehensive financial plans for your future, including savings strategies, investment guidance, and retirement planning.",
+        "de": "Entwickeln Sie umfassende Finanzpläne für Ihre Zukunft, einschließlich Sparstrategien, Anlageberatung und Altersvorsorge.",
+        "ru": "Разработайте комплексные финансовые планы на будущее, включая стратегии сбережений, инвестиционное руководство и планирование пенсии.",
+        "ce": "Хьайн заманхьалхе молхан планш кхолла - цӀенаш дан, инвестици кхетам, пенси планировать а.",
+        "prs": "د خپل راتلونکي لپاره د جامع مالي پلانونه رامینځته کړئ، پشمول د سپمولو ستراتیژیو، د پانګوونې لارښوونې، او د تقاعد پلان جوړول.",
+        "ps": "د خپل راتلونکي لپاره د جامع مالي پلانونه رامینځته کړئ، پشمول د سپمولو ستراتیژیو، د پانګوونې لارښوونې، او د تقاعد پلان جوړول.",
+        "fa": "طرح‌های مالی جامع برای آینده خود توسعه دهید، شامل استراتژی‌های پس‌انداز، راهنمایی سرمایه‌گذاری و برنامه‌ریزی بازنشستگی.",
+        "ar": "وضع خطط مالية شاملة لمستقبلك، بما في ذلك استراتيجيات الادخار وتوجيهات الاستثمار وتخطيط التقاعد.",
+        "ku": "Ji bo pêşerojiya xwe plansaziyên darayî yên berfireh pêşve bibin, tevî stratejiyên xilasbûnê, rêberiya veberhênanê û plansaziya teqawudê.",
+        "so": "Samee qorshayaal maaliyadeed oo dhamaystiran mustaqbalkaaga, oo ay ku jiraan xeeladaha kaydsiga, hagayaasha maalgashiga, iyo qorshaha hawlgabka.",
+        "ka": "შეიმუშავეთ ყოვლისმომცველი ფინანსური გეგმები თქვენი მომავლისთვის, მათ შორის დანაზოგი სტრატეგიები, ინვესტიციური ხელმძღვანელობა და საპენსიო დაგეგმვა.",
+        "sq": "Zhvilloni plane financiare gjithëpërfshirëse për të ardhmen tuaj, duke përfshirë strategjitë e kursimeve, udhëzimin e investimeve dhe planifikimin e pensionit."
+      },
+      "category": {
+        "title": "financialPlanning",
+        "description": "financialPlanningDescription",
+        "icon": "trending-up",
+        "color": "#10B981"
+      }
+    },
+    {
+      "id": 4,
+      "type": "category",
+      "title": {
+        "en": "Investment Courses",
+        "de": "Investitionskurse",
+        "ru": "Инвестиционные курсы",
+        "ce": "Инвестицийн курсаш",
+        "prs": "د پانګوونې کورسونه",
+        "ps": "د پانګوونې کورسونه",
+        "fa": "دوره‌های سرمایه‌گذاری",
+        "ar": "دورات الاستثمار",
+        "ku": "Kursên veberhênanê",
+        "so": "Koorsada maalgashiga",
+        "ka": "ინვესტიციური კურსები",
+        "sq": "Kurset e investimeve"
+      },
+      "text": {
+        "en": "Learn the fundamentals of investing, risk management, and building a diversified portfolio to grow your wealth over time.",
+        "de": "Lernen Sie die Grundlagen des Investierens, des Risikomanagements und des Aufbaus eines diversifizierten Portfolios, um Ihr Vermögen im Laufe der Zeit zu vermehren.",
+        "ru": "Изучите основы инвестирования, управления рисками и создания диверсифицированного портфеля для увеличения вашего богатства со временем.",
+        "ce": "Инвестици кхетамаш, риск урхалла, портфель кхолла дешна хьайн болх даккха дан.",
+        "prs": "د پانګوونې بنسټونه، د خطرونو مدیریت، او د متنوع پورټ فولیو جوړول زده کړئ چې د وخت په تیریدو سره ستاسو شتمني وده کړي.",
+        "ps": "د پانګوونې بنسټونه، د خطرونو مدیریت، او د متنوع پورټ فولیو جوړول زده کړئ چې د وخت په تیریدو سره ستاسو شتمني وده کړي.",
+        "fa": "مبانی سرمایه‌گذاری، مدیریت ریسک و ایجاد یک پرتفوی متنوع را برای افزایش ثروت خود در طول زمان بیاموزید.",
+        "ar": "تعلم أساسيات الاستثمار وإدارة المخاطر وبناء محفظة متنوعة لتنمية ثروتك مع مرور الوقت.",
+        "ku": "Bingehên veberhênanê, rêveberiya xetereyê û avakirina portföyeke cihêreng fêr bibin da ku di demê de dewlemendiya xwe zêde bikin.",
+        "so": "Baro aasaaska maalgashiga, maaraynta halista, iyo dhisidda kala-duwan portfolio si aad hodantinimadaada ugu kordhiso waqti ka dib.",
+        "ka": "ისწავლეთ ინვესტიციის საფუძვლები, რისკების მართვა და დივერსიფიცირებული პორტფელის შექმნა, რათა დროთა განმავლობაში გაზარდოთ თქვენი სიმდიდრე.",
+        "sq": "Mësoni bazat e investimit, menaxhimin e rrezikut dhe ndërtimin e një portofoli të larmishëm për të rritur pasurinë tuaj me kalimin e kohës."
+      },
+      "category": {
+        "title": "investmentCourses",
+        "description": "investmentCoursesDescription",
+        "icon": "show-chart",
+        "color": "#8B5CF6"
+      }
+    },
+    {
+      "id": 5,
+      "type": "category",
+      "title": {
+        "en": "Banking Basics",
+        "de": "Bank-Grundlagen",
+        "ru": "Основы банковского дела",
+        "ce": "Банкийн коьрта хаамаш",
+        "prs": "د بانکدارۍ بنسټونه",
+        "ps": "د بانکدارۍ بنسټونه",
+        "fa": "مبانی بانکداری",
+        "ar": "أساسيات المصرفية",
+        "ku": "Bingehên bankaciyê",
+        "so": "Aasaaska bangiga",
+        "ka": "საბანკო საქმის საფუძვლები",
+        "sq": "Bazat e bankierizmës"
+      },
+      "text": {
+        "en": "Understand banking services, account types, loans, credit cards, and how to effectively manage your banking relationships.",
+        "de": "Verstehen Sie Bankdienstleistungen, Kontotypen, Kredite, Kreditkarten und wie Sie Ihre Bankbeziehungen effektiv verwalten.",
+        "ru": "Понимайте банковские услуги, типы счетов, кредиты, кредитные карты и как эффективно управлять своими банковскими отношениями.",
+        "ce": "Банкийн гӀуллакхаш, счетан тайпанаш, кредиташ, кредитни карташ а хьайн банкан цхьаьнакхетар а хаза.",
+        "prs": "د بانکي خدماتو، د حساب ډولونه، پورونه، کریډیټ کارتونه، او دا چې څنګه خپل د بانک اړیکې په مؤثره توګه اداره کړئ پوه شئ.",
+        "ps": "د بانکي خدماتو، د حساب ډولونه، پورونه، کریډیټ کارتونه، او دا چې څنګه خپل د بانک اړیکې په مؤثره توګه اداره کړئ پوه شئ.",
+        "fa": "خدمات بانکی، انواع حساب، وام‌ها، کارت‌های اعتباری و نحوه مدیریت مؤثر روابط بانکی خود را درک کنید.",
+        "ar": "فهم الخدمات المصرفية وأنواع الحسابات والقروض وبطاقات الائتمان وكيفية إدارة علاقاتك المصرفية بفعالية.",
+        "ku": "Karûbarên bankaciyê, celebên hesaban, qerzan, kartên krediyê û çawa ku pêwendiyên bankaciya xwe bi bandor birêve bibin fam bikin.",
+        "so": "faham adeegyada bangiga, noocyada akoonka, amaahda, kaardhadhka amaahda, iyo sida si hufan loogu maamulo xidhiidhka bangigaaga.",
+        "ka": "გაიაზრეთ საბანკო სერვისები, ანგარიშების ტიპები, სესხები, საკრედიტო ბარათები და როგორ ეფექტურად მართოთ თქვენი საბანკო ურთიერთობები.",
+        "sq": "Kuptoni shërbimet bankare, llojet e llogarive, kreditë, kartat e kreditit dhe si të menaxhoni në mënyrë efektive marrëdhëniet tuaja bankare."
+      },
+      "category": {
+        "title": "bankingBasics",
+        "description": "bankingBasicsDescription",
+        "icon": "account-balance",
+        "color": "#06B6D4"
+      }
+    },
+    {
+      "id": 6,
+      "type": "category",
+      "title": {
+        "en": "Emergency Financial Aid",
+        "de": "Finanzielle Nothilfe",
+        "ru": "Экстренная финансовая помощь",
+        "ce": "Молхан агӀонан гӀо",
+        "prs": "د بیړنۍ مالي مرستې",
+        "ps": "د بیړنۍ مالي مرستې",
+        "fa": "کمک مالی اضطراری",
+        "ar": "المساعدة المالية الطارئة",
+        "ku": "Alîkariya darayî ya bilez",
+        "so": "Gargaarka maaliyadeed ee degdegga ah",
+        "ka": "სასწრაფო ფინანსური დახმარება",
+        "sq": "Ndihma financiare emergjente"
+      },
+      "text": {
+        "en": "Access immediate financial assistance programs for urgent situations, including emergency funds and crisis support services.",
+        "de": "Zugang zu sofortigen finanziellen Hilfsprogrammen für dringende Situationen, einschließlich Notfallfonds und Krisenunterstützungsdiensten.",
+        "ru": "Доступ к программам немедленной финансовой помощи в срочных ситуациях, включая фонды экстренной помощи и услуги поддержки в кризисных ситуациях.",
+        "ce": "АгӀонан хьалах молхан гӀо мегарш - агӀонан фондаш, кризисан гӀо а.",
+        "prs": "د بیړنیو وضعیتونو لپاره د سمدستي مالي مرستې پروګرامونو ته لاسرسی، د بیړني فنډونو او د بحران د ملاتړ خدماتو په شمول.",
+        "ps": "د بیړنیو وضعیتونو لپاره د سمدستي مالي مرستې پروګرامونو ته لاسرسی، د بیړني فنډونو او د بحران د ملاتړ خدماتو په شمول.",
+        "fa": "دسترسی به برنامه‌های کمک مالی فوری برای موقعیت‌های اضطراری، شامل صندوق‌های اضطراری و خدمات حمایت از بحران.",
+        "ar": "الوصول إلى برامج المساعدة المالية الفورية للحالات العاجلة، بما في ذلك صناديق الطوارئ وخدمات دعم الأزمات.",
+        "ku": "Gihîştina bernameyên alîkariya darayî ya bilez ji bo rewşên bilez, tevî fondên bilez û karûbarên piştgiriya qeyranê.",
+        "so": "Helitaanka barnaamijyada gargaarka maaliyadeed ee degdegga ah ee xaaladaha degdegga ah, oo ay ku jiraan sanduuqyada gurmadka iyo adeegyada taageerada argagaxa.",
+        "ka": "წვდომა სასწრაფო ფინანსური დახმარების პროგრამებზე გადაუდებელი სიტუაციებისთვის, მათ შორის საგანგებო ფონდები და კრიზისული მხარდაჭერის სერვისები.",
+        "sq": "Aksesi në programet e ndihmës financiare të menjëhershme për situata urgjente, duke përfshirë fondet e urgjencës dhe shërbimet e mbështetjes së krizës."
+      },
+      "category": {
+        "title": "emergencyAid",
+        "description": "emergencyAidDescription",
+        "icon": "emergency",
+        "color": "#F59E0B"
+      }
+    },
+    {
+      "id": 7,
+      "type": "feature",
+      "title": {
+        "en": "Voice Assistant Support",
+        "de": "Sprachassistent-Unterstützung",
+        "ru": "Поддержка голосового помощника",
+        "ce": "Аз ассистентан гӀо",
+        "prs": "د غږي مرستندوي ملاتړ",
+        "ps": "د غږي مرستندوي ملاتړ",
+        "fa": "پشتیبانی دستیار صوتی",
+        "ar": "دعم المساعد الصوتي",
+        "ku": "Piştgiriya Arîkar a Dengî",
+        "so": "Taageerada kaalmeeye codka",
+        "ka": "ხმოვანი ასისტენტის მხარდაჭერა",
+        "sq": "Mbështetja e asistentit zëror"
+      },
+      "text": {
+        "en": "Use voice commands to navigate through financial services and get spoken guidance in your preferred language.",
+        "de": "Verwenden Sie Sprachbefehle, um durch Finanzdienstleistungen zu navigieren und gesprochene Anleitung in Ihrer bevorzugten Sprache zu erhalten.",
+        "ru": "Используйте голосовые команды для навигации по финансовым услугам и получения голосовых указаний на предпочитаемом языке.",
+        "ce": "Азан команданаш лело молхан гӀуллакхаш юкъе а, хьайн метта аз кхетам а ма.",
+        "prs": "د غږي امرونو څخه کار واخلئ ترڅو د مالي خدماتو له لارې ګرځي او په خپله غوره ژبه کې د ویل شوي لارښوونې ترلاسه کړئ.",
+        "ps": "د غږي امرونو څخه کار واخلئ ترڅو د مالي خدماتو له لارې ګرځي او په خپله غوره ژبه کې د ویل شوي لارښوونې ترلاسه کړئ.",
+        "fa": "از دستورات صوتی برای پیمایش در میان خدمات مالی و دریافت راهنمایی گفتاری به زبان مورد علاقه خود استفاده کنید.",
+        "ar": "استخدم الأوامر الصوتية للتنقل عبر الخدمات المالية والحصول على إرشادات منطوقة بلغتك المفضلة.",
+        "ku": "Fermansaziyên dengî bikar bînin da ku di nav karûbarên darayî de bigerin û bi zimanê xwe yê bijarte rêberiya axaftî bistînin.",
+        "so": "Isticmaal amarada codka si aad ugu wareejiso adeegyada maaliyadeed oo aad u hesho hagayaasha la hadlay luqadda aad doorbidayso.",
+        "ka": "გამოიყენეთ ხმოვანი ბრძანებები ფინანსური სერვისებში ნავიგაციისთვის და მიიღეთ ნათქვამი ხელმძღვანელობა თქვენს სასურველ ენაზე.",
+        "sq": "Përdorni komandat zanore për të naviguar nëpër shërbimet financiare dhe për të marrë udhëzime të folura në gjuhën tuaj të preferuar."
+      }
+    },
+    {
+      "id": 8,
+      "type": "feature",
+      "title": {
+        "en": "Virtual Assistant",
+        "de": "Virtueller Assistent",
+        "ru": "Виртуальный помощник",
+        "ce": "Виртуальни ассистент",
+        "prs": "مجازي مرستندوی",
+        "ps": "مجازي مرستندوی",
+        "fa": "دستیار مجازی",
+        "ar": "المساعد الافتراضي",
+        "ku": "Arîkara Vîrtual",
+        "so": "Kaalmeeye farsamada",
+        "ka": "ვირტუალური ასისტენტი",
+        "sq": "Asistenti virtual"
+      },
+      "text": {
+        "en": "Chat with our AI assistant for personalized financial advice and instant answers to your questions.",
+        "de": "Chatten Sie mit unserem KI-Assistenten für personalisierte Finanzberatung und sofortige Antworten auf Ihre Fragen.",
+        "ru": "Общайтесь с нашим ИИ-помощником для получения персонализированных финансовых советов и мгновенных ответов на ваши вопросы.",
+        "ce": "Хьайн AI ассистентан дуьйцу - карийна молхан кхетам а, хьайн хаттарийн тӀекхача жоп а.",
+        "prs": "زموږ د AI مرستندوي سره د شخصي مالي مشورو او ستاسو د پوښتنو فوري ځوابونو لپاره خبرې وکړئ.",
+        "ps": "زموږ د AI مرستندوي سره د شخصي مالي مشورو او ستاسو د پوښتنو فوري ځوابونو لپاره خبرې وکړئ.",
+        "fa": "با دستیار هوش مصنوعی ما برای مشاوره مالی شخصی و پاسخ‌های فوری به سوالات خود چت کنید.",
+        "ar": "تحدث مع مساعد الذكاء الاصطناعي الخاص بنا للحصول على مشورة مالية شخصية وإجابات فورية على أسئلتك.",
+        "ku": "Bi arîkara AI ya me re ji bo şêwaza darayî ya kesane û bersivên bilez ên pirsên we re sohbet bikin.",
+        "so": "Kala hadal kaalmeeye AI-geena si aad u hesho talo maaliyadeed oo shakhsi ahaaneed iyo jawaabo degdeg ah oo su'aalahaaga ah.",
+        "ka": "ისაუბრეთ ჩვენს AI ასისტენტთან პერსონალიზებული ფინანსური რჩევებისა და თქვენს კითხვებზე მყისიერი პასუხებისთვის.",
+        "sq": "Bisedoni me asistentin tonë AI për këshilla financiare të personalizuara dhe përgjigje të menjëhershme për pyetjet tuaja."
+      }
+    },
+    {
+      "id": 9,
+      "type": "feature",
+      "title": {
+        "en": "Multi-Language Support",
+        "de": "Mehrsprachige Unterstützung",
+        "ru": "Многоязычная поддержка",
+        "ce": "Дуккха мотт чулацар",
+        "prs": "د څو ژبنۍ ملاتړ",
+        "ps": "د څو ژبنۍ ملاتړ",
+        "fa": "پشتیبانی چند زبانه",
+        "ar": "الدعم متعدد اللغات",
+        "ku": "Piştgiriya Gelek-Zimanan",
+        "so": "Taageerada luqado-kala-duwan",
+        "ka": "მრავალენოვანი მხარდაჭერა",
+        "sq": "Mbështetja shumëgjuhëshe"
+      },
+      "text": {
+        "en": "Access financial services information in 12 different languages to ensure you understand all available options.",
+        "de": "Zugang zu Informationen über Finanzdienstleistungen in 12 verschiedenen Sprachen, um sicherzustellen, dass Sie alle verfügbaren Optionen verstehen.",
+        "ru": "Доступ к информации о финансовых услугах на 12 различных языках для обеспечения понимания всех доступных вариантов.",
+        "ce": "Молхан гӀуллакхийн хаам 12 меттан мегна, массо нисбар хуьлуш.",
+        "prs": "د 12 مختلفو ژبو کې د مالي خدماتو معلوماتو ته لاسرسی ترڅو ډاډ ترلاسه کړئ چې تاسو ټول شتون لرونکي اختیارونه پوهیږئ.",
+        "ps": "د 12 مختلفو ژبو کې د مالي خدماتو معلوماتو ته لاسرسی ترڅو ډاډ ترلاسه کړئ چې تاسو ټول شتون لرونکي اختیارونه پوهیږئ.",
+        "fa": "دسترسی به اطلاعات خدمات مالی به 12 زبان مختلف برای اطمینان از درک همه گزینه‌های موجود.",
+        "ar": "الوصول إلى معلومات الخدمات المالية بـ 12 لغة مختلفة لضمان فهمك لجميع الخيارات المتاحة.",
+        "ku": "Gihîştina agahdariyên karûbarên darayî bi 12 zimanên cihêreng da ku pê bawer bibin ku hûn hemû vebijarkên berdest fam dikin.",
+        "so": "Helitaan macluumaadka adeegyada maaliyadeed 12 luqadood oo kala duwan si loo xaqiijiyo inaad fahanto dhammaan ikhtiyaaradka la heli karo.",
+        "ka": "ფინანსური სერვისების ინფორმაციის მიღება 12 სხვადასხვა ენაზე, რათა დარწმუნდეთ, რომ ესმით ყველა ხელმისაწვდომი ვარიანტი.",
+        "sq": "Aksesi në informacionin e shërbimeve financiare në 12 gjuhë të ndryshme për të siguruar që të kuptoni të gjitha opsionet e disponueshme."
+      }
+    }
+  ]
+}

@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -12,6 +11,7 @@ import askGeneralTutorial from '../data/tutorial/ask/general.json';
 import askEmergencyTutorial from '../data/tutorial/ask/emergency.json';
 import askLegalSupportTutorial from '../data/tutorial/ask/legal-support.json';
 import askHealthTutorial from '../data/tutorial/ask/health.json';
+import askFinancialTutorial from '../data/tutorial/ask/financial.json';
 import {
     getGlobalText,
     getAskText,
@@ -19,6 +19,7 @@ import {
     getAskEmergencyText,
     getAskLegalText,
     getAskHealthText,
+    getAskFinancialText,
     getHomeText} from '../utils/languageUtils';
 
 interface TutorialSlideContentProps {
@@ -68,6 +69,8 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
         return askLegalSupportTutorial;
       case 'ask-health':
         return askHealthTutorial;
+      case 'ask-financial':
+        return askFinancialTutorial;
       case 'virtualAssistant':
         return virtualAssistantTutorialData;
       default:
@@ -87,6 +90,8 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
           return getAskLegalText(key, languageCode);
         case 'ask-health':
           return getAskHealthText(key, languageCode);
+        case 'ask-financial':
+          return getAskFinancialText(key, languageCode);
         case 'virtualAssistant':
           return virtualAssistantTutorialData;
         default:
@@ -248,9 +253,9 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
       case 'icons':
         return 'help';
       case 'feature':
-        if (tutorialData === 'ask' || tutorialData === 'ask-general' || tutorialData === 'ask-emergency' || tutorialData === 'ask-health') {
-          const isLastSlide = slideIndex === (tutorialData === 'ask' ? 10 : tutorialData === 'ask-emergency' ? 10 : tutorialData === 'ask-health' ? 10 : 6);
-          const isSecondLastSlide = slideIndex === (tutorialData === 'ask' ? 9 : tutorialData === 'ask-emergency' ? 9 : tutorialData === 'ask-health' ? 9 : 5);
+        if (tutorialData === 'ask' || tutorialData === 'ask-general' || tutorialData === 'ask-emergency' || tutorialData === 'ask-health' || tutorialData === 'ask-financial') {
+          const isLastSlide = slideIndex === (tutorialData === 'ask' ? 10 : tutorialData === 'ask-emergency' ? 10 : tutorialData === 'ask-health' ? 10 : tutorialData === 'ask-financial' ? 9 : 6);
+          const isSecondLastSlide = slideIndex === (tutorialData === 'ask' ? 9 : tutorialData === 'ask-emergency' ? 9 : tutorialData === 'ask-health' ? 9 : tutorialData === 'ask-financial' ? 8 : 5);
           return isLastSlide ? 'language' : isSecondLastSlide ? 'record-voice-over' : 'mic';
         }
         if (tutorialData === 'ask-legal-support') {
@@ -275,9 +280,9 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
       case 'icons':
         return '#8B5CF6';
       case 'feature':
-        if (tutorialData === 'ask' || tutorialData === 'ask-general' || tutorialData === 'ask-emergency' || tutorialData === 'ask-health') {
-          const isLastSlide = slideIndex === (tutorialData === 'ask' ? 10 : tutorialData === 'ask-emergency' ? 10 : tutorialData === 'ask-health' ? 10 : 6);
-          const isSecondLastSlide = slideIndex === (tutorialData === 'ask' ? 9 : tutorialData === 'ask-emergency' ? 9 : tutorialData === 'ask-health' ? 9 : 5);
+        if (tutorialData === 'ask' || tutorialData === 'ask-general' || tutorialData === 'ask-emergency' || tutorialData === 'ask-health' || tutorialData === 'ask-financial') {
+          const isLastSlide = slideIndex === (tutorialData === 'ask' ? 10 : tutorialData === 'ask-emergency' ? 10 : tutorialData === 'ask-health' ? 10 : tutorialData === 'ask-financial' ? 9 : 6);
+          const isSecondLastSlide = slideIndex === (tutorialData === 'ask' ? 9 : tutorialData === 'ask-emergency' ? 9 : tutorialData === 'ask-health' ? 9 : tutorialData === 'ask-financial' ? 8 : 5);
           return isLastSlide ? '#10B981' : isSecondLastSlide ? '#8B5CF6' : '#10B981';
         }
         if (tutorialData === 'ask-legal-support') {
