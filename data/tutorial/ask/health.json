@@ -34,39 +34,115 @@
       }
     },
     {
+      "type": "assistant",
       "id": 1,
-      "type": "instruction",
       "title": {
-        "en": "How to Use This Feature",
-        "de": "Wie Sie diese Funktion nutzen",
-        "ru": "Как использовать эту функцию",
-        "ce": "Муха лелош ю хlара функци",
-        "prs": "چگونه از این ویژگی استفاده کنیم",
-        "ps": "دغه ځانګړتیا څنګه وکاروو",
-        "fa": "چگونه از این ویژگی استفاده کنیم",
-        "ar": "كيفية استخدام هذه الميزة",
-        "ku": "Meriv çawa vê taybetiyê bikar tîne",
-        "so": "Sida loo isticmaalo qorshahan",
-        "ka": "როგორ გამოვიყენოთ ეს ფუნქცია",
-        "sq": "Si ta përdorni këtë veçori"
+        "en": "Hi! I'm here to help you navigate this app and find what you need!",
+        "de": "Hallo! Ich bin hier, um Ihnen bei der Navigation in dieser App zu helfen und zu finden, was Sie brauchen!",
+        "ru": "Привет! Я здесь, чтобы помочь вам навигировать по этому приложению и найти то, что вам нужно!",
+        "ce": "Салам! Со кхузахь ву хlуна хlокху приложенин чохь некъ карийта а хlунга хlокху дӀаделира а.",
+        "prs": "سلام! من اینجا هستم تا به شما کمک کنم در این برنامه حرکت کنید و آنچه نیاز دارید پیدا کنید!",
+        "ps": "سلام! زه دلته یم چې ستاسو سره د دغه اپلیکیشن کې د لارښوونې کولو او هغه څه موندلو کې مرسته وکړم چې تاسو یې غواړئ!",
+        "fa": "سلام! من اینجا هستم تا به شما کمک کنم در این برنامه حرکت کنید و آنچه نیاز دارید پیدا کنید!",
+        "ar": "مرحباً! أنا هنا لمساعدتك في التنقل في هذا التطبيق والعثور على ما تحتاجه!",
+        "ku": "سڵاو! من لێرەم بۆ ئەوەی یارمەتیت بدەم لەم ئەپەدا بگەڕێیت و ئەوە بدۆزیتەوە کە پێویستتە!",
+        "so": "Salaam! Waxaan halkan u joogaa inaan kaa caawiyo aad u dhaqdhaqaaqdo appkan oo aad hesho waxa aad u baahan tahay!",
+        "ka": "გამარჯობა! მე აქ ვარ, რომ დაგეხმაროთ ამ აპლიკაციაში ნავიგაციაში და იპოვოთ ის, რაც გჭირდებათ!",
+        "sq": "Përshëndetje! Unë jam këtu për t'ju ndihmuar të navigoni në këtë aplikacion dhe të gjeni atë që ju nevojitet!"
       },
       "text": {
-        "en": "Answer a few questions to get personalized health service recommendations based on your needs.",
-        "de": "Beantworten Sie einige Fragen, um personalisierte Empfehlungen für Gesundheitsdienste zu erhalten.",
-        "ru": "Ответьте на несколько вопросов, чтобы получить персонализированные рекомендации медицинских услуг.",
-        "ce": "Жоп делахь цхьаъ хьажораш, хьан безаман кхетта саламатан кӀоргалун хаамаш длахь оцунна",
-        "prs": "به چند سوال پاسخ دهید تا توصیه‌های شخصی‌سازی شده خدمات صحی دریافت کنید.",
-        "ps": "د یو څو پوښتنو ځواب ورکړئ ترڅو ستاسو د اړتیاو پراساس د روغتیایي خدماتو وړاندیزونه ترلاسه کړئ.",
-        "fa": "به چند سوال پاسخ دهید تا توصیه‌های شخصی‌سازی شده خدمات بهداشتی دریافت کنید.",
-        "ar": "أجب على بعض الأسئلة للحصول على توصيات مخصصة لخدمات الصحة بناءً على احتياجاتك.",
-        "ku": "Bersiva çend pirsan bidin da ku pêşniyarên kesane yên karûbarên tendirustiyê li gorî hewcedariyên we bistînin.",
-        "so": "Ka jawaab su'aalo dhowr ah si aad u hesho talo gaar ah oo ku saabsan adeegyada caafimaadka iyadoo ku saleysan baahiyahaaga.",
-        "ka": "უპასუხეთ რამდენიმე კითხვას, რათა მიიღოთ პერსონალიზებული ჯანმრთელობის სერვისების რეკომენდაციები თქვენი საჭიროებების მიხედვით.",
-        "sq": "Përgjigjuni në disa pyetje për të marrë rekomandime të personalizuara të shërbimeve shëndetësore bazuar në nevojat tuaja."
+        "en": "Use the virtual assistant to get instant help and guidance. Ask questions in your preferred language and get personalized support.",
+        "de": "Nutzen Sie den virtuellen Assistenten für sofortige Hilfe und Anleitung. Stellen Sie Fragen in Ihrer bevorzugten Sprache und erhalten Sie persönliche Unterstützung.",
+        "ru": "Используйте виртуального помощника, чтобы получить мгновенную помощь и руководство. Задавайте вопросы на предпочитаемом языке и получайте персонализированную поддержку.",
+        "ce": "Виртуальни ассистенто лелае тlаьхьара гlо а хаам а лорна. Хlунна йиш йуьлу меттана хаттар дайте а шуна латта гlо лийте.",
+        "prs": "از دستیار مجازی برای دریافت کمک و راهنمایی فوری استفاده کنید. سوالات را به زبان ترجیحی خود بپرسید و پشتیبانی شخصی دریافت کنید.",
+        "ps": "د سمدستي مرستې او لارښوونې لپاره د مجازي مالي ملګري څخه کار واخلئ. په خپله غوره ژبه پوښتنې وکړئ او شخصي ملاتړ واخلئ.",
+        "fa": "از دستیار مجازی برای دریافت کمک و راهنمایی فوری استفاده کنید. سوالات را به زبان ترجیحی خود بپرسید و پشتیبانی شخصی دریافت کنید.",
+        "ar": "استخدم المساعد الافتراضي للحصول على المساعدة والإرشاد الفوري. اطرح الأسئلة بلغتك المفضلة واحصل على دعم شخصي.",
+        "ku": "یاریدەدەری مەجازی بەکاربهێنە بۆ وەرگرتنی یارمەتی و ڕێنمایی خێرا. پرسیار بکە بە زمانی خۆت و پشتگیری کەسی وەربگرە.",
+        "so": "Isticmaal caawiyaha farsamada ah si aad u hesho caawimaad iyo hagid degdeg ah. Su'aalo ku weydii luqadda aad door bidayso oo hel taageero shakhsi ah.",
+        "ka": "გამოიყენეთ ვირტუალური ასისტენტი მყისიერი დახმარებისა და მითითებების მისაღებად. დასვით კითხვები თქვენს სასურველ ენაზე და მიიღეთ პერსონალიზებული მხარდაჭერა.",
+        "sq": "Përdorni asistentin virtual për të marrë ndihmë dhe udhëzime të menjëhershme. Bëni pyetje në gjuhën tuaj të preferuar dhe merrni mbështetje të personalizuar."
       }
     },
     {
       "id": 2,
+      "type": "category",
+      "title": {
+        "en": "Quiz System",
+        "de": "Quiz-System",
+        "ru": "Система опроса",
+        "ce": "Хаттаран система",
+        "prs": "سیستم سوالات",
+        "ps": "د پوښتنو سیسټم",
+        "fa": "سیستم پرسش",
+        "ar": "نظام الأسئلة",
+        "ku": "سیستەمی پرسیار",
+        "so": "Nidaamka Su'aalaha",
+        "ka": "კითხვების სისტემა",
+        "sq": "Sistemi i pyetjeve"
+      },
+      "text": {
+        "en": "Answer guided questions to help us recommend the most relevant legal support services for your specific needs.",
+        "de": "Beantworten Sie geführte Fragen, um Ihnen die relevantesten Rechtsberatungsdienste für Ihre spezifischen Bedürfnisse zu empfehlen.",
+        "ru": "Отвечайте на направляемые вопросы, чтобы мы могли рекомендовать наиболее подходящие услуги правовой поддержки для ваших конкретных потребностей.",
+        "ce": "Белхан хаттарийн жоьпаш ло, шуна хьан леррина хlоттамашна лаьцна бакъонан гlон долу службаш тайина хlоттийча.",
+        "prs": "به سوالات راهنما پاسخ دهید تا ما مناسب‌ترین خدمات حمایت حقوقی را برای نیازهای خاص شما توصیه کنیم.",
+        "ps": "د لارښوونې پوښتنو ته ځواب ورکړئ ترڅو موږ ستاسو د ځانګړو اړتیاو لپاره ترټولو اړوند حقوقي ملاتړ خدمات وړاندیز کړو.",
+        "fa": "به سوالات راهنما پاسخ دهید تا ما مناسب‌ترین خدمات پشتیبانی حقوقی را برای نیازهای خاص شما توصیه کنیم.",
+        "ar": "أجب على الأسئلة الموجهة لمساعدتنا في التوصية بأنسب خدمات الدعم القانوني لاحتياجاتك المحددة.",
+        "ku": "وەڵامی پرسیارە ڕێنماییکراوەکان بدەرەوە بۆ یارمەتیدانمان لە پێشنیارکردنی گونجاوترین خزمەتگوزاری پشتگیری یاسایی بۆ پێداویستییە تایبەتەکانت.",
+        "so": "Ka jawaab su'aalaha hagitaanka ah si aad nagu caawiso inaan kuu soo jeedinno adeegyada taageerada sharciga ee ugu habboon baahiyahaaga gaarka ah.",
+        "ka": "უპასუხეთ მართვად კითხვებს, რომ დაგვეხმაროთ ყველაზე რელევანტური იურიდიული მხარდაჭერის სერვისების რეკომენდაციაში თქვენი კონკრეტული საჭიროებებისთვის.",
+        "sq": "Përgjigjuni pyetjeve të udhëzuara për të na ndihmuar të rekomandojmë shërbimet më të përshtatshme të mbështetjes ligjore për nevojat tuaja specifike."
+      },
+      "category": {
+        "title": "filters",
+        "description": "filtersDescription",
+        "icon": "filterList",
+        "color": "#3B82F6"
+      }
+    },
+    {
+      "id": 3,
+      "type": "category",
+      "title": {
+        "en": "Filter Options",
+        "de": "Filter-Optionen",
+        "ru": "Варианты фильтров",
+        "ce": "Хьажораган вариантал",
+        "prs": "گزینه‌های فیلتر",
+        "ps": "د فلټر اختیارونه",
+        "fa": "گزینه‌های فیلتر",
+        "ar": "خيارات المرشح",
+        "ku": "بژاردەکانی پاڵێوەر",
+        "so": "Doorashada Shaandhayaasha",
+        "ka": "ფილტრის ვარიანტები",
+        "sq": "Opsionet e filtrit"
+      },
+      "text": {
+        "en": "Use advanced filters to narrow down legal support options by type of assistance, location, and other criteria that matter to you.",
+        "de": "Verwenden Sie erweiterte Filter, um Rechtsberatungsoptionen nach Art der Hilfe, Standort und anderen für Sie wichtigen Kriterien einzugrenzen.",
+        "ru": "Используйте расширенные фильтры для сужения вариантов правовой поддержки по типу помощи, местоположению и другим важным для вас критериям.",
+        "ce": "Кхечу критерийшца, меттигца, гlон тlайпаца бакъонан гlон долу вариантал кlезиг даа хьажорагaш лело.",
+        "prs": "از فیلترهای پیشرفته استفاده کنید تا گزینه‌های حمایت حقوقی را بر اساس نوع کمک، موقعیت و معیارهای دیگر که برای شما مهم است محدود کنید.",
+        "ps": "د لرې پورتنیو فلټرونو څخه کار واخلئ ترڅو د مرستې د ډول، موقعیت او نورو هغو معیارونو له مخې د حقوقي ملاتړ اختیارونه محدود کړئ چې ستاسو لپاره مهم دي.",
+        "fa": "از فیلترهای پیشرفته استفاده کنید تا گزینه‌های پشتیبانی حقوقی را بر اساس نوع کمک، موقعیت و معیارهای دیگر که برای شما مهم است محدود کنید.",
+        "ar": "استخدم المرشحات المتقدمة لتضييق خيارات الدعم القانوني حسب نوع المساعدة والموقع والمعايير الأخرى المهمة بالنسبة لك.",
+        "ku": "پاڵێوەرە پێشکەوتووەکان بەکاربهێنە بۆ تەنگکردنەوەی هەڵبژاردەکانی پشتگیری یاسایی بەپێی جۆری یارمەتی، شوێن و پێوەرەکانی دیکە کە بۆ تۆ گرنگن.",
+        "so": "Isticmaal shaandhayaasha horumarsan si aad u yareeyo doorashada taageerada sharciga iyadoo lagu saleynayo nooca caawimaadda, goobta, iyo shuruudaha kale ee muhiimka kuu ah.",
+        "ka": "გამოიყენეთ გაფართოებული ფილტრები იურიდიული მხარდაჭერის ვარიანტების შესაზღუდავად დახმარების ტიპის, მდებარეობის და სხვა თქვენთვის მნიშვნელოვანი კრიტერიუმების მიხედვით.",
+        "sq": "Përdorni filtra të avancuar për të ngushtuar opsionet e mbështetjes ligjore sipas llojit të ndihmës, vendndodhjes dhe kritereve të tjera që janë të rëndësishme për ju."
+      },
+      "category": {
+        "title": "quiz",
+        "description": "quizDescription",
+        "icon": "quiz",
+        "color": "#3B82F6"
+      }
+    },
+    {
+      "id": 4,
       "type": "category",
       "category": {
         "title": "generalPractice",
@@ -104,7 +180,7 @@
       }
     },
     {
-      "id": 3,
+      "id": 5,
       "type": "category",
       "category": {
         "title": "mentalHealth",
@@ -142,7 +218,7 @@
       }
     },
     {
-      "id": 4,
+      "id": 6,
       "type": "category",
       "category": {
         "title": "specializedCare",
@@ -180,7 +256,7 @@
       }
     },
     {
-      "id": 5,
+      "id": 7,
       "type": "category",
       "category": {
         "title": "emergency",
@@ -218,7 +294,7 @@
       }
     },
     {
-      "id": 6,
+      "id": 8,
       "type": "category",
       "category": {
         "title": "womenHealth",
@@ -256,7 +332,7 @@
       }
     },
     {
-      "id": 7,
+      "id": 9,
       "type": "category",
       "category": {
         "title": "dental",
@@ -294,7 +370,7 @@
       }
     },
     {
-      "id": 8,
+      "id": 10,
       "type": "category",
       "category": {
         "title": "pharmacy",
@@ -332,7 +408,7 @@
       }
     },
     {
-      "id": 9,
+      "id": 11,
       "type": "category",
       "category": {
         "title": "community",
@@ -370,67 +446,67 @@
       }
     },
     {
-      "id": 10,
-      "type": "feature",
+      "type": "language",
+      "id": 12,
       "title": {
-        "en": "Virtual Assistant",
-        "de": "Virtueller Assistent",
-        "ru": "Виртуальный помощник",
-        "ce": "Виртуальни кӀоргйилла",
-        "prs": "دستیار مجازی",
-        "ps": "مجازی مرستندوی",
-        "fa": "دستیار مجازی",
-        "ar": "المساعد الافتراضي",
-        "ku": "Alîkarê virtual",
-        "so": "Kaaliyaha maya ah",
-        "ka": "ვირტუალური ასისტენტი",
-        "sq": "Asistenti virtual"
+        "en": "Language Selection",
+        "de": "Sprachauswahl",
+        "ru": "Выбор языка",
+        "ce": "Мотт харжар",
+        "prs": "انتخاب زبان",
+        "ps": "د ژبې ټاکنه",
+        "fa": "انتخاب زبان",
+        "ar": "اختيار اللغة",
+        "ku": "هەڵبژاردنی زمان",
+        "so": "Doorashada luqadda",
+        "ka": "ენის არჩევა",
+        "sq": "Zgjedhja e gjuhës"
       },
       "text": {
-        "en": "Get personalized help from our AI assistant trained specifically for health support questions.",
-        "de": "Erhalten Sie personalisierte Hilfe von unserem KI-Assistenten, der speziell für Fragen zur Gesundheitsunterstützung trainiert wurde.",
-        "ru": "Получите персонализированную помощь от нашего ИИ-помощника, специально обученного для вопросов поддержки здоровья.",
-        "ce": "Хьан саламатан кӀоргалун хьажоран мутталла дешина хьайн AI кӀоргйиллера персонализованна кӀоргалун ма елахь",
-        "prs": "از دستیار هوش مصنوعی ما که مخصوص سوالات پشتیبانی صحی آموزش دیده است، کمک شخصی‌سازی شده دریافت کنید.",
-        "ps": "زموږ د AI مرستندوي څخه د شخصي مرستې ترلاسه کړئ چې په ځانګړي توګه د روغتیایي ملاتړ پوښتنو لپاره روزل شوی دی.",
-        "fa": "از دستیار هوش مصنوعی ما که به طور خاص برای سوالات پشتیبانی سلامت آموزش دیده است، کمک شخصی‌سازی شده دریافت کنید.",
-        "ar": "احصل على مساعدة شخصية من مساعد الذكاء الاصطناعي المدرب خصيصاً لأسئلة دعم الصحة.",
-        "ku": "Ji alîkarê me yê AI yê ku bi taybetî ji bo pirsên piştgiriya tendirustiyê hatiye perwerdekirin, alîkariya kesane bistînin.",
-        "so": "Hel caawimo shaqsi ah oo ka timid kaaliyahayaga AI ee si gaar ah loogu tababaray su'aalaha taageerada caafimaadka.",
-        "ka": "მიიღეთ პერსონალიზებული დახმარება ჩვენი AI ასისტენტისგან, რომელიც სპეციალურად არის მომზადებული ჯანმრთელობის მხარდაჭერის კითხვებისთვის.",
-        "sq": "Merrni ndihmë të personalizuar nga asistenti ynë AI i trajnuar posaçërisht për pyetjet e mbështetjes së shëndetit."
+        "en": "Switch between 12 different languages anytime. The app supports German, English, Russian, Chechen, Dari, Pashto, Farsi, Arabic, Kurdish, Somali, Georgian, and Albanian.",
+        "de": "Wechseln Sie jederzeit zwischen 12 verschiedenen Sprachen. Die App unterstützt Deutsch, Englisch, Russisch, Tschetschenisch, Dari, Paschtu, Farsi, Arabisch, Kurdisch, Somali, Georgisch und Albanisch.",
+        "ru": "Переключайтесь между 12 различными языками в любое время. Приложение поддерживает немецкий, английский, русский, чеченский, дари, пушту, фарси, арабский, курдский, сомалийский, грузинский и албанский.",
+        "ce": "12 башха меттанаш юкъе мукъамехь хийца йиш ю. Приложенин немцойн, ингалсан, оьрсийн, нохчийн, дари, пашто, фарси, lарабийн, курдийн, сомалийн, гуржийн, албанийн меттанаш ловш ю.",
+        "prs": "در هر زمان بین 12 زبان مختلف تغییر دهید. این برنامه از آلمانی، انگلیسی، روسی، چچنی، دری، پشتو، فارسی، عربی، کردی، سومالیایی، گرجی و آلبانیایی پشتیبانی می‌کند.",
+        "ps": "په هر وخت کې د 12 مختلفو ژبو تر منځ بدلون وکړئ. دا اپلیکیشن د آلماني، انګلیسي، روسي، چیچني، دري، پښتو، فارسي، عربي، کردي، سومالي، جورجیایي، او البانیایي ملاتړ کوي.",
+        "fa": "در هر زمان بین 12 زبان مختلف تغییر دهید. این برنامه از آلمانی، انگلیسی، روسی، چچنی، دری، پشتو، فارسی، عربی، کردی، سومالیایی، گرجی و آلبانیایی پشتیبانی می‌کند.",
+        "ar": "تبديل بين 12 لغة مختلفة في أي وقت. يدعم التطبيق الألمانية والإنجليزية والروسية والشيشانية والداري والبشتو والفارسية والعربية والكردية والصومالية والجورجية والألبانية.",
+        "ku": "لە هەر کاتێکدا لە نێوان 12 زمانی جۆراوجۆردا بگۆڕە. ئەم ئەپە پشتگیری ئەڵمانی، ئینگلیزی، ڕووسی، چیچێنی، دەری، پەشتوو، فارسی، عەرەبی، کوردی، سۆمالی، گورجی و ئەڵبانی دەکات.",
+        "so": "Ku bedel 12 luqadood oo kala duwan marwalba ah. Appku wuxuu taageeraa Jarmal, Ingiriis, Ruush, Chechen, Dari, Pashto, Farsi, Carabi, Kurdish, Soomaali, Georgian, iyo Albanian.",
+        "ka": "ნებისმიერ დროს გადართეთ 12 სხვადასხვა ენას შორის. აპლიკაცია მხარს უჭერს გერმანულს, ინგლისურს, რუსულს, ჩეჩნურს, დარის, პაშტოს, ფარსს, არაბულს, ქურთულს, სომალიურს, ქართულს და ალბანურს.",
+        "sq": "Ndryshoni midis 12 gjuhëve të ndryshme në çdo kohë. Aplikacioni mbështet gjermanishten, anglishten, rusishten, çeçenishten, dari, pashto, farsishten, arabishten, kurdishten, somalisht, gjeorgjishten dhe shqipen."
       }
     },
     {
-      "id": 11,
-      "type": "feature",
+      "id": 13,
+      "type": "icons",
       "title": {
-        "en": "Language Support",
-        "de": "Sprachunterstützung",
-        "ru": "Языковая поддержка",
-        "ce": "Мottийn кӀоргалун",
-        "prs": "پشتیبانی زبان",
-        "ps": "د ژبې ملاتړ",
-        "fa": "پشتیبانی زبان",
-        "ar": "دعم اللغة",
-        "ku": "Piştgiriya ziman",
-        "so": "Taageerada luqadda",
-        "ka": "ენის მხარდაჭერა",
-        "sq": "Mbështetja e gjuhës"
+        "de": "Brauchen Sie mehr Hilfe?",
+        "en": "Need More Help?",
+        "ru": "Нужна дополнительная помощь?",
+        "ce": "Кхин гӏо хьуна?",
+        "prs": "به کمک بیشتر نیاز دارید؟",
+        "ps": "نورو مرستو ته اړتیا لرئ؟",
+        "fa": "به کمک بیشتر نیاز دارید؟",
+        "ar": "هل تحتاج المزيد من المساعدة؟",
+        "ku": "پێویستیت بە یارمەتی زیاتر هەیە؟",
+        "so": "Ma u baahan tahay caawimo dheeraad ah?",
+        "ka": "გჭირდებათ მეტი დახმარება?",
+        "sq": "Keni nevojë për më shumë ndihmë?"
       },
       "text": {
-        "en": "Access health information and services in multiple languages to better understand your options.",
-        "de": "Greifen Sie auf Gesundheitsinformationen und -dienste in mehreren Sprachen zu, um Ihre Optionen besser zu verstehen.",
-        "ru": "Получайте доступ к медицинской информации и услугам на нескольких языках, чтобы лучше понимать ваши возможности.",
-        "ce": "Дуккха мottаца саламатан хаамаш а, кӀоргалуш а ма елахь, хьан харжамаш яхь хаа оцунна",
-        "prs": "به اطلاعات و خدمات صحی به زبان‌های مختلف دسترسی داشته باشید تا گزینه‌های خود را بهتر درک کنید.",
-        "ps": "په مختلفو ژبو کې د روغتیایي معلوماتو او خدماتو ته لاسرسی ولرئ ترڅو خپل انتخابونه ښه پوه شئ.",
-        "fa": "به اطلاعات و خدمات بهداشتی به زبان‌های مختلف دسترسی داشته باشید تا گزینه‌های خود را بهتر درک کنید.",
-        "ar": "الوصول إلى المعلومات والخدمات الصحية بلغات متعددة لفهم خياراتك بشكل أفضل.",
-        "ku": "Bi gelek zimanan agahdarî û karûbarên tendirustiyê bistînin da ku vebijarkên xwe çêtir fêm bikin.",
-        "so": "Hel macluumaadka caafimaadka iyo adeegyada luqado badan si aad si fiican u fahamto doorashadaada.",
-        "ka": "მიიღეთ წვდომა ჯანმრთელობის ინფორმაციასა და სერვისებზე მრავალ ენაზე, რათა უკეთ გაიგოთ თქვენი არჩევანი.",
-        "sq": "Qasni në informacionin dhe shërbimet shëndetësore në gjuhë të shumta për të kuptuar më mirë opsionet tuaja."
+        "de": "Sie können jederzeit das Hilfe/Tutorial-Symbol auf jeder Seite drücken, um mehr Informationen über die Funktionen dieser Seite und deren effektive Nutzung zu erhalten.",
+        "en": "You can always press the help/tutorial icon on any page to get more information about that page's features and how to use them effectively.",
+        "ru": "Вы всегда можете нажать на значок справки/обучения на любой странице, чтобы получить больше информации о функциях этой страницы.",
+        "ce": "Хьо даиман латта тайна гӏо/дешаран тамгӏа могӏа агӏона хьажа.",
+        "prs": "شما همیشه می‌توانید روی نماد کمک/آموزش در هر صفحه کلیک کنید.",
+        "ps": "تاسو تل کولی شئ د مرستې/درسي نښې په هر پاڼه کې کلیک وکړئ.",
+        "fa": "شما همیشه می‌توانید روی نماد کمک/آموزش در هر صفحه کلیک کنید.",
+        "ar": "يمكنك دائماً الضغط على رمز المساعدة/التعليم في أي صفحة للحصول على مزيد من المعلومات.",
+        "ku": "تۆ هەمیشە دەتوانی کلیک لە نیشانی یارمەتی/فێرکردن بکەیت لە هەر پەڕەیەکدا.",
+        "so": "Waxaad had iyo jeer riiri kartaa calaamadda caawinta/tababarka bogga kasta.",
+        "ka": "ყოველთვის შეგიძლიათ დააწკაპუნოთ დახმარების/ტუტორიალის ნიშანზე ნებისმიერ გვერდზე.",
+        "sq": "Gjithmonë mund të shtypni ikonën e ndihmës/tutorialit në çdo faqe për të marrë më shumë informacion."
       }
     }
   ]

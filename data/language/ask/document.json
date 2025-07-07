@@ -475,5 +475,33 @@
     "it": "risultati trovati",
     "pl": "wyników znaleziono",
     "uk": "результатів знайдено"
+  },
+  "courtInterpretation": {
+    "en": "Court Interpretation",
+    "de": "Gerichtsübersetzung",
+    "ru": "Судебный перевод",
+    "ce": "Гlо-судебнъе тlаьцуш",
+    "prs": "ترجمه دادگاه",
+    "ps": "ژباړه د محکمو",
+    "fa": "ترجمه دادگاه",
+    "ar": "ترجمة المحكمة",
+    "ku": "وەڵامی دادگەها",
+    "so": "Tarjumaadda maxkamadda",
+    "ka": "მოწესრიგების თარგმნა",
+    "sq": "Përkthimi i gjykatës"
+  },
+  "tradeRecognition": {
+    "en": "Trade Recognition",
+    "de": "Anerkennung des Handels",
+    "ru": "Признание торговли",
+    "ce": "Торговлё шуьттеха",
+    "prs": "شناسایی تجارت",
+    "ps": "اوسیدلو ته پېژندنه",
+    "fa": "شناسایی تجارت",
+    "ar": "الاعتراف بالتجارة",
+    "ku": "پەیوەندیدانی بازرگانی",
+    "so": "Aqoonsiga ganacsiga",
+    "ka": "სავაჭრო აღიარება",
+    "sq": "Njohja e tregtisë"
   }
 }

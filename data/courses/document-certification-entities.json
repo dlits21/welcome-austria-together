@@ -11,6 +11,7 @@
         "en": "Official document translation for employment purposes",
         "de": "Offizielle Dokumentenübersetzung für Beschäftigungszwecke"
       },
+      "provider": "Arbeitsmarktservice (AMS)",
       "category": "translation",
       "urgency": "non-urgent",
       "supportType": "document-translation",
@@ -19,7 +20,7 @@
         "en": "The Austrian Public Employment Service provides certified translation services for employment-related documents including diplomas, certificates, and work experience records.",
         "de": "Das Arbeitsmarktservice Österreich bietet zertifizierte Übersetzungsdienste für beschäftigungsbezogene Dokumente wie Diplome, Zertifikate und Arbeitserfahrungsnachweise."
       },
-      "supportTypes": ["document-translation", "employment-documents"],
+      "supportTypes": ["documentTranslation", "employmentDocuments"],
       "specializations": ["Employment Documents", "Educational Certificates", "Professional Qualifications"],
       "contact": {
         "phone": "+43 50 904",
@@ -38,6 +39,7 @@
         "en": "Academic credential recognition and evaluation",
         "de": "Anerkennung und Bewertung akademischer Qualifikationen"
       },
+      "provider": "Österreichische Agentur für Bildung und Internationalisierung (OEAD)",
       "category": "certification",
       "urgency": "non-urgent",
       "supportType": "credential-recognition",
@@ -46,7 +48,7 @@
         "en": "The Austrian Agency for Education and Internationalisation provides recognition services for foreign academic qualifications and assists with the validation process for educational credentials.",
         "de": "Die Österreichische Agentur für Bildung und Internationalisierung bietet Anerkennungsdienstleistungen für ausländische akademische Qualifikationen und unterstützt beim Validierungsprozess für Bildungsnachweise."
       },
-      "supportTypes": ["credential-recognition", "academic-evaluation"],
+      "supportTypes": ["credentialRecognition", "academicEvaluation"],
       "specializations": ["University Degrees", "Vocational Qualifications", "Professional Certifications", "School Diplomas"],
       "contact": {
         "phone": "+43 1 534 08",
@@ -67,13 +69,14 @@
       },
       "category": "translation",
       "urgency": "urgent",
+      "provider": "Österreichischer Staat",
       "supportType": "legal-translation",
       "location": "Nationwide",
       "description": {
         "en": "Network of court-certified translators and interpreters providing official translations for legal proceedings, immigration documents, and official certificates.",
         "de": "Netzwerk von gerichtlich zertifizierten Übersetzern und Dolmetschern, die offizielle Übersetzungen für Gerichtsverfahren, Einwanderungsdokumente und amtliche Zertifikate bereitstellen."
       },
-      "supportTypes": ["legal-translation", "court-interpretation"],
+      "supportTypes": ["legalTranslation", "courtInterpretation"],
       "specializations": ["Legal Documents", "Immigration Papers", "Birth/Marriage Certificates", "Court Proceedings"],
       "contact": {
         "phone": "+43 1 521 55",
@@ -92,6 +95,7 @@
         "en": "Professional qualification recognition and certification",
         "de": "Anerkennung und Zertifizierung beruflicher Qualifikationen"
       },
+      "provider": "Wirtschaftskammer Österreich",
       "category": "certification",
       "urgency": "non-urgent",
       "supportType": "professional-certification",
@@ -100,7 +104,7 @@
         "en": "The Austrian Federal Economic Chamber provides recognition services for professional qualifications, trade certifications, and business-related credentials from foreign countries.",
         "de": "Die Wirtschaftskammer Österreich bietet Anerkennungsdienstleistungen für berufliche Qualifikationen, Handelszertifikate und geschäftsbezogene Nachweise aus dem Ausland."
       },
-      "supportTypes": ["professional-certification", "trade-recognition"],
+      "supportTypes": ["professionalCertification", "tradeRecognition"],
       "specializations": ["Trade Qualifications", "Business Certifications", "Professional Skills", "Vocational Training"],
       "contact": {
         "phone": "+43 5 90 900",
@@ -119,6 +123,7 @@
         "en": "Support with document processing and application assistance",
         "de": "Unterstützung bei der Dokumentenbearbeitung und Antragsstellungshilfe"
       },
+      "provider": "Caritas",
       "category": "assistance",
       "urgency": "non-urgent",
       "supportType": "document-assistance",
@@ -127,7 +132,7 @@
         "en": "Caritas provides comprehensive support for refugees and migrants in obtaining, translating, and certifying important documents needed for integration and employment.",
         "de": "Caritas bietet umfassende Unterstützung für Flüchtlinge und Migranten beim Beschaffen, Übersetzen und Beglaubigen wichtiger Dokumente, die für Integration und Beschäftigung benötigt werden."
       },
-      "supportTypes": ["document-assistance", "application-support"],
+      "supportTypes": ["documentAssistance", "applicationSupport"],
       "specializations": ["Refugee Documents", "Integration Support", "Application Assistance", "Document Guidance"],
       "contact": {
         "phone": "+43 1 878 12",

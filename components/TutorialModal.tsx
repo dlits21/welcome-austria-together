@@ -52,7 +52,7 @@ const TutorialModal: React.FC<TutorialModalProps> = ({
       case 'ask-legal-support':
         return 16;
       case 'ask-health':
-        return 12; // New case for health tutorial
+        return 14; // New case for health tutorial
       default:
         return 8;
     }
