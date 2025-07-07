@@ -40,7 +40,7 @@ const GenericGermanCoursePage = ({ courseData }) => {
     { type: 'tags', show: !isLegalSupport && courseData.tags },
     { type: 'enroll', show: !isLegalSupport },
   ];
-  console.log("Help", courseData)
+
   const renderItem = ({ item }) => {
     if (item.show === false) return null;
 

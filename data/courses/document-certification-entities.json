@@ -89,7 +89,7 @@
         "de": "Netzwerk von gerichtlich zertifizierten Übersetzern und Dolmetschern, die offizielle Übersetzungen für Gerichtsverfahren, Einwanderungsdokumente und amtliche Zertifikate bereitstellen."
       },
       "supportTypes": ["legalTranslation", "courtInterpretation"],
-      "specializations": ["Legal Documents", "Immigration Papers", "Birth/Marriage Certificates", "Court Proceedings"],
+      "specializations": ["Legal Documents", "Immigration Papers", "birthMarriageCertificates", "Court Proceedings"],
       "services": [
         "Sworn document translation",
         "Court interpretation services",
@@ -157,7 +157,7 @@
         "de": "Caritas bietet umfassende Unterstützung für Flüchtlinge und Migranten beim Beschaffen, Übersetzen und Beglaubigen wichtiger Dokumente, die für Integration und Beschäftigung benötigt werden."
       },
       "supportTypes": ["documentAssistance", "applicationSupport"],
-      "specializations": ["Refugee Documents", "Integration Support", "Application Assistance", "Document Guidance"],
+      "specializations": ["Refugee Documents", "Integration Support", "applicationSupport", "Document Guidance"],
       "services": [
         "Document processing assistance",
         "Application form completion",

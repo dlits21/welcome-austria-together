@@ -7,8 +7,6 @@ import {
   Modal, 
   ScrollView, 
   useWindowDimensions,
-  PanGestureHandler,
-  GestureHandlerRootView,
   State
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -16,6 +14,7 @@ import TutorialSlideContent from './TutorialSlideContent';
 import TutorialIndicators from './TutorialIndicators';
 import TutorialNavigation from './TutorialNavigation';
 import { getGlobalText } from '../utils/languageUtils';
+import { PanGestureHandler, GestureHandlerRootView } from 'react-native-gesture-handler';
 
 interface TutorialModalProps {
   visible: boolean;
@@ -89,6 +88,7 @@ const TutorialModal: React.FC<TutorialModalProps> = ({
   };
 
   const onSwipeGesture = (event: any) => {
+    console.log("Error Swipe Gesture", event)
     if (!isWideScreen) {
       const { translationX, state } = event.nativeEvent;
       
