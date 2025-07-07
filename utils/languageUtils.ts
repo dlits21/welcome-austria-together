@@ -10,6 +10,7 @@ import askHealthTranslations from '../data/language/ask/health.json';
 import askFinancialTranslations from '../data/language/ask/financial-support.json';
 import askCulturalTranslations from '../data/language/ask/cultural.json';
 import askCareerTranslations from '../data/language/ask/career.json';
+import askDocumentTranslations from '../data/language/ask/document.json';
 
 export const getGlobalText = (key: string, languageCode: string): string => {
   const translation = globalTranslations[key as keyof typeof globalTranslations];
@@ -80,5 +81,10 @@ export const getAskCulturalText = (key: string, languageCode: string): string =>
 
 export const getAskCareerText = (key: string, languageCode: string): string => {
   const translation = askCareerTranslations[key as keyof typeof askCareerTranslations];
+  return translation?.[languageCode as keyof typeof translation] || translation?.en || key;
+};
+
+export const getAskDocumentText = (key: string, languageCode: string): string => {
+  const translation = askDocumentTranslations[key as keyof typeof askDocumentTranslations];
   return translation?.[languageCode as keyof typeof translation] || translation?.en || key;
 };

@@ -16,6 +16,7 @@ import QuizControls from '../../components/QuizControls';
 import DocumentSupportList from '../../components/DocumentSupportList';
 import VirtualAssistantModal from '../../components/VirtualAssistantModal';
 import documentCertificationEntitiesData from '../../data/courses/document-certification-entities.json';
+import { getAskDocumentText, getGlobalText } from '../../utils/languageUtils';
 
 interface DocumentSupportEntity {
   id: string;
@@ -82,38 +83,35 @@ const DocumentSupportPage: React.FC = () => {
   // Quiz questions for document and certification support
   const quizQuestions = [
     {
-      question: language.code === 'de' 
-        ? 'Wie dringend benötigen Sie Dokumentenhilfe?' 
-        : 'How urgently do you need document assistance?',
+      question: getAskDocumentText('howUrgentlyNeedDocumentAssistance', currentLanguage),
       answers: [
-        { key: 'immediate', en: 'Immediate/Urgent', de: 'Sofort/Dringend' },
-        { key: 'soon', en: 'Within a few weeks', de: 'Innerhalb weniger Wochen' },
-        { key: 'planning', en: 'Planning ahead', de: 'Vorausplanung' }
+        { key: 'immediate', value: getGlobalText('immediate', currentLanguage) },
+        { key: 'soon', value: getGlobalText('soon', currentLanguage) },
+        { key: 'planning', value: getGlobalText('planning', currentLanguage) }
       ],
       key: 'urgency' as keyof typeof quizAnswers
     },
     {
-      question: language.code === 'de' 
-        ? 'Welche Art von Dokumentenhilfe benötigen Sie?' 
-        : 'What type of document assistance do you need?',
+      question: getAskDocumentText('whatTypeDocumentAssistance', currentLanguage),
       answers: [
-        { key: 'document-translation', en: 'Document Translation', de: 'Dokumentenübersetzung' },
-        { key: 'credential-recognition', en: 'Credential Recognition', de: 'Anerkennung von Qualifikationen' },
-        { key: 'legal-translation', en: 'Legal Document Translation', de: 'Rechtsdokumentenübersetzung' },
-        { key: 'professional-certification', en: 'Professional Certification', de: 'Berufliche Zertifizierung' },
-        { key: 'document-assistance', en: 'General Document Assistance', de: 'Allgemeine Dokumentenhilfe' },
-        { key: 'application-support', en: 'Application Support', de: 'Antragsunterstützung' },
-        { key: 'academic-evaluation', en: 'Academic Evaluation', de: 'Akademische Bewertung' }
+        { key: 'document-translation', value: getAskDocumentText('documentTranslation', currentLanguage) },
+        { key: 'credential-recognition', value: getAskDocumentText('credentialRecognition', currentLanguage) },
+        { key: 'legal-translation', value: getAskDocumentText('legalTranslation', currentLanguage) },
+        { key: 'professional-certification', value: getAskDocumentText('professionalCertification', currentLanguage) },
+        { key: 'document-assistance', value: getAskDocumentText('documentAssistance', currentLanguage) },
+        { key: 'application-support', value: getAskDocumentText('applicationSupport', currentLanguage) },
+        { key: 'academic-evaluation', value: getAskDocumentText('academicEvaluation', currentLanguage) }
       ],
       key: 'supportType' as keyof typeof quizAnswers
     },
     {
-      question: language.code === 'de' 
-        ? 'Wo befinden Sie sich?' 
-        : 'What is your location?',
+      question: getGlobalText('whereAreYouLocated', currentLanguage),
       answers: locations.length > 0 
-        ? locations.map(location => ({ key: location.toLowerCase(), en: location, de: location }))
-        : [{ key: 'nationwide', en: 'Nationwide', de: 'Österreichweit' }],
+        ? locations.map(location => ({ 
+            key: location.toLowerCase(), 
+            value: getGlobalText(location.toLowerCase().replace(" ", ""), currentLanguage) 
+          }))
+        : [{ key: 'nationwide', value: getGlobalText('nationwide', currentLanguage) }],
       key: 'location' as keyof typeof quizAnswers
     }
   ];
@@ -122,7 +120,7 @@ const DocumentSupportPage: React.FC = () => {
     setSoundEnabled(!soundEnabled);
   };
 
-  const handleQuizAnswer = (answer: string | { key: string, en: string, de: string }) => {
+  const handleQuizAnswer = (answer: string | { key: string, value: string }) => {
     const answerValue = typeof answer === 'string' ? answer : answer.key;
     const questionKey = quizQuestions[currentQuestion].key;
     
@@ -187,25 +185,23 @@ const DocumentSupportPage: React.FC = () => {
     setSelectedLocations([]);
   };
 
-  const pageTitle = language.code === 'de' ? 'Dokumente & Zertifizierung' : 'Documents & Certification';
-  const pageDescription = language.code === 'de' 
-    ? 'Finden Sie Unterstützung bei Dokumentenübersetzung, Anerkennung und Zertifizierung.'
-    : 'Find support for document translation, recognition and certification services.';
+  const pageTitle = getAskDocumentText('documentsAndCertification', currentLanguage);
+  const pageDescription = getAskDocumentText('findDocumentServices', currentLanguage);
 
   // Filter groups for FilterSection
   const filterGroups = [
     {
-      title: language.code === 'de' ? 'Unterstützungstyp' : 'Support Type',
+      title: getGlobalText('supportType', currentLanguage),
       items: supportTypes,
       selectedItems: selectedSupportTypes,
       onToggle: toggleSupportType,
       displayLabels: supportTypes.reduce((acc, type) => ({
         ...acc,
-        [type]: type.replace('-', ' ')
+        [type]: getAskDocumentText(type.replace('-', '').replace(' ', ''), currentLanguage)
       }), {})
     },
     {
-      title: language.code === 'de' ? 'Standort' : 'Location',
+      title: getGlobalText('location', currentLanguage),
       items: locations,
       selectedItems: selectedLocations,
       onToggle: toggleLocation
@@ -231,10 +227,8 @@ const DocumentSupportPage: React.FC = () => {
           currentQuestion={currentQuestion}
           questions={quizQuestions}
           languageCode={language.code}
-          title={language.code === 'de' ? 'Dokumenten-Assistent' : 'Document Support Assistant'}
-          subtitle={language.code === 'de' 
-            ? 'Beantworten Sie ein paar Fragen, um passende Dokumentendienste zu finden.'
-            : 'Answer a few questions to find suitable document services.'}
+          title={getAskDocumentText('documentSupportAssistant', currentLanguage)}
+          subtitle={getAskDocumentText('answerQuestionsForDocumentServices', currentLanguage)}
           onAnswer={handleQuizAnswer}
           onSkip={handleSkipQuiz}
           onClose={handleCloseQuiz}
@@ -250,10 +244,11 @@ const DocumentSupportPage: React.FC = () => {
 
         <FilterSection
           visible={!showQuiz && showFilters}
-          title={language.code === 'de' ? 'Filter' : 'Filters'}
+          title={getGlobalText('filters', currentLanguage)}
           languageCode={language.code}
           filterGroups={filterGroups}
           onClearFilters={clearFilters}
+          getTranslation={getAskDocumentText}
         />
         
         {!showQuiz && (

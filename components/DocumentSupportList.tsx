@@ -2,6 +2,7 @@
 import React from 'react';
 import GenericSupportList from './GenericSupportList';
 import documentEntities from '../data/courses/document-certification-entities.json';
+import { getAskDocumentText } from '../utils/languageUtils';
 
 interface DocumentSupportListProps {
   filters: Record<string, string>;
@@ -25,20 +26,12 @@ const DocumentSupportList: React.FC<DocumentSupportListProps> = ({ filters, lang
       filters={filters}
       languageCode={languageCode}
       onResetFilters={onResetFilters}
+      getTranslation={getAskDocumentText}
       routePrefix="/ask/document"
       categoryConfig={categoryConfig}
-      noResultsText={{
-        en: 'No document services found.',
-        de: 'Keine Dokumentendienste gefunden.'
-      }}
-      resetFiltersText={{
-        en: 'Reset filters',
-        de: 'Filter zurücksetzen'
-      }}
-      resultsFoundText={{
-        en: 'results found',
-        de: 'Ergebnisse gefunden'
-      }}
+      noResultsText={getAskDocumentText('noDocumentServicesFound', languageCode)}
+      resetFiltersText={getAskDocumentText('resetFilters', languageCode)}
+      resultsFoundText={getAskDocumentText('resultsFound', languageCode)}
     />
   );
 };

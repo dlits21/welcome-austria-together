@@ -1,0 +1,139 @@
+
+{
+  "documentsAndCertification": {
+    "en": "Documents & Certification",
+    "de": "Dokumente & Zertifizierung"
+  },
+  "findDocumentServices": {
+    "en": "Find support for document translation, recognition and certification services.",
+    "de": "Finden Sie Unterstützung bei Dokumentenübersetzung, Anerkennung und Zertifizierung."
+  },
+  "documentSupportAssistant": {
+    "en": "Document Support Assistant",
+    "de": "Dokumenten-Assistent"
+  },
+  "answerQuestionsForDocumentServices": {
+    "en": "Answer a few questions to find suitable document services.",
+    "de": "Beantworten Sie ein paar Fragen, um passende Dokumentendienste zu finden."
+  },
+  "howUrgentlyNeedDocumentAssistance": {
+    "en": "How urgently do you need document assistance?",
+    "de": "Wie dringend benötigen Sie Dokumentenhilfe?"
+  },
+  "whatTypeDocumentAssistance": {
+    "en": "What type of document assistance do you need?",
+    "de": "Welche Art von Dokumentenhilfe benötigen Sie?"
+  },
+  "documentTranslation": {
+    "en": "Document Translation",
+    "de": "Dokumentenübersetzung"
+  },
+  "credentialRecognition": {
+    "en": "Credential Recognition",
+    "de": "Anerkennung von Qualifikationen"
+  },
+  "legalTranslation": {
+    "en": "Legal Document Translation",
+    "de": "Rechtsdokumentenübersetzung"
+  },
+  "professionalCertification": {
+    "en": "Professional Certification",
+    "de": "Berufliche Zertifizierung"
+  },
+  "documentAssistance": {
+    "en": "General Document Assistance",
+    "de": "Allgemeine Dokumentenhilfe"
+  },
+  "applicationSupport": {
+    "en": "Application Support",
+    "de": "Antragsunterstützung"
+  },
+  "academicEvaluation": {
+    "en": "Academic Evaluation",
+    "de": "Akademische Bewertung"
+  },
+  "employmentDocuments": {
+    "en": "Employment Documents",
+    "de": "Beschäftigungsdokumente"
+  },
+  "educationalCertificates": {
+    "en": "Educational Certificates",
+    "de": "Bildungszertifikate"
+  },
+  "professionalQualifications": {
+    "en": "Professional Qualifications",
+    "de": "Berufliche Qualifikationen"
+  },
+  "legalDocuments": {
+    "en": "Legal Documents",
+    "de": "Rechtsdokumente"
+  },
+  "immigrationPapers": {
+    "en": "Immigration Papers",
+    "de": "Einwanderungsdokumente"
+  },
+  "birthMarriageCertificates": {
+    "en": "Birth/Marriage Certificates",
+    "de": "Geburts-/Heiratsurkunden"
+  },
+  "courtProceedings": {
+    "en": "Court Proceedings",
+    "de": "Gerichtsverfahren"
+  },
+  "tradeQualifications": {
+    "en": "Trade Qualifications",
+    "de": "Handelsqualifikationen"
+  },
+  "businessCertifications": {
+    "en": "Business Certifications",
+    "de": "Geschäftszertifikate"
+  },
+  "professionalSkills": {
+    "en": "Professional Skills",
+    "de": "Berufliche Fähigkeiten"
+  },
+  "vocationalTraining": {
+    "en": "Vocational Training",
+    "de": "Berufsausbildung"
+  },
+  "refugeeDocuments": {
+    "en": "Refugee Documents",
+    "de": "Flüchtlingsdokumente"
+  },
+  "integrationSupport": {
+    "en": "Integration Support",
+    "de": "Integrationshilfe"
+  },
+  "documentGuidance": {
+    "en": "Document Guidance",
+    "de": "Dokumentenberatung"
+  },
+  "universityDegrees": {
+    "en": "University Degrees",
+    "de": "Universitätsabschlüsse"
+  },
+  "vocationalQualifications": {
+    "en": "Vocational Qualifications",
+    "de": "Berufliche Qualifikationen"
+  },
+  "professionalCertifications": {
+    "en": "Professional Certifications",
+    "de": "Berufszertifikate"
+  },
+  "schoolDiplomas": {
+    "en": "School Diplomas",
+    "de": "Schuldiplome"
+  },
+  "noDocumentServicesFound": {
+    "en": "No document services found.",
+    "de": "Keine Dokumentendienste gefunden."
+  },
+  "resetFilters": {
+    "en": "Reset filters",
+    "de": "Filter zurücksetzen"
+  },
+  "resultsFound": {
+    "en": "results found",
+    "de": "Ergebnisse gefunden"
+  }
+}
