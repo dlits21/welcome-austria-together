@@ -99,7 +99,7 @@ const TutorialModal: React.FC<TutorialModalProps> = ({
         }
         else if (translationX < -50) {
             console.log("Swipe Close")
-            handleClose}
+            handleClose()}
       }
     }
   };
