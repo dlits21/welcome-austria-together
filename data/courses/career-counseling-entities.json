@@ -7,6 +7,10 @@
         "en": "AMS Career Guidance",
         "de": "AMS Berufsberatung"
       },
+      "subtitle": {
+        "en": "Professional career counseling and job placement services",
+        "de": "Professionelle Berufsberatung und Arbeitsvermittlung"
+      },
       "category": "employment",
       "urgency": "non-urgent",
       "supportType": "career-planning",
@@ -39,6 +43,10 @@
         "en": "WAFF Integration Support",
         "de": "WAFF Integrationshilfe"
       },
+      "subtitle": {
+        "en": "Comprehensive integration programs for Vienna residents",
+        "de": "Umfassende Integrationsprogramme für Wiener Einwohner"
+      },
       "category": "integration",
       "urgency": "non-urgent",
       "supportType": "integration-programs",
@@ -70,6 +78,10 @@
       "title": {
         "en": "Caritas Integration Center",
         "de": "Caritas Integrationszentrum"
+      },
+      "subtitle": {
+        "en": "Holistic support for refugees and migrants",
+        "de": "Ganzheitliche Unterstützung für Flüchtlinge und Migranten"
       },
       "category": "integration",
       "urgency": "urgent",
@@ -104,6 +116,10 @@
         "en": "WIFI Career Academy",
         "de": "WIFI Karriere Akademie"
       },
+      "subtitle": {
+        "en": "Professional development and certification programs",
+        "de": "Berufliche Weiterbildung und Zertifizierungsprogramme"
+      },
       "category": "education",
       "urgency": "non-urgent",
       "supportType": "professional-development",
@@ -116,7 +132,7 @@
       "services": [
         "Professional courses",
         "Certification programs",
-        "Skills training",
+        "Skills training", 
         "Career coaching"
       ],
       "contact": {
@@ -135,6 +151,10 @@
       "title": {
         "en": "Mentor Immigrant Professional Network",
         "de": "Mentor Migrant*innen Netzwerk"
+      },
+      "subtitle": {
+        "en": "Professional mentoring for skilled immigrants",
+        "de": "Professionelles Mentoring für qualifizierte Einwanderer"
       },
       "category": "networking",
       "urgency": "non-urgent",
@@ -167,6 +187,10 @@
       "title": {
         "en": "BFI Integration Courses",
         "de": "BFI Integrationskurse"
+      },
+      "subtitle": {
+        "en": "Language learning with cultural orientation",
+        "de": "Sprachlernen mit kultureller Orientierung"
       },
       "category": "education",
       "urgency": "urgent",
