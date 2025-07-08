@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Modal, View, Text, TouchableOpacity, StyleSheet, ScrollView, KeyboardAvoidingView } from 'react-native';
+import { Modal, View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 interface LegalQuizQuestion {
@@ -39,10 +39,7 @@ const LegalSupportQuizModal: React.FC<LegalSupportQuizModalProps> = ({
       animationType="fade"
     >
       <View style={styles.modalOverlay}>
-        <KeyboardAvoidingView
-           style={styles.modalContent}
-           behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-         >
+        <View style={styles.modalContent}>
           <TouchableOpacity style={styles.closeButton} onPress={onClose}>
             <MaterialIcons name="close" size={24} color="#666" />
           </TouchableOpacity>
@@ -60,25 +57,30 @@ const LegalSupportQuizModal: React.FC<LegalSupportQuizModalProps> = ({
           <View style={styles.questionContainer}>
             <Text style={styles.questionText}>{currentQ.question}</Text>
             
-            <ScrollView
-            style={styles.answersScrollView}
-            contentContainerStyle={styles.answersContainer}
-            keyboardShouldPersistTaps="handled">
-              {currentQ.answers.map((answer, index) => {
-                const isStringAnswer = typeof answer === 'string';
-                const displayText = isStringAnswer ? answer : (languageCode === 'de' ? answer.de : answer.en);
-                
-                return (
-                  <TouchableOpacity
-                    key={index}
-                    style={styles.answerButton}
-                    onPress={() => onAnswer(answer)}
-                  >
-                    <Text style={styles.answerText}>{displayText}</Text>
-                  </TouchableOpacity>
-                );
-              })}
-            </ScrollView>
+            <View style={styles.answersScrollContainer}>
+              <ScrollView 
+                style={styles.answersScrollView} 
+                contentContainerStyle={styles.answersContainer}
+                showsVerticalScrollIndicator={true}
+                scrollEnabled={true}
+                nestedScrollEnabled={true}
+              >
+                {currentQ.answers.map((answer, index) => {
+                  const isStringAnswer = typeof answer === 'string';
+                  const displayText = isStringAnswer ? answer : (languageCode === 'de' ? answer.de : answer.en);
+                  
+                  return (
+                    <TouchableOpacity
+                      key={index}
+                      style={styles.answerButton}
+                      onPress={() => onAnswer(answer)}
+                    >
+                      <Text style={styles.answerText}>{displayText}</Text>
+                    </TouchableOpacity>
+                  );
+                })}
+              </ScrollView>
+            </View>
           </View>
 
           <View style={styles.modalFooter}>
@@ -92,7 +94,7 @@ const LegalSupportQuizModal: React.FC<LegalSupportQuizModalProps> = ({
               {currentQuestion + 1} / {questions.length}
             </Text>
           </View>
-        </KeyboardAvoidingView>
+        </View>
       </View>
     </Modal>
   );
@@ -115,6 +117,8 @@ const styles = StyleSheet.create({
     maxHeight: '80%',
     alignItems: 'center',
     position: 'relative',
+    display: 'flex',
+    flexDirection: 'column',
   },
   closeButton: {
     position: 'absolute',
@@ -142,6 +146,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 24,
     flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
   },
   questionText: {
     fontSize: 18,
@@ -150,13 +156,20 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     textAlign: 'center',
   },
+  answersScrollContainer: {
+    width: '100%',
+    flex: 1,
+    minHeight: 200,
+    maxHeight: 300,
+  },
   answersScrollView: {
     width: '100%',
-    maxHeight: 300,
+    flex: 1,
   },
   answersContainer: {
     width: '100%',
     gap: 12,
+    paddingBottom: 20,
   },
   answerButton: {
     backgroundColor: '#f8fafc',
@@ -179,6 +192,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     width: '100%',
+    paddingTop: 16,
   },
   skipButton: {
     paddingVertical: 8,

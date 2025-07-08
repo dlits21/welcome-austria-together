@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { View, Text, StyleSheet, Platform } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { GermanFlag } from '../Flags';
 
 interface ConfirmationSlideProps {
@@ -19,7 +19,7 @@ const ConfirmationSlide: React.FC<ConfirmationSlideProps> = ({
       <View style={[styles.confirmationDemo, isWideScreen && styles.confirmationDemoWide]}>
         <View style={styles.mockConfirmationWindow}>
           <View style={styles.mockHeader}>
-            <GermanFlag style={[styles.mockFlag, {width: 10, height: 5}]} />
+            <GermanFlag style={styles.mockFlag} />
             <Text style={styles.mockTitle}>Deutsch</Text>
           </View>
           <Text style={styles.mockMessage}>
@@ -77,9 +77,9 @@ const styles = StyleSheet.create({
   mockConfirmationWindow: {
     backgroundColor: '#fff',
     borderRadius: 12,
-    padding: 20,
-    width: '90%',
-    maxWidth: 280,
+    padding: 16,
+    width: '80%',
+    maxWidth: 240,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -93,34 +93,36 @@ const styles = StyleSheet.create({
   },
   mockHeader: {
     alignItems: 'center',
-    marginBottom: 16,
+    marginBottom: 12,
   },
   mockFlag: {
-    borderRadius: 4,
-    marginBottom: 8,
+    width: 24,
+    height: 14,
+    borderRadius: 2,
+    marginBottom: 6,
   },
   mockTitle: {
-    fontSize: 20,
+    fontSize: 16,
     fontWeight: 'bold',
     color: '#333',
   },
   mockMessage: {
-    fontSize: 14,
+    fontSize: 12,
     textAlign: 'center',
     color: '#666',
-    lineHeight: 20,
-    marginBottom: 20,
+    lineHeight: 16,
+    marginBottom: 16,
   },
   mockButtons: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    gap: 12,
+    gap: 8,
   },
   mockButton: {
     flex: 1,
-    paddingVertical: 10,
-    paddingHorizontal: 16,
-    borderRadius: 8,
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+    borderRadius: 6,
     alignItems: 'center',
   },
   mockDeclineButton: {
@@ -132,12 +134,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#10B981',
   },
   mockButtonText: {
-    fontSize: 14,
+    fontSize: 11,
     fontWeight: '600',
     color: '#333',
   },
   mockButtonTextWhite: {
-    fontSize: 14,
+    fontSize: 11,
     fontWeight: '600',
     color: '#fff',
   },
