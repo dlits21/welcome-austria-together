@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Modal, View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
+import { Modal, View, Text, TouchableOpacity, StyleSheet, ScrollView, KeyboardAvoidingView } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 interface LegalQuizQuestion {
@@ -39,7 +39,10 @@ const LegalSupportQuizModal: React.FC<LegalSupportQuizModalProps> = ({
       animationType="fade"
     >
       <View style={styles.modalOverlay}>
-        <View style={styles.modalContent}>
+        <KeyboardAvoidingView
+           style={styles.modalContent}
+           behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+         >
           <TouchableOpacity style={styles.closeButton} onPress={onClose}>
             <MaterialIcons name="close" size={24} color="#666" />
           </TouchableOpacity>
@@ -57,7 +60,10 @@ const LegalSupportQuizModal: React.FC<LegalSupportQuizModalProps> = ({
           <View style={styles.questionContainer}>
             <Text style={styles.questionText}>{currentQ.question}</Text>
             
-            <ScrollView style={styles.answersScrollView} contentContainerStyle={styles.answersContainer}>
+            <ScrollView
+            style={styles.answersScrollView}
+            contentContainerStyle={styles.answersContainer}
+            keyboardShouldPersistTaps="handled">
               {currentQ.answers.map((answer, index) => {
                 const isStringAnswer = typeof answer === 'string';
                 const displayText = isStringAnswer ? answer : (languageCode === 'de' ? answer.de : answer.en);
@@ -86,7 +92,7 @@ const LegalSupportQuizModal: React.FC<LegalSupportQuizModalProps> = ({
               {currentQuestion + 1} / {questions.length}
             </Text>
           </View>
-        </View>
+        </KeyboardAvoidingView>
       </View>
     </Modal>
   );

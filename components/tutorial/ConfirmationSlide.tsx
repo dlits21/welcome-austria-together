@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Platform } from 'react-native';
 import { GermanFlag } from '../Flags';
 
 interface ConfirmationSlideProps {
@@ -19,7 +19,7 @@ const ConfirmationSlide: React.FC<ConfirmationSlideProps> = ({
       <View style={[styles.confirmationDemo, isWideScreen && styles.confirmationDemoWide]}>
         <View style={styles.mockConfirmationWindow}>
           <View style={styles.mockHeader}>
-            <GermanFlag style={styles.mockFlag} />
+            <GermanFlag style={[styles.mockFlag, {width: 10, height: 5}]} />
             <Text style={styles.mockTitle}>Deutsch</Text>
           </View>
           <Text style={styles.mockMessage}>
@@ -96,8 +96,6 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   mockFlag: {
-    width: 40,
-    height: 24,
     borderRadius: 4,
     marginBottom: 8,
   },
