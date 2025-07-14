@@ -15,9 +15,11 @@ import ModeToggle from './ModeToggle';
 import ChatSection from './ChatSection';
 import AvatarSelectionModal from './AvatarSelectionModal';
 import TutorialModal from './TutorialModal';
+import VirtualAssistantLanguageSwitcher from './VirtualAssistantLanguageSwitcher';
 import { getAssistantText } from '../utils/languageUtils';
 import { getCharacterImage } from '../utils/assistantUtils';
 import { languages } from '../data/languages/common';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface Message {
   id: string;
@@ -66,6 +68,7 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
   initialMessage,
   defaultMode = 'text',
 }) => {
+  const { setCurrentLanguage } = useLanguage();
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputText, setInputText] = useState('');
   const [isListening, setIsListening] = useState(false);
@@ -214,6 +217,11 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
     setMessages([welcomeMessage]);
   }, []);
 
+  const handleLanguageChange = useCallback((newLanguageCode: string) => {
+    setCurrentLanguage(newLanguageCode);
+    // The component will re-render with the new language due to prop changes
+  }, [setCurrentLanguage]);
+
   return (
     <Modal
       visible={visible}
@@ -242,6 +250,12 @@ const VirtualAssistantModal: React.FC<VirtualAssistantModalProps> = ({
           )}
 
           <View style={styles.headerRightButtons}>
+            <VirtualAssistantLanguageSwitcher
+              currentLanguage={languageCode}
+              onLanguageChange={handleLanguageChange}
+              isWideScreen={isWideScreen}
+            />
+            
             <TouchableOpacity
               style={styles.avatarButton} 
               onPress={() => setShowAvatarModal(true)}
