@@ -1,0 +1,392 @@
+{
+  "title": {
+    "en": "Information & Resources",
+    "de": "Informationen & Ressourcen",
+    "ru": "Информация и ресурсы",
+    "ce": "Хаам а ресурсаш а",
+    "prs": "اطلاعات و منابع",
+    "ps": "معلومات او سرچینې",
+    "fa": "اطلاعات و منابع",
+    "ar": "المعلومات والموارد",
+    "ku": "زانیاری و سەرچاوەکان",
+    "so": "Macluumaad iyo kheyraad",
+    "ka": "ინფორმაცია და რესურსები",
+    "sq": "Informacion dhe burime"
+  },
+  "searchPlaceholder": {
+    "en": "What would you like to know?",
+    "de": "Was möchten Sie wissen?",
+    "ru": "Что бы вы хотели узнать?",
+    "ce": "Хӏун хааийта хьуна?",
+    "prs": "چه چیزی می‌خواهید بدانید؟",
+    "ps": "تاسو څه غواړئ پوه شئ؟",
+    "fa": "چه چیزی می‌خواهید بدانید؟",
+    "ar": "ماذا تريد أن تعرف؟",
+    "ku": "چیت دەتەوێت بزانیت؟",
+    "so": "Maxaad jeclaan lahayd inaad ogaato?",
+    "ka": "რას გსურთ იცოდეთ?",
+    "sq": "Çfarë dëshironi të dini?"
+  },
+  "categories": {
+    "housing": {
+      "title": {
+        "en": "Housing",
+        "de": "Wohnen",
+        "ru": "Жилье",
+        "ce": "Цlенйин меттиг",
+        "prs": "مسکن",
+        "ps": "کور",
+        "fa": "مسکن",
+        "ar": "السكن",
+        "ku": "نیشتەجێبوون",
+        "so": "Guri",
+        "ka": "საცხოვრებელი",
+        "sq": "Strehimi"
+      },
+      "summary": {
+        "en": "Find apartments, housing support, tenant rights and rental information",
+        "de": "Wohnungssuche, Wohnungsunterstützung, Mieterrechte und Mietinformationen",
+        "ru": "Поиск квартир, жилищная поддержка, права арендаторов и арендная информация",
+        "ce": "Цlенйин меттигашта лахар, гlо, арендаторан бакъонаш, аренди хаам",
+        "prs": "یافتن آپارتمان، حمایت مسکن، حقوق مستأجر و اطلاعات اجاره",
+        "ps": "د کورونو موندل، د کور ملاتړ، د اجاره داره حقونه او د کرایې معلومات",
+        "fa": "یافتن آپارتمان، پشتیبانی مسکن، حقوق مستأجر و اطلاعات اجاره",
+        "ar": "العثور على الشقق ودعم الإسکان وحقوق المستأجرين ومعلومات الإيجار",
+        "ku": "دۆزینەوەی خانوو، پشتگیری نیشتەجێبوون، مافەکانی کرێچی و زانیاری کرێ",
+        "so": "Helid guryaha, taageerka guriyeeynta, xuquuqda kireeyayaasha iyo macluumaadka kireega",
+        "ka": "ბინების ძებნა, საცხოვრებლის მხარდაჭერა, მოიჯარეების უფლებები და ქირის ინფორმაცია",
+        "sq": "Gjeni apartamente, mbështetje për strehim, të drejtat e qiramarrësve dhe informacion mbi qiranë"
+      }
+    },
+    "work": {
+      "title": {
+        "en": "Work",
+        "de": "Arbeit",
+        "ru": "Работа",
+        "ce": "Болх",
+        "prs": "کار",
+        "ps": "کار",
+        "fa": "کار",
+        "ar": "العمل",
+        "ku": "کار",
+        "so": "Shaqo",
+        "ka": "სამუშაო",
+        "sq": "Puna"
+      },
+      "summary": {
+        "en": "Job search, work permits, employment rights and career guidance",
+        "de": "Jobsuche, Arbeitserlaubnisse, Arbeitsrechte und Karriereberatung",
+        "ru": "Поиск работы, разрешения на работу, трудовые права и карьерное руководство",
+        "ce": "Болх лахар, болхан рӀам, болхан бакъонаш, карьеран хаам",
+        "prs": "جستجوی شغل، مجوز کار، حقوق کارگری و راهنمایی شغلی",
+        "ps": "د دندې لټون، د کار اجازه، د کار حقونه او د مسلک لارښوونه",
+        "fa": "جستجوی شغل، مجوز کار، حقوق کارگری و راهنمایی شغلی",
+        "ar": "البحث عن عمل وتصاريح العمل وحقوق العمل والتوجيه المهني",
+        "ku": "گەڕان بۆ کار، مۆڵەتی کار، مافەکانی کارکردن و ڕێنمایی پیشەیی",
+        "so": "Raadinta shaqo, ogolaanshaha shaqada, xuquuqda shaqalaha iyo hagaha xirfadeed",
+        "ka": "სამუშაოს ძებნა, სამუშაო ნებართვები, საშრომო უფლებები და კარიერული მითითებები",
+        "sq": "Kërkimi i punës, lejet e punës, të drejtat e punës dhe udhëzimi në karrierë"
+      }
+    },
+    "health": {
+      "title": {
+        "en": "Health",
+        "de": "Gesundheit",
+        "ru": "Здоровье",
+        "ce": "Ден хlолла",
+        "prs": "سلامتی",
+        "ps": "روغتیا",
+        "fa": "سلامت",
+        "ar": "الصحة",
+        "ku": "تەندروستی",
+        "so": "Caafimaad",
+        "ka": "ჯანმრთელობა",
+        "sq": "Shëndeti"
+      },
+      "summary": {
+        "en": "Healthcare system, insurance, medical services and mental health support",
+        "de": "Gesundheitssystem, Versicherung, medizinische Dienste und psychische Gesundheitsunterstützung",
+        "ru": "Система здравоохранения, страховка, медицинские услуги и поддержка психического здоровья",
+        "ce": "Ден хlолла система, страховка, медицини хlокхуш, психикин ден хlолла гlо",
+        "prs": "سیستم بهداشتی، بیمه، خدمات طبی و حمایت سلامت روانی",
+        "ps": "د روغتیا سیسټم، بیمه، طبي خدمات او د ذهني روغتیا ملاتړ",
+        "fa": "سیستم بهداشتی، بیمه، خدمات پزشکی و پشتیبانی سلامت روان",
+        "ar": "النظام الصحي والتأمين والخدمات الطبية ودعم الصحة النفسية",
+        "ku": "سیستەمی تەندروستی، بیمە، خزمەتگوزاری پزیشکی و پشتگیری تەندروستی دەروونی",
+        "so": "Nidaamka caafimaadka, caymiska, adeegyada caafimaadka iyo taageerka caafimaadka maskaxda",
+        "ka": "ჯანდაცვის სისტემა, დაზღვევა, სამედიცინო მომსახურება და ფსიქიკური ჯანმრთელობის მხარდაჭერა",
+        "sq": "Sistemi shëndetësor, sigurimi, shërbimet mjekësore dhe mbështetja e shëndetit mendor"
+      }
+    },
+    "education": {
+      "title": {
+        "en": "Education",
+        "de": "Bildung",
+        "ru": "Образование",
+        "ce": "Дешар",
+        "prs": "آموزش",
+        "ps": "زده کړه",
+        "fa": "آموزش",
+        "ar": "التعليم",
+        "ku": "پەروەردە",
+        "so": "Waxbarashada",
+        "ka": "განათლება",
+        "sq": "Arsimi"
+      },
+      "summary": {
+        "en": "Schools, universities, language courses and educational opportunities",
+        "de": "Schulen, Universitäten, Sprachkurse und Bildungsmöglichkeiten",
+        "ru": "Школы, университеты, языковые курсы и образовательные возможности",
+        "ce": "Школаш, университеташ, маттан курсаш, дешаран гlирш",
+        "prs": "مدارس، دانشگاه‌ها، دوره‌های زبان و فرصت‌های آموزشی",
+        "ps": "ښوونځي، پوهنتونونه، د ژبې کورسونه او د زده کړو فرصتونه",
+        "fa": "مدارس، دانشگاه‌ها، دوره‌های زبان و فرصت‌های آموزشی",
+        "ar": "المدارس والجامعات ودورات اللغة والفرص التعليمية",
+        "ku": "قوتابخانەکان، زانکۆکان، کۆرسی زمان و دەرفەتەکانی پەروەردەیی",
+        "so": "Dugsiyada, jaamacadaha, koorsada luqadda iyo fursadaha waxbarasho",
+        "ka": "სკოლები, უნივერსიტეტები, ენობრივი კურსები და საგანმანათლებლო შესაძლებლობები",
+        "sq": "Shkollat, universitetet, kurset e gjuhës dhe mundësitë arsimore"
+      }
+    },
+    "finance": {
+      "title": {
+        "en": "Finance",
+        "de": "Finanzen",
+        "ru": "Финансы",
+        "ce": "Ахча",
+        "prs": "مالی",
+        "ps": "مالي",
+        "fa": "مالی",
+        "ar": "المالية",
+        "ku": "دارایی",
+        "so": "Dhaqaalaha",
+        "ka": "ფინანსები",
+        "sq": "Financat"
+      },
+      "summary": {
+        "en": "Banking, financial aid, benefits and money management guidance",
+        "de": "Banking, Finanzbeihilfen, Leistungen und Geldverwaltungsberatung",
+        "ru": "Банкинг, финансовая помощь, пособия и руководство по управлению деньгами",
+        "ce": "Банкаш, ахчан гlо, льготаш, ахчан урхалла хаам",
+        "prs": "بانکداری، کمک مالی، مزایا و راهنمایی مدیریت پول",
+        "ps": "بانکداری، مالي مرسته، ګټې او د پیسو مدیریت لارښوونه",
+        "fa": "بانکداری، کمک مالی، مزایا و راهنمایی مدیریت پول",
+        "ar": "الخدمات المصرفية والمساعدات المالية والمزايا وإرشادات إدارة الأموال",
+        "ku": "بانکداری، یارمەتی دارایی، سوودەکان و ڕێنمایی بەڕێوەبردنی پارە",
+        "so": "Bangiga, caawimaadda dhaqaalaha, faa'iidooyinka iyo hagaha maareynta lacagta",
+        "ka": "საბანკო, ფინანსური დახმარება, შეღავათები და ფულის მართვის მითითებები",
+        "sq": "Bankingu, ndihma financiare, përfitimet dhe udhëzimi për menaxhimin e parave"
+      }
+    },
+    "culture": {
+      "title": {
+        "en": "Culture",
+        "de": "Kultur",
+        "ru": "Культура",
+        "ce": "Культура",
+        "prs": "فرهنگ",
+        "ps": "کلتور",
+        "fa": "فرهنگ",
+        "ar": "الثقافة",
+        "ku": "کلتوور",
+        "so": "Dhaqanka",
+        "ka": "კულტურა",
+        "sq": "Kultura"
+      },
+      "summary": {
+        "en": "Austrian culture, traditions, events and cultural integration support",
+        "de": "Österreichische Kultur, Traditionen, Veranstaltungen und kulturelle Integrationsunterstützung",
+        "ru": "Австрийская культура, традиции, мероприятия и поддержка культурной интеграции",
+        "ce": "Австрин культура, йуьхь йолу хlокхуш, мероприятияш, культурни интеграцин гlо",
+        "prs": "فرهنگ اتریش، سنت‌ها، رویدادها و حمایت ادغام فرهنگی",
+        "ps": "د اتریش کلتور، دودونه، پیښې او د کلتوري ادغام ملاتړ",
+        "fa": "فرهنگ اتریش، سنت‌ها، رویدادها و پشتیبانی ادغام فرهنگی",
+        "ar": "الثقافة النمساوية والتقاليد والأحداث ودعم الاندماج الثقافي",
+        "ku": "کلتووری نەمسا، نەریتەکان، بۆنەکان و پشتگیری یەکخستنی کلتووری",
+        "so": "Dhaqanka Austria, caadooyinka, dhacdooyinka iyo taageerka isku dhafka dhaqameed",
+        "ka": "ავსტრიული კულტურა, ტრადიციები, ღონისძიებები და კულტურული ინტეგრაციის მხარდაჭერა",
+        "sq": "Kultura austriake, traditat, ngjarjet dhe mbështetja e integrimit kulturor"
+      }
+    },
+    "mobility": {
+      "title": {
+        "en": "Mobility",
+        "de": "Mobilität",
+        "ru": "Мобильность",
+        "ce": "Хургъяр",
+        "prs": "تحرک",
+        "ps": "خوځښت",
+        "fa": "تحرک",
+        "ar": "التنقل",
+        "ku": "جوڵەوجووڵە",
+        "so": "Dhaqdhaqaaqa",
+        "ka": "მობილობა",
+        "sq": "Lëvizshmëria"
+      },
+      "summary": {
+        "en": "Transportation, public transport, driving licenses and travel information",
+        "de": "Transport, öffentliche Verkehrsmittel, Führerscheine und Reiseinformationen",
+        "ru": "Транспорт, общественный транспорт, водительские права и информация о путешествиях",
+        "ce": "Транспорт, юхатуьйранча транспорт, машенан права, сафаран хаам",
+        "prs": "حمل و نقل، ترانسپورت عمومی، مجوز رانندگی و اطلاعات سفر",
+        "ps": "ټرانسپورت، عامه ټرانسپورت، د موټر چلولو جواز او د سفر معلومات",
+        "fa": "حمل و نقل، حمل و نقل عمومی، گواهینامه رانندگی و اطلاعات سفر",
+        "ar": "النقل والنقل العام ورخص القيادة ومعلومات السفر",
+        "ku": "گواستنەوە، گواستنەوەی گشتی، مۆڵەتی لێخوڕین و زانیاری گەشتکردن",
+        "so": "Gaadiidka, gaadiidka dadweynaha, shatiyada wadida iyo macluumaadka safarka",
+        "ka": "ტრანსპორტი, საზოგადოებრივი ტრანსპორტი, მართვის მოწმობები და მგზავრობის ინფორმაცია",
+        "sq": "Transporti, transporti publik, lejet e drejtimit dhe informacioni i udhëtimit"
+      }
+    },
+    "funding": {
+      "title": {
+        "en": "Funding",
+        "de": "Förderung",
+        "ru": "Финансирование",
+        "ce": "Финансирование",
+        "prs": "تمویل",
+        "ps": "تمویل",
+        "fa": "تأمین مالی",
+        "ar": "التمويل",
+        "ku": "فەندکردن",
+        "so": "Maalgelinta",
+        "ka": "დაფინანსება",
+        "sq": "Financimi"
+      },
+      "summary": {
+        "en": "Grants, scholarships, funding opportunities and financial assistance programs",
+        "de": "Zuschüsse, Stipendien, Fördermöglichkeiten und finanzielle Hilfsprogramme",
+        "ru": "Гранты, стипендии, возможности финансирования и программы финансовой помощи",
+        "ce": "Гранташ, стипендиш, финансирования гlирш, ахчан гlон программаш",
+        "prs": "کمک‌های مالی، بورسیه‌ها، فرصت‌های تمویل و برنامه‌های کمک مالی",
+        "ps": "مرستندویه، بورسونه، د تمویل فرصتونه او د مالي مرستې برنامې",
+        "fa": "کمک‌های مالی، بورسیه‌ها، فرصت‌های تأمین مالی و برنامه‌های کمک مالی",
+        "ar": "المنح والمنح الدراسية وفرص التمويل وبرامج المساعدة المالية",
+        "ku": "گرانتەکان، بورسیەکان، دەرفەتەکانی فەندکردن و بەرنامەکانی یارمەتی دارایی",
+        "so": "Deeqaha, hashiisyada, fursadaha maalgelinta iyo barnaamijyada caawimaadda dhaqaalaha",
+        "ka": "გრანტები, სტიპენდიები, დაფინანსების შესაძლებლობები და ფინანსური დახმარების პროგრამები",
+        "sq": "Grantet, bursat, mundësitë e financimit dhe programet e ndihmës financiare"
+      }
+    },
+    "women": {
+      "title": {
+        "en": "Women",
+        "de": "Frauen",
+        "ru": "Женщины",
+        "ce": "Зудчуьнаш",
+        "prs": "زنان",
+        "ps": "میرمنې",
+        "fa": "زنان",
+        "ar": "النساء",
+        "ku": "ژنان",
+        "so": "Haweenka",
+        "ka": "ქალები",
+        "sq": "Gratë"
+      },
+      "summary": {
+        "en": "Women's rights, support services, healthcare and empowerment programs",
+        "de": "Frauenrechte, Unterstützungsdienste, Gesundheitsversorgung und Empowerment-Programme",
+        "ru": "Права женщин, службы поддержки, здравоохранение и программы расширения прав и возможностей",
+        "ce": "Зудчуьнан бакъонаш, гlон хlокхуш, ден хlолла, хlирш хиллар программаш",
+        "prs": "حقوق زنان، خدمات حمایتی، مراقبت‌های بهداشتی و برنامه‌های توانمندسازی",
+        "ps": "د میرمنو حقونه، ملاتړ خدمات، روغتیایي پاملرنه او د پیاوړتیا برنامې",
+        "fa": "حقوق زنان، خدمات حمایتی، مراقبت‌های بهداشتی و برنامه‌های توانمندسازی",
+        "ar": "حقوق المرأة وخدمات الدعم والرعاية الصحية وبرامج التمكين",
+        "ku": "مافەکانی ژنان، خزمەتگوزاری پشتگیری، چاودێری تەندروستی و بەرنامەکانی بەهێزکردن",
+        "so": "Xuquuqda haweenka, adeegyada taageerka, daryeelka caafimaadka iyo barnaamijyada xoojinta",
+        "ka": "ქალთა უფლებები, დახმარების სერვისები, ჯანდაცვა და გაძლიერების პროგრამები",
+        "sq": "Të drejtat e grave, shërbimet e mbështetjes, kujdesi shëndetësor dhe programet e fuqizimit"
+      }
+    },
+    "children": {
+      "title": {
+        "en": "Children",
+        "de": "Kinder",
+        "ru": "Дети",
+        "ce": "Берийн",
+        "prs": "کودکان",
+        "ps": "ماشومان",
+        "fa": "کودکان",
+        "ar": "الأطفال",
+        "ku": "منداڵان",
+        "so": "Carruurta",
+        "ka": "ბავშვები",
+        "sq": "Fëmijët"
+      },
+      "summary": {
+        "en": "Children's rights, education, healthcare and family support services",
+        "de": "Kinderrechte, Bildung, Gesundheitsversorgung und Familienunterstützungsdienste",
+        "ru": "Права детей, образование, здравоохранение и службы поддержки семьи",
+        "ce": "Берийн бакъонаш, дешар, ден хlолла, г1усйоьллан гlон хlокхуш",
+        "prs": "حقوق کودکان، آموزش، مراقبت‌های بهداشتی و خدمات حمایت خانواده",
+        "ps": "د ماشومانو حقونه، زده کړه، روغتیایي پاملرنه او د کورنۍ د ملاتړ خدمات",
+        "fa": "حقوق کودکان، آموزش، مراقبت‌های بهداشتی و خدمات حمایت خانواده",
+        "ar": "حقوق الطفل والتعليم والرعاية الصحية وخدمات دعم الأسرة",
+        "ku": "مافەکانی منداڵان، پەروەردە، چاودێری تەندروستی و خزمەتگوزاری پشتگیری خێزان",
+        "so": "Xuquuqda carruurta, waxbarashada, daryeelka caafimaadka iyo adeegyada taageerka qoyska",
+        "ka": "ბავშვთა უფლებები, განათლება, ჯანდაცვა და ოჯახის მხარდაჭერის სერვისები",
+        "sq": "Të drejtat e fëmijëve, arsimi, kujdesi shëndetësor dhe shërbimet e mbështetjes familjare"
+      }
+    },
+    "mental-health": {
+      "title": {
+        "en": "Mental Health",
+        "de": "Psychische Gesundheit",
+        "ru": "Психическое здоровье",
+        "ce": "Психикин ден хlолла",
+        "prs": "سلامت روانی",
+        "ps": "رواني روغتیا",
+        "fa": "سلامت روان",
+        "ar": "الصحة النفسية",
+        "ku": "تەندروستی دەروونی",
+        "so": "Caafimaadka maskaxda",
+        "ka": "ფსიქიკური ჯანმრთელობა",
+        "sq": "Shëndeti mendor"
+      },
+      "summary": {
+        "en": "Mental health services, counseling, therapy and psychological support",
+        "de": "Psychische Gesundheitsdienste, Beratung, Therapie und psychologische Unterstützung",
+        "ru": "Услуги психического здоровья, консультирование, терапия и психологическая поддержка",
+        "ce": "Психикин ден хlолла хlокхуш, консультацеш, терапи, психологин гlо",
+        "prs": "خدمات سلامت روانی، مشاوره، درمان و حمایت روانشناختی",
+        "ps": "د رواني روغتیا خدمات، مشورې، درملنه او رواني ملاتړ",
+        "fa": "خدمات سلامت روان، مشاوره، درمان و پشتیبانی روانشناختی",
+        "ar": "خدمات الصحة النفسية والاستشارة والعلاج والدعم النفسي",
+        "ku": "خزمەتگوزاری تەندروستی دەروونی، ڕاوێژکاری، چارەسەری و پشتگیری دەروونی",
+        "so": "Adeegyada caafimaadka maskaxda, la-talinta, daawaynta iyo taageerka cilmi-nafsiga",
+        "ka": "ფსიქიკური ჯანმრთელობის სერვისები, კონსულტაცია, თერაპია და ფსიქოლოგიური მხარდაჭერა",
+        "sq": "Shërbimet e shëndetit mendor, këshillimi, terapia dhe mbështetja psikologjike"
+      }
+    },
+    "climate-change": {
+      "title": {
+        "en": "Climate Change",
+        "de": "Klimawandel",
+        "ru": "Изменение климата",
+        "ce": "Климатан хийцам",
+        "prs": "تغییرات اقلیمی",
+        "ps": "د اقلیم بدلون",
+        "fa": "تغییرات اقلیمی",
+        "ar": "تغير المناخ",
+        "ku": "گۆڕانی کەشوهەوا",
+        "so": "Isbedelka cimilada",
+        "ka": "კლიმატის ცვლილება",
+        "sq": "Ndryshimi i klimës"
+      },
+      "summary": {
+        "en": "Environmental protection, sustainability, green living and climate adaptation",
+        "de": "Umweltschutz, Nachhaltigkeit, grünes Leben und Klimaanpassung",
+        "ru": "Защита окружающей среды, устойчивость, экологическая жизнь и адаптация к климату",
+        "ce": "Экологин лардар, устойчивость, цlенан хила йолу хlокхуш, климатан мегаргйолу",
+        "prs": "حفاظت از محیط زیست، پایداری، زندگی سبز و سازگاری با اقلیم",
+        "ps": "د چاپیریال ساتنه، دوامداری، شین ژوند او د اقلیم سره سمون",
+        "fa": "حفاظت از محیط زیست، پایداری، زندگی سبز و سازگاری با اقلیم",
+        "ar": "حماية البيئة والاستدامة والمعيشة الخضراء والتكيف مع المناخ",
+        "ku": "پاراستنی ژینگە، بەردەوامی، ژیانی سەوز و گونجانەوە لەگەڵ کەشوهەوا",
+        "so": "Ilaalinta deegaanka, joogteynta, nolol-maalmeedka cagaaran iyo la qabsiga cimilada",
+        "ka": "გარემოს დაცვა, მდგრადობა, მწვანე ცხოვრება და კლიმატის ადაპტაცია",
+        "sq": "Mbrojtja e mjedisit, qëndrueshmëria, jetesa e gjelbër dhe përshtatja me klimën"
+      }
+    }
+  }
+}

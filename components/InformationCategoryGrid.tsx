@@ -10,17 +10,17 @@ import {
 import { CategoryItem } from '../data/information';
 
 interface InformationCategoryGridProps {
-  categories: CategoryItem[];
+  categories: any[];
   onCategoryPress: (categoryId: string) => void;
-  getClickForDetails: (languageCode: string) => string;
   languageCode: string;
+  getText: (key: string) => string;
 }
 
 const InformationCategoryGrid: React.FC<InformationCategoryGridProps> = ({
   categories,
   onCategoryPress,
-  getClickForDetails,
-  languageCode
+  languageCode,
+  getText
 }) => {
   const { width } = useWindowDimensions();
   
@@ -46,10 +46,10 @@ const InformationCategoryGrid: React.FC<InformationCategoryGridProps> = ({
           <Text style={styles.categoryIcon}>{item.icon}</Text>
         </View>
         <Text style={styles.categoryTitle}>
-          {languageCode === 'de' ? item.name.de : item.name.en}
+          {getText(`categories.${item.id}.title`)}
         </Text>
         <Text style={styles.categorySubtitle} numberOfLines={2}>
-          {getClickForDetails(languageCode)}
+          {getText(`categories.${item.id}.summary`)}
         </Text>
       </TouchableOpacity>
     );

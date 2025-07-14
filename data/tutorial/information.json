@@ -1,0 +1,164 @@
+{
+  "slides": [
+    {
+      "type": "welcome",
+      "id": 0,
+      "title": {
+        "en": "Welcome to Information & Resources",
+        "de": "Willkommen bei Informationen & Ressourcen",
+        "ru": "Добро пожаловать в информацию и ресурсы",
+        "ce": "Марша вогӏийла хаам а ресурсаш а",
+        "prs": "به اطلاعات و منابع خوش آمدید",
+        "ps": "معلوماتو او سرچینو ته ښه راغلاست",
+        "fa": "به اطلاعات و منابع خوش آمدید",
+        "ar": "مرحباً بك في المعلومات والموارد",
+        "ku": "بەخێربێن بۆ زانیاری و سەرچاوەکان",
+        "so": "Ku soo dhawow macluumaadka iyo kheyraadka",
+        "ka": "კეთილი იყოს თქვენი მობრძანება ინფორმაციასა და რესურსებში",
+        "sq": "Mirësevini në informacion dhe burime"
+      },
+      "text": {
+        "en": "Here you'll find comprehensive information about life in Austria. Each category contains detailed guides and resources to help you navigate different aspects of Austrian society.",
+        "de": "Hier finden Sie umfassende Informationen über das Leben in Österreich. Jede Kategorie enthält detaillierte Anleitungen und Ressourcen, die Ihnen helfen, verschiedene Aspekte der österreichischen Gesellschaft zu navigieren.",
+        "ru": "Здесь вы найдете исчерпывающую информацию о жизни в Австрии. Каждая категория содержит подробные руководства и ресурсы, которые помогут вам ориентироваться в различных аспектах австрийского общества.",
+        "ce": "Кхузахь хьо Австрин гӀиллакхехь тӀаьхьа а хаам карийта. Дукхаза категорех детальни гайдаш а ресурсаш а ю Австрин обществан башха аспектах некъ кардан.",
+        "prs": "در اینجا اطلاعات جامعی درباره زندگی در اتریش خواهید یافت. هر دسته حاوی راهنماهای مفصل و منابعی است که به شما کمک می‌کند تا جنبه‌های مختلف جامعه اتریش را درک کنید.",
+        "ps": "دلته تاسو به د اتریش د ژوند په اړه پراخه معلومات ومومئ. هره کټګورۍ د اتریش د ټولنې د مختلفو اړخونو د درک کولو لپاره تفصیلي لارښوونې او سرچینې لري.",
+        "fa": "در اینجا اطلاعات جامعی درباره زندگی در اتریش خواهید یافت. هر دسته حاوی راهنماهای مفصل و منابعی است که به شما کمک می‌کند تا جنبه‌های مختلف جامعه اتریش را درک کنید.",
+        "ar": "ستجد هنا معلومات شاملة عن الحياة في النمسا. تحتوي كل فئة على أدلة مفصلة وموارد لمساعدتك في فهم جوانب مختلفة من المجتمع النمساوي.",
+        "ku": "لێرە زانیاری تەواو دەربارەی ژیان لە نەمسا دەدۆزیتەوە. هەر پۆلێک ڕێبەری ورد و سەرچاوەکان لەخۆدەگرێت بۆ یارمەتیدانت لە تێگەیشتن لە ڕووەکانی جۆراوجۆری کۆمەڵگای نەمسا.",
+        "so": "Halkan waxaad ka heli doontaa macluumaad dhamaystiran oo ku saabsan nolosha Austria. Qaybba waxay ka kooban tahay hagayaal faahfaahsan iyo kheyraad si ay kaaga caawiyaan inaad fahanto dhinacyada kala duwan ee bulshada Austria.",
+        "ka": "აქ შეგიძლიათ იპოვოთ ყოვლისმომცველი ინფორმაცია ავსტრიაში ცხოვრების შესახებ. ყოველი კატეგორია შეიცავს დეტალურ სახელმძღვანელოებს და რესურსებს, რომლებიც დაგეხმარებათ ავსტრიული საზოგადოების სხვადასხვა ასპექტების გაგებაში.",
+        "sq": "Këtu do të gjeni informacion të plotë për jetën në Austri. Çdo kategori përmban udhëzues të detajuar dhe burime për t'ju ndihmuar të navigoni aspekte të ndryshme të shoqërisë austriake."
+      }
+    },
+    {
+      "type": "search",
+      "id": 1,
+      "title": {
+        "en": "Search for Information",
+        "de": "Nach Informationen suchen",
+        "ru": "Поиск информации",
+        "ce": "Хаам лахар",
+        "prs": "جستجوی اطلاعات",
+        "ps": "د معلوماتو لټون",
+        "fa": "جستجوی اطلاعات",
+        "ar": "البحث عن المعلومات",
+        "ku": "گەڕان بۆ زانیاری",
+        "so": "Raadinta macluumaadka",
+        "ka": "ინფორმაციის ძებნა",
+        "sq": "Kërkimi i informacionit"
+      },
+      "text": {
+        "en": "Use the search bar to quickly find specific information. Type your question or keywords, and our virtual assistant will help you find relevant resources and guidance.",
+        "de": "Verwenden Sie die Suchleiste, um schnell spezifische Informationen zu finden. Geben Sie Ihre Frage oder Schlüsselwörter ein, und unser virtueller Assistent hilft Ihnen dabei, relevante Ressourcen und Anleitungen zu finden.",
+        "ru": "Используйте строку поиска для быстрого поиска конкретной информации. Введите свой вопрос или ключевые слова, и наш виртуальный помощник поможет вам найти соответствующие ресурсы и руководства.",
+        "ce": "Тlаьхьа хаам лахаран лучу лахар. Хьан хаттар я ключевой джагlонаш язъе, виртуальни ассистенто хьуна гlортина ресурсаш а хаамаш а карийта.",
+        "prs": "از نوار جستجو برای یافتن سریع اطلاعات خاص استفاده کنید. سوال یا کلمات کلیدی خود را تایپ کنید و دستیار مجازی ما به شما کمک می‌کند منابع و راهنمایی‌های مرتبط پیدا کنید.",
+        "ps": "د ځانګړو معلوماتو د ګړندي موندلو لپاره د لټون بار وکاروئ. خپله پوښتنه یا کلیدي ټکي ولیکئ، او زموږ مجازي مرستیال به ستاسو سره د اړوندو سرچینو او لارښوونو موندلو کې مرسته وکړي.",
+        "fa": "از نوار جستجو برای یافتن سریع اطلاعات خاص استفاده کنید. سوال یا کلمات کلیدی خود را تایپ کنید و دستیار مجازی ما به شما کمک می‌کند منابع و راهنمایی‌های مرتبط پیدا کنید.",
+        "ar": "استخدم شريط البحث للعثور بسرعة على معلومات محددة. اكتب سؤالك أو الكلمات المفتاحية، وسيساعدك مساعدنا الافتراضي في العثور على الموارد والإرشادات ذات الصلة.",
+        "ku": "شریتی گەڕان بەکاربهێنە بۆ دۆزینەوەی خێرای زانیاری تایبەت. پرسیار یان ووشە سەرەکییەکانت بنووسە، یاریدەدەری مەجازیمان یارمەتیت دەدات سەرچاوە و ڕێنمایی پەیوەندیدارەکان بدۆزیتەوە.",
+        "so": "Isticmaal shajiga raadinta si aad degdeg ugu hesho macluumaad gaar ah. Qor su'aashaada ama erayada muhiimka ah, caawiyahayaga farsamada ahna wuu kaa caawin doonaa helitaanka kheyraadka iyo hagitaanka la xidhiidha.",
+        "ka": "გამოიყენეთ ძიების ზოლი კონკრეტული ინფორმაციის სწრაფად საპოვნელად. ჩაწერეთ თქვენი კითხვა ან საკვანძო სიტყვები, და ჩვენი ვირტუალური ასისტენტი დაგეხმარებათ შესაბამისი რესურსებისა და მითითებების მოძებნაში.",
+        "sq": "Përdorni shiritin e kërkimit për të gjetur shpejt informacion specifik. Shtypni pyetjen tuaj ose fjalët kyçe, dhe asistenti ynë virtual do t'ju ndihmojë të gjeni burime dhe udhëzime të lidhura."
+      }
+    },
+    {
+      "type": "category",
+      "id": 2,
+      "title": {
+        "en": "Housing Information",
+        "de": "Wohninformationen",
+        "ru": "Информация о жилье",
+        "ce": "Цlенйин меттига хаам",
+        "prs": "اطلاعات مسکن",
+        "ps": "د کور معلومات",
+        "fa": "اطلاعات مسکن",
+        "ar": "معلومات السكن",
+        "ku": "زانیاری نیشتەجێبوون",
+        "so": "Macluumaadka guriyeynta",
+        "ka": "საცხოვრებლის ინფორმაცია",
+        "sq": "Informacioni për strehimin"
+      },
+      "text": {
+        "en": "Find comprehensive information about housing in Austria, including apartment searching, rental agreements, tenant rights, housing support programs, and accommodation options for different needs and budgets.",
+        "de": "Finden Sie umfassende Informationen über das Wohnen in Österreich, einschließlich Wohnungssuche, Mietverträge, Mieterrechte, Wohnungsunterstützungsprogramme und Unterkunftsmöglichkeiten für verschiedene Bedürfnisse und Budgets.",
+        "ru": "Найдите исчерпывающую информацию о жилье в Австрии, включая поиск квартир, договоры аренды, права арендаторов, программы жилищной поддержки и варианты размещения для различных потребностей и бюджетов.",
+        "ce": "Австрин цlенйин меттигашна хьокху хаам карийта - цlенах лахар, аренди барташ, арендаторан бакъонаш, цlенйин меттиган гlон программаш, башха хьежамашна а бюджеташна а тlехьара меттигаш.",
+        "prs": "اطلاعات جامعی در مورد مسکن در اتریش پیدا کنید، از جمله جستجوی آپارتمان، قراردادهای اجاره، حقوق مستأجر، برنامه‌های حمایت مسکن و گزینه‌های اقامت برای نیازها و بودجه‌های مختلف.",
+        "ps": "د اتریش د کورونو په اړه پراخه معلومات ومومئ، پشمول د کور لټون، د کرایې تړونونه، د اجاره دارۍ حقونه، د کور د ملاتړ برنامې، او د مختلفو اړتیاوو او بودیجو لپاره د استوګنې اختیارونه.",
+        "fa": "اطلاعات جامعی در مورد مسکن در اتریش پیدا کنید، از جمله جستجوی آپارتمان، قراردادهای اجاره، حقوق مستأجر، برنامه‌های حمایت مسکن و گزینه‌های اقامت برای نیازها و بودجه‌های مختلف.",
+        "ar": "اعثر على معلومات شاملة حول السكن في النمسا، بما في ذلك البحث عن الشقق وعقود الإيجار وحقوق المستأجرين وبرامج دعم الإسكان وخيارات الإقامة للاحتياجات والميزانيات المختلفة.",
+        "ku": "زانیاری تەواو دەربارەی نیشتەجێبوون لە نەمسا بدۆزەوە، لەوانە گەڕان بۆ خانوو، ڕێکەوتنامەکانی کرێ، مافەکانی کرێچی، بەرنامەکانی پشتگیری نیشتەجێبوون، و هەڵبژاردەکانی جێگیربوون بۆ پێداویستی و بودجەی جۆراوجۆر.",
+        "so": "Hel macluumaad dhamaystiran oo ku saabsan guriyeynta Austria, oo ay ku jiraan raadinta guryaha, heshiisyada kireega, xuquuqda kireeyayaasha, barnaamijyada taageerka guriyeynta, iyo xulashooyinka dejinta ee baahiyaha iyo miisaaniyadaha kala duwan.",
+        "ka": "იპოვეთ ყოვლისმომცველი ინფორმაცია ავსტრიაში საცხოვრებლის შესახებ, მათ შორის ბინების ძებნა, ქირის ხელშეკრულებები, მოიჯარეების უფლებები, საცხოვრებლის მხარდაჭერის პროგრამები და განთავსების ვარიანტები სხვადასხვა საჭიროებებისა და ბიუჯეტებისთვის.",
+        "sq": "Gjeni informacion të plotë për strehimin në Austri, duke përfshirë kërkimin e apartamenteve, marrëveshjet e qirasë, të drejtat e qiramarrësve, programet e mbështetjes së strehimit dhe opsionet e akomodimit për nevoja dhe buxhete të ndryshme."
+      }
+    },
+    {
+      "type": "category",
+      "id": 3,
+      "title": {
+        "en": "Work & Employment",
+        "de": "Arbeit & Beschäftigung",
+        "ru": "Работа и трудоустройство",
+        "ce": "Болх а зlен хила а",
+        "prs": "کار و استخدام",
+        "ps": "کار او دنده",
+        "fa": "کار و اشتغال",
+        "ar": "العمل والتوظيف",
+        "ku": "کار و دامەزراندن",
+        "so": "Shaqo iyo shaqeyn",
+        "ka": "სამუშაო და დასაქმება",
+        "sq": "Puna dhe punësimi"
+      },
+      "text": {
+        "en": "Explore comprehensive employment resources including job search strategies, work permits, CV writing, interview preparation, workplace rights, and career development opportunities in Austria.",
+        "de": "Erkunden Sie umfassende Beschäftigungsressourcen, einschließlich Jobsuchstrategien, Arbeitserlaubnisse, Lebenslaufschreibung, Vorstellungsgesprächsvorbereitung, Arbeitsplatzrechte und Karriereentwicklungsmöglichkeiten in Österreich.",
+        "ru": "Изучите комплексные ресурсы по трудоустройству, включая стратегии поиска работы, разрешения на работу, написание резюме, подготовку к собеседованиям, трудовые права и возможности карьерного роста в Австрии.",
+        "ce": "Болхан комплексни ресурсаш хьажа - болх лахаран стратегиш, болхан рlамаш, CV йазар, интервьюшна хазарна хилар, болхан меттиган бакъонаш, Австрин карьеран хьоьхуш.",
+        "prs": "منابع جامع اشتغال را کاوش کنید از جمله استراتژی‌های جستجوی شغل، مجوزهای کار، نوشتن رزومه، آماده‌سازی مصاحبه، حقوق محل کار و فرصت‌های توسعه شغلی در اتریش.",
+        "ps": "د دندې پراخه سرچینې وپلټئ پشمول د دندې د لټون ستراتیژۍ، د کار اجازې، د CV لیکل، د مرکې چمتووالی، د کار ځای حقونه، او په اتریش کې د مسلک د ودې فرصتونه.",
+        "fa": "منابع جامع اشتغال را کاوش کنید از جمله استراتژی‌های جستجوی شغل، مجوزهای کار، نوشتن رزومه، آماده‌سازی مصاحبه، حقوق محل کار و فرصت‌های توسعه شغلی در اتریش.",
+        "ar": "استكشف موارد التوظيف الشاملة بما في ذلك استراتيجيات البحث عن عمل وتصاريح العمل وكتابة السيرة الذاتية والتحضير للمقابلات وحقوق مكان العمل وفرص تطوير المهنة في النمسا.",
+        "ku": "سەرچاوەکانی دامەزراندنی فراوان بگەڕێ لەوانە ستراتیژیەکانی گەڕان بۆ کار، مۆڵەتی کار، نووسینی CV، ئامادەکاری چاوپێکەوتن، مافەکانی شوێنی کار، و دەرفەتەکانی گەشەپێدانی پیشەیی لە نەمسا.",
+        "so": "Sahaminta kheyraadka shaqeynta ee dhamaystiran oo ay ku jiraan xeeladaha raadinta shaqada, oggolaanshaha shaqada, qorista CV-ga, diyaargarowga wareysiga, xuquuqda goobta shaqada, iyo fursadaha horumarka xirfadeed ee Austria.",
+        "ka": "შეისწავლეთ დასაქმების ყოვლისმომცველი რესურსები, მათ შორის სამუშაოს ძებნის სტრატეგიები, სამუშაო ნებართვები, CV-ის დაწერა, ინტერვიუსთვის მომზადება, სამუშაო ადგილის უფლებები და კარიერული განვითარების შესაძლებლობები ავსტრიაში.",
+        "sq": "Eksploroni burimet gjithëpërfshirëse të punësimit duke përfshirë strategjitë e kërkimit të punës, lejet e punës, shkrimimin e CV-së, përgatitjen e intervistës, të drejtat e vendit të punës dhe mundësitë e zhvillimit të karrierës në Austri."
+      }
+    },
+    {
+      "type": "confirmation",
+      "id": 4,
+      "title": {
+        "en": "Ready to Explore!",
+        "de": "Bereit zum Erkunden!",
+        "ru": "Готовы к изучению!",
+        "ce": "Хьажа хlотта йу!",
+        "prs": "آماده کاوش!",
+        "ps": "د سپړنې لپاره چمتو!",
+        "fa": "آماده کاوش!",
+        "ar": "جاهز للاستكشاف!",
+        "ku": "ئامادەی گەڕان!",
+        "so": "Diyaar u yahay sahaminta!",
+        "ka": "მზად ყოფნა შესასწავლად!",
+        "sq": "Gati për të eksploruar!"
+      },
+      "text": {
+        "en": "You're now ready to explore all the information and resources available. Click on any category to dive deeper into specific topics, or use the search feature to find exactly what you need.",
+        "de": "Sie sind jetzt bereit, alle verfügbaren Informationen und Ressourcen zu erkunden. Klicken Sie auf eine beliebige Kategorie, um tiefer in spezifische Themen einzutauchen, oder verwenden Sie die Suchfunktion, um genau das zu finden, was Sie benötigen.",
+        "ru": "Теперь вы готовы изучить всю доступную информацию и ресурсы. Нажмите на любую категорию, чтобы углубиться в конкретные темы, или используйте функцию поиска, чтобы найти именно то, что вам нужно.",
+        "ce": "Хlинца хьо гlорта вайна вуьлу хаам а ресурсаш а хьажаш ю. Мегаргчоь категореахь тlетоха конкретни темашка чулацаме, я лахаран функци лело конкретно аьлла хьунга хlокхуш карадан.",
+        "prs": "اکنون آماده‌اید تا همه اطلاعات و منابع موجود را کاوش کنید. روی هر دسته کلیک کنید تا عمیق‌تر در موضوعات خاص غوطه‌ور شوید، یا از ویژگی جستجو استفاده کنید تا دقیقاً آنچه نیاز دارید پیدا کنید.",
+        "ps": "تاسو اوس چمتو یاست چې ټول شته معلومات او سرچینې وپلټئ. په کومه کټګورۍ کلیک وکړئ ترڅو په ځانګړو موضوعاتو کې ژور شئ، یا د لټون ځانګړتیا وکاروئ ترڅو دقیقاً هغه څه ومومئ چې ورته اړتیا لرئ.",
+        "fa": "اکنون آماده‌اید تا همه اطلاعات و منابع موجود را کاوش کنید. روی هر دسته کلیک کنید تا عمیق‌تر در موضوعات خاص فرو بروید، یا از ویژگی جستجو استفاده کنید تا دقیقاً آنچه نیاز دارید پیدا کنید.",
+        "ar": "أنت الآن جاهز لاستكشاف جميع المعلومات والموارد المتاحة. انقر على أي فئة للتعمق في مواضيع محددة، أو استخدم ميزة البحث للعثور على ما تحتاجه بالضبط.",
+        "ku": "ئێستا ئامادەیت بۆ گەڕانی هەموو ئەو زانیاری و سەرچاوانەی بەردەستن. کلیک لە هەر پۆلێک بکە بۆ قووڵبوونەوە لە بابەتە تایبەتەکان، یان تایبەتمەندی گەڕان بەکاربهێنە بۆ دۆزینەوەی ئەوەی پێویستت.",
+        "so": "Hadda waxaad diyaar u tahay inaad sahamiso dhammaan macluumaadka iyo kheyraadka la heli karo. Gujiso qaybba si aad uga qoto dheer mawduucyada gaarka ah, ama isticmaal muuqaalka raadinta si aad u hesho waxa aad u baahan tahay.",
+        "ka": "ახლა მზად ხართ შეისწავლოთ ყველა ხელმისაწვდომი ინფორმაცია და რესურსი. დააწკაპუნეთ ნებისმიერ კატეგორიაზე კონკრეტულ თემებში ღრმად ჩასასვლელად, ან გამოიყენეთ ძიების ფუნქცია იმის სანახავად, რაც გჭირდებათ.",
+        "sq": "Tani jeni gati të eksploroni të gjithë informacionin dhe burimet e disponueshme. Klikoni në çdo kategori për t'u thelluar në tema specifike, ose përdorni veçorinë e kërkimit për të gjetur saktësisht atë që ju nevojitet."
+      }
+    }
+  ]
+}

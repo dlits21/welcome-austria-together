@@ -14,7 +14,7 @@ import { getHomeText } from '../utils/languageUtils';
 
 // Import refactored components
 import Header from '../components/Header';
-import SearchBar from '../components/SearchBar';
+import SearchSection from '../components/SearchSection';
 import CategoryGrid from '../components/CategoryGrid';
 import TutorialModal from '../components/TutorialModal';
 import LanguageModal from '../components/LanguageModal';
@@ -96,10 +96,10 @@ const Home: React.FC = () => {
         <Text style={styles.title}>{getHomeText('howCanIHelp', currentLanguage)}</Text>
         
         {/* Search Bar */}
-        <SearchBar 
+        <SearchSection 
           searchInput={searchInput}
-          setSearchInput={setSearchInput}
-          handleSearch={handleSearch}
+          onSearchInputChange={setSearchInput}
+          onSearch={handleSearch}
           placeholder={getHomeText('searchPlaceholder', currentLanguage)}
         />
         

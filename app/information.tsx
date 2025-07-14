@@ -8,30 +8,39 @@ import {
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useLanguage } from '../contexts/LanguageContext';
-import {
-    languages,
-    getMainCategories,
-    getWhatWouldYouWantToKnow,
-    getClickForDetails } from '../data/languages/common';
+import { languages } from '../data/languages/common';
 import PageNavigation from '../components/PageNavigation';
 import LanguageModal from '../components/LanguageModal';
-import HelpModal from '../components/HelpModal';
+import TutorialModal from '../components/TutorialModal';
 import VirtualAssistantModal from '../components/VirtualAssistantModal';
 import SearchSection from '../components/SearchSection';
 import InformationCategoryGrid from '../components/InformationCategoryGrid';
-import { informationCategories } from '../data/information'
+import { informationCategories } from '../data/information';
+
+// Import language data
+import informationLanguageData from '../data/language/information.json';
 
 const Information: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [searchInput, setSearchInput] = useState('');
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
-  const [showHelpModal, setShowHelpModal] = useState(false);
+  const [showTutorialModal, setShowTutorialModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const router = useRouter();
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
+
+  // Helper function to get text from language data
+  const getText = (key: string) => {
+    const keys = key.split('.');
+    let value: any = informationLanguageData;
+    for (const k of keys) {
+      value = value?.[k];
+    }
+    return value?.[currentLanguage] || value?.en || key;
+  };
 
   const toggleSound = () => {
     setSoundEnabled(!soundEnabled);
@@ -62,25 +71,25 @@ const Information: React.FC = () => {
         toggleSound={toggleSound}
         soundEnabled={soundEnabled}
         showLanguageModal={() => setShowLanguageModal(true)}
-        showHelpModal={() => setShowHelpModal(true)}
+        showHelpModal={() => setShowTutorialModal(true)}
         showVirtualAssistant={() => setShowVirtualAssistant(true)}
       />
       
       <View style={styles.content}>
-        <Text style={styles.title}>{getMainCategories(language.code, 'information')}</Text>
+        <Text style={styles.title}>{getText('title')}</Text>
         
         <SearchSection
           searchInput={searchInput}
           onSearchInputChange={setSearchInput}
           onSearch={handleSearch}
-          placeholder={getWhatWouldYouWantToKnow(language.code)}
+          placeholder={getText('searchPlaceholder')}
         />
         
         <InformationCategoryGrid
           categories={informationCategories}
           onCategoryPress={handleCategoryPress}
-          getClickForDetails={getClickForDetails}
           languageCode={language.code}
+          getText={getText}
         />
       </View>
       
@@ -91,11 +100,12 @@ const Information: React.FC = () => {
         languageCode={language.code}
       />
       
-      {/* Help Modal */}
-      <HelpModal
-        visible={showHelpModal}
-        onClose={() => setShowHelpModal(false)}
+      {/* Tutorial Modal */}
+      <TutorialModal
+        visible={showTutorialModal}
+        onClose={() => setShowTutorialModal(false)}
         languageCode={language.code}
+        tutorialData="information"
       />
 
       {/* Virtual Assistant Modal */}
