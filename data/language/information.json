@@ -387,6 +387,126 @@
         "ka": "გარემოს დაცვა, მდგრადობა, მწვანე ცხოვრება და კლიმატის ადაპტაცია",
         "sq": "Mbrojtja e mjedisit, qëndrueshmëria, jetesa e gjelbër dhe përshtatja me klimën"
       }
+    },
+    "german-learning": {
+      "title": {
+        "en": "German Learning",
+        "de": "Deutsch lernen",
+        "ru": "Изучение немецкого",
+        "ce": "Немцойн мотт дешар",
+        "prs": "یادگیری آلمانی",
+        "ps": "د آلمانی زده کړه",
+        "fa": "یادگیری آلمانی",
+        "ar": "تعلم الألمانية",
+        "ku": "فێربوونی ئەڵمانی",
+        "so": "Barashada Jarmalka",
+        "ka": "გერმანული ენის შესწავლა",
+        "sq": "Mësimi i gjermanishtes"
+      },
+      "summary": {
+        "en": "German language courses, online learning, certificates and language practice",
+        "de": "Deutsche Sprachkurse, Online-Lernen, Zertifikate und Sprachpraxis",
+        "ru": "Курсы немецкого языка, онлайн-обучение, сертификаты и языковая практика",
+        "ce": "Немцойн маттан курсаш, онлайн дешар, сертификаташ, маттан практика",
+        "prs": "دوره‌های زبان آلمانی، یادگیری آنلاین، گواهینامه‌ها و تمرین زبان",
+        "ps": "د آلمانی ژبې کورسونه، آنلاین زده کړه، سندونه او د ژبې تمرین",
+        "fa": "دوره‌های زبان آلمانی، یادگیری آنلاین، گواهینامه‌ها و تمرین زبان",
+        "ar": "دورات اللغة الألمانية والتعلم عبر الإنترنت والشهادات وممارسة اللغة",
+        "ku": "کۆرسی زمانی ئەڵمانی، فێربوونی ئۆنلاین، بڕوانامەکان و ڕاهێنانی زمان",
+        "so": "Koorsada luqadda Jarmalka, barashada onlaynka, shahaadooyinka iyo ku celcelinta luqadda",
+        "ka": "გერმანული ენის კურსები, ონლაინ სწავლა, სერტიფიკატები და ენობრივი პრაქტიკა",
+        "sq": "Kurset e gjuhës gjermane, mësimi online, certifikatat dhe praktika e gjuhës"
+      }
+    },
+    "security": {
+      "title": {
+        "en": "Security",
+        "de": "Sicherheit",
+        "ru": "Безопасность",
+        "ce": "Лардар",
+        "prs": "امنیت",
+        "ps": "امنیت",
+        "fa": "امنیت",
+        "ar": "الأمان",
+        "ku": "ئاسایش",
+        "so": "Amniga",
+        "ka": "უსაფრთხოება",
+        "sq": "Siguria"
+      },
+      "summary": {
+        "en": "Personal safety, emergency contacts, crime prevention and security services",
+        "de": "Persönliche Sicherheit, Notfallkontakte, Kriminalprävention und Sicherheitsdienste",
+        "ru": "Личная безопасность, экстренные контакты, предотвращение преступлений и службы безопасности",
+        "ce": "Шен лардар, маттехь йу номераш, зиянан къастор, лардаран хlокхуш",
+        "prs": "امنیت شخصی، تماس‌های اضطراری، پیشگیری از جرم و خدمات امنیتی",
+        "ps": "شخصي امنیت، بیړني اړیکې، د جرم مخنیوی او امنیتي خدمات",
+        "fa": "امنیت شخصی، تماس‌های اضطراری، پیشگیری از جرم و خدمات امنیتی",
+        "ar": "الأمان الشخصي وجهات الاتصال الطارئة ومنع الجريمة والخدمات الأمنية",
+        "ku": "ئاسایشی کەسی، پەیوەندی کتوپڕ، بەربەستکردنی تاوان و خزمەتگوزاری ئاسایش",
+        "so": "Amniga gaarka ah, xiriirka degdegga ah, ka-hortagga dembiyo iyo adeegyada amniga",
+        "ka": "პირადი უსაფრთხოება, საგანგებო კონტაქტები, დანაშაულის პრევენცია და უსაფრთხოების სერვისები",
+        "sq": "Siguria personale, kontaktet e urgjencës, parandalimi i krimit dhe shërbimet e sigurisë"
+      }
+    },
+    "political-education": {
+      "title": {
+        "en": "Political Education",
+        "de": "Politische Bildung",
+        "ru": "Политическое образование",
+        "ce": "Политически дешар",
+        "prs": "آموزش سیاسی",
+        "ps": "سیاسي زده کړه",
+        "fa": "آموزش سیاسی",
+        "ar": "التعليم السياسي",
+        "ku": "پەروەردەی سیاسی",
+        "so": "Waxbarashada siyaasadda",
+        "ka": "პოლიტიკური განათლება",
+        "sq": "Arsimi politik"
+      },
+      "summary": {
+        "en": "Democracy, voting, civic duties, constitution and political participation",
+        "de": "Demokratie, Wählen, Bürgerpflichten, Verfassung und politische Teilhabe",
+        "ru": "Демократия, голосование, гражданские обязанности, конституция и политическое участие",
+        "ce": "Демократи, довзар, граждански долгаш, конституци, политически дакъалуш",
+        "prs": "دموکراسی، رأی‌گیری، وظایف شهروندی، قانون اساسی و مشارکت سیاسی",
+        "ps": "ولسواکي، رایه ورکول، د اتباعو دندې، اساسي قانون او سیاسي ګډون",
+        "fa": "دموکراسی، رأی‌گیری، وظایف شهروندی، قانون اساسی و مشارکت سیاسی",
+        "ar": "الديمقراطية والتصويت والواجبات المدنية والدستور والمشاركة السياسية",
+        "ku": "دیموکراسی، دەنگدان، ئەرکە مەدەنییەکان، دەستوور و بەشداریکردنی سیاسی",
+        "so": "Dimuqraadiyadda, codeynta, waajibadka muwaadiniinta, dastuarka iyo ka-qaybgalka siyaasadda",
+        "ka": "დემოკრატია, ხმის მიცემა, სამოქალაქო მოვალეობები, კონსტიტუცია და პოლიტიკური მონაწილეობა",
+        "sq": "Demokracia, votimi, detyrimet qytetare, kushtetuta dhe pjesëmarrja politike"
+      }
+    },
+    "translation": {
+      "title": {
+        "en": "Translation",
+        "de": "Übersetzung",
+        "ru": "Перевод",
+        "ce": "Гочйар",
+        "prs": "ترجمه",
+        "ps": "ژباړه",
+        "fa": "ترجمه",
+        "ar": "الترجمة",
+        "ku": "وەرگێڕان",
+        "so": "Turjumaad",
+        "ka": "თარგმანი",
+        "sq": "Përkthimi"
+      },
+      "summary": {
+        "en": "Document translation, certified translators, interpretation services and language support",
+        "de": "Dokumentenübersetzung, zertifizierte Übersetzer, Dolmetscherdienste und Sprachunterstützung",
+        "ru": "Перевод документов, сертифицированные переводчики, услуги переводчика и языковая поддержка",
+        "ce": "Документаш гочйар, сертификатехь йолу гочйархой, гочйаран хlокхуш, маттан гlо",
+        "prs": "ترجمه اسناد، مترجمان تأیید شده، خدمات ترجمه و پشتیبانی زبان",
+        "ps": "د اسنادو ژباړه، تصدیق شوي ژباړونکي، د ژباړې خدمات او د ژبې ملاتړ",
+        "fa": "ترجمه اسناد، مترجمان تأیید شده، خدمات ترجمه و پشتیبانی زبان",
+        "ar": "ترجمة الوثائق والمترجمون المعتمدون وخدمات الترجمة الفورية والدعم اللغوي",
+        "ku": "وەرگێڕانی بەڵگەنامەکان، وەرگێڕانی پەسەندکراو، خزمەتگوزاری وەرگێڕان و پشتگیری زمان",
+        "so": "Turjumaadda dukumentiyada, turjubaanno la xaqiijiyay, adeegyada tarjumaadda iyo taageerka luqadda",
+        "ka": "დოკუმენტების თარგმანი, სერტიფიცირებული თარჯიმნები, თარჯიმნის სერვისები და ენობრივი მხარდაჭერა",
+        "sq": "Përkthimi i dokumenteve, përkthyesit e certifikuar, shërbimet e interpretimit dhe mbështetja gjuhësore"
+      }
     }
   }
 }

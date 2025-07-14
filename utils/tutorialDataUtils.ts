@@ -10,6 +10,7 @@ import askHealthTutorial from '../data/tutorial/ask/health.json';
 import askFinancialTutorial from '../data/tutorial/ask/financial.json';
 import askCulturalTutorial from '../data/tutorial/ask/cultural.json';
 import askDocumentTutorial from '../data/tutorial/ask/document.json';
+import informationTutorialData from '../data/tutorial/information.json';
 import {
   getGlobalText,
   getAskText,
@@ -43,6 +44,8 @@ export const getTutorialData = (tutorialData: string) => {
       return askCulturalTutorial;
     case 'ask-document':
       return askDocumentTutorial;
+    case 'information':
+      return informationTutorialData;
     case 'virtualAssistant':
       return virtualAssistantTutorialData;
     default:
