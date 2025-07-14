@@ -59,7 +59,7 @@ const TutorialModal: React.FC<TutorialModalProps> = ({
       case 'ask-document':
         return 9; // New case for document tutorial
       case 'information':
-        return 5; // New case for information tutorial
+        return 6; // Updated for information tutorial with basic structure
       default:
         return 8;
     }

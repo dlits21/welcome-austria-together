@@ -68,32 +68,38 @@
       "type": "category",
       "id": 2,
       "title": {
-        "en": "Housing Information",
-        "de": "Wohninformationen",
-        "ru": "Информация о жилье",
-        "ce": "Цlенйин меттига хаам",
-        "prs": "اطلاعات مسکن",
-        "ps": "د کور معلومات",
-        "fa": "اطلاعات مسکن",
-        "ar": "معلومات السكن",
-        "ku": "زانیاری نیشتەجێبوون",
-        "so": "Macluumaadka guriyeynta",
-        "ka": "საცხოვრებლის ინფორმაცია",
-        "sq": "Informacioni për strehimin"
+        "en": "German Learning",
+        "de": "Deutsch Lernen",
+        "ru": "Изучение немецкого языка",
+        "ce": "Немцойн мотт дешар",
+        "prs": "یادگیری آلمانی",
+        "ps": "د آلماني زده کړه",
+        "fa": "یادگیری آلمانی",
+        "ar": "تعلم الألمانية",
+        "ku": "فێربوونی ئەڵمانی",
+        "so": "Barashada Jarmalka",
+        "ka": "გერმანული ენის სწავლა",
+        "sq": "Mësimi i gjermanishtes"
       },
       "text": {
-        "en": "Find comprehensive information about housing in Austria, including apartment searching, rental agreements, tenant rights, housing support programs, and accommodation options for different needs and budgets.",
-        "de": "Finden Sie umfassende Informationen über das Wohnen in Österreich, einschließlich Wohnungssuche, Mietverträge, Mieterrechte, Wohnungsunterstützungsprogramme und Unterkunftsmöglichkeiten für verschiedene Bedürfnisse und Budgets.",
-        "ru": "Найдите исчерпывающую информацию о жилье в Австрии, включая поиск квартир, договоры аренды, права арендаторов, программы жилищной поддержки и варианты размещения для различных потребностей и бюджетов.",
-        "ce": "Австрин цlенйин меттигашна хьокху хаам карийта - цlенах лахар, аренди барташ, арендаторан бакъонаш, цlенйин меттиган гlон программаш, башха хьежамашна а бюджеташна а тlехьара меттигаш.",
-        "prs": "اطلاعات جامعی در مورد مسکن در اتریش پیدا کنید، از جمله جستجوی آپارتمان، قراردادهای اجاره، حقوق مستأجر، برنامه‌های حمایت مسکن و گزینه‌های اقامت برای نیازها و بودجه‌های مختلف.",
-        "ps": "د اتریش د کورونو په اړه پراخه معلومات ومومئ، پشمول د کور لټون، د کرایې تړونونه، د اجاره دارۍ حقونه، د کور د ملاتړ برنامې، او د مختلفو اړتیاوو او بودیجو لپاره د استوګنې اختیارونه.",
-        "fa": "اطلاعات جامعی در مورد مسکن در اتریش پیدا کنید، از جمله جستجوی آپارتمان، قراردادهای اجاره، حقوق مستأجر، برنامه‌های حمایت مسکن و گزینه‌های اقامت برای نیازها و بودجه‌های مختلف.",
-        "ar": "اعثر على معلومات شاملة حول السكن في النمسا، بما في ذلك البحث عن الشقق وعقود الإيجار وحقوق المستأجرين وبرامج دعم الإسكان وخيارات الإقامة للاحتياجات والميزانيات المختلفة.",
-        "ku": "زانیاری تەواو دەربارەی نیشتەجێبوون لە نەمسا بدۆزەوە، لەوانە گەڕان بۆ خانوو، ڕێکەوتنامەکانی کرێ، مافەکانی کرێچی، بەرنامەکانی پشتگیری نیشتەجێبوون، و هەڵبژاردەکانی جێگیربوون بۆ پێداویستی و بودجەی جۆراوجۆر.",
-        "so": "Hel macluumaad dhamaystiran oo ku saabsan guriyeynta Austria, oo ay ku jiraan raadinta guryaha, heshiisyada kireega, xuquuqda kireeyayaasha, barnaamijyada taageerka guriyeynta, iyo xulashooyinka dejinta ee baahiyaha iyo miisaaniyadaha kala duwan.",
-        "ka": "იპოვეთ ყოვლისმომცველი ინფორმაცია ავსტრიაში საცხოვრებლის შესახებ, მათ შორის ბინების ძებნა, ქირის ხელშეკრულებები, მოიჯარეების უფლებები, საცხოვრებლის მხარდაჭერის პროგრამები და განთავსების ვარიანტები სხვადასხვა საჭიროებებისა და ბიუჯეტებისთვის.",
-        "sq": "Gjeni informacion të plotë për strehimin në Austri, duke përfshirë kërkimin e apartamenteve, marrëveshjet e qirasë, të drejtat e qiramarrësve, programet e mbështetjes së strehimit dhe opsionet e akomodimit për nevoja dhe buxhete të ndryshme."
+        "en": "Find comprehensive German language learning resources including courses, practice materials, language exchanges, and certification preparation to help you integrate into Austrian society.",
+        "de": "Finden Sie umfassende Ressourcen zum Erlernen der deutschen Sprache, einschließlich Kurse, Übungsmaterialien, Sprachaustausch und Zertifizierungsvorbereitung, um Ihnen bei der Integration in die österreichische Gesellschaft zu helfen.",
+        "ru": "Найдите комплексные ресурсы для изучения немецкого языка, включая курсы, учебные материалы, языковой обмен и подготовку к сертификации, чтобы помочь вам интегрироваться в австрийское общество.",
+        "ce": "Немцойн мотт дешаран комплексни ресурсаш карийта - курсаш, практически материалаш, меттан цхьаьнакхетар, сертификацин хазарна хилар Австрин обществехь интеграций дан.",
+        "prs": "منابع جامع یادگیری زبان آلمانی پیدا کنید از جمله دوره‌ها، مواد تمرینی، تبادل زبان و آماده‌سازی گواهی‌نامه تا به شما در ادغام در جامعه اتریش کمک کند.",
+        "ps": "د آلماني ژبې د زده کړې پراخه سرچینې ومومئ پشمول کورسونه، د تمرین توکي، د ژبې تبادله، او د سندونو چمتووالی چې ستاسو سره د اتریش په ټولنه کې د یوځای کیدو کې مرسته وکړي.",
+        "fa": "منابع جامع یادگیری زبان آلمانی پیدا کنید از جمله دوره‌ها، مواد تمرینی، تبادل زبان و آماده‌سازی گواهی‌نامه تا به شما در ادغام در جامعه اتریش کمک کند.",
+        "ar": "اعثر على موارد شاملة لتعلم اللغة الألمانية بما في ذلك الدورات والمواد التدريبية وتبادل اللغة وإعداد الشهادات لمساعدتك في الاندماج في المجتمع النمساوي.",
+        "ku": "سەرچاوەکانی فێربوونی ژمارەی ئەڵمانی بدۆزەوە لەوانە کۆرسەکان، کەرەستەکانی پراکتیک، ئاڵوگۆڕی زمان، و ئامادەکاری بەڵگەنامە بۆ یارمەتیدانت لە یەکخستن لە کۆمەڵگای نەمسا.",
+        "so": "Hel kheyraad dhamaystiran oo barashada luuqadda Jarmalka ah oo ay ku jiraan koorsooyin, qalabka tababarka, isweydaarsiga luqadda, iyo diyaarinta shahaadada si ay kaaga caawiyaan ku dhameysashada bulshada Austria.",
+        "ka": "იპოვეთ გერმანული ენის სწავლის ყოვლისმომცველი რესურსები, მათ შორის კურსები, სავარჯიშო მასალები, ენობრივი გაცვლები და სერტიფიცირების მომზადება, რათა დაგეხმაროთ ინტეგრაციაში ავსტრიულ საზოგადოებაში.",
+        "sq": "Gjeni burime gjithëpërfshirëse të mësimit të gjuhës gjermane duke përfshirë kurse, materiale praktike, shkëmbim gjuhësh dhe përgatitje certifikimi për t'ju ndihmuar të integroheni në shoqërinë austriake."
+      },
+      "category": {
+        "title": "german-learning",
+        "description": "german-learning-description",
+        "icon": "school",
+        "color": "#EF4444"
       }
     },
     {
@@ -126,11 +132,55 @@
         "so": "Sahaminta kheyraadka shaqeynta ee dhamaystiran oo ay ku jiraan xeeladaha raadinta shaqada, oggolaanshaha shaqada, qorista CV-ga, diyaargarowga wareysiga, xuquuqda goobta shaqada, iyo fursadaha horumarka xirfadeed ee Austria.",
         "ka": "შეისწავლეთ დასაქმების ყოვლისმომცველი რესურსები, მათ შორის სამუშაოს ძებნის სტრატეგიები, სამუშაო ნებართვები, CV-ის დაწერა, ინტერვიუსთვის მომზადება, სამუშაო ადგილის უფლებები და კარიერული განვითარების შესაძლებლობები ავსტრიაში.",
         "sq": "Eksploroni burimet gjithëpërfshirëse të punësimit duke përfshirë strategjitë e kërkimit të punës, lejet e punës, shkrimimin e CV-së, përgatitjen e intervistës, të drejtat e vendit të punës dhe mundësitë e zhvillimit të karrierës në Austri."
+      },
+      "category": {
+        "title": "work",
+        "description": "work-description",
+        "icon": "work",
+        "color": "#F59E0B"
+      }
+    },
+    {
+      "type": "category",
+      "id": 4,
+      "title": {
+        "en": "Housing Information",
+        "de": "Wohninformationen",
+        "ru": "Информация о жилье",
+        "ce": "Цlенйин меттига хаам",
+        "prs": "اطلاعات مسکن",
+        "ps": "د کور معلومات",
+        "fa": "اطلاعات مسکن",
+        "ar": "معلومات السكن",
+        "ku": "زانیاری نیشتەجێبوون",
+        "so": "Macluumaadka guriyeynta",
+        "ka": "საცხოვრებლის ინფორმაცია",
+        "sq": "Informacioni për strehimin"
+      },
+      "text": {
+        "en": "Find comprehensive information about housing in Austria, including apartment searching, rental agreements, tenant rights, housing support programs, and accommodation options for different needs and budgets.",
+        "de": "Finden Sie umfassende Informationen über das Wohnen in Österreich, einschließlich Wohnungssuche, Mietverträge, Mieterrechte, Wohnungsunterstützungsprogramme und Unterkunftsmöglichkeiten für verschiedene Bedürfnisse und Budgets.",
+        "ru": "Найдите исчерпывающую информацию о жилье в Австрии, включая поиск квартир, договоры аренды, права арендаторов, программы жилищной поддержки и варианты размещения для различных потребностей и бюджетов.",
+        "ce": "Австрин цlенйин меттигашна хьокху хаам карийта - цlенах лахар, аренди барташ, арендаторан бакъонаш, цlенйин меттиган гlон программаш, башха хьежамашна а бюджеташна а тlехьара меттигаш.",
+        "prs": "اطلاعات جامعی در مورد مسکن در اتریش پیدا کنید، از جمله جستجوی آپارتمان، قراردادهای اجاره، حقوق مستأجر، برنامه‌های حمایت مسکن و گزینه‌های اقامت برای نیازها و بودجه‌های مختلف.",
+        "ps": "د اتریش د کورونو په اړه پراخه معلومات ومومئ، پشمول د کور لټون، د کرایې تړونونه، د اجاره دارۍ حقونه، د کور د ملاتړ برنامې، او د مختلفو اړتیاوو او بودیجو لپاره د استوګنې اختیارونه.",
+        "fa": "اطلاعات جامعی در مورد مسکن در اتریش پیدا کنید، از جمله جستجوی آپارتمان، قراردادهای اجاره، حقوق مستأجر، برنامه‌های حمایت مسکن و گزینه‌های اقامت برای نیازها و بودجه‌های مختلف.",
+        "ar": "اعثر على معلومات شاملة حول السكن في النمسا، بما في ذلك البحث عن الشقق وعقود الإيجار وحقوق المستأجرين وبرامج دعم الإسكان وخيارات الإقامة للاحتياجات والميزانيات المختلفة.",
+        "ku": "زانیاری تەواو دەربارەی نیشتەجێبوون لە نەمسا بدۆزەوە، لەوانە گەڕان بۆ خانوو، ڕێکەوتنامەکانی کرێ، مافەکانی کرێچی، بەرنامەکانی پشتگیری نیشتەجێبوون، و هەڵبژاردەکانی جێگیربوون بۆ پێداویستی و بودجەی جۆراوجۆر.",
+        "so": "Hel macluumaad dhamaystiran oo ku saabsan guriyeynta Austria, oo ay ku jiraan raadinta guryaha, heshiisyada kireega, xuquuqda kireeyayaasha, barnaamijyada taageerka guriyeynta, iyo xulashooyinka dejinta ee baahiyaha iyo miisaaniyadaha kala duwan.",
+        "ka": "იპოვეთ ყოვლისმომცველი ინფორმაცია ავსტრიაში საცხოვრებლის შესახებ, მათ შორის ბინების ძებნა, ქირის ხელშეკრულებები, მოიჯარეების უფლებები, საცხოვრებლის მხარდაჭერის პროგრამები და განთავსების ვარიანტები სხვადასხვა საჭიროებებისა და ბიუჯეტებისთვის.",
+        "sq": "Gjeni informacion të plotë për strehimin në Austri, duke përfshirë kërkimin e apartamenteve, marrëveshjet e qirasë, të drejtat e qiramarrësve, programet e mbështetjes së strehimit dhe opsionet e akomodimit për nevoja dhe buxhete të ndryshme."
+      },
+      "category": {
+        "title": "housing",
+        "description": "housing-description",
+        "icon": "home",
+        "color": "#228B22"
       }
     },
     {
       "type": "confirmation",
-      "id": 4,
+      "id": 18,
       "title": {
         "en": "Ready to Explore!",
         "de": "Bereit zum Erkunden!",
