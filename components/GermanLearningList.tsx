@@ -96,7 +96,7 @@ const GermanLearningList: React.FC<GermanLearningListProps> = ({
         integrationRequirement: course.tags?.includes('Integration') || false,
         supportTypes,
         urgency: 'nonUrgent', // German learning is typically non-urgent
-        category: course.isResource ? 'resource' : 'course',
+        category: course.isResource ? 'resource' : (course.courseDetails?.type === 'exam' ? 'exam' : 'course'),
         contact: {
           phone: course.contact?.phone || '',
           email: course.contact?.email || '',
@@ -136,6 +136,7 @@ const GermanLearningList: React.FC<GermanLearningListProps> = ({
       noResultsText={getTranslation('filters.noResults', languageCode)}
       resetFiltersText={getTranslation('filters.resetFilters', languageCode)}
       resultsFoundText={getTranslation('filters.resultsFound', languageCode)}
+      isGermanLearning={true}
     />
   );
 };
