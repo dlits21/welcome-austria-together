@@ -12,7 +12,8 @@
       "bundleIdentifier": "com.yourapp.bundle",
       "infoPlist": {
         "NSCameraUsageDescription": "This app needs access to the camera to take photos.",
-        "NSPhotoLibraryUsageDescription": "This app needs access to your photo library to select images."
+        "NSPhotoLibraryUsageDescription": "This app needs access to your photo library to select images.",
+        "ITSAppUsesNonExemptEncryption": false
       }
     }
   }
