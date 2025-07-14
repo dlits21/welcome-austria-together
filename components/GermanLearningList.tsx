@@ -14,7 +14,8 @@ interface GermanCourse {
   price: string | number;
   online: boolean;
   duration?: string;
-  description: { en: string; de: string };
+  description: any;
+  subtitle: any;
   provider: string;
   forWomen?: boolean;
   forYoungMigrants?: boolean;
@@ -81,6 +82,7 @@ const GermanLearningList: React.FC<GermanLearningListProps> = ({
         id: course.id,
         title: course.title,
         description: course.description,
+        subtitle: course.subtitle,
         type: course.isResource ? 'resource' : (course.courseDetails?.type === 'exam' ? 'exam' : 'course'),
         level: course.courseDetails?.level?.includes('-') 
           ? course.courseDetails.level.split('-').map((l: string) => l.trim())

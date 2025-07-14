@@ -108,6 +108,7 @@ const GenericSupportList: React.FC<GenericSupportListProps> = ({
   };
 
   const getEntitySubtitle = (entity: Entity): string => {
+    console.error("help", entity)
     if (entity.subtitle) {
       return entity.subtitle[languageCode] || entity.subtitle['de'];
     }
