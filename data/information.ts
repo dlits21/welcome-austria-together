@@ -135,22 +135,22 @@ export const informationCategories: CategoryItem[] = [
       color: '#9932CC'
     },
     {
-      id: 'volunteering',
-      icon: '🤝',
-      name: { en: 'Volunteering', de: 'Mithelfen' },
+      id: 'women',
+      icon: '👩',
+      name: { en: 'Women', de: 'Frauen' },
       description: {
-        en: 'Learn about volunteer opportunities, including community service and charitable work.',
-        de: 'Erfahren Sie mehr über Mithelferangebote, einschließlich Gemeinschaftsdienstleistungen und charitablen Arbeiten.'
+        en: 'Support and resources for women, including rights, healthcare, and services.',
+        de: 'Unterstützung und Ressourcen für Frauen, einschließlich Rechte, Gesundheitsversorgung und Dienstleistungen.'
       },
       color: '#FF4500'
     },
     {
-      id: 'contacts',
-      icon: '📞',
-      name: { en: 'Important Contacts and Legal Help', de: 'Wichtige Kontakte und rechtliche Hilfe' },
+      id: 'children',
+      icon: '👶',
+      name: { en: 'Children', de: 'Kinder' },
       description: {
-        en: 'Find information about important contacts and legal help.',
-        de: 'Finden Sie Informationen über wichtige Kontakte und rechtliche Hilfe.'
+        en: 'Information about children\'s rights, education, healthcare, and protection.',
+        de: 'Informationen über Kinderrechte, Bildung, Gesundheitsversorgung und Schutz.'
       },
       color: '#008000'
     },

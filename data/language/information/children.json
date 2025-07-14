@@ -1,0 +1,170 @@
+{
+  "en": {
+    "title": "Children",
+    "description": "Information about children's rights, education, healthcare, and protection.",
+    "tiles": {
+      "childrens-rights": "Children's Rights",
+      "education": "Education and Schools",
+      "healthcare": "Children's Healthcare",
+      "child-protection": "Child Protection",
+      "childcare": "Childcare Services",
+      "family-support": "Family Support",
+      "developmental-services": "Developmental Services",
+      "emergency-support": "Emergency Support"
+    }
+  },
+  "de": {
+    "title": "Kinder",
+    "description": "Informationen über Kinderrechte, Bildung, Gesundheitsversorgung und Schutz.",
+    "tiles": {
+      "childrens-rights": "Kinderrechte",
+      "education": "Bildung und Schulen",
+      "healthcare": "Kindergesundheit",
+      "child-protection": "Kinderschutz",
+      "childcare": "Kinderbetreuung",
+      "family-support": "Familienunterstützung",
+      "developmental-services": "Entwicklungsdienste",
+      "emergency-support": "Notfallunterstützung"
+    }
+  },
+  "ru": {
+    "title": "Дети",
+    "description": "Информация о правах детей, образовании, здравоохранении и защите.",
+    "tiles": {
+      "childrens-rights": "Права детей",
+      "education": "Образование и школы",
+      "healthcare": "Здоровье детей",
+      "child-protection": "Защита детей",
+      "childcare": "Услуги по уходу за детьми",
+      "family-support": "Поддержка семьи",
+      "developmental-services": "Развивающие услуги",
+      "emergency-support": "Экстренная поддержка"
+    }
+  },
+  "ce": {
+    "title": "Берий",
+    "description": "Берийн бартамийн, дешаран, хьеҙриган а, ларамийн хаам.",
+    "tiles": {
+      "childrens-rights": "Берийн бартамаш",
+      "education": "Дешар а, ешараш а",
+      "healthcare": "Берийн хьеҙрига",
+      "child-protection": "Берийн ларам",
+      "childcare": "Берийн хьал болийн хилам",
+      "family-support": "Доьзалан гIо",
+      "developmental-services": "Хьокхийн хилам",
+      "emergency-support": "Малхбузан гIо"
+    }
+  },
+  "prs": {
+    "title": "کودکان",
+    "description": "اطلاعات درباره حقوق کودکان، آموزش، مراقبت‌های بهداشتی و حمایت.",
+    "tiles": {
+      "childrens-rights": "حقوق کودکان",
+      "education": "آموزش و مدارس",
+      "healthcare": "مراقبت‌های بهداشتی کودکان",
+      "child-protection": "حمایت از کودکان",
+      "childcare": "خدمات مراقبت از کودک",
+      "family-support": "حمایت از خانواده",
+      "developmental-services": "خدمات رشد",
+      "emergency-support": "حمایت اضطراری"
+    }
+  },
+  "ps": {
+    "title": "ماشومان",
+    "description": "د ماشومانو د حقوقو، زده کړې، روغتیایی پاملرنې او ساتنې معلومات.",
+    "tiles": {
+      "childrens-rights": "د ماشومانو حقونه",
+      "education": "زده کړه او ښوونځي",
+      "healthcare": "د ماشومانو روغتیایی پاملرنه",
+      "child-protection": "د ماشومانو ساتنه",
+      "childcare": "د ماشومانو پاملرنې خدمات",
+      "family-support": "د کورنۍ ملاتړ",
+      "developmental-services": "پرمختیایی خدمات",
+      "emergency-support": "بیړني ملاتړ"
+    }
+  },
+  "fa": {
+    "title": "کودکان",
+    "description": "اطلاعات درباره حقوق کودکان، آموزش، مراقبت‌های بهداشتی و حمایت.",
+    "tiles": {
+      "childrens-rights": "حقوق کودکان",
+      "education": "آموزش و مدارس",
+      "healthcare": "مراقبت‌های بهداشتی کودکان",
+      "child-protection": "حمایت از کودکان",
+      "childcare": "خدمات مراقبت از کودک",
+      "family-support": "حمایت خانواده",
+      "developmental-services": "خدمات توسعه‌ای",
+      "emergency-support": "حمایت اضطراری"
+    }
+  },
+  "ar": {
+    "title": "الأطفال",
+    "description": "معلومات حول حقوق الأطفال والتعليم والرعاية الصحية والحماية.",
+    "tiles": {
+      "childrens-rights": "حقوق الأطفال",
+      "education": "التعليم والمدارس",
+      "healthcare": "الرعاية الصحية للأطفال",
+      "child-protection": "حماية الطفل",
+      "childcare": "خدمات رعاية الأطفال",
+      "family-support": "دعم الأسرة",
+      "developmental-services": "الخدمات التنموية",
+      "emergency-support": "الدعم الطارئ"
+    }
+  },
+  "ku": {
+    "title": "منداڵان",
+    "description": "زانیاری دەربارەی مافەکانی منداڵان، پەروەردە، چاودێری تەندروستی و پاراستن.",
+    "tiles": {
+      "childrens-rights": "مافەکانی منداڵان",
+      "education": "پەروەردە و قوتابخانەکان",
+      "healthcare": "چاودێری تەندروستی منداڵان",
+      "child-protection": "پاراستنی منداڵ",
+      "childcare": "خزمەتگوزاری چاودێری منداڵ",
+      "family-support": "پشتگیری خێزان",
+      "developmental-services": "خزمەتگوزاری گەشەپێدان",
+      "emergency-support": "پشتگیری فریاکەوتن"
+    }
+  },
+  "so": {
+    "title": "Carruurta",
+    "description": "Macluumaad ku saabsan xuquuqda carruurta, waxbarashada, daryeelka caafimaadka iyo ilaalinta.",
+    "tiles": {
+      "childrens-rights": "Xuquuqda Carruurta",
+      "education": "Waxbarashada iyo Dugsiyada",
+      "healthcare": "Daryeelka Caafimaadka Carruurta",
+      "child-protection": "Ilaalinta Carruurta",
+      "childcare": "Adeegyada Daryeelka Carruurta",
+      "family-support": "Taageero Qoyska",
+      "developmental-services": "Adeegyada Horumarka",
+      "emergency-support": "Taageero Degdegga ah"
+    }
+  },
+  "ka": {
+    "title": "ბავშვები",
+    "description": "ინფორმაცია ბავშვთა უფლებების, განათლების, ჯანდაცვისა და დაცვის შესახებ.",
+    "tiles": {
+      "childrens-rights": "ბავშვთა უფლებები",
+      "education": "განათლება და სკოლები",
+      "healthcare": "ბავშვთა ჯანდაცვა",
+      "child-protection": "ბავშვთა დაცვა",
+      "childcare": "ბავშვთა მოვლის სერვისები",
+      "family-support": "ოჯახის მხარდაჭერა",
+      "developmental-services": "განვითარების სერვისები",
+      "emergency-support": "გადაუდებელი მხარდაჭერა"
+    }
+  },
+  "sq": {
+    "title": "Fëmijët",
+    "description": "Informacion rreth të drejtave të fëmijëve, arsimit, kujdesit shëndetësor dhe mbrojtjes.",
+    "tiles": {
+      "childrens-rights": "Të Drejtat e Fëmijëve",
+      "education": "Arsimi dhe Shkollat",
+      "healthcare": "Kujdesi Shëndetësor i Fëmijëve",
+      "child-protection": "Mbrojtja e Fëmijëve",
+      "childcare": "Shërbimet e Kujdesit ndaj Fëmijëve",
+      "family-support": "Mbështetja e Familjes",
+      "developmental-services": "Shërbimet e Zhvillimit",
+      "emergency-support": "Mbështetja Emergjente"
+    }
+  }
+}

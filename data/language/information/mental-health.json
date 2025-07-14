@@ -1,0 +1,170 @@
+{
+  "en": {
+    "title": "Mental Health",
+    "description": "Access mental health resources, counseling services, and wellness support.",
+    "tiles": {
+      "mental-health-basics": "Mental Health Basics",
+      "counseling-services": "Counseling Services",
+      "crisis-support": "Crisis Support",
+      "therapy-options": "Therapy Options",
+      "wellness-resources": "Wellness Resources",
+      "support-groups": "Support Groups",
+      "mental-health-professionals": "Mental Health Professionals",
+      "self-care": "Self-Care"
+    }
+  },
+  "de": {
+    "title": "Psychische Gesundheit",
+    "description": "Zugang zu Ressourcen für psychische Gesundheit, Beratungsdiensten und Wellness-Unterstützung.",
+    "tiles": {
+      "mental-health-basics": "Grundlagen der psychischen Gesundheit",
+      "counseling-services": "Beratungsdienste",
+      "crisis-support": "Krisenunterstützung",
+      "therapy-options": "Therapieoptionen",
+      "wellness-resources": "Wellness-Ressourcen",
+      "support-groups": "Selbsthilfegruppen",
+      "mental-health-professionals": "Fachkräfte für psychische Gesundheit",
+      "self-care": "Selbstfürsorge"
+    }
+  },
+  "ru": {
+    "title": "Психическое здоровье",
+    "description": "Доступ к ресурсам психического здоровья, консультационным услугам и поддержке благополучия.",
+    "tiles": {
+      "mental-health-basics": "Основы психического здоровья",
+      "counseling-services": "Консультационные услуги",
+      "crisis-support": "Кризисная поддержка",
+      "therapy-options": "Варианты терапии",
+      "wellness-resources": "Ресурсы благополучия",
+      "support-groups": "Группы поддержки",
+      "mental-health-professionals": "Специалисты по психическому здоровью",
+      "self-care": "Самообслуживание"
+    }
+  },
+  "ce": {
+    "title": "Психически хьал",
+    "description": "Психически хьалан ресурсаш, консультационни хилам а, хьалан жигаран гIо а.",
+    "tiles": {
+      "mental-health-basics": "Психически хьалан коьрта хаамаш",
+      "counseling-services": "Консультационни хилам",
+      "crisis-support": "Кризисан гIо",
+      "therapy-options": "Терапийн варианташ",
+      "wellness-resources": "Хьалан жигаран ресурсаш",
+      "support-groups": "ГIолла тоба",
+      "mental-health-professionals": "Психически хьалан специалисташ",
+      "self-care": "Шайн хьалан хьажорг"
+    }
+  },
+  "prs": {
+    "title": "سلامت روانی",
+    "description": "دسترسی به منابع سلامت روانی، خدمات مشاوره و حمایت رفاه.",
+    "tiles": {
+      "mental-health-basics": "مبانی سلامت روانی",
+      "counseling-services": "خدمات مشاوره",
+      "crisis-support": "حمایت بحران",
+      "therapy-options": "گزینه‌های درمان",
+      "wellness-resources": "منابع رفاه",
+      "support-groups": "گروه‌های حمایتی",
+      "mental-health-professionals": "متخصصان سلامت روانی",
+      "self-care": "مراقبت از خود"
+    }
+  },
+  "ps": {
+    "title": "ذهني روغتیا",
+    "description": "د ذهني روغتیا سرچینو، مشورې خدماتو او د هوساینې ملاتړ ته لاسرسي.",
+    "tiles": {
+      "mental-health-basics": "د ذهني روغتیا بنسټونه",
+      "counseling-services": "د مشورې خدمات",
+      "crisis-support": "د بحران ملاتړ",
+      "therapy-options": "د درملنې انتخابونه",
+      "wellness-resources": "د هوساینې سرچینې",
+      "support-groups": "د ملاتړ ډلې",
+      "mental-health-professionals": "د ذهني روغتیا مسلکی",
+      "self-care": "د ځان پاملرنه"
+    }
+  },
+  "fa": {
+    "title": "سلامت روان",
+    "description": "دسترسی به منابع سلامت روان، خدمات مشاوره و حمایت از سلامتی.",
+    "tiles": {
+      "mental-health-basics": "مبانی سلامت روان",
+      "counseling-services": "خدمات مشاوره",
+      "crisis-support": "حمایت در بحران",
+      "therapy-options": "گزینه‌های درمان",
+      "wellness-resources": "منابع تندرستی",
+      "support-groups": "گروه‌های حمایتی",
+      "mental-health-professionals": "متخصصان سلامت روان",
+      "self-care": "مراقبت از خود"
+    }
+  },
+  "ar": {
+    "title": "الصحة النفسية",
+    "description": "الوصول إلى موارد الصحة النفسية وخدمات الإرشاد ودعم العافية.",
+    "tiles": {
+      "mental-health-basics": "أساسيات الصحة النفسية",
+      "counseling-services": "خدمات الإرشاد",
+      "crisis-support": "دعم الأزمات",
+      "therapy-options": "خيارات العلاج",
+      "wellness-resources": "موارد العافية",
+      "support-groups": "مجموعات الدعم",
+      "mental-health-professionals": "أخصائيو الصحة النفسية",
+      "self-care": "العناية بالذات"
+    }
+  },
+  "ku": {
+    "title": "تەندروستی دەروونی",
+    "description": "دەستگەیشتن بە سەرچاوەکانی تەندروستی دەروونی، خزمەتگوزاری ڕاوێژکاری و پشتگیری تەندروستی.",
+    "tiles": {
+      "mental-health-basics": "بنەماکانی تەندروستی دەروونی",
+      "counseling-services": "خزمەتگوزاری ڕاوێژکاری",
+      "crisis-support": "پشتگیری قەیران",
+      "therapy-options": "هەڵبژاردەکانی چارەسەری",
+      "wellness-resources": "سەرچاوەکانی تەندروستی",
+      "support-groups": "گروپەکانی پشتگیری",
+      "mental-health-professionals": "پسپۆڕانی تەندروستی دەروونی",
+      "self-care": "چاودێری خۆمان"
+    }
+  },
+  "so": {
+    "title": "Caafimaadka Maskaxda",
+    "description": "Helitaanka kheyraadka caafimaadka maskaxda, adeegyada latalinta iyo taageerada caafimaadka.",
+    "tiles": {
+      "mental-health-basics": "Aasaaska Caafimaadka Maskaxda",
+      "counseling-services": "Adeegyada Latalinta",
+      "crisis-support": "Taageero Dhibaato",
+      "therapy-options": "Ikhtiyaarada Daaweynta",
+      "wellness-resources": "Kheyraadka Caafimaadka",
+      "support-groups": "Kooxaha Taageerada",
+      "mental-health-professionals": "Takhasuska Caafimaadka Maskaxda",
+      "self-care": "Is-daryeelka"
+    }
+  },
+  "ka": {
+    "title": "ფსიქიკური ჯანმრთელობა",
+    "description": "წვდომა ფსიქიკური ჯანმრთელობის რესურსებზე, კონსულტაციის სერვისებსა და კეთილდღეობის მხარდაჭერაზე.",
+    "tiles": {
+      "mental-health-basics": "ფსიქიკური ჯანმრთელობის საფუძვლები",
+      "counseling-services": "კონსულტაციის სერვისები",
+      "crisis-support": "კრიზისული მხარდაჭერა",
+      "therapy-options": "თერაპიის ოპციები",
+      "wellness-resources": "კეთილდღეობის რესურსები",
+      "support-groups": "მხარდაჭერის ჯგუფები",
+      "mental-health-professionals": "ფსიქიკური ჯანმრთელობის სპეციალისტები",
+      "self-care": "თვითმოვლა"
+    }
+  },
+  "sq": {
+    "title": "Shëndeti Mendor",
+    "description": "Qasja në burimet e shëndetit mendor, shërbimet e këshillimit dhe mbështetjen e mirëqenies.",
+    "tiles": {
+      "mental-health-basics": "Bazat e Shëndetit Mendor",
+      "counseling-services": "Shërbimet e Këshillimit",
+      "crisis-support": "Mbështetja në Krizë",
+      "therapy-options": "Opsionet e Terapisë",
+      "wellness-resources": "Burimet e Mirëqenies",
+      "support-groups": "Grupet e Mbështetjes",
+      "mental-health-professionals": "Profesionistët e Shëndetit Mendor",
+      "self-care": "Kujdesi për Veten"
+    }
+  }
+}

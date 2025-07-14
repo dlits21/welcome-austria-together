@@ -1,0 +1,170 @@
+{
+  "en": {
+    "title": "Women",
+    "description": "Support and resources for women, including rights, healthcare, and services.",
+    "tiles": {
+      "womens-rights": "Women's Rights",
+      "domestic-violence": "Domestic Violence Support",
+      "healthcare": "Women's Healthcare",
+      "employment": "Employment and Career",
+      "legal-support": "Legal Support",
+      "childcare": "Childcare Support",
+      "education": "Education and Training",
+      "financial-independence": "Financial Independence"
+    }
+  },
+  "de": {
+    "title": "Frauen",
+    "description": "Unterstützung und Ressourcen für Frauen, einschließlich Rechte, Gesundheitsversorgung und Dienstleistungen.",
+    "tiles": {
+      "womens-rights": "Frauenrechte",
+      "domestic-violence": "Häusliche Gewalt Unterstützung",
+      "healthcare": "Frauengesundheit",
+      "employment": "Beschäftigung und Karriere",
+      "legal-support": "Rechtliche Unterstützung",
+      "childcare": "Kinderbetreuung",
+      "education": "Bildung und Ausbildung",
+      "financial-independence": "Finanzielle Unabhängigkeit"
+    }
+  },
+  "ru": {
+    "title": "Женщины",
+    "description": "Поддержка и ресурсы для женщин, включая права, здравоохранение и услуги.",
+    "tiles": {
+      "womens-rights": "Права женщин",
+      "domestic-violence": "Поддержка при домашнем насилии",
+      "healthcare": "Здоровье женщин",
+      "employment": "Трудоустройство и карьера",
+      "legal-support": "Правовая поддержка",
+      "childcare": "Поддержка по уходу за детьми",
+      "education": "Образование и обучение",
+      "financial-independence": "Финансовая независимость"
+    }
+  },
+  "ce": {
+    "title": "Зудчий",
+    "description": "Зудчийн гIо а, ресурсаш а, цунна йолу бартамаш а, хьеҙрига маккиш а, хилам а.",
+    "tiles": {
+      "womens-rights": "Зудчийн бартамаш",
+      "domestic-violence": "Доьзалехь зулам бехкийн гIо",
+      "healthcare": "Зудчийн хьеҙрига",
+      "employment": "Болх а, карьера а",
+      "legal-support": "Юридически гIо",
+      "childcare": "Берийн хьал болийн гIо",
+      "education": "Дешар а, дыхандар а",
+      "financial-independence": "Финансови серлопа"
+    }
+  },
+  "prs": {
+    "title": "زنان",
+    "description": "حمایت و منابع برای زنان، شامل حقوق، مراقبت‌های بهداشتی و خدمات.",
+    "tiles": {
+      "womens-rights": "حقوق زنان",
+      "domestic-violence": "حمایت از خشونت خانگی",
+      "healthcare": "مراقبت‌های بهداشتی زنان",
+      "employment": "اشتغال و حرفه",
+      "legal-support": "حمایت حقوقی",
+      "childcare": "حمایت از مراقبت کودک",
+      "education": "آموزش و تربیت",
+      "financial-independence": "استقلال مالی"
+    }
+  },
+  "ps": {
+    "title": "میرمنې",
+    "description": "د میرمنو لپاره ملاتړ او سرچینې، د حقوقو، روغتیایی پاملرنې او خدماتو په شمول.",
+    "tiles": {
+      "womens-rights": "د میرمنو حقونه",
+      "domestic-violence": "د کورنۍ تاوتریخوالي ملاتړ",
+      "healthcare": "د میرمنو روغتیایی پاملرنه",
+      "employment": "دندې او مسلک",
+      "legal-support": "قانوني ملاتړ",
+      "childcare": "د ماشومانو پاملرنې ملاتړ",
+      "education": "زده کړه او روزنه",
+      "financial-independence": "مالي خپلواکي"
+    }
+  },
+  "fa": {
+    "title": "زنان",
+    "description": "حمایت و منابع برای زنان، شامل حقوق، مراقبت‌های بهداشتی و خدمات.",
+    "tiles": {
+      "womens-rights": "حقوق زنان",
+      "domestic-violence": "حمایت از خشونت خانگی",
+      "healthcare": "مراقبت‌های بهداشتی زنان",
+      "employment": "اشتغال و شغل",
+      "legal-support": "حمایت حقوقی",
+      "childcare": "حمایت مراقبت از کودک",
+      "education": "آموزش و پرورش",
+      "financial-independence": "استقلال مالی"
+    }
+  },
+  "ar": {
+    "title": "النساء",
+    "description": "الدعم والموارد للنساء، بما في ذلك الحقوق والرعاية الصحية والخدمات.",
+    "tiles": {
+      "womens-rights": "حقوق المرأة",
+      "domestic-violence": "دعم العنف المنزلي",
+      "healthcare": "الرعاية الصحية للنساء",
+      "employment": "التوظيف والمهنة",
+      "legal-support": "الدعم القانوني",
+      "childcare": "دعم رعاية الأطفال",
+      "education": "التعليم والتدريب",
+      "financial-independence": "الاستقلال المالي"
+    }
+  },
+  "ku": {
+    "title": "ئافرەتان",
+    "description": "پشتگیری و سەرچاوەکان بۆ ئافرەتان، بەشداربوونی مافەکان، چاودێری تەندروستی و خزمەتگوزاری.",
+    "tiles": {
+      "womens-rights": "مافەکانی ئافرەتان",
+      "domestic-violence": "پشتگیری توندوتیژی ماڵەوە",
+      "healthcare": "چاودێری تەندروستی ئافرەتان",
+      "employment": "کار و پیشە",
+      "legal-support": "پشتگیری یاسایی",
+      "childcare": "پشتگیری چاودێری منداڵ",
+      "education": "پەروەردە و ڕاهێنان",
+      "financial-independence": "سەربەخۆیی دارایی"
+    }
+  },
+  "so": {
+    "title": "Haweenka",
+    "description": "Taageero iyo ilaha haweenka, oo ay ku jiraan xuquuqda, daryeelka caafimaadka iyo adeegyada.",
+    "tiles": {
+      "womens-rights": "Xuquuqda Haweenka",
+      "domestic-violence": "Taageero Rabshadaha Guriga",
+      "healthcare": "Daryeelka Caafimaadka Haweenka",
+      "employment": "Shaqada iyo Xirfadda",
+      "legal-support": "Taageero Sharci",
+      "childcare": "Taageero Daryeelka Carruurta",
+      "education": "Waxbarasho iyo Tababar",
+      "financial-independence": "Madax-bannaanida Dhaqaalaha"
+    }
+  },
+  "ka": {
+    "title": "ქალები",
+    "description": "ქალთა მხარდაჭერა და რესურსები, ჩათვლით უფლებები, ჯანდაცვა და მომსახურება.",
+    "tiles": {
+      "womens-rights": "ქალთა უფლებები",
+      "domestic-violence": "ოჯახური ძალადობის მხარდაჭერა",
+      "healthcare": "ქალთა ჯანდაცვა",
+      "employment": "დასაქმება და კარიერა",
+      "legal-support": "იურიდიული მხარდაჭერა",
+      "childcare": "ბავშვთა მოვლის მხარდაჭერა",
+      "education": "განათლება და ტრენინგი",
+      "financial-independence": "ფინანსური დამოუკიდებლობა"
+    }
+  },
+  "sq": {
+    "title": "Gratë",
+    "description": "Mbështetje dhe burime për gratë, përfshirë të drejtat, kujdesin shëndetësor dhe shërbimet.",
+    "tiles": {
+      "womens-rights": "Të Drejtat e Grave",
+      "domestic-violence": "Mbështetje ndaj Dhunës në Familje",
+      "healthcare": "Kujdesi Shëndetësor i Grave",
+      "employment": "Punësimi dhe Karriera",
+      "legal-support": "Mbështetje Ligjore",
+      "childcare": "Mbështetje për Kujdesin ndaj Fëmijëve",
+      "education": "Arsimi dhe Trajnimi",
+      "financial-independence": "Pavarësia Financiare"
+    }
+  }
+}

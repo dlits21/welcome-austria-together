@@ -1,0 +1,170 @@
+{
+  "en": {
+    "title": "Climate Change",
+    "description": "Learn about climate change impacts, sustainability, and environmental protection.",
+    "tiles": {
+      "climate-science": "Climate Science",
+      "environmental-protection": "Environmental Protection",
+      "sustainability": "Sustainability",
+      "renewable-energy": "Renewable Energy",
+      "waste-management": "Waste Management",
+      "green-transportation": "Green Transportation",
+      "climate-adaptation": "Climate Adaptation",
+      "environmental-activism": "Environmental Activism"
+    }
+  },
+  "de": {
+    "title": "Klimawandel",
+    "description": "Erfahren Sie mehr über Klimawandel-Auswirkungen, Nachhaltigkeit und Umweltschutz.",
+    "tiles": {
+      "climate-science": "Klimawissenschaft",
+      "environmental-protection": "Umweltschutz",
+      "sustainability": "Nachhaltigkeit",
+      "renewable-energy": "Erneuerbare Energien",
+      "waste-management": "Abfallwirtschaft",
+      "green-transportation": "Grüne Mobilität",
+      "climate-adaptation": "Klimaanpassung",
+      "environmental-activism": "Umweltaktivismus"
+    }
+  },
+  "ru": {
+    "title": "Изменение климата",
+    "description": "Узнайте о влиянии изменения климата, устойчивости и охране окружающей среды.",
+    "tiles": {
+      "climate-science": "Наука о климате",
+      "environmental-protection": "Охрана окружающей среды",
+      "sustainability": "Устойчивость",
+      "renewable-energy": "Возобновляемая энергия",
+      "waste-management": "Управление отходами",
+      "green-transportation": "Экологический транспорт",
+      "climate-adaptation": "Адаптация к климату",
+      "environmental-activism": "Экологический активизм"
+    }
+  },
+  "ce": {
+    "title": "Климатан хийцам",
+    "description": "Климатан хийцамин йоккхийна, устойчивости а, лорама гIонца а хIума болийна.",
+    "tiles": {
+      "climate-science": "Климатан Iилма",
+      "environmental-protection": "Лораман ларам",
+      "sustainability": "Устойчивост",
+      "renewable-energy": "Керланийн энергеш",
+      "waste-management": "Къинхетарийн урхалла",
+      "green-transportation": "ХIадахь транспорт",
+      "climate-adaptation": "Климатан хийцамийн адаптаци",
+      "environmental-activism": "Лораман активизм"
+    }
+  },
+  "prs": {
+    "title": "تغییرات آب و هوایی",
+    "description": "درباره تأثیرات تغییرات آب و هوایی، پایداری و حفاظت محیط زیست بیاموزید.",
+    "tiles": {
+      "climate-science": "علوم آب و هوا",
+      "environmental-protection": "حفاظت محیط زیست",
+      "sustainability": "پایداری",
+      "renewable-energy": "انرژی تجدیدپذیر",
+      "waste-management": "مدیریت زباله",
+      "green-transportation": "حمل و نقل سبز",
+      "climate-adaptation": "سازگاری با آب و هوا",
+      "environmental-activism": "فعالیت محیط زیست"
+    }
+  },
+  "ps": {
+    "title": "د اقلیم بدلون",
+    "description": "د اقلیم د بدلون اغیزو، دوامدارتیا او د چاپیریال د ساتنې په اړه زده کړئ.",
+    "tiles": {
+      "climate-science": "د اقلیم ساینس",
+      "environmental-protection": "د چاپیریال ساتنه",
+      "sustainability": "دوامدارتیا",
+      "renewable-energy": "د تجدیدپذیرې انرژۍ",
+      "waste-management": "د کثافاتو مدیریت",
+      "green-transportation": "شین ترانسپورت",
+      "climate-adaptation": "د اقلیم سره تطبیق",
+      "environmental-activism": "د چاپیریال فعالیت"
+    }
+  },
+  "fa": {
+    "title": "تغییر اقلیم",
+    "description": "درباره تأثیرات تغییر اقلیم، پایداری و حفاظت از محیط زیست بیاموزید.",
+    "tiles": {
+      "climate-science": "علوم اقلیم",
+      "environmental-protection": "حفاظت محیط زیست",
+      "sustainability": "پایداری",
+      "renewable-energy": "انرژی تجدیدپذیر",
+      "waste-management": "مدیریت زباله",
+      "green-transportation": "حمل و نقل سبز",
+      "climate-adaptation": "سازگاری اقلیمی",
+      "environmental-activism": "فعالیت زیست محیطی"
+    }
+  },
+  "ar": {
+    "title": "تغير المناخ",
+    "description": "تعلم عن تأثيرات تغير المناخ والاستدامة وحماية البيئة.",
+    "tiles": {
+      "climate-science": "علوم المناخ",
+      "environmental-protection": "حماية البيئة",
+      "sustainability": "الاستدامة",
+      "renewable-energy": "الطاقة المتجددة",
+      "waste-management": "إدارة النفايات",
+      "green-transportation": "النقل الأخضر",
+      "climate-adaptation": "التكيف مع المناخ",
+      "environmental-activism": "النشاط البيئي"
+    }
+  },
+  "ku": {
+    "title": "گۆڕانی کەشوهەوا",
+    "description": "فێربوون دەربارەی کاریگەری گۆڕانی کەشوهەوا، بەردەوامی و پاراستنی ژینگە.",
+    "tiles": {
+      "climate-science": "زانستی کەشوهەوا",
+      "environmental-protection": "پاراستنی ژینگە",
+      "sustainability": "بەردەوامی",
+      "renewable-energy": "وزەی نوێکردنەوە",
+      "waste-management": "بەڕێوەبردنی پاشماوە",
+      "green-transportation": "گواستنەوەی سەوز",
+      "climate-adaptation": "گونجاندن لەگەڵ کەشوهەوا",
+      "environmental-activism": "چالاکی ژینگەیی"
+    }
+  },
+  "so": {
+    "title": "Isbeddelka Cimilada",
+    "description": "Baro saameynta isbeddelka cimilada, joogteynta iyo ilaalinta deegaanka.",
+    "tiles": {
+      "climate-science": "Cilmiga Cimilada",
+      "environmental-protection": "Ilaalinta Deegaanka",
+      "sustainability": "Joogteynta",
+      "renewable-energy": "Tamarta Cusub",
+      "waste-management": "Maamulka Qashinka",
+      "green-transportation": "Gaadiidka Cagaaran",
+      "climate-adaptation": "La Qabsiga Cimilada",
+      "environmental-activism": "Firfircoonida Deegaanka"
+    }
+  },
+  "ka": {
+    "title": "კლიმატის ცვლილება",
+    "description": "შეისწავლეთ კლიმატის ცვლილების ზეგავლენა, მდგრადობა და გარემოს დაცვა.",
+    "tiles": {
+      "climate-science": "კლიმატის მეცნიერება",
+      "environmental-protection": "გარემოს დაცვა",
+      "sustainability": "მდგრადობა",
+      "renewable-energy": "განახლებადი ენერგია",
+      "waste-management": "ნარჩენების მართვა",
+      "green-transportation": "მწვანე ტრანსპორტი",
+      "climate-adaptation": "კლიმატთან ადაპტაცია",
+      "environmental-activism": "გარემოზე ზრუნვის აქტივიზმი"
+    }
+  },
+  "sq": {
+    "title": "Ndryshimi i Klimës",
+    "description": "Mësoni rreth ndikimit të ndryshimit të klimës, qëndrueshmërisë dhe mbrojtjes mjedisore.",
+    "tiles": {
+      "climate-science": "Shkenca e Klimës",
+      "environmental-protection": "Mbrojtja Mjedisore",
+      "sustainability": "Qëndrueshmëria",
+      "renewable-energy": "Energjia e Rinovueshme",
+      "waste-management": "Menaxhimi i Mbetjeve",
+      "green-transportation": "Transporti i Gjelbër",
+      "climate-adaptation": "Përshtatja me Klimën",
+      "environmental-activism": "Aktivizmi Mjedisor"
+    }
+  }
+}
