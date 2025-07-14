@@ -241,6 +241,44 @@
         "ka": "ყოველთვის შეგიძლიათ დააწკაპუნოთ დახმარების/ტუტორიალის ნიშანზე ნებისმიერ გვერდზე.",
         "sq": "Gjithmonë mund të shtypni ikonën e ndihmës/tutorialit në çdo faqe për të marrë më shumë informacion."
       }
+    },
+    {
+      "id": 6,
+      "type": "category",
+      "title": {
+        "en": "Health Information",
+        "de": "Gesundheitsinformationen",
+        "ru": "Информация о здоровье",
+        "ce": "Саламашкахь хаамаш",
+        "fa-AF": "معلومات صحی",
+        "ps": "د روغتیا معلومات",
+        "fa": "اطلاعات سلامت",
+        "ar": "معلومات الصحة",
+        "ku": "Agahdariya Tenduristiyê",
+        "so": "Macluumaadka Caafimaadka",
+        "ka": "ჯანმრთელობის ინფორმაცია",
+        "sq": "Informacioni mbi Shëndetin"
+      },
+      "text": {
+        "en": "Access healthcare services, understand insurance systems, and find medical professionals in Austria.",
+        "de": "Zugang zu Gesundheitsdiensten, Verständnis von Versicherungssystemen und Suche nach Medizinern in Österreich.",
+        "ru": "Доступ к медицинским услугам, понимание страховых систем и поиск медицинских специалистов в Австрии.",
+        "ce": "Австрихь эколашкахь саламашкахь гӀуллакхаш латтар, страховка системаш гӀан.",
+        "fa-AF": "دسترسی به خدمات بهداشتی، درک سیستم‌های بیمه و یافتن متخصصان پزشکی در اتریش.",
+        "ps": "د روغتیا خدماتو ته لاسرسی، د بیمې سیسټمونو پوهه او په اتریش کې د طبي متخصصینو موندل.",
+        "fa": "دسترسی به خدمات بهداشتی، درک سیستم‌های بیمه و یافتن متخصصان پزشکی در اتریش.",
+        "ar": "الوصول إلى الخدمات الصحية وفهم أنظمة التأمين والعثور على المتخصصين الطبيين في النمسا.",
+        "ku": "Gihîştina karûbarên tenduristiyê, têgihîştina pergalên bîmeyê û dîtina pisporyên bijîşkî li Awistiriyayê.",
+        "so": "Helitaanka adeegyada caafimaadka, fahamka habka caymiska iyo helitaanka takhasuusyada caafimaadka Awstariya.",
+        "ka": "ჯანდაცვის სერვისებზე წვდომა, სადაზღვევო სისტემების გაგება და სამედიცინო სპეციალისტების მოძიება ავსტრიაში.",
+        "sq": "Qasja në shërbimet shëndetësore, kuptimi i sistemeve të sigurimit dhe gjetja e profesionistëve mjekësorë në Austri."
+      },
+      "category": {
+        "title": "health",
+        "description": "health_summary",
+        "icon": "local-hospital",
+        "color": "#EF4444"
+      }
     }
   ]
 }
