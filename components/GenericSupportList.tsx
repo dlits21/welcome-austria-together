@@ -46,6 +46,7 @@ interface GenericSupportListProps {
   noResultsText: string;
   resetFiltersText: string;
   resultsFoundText: string;
+  isGermanLearning?: boolean;
 }
 
 const GenericSupportList: React.FC<GenericSupportListProps> = ({
@@ -58,7 +59,8 @@ const GenericSupportList: React.FC<GenericSupportListProps> = ({
   categoryConfig,
   noResultsText,
   resetFiltersText,
-  resultsFoundText
+  resultsFoundText,
+  isGermanLearning = false
 }) => {
   const router = useRouter();
   const [filteredEntities, setFilteredEntities] = useState<Entity[]>([]);
@@ -73,6 +75,12 @@ const GenericSupportList: React.FC<GenericSupportListProps> = ({
     if (filters.supportType) {
       filtered = filtered.filter(entity =>
           entity.supportTypes && entity.supportTypes.includes(filters.supportType)
+        );
+    }
+
+    if (filters.level) {
+      filtered = filtered.filter(entity =>
+          entity.supportTypes && entity.supportTypes.includes(filters.level)
         );
     }
 
@@ -165,15 +173,34 @@ const GenericSupportList: React.FC<GenericSupportListProps> = ({
                   {getEntityTitle(entity)}
                 </Text>
                 <View style={styles.badgeContainer}>
-                  <View style={[styles.urgencyBadge, { backgroundColor: getUrgencyColor(entity.urgency) }]}>
-                    <Text style={styles.badgeText}>
-                      {entity.urgency === 'urgent' 
-                        ? (getGlobalText('urgent', languageCode))
-                        : (getGlobalText('nonUrgent', languageCode))}
-                    </Text>
-                  </View>
+                  {isGermanLearning ? (
+                    // For German learning, show level badge instead of urgency
+                    entity.supportTypes && entity.supportTypes.find(type => ['A0', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'].some(level => type.includes(level))) && (
+                      <View style={[styles.levelBadge, { backgroundColor: '#3B82F6' }]}>
+                        <Text style={styles.badgeText}>
+                          {entity.supportTypes.find(type => ['A0', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'].some(level => type.includes(level)))}
+                        </Text>
+                      </View>
+                    )
+                  ) : (
+                    <View style={[styles.urgencyBadge, { backgroundColor: getUrgencyColor(entity.urgency) }]}>
+                      <Text style={styles.badgeText}>
+                        {entity.urgency === 'urgent' 
+                          ? (getGlobalText('urgent', languageCode))
+                          : (getGlobalText('nonUrgent', languageCode))}
+                      </Text>
+                    </View>
+                  )}
                 </View>
               </View>
+              {/* Course Type Tag for German Learning */}
+              {isGermanLearning && (
+                <View style={[styles.courseTypeBadge, { backgroundColor: getCategoryColor(entity.category) }]}>
+                  <Text style={styles.courseTypeText}>
+                    {getTranslation(entity.category, languageCode)}
+                  </Text>
+                </View>
+              )}
             </View>
 
             <Text style={styles.entityDescription}>
@@ -213,10 +240,13 @@ const GenericSupportList: React.FC<GenericSupportListProps> = ({
               </View>
             )}
 
-            <View style={styles.contactInfo}>
-              <MaterialIcons name="phone" size={16} color="#6B7280" />
-              <Text style={styles.contactText}>{entity.contact.phone}</Text>
-            </View>
+            {/* Only show phone if it exists */}
+            {entity.contact.phone && entity.contact.phone.trim() && (
+              <View style={styles.contactInfo}>
+                <MaterialIcons name="phone" size={16} color="#6B7280" />
+                <Text style={styles.contactText}>{entity.contact.phone}</Text>
+              </View>
+            )}
           </TouchableOpacity>
         ))}
 
@@ -311,6 +341,25 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     marginRight: 8,
     marginBottom: 4,
+  },
+  levelBadge: {
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 12,
+    marginRight: 8,
+    marginBottom: 4,
+  },
+  courseTypeBadge: {
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 6,
+    marginLeft: 8,
+  },
+  courseTypeText: {
+    fontSize: 10,
+    fontWeight: '600',
+    color: '#fff',
+    textTransform: 'uppercase',
   },
   badgeText: {
     fontSize: 12,
