@@ -62,16 +62,11 @@ const GermanLearningPage = () => {
     const courseIndices = courseLevels.map(level => levelOrder.indexOf(level)).filter(i => i !== -1);
     const courseMin = Math.min(...courseIndices);
     const courseMax = Math.max(...courseIndices);
-    console.error('courseLevels:', courseLevels);
-    console.error('CourseMin:', courseMin);
-    console.error('CourseMax:', courseMax);
 
     // Get min and max for selected levels
     const selectedIndices = selectedLevels.map(level => levelOrder.indexOf(level)).filter(i => i !== -1);
     const selectedMin = Math.min(...selectedIndices);
     const selectedMax = Math.max(...selectedIndices);
-    console.error('selectedMin:', selectedMin);
-    console.error('selectedMax:', selectedMax);
 
     // Check if ranges overlap
     return !(courseMax < selectedMin || courseMin > selectedMax);

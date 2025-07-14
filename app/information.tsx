@@ -23,9 +23,8 @@ import informationLanguageData from '../data/language/information.json';
 const Information: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [searchInput, setSearchInput] = useState('');
-  const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
-  const [showTutorialModal, setShowTutorialModal] = useState(false);
+  const [showTutorial, setShowTutorial] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
   const [searchQuery, setSearchQuery] = useState<string>('');
   const router = useRouter();
@@ -67,11 +66,9 @@ const Information: React.FC = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <PageNavigation 
-        toggleSound={toggleSound}
-        soundEnabled={soundEnabled}
+      <PageNavigation
         showLanguageModal={() => setShowLanguageModal(true)}
-        showHelpModal={() => setShowTutorialModal(true)}
+        showTutorial={() => setShowTutorial(true)}
         showVirtualAssistant={() => setShowVirtualAssistant(true)}
       />
       
@@ -102,8 +99,8 @@ const Information: React.FC = () => {
       
       {/* Tutorial Modal */}
       <TutorialModal
-        visible={showTutorialModal}
-        onClose={() => setShowTutorialModal(false)}
+        visible={showTutorial}
+        onClose={() => setShowTutorial(false)}
         languageCode={language.code}
         tutorialData="information"
       />

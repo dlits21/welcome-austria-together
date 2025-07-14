@@ -16,7 +16,6 @@ import { getAskText } from '../utils/languageUtils';
 const AskPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const router = useRouter();
-  const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
   const [showTutorial, setShowTutorial] = useState(false);

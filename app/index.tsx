@@ -35,6 +35,7 @@ import VirtualAssistantModal from "../components/VirtualAssistantModal";
 import TutorialModal from "../components/TutorialModal";
 
 // Language data with correct flags and languages
+// (English, German, Russian, Chechen, Dari, Pashto, Persian, Arabic, Kurdish, Somali, Georgian, Albanian)
 const languages = [
   { code: "de", name: "Deutsch", flag: GermanFlag }, // German
   { code: "en", name: "English", flag: GBFlag }, // English
