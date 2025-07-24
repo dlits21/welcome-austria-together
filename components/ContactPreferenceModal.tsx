@@ -10,10 +10,11 @@ import {
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { handleContactClick } from '../utils/contactUtils';
-import FacebookIcon from '../assets/images/facebook.svg';
-import SignalIcon from '../assets/images/signal.svg';
-import WhatsAppIcon from '../assets/images/whatsapp.svg';
-import TelegramIcon from '../assets/images/telegram.svg';
+// For React Native, we'll use MaterialIcons instead of SVG imports
+// import FacebookIcon from '../assets/images/facebook.svg';
+// import SignalIcon from '../assets/images/signal.svg';
+// import WhatsAppIcon from '../assets/images/whatsapp.svg';
+// import TelegramIcon from '../assets/images/telegram.svg';
 
 // Import general support translations
 import generalTranslations from '../data/language/ask/general.json';
@@ -70,7 +71,7 @@ const ContactPreferenceModal: React.FC<ContactPreferenceModalProps> = ({
                   style={styles.contactOption}
                   onPress={() => handleContactSelection('whatsapp')}
                 >
-                  <WhatsAppIcon width={24} height={24} />
+                  <MaterialIcons name="message" size={24} color="#25D366" />
                   <Text style={styles.optionText}>WhatsApp</Text>
                 </TouchableOpacity>
                 
@@ -78,7 +79,7 @@ const ContactPreferenceModal: React.FC<ContactPreferenceModalProps> = ({
                   style={styles.contactOption}
                   onPress={() => handleContactSelection('signal')}
                 >
-                  <SignalIcon width={24} height={24} />
+                  <MaterialIcons name="security" size={24} color="#3A76F0" />
                   <Text style={styles.optionText}>Signal</Text>
                 </TouchableOpacity>
                 
@@ -86,7 +87,7 @@ const ContactPreferenceModal: React.FC<ContactPreferenceModalProps> = ({
                   style={styles.contactOption}
                   onPress={() => handleContactSelection('telegram')}
                 >
-                  <TelegramIcon width={24} height={24} />
+                  <MaterialIcons name="send" size={24} color="#0088CC" />
                   <Text style={styles.optionText}>Telegram</Text>
                 </TouchableOpacity>
                 
@@ -94,7 +95,7 @@ const ContactPreferenceModal: React.FC<ContactPreferenceModalProps> = ({
                   style={styles.contactOption}
                   onPress={() => handleContactSelection('facebook')}
                 >
-                  <FacebookIcon width={24} height={24} />
+                  <MaterialIcons name="facebook" size={24} color="#1877F2" />
                   <Text style={styles.optionText}>Facebook</Text>
                 </TouchableOpacity>
               </View>

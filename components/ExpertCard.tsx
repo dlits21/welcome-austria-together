@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
   actionButton: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     backgroundColor: '#fff',
     paddingHorizontal: 16,
     paddingVertical: 12,

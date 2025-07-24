@@ -6,7 +6,8 @@ import {
   Modal,
   TouchableOpacity,
   SafeAreaView,
-  ScrollView
+  ScrollView,
+  Platform
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { WebView } from 'react-native-webview';
@@ -48,13 +49,26 @@ const BookAppointmentModal: React.FC<BookAppointmentModalProps> = ({
           </View>
           
           <View style={styles.content}>
-            <WebView
-              source={{ uri: 'https://calendly.com/dlits2111' }}
-              style={styles.calendly}
-              javaScriptEnabled={true}
-              domStorageEnabled={true}
-              startInLoadingState={true}
-            />
+            {Platform.OS === 'web' ? (
+              <iframe
+                src="https://calendly.com/dlits2111"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  minHeight: 600,
+                  border: 'none'
+                }}
+                frameBorder="0"
+              />
+            ) : (
+              <WebView
+                source={{ uri: 'https://calendly.com/dlits2111' }}
+                style={styles.calendly}
+                javaScriptEnabled={true}
+                domStorageEnabled={true}
+                startInLoadingState={true}
+              />
+            )}
           </View>
         </SafeAreaView>
       </View>
