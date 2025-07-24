@@ -147,7 +147,7 @@ const GeneralSupport: React.FC = () => {
       <ScrollView style={styles.scrollView} contentContainerStyle={styles.contentContainer}>
         {/* Talk to a mentor */}
         <AccordionItem
-          title="Ask a general question to a peer"
+          title={getGeneralText('talkToMentor', currentLanguage)}
           icon="question-answer"
           iconColor="#3B82F6"
           expanded={expandedSection === 'mentor'}
@@ -187,7 +187,7 @@ const GeneralSupport: React.FC = () => {
         
         {/* Ask the community */}
         <AccordionItem
-          title="Ask the community"
+          title={getGeneralText('askCommunity', currentLanguage)}
           icon="people"
           iconColor="#10B981"
           expanded={expandedSection === 'community'}
@@ -217,7 +217,7 @@ const GeneralSupport: React.FC = () => {
 
         {/* Visit us online */}
         <AccordionItem
-          title="Ask a specific question to our experts"
+          title={getGeneralText('visitUsOnline', currentLanguage)}
           icon="computer"
           iconColor="#666"
           expanded={expandedSection === 'online'}
@@ -239,7 +239,7 @@ const GeneralSupport: React.FC = () => {
         
         {/* Visit in person */}
         <AccordionItem
-          title="Come to our office"
+          title={getGeneralText('visitInPerson', currentLanguage)}
           icon="location-on"
           iconColor="#8B5CF6"
           expanded={expandedSection === 'visit'}
@@ -254,9 +254,24 @@ const GeneralSupport: React.FC = () => {
           ))}
         </AccordionItem>
 
+        {/* Virtual Chatbots */}
+        <AccordionItem
+          title={getGeneralText('talkToVirtualChatbots', currentLanguage)}
+          icon="android"
+          iconColor="#9C27B0"
+          expanded={expandedSection === 'chatbots'}
+          onPress={() => toggleSection('chatbots')}
+        >
+          <ContactButton 
+            title={getGeneralText('talkToVirtualChatbots', currentLanguage)}
+            icon="android" 
+            onPress={() => setShowVirtualAssistant(true)}
+          />
+        </AccordionItem>
+
         {/* FAQ Section */}
         <AccordionItem
-          title="FAQ"
+          title={getGeneralText('faq', currentLanguage)}
           icon="help"
           iconColor="#F59E0B"
           expanded={expandedSection === 'faq'}

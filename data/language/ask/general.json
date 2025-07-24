@@ -322,6 +322,20 @@
     "ka": "FAQ",
     "sq": "FAQ"
   },
+  "talkToVirtualChatbots": {
+    "en": "Talk to one of our Virtual Chatbots",
+    "de": "Sprechen Sie mit einem unserer virtuellen Chatbots",
+    "ru": "Поговорите с одним из наших виртуальных чат-ботов",
+    "ce": "Шуьга виртуальни чат-ботийн цхьаннан дувцал",
+    "prs": "با یکی از چت بات‌های مجازی ما صحبت کنید",
+    "ps": "زموږ د مجازي چیټ بوټونو څخه د یوه سره خبرې وکړئ",
+    "fa": "با یکی از چت بات‌های مجازی ما صحبت کنید",
+    "ar": "تحدث مع أحد روبوتات الدردشة الافتراضية لدينا",
+    "ku": "قسەکردن لەگەڵ یەکێک لە چاتبۆتە مەجازییەکانمان",
+    "so": "Kala hadal mid ka mid ah chatbots-ka maya ah ee aynu leenahay",
+    "ka": "ისაუბრეთ ჩვენი ვირტუალური ჩატბოტებიდან ერთ-ერთთან",
+    "sq": "Flisni me një nga Chatbot-et tanë virtualë"
+  },
   "faqQuestion1": {
     "en": "How can I schedule an appointment?",
     "de": "Wie kann ich einen Termin vereinbaren?",

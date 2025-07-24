@@ -34,8 +34,14 @@ const ExpertCard: React.FC<ExpertCardProps> = ({
   const [showGroupMeetings, setShowGroupMeetings] = useState(false);
   const [showContactPreference, setShowContactPreference] = useState(false);
   
-  // Fixed expert image - use abdul.png for all experts
-  const expertImage = require('../assets/images/abdul.png');
+  // Get a unique PNG for each expert based on their name
+  const getExpertImage = (expertName: string) => {
+    const imageNames = ['abdul.png', 'amina.png', 'arlinda.png', 'fatima.png', 'giorgi.png', 'leila.png', 'liridon.png', 'maryam.png', 'nino.png', 'omar.png', 'rustam.png', 'timur.png', 'zainab.png'];
+    const index = expertName.length % imageNames.length;
+    return require(`../assets/images/${imageNames[index]}`);
+  };
+  
+  const expertImage = getExpertImage(name);
 
   const handleTextContact = () => {
     setShowContactPreference(true);
@@ -83,13 +89,6 @@ const ExpertCard: React.FC<ExpertCardProps> = ({
           <Text style={styles.actionButtonText}>{getGeneralText('textMe', languageCode)}</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity 
-          style={styles.actionButton}
-          onPress={handleEmailContact}
-        >
-          <MaterialIcons name="email" size={16} color="#F59E0B" />
-          <Text style={styles.actionButtonText}>{getGeneralText('emailMe', languageCode)}</Text>
-        </TouchableOpacity>
       </View>
 
       {/* Modals */}
