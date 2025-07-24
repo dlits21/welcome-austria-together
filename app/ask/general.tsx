@@ -147,7 +147,7 @@ const GeneralSupport: React.FC = () => {
       <ScrollView style={styles.scrollView} contentContainerStyle={styles.contentContainer}>
         {/* Talk to a mentor */}
         <AccordionItem
-          title={getGeneralText('talkToMentor', currentLanguage)}
+          title="Ask a general question to a peer"
           icon="question-answer"
           iconColor="#3B82F6"
           expanded={expandedSection === 'mentor'}
@@ -187,7 +187,7 @@ const GeneralSupport: React.FC = () => {
         
         {/* Ask the community */}
         <AccordionItem
-          title={getGeneralText('askCommunity', currentLanguage)}
+          title="Ask the community"
           icon="people"
           iconColor="#10B981"
           expanded={expandedSection === 'community'}
@@ -217,7 +217,7 @@ const GeneralSupport: React.FC = () => {
 
         {/* Visit us online */}
         <AccordionItem
-          title={getGeneralText('visitUsOnline', currentLanguage)}
+          title="Ask a specific question to our experts"
           icon="computer"
           iconColor="#666"
           expanded={expandedSection === 'online'}
@@ -239,7 +239,7 @@ const GeneralSupport: React.FC = () => {
         
         {/* Visit in person */}
         <AccordionItem
-          title={getGeneralText('visitInPerson', currentLanguage)}
+          title="Come to our office"
           icon="location-on"
           iconColor="#8B5CF6"
           expanded={expandedSection === 'visit'}
@@ -256,7 +256,7 @@ const GeneralSupport: React.FC = () => {
 
         {/* FAQ Section */}
         <AccordionItem
-          title={getGeneralText('faq', currentLanguage)}
+          title="FAQ"
           icon="help"
           iconColor="#F59E0B"
           expanded={expandedSection === 'faq'}

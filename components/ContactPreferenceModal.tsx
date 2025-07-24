@@ -67,7 +67,7 @@ const ContactPreferenceModal: React.FC<ContactPreferenceModalProps> = ({
             
             {contactType === 'text' && (
               <View style={styles.optionsContainer}>
-                <TouchableOpacity 
+                <TouchableOpacity
                   style={styles.contactOption}
                   onPress={() => handleContactSelection('whatsapp')}
                 >
@@ -75,7 +75,7 @@ const ContactPreferenceModal: React.FC<ContactPreferenceModalProps> = ({
                   <Text style={styles.optionText}>WhatsApp</Text>
                 </TouchableOpacity>
                 
-                <TouchableOpacity 
+                <TouchableOpacity
                   style={styles.contactOption}
                   onPress={() => handleContactSelection('signal')}
                 >
@@ -83,7 +83,7 @@ const ContactPreferenceModal: React.FC<ContactPreferenceModalProps> = ({
                   <Text style={styles.optionText}>Signal</Text>
                 </TouchableOpacity>
                 
-                <TouchableOpacity 
+                <TouchableOpacity
                   style={styles.contactOption}
                   onPress={() => handleContactSelection('telegram')}
                 >
@@ -91,12 +91,20 @@ const ContactPreferenceModal: React.FC<ContactPreferenceModalProps> = ({
                   <Text style={styles.optionText}>Telegram</Text>
                 </TouchableOpacity>
                 
-                <TouchableOpacity 
+                <TouchableOpacity
                   style={styles.contactOption}
                   onPress={() => handleContactSelection('facebook')}
                 >
                   <MaterialIcons name="facebook" size={24} color="#1877F2" />
                   <Text style={styles.optionText}>Facebook</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                  style={styles.contactOption}
+                  onPress={() => handleContactSelection('email')}
+                >
+                  <MaterialIcons name="email" size={24} color="#F59E0B" />
+                  <Text style={styles.optionText}>Email</Text>
                 </TouchableOpacity>
               </View>
             )}

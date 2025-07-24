@@ -87,8 +87,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 12,
     margin: 20,
-    maxHeight: '80%',
-    width: '90%',
+    maxHeight: '90%',
+    width: '95%',
+    flex: 1,
   },
   header: {
     flexDirection: 'row',
@@ -103,10 +104,12 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
+    minHeight: 500,
   },
   calendly: {
     flex: 1,
-    minHeight: 600,
+    minHeight: 500,
+    width: '100%',
   },
 });
 

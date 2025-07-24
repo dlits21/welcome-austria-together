@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { getGlobalText } from '../utils/languageUtils';
 import BookAppointmentModal from './BookAppointmentModal';
 import GroupMeetingsModal from './GroupMeetingsModal';
 import ContactPreferenceModal from './ContactPreferenceModal';
+import { handleContactClick } from '../utils/contactUtils';
 
 // Import general support translations
 import generalTranslations from '../data/language/ask/general.json';
@@ -32,23 +33,39 @@ const ExpertCard: React.FC<ExpertCardProps> = ({
   const [showBookAppointment, setShowBookAppointment] = useState(false);
   const [showGroupMeetings, setShowGroupMeetings] = useState(false);
   const [showContactPreference, setShowContactPreference] = useState(false);
-  const [contactType, setContactType] = useState<'text' | 'email'>('text');
+  
+  // Random expert images
+  const expertImages = [
+    require('../assets/images/abdul.png'),
+    require('../assets/images/amina.png'),
+    require('../assets/images/arlinda.png'),
+    require('../assets/images/fatima.png'),
+    require('../assets/images/giorgi.png'),
+    require('../assets/images/leila.png'),
+    require('../assets/images/liridon.png'),
+    require('../assets/images/maryam.png'),
+    require('../assets/images/nino.png'),
+    require('../assets/images/omar.png'),
+    require('../assets/images/rustam.png'),
+    require('../assets/images/timur.png'),
+    require('../assets/images/zainab.png'),
+  ];
+  
+  const randomImage = expertImages[Math.floor(Math.random() * expertImages.length)];
 
   const handleTextContact = () => {
-    setContactType('text');
     setShowContactPreference(true);
   };
 
   const handleEmailContact = () => {
-    setContactType('email');
-    setShowContactPreference(true);
+    handleContactClick('email', true, languageCode);
   };
 
   return (
     <View style={styles.expertCard}>
       <View style={styles.expertHeader}>
         <View style={styles.avatarContainer}>
-          <MaterialIcons name="person" size={40} color="#3B82F6" />
+          <Image source={randomImage} style={styles.expertImage} />
         </View>
         <View style={styles.expertInfo}>
           <Text style={styles.expertName}>{name}</Text>
@@ -109,7 +126,7 @@ const ExpertCard: React.FC<ExpertCardProps> = ({
         visible={showContactPreference}
         onClose={() => setShowContactPreference(false)}
         languageCode={languageCode}
-        contactType={contactType}
+        contactType="text"
       />
     </View>
   );
@@ -139,6 +156,11 @@ const styles = StyleSheet.create({
   },
   avatarContainer: {
     marginBottom: 12,
+  },
+  expertImage: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
   },
   expertInfo: {
     alignItems: 'center',
