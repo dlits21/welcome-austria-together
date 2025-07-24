@@ -69,7 +69,7 @@
       "type": "category",
       "id": 2,
       "title": {
-        "en": "Ask a General Question to a Peer",
+        "en": "Ask a general question to a peer",
         "de": "Stelle eine allgemeine Frage an einen Kollegen",
         "ru": "Задать общий вопрос сверстнику",
         "ce": "Йоьхна цхьаннан йуьхь хаттар де",
@@ -107,7 +107,7 @@
       "type": "category",
       "id": 3,
       "title": {
-        "en": "Ask the Community",
+        "en": "Ask the community",
         "de": "Frage die Community",
         "ru": "Спросить сообщество",
         "ce": "Жамlате хаттар де",
@@ -145,7 +145,7 @@
       "type": "category",
       "id": 4,
       "title": {
-        "en": "Ask a Specific Question to Our Experts",
+        "en": "Ask a specific question to our experts",
         "de": "Stellen Sie eine spezifische Frage an unsere Experten",
         "ru": "Задайте конкретный вопрос нашим экспертам",
         "ce": "Шуьга экспертийн конкретни хаттар де",
@@ -183,7 +183,7 @@
       "type": "category",
       "id": 5,
       "title": {
-        "en": "Come to Our Office",
+        "en": "Come to our office",
         "de": "Kommen Sie in unser Büro",
         "ru": "Приходите в наш офис",
         "ce": "Шуьга офисехь хьажа де",
@@ -221,7 +221,7 @@
       "type": "category",
       "id": 6,
       "title": {
-        "en": "Frequently Asked Questions",
+        "en": "FAQ",
         "de": "Häufig gestellte Fragen",
         "ru": "Часто задаваемые вопросы",
         "ce": "Дуккха хатторш",
@@ -285,6 +285,44 @@
         "so": "Ku bedel 12 luqadood oo kala duwan marwalba ah. Appku wuxuu taageeraa Jarmal, Ingiriis, Ruush, Chechen, Dari, Pashto, Farsi, Carabi, Kurdish, Soomaali, Georgian, iyo Albanian.",
         "ka": "ნებისმიერ დროს გადართეთ 12 სხვადასხვა ენას შორის. აპლიკაცია მხარს უჭერს გერმანულს, ინგლისურს, რუსულს, ჩეჩნურს, დარის, პაშტოს, ფარსს, არაბულს, ქურთულს, სომალიურს, ქართულს და ალბანურს.",
         "sq": "Ndryshoni midis 12 gjuhëve të ndryshme në çdo kohë. Aplikacioni mbështet gjermanishten, anglishten, rusishten, çeçenishten, dari, pashto, farsishten, arabishten, kurdishten, somalisht, gjeorgjishten dhe shqipen."
+      }
+    },
+    {
+      "type": "category",
+      "id": 7,
+      "title": {
+        "en": "Talk to one of our Virtual Chatbots",
+        "de": "Sprechen Sie mit einem unserer virtuellen Chatbots",
+        "ru": "Поговорите с одним из наших виртуальных чат-ботов",
+        "ce": "Шуьга виртуальни чат-ботийн цхьаннан дувцал",
+        "prs": "با یکی از چت بات‌های مجازی ما صحبت کنید",
+        "ps": "زموږ د مجازي چیټ بوټونو څخه د یوه سره خبرې وکړئ",
+        "fa": "با یکی از چت بات‌های مجازی ما صحبت کنید",
+        "ar": "تحدث مع أحد روبوتات الدردشة الافتراضية لدينا",
+        "ku": "قسەکردن لەگەڵ یەکێک لە چاتبۆتە مەجازییەکانمان",
+        "so": "Kala hadal mid ka mid ah chatbots-ka maya ah ee aynu leenahay",
+        "ka": "ისაუბრეთ ჩვენი ვირტუალური ჩატბოტებიდან ერთ-ერთთან",
+        "sq": "Flisni me një nga Chatbot-et tanë virtualë"
+      },
+      "text": {
+        "en": "Get instant help from our AI-powered virtual assistants who can answer your questions and guide you through various topics.",
+        "de": "Erhalten Sie sofortige Hilfe von unseren KI-gestützten virtuellen Assistenten, die Ihre Fragen beantworten und Sie durch verschiedene Themen führen können.",
+        "ru": "Получите мгновенную помощь от наших виртуальных помощников на базе ИИ, которые могут ответить на ваши вопросы и провести вас через различные темы.",
+        "ce": "Шуьга ИИ-н гӀирса кхечу виртуальни ассистентийн тӀаьхьа йолийна гӀо схьа.",
+        "prs": "از دستیاران مجازی هوش مصنوعی ما کمک فوری دریافت کنید که می‌توانند به سوالات شما پاسخ دهند و شما را در موضوعات مختلف راهنمایی کنند.",
+        "ps": "زموږ د مصنوعي هوښیارۍ پر بنسټ والو مجازي مرستیالانو څخه سمدستي مرسته واخلئ چې ستاسو ته ځوابونه ورکړي او ستاسو لارښود وي.",
+        "fa": "از دستیاران مجازی هوش مصنوعی ما کمک فوری دریافت کنید که می‌توانند به سوالات شما پاسخ دهند و شما را راهنمایی کنند.",
+        "ar": "احصل على مساعدة فورية من مساعدينا الافتراضيين المدعومين بالذكاء الاصطناعي الذين يمكنهم الإجابة على أسئلتك وإرشادك.",
+        "ku": "یارمەتی خێرا لە یاریدەدەرە مەجازییەکانمان وەربگرن کە دەتوانن وەڵامی پرسیارەکانت بدەنەوە.",
+        "so": "Hel degdeg ah ka hel kaaliyeyaashada maya ah ee AI-ga kaashaday kuwaas oo jawaabi kara su'aalahaga.",
+        "ka": "მიიღეთ მყისიერი დახმარება ჩვენი AI-ით გაძლიერებული ვირტუალური ასისტენტებისგან.",
+        "sq": "Merrni ndihmë të menjëhershme nga asistentët tanë virtualë të fuqizuar nga AI-ja."
+      },
+      "category": {
+        "title": "talkToVirtualChatbots",
+        "description": "talkToVirtualChatbotsDescription",
+        "icon": "android",
+        "color": "#9C27B0"
       }
     },
     {

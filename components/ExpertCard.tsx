@@ -34,23 +34,14 @@ const ExpertCard: React.FC<ExpertCardProps> = ({
   const [showGroupMeetings, setShowGroupMeetings] = useState(false);
   const [showContactPreference, setShowContactPreference] = useState(false);
   
-  // Get a unique PNG for each expert based on their name
-  const expertImageDict = {
-      'abdul.png': `../assets/images/abdul.png`,
-      'fatima.png': `../assets/images/fatima.png`,
-      'arlinda.png': `../assets/images/arlinda.png`,
-      'giorgi.png': `../assets/images/giorgi.png`,
-      'leila.png': `../assets/images/leila.png`,
-      'liridon.png': `../assets/images/liridon.png`,
-      'maryam.png': `../assets/images/maryam.png`,
-      'nino.png': `../assets/images/nino.png`,
-      'omar.png': `../assets/images/omar.png`,
-      'rustam.png': `../assets/images/rustam.png`,
-      'timur.png': `../assets/images/timur.png`,
-      'zainab.png': `../assets/images/zainab.png`,
-    };
-
-  const expertImage = expertImageDict?.[name];
+  // Get a unique PNG for each expert based on their name (cycling through 5 images)
+  const getExpertImage = (expertName: string) => {
+    const imageNames = ['abdul.png', 'amina.png', 'arlinda.png', 'fatima.png', 'giorgi.png'];
+    const index = expertName.length % imageNames.length;
+    return require(`../assets/images/${imageNames[index]}`);
+  };
+  
+  const expertImage = getExpertImage(name);
 
   const handleTextContact = () => {
     setShowContactPreference(true);
