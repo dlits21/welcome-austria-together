@@ -42,41 +42,20 @@ const BookAppointmentModal: React.FC<BookAppointmentModalProps> = ({
       <View style={styles.modalOverlay}>
         <SafeAreaView style={styles.modalContainer}>
           <View style={styles.header}>
-            <Text style={styles.modalTitle}>
-              {getGeneralText('bookAppointmentTitle', languageCode)}
-            </Text>
             <TouchableOpacity onPress={onClose} style={styles.closeButton}>
               <MaterialIcons name="close" size={24} color="#666" />
             </TouchableOpacity>
           </View>
           
-          <ScrollView style={styles.content}>
-            <View style={styles.expertInfo}>
-              <MaterialIcons name="person" size={48} color="#3B82F6" />
-              <Text style={styles.expertName}>{expertName}</Text>
-            </View>
-            
-            <Text style={styles.description}>
-              {getGeneralText('bookAppointmentDescription', languageCode)}
-            </Text>
-
-            <iframe src="https://calendly.com/dlits2111" style={styles.calendly}
-                frameborder="0">
-            </iframe>
-
-            <View style={styles.actionButtons}>
-              <TouchableOpacity style={styles.confirmButton} onPress={onClose}>
-                <Text style={styles.confirmButtonText}>
-                  {getGeneralText('getAppointment', languageCode)}
-                </Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.cancelButton} onPress={onClose}>
-                <Text style={styles.cancelButtonText}>
-                  {getGeneralText('cancel', languageCode)}
-                </Text>
-              </TouchableOpacity>
-            </View>
-          </ScrollView>
+          <View style={styles.content}>
+            <WebView
+              source={{ uri: 'https://calendly.com/dlits2111' }}
+              style={styles.calendly}
+              javaScriptEnabled={true}
+              domStorageEnabled={true}
+              startInLoadingState={true}
+            />
+          </View>
         </SafeAreaView>
       </View>
     </Modal>
@@ -99,86 +78,21 @@ const styles = StyleSheet.create({
   },
   header: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-end',
     alignItems: 'center',
     padding: 20,
     borderBottomWidth: 1,
     borderBottomColor: '#e0e0e0',
   },
-  modalTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#333',
-  },
   closeButton: {
     padding: 8,
   },
   content: {
-    padding: 20,
+    flex: 1,
   },
   calendly: {
-    width: "100%",
-    midWidth: 320,
-  },
-  expertInfo: {
-    alignItems: 'center',
-    marginBottom: 20,
-  },
-  expertName: {
-    fontSize: 18,
-    fontWeight: '600',
-    color: '#333',
-    marginTop: 8,
-  },
-  description: {
-    fontSize: 16,
-    color: '#666',
-    lineHeight: 24,
-    textAlign: 'center',
-    marginBottom: 20,
-  },
-  calendarPlaceholder: {
-    alignItems: 'center',
-    backgroundColor: '#f8f9fa',
-    padding: 40,
-    borderRadius: 12,
-    marginBottom: 20,
-    borderWidth: 2,
-    borderColor: '#e9ecef',
-    borderStyle: 'dashed',
-  },
-  calendarText: {
-    fontSize: 16,
-    color: '#666',
-    marginTop: 12,
-    textAlign: 'center',
-  },
-  actionButtons: {
-    gap: 12,
-  },
-  confirmButton: {
-    backgroundColor: '#3B82F6',
-    paddingVertical: 12,
-    paddingHorizontal: 24,
-    borderRadius: 8,
-    alignItems: 'center',
-  },
-  confirmButtonText: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: '600',
-  },
-  cancelButton: {
-    backgroundColor: '#f0f0f0',
-    paddingVertical: 12,
-    paddingHorizontal: 24,
-    borderRadius: 8,
-    alignItems: 'center',
-  },
-  cancelButtonText: {
-    color: '#666',
-    fontSize: 16,
-    fontWeight: '600',
+    flex: 1,
+    minHeight: 600,
   },
 });
 
