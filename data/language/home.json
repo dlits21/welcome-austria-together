@@ -44,6 +44,20 @@
         "ka": "კითხვა",
         "sq": "Pyet"
       },
+      "subtitle": {
+        "en": "talk to us, ask us a question, reach out to experts",
+        "de": "sprechen Sie mit uns, stellen Sie uns eine Frage, wenden Sie sich an Experten",
+        "ru": "поговорите с нами, задайте нам вопрос, обратитесь к экспертам",
+        "ce": "тӀехь дувцар, хатт кхоьлла тӀехь, экспертийн кхичу",
+        "prs": "با ما صحبت کنید، از ما سوال بپرسید، با متخصصان تماس بگیرید",
+        "ps": "له موږ سره خبرې وکړئ، له موږ څخه پوښتنه وکړئ، متخصصینو ته ورسیږئ",
+        "fa": "با ما صحبت کنید، از ما سوال بپرسید، با متخصصان تماس بگیرید",
+        "ar": "تحدث معنا، اسألنا سؤالاً، تواصل مع الخبراء",
+        "ku": "قسەمان لەگەڵ بکە، پرسیارمان لێ بکە، پەیوەندی بە پسپۆڕانەوە بکە",
+        "so": "nala hadal, weydii su'aal, kula xidhiidh khubarada",
+        "ka": "ისაუბრეთ ჩვენთან, დაგვისვით კითხვა, დაუკავშირდით ექსპერტებს",
+        "sq": "flisni me ne, bëni një pyetje, kontaktoni ekspertët"
+      },
       "description": {
         "en": "Ask questions",
         "de": "Stellen Sie Fragen",
@@ -73,6 +87,20 @@
         "so": "Macluumaad",
         "ka": "ინფორმაცია",
         "sq": "Informacion"
+      },
+      "subtitle": {
+        "en": "find out everything you need to know about life in Austria",
+        "de": "finden Sie alles heraus, was Sie über das Leben in Österreich wissen müssen",
+        "ru": "узнайте всё, что вам нужно знать о жизни в Австрии",
+        "ce": "Австрехь гӀиллакхехь лаьцна йиш ю массо хуьлуьйту",
+        "prs": "همه چیزی را که باید در مورد زندگی در اتریش بدانید، پیدا کنید",
+        "ps": "د اتریش د ژوند په اړه ټول هغه څه ومومئ چې تاسو ته اړین دي",
+        "fa": "همه چیزی را که باید در مورد زندگی در اتریش بدانید، پیدا کنید",
+        "ar": "اكتشف كل ما تحتاج لمعرفته حول الحياة في النمسا",
+        "ku": "هەموو ئەو شتانە بدۆزەرەوە کە پێویستت بە زانینیانە دەربارەی ژیان لە نەمسا",
+        "so": "soo hel dhammaan waxa aad u baahan tahay inaad ka ogaato nolosha Austriya",
+        "ka": "გაიგეთ ყველაფერი, რაც ავსტრიაში ცხოვრების შესახებ უნდა იცოდეთ",
+        "sq": "zbuloni gjithçka që duhet të dini për jetën në Austri"
       },
       "description": {
         "en": "Important information",
@@ -104,6 +132,20 @@
         "ka": "სწავლა",
         "sq": "Mëso"
       },
+      "subtitle": {
+        "en": "learn new skills and get certificates that help you in Austria",
+        "de": "lernen Sie neue Fähigkeiten und erhalten Sie Zertifikate, die Ihnen in Österreich helfen",
+        "ru": "изучайте новые навыки и получайте сертификаты, которые помогут вам в Австрии",
+        "ce": "керлачу хӀумнаш дешар, Австрехь гӀо дича сертификаташ дӀахо",
+        "prs": "مهارت‌های جدید یاد بگیرید و گواهینامه‌هایی بگیرید که در اتریش به شما کمک می‌کند",
+        "ps": "نوي مهارتونه زده کړئ او هغه سندونه ترلاسه کړئ چې ستاسو سره په اتریش کې مرسته کوي",
+        "fa": "مهارت‌های جدید یاد بگیرید و گواهینامه‌هایی بگیرید که در اتریش به شما کمک می‌کند",
+        "ar": "تعلم مهارات جديدة واحصل على شهادات تساعدك في النمسا",
+        "ku": "شارەزاییەکانی نوێ فێر ببە و بڕوانامەکان وەربگرە کە لە نەمسا یارمەتیت دەدەن",
+        "so": "baro xirfado cusub oo hel shahaadooyin ku caawiya Austriya",
+        "ka": "ისწავლეთ ახალი უნარები და მიიღეთ სერტიფიკატები, რომლებიც დაგეხმარებათ ავსტრიაში",
+        "sq": "mësoni aftësi të reja dhe merrni certifikata që ju ndihmojnë në Austri"
+      },
       "description": {
         "en": "Learning materials",
         "de": "Lernmaterialien",
@@ -133,6 +175,20 @@
         "so": "Bulshada",
         "ka": "საზოგადოება",
         "sq": "Komuniteti"
+      },
+      "subtitle": {
+        "en": "do you need help? can you help others? connect to others in your neighborhood",
+        "de": "brauchen Sie Hilfe? können Sie anderen helfen? verbinden Sie sich mit anderen in Ihrer Nachbarschaft",
+        "ru": "вам нужна помощь? можете ли вы помочь другим? связывайтесь с другими в вашем районе",
+        "ce": "хьуна гӀо лаьцна? хьан кхечу нахана гӀо луш ю? хьан юьртан кхечу нахаца цхьаьнакхетар",
+        "prs": "آیا به کمک نیاز دارید؟ آیا می‌توانید به دیگران کمک کنید؟ با دیگران در محله‌تان ارتباط برقرار کنید",
+        "ps": "تاسو ته د مرستې اړتیا ده؟ تاسو کولی شئ نورو ته مرسته وکړئ؟ په خپل ګاونډ کې د نورو سره اړیکه ونیسئ",
+        "fa": "آیا به کمک نیاز دارید؟ آیا می‌توانید به دیگران کمک کنید؟ با دیگران در محله‌تان ارتباط برقرار کنید",
+        "ar": "هل تحتاج مساعدة؟ هل يمكنك مساعدة الآخرين؟ تواصل مع الآخرين في حيك",
+        "ku": "پێویستیت بە یارمەتی هەیە؟ دەتوانیت یارمەتی خەڵکانی تر بدەیت؟ پەیوەندی بە کەسانی تری ناوچەکەتەوە بکە",
+        "so": "ma u baahan tahay caawimo? ma kaa caawin kartaa kuwa kale? ku xidh dadka kale ee dariska",
+        "ka": "გჭირდებათ დახმარება? შეგიძლიათ სხვებს დაეხმაროთ? დაუკავშირდით სხვებს თქვენს უბანში",
+        "sq": "a keni nevojë për ndihmë? a mund të ndihmoni të tjerët? lidhuni me të tjerët në lagjen tuaj"
       },
       "description": {
         "en": "Community resources",

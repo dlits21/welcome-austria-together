@@ -65,16 +65,16 @@ const Home: React.FC = () => {
 
   // Get translations using the new utility functions
   const askTitle = getHomeText('categories.ask.title', currentLanguage);
-  const askSubtitle = getHomeText('categories.ask.description', currentLanguage);
+  const askSubtitle = getHomeText('categories.ask.subtitle', currentLanguage);
     
   const infoTitle = getHomeText('categories.information.title', currentLanguage);
-  const infoSubtitle = getHomeText('categories.information.description', currentLanguage);
+  const infoSubtitle = getHomeText('categories.information.subtitle', currentLanguage);
     
   const learnTitle = getHomeText('categories.learn.title', currentLanguage);
-  const learnSubtitle = getHomeText('categories.learn.description', currentLanguage);
+  const learnSubtitle = getHomeText('categories.learn.subtitle', currentLanguage);
     
   const communityTitle = getHomeText('categories.community.title', currentLanguage);
-  const communitySubtitle = getHomeText('categories.community.description', currentLanguage);
+  const communitySubtitle = getHomeText('categories.community.subtitle', currentLanguage);
 
   return (
     <SafeAreaView style={styles.container}>
