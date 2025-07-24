@@ -34,24 +34,8 @@ const ExpertCard: React.FC<ExpertCardProps> = ({
   const [showGroupMeetings, setShowGroupMeetings] = useState(false);
   const [showContactPreference, setShowContactPreference] = useState(false);
   
-  // Random expert images
-  const expertImages = [
-    require('../assets/images/abdul.png'),
-    require('../assets/images/amina.png'),
-    require('../assets/images/arlinda.png'),
-    require('../assets/images/fatima.png'),
-    require('../assets/images/giorgi.png'),
-    require('../assets/images/leila.png'),
-    require('../assets/images/liridon.png'),
-    require('../assets/images/maryam.png'),
-    require('../assets/images/nino.png'),
-    require('../assets/images/omar.png'),
-    require('../assets/images/rustam.png'),
-    require('../assets/images/timur.png'),
-    require('../assets/images/zainab.png'),
-  ];
-  
-  const randomImage = expertImages[Math.floor(Math.random() * expertImages.length)];
+  // Fixed expert image - use abdul.png for all experts
+  const expertImage = require('../assets/images/abdul.png');
 
   const handleTextContact = () => {
     setShowContactPreference(true);
@@ -65,7 +49,7 @@ const ExpertCard: React.FC<ExpertCardProps> = ({
     <View style={styles.expertCard}>
       <View style={styles.expertHeader}>
         <View style={styles.avatarContainer}>
-          <Image source={randomImage} style={styles.expertImage} />
+        <Image source={expertImage} style={styles.expertImage} />
         </View>
         <View style={styles.expertInfo}>
           <Text style={styles.expertName}>{name}</Text>
