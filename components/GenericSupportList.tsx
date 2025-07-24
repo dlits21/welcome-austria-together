@@ -175,10 +175,10 @@ const GenericSupportList: React.FC<GenericSupportListProps> = ({
                 <View style={styles.badgeContainer}>
                   {isGermanLearning ? (
                     // For German learning, show level badge instead of urgency
-                    entity.supportTypes && entity.supportTypes.find(type => ['A0', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'].some(level => type.includes(level))) && (
+                    entity.level && entity.level.find(type => ['A0', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'].some(level => type.includes(level))) && (
                       <View style={[styles.levelBadge, { backgroundColor: '#3B82F6' }]}>
                         <Text style={styles.badgeText}>
-                          {entity.supportTypes.find(type => ['A0', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'].some(level => type.includes(level)))}
+                          {entity.level.join("-")}
                         </Text>
                       </View>
                     )

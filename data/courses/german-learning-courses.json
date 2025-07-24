@@ -376,7 +376,7 @@
     "courseDetails": {
       "level": "A1-B2",
       "price": "Free",
-      "location": "Austria-wide",
+      "location": "nationwide",
       "certificate": "Yes",
       "type": "course"
     },
@@ -564,7 +564,7 @@
     },
     "tags": ["A0‑B1", "Free", "Vienna", "NGO", "ÖSD Preparation"],
     "hasMap": true,
-    "isResource": true,
+    "isResource": false,
     "forWomen": true,
     "forYoungMigrants": false,
     "childcare": true,
@@ -852,7 +852,7 @@
       "price": "Free",
       "location": "Online",
       "certificate": "Yes",
-      "type": "resource"
+      "type": "course"
     },
     "tags": [
       "A1–B2",
@@ -891,7 +891,7 @@
     "courseDetails": {
       "level": "A1-C1",
       "price": "Free",
-      "location": "Austria-wide",
+      "location": "nationwide",
       "certificate": "Yes (ÖIF)",
       "type": "course"
     },
@@ -931,7 +931,6 @@
     },
     "courseDetails": {
       "level": "A0-A2",
-      "price": "Free",
       "price": "Free",
       "location": "Vienna",
       "certificate": "No",
@@ -1192,7 +1191,7 @@
       "price": "Free",
       "location": "Online",
       "certificate": "Not specified",
-      "type": "course",
+      "type": "resource",
       "duration": "Flexible",
       "schedule": "Self-paced"
     },
@@ -1206,48 +1205,6 @@
     "hasMap": false,
     "isResource": true,
     "childcare": false,
-    "forWomen": false,
-    "forYoungMigrants": false
-  },
-  "vhs_vienna": {
-    "id": "vhs_vienna",
-    "title": {
-      "en": "VHS Vienna - German Courses",
-      "de": "VHS Wien - Deutschkurse"
-    },
-    "subtitle": {
-      "en": "Wide range of German courses for all levels in Vienna",
-      "de": "Vielfältige Deutschkurse für alle Niveaustufen in Wien"
-    },
-    "provider": "Wiener Volkshochschulen (VHS)",
-    "description": {
-      "en": "Vienna's adult education centers (VHS) offer a wide range of German courses for all levels (A1 to C2). The courses are aimed at beginners as well as advanced learners and are offered in various formats, including face-to-face classes, online courses and hybrid models. The VHS places particular emphasis on practice-oriented learning and promotes integration through language competence.\n\nCourse details:\n• Level: A1-C2\n• Duration: Varies depending on the course; typically 8-12 weeks\n• Schedule: Various times, including evening and weekend courses\n• Location: Over 20 locations throughout Vienna\n• Class size: Small groups for individual attention\n• Childcare: Yes (depending on location and course)\n• Price: Paid\n• Provider: Public\n• Language support: Dari/Farsi, Arabic, English (depending on course and location)\n• Relevant: Support for integration agreements and language support\n• Certificate: Confirmation of participation\n\n\nWhat you will learn:\n• Basic to advanced German language skills\n• Communication in everyday situations\n• Pronunciation and listening comprehension\n• Simple to complex grammar and vocabulary\n• Preparation for integration exams\n\nAt the end of this course you will be able to\n• Communicate confidently in the German language\n• Understand and apply the principles of the Austrian legal and social order\n• Successfully take the integration exam\n\nFor more information and to register for courses, please visit the official website of the Wiener Volkshochschulen.",
-      "de": "Die Wiener Volkshochschulen (VHS) bieten ein breites Spektrum an Deutschkursen für alle Niveaustufen (A1 bis C1) an. Die Kurse richten sich an Anfänger*innen sowie an Fortgeschrittene und werden in verschiedenen Formaten angeboten, darunter Präsenzunterricht, Online-Kurse und hybride Modelle. Die VHS legt besonderen Wert auf praxisorientiertes Lernen und fördert die Integration durch Sprachkompetenz.\n\nKursdetails:\n• Level: A1-C2\n• Dauer: Variiert je nach Kurs; typischerweise 8–12 Wochen\n• Zeitplan: Verschiedene Zeiten, auch Abend- und Wochenendkurse\n• Ort: Über 20 Standorte in ganz Wien\n• Klassengröße: Kleine Gruppen für individuelle Betreuung\n• Kinderbetreuung: Ja (abhängig vom Standort und Kurs)\n• Preis: Kostenpflichtig\n• Anbieter: Öffentlich\n• Sprachliche Unterstützung: Dari/Farsi, Arabisch, Englisch (abhängig vom Kurs und Standort)\n• Relevant: Unterstützung für Integrationsvereinbarungen und Sprachförderung\n• Zertifikat: Teilnahmebestätigung\n\n\nWas Sie lernen werden:\n•  Grundlegende bis fortgeschrittene Deutschkenntnisse\n•  Kommunikation in Alltagssituationen\n•  Aussprache und Hörverständnis\n•  Einfache bis komplexe Grammatik und Wortschatz\n•  Vorbereitung auf Integrationsprüfungen\n\nAm Ende dieses Kurses können Sie:\n• Sich sicher in der deutschen Sprache verständigen\n• Die Prinzipien der österreichischen Rechts- und Gesellschaftsordnung verstehen und anwenden\n• Die Integrationsprüfung erfolgreich ablegen\n\nFor more information and to register for courses, please visit the official website of the Wiener Volkshochschulen."
-    },
-    "contact": {
-      "phone": "+43 1 893 00 83",
-      "email": "info@vhs.at",
-      "website": "https://www.vhs.at/de/info/deutschkurse"
-    },
-    "courseDetails": {
-      "level": "A1-C2",
-      "price": "Paid",
-      "location": "Vienna",
-      "certificate": "Confirmation of participation",
-      "type": "course",
-      "duration": "8–12 weeks",
-      "schedule": "Various, including evenings and weekends"
-    },
-    "tags": [
-      "A1–C2",
-      "Paid",
-      "Vienna",
-      "Public",
-      "Website"
-    ],
-    "hasMap": true,
-    "isResource": true,
-    "childcare": true,
     "forWomen": false,
     "forYoungMigrants": false
   },

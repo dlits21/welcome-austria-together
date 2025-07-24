@@ -11,6 +11,7 @@ import askFinancialTranslations from '../data/language/ask/financial-support.jso
 import askCulturalTranslations from '../data/language/ask/cultural.json';
 import askCareerTranslations from '../data/language/ask/career.json';
 import askDocumentTranslations from '../data/language/ask/document.json';
+import informationGermanLearningTranslations from '../data/language/information/german-learning.json';
 
 export const getGlobalText = (key: string, languageCode: string): string => {
   const translation = globalTranslations[key as keyof typeof globalTranslations];
@@ -87,4 +88,16 @@ export const getAskCareerText = (key: string, languageCode: string): string => {
 export const getAskDocumentText = (key: string, languageCode: string): string => {
   const translation = askDocumentTranslations[key as keyof typeof askDocumentTranslations];
   return translation?.[languageCode as keyof typeof translation] || translation?.en || key;
+};
+
+export const getInformationGermanLearningText = (key: string, languageCode: string): string => {
+  const keys = key.split('.');
+    let translation: any = informationGermanLearningTranslations;
+
+    for (const k of keys) {
+      translation = translation?.[k];
+    }
+    console.error("help", keys, translation)
+
+    return translation?.[languageCode as keyof typeof translation] || translation?.en || key;
 };

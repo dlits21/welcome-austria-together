@@ -6,9 +6,10 @@ import {
   Modal,
   TouchableOpacity,
   SafeAreaView,
-  ScrollView,
+  ScrollView
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { WebView } from 'react-native-webview';
 
 // Import general support translations
 import generalTranslations from '../data/language/ask/general.json';
@@ -58,14 +59,11 @@ const BookAppointmentModal: React.FC<BookAppointmentModalProps> = ({
             <Text style={styles.description}>
               {getGeneralText('bookAppointmentDescription', languageCode)}
             </Text>
-            
-            <View style={styles.calendarPlaceholder}>
-              <MaterialIcons name="calendar-month" size={48} color="#3B82F6" />
-              <Text style={styles.calendarText}>
-                {getGeneralText('selectAppointmentTime', languageCode)}
-              </Text>
-            </View>
-            
+
+            <iframe src="https://calendly.com/dlits2111" style={styles.calendly}
+                frameborder="0">
+            </iframe>
+
             <View style={styles.actionButtons}>
               <TouchableOpacity style={styles.confirmButton} onPress={onClose}>
                 <Text style={styles.confirmButtonText}>
@@ -117,6 +115,10 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: 20,
+  },
+  calendly: {
+    width: "100%",
+    midWidth: 320,
   },
   expertInfo: {
     alignItems: 'center',

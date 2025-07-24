@@ -5,7 +5,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 
 interface CategoryCardProps {
   title: string;
-  description: string;
+  subtitle: string;
   icon: keyof typeof MaterialIcons.glyphMap;
   onPress: () => void;
   color?: string;
@@ -14,7 +14,7 @@ interface CategoryCardProps {
 
 const CategoryCard: React.FC<CategoryCardProps> = ({
   title,
-  description,
+  subtitle,
   icon,
   onPress,
   color = '#3B82F6',
@@ -35,7 +35,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
           />
         </View>
         <Text style={styles.title}>{title}</Text>
-        <Text style={styles.description}>{description}</Text>
+        <Text style={styles.subtitle}>{subtitle}</Text>
       </TouchableOpacity>
     );
   }
@@ -58,7 +58,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
         />
       </View>
       <Text style={styles.title}>{title}</Text>
-      <Text style={styles.description}>{description}</Text>
+      <Text style={styles.subtitle}>{subtitle}</Text>
     </TouchableOpacity>
   );
 };
@@ -116,7 +116,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 8,
   },
-  description: {
+  subtitle: {
     fontSize: 14,
     color: '#6b7280',
     textAlign: 'center',
