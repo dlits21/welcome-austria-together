@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -46,25 +45,14 @@ const ExpertCard: React.FC<ExpertCardProps> = ({
   };
 
   return (
-    <>
-      <View style={styles.expertCard}>
-        <View style={styles.expertHeader}>
-          <View style={styles.avatarContainer}>
-            <MaterialIcons name="person" size={32} color="#666" />
-            <View style={[styles.statusIndicator, isOnline ? styles.online : styles.offline]} />
-          </View>
-          <View style={styles.expertInfo}>
-            <Text style={styles.expertName}>{name}</Text>
-            <Text style={styles.expertSpecialization}>{specialization}</Text>
-            <Text style={styles.availableDays}>{availableDays}</Text>
-          </View>
+    <View style={styles.expertCard}>
+      <View style={styles.expertHeader}>
+        <View style={styles.avatarContainer}>
+          <MaterialIcons name="person" size={40} color="#3B82F6" />
         </View>
-        <View style={styles.statusContainer}>
-          <View style={[styles.statusBadge, isOnline ? styles.onlineBadge : styles.offlineBadge]}>
-            <Text style={[styles.statusText, isOnline ? styles.onlineText : styles.offlineText]}>
-              {isOnline ? getGlobalText('online', languageCode) : getGlobalText('offline', languageCode)}
-            </Text>
-          </View>
+        <View style={styles.expertInfo}>
+          <Text style={styles.expertName}>{name}</Text>
+          <Text style={styles.expertSpecialization}>{specialization}</Text>
         </View>
       </View>
 
@@ -123,114 +111,70 @@ const ExpertCard: React.FC<ExpertCardProps> = ({
         languageCode={languageCode}
         contactType={contactType}
       />
-    </>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   expertCard: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flex: 1,
+    minWidth: 250,
+    maxWidth: 350,
     padding: 16,
     backgroundColor: '#f9f9f9',
-    borderRadius: 8,
-    marginBottom: 8,
+    borderRadius: 12,
+    margin: 8,
     borderWidth: 1,
     borderColor: '#e0e0e0',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
   },
   expertHeader: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     alignItems: 'center',
-    flex: 1,
+    marginBottom: 16,
   },
   avatarContainer: {
-    position: 'relative',
-    marginRight: 12,
-  },
-  statusIndicator: {
-    position: 'absolute',
-    bottom: -2,
-    right: -2,
-    width: 12,
-    height: 12,
-    borderRadius: 6,
-    borderWidth: 2,
-    borderColor: '#fff',
-  },
-  online: {
-    backgroundColor: '#10B981',
-  },
-  offline: {
-    backgroundColor: '#EF4444',
+    marginBottom: 12,
   },
   expertInfo: {
-    flex: 1,
+    alignItems: 'center',
   },
   expertName: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: '600',
     color: '#333',
-    marginBottom: 2,
+    marginBottom: 4,
+    textAlign: 'center',
   },
   expertSpecialization: {
     fontSize: 14,
     color: '#666',
-    marginBottom: 2,
-  },
-  availableDays: {
-    fontSize: 12,
-    color: '#888',
-  },
-  statusContainer: {
-    alignItems: 'flex-end',
-  },
-  statusBadge: {
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-    borderRadius: 12,
-  },
-  onlineBadge: {
-    backgroundColor: '#D1FAE5',
-  },
-  offlineBadge: {
-    backgroundColor: '#FEE2E2',
-  },
-  statusText: {
-    fontSize: 12,
-    fontWeight: '500',
-  },
-  onlineText: {
-    color: '#065F46',
-  },
-  offlineText: {
-    color: '#991B1B',
+    textAlign: 'center',
   },
   actionButtons: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
     gap: 8,
-    marginBottom: 12,
-    paddingHorizontal: 4,
   },
   actionButton: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
     backgroundColor: '#fff',
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    borderRadius: 6,
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    borderRadius: 8,
     borderWidth: 1,
     borderColor: '#e0e0e0',
-    flex: 1,
-    minWidth: '48%',
+    marginBottom: 8,
   },
   actionButtonText: {
-    fontSize: 12,
+    fontSize: 14,
     color: '#333',
-    marginLeft: 6,
+    marginLeft: 8,
     fontWeight: '500',
-    flex: 1,
   },
 });
 

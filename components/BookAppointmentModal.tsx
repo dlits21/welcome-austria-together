@@ -59,10 +59,17 @@ const BookAppointmentModal: React.FC<BookAppointmentModalProps> = ({
               {getGeneralText('bookAppointmentDescription', languageCode)}
             </Text>
             
+            <View style={styles.calendarPlaceholder}>
+              <MaterialIcons name="calendar-month" size={48} color="#3B82F6" />
+              <Text style={styles.calendarText}>
+                {getGeneralText('selectAppointmentTime', languageCode)}
+              </Text>
+            </View>
+            
             <View style={styles.actionButtons}>
               <TouchableOpacity style={styles.confirmButton} onPress={onClose}>
                 <Text style={styles.confirmButtonText}>
-                  {getGeneralText('confirm', languageCode)}
+                  {getGeneralText('getAppointment', languageCode)}
                 </Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.cancelButton} onPress={onClose}>
@@ -126,7 +133,23 @@ const styles = StyleSheet.create({
     color: '#666',
     lineHeight: 24,
     textAlign: 'center',
-    marginBottom: 30,
+    marginBottom: 20,
+  },
+  calendarPlaceholder: {
+    alignItems: 'center',
+    backgroundColor: '#f8f9fa',
+    padding: 40,
+    borderRadius: 12,
+    marginBottom: 20,
+    borderWidth: 2,
+    borderColor: '#e9ecef',
+    borderStyle: 'dashed',
+  },
+  calendarText: {
+    fontSize: 16,
+    color: '#666',
+    marginTop: 12,
+    textAlign: 'center',
   },
   actionButtons: {
     gap: 12,

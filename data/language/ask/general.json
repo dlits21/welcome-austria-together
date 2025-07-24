@@ -601,5 +601,33 @@
     "so": "Xaqiiji",
     "ka": "დადასტურება",
     "sq": "Konfirmo"
+  },
+  "getAppointment": {
+    "en": "Get appointment",
+    "de": "Termin vereinbaren",
+    "ru": "Записаться на прием",
+    "ce": "Хlинца хан дехьа доза",
+    "prs": "وقت ملاقات بگیرید",
+    "ps": "د ملاقاتو وخت واخلئ",
+    "fa": "قرار ملاقات بگیرید",
+    "ar": "احجز موعد",
+    "ku": "کاتی چاوپێکەوتن بگرە",
+    "so": "Qaado ballan",
+    "ka": "შეხვედრის დანიშვნა",
+    "sq": "Cakto takim"
+  },
+  "selectAppointmentTime": {
+    "en": "Select appointment time",
+    "de": "Terminzeit auswählen",
+    "ru": "Выберите время встречи",
+    "ce": "Хlинца хан дехьа доза",
+    "prs": "زمان ملاقات را انتخاب کنید",
+    "ps": "د ملاقاتو وخت غوره کړئ",
+    "fa": "زمان ملاقات را انتخاب کنید",
+    "ar": "اختر وقت الموعد",
+    "ku": "کاتی چاوپێکەوتن هەڵبژێرە",
+    "so": "Dooro waqtiga ballanta",
+    "ka": "აირჩიეთ შეხვედრის დრო",
+    "sq": "Zgjidhni kohën e takimit"
   }
 }

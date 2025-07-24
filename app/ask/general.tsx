@@ -223,16 +223,18 @@ const GeneralSupport: React.FC = () => {
           expanded={expandedSection === 'online'}
           onPress={() => toggleSection('online')}
         >
-          {onlineExperts.map((expert, index) => (
-            <ExpertCard
-              key={index}
-              name={expert.name}
-              specialization={expert.specialization}
-              availableDays={expert.availableDays}
-              isOnline={expert.isOnline}
-              languageCode={currentLanguage}
-            />
-          ))}
+          <View style={styles.expertGrid}>
+            {onlineExperts.map((expert, index) => (
+              <ExpertCard
+                key={index}
+                name={expert.name}
+                specialization={expert.specialization}
+                availableDays={expert.availableDays}
+                isOnline={expert.isOnline}
+                languageCode={currentLanguage}
+              />
+            ))}
+          </View>
         </AccordionItem>
         
         {/* Visit in person */}
@@ -320,6 +322,12 @@ const styles = StyleSheet.create({
   contentContainer: {
     padding: 16,
     paddingBottom: 30,
+  },
+  expertGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
   },
 });
 
