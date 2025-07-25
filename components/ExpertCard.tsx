@@ -21,6 +21,7 @@ interface ExpertCardProps {
   availableDays: string;
   isOnline: boolean;
   languageCode: string;
+  languages?: string[];
 }
 
 const ExpertCard: React.FC<ExpertCardProps> = ({
@@ -28,7 +29,8 @@ const ExpertCard: React.FC<ExpertCardProps> = ({
   specialization,
   availableDays,
   isOnline,
-  languageCode
+  languageCode,
+  languages = []
 }) => {
   const [showBookAppointment, setShowBookAppointment] = useState(false);
   const [showGroupMeetings, setShowGroupMeetings] = useState(false);
@@ -70,6 +72,14 @@ const ExpertCard: React.FC<ExpertCardProps> = ({
         <View style={styles.expertInfo}>
           <Text style={styles.expertName}>{name}</Text>
           <Text style={styles.expertSpecialization}>{specialization}</Text>
+          {languages.length > 0 && (
+            <View style={styles.languagesContainer}>
+              <MaterialIcons name="language" size={14} color="#8B5CF6" />
+              <Text style={styles.languagesText}>
+                {languages.join(', ')}
+              </Text>
+            </View>
+          )}
         </View>
       </View>
 
@@ -190,6 +200,17 @@ const styles = StyleSheet.create({
     color: '#333',
     marginLeft: 8,
     fontWeight: '500',
+  },
+  languagesContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 4,
+  },
+  languagesText: {
+    fontSize: 12,
+    color: '#8B5CF6',
+    marginLeft: 4,
+    fontStyle: 'italic',
   },
 });
 

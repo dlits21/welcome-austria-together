@@ -643,5 +643,19 @@
     "so": "Dooro waqtiga ballanta",
     "ka": "აირჩიეთ შეხვედრის დრო",
     "sq": "Zgjidhni kohën e takimit"
+  },
+  "expertLanguages": {
+    "en": "Languages",
+    "de": "Sprachen",
+    "ru": "Языки",
+    "ce": "Меттанаш",
+    "prs": "زبان‌ها",
+    "ps": "ژبې",
+    "fa": "زبان‌ها",
+    "ar": "اللغات",
+    "ku": "زمانەکان",
+    "so": "Luuqadaha",
+    "ka": "ენები",
+    "sq": "Gjuhët"
   }
 }

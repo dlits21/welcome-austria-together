@@ -28,6 +28,14 @@ interface Entity {
   eligibility?: string;
   cost?: string;
   openingHours?: string;
+  // German learning specific properties
+  type?: 'course' | 'resource' | 'exam';
+  level?: string[];
+  online?: boolean;
+  forWomen?: boolean;
+  forYoungMigrants?: boolean;
+  childcare?: boolean;
+  integrationRequirement?: boolean;
 }
 
 interface CategoryConfig {
@@ -40,7 +48,7 @@ interface GenericSupportListProps {
   filters: Record<string, string>;
   languageCode: string;
   onResetFilters: () => void;
-  getTranslation: () => void;
+  getTranslation: (key: string, languageCode: string) => string;
   routePrefix: string;
   categoryConfig: Record<string, CategoryConfig>;
   noResultsText: string;
@@ -68,30 +76,67 @@ const GenericSupportList: React.FC<GenericSupportListProps> = ({
   useEffect(() => {
     let filtered = entities;
 
+    // Filter by urgency
     if (filters.urgency) {
       filtered = filtered.filter(entity => entity.urgency === filters.urgency);
     }
 
+    // Filter by support type (course/resource/exam)
     if (filters.supportType) {
-      filtered = filtered.filter(entity =>
+      if (isGermanLearning) {
+        // For German learning, filter by type directly
+        filtered = filtered.filter(entity => entity.type === filters.supportType);
+      } else {
+        filtered = filtered.filter(entity =>
           entity.supportTypes && entity.supportTypes.includes(filters.supportType)
         );
+      }
     }
 
-    if (filters.level) {
+    // Filter by level (for German learning)
+    if (filters.level && isGermanLearning) {
       filtered = filtered.filter(entity =>
-          entity.supportTypes && entity.supportTypes.includes(filters.level)
-        );
-    }
-
-    if (filters.location && filters.location !== 'all-austria') {
-      filtered = filtered.filter(entity => 
-        entity.location === filters.location || entity.location === 'all-austria'
+        entity.level && entity.level.some(level => level.includes(filters.level))
       );
     }
 
+    // Filter by location
+    if (filters.location && filters.location !== 'all-austria' && filters.location !== 'anywhere') {
+      if (filters.location === 'Online') {
+        filtered = filtered.filter(entity => entity.online === true);
+      } else {
+        filtered = filtered.filter(entity => 
+          entity.location === filters.location || 
+          entity.location === 'all-austria' ||
+          (entity.online && filters.location === 'Online')
+        );
+      }
+    }
+
+    // Additional filters for German learning
+    if (isGermanLearning) {
+      Object.keys(filters).forEach(filterKey => {
+        if (!['supportType', 'level', 'location', 'urgency'].includes(filterKey)) {
+          const filterValue = filters[filterKey];
+          if (filterValue === 'true') {
+            if (filterKey === 'forWomen') {
+              filtered = filtered.filter(entity => entity.forWomen === true);
+            } else if (filterKey === 'forYoungMigrants') {
+              filtered = filtered.filter(entity => entity.forYoungMigrants === true);
+            } else if (filterKey === 'childcare') {
+              filtered = filtered.filter(entity => entity.childcare === true);
+            } else if (filterKey === 'integrationRequirement') {
+              filtered = filtered.filter(entity => entity.integrationRequirement === true);
+            } else if (filterKey === 'onlineOnly') {
+              filtered = filtered.filter(entity => entity.online === true);
+            }
+          }
+        }
+      });
+    }
+
     setFilteredEntities(filtered);
-  }, [filters, entities]);
+  }, [filters, entities, isGermanLearning]);
 
   const getCategoryIcon = (category: string): string => {
     return categoryConfig[category]?.icon || 'help';
@@ -197,7 +242,7 @@ const GenericSupportList: React.FC<GenericSupportListProps> = ({
               {isGermanLearning && (
                 <View style={[styles.courseTypeBadge, { backgroundColor: getCategoryColor(entity.category) }]}>
                   <Text style={styles.courseTypeText}>
-                    {getTranslation(entity.category, languageCode)}
+                    {getTranslation(`courseTypes.${entity.category}`, languageCode)}
                   </Text>
                 </View>
               )}
@@ -209,7 +254,7 @@ const GenericSupportList: React.FC<GenericSupportListProps> = ({
 
             {/* Show all specializations */}
             <View style={styles.tagsContainer}>
-              {entity.supportTypes.map((spec, index) => (
+              {entity.supportTypes?.map((spec, index) => (
                 <View key={index} style={styles.tag}>
                   <Text style={styles.tagText}>{getTranslation(spec, languageCode)}</Text>
                 </View>

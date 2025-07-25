@@ -81,23 +81,28 @@ const GeneralSupport: React.FC = () => {
   const onlineExperts = [
     {
       name: 'Dr. Sarah Mueller',
-      specialization: getGeneralText('legalSupport', currentLanguage)
+      specialization: getGeneralText('legalSupport', currentLanguage),
+      languages: ['German', 'English', 'French']
     },
     {
       name: 'Ahmed Hassan',
-      specialization: getGeneralText('migrationExperience', currentLanguage)
+      specialization: getGeneralText('migrationExperience', currentLanguage),
+      languages: ['Arabic', 'German', 'English']
     },
     {
       name: 'Maria Gonzalez',
-      specialization: getGeneralText('educationCounseling', currentLanguage)
+      specialization: getGeneralText('educationCounseling', currentLanguage),
+      languages: ['Spanish', 'German', 'English']
     },
     {
       name: 'Dr. Fatima Al-Rashid',
-      specialization: getGeneralText('healthcare', currentLanguage)
+      specialization: getGeneralText('healthcare', currentLanguage),
+      languages: ['Persian', 'German', 'English']
     },
     {
       name: 'Viktor Petrov',
-      specialization: getGeneralText('jobMarket', currentLanguage)
+      specialization: getGeneralText('jobMarket', currentLanguage),
+      languages: ['Russian', 'German', 'English']
     }
   ];
 
@@ -221,6 +226,7 @@ const GeneralSupport: React.FC = () => {
                 specialization={expert.specialization}
                 availableDays={expert.availableDays}
                 languageCode={currentLanguage}
+                languages={expert.languages}
               />
             ))}
           </View>

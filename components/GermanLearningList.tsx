@@ -36,12 +36,14 @@ interface GermanLearningListProps {
   filters: Record<string, string>;
   languageCode: string;
   onResetFilters: () => void;
+  getTranslation: (key: string, languageCode: string) => string;
 }
 
 const GermanLearningList: React.FC<GermanLearningListProps> = ({
   filters,
   languageCode,
   onResetFilters,
+  getTranslation,
 }) => {
   const [convertedCourses, setConvertedCourses] = useState<GermanCourse[]>([]);
 
@@ -130,7 +132,7 @@ const GermanLearningList: React.FC<GermanLearningListProps> = ({
       filters={filters}
       languageCode={languageCode}
       onResetFilters={onResetFilters}
-      getTranslation={getInformationGermanLearningText}
+      getTranslation={getTranslation}
       routePrefix="/information/german-learning-pages"
       categoryConfig={categoryConfig}
       noResultsText={getInformationGermanLearningText('filters.noResults', languageCode)}
