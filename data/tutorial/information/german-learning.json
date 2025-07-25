@@ -1,0 +1,168 @@
+{
+  "title": {
+    "en": "German Learning Tutorial",
+    "de": "Deutsch Lernen Tutorial",
+    "ru": "Учебник по изучению немецкого",
+    "ce": "Немцойн мотт дешаран тутоо",
+    "prs": "آموزش یادگیری آلمانی",
+    "ps": "د آلمانی زده کړې ښوونه",
+    "fa": "آموزش یادگیری آلمانی",
+    "ar": "تعليم تعلم الألمانية",
+    "ku": "ڕێنمایی فێربوونی ئەڵمانی",
+    "so": "Casharka barashada Jarmalka",
+    "ka": "გერმანული ენის სწავლის სახელმძღვანელო",
+    "sq": "Udhëzuesi për mësimin e gjermanishtes"
+  },
+  "slides": [
+    {
+      "title": {
+        "en": "Welcome to German Learning",
+        "de": "Willkommen beim Deutsch lernen",
+        "ru": "Добро пожаловать в изучение немецкого",
+        "ce": "Марша догlийла немцойн мотт дешарца",
+        "prs": "به یادگیری آلمانی خوش آمدید",
+        "ps": "د آلمانی زده کړې ته ښه راغلاست",
+        "fa": "به یادگیری آلمانی خوش آمدید",
+        "ar": "مرحباً بكم في تعلم الألمانية",
+        "ku": "بەخێربێن بۆ فێربوونی ئەڵمانی",
+        "so": "Ku soo dhaweyn barashada Jarmalka",
+        "ka": "კეთილი იყოს თქვენი მობრძანება გერმანული ენის სწავლაში",
+        "sq": "Mirë se vini në mësimin e gjermanishtes"
+      },
+      "content": {
+        "en": "Find the perfect German course, resource, or exam preparation that matches your level and preferences.",
+        "de": "Finden Sie den perfekten Deutschkurs, die perfekten Ressourcen oder die perfekte Prüfungsvorbereitung, die Ihrem Niveau und Ihren Vorlieben entspricht.",
+        "ru": "Найдите идеальный курс немецкого языка, ресурсы или подготовку к экзамену, которые соответствуют вашему уровню и предпочтениям.",
+        "ce": "Шун лаьчкъашца а хааманашца тешна хlотталла немцойн мотт дешаран курс, ресурсаш я экзаменан йолаеш хьажа.",
+        "prs": "دوره‌ی آلمانی، منابع یا آمادگی برای امتحان مناسب که با سطح و علایق شما مطابقت دارد را پیدا کنید.",
+        "ps": "د آلمانی کورس، سرچینې یا د ازموینې چمتووالی وموندئ چې ستاسو د کچې او روښانو سره سمون ولري.",
+        "fa": "دوره‌ی آلمانی، منابع یا آمادگی برای آزمون مناسب که با سطح و علایق شما مطابقت دارد را پیدا کنید.",
+        "ar": "اعثر على دورة الألمانية المثالية أو الموارد أو التحضير للامتحان الذي يتناسب مع مستواك وتفضيلاتك.",
+        "ku": "کۆرسی ئەڵمانی، سەرچاوەکان یان ئامادەکاری تاقیکردنەوە بدۆزەرەوە کە لەگەڵ ئاست و حەزەکانت بگونجێت.",
+        "so": "Hel koorska Jarmalka, kheyraadyada ama diyaarinta imtixaanka ee ku habboon heeraaga iyo dookhaaga.",
+        "ka": "იპოვეთ შესაფერისი გერმანული კურსი, რესურსები ან გამოცდის მომზადება, რომელიც შეესაბამება თქვენს დონეს და უპირატესობებს.",
+        "sq": "Gjeni kursin e gjermanishtes, burimet ose përgatitjen për provim që përputhet me nivelin dhe preferencat tuaja."
+      }
+    },
+    {
+      "title": {
+        "en": "Take the Quick Quiz",
+        "de": "Machen Sie das schnelle Quiz",
+        "ru": "Пройдите быстрый тест",
+        "ce": "Терахь викторина е",
+        "prs": "آزمون سریع را شرکت کنید",
+        "ps": "ګړندۍ ازموینه واخلئ",
+        "fa": "آزمون سریع را شرکت کنید",
+        "ar": "خذ الاختبار السريع",
+        "ku": "تاقیکردنەوە خێراکە بکە",
+        "so": "Qaado imtixaanka degdegga ah",
+        "ka": "გაიარეთ სწრაფი ვიქტორინა",
+        "sq": "Bëni testin e shpejtë"
+      },
+      "content": {
+        "en": "Answer a few simple questions to get personalized course recommendations based on your needs and German level.",
+        "de": "Beantworten Sie ein paar einfache Fragen, um personalisierte Kursempfehlungen basierend auf Ihren Bedürfnissen und Ihrem Deutschniveau zu erhalten.",
+        "ru": "Ответьте на несколько простых вопросов, чтобы получить персональные рекомендации курсов на основе ваших потребностей и уровня немецкого языка.",
+        "ce": "Цхьана дукха а цакарчу хаттарашна жоп ло, шун хааманашца а немцойн мотт довзучу лаьчкъашца а тешна хlотталла курсийн хаамаш лаха.",
+        "prs": "به چند سوال ساده پاسخ دهید تا توصیه‌های شخصی‌سازی شده‌ای برای دوره‌ها بر اساس نیازهای شما و سطح آلمانی‌تان دریافت کنید.",
+        "ps": "د یو څو ساده پوښتنو ځواب ورکړئ ترڅو د خپلو اړتیاوو او د آلمانۍ کچې پر بنسټ د کورسونو د شخصي سپارښتنو ترلاسه کړئ.",
+        "fa": "به چند سوال ساده پاسخ دهید تا توصیه‌های شخصی‌سازی شده‌ای برای دوره‌ها بر اساس نیازهای شما و سطح آلمانی‌تان دریافت کنید.",
+        "ar": "أجب على بضعة أسئلة بسيطة للحصول على توصيات دورات شخصية بناءً على احتياجاتك ومستوى الألمانية لديك.",
+        "ku": "وەڵامی چەند پرسیارێکی ساده بدەرەوە بۆ وەرگرتنی پێشنیاری کۆرسی کەسی کە لەسەر بنەمای پێداویستی و ئاستی ئەڵمانیت بێت.",
+        "so": "Ka jawaab su'aalo fudud ah si aad u hesho talooyinka kooraska ee gaarka ah ee ku saleysan baahiyahaaga iyo heerka Jarmalka.",
+        "ka": "უპასუხეთ რამდენიმე მარტივ კითხვას, რათა მიიღოთ პერსონალიზებული კურსის რეკომენდაციები თქვენი საჭიროებებისა და გერმანული ენის დონის მიხედვით.",
+        "sq": "Përgjigjuni në disa pyetje të thjeshta për të marrë rekomandime kursi të personalizuara bazuar në nevojat tuaja dhe nivelin e gjermanishtes."
+      }
+    },
+    {
+      "title": {
+        "en": "Browse by Category",
+        "de": "Nach Kategorie durchsuchen",
+        "ru": "Просмотр по категориям",
+        "ce": "Категорийн коьрта хьажа",
+        "prs": "بر اساس دسته بندی جستجو کنید",
+        "ps": "د کټګورۍ له مخې وګورئ",
+        "fa": "بر اساس دسته‌بندی مرور کنید",
+        "ar": "تصفح حسب الفئة",
+        "ku": "بەپێی پۆل بگەڕێ",
+        "so": "Ku dhex eeg qaybaha",
+        "ka": "კატეგორიის მიხედვით დათვალიერება",
+        "sq": "Shfletoni sipas kategorisë"
+      },
+      "content": {
+        "en": "Use the tabs to filter between Courses (structured learning), Resources (self-study materials), and Exams (certification tests).",
+        "de": "Verwenden Sie die Registerkarten, um zwischen Kursen (strukturiertes Lernen), Ressourcen (Selbststudienmaterialien) und Prüfungen (Zertifizierungstests) zu filtern.",
+        "ru": "Используйте вкладки для фильтрации между Курсами (структурированное обучение), Ресурсами (материалы для самостоятельного изучения) и Экзаменами (сертификационные тесты).",
+        "ce": "Курсашца юкъера (къоьллина дешар), ресурсашца юкъера (цхьана дешаран материалаш) а экзаменашца юкъера (сертификацин тесташ) хийца йолуш закладкаш лелае.",
+        "prs": "از برگه‌ها برای فیلتر کردن بین دوره‌ها (یادگیری ساختاریافته)، منابع (مواد خودآموزی) و امتحانات (آزمون‌های گواهی) استفاده کنید.",
+        "ps": "د کورسونو (جوړښت لرونکي زده کړه)، سرچینو (د ځان زده کړې توکو) او ازموینو (د گواهې ازموینو) ترمنځ د فلټر کولو لپاره ټابونه وکاروئ.",
+        "fa": "از برگه‌ها برای فیلتر کردن بین دوره‌ها (یادگیری ساختاریافته)، منابع (مواد خودآموزی) و آزمون‌ها (آزمون‌های گواهی) استفاده کنید.",
+        "ar": "استخدم علامات التبويب للتصفية بين الدورات (التعلم المنظم) والموارد (مواد الدراسة الذاتية) والامتحانات (اختبارات الشهادة).",
+        "ku": "تابەکان بەکاربهێنە بۆ فلتەرکردن لە نێوان کۆرسەکان (فێربوونی ڕێکخراو)، سەرچاوەکان (مادەی خوێندنی تاکەکەسی) و تاقیکردنەوەکان (تاقیکردنەوەی بڕوانامە).",
+        "so": "Isticmaal tabsyada si aad u kala sooci kooraska (barashada habaysan), kheyraadyada (agabka iskubarashada), iyo imtixaannada (tijaaboyinka shahaadada).",
+        "ka": "გამოიყენეთ ფურცლები კურსებს (სტრუქტურირებული სწავლა), რესურსებს (თვითსწავლების მასალები) და გამოცდებს (სერტიფიკაციის ტესტები) შორის ფილტრაციისთვის.",
+        "sq": "Përdorni skedat për të filtruar midis Kurseve (mësimet e strukturuara), Burimeve (materialet e vetë-studimit), dhe Provimeve (testet e certifikimit)."
+      }
+    },
+    {
+      "title": {
+        "en": "Use Filters",
+        "de": "Filter verwenden",
+        "ru": "Использование фильтров",
+        "ce": "Фильтераш лелае",
+        "prs": "از فیلترها استفاده کنید",
+        "ps": "فلټرونه وکاروئ",
+        "fa": "از فیلترها استفاده کنید",
+        "ar": "استخدم المرشحات",
+        "ku": "فلتەرەکان بەکاربهێنە",
+        "so": "Isticmaal shaandhaynta",
+        "ka": "გამოიყენეთ ფილტრები",
+        "sq": "Përdorni filtrat"
+      },
+      "content": {
+        "en": "Click the filter button to narrow down results by language level (A1-C2), location (Online/Vienna), and special requirements like women-only courses or childcare.",
+        "de": "Klicken Sie auf die Filter-Schaltfläche, um die Ergebnisse nach Sprachniveau (A1-C2), Standort (Online/Wien) und besonderen Anforderungen wie nur für Frauen oder Kinderbetreuung einzugrenzen.",
+        "ru": "Нажмите кнопку фильтра, чтобы сузить результаты по уровню языка (A1-C2), местоположению (Онлайн/Вена) и особым требованиям, таким как курсы только для женщин или присмотр за детьми.",
+        "ce": "Фильтран кнопка тlе таlе, мотт довзучу лаьчкъашца (A1-C2), меттигашца (Интернет/Вена) а леррина дошамашца (цхьана зудчуьнашна бен курсаш я берашкахь хьеякхар) жопаш цlенъе.",
+        "prs": "روی دکمه فیلتر کلیک کنید تا نتایج را بر اساس سطح زبان (A1-C2)، مکان (آنلاین/وین) و نیازهای خاص مانند دوره‌های مخصوص زنان یا مراقبت از کودکان محدود کنید.",
+        "ps": "د فلټر تڼۍ کلیک وکړئ ترڅو پایلې د ژبې د کچې (A1-C2)، ځای (آنلاین/ویانا) او ځانګړو اړتیاوو لکه د ښځو لپاره کورسونه یا د ماشومانو پاملرنه محدود کړئ.",
+        "fa": "روی دکمه فیلتر کلیک کنید تا نتایج را بر اساس سطح زبان (A1-C2)، مکان (آنلاین/وین) و نیازهای خاص مانند دوره‌های مخصوص زنان یا مراقبت از کودکان محدود کنید.",
+        "ar": "انقر على زر التصفية لتضييق النتائج حسب مستوى اللغة (A1-C2) والموقع (عبر الإنترنت/فيينا) والمتطلبات الخاصة مثل دورات النساء فقط أو رعاية الأطفال.",
+        "ku": "کلیک لە دوگمەی فلتەر بکە بۆ تەنگکردنەوەی ئەنجامەکان بەپێی ئاستی زمان (A1-C2)، شوێن (ئۆنلاین/ڤیەنا) و پێداویستیە تایبەتەکان وەک کۆرسەکانی تایبەت بە ژنان یان چاودێری منداڵان.",
+        "so": "Guji badhanka shaandhaynta si aad u yarayso natiijoyinka heerkii luqadda (A1-C2), goobta (Onlayn/Vienna), iyo shuruudaha gaarka ah sida koorsaska haweenka keliya ama daryeelka carruurta.",
+        "ka": "დააწკაპუნეთ ფილტრის ღილაკზე შედეგების შესაზღუდად ენის დონის (A1-C2), ადგილმდებარეობის (ონლაინ/ვენა) და სპეციალური მოთხოვნების მიხედვით, როგორიცაა მხოლოდ ქალებისთვის კურსები ან ბავშვების მზრუნველობა.",
+        "sq": "Klikoni butonin e filtrit për të ngushtuar rezultatet sipas nivelit të gjuhës (A1-C2), vendndodhjes (Online/Vjena), dhe kërkesave të veçanta si kurset vetëm për gratë ose kujdesi për fëmijët."
+      }
+    },
+    {
+      "title": {
+        "en": "Get Help",
+        "de": "Hilfe bekommen",
+        "ru": "Получить помощь",
+        "ce": "ГIо лаха",
+        "prs": "کمک دریافت کنید",
+        "ps": "مرسته واخلئ",
+        "fa": "کمک دریافت کنید",
+        "ar": "احصل على المساعدة",
+        "ku": "یارمەتی وەربگرە",
+        "so": "Hel caawimaad",
+        "ka": "დახმარების მიღება",
+        "sq": "Merrni ndihmë"
+      },
+      "content": {
+        "en": "Need personalized guidance? Click the virtual assistant icon to chat with our AI helper, or use the help button for this tutorial anytime.",
+        "de": "Brauchen Sie persönliche Beratung? Klicken Sie auf das Virtual Assistant-Symbol, um mit unserem KI-Helfer zu chatten, oder verwenden Sie jederzeit die Hilfe-Schaltfläche für dieses Tutorial.",
+        "ru": "Нужна персональная помощь? Нажмите на значок виртуального помощника, чтобы пообщаться с нашим ИИ-помощником, или используйте кнопку помощи для этого учебника в любое время.",
+        "ce": "Персоналан гIо лаьа ву? Виртуалан гIоразвогIучу элиран тlе таlе, наха ИИ-гIоразвогIучуьнца дувцар дан, я цу мануалан гIоразвогIучун кнопка мукъда деза а лелае.",
+        "prs": "به راهنمایی شخصی نیاز دارید؟ روی آیکون دستیار مجازی کلیک کنید تا با کمک‌کننده هوش مصنوعی ما گفتگو کنید، یا هر زمان از دکمه کمک برای این آموزش استفاده کنید.",
+        "ps": "د شخصي لارښوونې اړتیا لرئ؟ د ورچوال مرستندوی آیکن باندې کلیک وکړئ ترڅو زموږ د AI مرستندوی سره خبرې وکړئ، یا د دغه ښوونې لپاره هر وخت د مرستې تڼۍ وکاروئ.",
+        "fa": "به راهنمایی شخصی نیاز دارید؟ روی آیکون دستیار مجازی کلیک کنید تا با کمک‌کننده هوش مصنوعی ما گفتگو کنید، یا هر زمان از دکمه کمک برای این آموزش استفاده کنید.",
+        "ar": "تحتاج إلى إرشاد شخصي؟ انقر على أيقونة المساعد الافتراضي للدردشة مع مساعد الذكاء الاصطناعي، أو استخدم زر المساعدة لهذا الدليل في أي وقت.",
+        "ku": "پێویستیت بە ڕێنمایی کەسی هەیە؟ کلیک لە آیکۆنی یاریدەدەری ڤیرچووال بکە بۆ گفتوگۆکردن لەگەڵ یاریدەدەری AIمان، یان دوگمەی یارمەتی بەکاربهێنە بۆ ئەم ڕێنماییە هەر کاتێک.",
+        "so": "Ma u baahan tahay hagitaan shakhsi ah? Guji astaamaha kaaliyaha farsamada si aad ula sheekaysato kaaliyaha AI-ga, ama isticmaal badhanka caawimada tutorial-kan mar kasta.",
+        "ka": "გჭირდებათ პერსონალიზებული მითითებები? დააწკაპუნეთ ვირტუალური ასისტენტის ხატულაზე ჩვენს AI დამხმარესთან საუბარისთვის, ან გამოიყენეთ დახმარების ღილაკი ამ ტუტორიალისთვის ნებისმიერ დროს.",
+        "sq": "Keni nevojë për udhëzime të personalizuara? Klikoni ikonën e asistentit virtual për të biseduar me ndihmësin tonë AI, ose përdorni butonin e ndihmës për këtë udhëzues në çdo kohë."
+      }
+    }
+  ]
+}

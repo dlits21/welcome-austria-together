@@ -407,8 +407,108 @@
           "so": "Meel kasta",
           "ka": "ნებისმიერ ადგილას",
           "sq": "Çdo vend"
-        }
       }
     }
+  },
+  "levelDescriptions": {
+    "A0": {
+      "en": "Absolute beginner",
+      "de": "Absoluter Anfänger",
+      "ru": "Полный новичок",
+      "ce": "Юхалехь дешарца",
+      "prs": "مبتدی مطلق",
+      "ps": "مطلق پیل کوونکی",
+      "fa": "مبتدی مطلق",
+      "ar": "مبتدئ مطلق",
+      "ku": "دەستپێکەری تەواو",
+      "so": "Bilowga qallan",
+      "ka": "სრული დამწყები",
+      "sq": "Fillestar absolut"
+    },
+    "A1": {
+      "en": "Beginner",
+      "de": "Anfänger",
+      "ru": "Начинающий",
+      "ce": "Юхалехь деша",
+      "prs": "مبتدی",
+      "ps": "پیل کوونکی",
+      "fa": "مبتدی",
+      "ar": "مبتدئ",
+      "ku": "دەستپێکەر",
+      "so": "Bilow",
+      "ka": "დამწყები",
+      "sq": "Fillestar"
+    },
+    "A2": {
+      "en": "Elementary",
+      "de": "Grundstufe",
+      "ru": "Элементарный",
+      "ce": "Коьртан",
+      "prs": "ابتدایی",
+      "ps": "لومړنی",
+      "fa": "ابتدایی",
+      "ar": "ابتدائي",
+      "ku": "سەرەکی",
+      "so": "Aasaasi",
+      "ka": "დაწყებითი",
+      "sq": "Fillestare"
+    },
+    "B1": {
+      "en": "Intermediate",
+      "de": "Mittelstufe",
+      "ru": "Средний",
+      "ce": "Юккъера",
+      "prs": "متوسط",
+      "ps": "منځنی",
+      "fa": "متوسط",
+      "ar": "متوسط",
+      "ku": "ناوەندی",
+      "so": "Dhexe",
+      "ka": "საშუალო",
+      "sq": "Mesatar"
+    },
+    "B2": {
+      "en": "Upper intermediate",
+      "de": "Obere Mittelstufe",
+      "ru": "Выше среднего",
+      "ce": "Лакхера юккъера",
+      "prs": "متوسط بالا",
+      "ps": "پورته منځنی",
+      "fa": "متوسط بالا",
+      "ar": "فوق المتوسط",
+      "ku": "ناوەندی بەرز",
+      "so": "Dhexe sare",
+      "ka": "მაღალი საშუალო",
+      "sq": "Mesatar i lartë"
+    },
+    "C1": {
+      "en": "Advanced",
+      "de": "Fortgeschritten",
+      "ru": "Продвинутый",
+      "ce": "Хlинца доккха",
+      "prs": "پیشرفته",
+      "ps": "پرمختللی",
+      "fa": "پیشرفته",
+      "ar": "متقدم",
+      "ku": "پێشکەوتوو",
+      "so": "Horumar",
+      "ka": "მაღალი",
+      "sq": "I përparuar"
+    },
+    "C2": {
+      "en": "Proficient",
+      "de": "Experte",
+      "ru": "Экспертный",
+      "ce": "Мастар",
+      "prs": "متخصص",
+      "ps": "ماهر",
+      "fa": "متخصص",
+      "ar": "خبير",
+      "ku": "شارەزا",
+      "so": "Khibrad leh",
+      "ka": "ექსპერტი",
+      "sq": "Ekspert"
+    }
   }
+}
 }

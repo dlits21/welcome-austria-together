@@ -9,6 +9,10 @@ import GermanLearningList from '../../components/GermanLearningList';
 import QuizModal from '../../components/QuizModal';
 import QuizControls from '../../components/QuizControls';
 import FilterSection from '../../components/FilterSection';
+import FilterModal from '../../components/FilterModal';
+import VirtualAssistantModal from '../../components/VirtualAssistantModal';
+import TutorialModal from '../../components/TutorialModal';
+import tutorialData from '../../data/tutorial/information/german-learning.json';
 import coursesData from '../../data/courses/german-learning-courses.json';
 import germanLearningTexts from '../../data/language/information/german-learning.json';
 
@@ -37,7 +41,15 @@ const GermanLearningPage = () => {
   const [showQuiz, setShowQuiz] = useState(true);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showFilters, setShowFilters] = useState(false);
+  const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
+  const [showTutorial, setShowTutorial] = useState(false);
   const [activeTab, setActiveTab] = useState<string>('all');
+
+  // Filter modal states
+  const [selectedLevels, setSelectedLevels] = useState<string[]>([]);
+  const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
+  const [onlineOnly, setOnlineOnly] = useState(false);
+  const [freeOnly, setFreeOnly] = useState(false);
 
   // Filter states for GermanLearningList
   const [filters, setFilters] = useState<Record<string, string>>({});
@@ -69,7 +81,15 @@ const GermanLearningPage = () => {
     },
     {
       question: getTranslation('quizQuestions.level.question'),
-      answers: ['A0', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'],
+      answers: [
+        { key: 'A0', label: 'A0 - ' + getTranslation('levelDescriptions.A0') },
+        { key: 'A1', label: 'A1 - ' + getTranslation('levelDescriptions.A1') },
+        { key: 'A2', label: 'A2 - ' + getTranslation('levelDescriptions.A2') },
+        { key: 'B1', label: 'B1 - ' + getTranslation('levelDescriptions.B1') },
+        { key: 'B2', label: 'B2 - ' + getTranslation('levelDescriptions.B2') },
+        { key: 'C1', label: 'C1 - ' + getTranslation('levelDescriptions.C1') },
+        { key: 'C2', label: 'C2 - ' + getTranslation('levelDescriptions.C2') }
+      ],
       key: 'level'
     },
     {
@@ -100,7 +120,8 @@ const GermanLearningPage = () => {
       newFilters.supportType = answerKey;
       setActiveTab(answerKey);
     } else if (currentQ.key === 'level') {
-      newFilters.level = answerKey;
+      const levelKey = typeof answer === 'string' ? answer : answer.key;
+      newFilters.level = levelKey;
     } else if (currentQ.key === 'location') {
       if (answerKey !== 'anywhere') {
         newFilters.location = answerKey;
@@ -138,6 +159,78 @@ const GermanLearningPage = () => {
   const onResetFilters = () => {
     setFilters({});
     setActiveTab('all');
+    setSelectedLevels([]);
+    setSelectedLocations([]);
+    setOnlineOnly(false);
+    setFreeOnly(false);
+  };
+
+  // Get available locations from course data
+  const getAvailableLocations = () => {
+    const locations = new Set<string>();
+    Object.values(coursesData).forEach((course: any) => {
+      if (course.courseDetails?.location) {
+        locations.add(course.courseDetails.location);
+      }
+    });
+    return Array.from(locations);
+  };
+
+  // Filter toggle functions
+  const onToggleLevel = (level: string) => {
+    const newLevels = selectedLevels.includes(level) 
+      ? selectedLevels.filter(l => l !== level)
+      : [...selectedLevels, level];
+    setSelectedLevels(newLevels);
+    
+    const newFilters = { ...filters };
+    if (newLevels.length > 0) {
+      newFilters.level = newLevels.join(',');
+    } else {
+      delete newFilters.level;
+    }
+    setFilters(newFilters);
+  };
+
+  const onToggleLocation = (location: string) => {
+    const newLocations = selectedLocations.includes(location)
+      ? selectedLocations.filter(l => l !== location)
+      : [...selectedLocations, location];
+    setSelectedLocations(newLocations);
+    
+    const newFilters = { ...filters };
+    if (newLocations.length > 0) {
+      newFilters.location = newLocations.join(',');
+    } else {
+      delete newFilters.location;
+    }
+    setFilters(newFilters);
+  };
+
+  const onToggleOnlineOnly = () => {
+    const newOnlineOnly = !onlineOnly;
+    setOnlineOnly(newOnlineOnly);
+    
+    const newFilters = { ...filters };
+    if (newOnlineOnly) {
+      newFilters.onlineOnly = 'true';
+    } else {
+      delete newFilters.onlineOnly;
+    }
+    setFilters(newFilters);
+  };
+
+  const onToggleFreeOnly = () => {
+    const newFreeOnly = !freeOnly;
+    setFreeOnly(newFreeOnly);
+    
+    const newFilters = { ...filters };
+    if (newFreeOnly) {
+      newFilters.freeOnly = 'true';
+    } else {
+      delete newFilters.freeOnly;
+    }
+    setFilters(newFilters);
   };
 
 
@@ -188,7 +281,8 @@ const GermanLearningPage = () => {
         toggleSound={toggleSound}
         soundEnabled={soundEnabled}
         showLanguageModal={() => setShowLanguageModal(true)}
-        showHelpModal={() => setShowHelpModal(true)}
+        showHelpModal={() => setShowTutorial(true)}
+        showVirtualAssistant={() => setShowVirtualAssistant(true)}
       />
 
       <View style={styles.content}>
@@ -232,10 +326,33 @@ const GermanLearningPage = () => {
         languageCode={language.code}
       />
 
-      <HelpModal
-        visible={showHelpModal}
-        onClose={() => setShowHelpModal(false)}
-        languageCode={language.code}
+      <FilterModal
+        visible={showFilters}
+        onClose={() => setShowFilters(false)}
+        languageCode={currentLanguage}
+        selectedLevels={selectedLevels}
+        selectedLocations={selectedLocations}
+        onlineOnly={onlineOnly}
+        freeOnly={freeOnly}
+        locations={getAvailableLocations()}
+        onToggleLevel={onToggleLevel}
+        onToggleLocation={onToggleLocation}
+        onToggleOnlineOnly={onToggleOnlineOnly}
+        onToggleFreeOnly={onToggleFreeOnly}
+        onClearFilters={onResetFilters}
+      />
+
+      <VirtualAssistantModal
+        visible={showVirtualAssistant}
+        onClose={() => setShowVirtualAssistant(false)}
+        languageCode={currentLanguage}
+      />
+
+      <TutorialModal
+        visible={showTutorial}
+        onClose={() => setShowTutorial(false)}
+        tutorialData={tutorialData}
+        languageCode={currentLanguage}
       />
     </SafeAreaView>
   );
