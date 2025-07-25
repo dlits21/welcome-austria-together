@@ -35,13 +35,23 @@ const ExpertCard: React.FC<ExpertCardProps> = ({
   const [showContactPreference, setShowContactPreference] = useState(false);
   
   // Get a unique PNG for each expert based on their name (cycling through 5 images)
-  const getExpertImage = (expertName: string) => {
-    const imageNames = ['abdul.png', 'amina.png', 'arlinda.png', 'fatima.png', 'giorgi.png'];
-    const index = expertName.length % imageNames.length;
-    return require(`../assets/images/${imageNames[index]}`);
-  };
-  
-  const expertImage = getExpertImage(name);
+  const expertImages = [
+      require('../assets/images/abdul.png'),
+      require('../assets/images/amina.png'),
+      require('../assets/images/arlinda.png'),
+      require('../assets/images/fatima.png'),
+      require('../assets/images/giorgi.png'),
+      require('../assets/images/leila.png'),
+      require('../assets/images/liridon.png'),
+      require('../assets/images/maryam.png'),
+      require('../assets/images/nino.png'),
+      require('../assets/images/omar.png'),
+      require('../assets/images/rustam.png'),
+      require('../assets/images/timur.png'),
+      require('../assets/images/zainab.png'),
+    ];
+
+    const expertImage = expertImages[Math.floor(Math.random() * expertImages.length)];
 
   const handleTextContact = () => {
     setShowContactPreference(true);

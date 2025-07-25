@@ -81,33 +81,23 @@ const GeneralSupport: React.FC = () => {
   const onlineExperts = [
     {
       name: 'Dr. Sarah Mueller',
-      specialization: getGeneralText('legalSupport', currentLanguage),
-      availableDays: getGeneralText('mondayFridaySchedule', currentLanguage),
-      isOnline: true
+      specialization: getGeneralText('legalSupport', currentLanguage)
     },
     {
       name: 'Ahmed Hassan',
-      specialization: getGeneralText('migrationExperience', currentLanguage),
-      availableDays: getGeneralText('mondayWednesdayFridaySchedule', currentLanguage),
-      isOnline: false
+      specialization: getGeneralText('migrationExperience', currentLanguage)
     },
     {
       name: 'Maria Gonzalez',
-      specialization: getGeneralText('educationCounseling', currentLanguage),
-      availableDays: getGeneralText('tuesdayThursdaySchedule', currentLanguage),
-      isOnline: true
+      specialization: getGeneralText('educationCounseling', currentLanguage)
     },
     {
       name: 'Dr. Fatima Al-Rashid',
-      specialization: getGeneralText('healthcare', currentLanguage),
-      availableDays: getGeneralText('mondayThursdaySchedule', currentLanguage),
-      isOnline: true
+      specialization: getGeneralText('healthcare', currentLanguage)
     },
     {
       name: 'Viktor Petrov',
-      specialization: getGeneralText('jobMarket', currentLanguage),
-      availableDays: getGeneralText('wednesdayFridaySchedule', currentLanguage),
-      isOnline: false
+      specialization: getGeneralText('jobMarket', currentLanguage)
     }
   ];
 
@@ -230,7 +220,6 @@ const GeneralSupport: React.FC = () => {
                 name={expert.name}
                 specialization={expert.specialization}
                 availableDays={expert.availableDays}
-                isOnline={expert.isOnline}
                 languageCode={currentLanguage}
               />
             ))}
