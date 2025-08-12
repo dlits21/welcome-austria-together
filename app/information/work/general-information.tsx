@@ -31,19 +31,35 @@ const GeneralInformationPage: React.FC = () => {
   const definitions = {
     'job market': {
       en: 'The supply and demand for employment in the economy, including available positions and job seekers.',
-      de: 'Das Angebot und die Nachfrage nach Arbeitsplätzen in der Wirtschaft, einschließlich verfügbarer Stellen und Arbeitssuchenden.'
+      de: 'Das Angebot und die Nachfrage nach Arbeitsplätzen in der Wirtschaft, einschließlich verfügbarer Stellen und Arbeitssuchenden.',
+      terms: {
+        en: ['labor market', 'labour market'],
+        de: ['Arbeitsmarkt']
+      }
     },
     'networking': {
       en: 'Building professional relationships to create career opportunities and exchange knowledge.',
-      de: 'Aufbau professioneller Beziehungen zur Schaffung von Karrieremöglichkeiten und Wissensaustausch.'
+      de: 'Aufbau professioneller Beziehungen zur Schaffung von Karrieremöglichkeiten und Wissensaustausch.',
+      terms: {
+        en: [],
+        de: ['Networking']
+      }
     },
     'freelancing': {
       en: 'Working independently for multiple clients rather than being employed by a single company.',
-      de: 'Selbstständige Arbeit für mehrere Kunden anstatt bei einem einzigen Unternehmen angestellt zu sein.'
+      de: 'Selbstständige Arbeit für mehrere Kunden anstatt bei einem einzigen Unternehmen angestellt zu sein.',
+      terms: {
+        en: ['self-employment'],
+        de: ['Freelancing', 'Selbstständigkeit', 'Selbstständiger', 'Einzelunternehmer']
+      }
     },
     'qualification recognition': {
       en: 'The process of having foreign educational credentials officially recognized in Austria.',
-      de: 'Der Prozess der offiziellen Anerkennung ausländischer Bildungsabschlüsse in Österreich.'
+      de: 'Der Prozess der offiziellen Anerkennung ausländischer Bildungsabschlüsse in Österreich.',
+      terms: {
+        en: ['recognition of qualifications'],
+        de: ['Qualifikationsanerkennung', 'Anerkennung von Qualifikationen']
+      }
     }
   };
 

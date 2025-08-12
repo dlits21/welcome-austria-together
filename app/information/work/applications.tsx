@@ -31,19 +31,35 @@ const ApplicationsPage: React.FC = () => {
   const definitions = {
     'CV': {
       en: 'Curriculum Vitae - a document summarizing your education, work experience, and skills.',
-      de: 'Lebenslauf - ein Dokument, das Ihre Ausbildung, Berufserfahrung und Fähigkeiten zusammenfasst.'
+      de: 'Lebenslauf - ein Dokument, das Ihre Ausbildung, Berufserfahrung und Fähigkeiten zusammenfasst.',
+      terms: {
+        en: ['resume', 'résumé'],
+        de: ['Lebenslauf']
+      }
     },
     'cover letter': {
       en: 'A letter accompanying your CV that explains your motivation and qualifications for a specific job.',
-      de: 'Ein Brief, der Ihren Lebenslauf begleitet und Ihre Motivation und Qualifikationen für eine bestimmte Stelle erklärt.'
+      de: 'Ein Brief, der Ihren Lebenslauf begleitet und Ihre Motivation und Qualifikationen für eine bestimmte Stelle erklärt.',
+      terms: {
+        en: ['motivation letter'],
+        de: ['Motivationsschreiben', 'Anschreiben']
+      }
     },
     'references': {
       en: 'Contact information of previous employers or colleagues who can vouch for your work performance.',
-      de: 'Kontaktdaten früherer Arbeitgeber oder Kollegen, die für Ihre Arbeitsleistung bürgen können.'
+      de: 'Kontaktdaten früherer Arbeitgeber oder Kollegen, die für Ihre Arbeitsleistung bürgen können.',
+      terms: {
+        en: [],
+        de: ['Referenzen']
+      }
     },
     'portfolio': {
       en: 'A collection of work samples demonstrating your skills and achievements in your field.',
-      de: 'Eine Sammlung von Arbeitsproben, die Ihre Fähigkeiten und Erfolge in Ihrem Bereich demonstrieren.'
+      de: 'Eine Sammlung von Arbeitsproben, die Ihre Fähigkeiten und Erfolge in Ihrem Bereich demonstrieren.',
+      terms: {
+        en: [],
+        de: ['Portfolio']
+      }
     }
   };
 

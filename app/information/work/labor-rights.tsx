@@ -31,19 +31,35 @@ const LaborRightsPage: React.FC = () => {
   const definitions = {
     'overtime': {
       en: 'Work performed beyond normal working hours, typically compensated with extra pay or time off.',
-      de: 'Arbeit, die über die normalen Arbeitszeiten hinaus geleistet wird, normalerweise mit Überstundenlohn oder Zeitausgleich kompensiert.'
+      de: 'Arbeit, die über die normalen Arbeitszeiten hinaus geleistet wird, normalerweise mit Überstundenlohn oder Zeitausgleich kompensiert.',
+      terms: {
+        en: [],
+        de: ['Überstunden']
+      }
     },
     'termination notice': {
       en: 'Advance warning required by law before ending an employment contract.',
-      de: 'Gesetzlich vorgeschriebene Vorankündigung vor Beendigung eines Arbeitsvertrags.'
+      de: 'Gesetzlich vorgeschriebene Vorankündigung vor Beendigung eines Arbeitsvertrags.',
+      terms: {
+        en: ['notice period'],
+        de: ['Kündigungsfrist', 'Kündigungsfristen']
+      }
     },
     'works council': {
-      en: 'Employee representatives who protect workers\' rights and interests within a company.',
-      de: 'Arbeitnehmervertreter, die die Rechte und Interessen der Arbeiter in einem Unternehmen schützen.'
+      en: "Employee representatives who protect workers' rights and interests within a company.",
+      de: 'Arbeitnehmervertreter, die die Rechte und Interessen der Arbeiter in einem Unternehmen schützen.',
+      terms: {
+        en: [],
+        de: ['Betriebsrat']
+      }
     },
     'discrimination': {
       en: 'Unfair treatment based on personal characteristics like gender, age, religion, or nationality.',
-      de: 'Unfaire Behandlung aufgrund persönlicher Eigenschaften wie Geschlecht, Alter, Religion oder Nationalität.'
+      de: 'Unfaire Behandlung aufgrund persönlicher Eigenschaften wie Geschlecht, Alter, Religion oder Nationalität.',
+      terms: {
+        en: [],
+        de: ['Diskriminierung']
+      }
     }
   };
 

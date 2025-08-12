@@ -31,19 +31,35 @@ const AllYouNeedToKnowPage: React.FC = () => {
   const definitions = {
     'employment contract': {
       en: 'A legal agreement between employer and employee that defines working conditions, salary, and responsibilities.',
-      de: 'Ein rechtlicher Vertrag zwischen Arbeitgeber und Arbeitnehmer, der Arbeitsbedingungen, Gehalt und Verantwortlichkeiten definiert.'
+      de: 'Ein rechtlicher Vertrag zwischen Arbeitgeber und Arbeitnehmer, der Arbeitsbedingungen, Gehalt und Verantwortlichkeiten definiert.',
+      terms: {
+        en: [],
+        de: ['Arbeitsvertrag']
+      }
     },
     'work permit': {
       en: 'Official authorization allowing non-EU citizens to work legally in Austria.',
-      de: 'Offizielle Genehmigung, die Nicht-EU-Bürgern erlaubt, legal in Österreich zu arbeiten.'
+      de: 'Offizielle Genehmigung, die Nicht-EU-Bürgern erlaubt, legal in Österreich zu arbeiten.',
+      terms: {
+        en: [],
+        de: ['Arbeitsgenehmigung', 'Arbeitserlaubnis']
+      }
     },
     'social insurance': {
       en: 'Mandatory insurance covering health, pension, unemployment, and accident benefits.',
-      de: 'Pflichtversicherung, die Gesundheit, Rente, Arbeitslosigkeit und Unfallleistungen abdeckt.'
+      de: 'Pflichtversicherung, die Gesundheit, Rente, Arbeitslosigkeit und Unfallleistungen abdeckt.',
+      terms: {
+        en: [],
+        de: ['Sozialversicherung']
+      }
     },
     'collective agreement': {
       en: 'Agreement between unions and employers setting minimum wages and working conditions for specific industries.',
-      de: 'Vereinbarung zwischen Gewerkschaften und Arbeitgebern über Mindestlöhne und Arbeitsbedingungen für bestimmte Branchen.'
+      de: 'Vereinbarung zwischen Gewerkschaften und Arbeitgebern über Mindestlöhne und Arbeitsbedingungen für bestimmte Branchen.',
+      terms: {
+        en: ['collective agreements'],
+        de: ['Kollektivvertrag', 'Kollektivverträge', 'Kollektivverträgen']
+      }
     }
   };
 
