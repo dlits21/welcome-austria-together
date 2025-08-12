@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Modal } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
+import { X } from 'lucide-react';
 
 interface HighlightedTextProps {
   children: string;
@@ -13,45 +12,57 @@ const HighlightedText: React.FC<HighlightedTextProps> = ({ children, definitions
   const [modalVisible, setModalVisible] = useState(false);
 
   const renderTextWithHighlights = () => {
-    let text = children;
+    const text = children;
     const highlightedWords = Object.keys(definitions);
     
-    // Split text into words and check for highlights
-    const words = text.split(' ');
-    const elements: JSX.Element[] = [];
+    // Split text into paragraphs and then words
+    const paragraphs = text.split('\n\n');
     
-    words.forEach((word, index) => {
-      // Remove punctuation for matching
-      const cleanWord = word.toLowerCase().replace(/[.,!?;:]$/, '');
-      const isHighlighted = highlightedWords.some(hw => hw.toLowerCase() === cleanWord);
+    return paragraphs.map((paragraph, paragraphIndex) => {
+      const words = paragraph.split(' ');
+      const elements: JSX.Element[] = [];
       
-      if (isHighlighted) {
-        const originalWord = highlightedWords.find(hw => hw.toLowerCase() === cleanWord) || word;
-        elements.push(
-          <TouchableOpacity
-            key={index}
-            onPress={() => {
-              setSelectedWord(originalWord);
-              setModalVisible(true);
-            }}
-            style={styles.highlightedWord}
-          >
-            <Text style={styles.highlightedText}>{word}</Text>
-          </TouchableOpacity>
-        );
-      } else {
-        elements.push(
-          <Text key={index} style={styles.normalText}>{word}</Text>
-        );
-      }
+      words.forEach((word, index) => {
+        // Remove punctuation for matching but keep it for display
+        const cleanWord = word.toLowerCase().replace(/[.,!?;:\n]$/, '');
+        const isHighlighted = highlightedWords.some(hw => hw.toLowerCase() === cleanWord);
+        
+        if (isHighlighted) {
+          const originalWord = highlightedWords.find(hw => hw.toLowerCase() === cleanWord) || word;
+          elements.push(
+            <button
+              key={`${paragraphIndex}-${index}`}
+              onClick={() => {
+                setSelectedWord(originalWord);
+                setModalVisible(true);
+              }}
+              className="inline border-b-2 border-primary bg-primary/10 px-1 py-0.5 rounded-sm text-primary hover:bg-primary/20 transition-colors cursor-pointer"
+            >
+              {word}
+            </button>
+          );
+        } else {
+          elements.push(
+            <span key={`${paragraphIndex}-${index}`} className="text-foreground">
+              {word}
+            </span>
+          );
+        }
+        
+        // Add space between words except for the last word
+        if (index < words.length - 1) {
+          elements.push(
+            <span key={`${paragraphIndex}-space-${index}`} className="text-foreground"> </span>
+          );
+        }
+      });
       
-      // Add space between words except for the last word
-      if (index < words.length - 1) {
-        elements.push(<Text key={`space-${index}`} style={styles.normalText}> </Text>);
-      }
+      return (
+        <p key={paragraphIndex} className="mb-4 leading-relaxed">
+          {elements}
+        </p>
+      );
     });
-    
-    return elements;
   };
 
   const getDefinition = () => {
@@ -60,102 +71,35 @@ const HighlightedText: React.FC<HighlightedTextProps> = ({ children, definitions
   };
 
   return (
-    <View>
-      <View style={styles.textContainer}>
+    <div className="text-foreground">
+      <div className="space-y-4">
         {renderTextWithHighlights()}
-      </View>
+      </div>
       
-      <Modal
-        visible={modalVisible}
-        transparent
-        animationType="fade"
-        onRequestClose={() => setModalVisible(false)}
-      >
-        <TouchableOpacity 
-          style={styles.modalOverlay}
-          activeOpacity={1}
-          onPress={() => setModalVisible(false)}
+      {modalVisible && (
+        <div 
+          className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50"
+          onClick={() => setModalVisible(false)}
         >
-          <View style={styles.modalContent}>
-            <View style={styles.modalHeader}>
-              <Text style={styles.modalTitle}>{selectedWord}</Text>
-              <TouchableOpacity 
-                onPress={() => setModalVisible(false)}
-                style={styles.closeButton}
+          <div 
+            className="bg-background border rounded-lg p-6 max-w-sm w-full shadow-lg"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-center mb-3">
+              <h3 className="text-lg font-semibold text-foreground">{selectedWord}</h3>
+              <button 
+                onClick={() => setModalVisible(false)}
+                className="p-1 hover:bg-muted rounded-sm transition-colors"
               >
-                <MaterialIcons name="close" size={24} color="#666" />
-              </TouchableOpacity>
-            </View>
-            <Text style={styles.modalText}>{getDefinition()}</Text>
-          </View>
-        </TouchableOpacity>
-      </Modal>
-    </View>
+                <X size={20} className="text-muted-foreground" />
+              </button>
+            </div>
+            <p className="text-muted-foreground leading-relaxed">{getDefinition()}</p>
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
-
-const styles = StyleSheet.create({
-  textContainer: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-  },
-  normalText: {
-    fontSize: 16,
-    lineHeight: 24,
-    color: '#374151',
-  },
-  highlightedWord: {
-    borderBottomWidth: 2,
-    borderBottomColor: '#3B82F6',
-    backgroundColor: '#EBF4FF',
-    paddingHorizontal: 2,
-    paddingVertical: 1,
-    borderRadius: 3,
-  },
-  highlightedText: {
-    fontSize: 16,
-    lineHeight: 24,
-    color: '#1E40AF',
-    fontWeight: '500',
-  },
-  modalOverlay: {
-    flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
-  },
-  modalContent: {
-    backgroundColor: 'white',
-    borderRadius: 12,
-    padding: 20,
-    maxWidth: '90%',
-    width: 300,
-    elevation: 5,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-  },
-  modalHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 12,
-  },
-  modalTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#1F2937',
-  },
-  closeButton: {
-    padding: 4,
-  },
-  modalText: {
-    fontSize: 16,
-    lineHeight: 22,
-    color: '#374151',
-  },
-});
 
 export default HighlightedText;
