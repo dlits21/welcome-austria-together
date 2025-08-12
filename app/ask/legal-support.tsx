@@ -95,7 +95,7 @@ const LegalSupportPage: React.FC = () => {
     }
   ];
 
-  const handleQuizAnswer = (answer: string | { key: string, en: string, de: string }) => {
+  const handleQuizAnswer = (answer: any) => {
     const answerValue = typeof answer === 'string' ? answer : answer.key;
     const questionKey = quizQuestions[currentQuestion].key;
     

@@ -5,6 +5,8 @@ import { useRouter } from 'expo-router';
 import { MaterialIcons } from '@expo/vector-icons';
 import { getGlobalText } from '../utils/languageUtils';
 
+const levels_enum = { 'a0': 0, 'a1': 1, 'a2': 2, 'b1':3, 'b2': 4, 'c1':5, 'c2':6};
+
 interface Entity {
   id: string;
   name?: { en: string; de: string };
@@ -73,6 +75,8 @@ const GenericSupportList: React.FC<GenericSupportListProps> = ({
   const router = useRouter();
   const [filteredEntities, setFilteredEntities] = useState<Entity[]>([]);
 
+  console.log("Filter: ", filters, entities)
+
   useEffect(() => {
     let filtered = entities;
 
@@ -83,54 +87,51 @@ const GenericSupportList: React.FC<GenericSupportListProps> = ({
 
     // Filter by support type (course/resource/exam)
     if (filters.supportType) {
-      if (isGermanLearning) {
-        // For German learning, filter by type directly
-        filtered = filtered.filter(entity => entity.type === filters.supportType);
-      } else {
-        filtered = filtered.filter(entity =>
-          entity.supportTypes && entity.supportTypes.includes(filters.supportType)
-        );
-      }
+      filtered = filtered.filter(entity =>
+        entity.supportTypes && entity.supportTypes.includes(filters.supportType)
+      );
     }
 
+    if (filters.courseTypes && filters.courseTypes !== 'all')
+    filtered = filtered.filter(entity => entity.type === filters.courseTypes)
+
     // Filter by level (for German learning)
-    if (filters.level && isGermanLearning) {
+    if (filters.level && isGermanLearning && filters.level.length) {
       filtered = filtered.filter(entity =>
-        entity.level && entity.level.some(level => level.includes(filters.level))
+        entity.level && (entity.level.length > 1 ? filters.level.some(level_key => matchLevel(level_key, entity.level[0], entity.level[1])) : filters.level.some(level_key => level_key === entity.level[0]))
       );
     }
 
     // Filter by location
-    if (filters.location && filters.location !== 'all-austria' && filters.location !== 'anywhere') {
-      if (filters.location === 'Online') {
+    if (filters.location && filters.location !== 'nationwide') {
+
+      if (filters.location.toLowerCase() === 'online') {
         filtered = filtered.filter(entity => entity.online === true);
       } else {
-        filtered = filtered.filter(entity => 
-          entity.location === filters.location || 
-          entity.location === 'all-austria' ||
-          (entity.online && filters.location === 'Online')
+        filtered = filtered.filter(entity =>
+          entity.location.toLowerCase() === filters.location.toLowerCase() ||
+          entity.location.toLowerCase() === 'nationwide' ||
+          (entity.online && filters.location.toLowerCase() === 'online')
         );
       }
     }
 
     // Additional filters for German learning
     if (isGermanLearning) {
-      Object.keys(filters).forEach(filterKey => {
-        if (!['supportType', 'level', 'location', 'urgency'].includes(filterKey)) {
-          const filterValue = filters[filterKey];
-          if (filterValue === 'true') {
-            if (filterKey === 'forWomen') {
-              filtered = filtered.filter(entity => entity.forWomen === true);
-            } else if (filterKey === 'forYoungMigrants') {
-              filtered = filtered.filter(entity => entity.forYoungMigrants === true);
-            } else if (filterKey === 'childcare') {
-              filtered = filtered.filter(entity => entity.childcare === true);
-            } else if (filterKey === 'integrationRequirement') {
-              filtered = filtered.filter(entity => entity.integrationRequirement === true);
-            } else if (filterKey === 'onlineOnly') {
-              filtered = filtered.filter(entity => entity.online === true);
-            }
-          }
+
+      filters?.additionalFilters.map(filterKey => {
+          console.log("FilterKey ", filterKey)
+        if (filterKey === 'forWomen') {
+          filtered = filtered.filter(entity => entity.forWomen === true);
+          console.log("Only Women ", filtered)
+        } else if (filterKey === 'forYoungMigrants') {
+          filtered = filtered.filter(entity => entity.forYoungMigrants === true);
+        } else if (filterKey === 'childcare') {
+          filtered = filtered.filter(entity => entity.childcare === true);
+        } else if (filterKey === 'integrationRequirement') {
+          filtered = filtered.filter(entity => entity.integrationRequirement === true);
+        } else if (filterKey === 'onlineOnly') {
+          filtered = filtered.filter(entity => entity.online === true);
         }
       });
     }
@@ -140,6 +141,10 @@ const GenericSupportList: React.FC<GenericSupportListProps> = ({
 
   const getCategoryIcon = (category: string): string => {
     return categoryConfig[category]?.icon || 'help';
+  };
+
+  const matchLevel = (value: string, lower: string, upper: string) => {
+    return levels_enum[lower.toLowerCase()] <= levels_enum[value.toLowerCase()] && levels_enum[value.toLowerCase()] <= levels_enum[upper.toLowerCase()]
   };
 
   const getCategoryColor = (category: string): string => {
@@ -161,7 +166,6 @@ const GenericSupportList: React.FC<GenericSupportListProps> = ({
   };
 
   const getEntitySubtitle = (entity: Entity): string => {
-    console.error("help", entity)
     if (entity.subtitle) {
       return entity.subtitle[languageCode] || entity.subtitle['de'];
     }
@@ -242,7 +246,7 @@ const GenericSupportList: React.FC<GenericSupportListProps> = ({
               {isGermanLearning && (
                 <View style={[styles.courseTypeBadge, { backgroundColor: getCategoryColor(entity.category) }]}>
                   <Text style={styles.courseTypeText}>
-                    {getTranslation(`courseTypes.${entity.category}`, languageCode)}
+                    {getTranslation(`${entity.category}`, languageCode)}
                   </Text>
                 </View>
               )}

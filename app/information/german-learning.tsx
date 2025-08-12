@@ -9,8 +9,10 @@ import GermanLearningList from '../../components/GermanLearningList';
 import QuizModal from '../../components/QuizModal';
 import QuizControls from '../../components/QuizControls';
 import FilterSection from '../../components/FilterSection';
+import VirtualAssistantModal from '../../components/VirtualAssistantModal';
+import TutorialModal from '../../components/TutorialModal';
 import coursesData from '../../data/courses/german-learning-courses.json';
-import germanLearningTexts from '../../data/language/information/german-learning.json';
+import { getInformationGermanLearningText, getGlobalText } from '../../utils/languageUtils';
 
 interface GermanCourse {
   id: string;
@@ -31,123 +33,216 @@ interface GermanCourse {
 
 const GermanLearningPage = () => {
   const { currentLanguage } = useLanguage();
-  const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
-  const [showHelpModal, setShowHelpModal] = useState(false);
+  const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
+  const [showTutorial, setShowTutorial] = useState(false);
+
+  const germanCourseEntities: GermanCourse[] = Object.values(coursesData);
+
+  // Quiz states
   const [showQuiz, setShowQuiz] = useState(true);
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [showFilters, setShowFilters] = useState(false);
-  const [activeTab, setActiveTab] = useState<string>('all');
+  const [filterAnswers, setFilterAnswers] = useState({
+    courseType: '',
+    additionalFilter: '',
+    level: '',
+    location: '',
+  });
 
-  // Filter states for GermanLearningList
-  const [filters, setFilters] = useState<Record<string, string>>({});
+  const [selectedCourseType, setSelectedCourseType] = useState<string>('all');
+  const [selectedAdditionalFilters, setSelectedAdditionalFilters] = useState<string[]>([]);
+  const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
+  const [selectedLevel, setSelectedLevel] = useState<string[]>([]);
+  const [showFilters, setShowFilters] = useState(false);
 
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
-  // Helper function to get translations from the JSON file
-  const getTranslation = (key: string, lang: string = currentLanguage): string => {
-    const keyParts = key.split('.');
-    let value: any = germanLearningTexts;
-    
-    for (const part of keyParts) {
-      value = value?.[part];
-    }
-    
-    return value?.[lang] || value?.['en'] || key;
+  const locations = Array.from(new Set(germanCourseEntities.map(entity => entity.courseDetails.location.toLowerCase())));
+  const tabs = [
+    'all',
+    'course',
+    'resource',
+    'exam',
+  ]
+
+  const additionalFilters = [
+    'forWomen',
+    'childcare',
+    'forYoungMigrants',
+    'onlineOnly',
+    'integrationRequirement',
+  ]
+
+
+  const filters = {
+    additionalFilters: selectedAdditionalFilters,
+    courseTypes: selectedCourseType,
+    location: selectedLocations.length > 0 ? selectedLocations[0] : '',
+    level: selectedLevel,
   };
 
   // Quiz questions using translations
-  const getQuizQuestions = () => [
+  const quizQuestions = [
     {
-      question: getTranslation('quizQuestions.type.question'),
+      question: getInformationGermanLearningText('courseTypeQuestion', currentLanguage),
       answers: [
-        { key: 'course', en: getTranslation('quizQuestions.type.answers.course'), de: getTranslation('quizQuestions.type.answers.course') },
-        { key: 'resource', en: getTranslation('quizQuestions.type.answers.resource'), de: getTranslation('quizQuestions.type.answers.resource') },
-        { key: 'exam', en: getTranslation('quizQuestions.type.answers.exam'), de: getTranslation('quizQuestions.type.answers.exam') }
+        { key: 'course', value: getInformationGermanLearningText('courses', currentLanguage) },
+        { key: 'resource', value: getInformationGermanLearningText('resources', currentLanguage) },
+        { key: 'exam', value: getInformationGermanLearningText('exams', currentLanguage) }
       ],
-      key: 'supportType'
+      key: 'courseType'
     },
     {
-      question: getTranslation('quizQuestions.level.question'),
+      question: getInformationGermanLearningText('levelQuestion', currentLanguage),
       answers: ['A0', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2'],
       key: 'level'
     },
     {
-      question: getTranslation('quizQuestions.location.question'),
-      answers: [
-        { key: 'Online', en: getTranslation('quizQuestions.location.answers.online'), de: getTranslation('quizQuestions.location.answers.online') },
-        { key: 'Vienna', en: getTranslation('quizQuestions.location.answers.vienna'), de: getTranslation('quizQuestions.location.answers.vienna') },
-        { key: 'anywhere', en: getTranslation('quizQuestions.location.answers.anyLocation'), de: getTranslation('quizQuestions.location.answers.anyLocation') }
-      ],
+      question: getInformationGermanLearningText('locationQuestion', currentLanguage),
+      answers: locations.map(location => ({ key: location.toLowerCase(), value: getGlobalText(location.toLowerCase().replace(" ", ""), currentLanguage)})),
       key: 'location'
+    },
+    {
+      question: getInformationGermanLearningText('additionalFiltersQuestion', currentLanguage),
+      answers: [
+        { key: 'forWomen', value: getInformationGermanLearningText('forWomen', currentLanguage) },
+        { key: 'childcare', value: getInformationGermanLearningText('childcare', currentLanguage) },
+        { key: 'forYoungMigrants', value: getInformationGermanLearningText('forYoungMigrants', currentLanguage) },
+        { key: 'onlineOnly', value: getInformationGermanLearningText('onlineOnly', currentLanguage) },
+        { key: 'integrationRequirement', value: getInformationGermanLearningText('integrationRequirement', currentLanguage) },
+      ],
+      key: 'additionalFilter'
     }
   ];
 
-
-  const toggleSound = () => {
-    setSoundEnabled(!soundEnabled);
-  };
-
-  const handleQuizAnswer = (answer: string | { key: string; en: string; de: string }) => {
-    const quizQuestions = getQuizQuestions();
-    const currentQ = quizQuestions[currentQuestion];
-    
-    // Apply filter based on answer
-    const newFilters = { ...filters };
-    const answerKey = typeof answer === 'string' ? answer : answer.key;
-    
-    if (currentQ.key === 'supportType') {
-      newFilters.supportType = answerKey;
-      setActiveTab(answerKey);
-    } else if (currentQ.key === 'level') {
-      newFilters.level = answerKey;
-    } else if (currentQ.key === 'location') {
-      if (answerKey !== 'anywhere') {
-        newFilters.location = answerKey;
+  const handleFilters = (key: string, value: string) => {
+    if (key === 'courseType') {
+        console.log("Handle courseType", value)
+      setSelectedCourseType(value);
+    } else if (key === 'level') {
+      setSelectedLevel([value]);
+    } else if (key === 'additionalFilter') {
+      setSelectedAdditionalFilters([value]);
+    } else if (key === 'location') {
+      const locationName = locations.find(loc => loc.toLowerCase() === value);
+      if (locationName) {
+        setSelectedLocations([locationName]);
       }
     }
+  }
+
+  const handleQuizAnswer = (answer: any) => {
+    const answerValue = typeof answer === 'string' ? answer : answer.key;
+    const questionKey = quizQuestions[currentQuestion].key;
     
-    setFilters(newFilters);
+    // Apply filter based on answer
+    setFilterAnswers(prev => ({
+      ...prev,
+      [questionKey]: answerValue
+    }));
+    
+    handleFilters(questionKey, answerValue)
 
     // Move to next question or close quiz
     if (currentQuestion < quizQuestions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
       setShowQuiz(false);
-      setCurrentQuestion(0);
     }
   };
 
-  const skipQuestion = () => {
-    const quizQuestions = getQuizQuestions();
+  const handleSkipQuiz = () => {
     if (currentQuestion < quizQuestions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
       setShowQuiz(false);
-      setCurrentQuestion(0);
     }
   };
 
+  const handleCloseQuiz = () => {
+    setShowQuiz(false);
+  };
+
   const resetQuiz = () => {
+    setFilterAnswers({ courseType: '', location: '', level: '', additionalFilters: '' });
     setCurrentQuestion(0);
     setShowQuiz(true);
-    setFilters({});
-    setActiveTab('all');
+    setSelectedCourseType('all');
   };
 
-  const onResetFilters = () => {
-    setFilters({});
-    setActiveTab('all');
+  const toggleCourseType = (type: string) => {
+    setSelectedCourseType(type);
   };
 
+  const toggleAdditionalFilters = (type: string) => {
+    setSelectedAdditionalFilters(prev =>
+      prev.includes(type)
+        ? prev.filter(t => t !== type)
+        : [...prev, type]
+    );
+  };
+
+  const toggleLevel = (type: string) => {
+    setSelectedLevel(prev =>
+      prev.includes(type)
+        ? prev.filter(t => t !== type)
+        : [...prev, type]
+    );
+  };
+
+  const toggleLocation = (location: string) => {
+    setSelectedLocations(prev =>
+      prev.includes(location)
+        ? prev.filter(l => l !== location)
+        : [...prev, location]
+    );
+  };
+
+  const clearFilters = () => {
+    setSelectedAdditionalFilters([]);
+    setSelectedLocations([]);
+    setSelectedLevel([]);
+    setSelectedCourseType('all');
+  };
+
+ // Filter groups for FilterSection with multi-lingual labels
+  const filterGroups = [
+
+    {
+      title: getGlobalText('courseType', currentLanguage),
+      items: tabs,
+      selectedItems: selectedCourseType,
+      displayLabels: tabs.reduce((acc, type) => ({
+         ...acc,
+         [type]: type.replace('-', ' ')
+       }), {}),
+      onToggle: toggleCourseType
+    },
+    {
+      title: getGlobalText('location', currentLanguage),
+      items: locations,
+      selectedItems: selectedLocations,
+      onToggle: toggleLocation
+    },
+    {
+      title: getInformationGermanLearningText('AdditionalFilterTitle', currentLanguage),
+      items: additionalFilters,
+      selectedItems: selectedAdditionalFilters,
+      onToggle: toggleAdditionalFilters,
+      displayLabels: additionalFilters.reduce((acc, type) => ({
+        ...acc,
+        [type]: type.replace('-', ' ')
+      }), {})
+    },
+  ];
 
   // Tab buttons for filtering by course type
   const renderTabButtons = () => {
     const tabs = [
-      { id: 'all', label: getTranslation('tabs.all') },
-      { id: 'course', label: getTranslation('tabs.courses') },
-      { id: 'resource', label: getTranslation('tabs.resources') },
-      { id: 'exam', label: getTranslation('tabs.exams') }
+      { id: 'all', label: getInformationGermanLearningText('all', currentLanguage) },
+      { id: 'course', label: getInformationGermanLearningText('course', currentLanguage) },
+      { id: 'resource', label: getInformationGermanLearningText('resource', currentLanguage) },
+      { id: 'exam', label: getInformationGermanLearningText('exam', currentLanguage) }
     ];
 
     return (
@@ -157,22 +252,18 @@ const GermanLearningPage = () => {
             key={tab.id}
             style={[
               styles.tabButton,
-              activeTab === tab.id && styles.activeTab
+              selectedCourseType === tab.id && styles.activeTab
             ]}
             onPress={() => {
-              setActiveTab(tab.id);
+              setSelectedCourseType(tab.id);
               if (tab.id === 'all') {
-                const newFilters = { ...filters };
-                delete newFilters.supportType;
-                setFilters(newFilters);
-              } else {
-                setFilters({ ...filters, supportType: tab.id });
+                setSelectedCourseType('all');
               }
             }}
           >
             <Text style={[
               styles.tabButtonText,
-              activeTab === tab.id && styles.activeTabText
+              selectedCourseType === tab.id && styles.activeTabText
             ]}>
               {tab.label}
             </Text>
@@ -185,57 +276,72 @@ const GermanLearningPage = () => {
   return (
     <SafeAreaView style={styles.container}>
       <PageNavigation
-        toggleSound={toggleSound}
-        soundEnabled={soundEnabled}
         showLanguageModal={() => setShowLanguageModal(true)}
-        showHelpModal={() => setShowHelpModal(true)}
+        showVirtualAssistant={() => setShowVirtualAssistant(true)}
+        showTutorial={() => setShowTutorial(true)}
       />
 
       <View style={styles.content}>
         <Text style={styles.title}>
-          {getTranslation('pageTitle')}
+          {getInformationGermanLearningText('pageTitle', currentLanguage)}
         </Text>
         <Text style={styles.subtitle}>
-          {getTranslation('pageSubtitle')}
+          {getInformationGermanLearningText('pageSubtitle', currentLanguage)}
         </Text>
 
-        <QuizControls
-          languageCode={currentLanguage}
-          onResetQuiz={resetQuiz}
-          onToggleFilters={() => setShowFilters(!showFilters)}
-        />
+        {!showQuiz && (
+          <QuizControls
+            languageCode={currentLanguage}
+            onResetQuiz={resetQuiz}
+            onToggleFilters={() => setShowFilters(!showFilters)}
+          />
+        )}
 
         {/* Tab Buttons */}
         {renderTabButtons()}
 
-        <GermanLearningList
-          filters={filters}
-          languageCode={currentLanguage}
-          onResetFilters={onResetFilters}
-          getTranslation={getTranslation}
+        <FilterSection
+          visible={!showQuiz && showFilters}
+          title={getGlobalText('filters', currentLanguage)}
+          languageCode={language.code}
+          filterGroups={filterGroups}
+          onClearFilters={clearFilters}
+          getTranslation={getInformationGermanLearningText}
         />
+
+        {!showQuiz && (
+          <GermanLearningList
+            filters={filters}
+            languageCode={currentLanguage}
+            onResetFilters={clearFilters}
+            getTranslation={getInformationGermanLearningText}
+          />
+        )}
       </View>
 
       <QuizModal
         visible={showQuiz}
         currentQuestion={currentQuestion}
-        questions={getQuizQuestions()}
+        questions={quizQuestions}
         languageCode={currentLanguage}
         onAnswer={handleQuizAnswer}
-        onSkip={skipQuestion}
-        onClose={() => setShowQuiz(false)}
+        onSkip={handleSkipQuiz}
+        onClose={handleCloseQuiz}
       />
 
+      {/* Language Modal */}
       <LanguageModal
         visible={showLanguageModal}
         onClose={() => setShowLanguageModal(false)}
         languageCode={language.code}
       />
 
-      <HelpModal
-        visible={showHelpModal}
-        onClose={() => setShowHelpModal(false)}
+      {/* Tutorial Modal */}
+      <TutorialModal
+        visible={showTutorial}
+        onClose={() => setShowTutorial(false)}
         languageCode={language.code}
+        tutorialData="german-learning"
       />
     </SafeAreaView>
   );

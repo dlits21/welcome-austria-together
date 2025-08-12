@@ -1,10 +1,11 @@
 import React from 'react';
 import { Modal, View, Text, TouchableOpacity, StyleSheet, ScrollView, Platform } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { getInformationGermanLearningText, getGlobalText } from '../utils/languageUtils';
 
 interface QuizQuestion {
   question: string;
-  answers: (string | { key: string; en: string; de: string })[];
+  answers: (string | { key: string; value: string })[];
   key: string;
 }
 
@@ -13,7 +14,7 @@ interface QuizModalProps {
   currentQuestion: number;
   questions: QuizQuestion[];
   languageCode: string;
-  onAnswer: (answer: string | { key: string; en: string; de: string }) => void;
+  onAnswer: (answer: string | { key: string; value: string }) => void;
   onSkip: () => void;
   onClose: () => void;
 }
@@ -33,15 +34,15 @@ const QuizModal: React.FC<QuizModalProps> = ({
 
   const getLevelDescription = (level: string) => {
     const descriptions: { [key: string]: { en: string; de: string } } = {
-      'A0': { en: 'Complete beginner', de: 'Kompletter Anfänger' },
-      'A1': { en: 'Beginner', de: 'Anfänger' },
-      'A2': { en: 'Elementary', de: 'Grundkenntnisse' },
-      'B1': { en: 'Intermediate', de: 'Mittelstufe' },
-      'B2': { en: 'Upper intermediate', de: 'Obere Mittelstufe' },
-      'C1': { en: 'Advanced', de: 'Fortgeschritten' },
-      'C2': { en: 'Proficient', de: 'Sehr fortgeschritten' }
+      'A0': getInformationGermanLearningText('a0', languageCode),
+      'A1': getInformationGermanLearningText('a1', languageCode),
+      'A2': getInformationGermanLearningText('a2', languageCode),
+      'B1': getInformationGermanLearningText('b1', languageCode),
+      'B2': getInformationGermanLearningText('b2', languageCode),
+      'C1': getInformationGermanLearningText('c1', languageCode),
+      'C2': getInformationGermanLearningText('c2', languageCode),
     };
-    return descriptions[level] ? descriptions[level][languageCode as 'en' | 'de'] : level;
+    return descriptions[level] ? descriptions[level] : level;
   };
 
   return (
@@ -58,13 +59,11 @@ const QuizModal: React.FC<QuizModalProps> = ({
           </TouchableOpacity>
 
           <Text style={styles.modalTitle}>
-            {languageCode === 'de' ? 'Finden Sie das Richtige für sich' : 'Find What\'s Right for You'}
+            {getInformationGermanLearningText('languageSupport', languageCode)}
           </Text>
 
           <Text style={styles.modalSubtitle}>
-            {languageCode === 'de'
-              ? 'Beantworten Sie ein paar kurze Fragen, um personalisierte Empfehlungen zu erhalten.'
-              : 'Answer a few quick questions to get personalized recommendations.'}
+            {getInformationGermanLearningText('languageSupportQuestion', languageCode)}
           </Text>
 
           {/* Scrollable content container */}
@@ -78,7 +77,7 @@ const QuizModal: React.FC<QuizModalProps> = ({
 
             {currentQ.answers.map((answer, index) => {
               const isStringAnswer = typeof answer === 'string';
-              let displayText = isStringAnswer ? answer : (languageCode === 'de' ? answer.de : answer.en);
+              let displayText = isStringAnswer ? answer : (answer?.value);
 
               // Add description for level answers without duplication
               if (currentQ.key === 'level' && isStringAnswer) {
@@ -103,7 +102,7 @@ const QuizModal: React.FC<QuizModalProps> = ({
           <View style={styles.modalFooter}>
             <TouchableOpacity style={styles.skipButton} onPress={onSkip}>
               <Text style={styles.skipButtonText}>
-                {languageCode === 'de' ? 'Überspringen' : 'Skip'}
+                {getGlobalText('skip', languageCode)}
               </Text>
             </TouchableOpacity>
 

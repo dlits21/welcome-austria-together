@@ -51,32 +51,13 @@ const GermanLearningList: React.FC<GermanLearningListProps> = ({
     // Convert course data to match GenericSupportList interface
     const converted: GermanCourse[] = Object.values(coursesData).map((course: any) => {
       const supportTypes: string[] = [];
-      
-      // Map course type to support types
-      if (course.courseDetails?.type === 'course') {
-        supportTypes.push('courseTypes.course');
-      }
-      if (course.courseDetails?.type === 'resource') {
-        supportTypes.push('courseTypes.resource');
-      }
-      if (course.courseDetails?.type === 'exam') {
-        supportTypes.push('courseTypes.exam');
-      }
-
-      // Add level as support type
-      //if (course.courseDetails?.level) {
-      //  const levels = course.courseDetails.level.includes('-')
-      //    ? course.courseDetails.level.split('-').map((l: string) => l.trim())
-      //    : [course.courseDetails.level];
-      //  supportTypes.push(...levels);
-      //}
 
       // Add additional tags
-      if (course.forWomen) supportTypes.push('additionalFilters.forWomen');
-      if (course.forYoungMigrants) supportTypes.push('additionalFilters.forYoungMigrants');
-      if (course.childcare) supportTypes.push('additionalFilters.childcare');
-      if (course.tags?.includes('Integration')) supportTypes.push('additionalFilters.integrationRequirement');
-      if (course.courseDetails?.location === 'Online' || course.online) supportTypes.push('additionalFilters.onlineOnly');
+      if (course.forWomen) supportTypes.push('forWomen');
+      if (course.forYoungMigrants) supportTypes.push('forYoungMigrants');
+      if (course.childcare) supportTypes.push('childcare');
+      if (course.tags?.includes('Integration')) supportTypes.push('integrationRequirement');
+      if (course.courseDetails?.location === 'Online' || course.online) supportTypes.push('onlineOnly');
 
       return {
         id: course.id,
@@ -135,7 +116,7 @@ const GermanLearningList: React.FC<GermanLearningListProps> = ({
       getTranslation={getTranslation}
       routePrefix="/information/german-learning-pages"
       categoryConfig={categoryConfig}
-      noResultsText={getInformationGermanLearningText('filters.noResults', languageCode)}
+      noResultsText={getInformationGermanLearningText('noResults', languageCode)}
       resetFiltersText={getGlobalText('resetFilters', languageCode)}
       resultsFoundText={getGlobalText('resultsFound', languageCode)}
       isGermanLearning={true}

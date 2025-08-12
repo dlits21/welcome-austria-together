@@ -376,7 +376,7 @@
     "courseDetails": {
       "level": "A1-B2",
       "price": "Free",
-      "location": "nationwide",
+      "location": "Nationwide",
       "certificate": "Yes",
       "type": "course"
     },
@@ -485,7 +485,7 @@
     "courseDetails": {
       "level": "A1",
       "price": "Free",
-      "location": "Online / Offline (app-based)",
+      "location": "Online",
       "certificate": "No",
       "type": "resource"
     },
@@ -891,7 +891,7 @@
     "courseDetails": {
       "level": "A1-C1",
       "price": "Free",
-      "location": "nationwide",
+      "location": "Nationwide",
       "certificate": "Yes (ÖIF)",
       "type": "course"
     },
@@ -977,7 +977,7 @@
     "courseDetails": {
       "level": "A1-C2",
       "price": "Varies",
-      "location": "Over 400 licensed examination centers worldwide",
+      "location": "Nationwide",
       "certificate": "Yes (ÖSD)",
       "type": "exam"
     },

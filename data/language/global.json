@@ -531,5 +531,24 @@
     "so": "Bilaash",
     "ka": "უფასო",
     "sq": "Falas"
+  },
+  "online": {
+    "en": "Online",
+    "de": "Online",
+    "ru": "Онлайн",
+    "ce": "Онлайн",
+    "prs": "آنلاین",
+    "ps": "آنلاین",
+    "fa": "آنلاین",
+    "ar": "متصل",
+    "ku": "ئۆنلاین",
+    "so": "Online",
+    "ka": "ონლაინ",
+    "sq": "Në linjë"
+  },
+  "courseType":
+  {
+    "en": "Course Typ",
+    "de": "Typ"
   }
 }
