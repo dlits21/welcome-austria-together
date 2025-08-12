@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Modal, Platform } from 'react-native';
+import { StyleSheet, Text, View, Modal, TouchableOpacity } from 'react-native';
 
 interface DefinitionValue {
   en: string; // Explanation in English
@@ -92,18 +92,17 @@ const HighlightedText: React.FC<HighlightedTextProps> = ({ children, definitions
 
       if (canonicalKey) {
         elements.push(
-          <TouchableOpacity
+          <Text
             key={`p-${pIndex}-h-${matchStart}`}
             onPress={() => {
               setSelectedKey(canonicalKey);
               setSelectedLabel(found);
               setModalVisible(true);
             }}
-            activeOpacity={0.7}
-            style={styles.highlightWrap}
+            style={[styles.normalText, styles.highlightedText]}
           >
-            <Text style={[styles.normalText, styles.highlightedText]}>{found}</Text>
-          </TouchableOpacity>
+            {found}
+          </Text>
         );
       } else {
         // Fallback as normal text if no canonical key found
@@ -197,17 +196,17 @@ const styles = StyleSheet.create({
     color: '#374151',
   },
   highlightWrap: {
-    borderBottomWidth: Platform.OS === 'android' ? 1 : 0, // Android dashed underline fallback
+    borderBottomWidth: 3,
     borderStyle: 'dashed',
     borderColor: '#ef4444', // red-500
   },
   highlightedText: {
     fontSize: 16,
     lineHeight: 24,
-    // Red dashed underline on iOS & web RN; border fallback above for Android
-    textDecorationLine: 'underline',
-    textDecorationStyle: 'dashed',
-    textDecorationColor: '#ef4444',
+    borderBottomWidth: 3,
+    borderStyle: 'dashed',
+    borderColor: '#ef4444', // red-500
+    paddingBottom: 1,
   },
   modalOverlay: {
     flex: 1,
