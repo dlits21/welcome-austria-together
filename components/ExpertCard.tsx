@@ -6,6 +6,7 @@ import BookAppointmentModal from './BookAppointmentModal';
 import GroupMeetingsModal from './GroupMeetingsModal';
 import ContactPreferenceModal from './ContactPreferenceModal';
 import { handleContactClick } from '../utils/contactUtils';
+import { GermanFlag, AlbanianFlag, AfghaniFlag, SyrianFlag, IranianFlag, RussianFlag, SomaliFlag, GeorgianFlag } from './Flags';
 
 // Import general support translations
 import generalTranslations from '../data/language/ask/general.json';
@@ -23,6 +24,22 @@ interface ExpertCardProps {
   languageCode: string;
   languages?: string[];
 }
+
+const getCountryFlag = (language: string) => {
+  const flagMap: { [key: string]: React.ComponentType<any> } = {
+    'German': GermanFlag,
+    'Albanian': AlbanianFlag,
+    'Dari': AfghaniFlag,
+    'Arabic': SyrianFlag, // Using Syrian flag for Arabic
+    'Persian': IranianFlag,
+    'Russian': RussianFlag,
+    'Somali': SomaliFlag,
+    'Georgian': GeorgianFlag
+  };
+  
+  const FlagComponent = flagMap[language];
+  return FlagComponent ? <FlagComponent width={20} height={15} /> : null;
+};
 
 const ExpertCard: React.FC<ExpertCardProps> = ({
   name,
@@ -75,9 +92,13 @@ const ExpertCard: React.FC<ExpertCardProps> = ({
           {languages.length > 0 && (
             <View style={styles.languagesContainer}>
               <MaterialIcons name="language" size={14} color="#8B5CF6" />
-              <Text style={styles.languagesText}>
-                {languages.join(', ')}
-              </Text>
+              <View style={styles.flagsContainer}>
+                {languages.map((lang, index) => (
+                  <View key={index} style={styles.flagWrapper}>
+                    {getCountryFlag(lang)}
+                  </View>
+                ))}
+              </View>
             </View>
           )}
         </View>
@@ -206,11 +227,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 4,
   },
-  languagesText: {
-    fontSize: 12,
-    color: '#8B5CF6',
+  flagsContainer: {
+    flexDirection: 'row',
     marginLeft: 4,
-    fontStyle: 'italic',
+  },
+  flagWrapper: {
+    marginRight: 4,
+    borderRadius: 2,
+    overflow: 'hidden',
   },
 });
 
