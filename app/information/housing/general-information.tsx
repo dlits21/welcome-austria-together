@@ -6,12 +6,15 @@ import { languages } from '../../../data/languages/common';
 import PageNavigation from '../../../components/PageNavigation';
 import LanguageModal from '../../../components/LanguageModal';
 import HelpModal from '../../../components/HelpModal';
+import HighlightedText from '../../../components/HighlightedText';
+import FAQItem from '../../../components/FAQItem';
 
 const HousingGeneralInfoPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
+  const [expandedFaq, setExpandedFaq] = useState<number | null>(0);
 
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
@@ -22,14 +25,89 @@ const HousingGeneralInfoPage: React.FC = () => {
     title: { en: 'Housing: General Information', de: 'Wohnen: Allgemeine Informationen' },
     subtitle: { en: 'Basics of renting and living in Austria', de: 'Grundlagen zum Mieten und Wohnen in Österreich' },
     text: {
-      en: `In Austria, most apartments are rented. You usually pay a deposit (Kaution), monthly rent, and operating costs. Register your address (Meldezettel) within 3 days of moving in. Know the difference between main tenancy, subletting, and shared flats (WG).`,
-      de: `In Österreich werden die meisten Wohnungen gemietet. Üblicherweise zahlen Sie eine Kaution, monatliche Miete und Betriebskosten. Melden Sie Ihre Adresse (Meldezettel) innerhalb von 3 Tagen nach Einzug an. Kennen Sie den Unterschied zwischen Hauptmiete, Untermiete und Wohngemeinschaft (WG).`
+      en: `In Austria, most people rent their homes. When you move into a flat you typically pay a deposit (Kaution), monthly rent and operating costs (Betriebskosten). Within 3 days you must register your new address using the Meldezettel.
+
+Understanding the difference between main tenancy (Hauptmiete), subletting (Untermiete) and shared flats (WG) helps you choose the right contract and avoid problems. Always ask for a written handover protocol with meter readings and visible defects. Keep all payments traceable (bank transfer) and file every document.`,
+      de: `In Österreich werden die meisten Wohnungen gemietet. Beim Einzug zahlen Sie in der Regel eine Kaution, monatliche Miete und Betriebskosten. Innerhalb von 3 Tagen müssen Sie Ihre neue Adresse mit dem Meldezettel anmelden.
+
+Der Unterschied zwischen Hauptmiete, Untermiete und Wohngemeinschaft (WG) ist wichtig, um den richtigen Vertrag zu wählen und Probleme zu vermeiden. Verlangen Sie ein schriftliches Übergabeprotokoll mit Zählerständen und sichtbaren Mängeln. Zahlen Sie nach Möglichkeit nicht bar und heben Sie alle Unterlagen gut auf.`
     },
     links: [
       { title: { en: 'help.gv.at – Moving and registration', de: 'oesterreich.gv.at – Umzug & Meldung' }, url: 'https://www.oesterreich.gv.at/themen/leben_in_oesterreich/wohnen.html' },
       { title: { en: 'City info (Vienna): Housing', de: 'Stadt Wien: Wohnen' }, url: 'https://www.wien.gv.at/wohnen/' }
     ]
   };
+
+  const definitions = {
+    Kaution: {
+      en: 'Refundable security deposit (usually 2–3 gross monthly rents) held as safety for damages or unpaid costs. Must be returned after proper move-out minus justified costs.',
+      de: 'Rückzahlbare Sicherheitsleistung (meist 2–3 Bruttomonatsmieten) als Absicherung für Schäden oder offene Kosten. Nach korrektem Auszug abzüglich berechtigter Kosten zurückzuzahlen.',
+      terms: { en: ['deposit'], de: ['Kaution'] }
+    },
+    Meldezettel: {
+      en: 'Official address registration form you must submit shortly after moving to a new address.',
+      de: 'Amtliches Formular zur Anmeldung der Wohnadresse, das kurz nach dem Einzug abgegeben werden muss.'
+    },
+    Hauptmiete: {
+      en: 'Main tenancy: you are the primary tenant with a direct contract with the landlord.',
+      de: 'Hauptmiete: Sie sind Hauptmieter:in mit direktem Vertrag mit der Vermietung.'
+    },
+    Untermiete: {
+      en: 'Subletting: you rent from the main tenant, not directly from the landlord. Requires permission in many cases.',
+      de: 'Untermiete: Sie mieten von der Hauptmieter:in und nicht direkt von der Vermietung. Oft zustimmungspflichtig.'
+    },
+    WG: {
+      en: 'Shared flat (WG): several people share a flat and costs; contracts can be joint or separate.',
+      de: 'Wohngemeinschaft (WG): mehrere Personen teilen sich eine Wohnung und Kosten; Verträge können gemeinsam oder getrennt sein.',
+      terms: { en: ['shared flat', 'flatshare', 'shared apartment'], de: ['WG', 'Wohngemeinschaft'] }
+    },
+    Betriebskosten: {
+      en: 'Operating costs (e.g., building services, waste, common electricity) paid in addition to base rent.',
+      de: 'Betriebskosten (z. B. Hausbetrieb, Müll, Allgemeinstrom), die zusätzlich zur Miete zu zahlen sind.',
+      terms: { en: ['operating costs'] }
+    }
+  } as const;
+
+  const keyPoints = {
+    en: [
+      'Register your address (Meldezettel) within 3 days of moving in',
+      'Request a written handover protocol with meter readings and defects',
+      'Prefer bank transfer over cash; keep every receipt and email',
+      'Consider household/liability insurance (Haushalts-/Haftpflichtversicherung)',
+      'Read the house rules (Hausordnung) and waste separation rules'
+    ],
+    de: [
+      'Adresse innerhalb von 3 Tagen mit dem Meldezettel anmelden',
+      'Schriftliches Übergabeprotokoll mit Zählerständen und Mängeln verlangen',
+      'Überweisungen statt Barzahlung; alle Belege und E-Mails aufbewahren',
+      'Haushalts-/Haftpflichtversicherung prüfen',
+      'Hausordnung und Mülltrennung beachten'
+    ]
+  } as const;
+
+  const faqs = [
+    {
+      q: { en: 'What do I need immediately after moving in?', de: 'Was brauche ich direkt nach dem Einzug?' },
+      a: {
+        en: 'Register your address (Meldezettel), read and record all meter readings, put your name on the mailbox, set up electricity/gas/internet if needed, and keep the signed handover protocol.',
+        de: 'Adresse anmelden (Meldezettel), alle Zählerstände ablesen und notieren, Namen am Postkasten anbringen, Strom/Gas/Internet anmelden und das unterschriebene Übergabeprotokoll aufbewahren.'
+      }
+    },
+    {
+      q: { en: 'How high is a typical deposit?', de: 'Wie hoch ist die übliche Kaution?' },
+      a: {
+        en: 'Commonly 2–3 gross monthly rents. It must be returned after move-out minus justified costs (e.g., open bills or damages).',
+        de: 'Üblich sind 2–3 Bruttomonatsmieten. Nach dem Auszug muss sie abzüglich berechtigter Kosten (z. B. offene Rechnungen oder Schäden) zurückgezahlt werden.'
+      }
+    },
+    {
+      q: { en: 'Can I sublet my room?', de: 'Darf ich mein Zimmer untervermieten?' },
+      a: {
+        en: 'Often possible but may require written permission from the landlord and a proper sublet agreement. Always clarify in advance.',
+        de: 'Oft möglich, aber häufig zustimmungspflichtig. Holen Sie sich vorab eine schriftliche Zustimmung und schließen Sie einen Untermietvertrag.'
+      }
+    }
+  ] as const;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -43,7 +121,32 @@ const HousingGeneralInfoPage: React.FC = () => {
       <ScrollView style={styles.content}>
         <Text style={styles.title}>{language.code === 'de' ? content.title.de : content.title.en}</Text>
         <Text style={styles.subtitle}>{language.code === 'de' ? content.subtitle.de : content.subtitle.en}</Text>
-        <Text style={styles.text}>{language.code === 'de' ? content.text.de : content.text.en}</Text>
+        <HighlightedText language={language.code} definitions={definitions}>
+          {language.code === 'de' ? content.text.de : content.text.en}
+        </HighlightedText>
+
+        <View style={styles.linksSection}>
+          <Text style={styles.sectionTitle}>{language.code === 'de' ? 'Wichtig auf einen Blick' : 'Key points'}</Text>
+          {(language.code === 'de' ? keyPoints.de : keyPoints.en).map((item, idx) => (
+            <View key={idx} style={styles.bulletItem}>
+              <MaterialIcons name="check-circle" size={18} color="#10B981" />
+              <Text style={styles.bulletText}>{item}</Text>
+            </View>
+          ))}
+        </View>
+
+        <View style={styles.faqSection}>
+          <Text style={styles.sectionTitle}>{language.code === 'de' ? 'Häufige Fragen' : 'Most pressing questions'}</Text>
+          {(faqs as any[]).map((f, idx) => (
+            <FAQItem
+              key={idx}
+              question={language.code === 'de' ? f.q.de : f.q.en}
+              answer={language.code === 'de' ? f.a.de : f.a.en}
+              expanded={expandedFaq === idx}
+              onPress={() => setExpandedFaq(expandedFaq === idx ? null : idx)}
+            />
+          ))}
+        </View>
 
         <View style={styles.linksSection}>
           <Text style={styles.sectionTitle}>{language.code === 'de' ? 'Nützliche Links' : 'Useful Links'}</Text>
@@ -68,9 +171,12 @@ const styles = StyleSheet.create({
   content: { flex: 1, padding: 16 },
   title: { fontSize: 28, fontWeight: 'bold', marginBottom: 8, color: '#1f2937' },
   subtitle: { fontSize: 18, fontWeight: '600', color: '#4b5563', marginBottom: 20 },
-  text: { fontSize: 16, lineHeight: 24, color: '#374151', marginBottom: 32 },
-  linksSection: { marginBottom: 32 },
-  sectionTitle: { fontSize: 20, fontWeight: '600', color: '#1f2937', marginBottom: 16 },
+  text: { fontSize: 16, lineHeight: 24, color: '#374151', marginBottom: 16 },
+  linksSection: { marginBottom: 24 },
+  sectionTitle: { fontSize: 20, fontWeight: '600', color: '#1f2937', marginBottom: 12 },
+  bulletItem: { flexDirection: 'row', alignItems: 'center', marginBottom: 8 },
+  bulletText: { fontSize: 16, color: '#374151', marginLeft: 8, flex: 1 },
+  faqSection: { marginBottom: 24 },
   linkItem: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#f8fafc', padding: 16, borderRadius: 8, marginBottom: 12, borderWidth: 1, borderColor: '#e2e8f0' },
   linkText: { flex: 1, fontSize: 16, color: '#3B82F6', marginLeft: 12, fontWeight: '500' },
 });
