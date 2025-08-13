@@ -22,40 +22,10 @@ interface HousingTile {
 
 const housingTiles: HousingTile[] = [
   {
-    id: 'landlords-rights',
-    title: { en: 'Landlords Rights', de: 'Vermieterrechte' },
-    color: '#3B82F6',
-    icon: '🏠'
-  },
-  {
-    id: 'renters-rights',
-    title: { en: 'Renters Rights', de: 'Mieterrechte' },
-    color: '#10B981',
-    icon: '🔑'
-  },
-  {
-    id: 'looking-for-housing',
-    title: { en: 'Looking for Housing', de: 'Wohnungssuche' },
-    color: '#F59E0B',
-    icon: '🔍'
-  },
-  {
     id: 'general-information',
     title: { en: 'General Information', de: 'Allgemeine Informationen' },
     color: '#EF4444',
     icon: 'ℹ️'
-  },
-  {
-    id: 'rental-contracts',
-    title: { en: 'Rental Contracts', de: 'Mietverträge' },
-    color: '#8B5CF6',
-    icon: '📄'
-  },
-  {
-    id: 'housing-subsidies',
-    title: { en: 'Housing Subsidies', de: 'Wohnbeihilfen' },
-    color: '#F97316',
-    icon: '💰'
   },
   {
     id: 'moving-checklist',
@@ -64,10 +34,28 @@ const housingTiles: HousingTile[] = [
     icon: '📋'
   },
   {
-    id: 'housing-types',
-    title: { en: 'Housing Types', de: 'Wohnungstypen' },
-    color: '#84CC16',
-    icon: '🏢'
+    id: 'renters-rights',
+    title: { en: 'Renters Rights', de: 'Mieterrechte' },
+    color: '#10B981',
+    icon: '🔑'
+  },
+  {
+    id: 'rental-contracts',
+    title: { en: 'Rental Contracts', de: 'Mietverträge' },
+    color: '#8B5CF6',
+    icon: '📄'
+  },
+  {
+    id: 'search-for-housing',
+    title: { en: 'Search for Housing', de: 'Wohnungssuche' },
+    color: '#F59E0B',
+    icon: '🔍'
+  },
+  {
+    id: 'subsidies',
+    title: { en: 'Subsidies', de: 'Wohnbeihilfen' },
+    color: '#F97316',
+    icon: '💰'
   }
 ];
 
