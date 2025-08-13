@@ -8,6 +8,7 @@ import { languages, getWhatWouldYouWantToKnow } from '../../data/languages/commo
 import PageNavigation from '../../components/PageNavigation';
 import LanguageModal from '../../components/LanguageModal';
 import HelpModal from '../../components/HelpModal';
+import VirtualAssistantModal from '../../components/VirtualAssistantModal';
 
 interface WorkTile {
   id: string;
@@ -76,6 +77,8 @@ const WorkPage: React.FC = () => {
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
   const [searchInput, setSearchInput] = useState('');
+  const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
+  const [searchQuery, setSearchQuery] = useState<string>('');
   const router = useRouter();
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
@@ -86,13 +89,20 @@ const WorkPage: React.FC = () => {
 
   const handleSearch = () => {
     if (searchInput.trim()) {
-      console.log('Search query:', searchInput);
+      setSearchQuery(searchInput);
+      setShowVirtualAssistant(true);
+      setSearchInput('');
     }
   };
 
   const handleTilePress = (tileId: string) => {
     console.log(`Selected tile: ${tileId}`);
     router.push(`/information/work/${tileId}`);
+  };
+
+  const handleVirtualAssistantClose = () => {
+    setShowVirtualAssistant(false);
+    setSearchQuery('');
   };
 
   const pageTitle = language.code === 'de' ? 'Arbeit und Beruf' : 'Work and Career';
@@ -165,6 +175,14 @@ const WorkPage: React.FC = () => {
         visible={showHelpModal}
         onClose={() => setShowHelpModal(false)}
         languageCode={language.code}
+      />
+
+      {/* Virtual Assistant Modal */}
+      <VirtualAssistantModal
+        visible={showVirtualAssistant}
+        onClose={handleVirtualAssistantClose}
+        languageCode={language.code}
+        initialMessage={searchQuery}
       />
     </SafeAreaView>
   );
