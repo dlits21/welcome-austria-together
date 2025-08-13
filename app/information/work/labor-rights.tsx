@@ -5,7 +5,8 @@ import { useLanguage } from '../../../contexts/LanguageContext';
 import { languages } from '../../../data/languages/common';
 import PageNavigation from '../../../components/PageNavigation';
 import LanguageModal from '../../../components/LanguageModal';
-import HelpModal from '../../../components/HelpModal';
+import VirtualAssistantModal from '../../../components/VirtualAssistantModal';
+import TutorialModal from '../../../components/TutorialModal';
 import HighlightedText from '../../../components/HighlightedText';
 
 const LaborRightsPage: React.FC = () => {
@@ -15,10 +16,6 @@ const LaborRightsPage: React.FC = () => {
   const [showTutorial, setShowTutorial] = useState(false);
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
-
-  const toggleSound = () => {
-    setSoundEnabled(!soundEnabled);
-  };
 
   const handleLinkPress = (url: string) => {
     Linking.openURL(url);

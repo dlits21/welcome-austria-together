@@ -15,7 +15,6 @@ const WorkPermitsPage: React.FC = () => {
   const [showTutorial, setShowTutorial] = useState(false);
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
-  const toggleSound = () => setSoundEnabled(!soundEnabled);
   const handleLinkPress = (url: string) => Linking.openURL(url);
 
   const content = {

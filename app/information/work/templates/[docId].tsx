@@ -5,7 +5,8 @@ import { useLanguage } from '../../../../contexts/LanguageContext';
 import { languages } from '../../../../data/languages/common';
 import PageNavigation from '../../../../components/PageNavigation';
 import LanguageModal from '../../../../components/LanguageModal';
-import HelpModal from '../../../../components/HelpModal';
+import VirtualAssistantModal from '../../../../components/VirtualAssistantModal';
+import TutorialModal from '../../../../components/TutorialModal';
 
 const TEMPLATE_CONTENT = {
   'cv': {
@@ -131,9 +132,9 @@ const TemplateDetailPage: React.FC = () => {
   const id = Array.isArray(docId) ? docId[0] : docId;
   const data = id && (TEMPLATE_CONTENT as any)[id as TemplateKey];
 
-  const [soundEnabled, setSoundEnabled] = React.useState(true);
   const [showLanguageModal, setShowLanguageModal] = React.useState(false);
-  const [showHelpModal, setShowHelpModal] = React.useState(false);
+  const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
+  const [showTutorial, setShowTutorial] = useState(false);
 
   if (!id || !data) {
     return (
@@ -154,10 +155,9 @@ const TemplateDetailPage: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <PageNavigation
-        toggleSound={() => setSoundEnabled(!soundEnabled)}
-        soundEnabled={soundEnabled}
         showLanguageModal={() => setShowLanguageModal(true)}
-        showHelpModal={() => setShowHelpModal(true)}
+        showVirtualAssistant={() => setShowVirtualAssistant(true)}
+        showTutorial={() => setShowTutorial(true)}
       />
       <ScrollView style={styles.content}>
         <Text style={styles.title}>{language.code === 'de' ? data.title.de : data.title.en}</Text>
@@ -189,7 +189,20 @@ const TemplateDetailPage: React.FC = () => {
       </ScrollView>
 
       <LanguageModal visible={showLanguageModal} onClose={() => setShowLanguageModal(false)} languageCode={language.code} />
-      <HelpModal visible={showHelpModal} onClose={() => setShowHelpModal(false)} languageCode={language.code} />
+      {/* Virtual Assistant Modal */}
+      <VirtualAssistantModal
+        visible={showVirtualAssistant}
+        onClose={() => setShowVirtualAssistant(false)}
+        languageCode={language.code}
+      />
+
+      {/* Tutorial Modal */}
+      <TutorialModal
+        visible={showTutorial}
+        onClose={() => setShowTutorial(false)}
+        languageCode={language.code}
+        tutorialData="home"
+      />
     </SafeAreaView>
   );
 };

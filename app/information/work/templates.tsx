@@ -34,8 +34,6 @@ const WorkTemplatesPage: React.FC = () => {
 
   const router = useRouter();
 
-  const toggleSound = () => setSoundEnabled(!soundEnabled);
-
   const renderItem = ({ item }: { item: TemplateItem }) => (
     <TouchableOpacity
       style={[styles.tile, { borderColor: item.color + '40' }]}
