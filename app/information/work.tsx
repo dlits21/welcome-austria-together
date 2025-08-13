@@ -76,7 +76,7 @@ const WorkPage: React.FC = () => {
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
   const [showTutorial, setShowTutorial] = useState(false);
-  const [searchInput, setSearchInput] = useState('');
+  const [searchQuery, setSearchQuery] = useState<string>('');
   const router = useRouter();
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
@@ -87,13 +87,20 @@ const WorkPage: React.FC = () => {
 
   const handleSearch = () => {
     if (searchInput.trim()) {
-      console.log('Search query:', searchInput);
+      setSearchQuery(searchInput);
+      setShowVirtualAssistant(true);
+      setSearchInput('');
     }
   };
 
   const handleTilePress = (tileId: string) => {
     console.log(`Selected tile: ${tileId}`);
     router.push(`/information/work/${tileId}`);
+  };
+
+  const handleVirtualAssistantClose = () => {
+    setShowVirtualAssistant(false);
+    setSearchQuery('');
   };
 
   const pageTitle = language.code === 'de' ? 'Arbeit und Beruf' : 'Work and Career';
@@ -117,7 +124,7 @@ const WorkPage: React.FC = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <PageNavigation 
+      <PageNavigation
         showLanguageModal={() => setShowLanguageModal(true)}
         showVirtualAssistant={() => setShowVirtualAssistant(true)}
         showTutorial={() => setShowTutorial(true)}
@@ -159,13 +166,6 @@ const WorkPage: React.FC = () => {
         onClose={() => setShowLanguageModal(false)} 
         languageCode={language.code}
       />
-      
-      {/* Virtual Assistant Modal */}
-      <VirtualAssistantModal
-        visible={showVirtualAssistant}
-        onClose={() => setShowVirtualAssistant(false)}
-        languageCode={language.code}
-      />
 
       {/* Tutorial Modal */}
       <TutorialModal
@@ -173,6 +173,14 @@ const WorkPage: React.FC = () => {
         onClose={() => setShowTutorial(false)}
         languageCode={language.code}
         tutorialData="home"
+      />
+
+      {/* Virtual Assistant Modal */}
+      <VirtualAssistantModal
+        visible={showVirtualAssistant}
+        onClose={handleVirtualAssistantClose}
+        languageCode={language.code}
+        initialMessage={searchQuery}
       />
     </SafeAreaView>
   );
