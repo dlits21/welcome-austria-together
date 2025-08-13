@@ -5,15 +5,16 @@ import { useLanguage } from '../../../contexts/LanguageContext';
 import { languages } from '../../../data/languages/common';
 import PageNavigation from '../../../components/PageNavigation';
 import LanguageModal from '../../../components/LanguageModal';
-import HelpModal from '../../../components/HelpModal';
+import VirtualAssistantModal from '../../../components/VirtualAssistantModal';
+import TutorialModal from '../../../components/TutorialModal';
 import HighlightedText from '../../../components/HighlightedText';
 
 const AllYouNeedToKnowPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
-  const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
-  const [showHelpModal, setShowHelpModal] = useState(false);
-  
+  const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
+  const [showTutorial, setShowTutorial] = useState(false);
+
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
   const toggleSound = () => {
@@ -132,11 +133,10 @@ Das Verständnis der österreichischen Arbeitsplatzkultur ist ebenfalls wichtig.
 
   return (
     <SafeAreaView style={styles.container}>
-      <PageNavigation 
-        toggleSound={toggleSound}
-        soundEnabled={soundEnabled}
+      <PageNavigation
         showLanguageModal={() => setShowLanguageModal(true)}
-        showHelpModal={() => setShowHelpModal(true)}
+        showVirtualAssistant={() => setShowVirtualAssistant(true)}
+        showTutorial={() => setShowTutorial(true)}
       />
       
       <ScrollView style={styles.content}>
@@ -197,10 +197,19 @@ Das Verständnis der österreichischen Arbeitsplatzkultur ist ebenfalls wichtig.
         languageCode={language.code}
       />
       
-      <HelpModal
-        visible={showHelpModal}
-        onClose={() => setShowHelpModal(false)}
+      {/* Virtual Assistant Modal */}
+      <VirtualAssistantModal
+        visible={showVirtualAssistant}
+        onClose={() => setShowVirtualAssistant(false)}
         languageCode={language.code}
+      />
+
+      {/* Tutorial Modal */}
+      <TutorialModal
+        visible={showTutorial}
+        onClose={() => setShowTutorial(false)}
+        languageCode={language.code}
+        tutorialData="home"
       />
     </SafeAreaView>
   );

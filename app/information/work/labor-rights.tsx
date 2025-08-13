@@ -10,9 +10,9 @@ import HighlightedText from '../../../components/HighlightedText';
 
 const LaborRightsPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
-  const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
-  const [showHelpModal, setShowHelpModal] = useState(false);
+  const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
+  const [showTutorial, setShowTutorial] = useState(false);
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
@@ -179,10 +179,9 @@ Dokumentation ist wichtig - führen Sie Aufzeichnungen über Arbeitszeiten, Lohn
   return (
     <SafeAreaView style={styles.container}>
       <PageNavigation 
-        toggleSound={toggleSound}
-        soundEnabled={soundEnabled}
         showLanguageModal={() => setShowLanguageModal(true)}
-        showHelpModal={() => setShowHelpModal(true)}
+        showVirtualAssistant={() => setShowVirtualAssistant(true)}
+        showTutorial={() => setShowTutorial(true)}
       />
       
       <ScrollView style={styles.content}>
@@ -243,10 +242,19 @@ Dokumentation ist wichtig - führen Sie Aufzeichnungen über Arbeitszeiten, Lohn
         languageCode={language.code}
       />
       
-      <HelpModal
-        visible={showHelpModal}
-        onClose={() => setShowHelpModal(false)}
+      {/* Virtual Assistant Modal */}
+      <VirtualAssistantModal
+        visible={showVirtualAssistant}
+        onClose={() => setShowVirtualAssistant(false)}
         languageCode={language.code}
+      />
+
+      {/* Tutorial Modal */}
+      <TutorialModal
+        visible={showTutorial}
+        onClose={() => setShowTutorial(false)}
+        languageCode={language.code}
+        tutorialData="home"
       />
     </SafeAreaView>
   );
