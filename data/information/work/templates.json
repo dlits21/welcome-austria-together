@@ -121,5 +121,130 @@
         { "label": "Zusätzliche Anmerkungen", "key": "notes", "type": "multiline", "placeholder": "Dank und Übergabeangebot", "required": false }
       ]
     }
+  },
+  "job-contract": {
+    "id": "job-contract",
+    "title": {
+      "en": "Job Contract Review",
+      "de": "Arbeitsvertrag Überprüfung"
+    },
+    "subtitle": {
+      "en": "Employment contract analysis template",
+      "de": "Arbeitsvertrag-Analyse-Vorlage"
+    },
+    "description": {
+      "en": "Use this template to review and analyze key points in your employment contract before signing.",
+      "de": "Verwenden Sie diese Vorlage, um wichtige Punkte in Ihrem Arbeitsvertrag vor der Unterzeichnung zu überprüfen und zu analysieren."
+    },
+    "fields": {
+      "en": [
+        { "label": "Your Name", "key": "fullName", "type": "text", "placeholder": "Enter your full name", "required": true },
+        { "label": "Company Name", "key": "companyName", "type": "text", "placeholder": "Name of the company", "required": true },
+        { "label": "Position Title", "key": "position", "type": "text", "placeholder": "Your job title", "required": true },
+        { "label": "Salary Amount", "key": "salary", "type": "text", "placeholder": "Annual/monthly salary", "required": true },
+        { "label": "Working Hours", "key": "workingHours", "type": "text", "placeholder": "Hours per week", "required": true },
+        { "label": "Start Date", "key": "startDate", "type": "text", "placeholder": "DD.MM.YYYY", "required": true },
+        { "label": "Contract Duration", "key": "duration", "type": "text", "placeholder": "Permanent, fixed-term, etc.", "required": true },
+        { "label": "Notice Period", "key": "noticePeriod", "type": "text", "placeholder": "Notice period for termination", "required": false },
+        { "label": "Benefits", "key": "benefits", "type": "multiline", "placeholder": "Health insurance, vacation days, etc.", "required": false },
+        { "label": "Key Contract Points", "key": "keyPoints", "type": "multiline", "placeholder": "Important clauses or concerns", "required": false }
+      ],
+      "de": [
+        { "label": "Ihr Name", "key": "fullName", "type": "text", "placeholder": "Ihren vollständigen Namen eingeben", "required": true },
+        { "label": "Firmenname", "key": "companyName", "type": "text", "placeholder": "Name des Unternehmens", "required": true },
+        { "label": "Stellenbezeichnung", "key": "position", "type": "text", "placeholder": "Ihre Berufsbezeichnung", "required": true },
+        { "label": "Gehalt", "key": "salary", "type": "text", "placeholder": "Jahres-/Monatsgehalt", "required": true },
+        { "label": "Arbeitszeit", "key": "workingHours", "type": "text", "placeholder": "Stunden pro Woche", "required": true },
+        { "label": "Startdatum", "key": "startDate", "type": "text", "placeholder": "TT.MM.JJJJ", "required": true },
+        { "label": "Vertragsdauer", "key": "duration", "type": "text", "placeholder": "Unbefristet, befristet, etc.", "required": true },
+        { "label": "Kündigungsfrist", "key": "noticePeriod", "type": "text", "placeholder": "Kündigungsfrist", "required": false },
+        { "label": "Zusatzleistungen", "key": "benefits", "type": "multiline", "placeholder": "Krankenversicherung, Urlaubstage, etc.", "required": false },
+        { "label": "Wichtige Vertragspunkte", "key": "keyPoints", "type": "multiline", "placeholder": "Wichtige Klauseln oder Bedenken", "required": false }
+      ]
+    }
+  },
+  "reference-letter": {
+    "id": "reference-letter",
+    "title": {
+      "en": "Reference Letter Request",
+      "de": "Arbeitszeugnis Anfrage"
+    },
+    "subtitle": {
+      "en": "Professional reference letter template",
+      "de": "Professionelle Arbeitszeugnis-Vorlage"
+    },
+    "description": {
+      "en": "Request a professional reference letter from your current or former employer.",
+      "de": "Fordern Sie ein professionelles Arbeitszeugnis von Ihrem aktuellen oder ehemaligen Arbeitgeber an."
+    },
+    "fields": {
+      "en": [
+        { "label": "Your Name", "key": "fullName", "type": "text", "placeholder": "Enter your full name", "required": true },
+        { "label": "Your Address", "key": "address", "type": "text", "placeholder": "Your address", "required": true },
+        { "label": "Manager/HR Name", "key": "managerName", "type": "text", "placeholder": "Name of your manager or HR", "required": true },
+        { "label": "Company Name", "key": "companyName", "type": "text", "placeholder": "Your company name", "required": true },
+        { "label": "Company Address", "key": "companyAddress", "type": "text", "placeholder": "Company address", "required": true },
+        { "label": "Date", "key": "date", "type": "text", "placeholder": "DD.MM.YYYY", "required": true },
+        { "label": "Position Held", "key": "position", "type": "text", "placeholder": "Your job title", "required": true },
+        { "label": "Employment Period", "key": "employmentPeriod", "type": "text", "placeholder": "From DD.MM.YYYY to DD.MM.YYYY", "required": true },
+        { "label": "Key Responsibilities", "key": "responsibilities", "type": "multiline", "placeholder": "Main duties and responsibilities", "required": true },
+        { "label": "Key Achievements", "key": "achievements", "type": "multiline", "placeholder": "Notable accomplishments", "required": false },
+        { "label": "Reason for Request", "key": "reason", "type": "text", "placeholder": "Job application, visa, etc.", "required": false }
+      ],
+      "de": [
+        { "label": "Ihr Name", "key": "fullName", "type": "text", "placeholder": "Ihren vollständigen Namen eingeben", "required": true },
+        { "label": "Ihre Adresse", "key": "address", "type": "text", "placeholder": "Ihre Adresse", "required": true },
+        { "label": "Vorgesetzter/HR Name", "key": "managerName", "type": "text", "placeholder": "Name Ihres Vorgesetzten oder HR", "required": true },
+        { "label": "Firmenname", "key": "companyName", "type": "text", "placeholder": "Name Ihrer Firma", "required": true },
+        { "label": "Firmenadresse", "key": "companyAddress", "type": "text", "placeholder": "Firmenadresse", "required": true },
+        { "label": "Datum", "key": "date", "type": "text", "placeholder": "TT.MM.JJJJ", "required": true },
+        { "label": "Position", "key": "position", "type": "text", "placeholder": "Ihre Berufsbezeichnung", "required": true },
+        { "label": "Beschäftigungszeitraum", "key": "employmentPeriod", "type": "text", "placeholder": "Von TT.MM.JJJJ bis TT.MM.JJJJ", "required": true },
+        { "label": "Hauptaufgaben", "key": "responsibilities", "type": "multiline", "placeholder": "Hauptaufgaben und Verantwortlichkeiten", "required": true },
+        { "label": "Erfolge", "key": "achievements", "type": "multiline", "placeholder": "Bemerkenswerte Leistungen", "required": false },
+        { "label": "Grund für Anfrage", "key": "reason", "type": "text", "placeholder": "Bewerbung, Visa, etc.", "required": false }
+      ]
+    }
+  },
+  "salary-negotiation": {
+    "id": "salary-negotiation",
+    "title": {
+      "en": "Salary Negotiation Prep",
+      "de": "Gehaltsverhandlung Vorbereitung"
+    },
+    "subtitle": {
+      "en": "Salary negotiation preparation template",
+      "de": "Vorlage zur Vorbereitung von Gehaltsverhandlungen"
+    },
+    "description": {
+      "en": "Prepare for salary negotiations by documenting your achievements, market research, and negotiation strategy.",
+      "de": "Bereiten Sie sich auf Gehaltsverhandlungen vor, indem Sie Ihre Erfolge, Marktforschung und Verhandlungsstrategie dokumentieren."
+    },
+    "fields": {
+      "en": [
+        { "label": "Your Name", "key": "fullName", "type": "text", "placeholder": "Enter your full name", "required": true },
+        { "label": "Current Position", "key": "position", "type": "text", "placeholder": "Your current job title", "required": true },
+        { "label": "Current Salary", "key": "currentSalary", "type": "text", "placeholder": "Current annual salary", "required": true },
+        { "label": "Desired Salary", "key": "desiredSalary", "type": "text", "placeholder": "Target salary amount", "required": true },
+        { "label": "Market Research", "key": "marketResearch", "type": "multiline", "placeholder": "Industry salary ranges and sources", "required": true },
+        { "label": "Key Achievements", "key": "achievements", "type": "multiline", "placeholder": "Recent accomplishments and contributions", "required": true },
+        { "label": "Added Responsibilities", "key": "responsibilities", "type": "multiline", "placeholder": "New duties since last review", "required": false },
+        { "label": "Skills Acquired", "key": "skills", "type": "multiline", "placeholder": "New certifications, training, etc.", "required": false },
+        { "label": "Negotiation Strategy", "key": "strategy", "type": "multiline", "placeholder": "Approach and key talking points", "required": true },
+        { "label": "Alternative Benefits", "key": "benefits", "type": "multiline", "placeholder": "Non-salary benefits to consider", "required": false }
+      ],
+      "de": [
+        { "label": "Ihr Name", "key": "fullName", "type": "text", "placeholder": "Ihren vollständigen Namen eingeben", "required": true },
+        { "label": "Aktuelle Position", "key": "position", "type": "text", "placeholder": "Ihre aktuelle Berufsbezeichnung", "required": true },
+        { "label": "Aktuelles Gehalt", "key": "currentSalary", "type": "text", "placeholder": "Aktuelles Jahresgehalt", "required": true },
+        { "label": "Gewünschtes Gehalt", "key": "desiredSalary", "type": "text", "placeholder": "Zielgehalt", "required": true },
+        { "label": "Marktforschung", "key": "marketResearch", "type": "multiline", "placeholder": "Branchengehälter und Quellen", "required": true },
+        { "label": "Wichtige Erfolge", "key": "achievements", "type": "multiline", "placeholder": "Aktuelle Leistungen und Beiträge", "required": true },
+        { "label": "Zusätzliche Verantwortungen", "key": "responsibilities", "type": "multiline", "placeholder": "Neue Aufgaben seit letzter Bewertung", "required": false },
+        { "label": "Erworbene Fähigkeiten", "key": "skills", "type": "multiline", "placeholder": "Neue Zertifikate, Schulungen, etc.", "required": false },
+        { "label": "Verhandlungsstrategie", "key": "strategy", "type": "multiline", "placeholder": "Herangehensweise und wichtige Punkte", "required": true },
+        { "label": "Alternative Zusatzleistungen", "key": "benefits", "type": "multiline", "placeholder": "Nicht-monetäre Leistungen", "required": false }
+      ]
+    }
   }
 }

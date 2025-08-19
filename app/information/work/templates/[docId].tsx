@@ -50,6 +50,40 @@ const TemplateDetailPage: React.FC = () => {
     );
   };
 
+  const generateWordDocument = async () => {
+    // TODO: Implement Word document generation
+    // This function should:
+    // 1. Create a new .docx document using a library like docx
+    // 2. Add formatted content based on formData and selected template
+    // 3. Apply proper styling, headers, and layout
+    // 4. Save and share the Word file
+    
+    const templateTitle = data.title[downloadLanguage === 'de' ? 'de' : 'en'];
+    Alert.alert(
+      language.code === 'de' ? 'Word Generierung' : 'Word Generation',
+      language.code === 'de' 
+        ? `Word-Generierung für ${templateTitle} ist noch nicht implementiert. Diese Funktion wird bald verfügbar sein.`
+        : `Word generation for ${templateTitle} is not yet implemented. This feature will be available soon.`
+    );
+  };
+
+  const generateODTDocument = async () => {
+    // TODO: Implement OpenOffice document generation
+    // This function should:
+    // 1. Create a new .odt document using a library like odt-writer or similar
+    // 2. Add formatted content based on formData and selected template
+    // 3. Apply proper styling and layout compatible with OpenOffice/LibreOffice
+    // 4. Save and share the ODT file
+    
+    const templateTitle = data.title[downloadLanguage === 'de' ? 'de' : 'en'];
+    Alert.alert(
+      language.code === 'de' ? 'ODT Generierung' : 'ODT Generation',
+      language.code === 'de' 
+        ? `ODT-Generierung für ${templateTitle} ist noch nicht implementiert. Diese Funktion wird bald verfügbar sein.`
+        : `ODT generation for ${templateTitle} is not yet implemented. This feature will be available soon.`
+    );
+  };
+
   const handleDownload = async () => {
     const requiredFields = fields.filter(field => field.required);
     const missingRequiredFields = requiredFields.filter(field => !formData[field.key] || formData[field.key].trim() === '');
@@ -66,14 +100,10 @@ const TemplateDetailPage: React.FC = () => {
 
     if (downloadFormat === 'pdf') {
       await generatePDF();
-    } else {
-      // TODO: Implement Word and OpenOffice document generation
-      Alert.alert(
-        language.code === 'de' ? 'Format nicht verfügbar' : 'Format Not Available',
-        language.code === 'de' 
-          ? `${downloadFormat.toUpperCase()}-Export wird noch entwickelt. Verwenden Sie vorerst PDF.`
-          : `${downloadFormat.toUpperCase()} export is still in development. Please use PDF for now.`
-      );
+    } else if (downloadFormat === 'word') {
+      await generateWordDocument();
+    } else if (downloadFormat === 'openoffice') {
+      await generateODTDocument();
     }
   };
 
