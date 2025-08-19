@@ -16,7 +16,6 @@ const GeneralInformationPage: React.FC = () => {
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
   const [showTutorial, setShowTutorial] = useState(false);
-  const router = useRouter();
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
@@ -145,10 +144,7 @@ const GeneralInformationPage: React.FC = () => {
       />
       
       <ScrollView style={styles.content}>
-        <TouchableOpacity onPress={() => router.back()} style={styles.backButton}>
-          <Text style={styles.backText}>← {language.code === 'de' ? 'Zurück' : 'Back'}</Text>
-        </TouchableOpacity>
-
+       
         <Text style={styles.title}>
           {language.code === 'de' ? content.title.de : content.title.en}
         </Text>

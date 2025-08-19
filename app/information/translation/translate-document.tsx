@@ -28,7 +28,6 @@ const TranslateDocumentPage: React.FC = () => {
   const [sourceLanguage, setSourceLanguage] = useState('de');
   const [targetLanguage, setTargetLanguage] = useState('en');
   const [translatedText, setTranslatedText] = useState<string | null>(null);
-  const router = useRouter();
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
@@ -129,9 +128,6 @@ const TranslateDocumentPage: React.FC = () => {
       />
       
       <ScrollView style={styles.content}>
-        <TouchableOpacity onPress={() => router.back()} style={styles.backButton}>
-          <Text style={styles.backText}>← {language.code === 'de' ? 'Zurück' : 'Back'}</Text>
-        </TouchableOpacity>
 
         <Text style={styles.title}>{currentContent.title}</Text>
         

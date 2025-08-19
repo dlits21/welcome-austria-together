@@ -147,7 +147,6 @@ Folgen Sie angemessen nach dem Einreichen von Bewerbungen nach, aber vermeiden S
     <SafeAreaView style={styles.container}>
       <PageNavigation
         showLanguageModal={() => setShowLanguageModal(true)}
-        showHelpModal={() => setShowHelpModal(true)}
         showVirtualAssistant={() => setShowVirtualAssistant(true)}
         showTutorial={() => setShowTutorial(true)}
       />

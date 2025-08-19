@@ -6,16 +6,16 @@ import { useLanguage } from '../../../contexts/LanguageContext';
 import { languages } from '../../../data/languages/common';
 import PageNavigation from '../../../components/PageNavigation';
 import LanguageModal from '../../../components/LanguageModal';
-import HelpModal from '../../../components/HelpModal';
+import VirtualAssistantModal from '../../../components/VirtualAssistantModal';
+import TutorialModal from '../../../components/TutorialModal';
 import HighlightedText from '../../../components/HighlightedText';
 import FAQItem from '../../../components/FAQItem';
 
 const ProfessionalTranslationPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
-  const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
-  const [showHelpModal, setShowHelpModal] = useState(false);
-  const router = useRouter();
+  const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
+  const [showTutorial, setShowTutorial] = useState(false);;
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
@@ -214,18 +214,13 @@ const ProfessionalTranslationPage: React.FC = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <PageNavigation 
-        toggleSound={() => setSoundEnabled(!soundEnabled)}
-        soundEnabled={soundEnabled}
+      <PageNavigation
         showLanguageModal={() => setShowLanguageModal(true)}
-        showHelpModal={() => setShowHelpModal(true)}
+        showVirtualAssistant={() => setShowVirtualAssistant(true)}
+        showTutorial={() => setShowTutorial(true)}
       />
       
       <ScrollView style={styles.content}>
-        <TouchableOpacity onPress={() => router.back()} style={styles.backButton}>
-          <Text style={styles.backText}>← {language.code === 'de' ? 'Zurück' : 'Back'}</Text>
-        </TouchableOpacity>
-
         <Text style={styles.title}>{currentContent.title}</Text>
         
         <Text style={styles.content}>{currentContent.intro}</Text>
@@ -315,16 +310,19 @@ const ProfessionalTranslationPage: React.FC = () => {
         ))}
       </ScrollView>
       
-      <LanguageModal 
-        visible={showLanguageModal} 
-        onClose={() => setShowLanguageModal(false)} 
+      {/* Virtual Assistant Modal */}
+      <VirtualAssistantModal
+        visible={showVirtualAssistant}
+        onClose={() => setShowVirtualAssistant(false)}
         languageCode={language.code}
       />
       
-      <HelpModal
-        visible={showHelpModal}
-        onClose={() => setShowHelpModal(false)}
+      {/* Tutorial Modal */}
+      <TutorialModal
+        visible={showTutorial}
+        onClose={() => setShowTutorial(false)}
         languageCode={language.code}
+        tutorialData="home"
       />
     </SafeAreaView>
   );
