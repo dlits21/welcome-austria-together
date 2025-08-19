@@ -228,13 +228,13 @@ const ProfessionalTranslationPage: React.FC = () => {
 
         <Text style={styles.title}>{currentContent.title}</Text>
         
-        <HighlightedText text={currentContent.intro} />
+        <Text style={styles.content}>{currentContent.intro}</Text>
 
         {currentContent.sections.map((section, index) => (
           <View key={index} style={styles.section}>
             <Text style={styles.sectionTitle}>{section.title}</Text>
             {section.content.map((item, itemIndex) => (
-              <HighlightedText key={itemIndex} text={item} />
+              <Text key={itemIndex} style={styles.content}>{item}</Text>
             ))}
           </View>
         ))}
@@ -430,6 +430,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginVertical: 24,
     color: '#1a1a1a',
+  },
+  content: {
+    fontSize: 16,
+    lineHeight: 24,
+    color: '#374151',
+    marginBottom: 8,
   },
 });
 

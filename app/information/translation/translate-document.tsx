@@ -139,7 +139,7 @@ const TranslateDocumentPage: React.FC = () => {
 
         <Text style={styles.title}>{currentContent.title}</Text>
         
-        <HighlightedText text={currentContent.description} />
+        <Text style={styles.content}>{currentContent.description}</Text>
 
         {/* Language Selection */}
         <View style={styles.languageSection}>
@@ -202,13 +202,13 @@ const TranslateDocumentPage: React.FC = () => {
             {language.code === 'de' ? 'Einschränkungen:' : 'Limitations:'}
           </Text>
           {currentContent.limitations.map((limitation, index) => (
-            <HighlightedText key={index} text={limitation} />
+            <Text key={index} style={styles.content}>{limitation}</Text>
           ))}
         </View>
 
         {/* Disclaimer */}
         <View style={styles.disclaimerContainer}>
-          <HighlightedText text={currentContent.disclaimer} />
+          <Text style={styles.disclaimerText}>{currentContent.disclaimer}</Text>
         </View>
 
         {/* External Tools */}
@@ -374,6 +374,17 @@ const styles = StyleSheet.create({
   toolDescription: {
     fontSize: 14,
     color: '#64748b',
+  },
+  content: {
+    fontSize: 16,
+    lineHeight: 24,
+    color: '#374151',
+    marginBottom: 8,
+  },
+  disclaimerText: {
+    fontSize: 14,
+    color: '#92400e',
+    fontWeight: '500',
   },
 });
 
