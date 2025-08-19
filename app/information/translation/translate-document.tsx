@@ -119,6 +119,20 @@ const TranslateDocumentPage: React.FC = () => {
     Linking.openURL(url);
   };
 
+  const parseMarkdownText = (text: string) => {
+    const parts = text.split(/(\*\*[^*]+\*\*)/g);
+    return parts.map((part, index) => {
+      if (part.startsWith('**') && part.endsWith('**')) {
+        return (
+          <Text key={index} style={styles.boldText}>
+            {part.slice(2, -2)}
+          </Text>
+        );
+      }
+      return part;
+    });
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <PageNavigation
@@ -133,7 +147,7 @@ const TranslateDocumentPage: React.FC = () => {
         
         <Text style={styles.subtitle}>{currentContent.subtitle}</Text>
         
-        <Text style={styles.description}>{currentContent.description}</Text>
+        <Text style={styles.description}>{parseMarkdownText(currentContent.description)}</Text>
 
         {/* Language Selection */}
         <View style={styles.languageSection}>
@@ -394,7 +408,11 @@ const styles = StyleSheet.create({
   },
   toolDescription: {
     fontSize: 14,
-    color: '#6B7280',
+  color: '#6B7280',
+  },
+  boldText: {
+    fontWeight: 'bold',
+    color: '#1F2937',
   },
 });
 
