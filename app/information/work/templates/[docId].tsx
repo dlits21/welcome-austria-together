@@ -8,98 +8,10 @@ import LanguageModal from '../../../../components/LanguageModal';
 import VirtualAssistantModal from '../../../../components/VirtualAssistantModal';
 import TutorialModal from '../../../../components/TutorialModal';
 import { Picker } from '@react-native-picker/picker';
+// import PDFLib from 'react-native-pdf-lib'; // TODO: Implement PDF generation
+import templatesData from '../../../../data/information/work/templates.json';
 
-const TEMPLATE_FIELDS = {
-  'cv': {
-    title: { en: 'CV (Lebenslauf)', de: 'Lebenslauf (CV)' },
-    fields: {
-      en: [
-        { label: 'Full Name', key: 'fullName', type: 'text', placeholder: 'Enter your full name' },
-        { label: 'Email Address', key: 'email', type: 'email', placeholder: 'your.email@example.com' },
-        { label: 'Phone Number', key: 'phone', type: 'text', placeholder: '+43 123 456 789' },
-        { label: 'Address', key: 'address', type: 'text', placeholder: 'Street, City, Postal Code' },
-        { label: 'Date of Birth', key: 'dateOfBirth', type: 'text', placeholder: 'DD.MM.YYYY' },
-        { label: 'Professional Summary', key: 'summary', type: 'multiline', placeholder: 'Brief professional summary (2-3 sentences)' },
-        { label: 'Work Experience', key: 'workExperience', type: 'multiline', placeholder: 'Job title, company, dates, key achievements' },
-        { label: 'Education', key: 'education', type: 'multiline', placeholder: 'Degree, institution, dates' },
-        { label: 'Skills', key: 'skills', type: 'multiline', placeholder: 'Languages, software, technical skills' },
-        { label: 'Certificates', key: 'certificates', type: 'multiline', placeholder: 'Certificates and trainings' },
-        { label: 'References', key: 'references', type: 'multiline', placeholder: 'References (optional)' }
-      ],
-      de: [
-        { label: 'Vollständiger Name', key: 'fullName', type: 'text', placeholder: 'Ihren vollständigen Namen eingeben' },
-        { label: 'E-Mail-Adresse', key: 'email', type: 'email', placeholder: 'ihre.email@beispiel.com' },
-        { label: 'Telefonnummer', key: 'phone', type: 'text', placeholder: '+43 123 456 789' },
-        { label: 'Adresse', key: 'address', type: 'text', placeholder: 'Straße, Stadt, Postleitzahl' },
-        { label: 'Geburtsdatum', key: 'dateOfBirth', type: 'text', placeholder: 'TT.MM.JJJJ' },
-        { label: 'Kurzprofil', key: 'summary', type: 'multiline', placeholder: 'Kurzes berufliches Profil (2-3 Sätze)' },
-        { label: 'Berufserfahrung', key: 'workExperience', type: 'multiline', placeholder: 'Position, Unternehmen, Zeitraum, Erfolge' },
-        { label: 'Ausbildung', key: 'education', type: 'multiline', placeholder: 'Abschluss, Institution, Zeitraum' },
-        { label: 'Fähigkeiten', key: 'skills', type: 'multiline', placeholder: 'Sprachen, Software, technische Fähigkeiten' },
-        { label: 'Zertifikate', key: 'certificates', type: 'multiline', placeholder: 'Zertifikate und Schulungen' },
-        { label: 'Referenzen', key: 'references', type: 'multiline', placeholder: 'Referenzen (optional)' }
-      ]
-    }
-  },
-  'cover-letter': {
-    title: { en: 'Cover Letter', de: 'Anschreiben' },
-    fields: {
-      en: [
-        { label: 'Your Name', key: 'fullName', type: 'text', placeholder: 'Enter your full name' },
-        { label: 'Your Address', key: 'address', type: 'text', placeholder: 'Your address' },
-        { label: 'Company Name', key: 'companyName', type: 'text', placeholder: 'Company you are applying to' },
-        { label: 'Company Address', key: 'companyAddress', type: 'text', placeholder: 'Company address' },
-        { label: 'Position Title', key: 'position', type: 'text', placeholder: 'Position you are applying for' },
-        { label: 'Date', key: 'date', type: 'text', placeholder: 'DD.MM.YYYY' },
-        { label: 'Introduction', key: 'introduction', type: 'multiline', placeholder: 'Who you are and the role you are applying for' },
-        { label: 'Motivation', key: 'motivation', type: 'multiline', placeholder: 'Why you are interested in this position/company' },
-        { label: 'Your Fit', key: 'fit', type: 'multiline', placeholder: 'Your relevant experience and skills' },
-        { label: 'Closing', key: 'closing', type: 'multiline', placeholder: 'Availability and thanks' }
-      ],
-      de: [
-        { label: 'Ihr Name', key: 'fullName', type: 'text', placeholder: 'Ihren vollständigen Namen eingeben' },
-        { label: 'Ihre Adresse', key: 'address', type: 'text', placeholder: 'Ihre Adresse' },
-        { label: 'Firmenname', key: 'companyName', type: 'text', placeholder: 'Firma, bei der Sie sich bewerben' },
-        { label: 'Firmenadresse', key: 'companyAddress', type: 'text', placeholder: 'Firmenadresse' },
-        { label: 'Stellenbezeichnung', key: 'position', type: 'text', placeholder: 'Position, für die Sie sich bewerben' },
-        { label: 'Datum', key: 'date', type: 'text', placeholder: 'TT.MM.JJJJ' },
-        { label: 'Einleitung', key: 'introduction', type: 'multiline', placeholder: 'Wer Sie sind und für welche Stelle Sie sich bewerben' },
-        { label: 'Motivation', key: 'motivation', type: 'multiline', placeholder: 'Warum Sie an Position/Unternehmen interessiert sind' },
-        { label: 'Eignung', key: 'fit', type: 'multiline', placeholder: 'Relevante Erfahrungen und Fähigkeiten' },
-        { label: 'Schluss', key: 'closing', type: 'multiline', placeholder: 'Verfügbarkeit und Dank' }
-      ]
-    }
-  },
-  'resignation-letter': {
-    title: { en: 'Resignation Letter', de: 'Kündigungsschreiben' },
-    fields: {
-      en: [
-        { label: 'Your Name', key: 'fullName', type: 'text', placeholder: 'Enter your full name' },
-        { label: 'Your Address', key: 'address', type: 'text', placeholder: 'Your address' },
-        { label: 'Manager/HR Name', key: 'managerName', type: 'text', placeholder: 'Name of your manager or HR' },
-        { label: 'Company Name', key: 'companyName', type: 'text', placeholder: 'Your company name' },
-        { label: 'Company Address', key: 'companyAddress', type: 'text', placeholder: 'Company address' },
-        { label: 'Date', key: 'date', type: 'text', placeholder: 'DD.MM.YYYY' },
-        { label: 'Last Working Day', key: 'lastWorkingDay', type: 'text', placeholder: 'DD.MM.YYYY' },
-        { label: 'Reason (Optional)', key: 'reason', type: 'text', placeholder: 'Brief reason for leaving (optional)' },
-        { label: 'Additional Notes', key: 'notes', type: 'multiline', placeholder: 'Thanks and handover offer' }
-      ],
-      de: [
-        { label: 'Ihr Name', key: 'fullName', type: 'text', placeholder: 'Ihren vollständigen Namen eingeben' },
-        { label: 'Ihre Adresse', key: 'address', type: 'text', placeholder: 'Ihre Adresse' },
-        { label: 'Vorgesetzter/HR Name', key: 'managerName', type: 'text', placeholder: 'Name Ihres Vorgesetzten oder HR' },
-        { label: 'Firmenname', key: 'companyName', type: 'text', placeholder: 'Name Ihrer Firma' },
-        { label: 'Firmenadresse', key: 'companyAddress', type: 'text', placeholder: 'Firmenadresse' },
-        { label: 'Datum', key: 'date', type: 'text', placeholder: 'TT.MM.JJJJ' },
-        { label: 'Letzter Arbeitstag', key: 'lastWorkingDay', type: 'text', placeholder: 'TT.MM.JJJJ' },
-        { label: 'Grund (Optional)', key: 'reason', type: 'text', placeholder: 'Kurzer Grund für Kündigung (optional)' },
-        { label: 'Zusätzliche Anmerkungen', key: 'notes', type: 'multiline', placeholder: 'Dank und Übergabeangebot' }
-      ]
-    }
-  }
-} as const;
-
-type TemplateKey = keyof typeof TEMPLATE_FIELDS;
+type TemplateKey = keyof typeof templatesData;
 
 const TemplateDetailPage: React.FC = () => {
   const { docId } = useLocalSearchParams();
@@ -108,7 +20,7 @@ const TemplateDetailPage: React.FC = () => {
   const language = languages.find(l => l.code === currentLanguage) || languages[1];
 
   const id = Array.isArray(docId) ? docId[0] : docId;
-  const data = id && (TEMPLATE_FIELDS as any)[id as TemplateKey];
+  const data = id && (templatesData as any)[id as TemplateKey];
 
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
@@ -121,25 +33,48 @@ const TemplateDetailPage: React.FC = () => {
     setFormData(prev => ({ ...prev, [key]: value }));
   };
 
-  const handleDownload = () => {
-    const hasRequiredFields = Object.keys(formData).length > 0;
-    if (!hasRequiredFields) {
+  const generatePDF = async () => {
+    // TODO: Implement PDF generation using react-native-pdf-lib
+    // This function should:
+    // 1. Create a new PDF document
+    // 2. Add formatted content based on formData and selected template
+    // 3. Apply proper styling and layout
+    // 4. Save and share the PDF file
+    
+    const templateTitle = data.title[downloadLanguage === 'de' ? 'de' : 'en'];
+    Alert.alert(
+      language.code === 'de' ? 'PDF Generierung' : 'PDF Generation',
+      language.code === 'de' 
+        ? `PDF-Generierung für ${templateTitle} ist noch nicht implementiert. Diese Funktion wird bald verfügbar sein.`
+        : `PDF generation for ${templateTitle} is not yet implemented. This feature will be available soon.`
+    );
+  };
+
+  const handleDownload = async () => {
+    const requiredFields = fields.filter(field => field.required);
+    const missingRequiredFields = requiredFields.filter(field => !formData[field.key] || formData[field.key].trim() === '');
+    
+    if (missingRequiredFields.length > 0) {
       Alert.alert(
-        language.code === 'de' ? 'Felder ausfüllen' : 'Fill Fields',
+        language.code === 'de' ? 'Pflichtfelder ausfüllen' : 'Fill Required Fields',
         language.code === 'de' 
-          ? 'Bitte füllen Sie mindestens ein Feld aus, bevor Sie herunterladen.'
-          : 'Please fill in at least one field before downloading.'
+          ? `Bitte füllen Sie alle Pflichtfelder aus: ${missingRequiredFields.map(f => f.label).join(', ')}`
+          : `Please fill in all required fields: ${missingRequiredFields.map(f => f.label).join(', ')}`
       );
       return;
     }
 
-    // Simulate download functionality
-    Alert.alert(
-      language.code === 'de' ? 'Download gestartet' : 'Download Started',
-      language.code === 'de' 
-        ? `Ihr ${data.title[downloadLanguage === 'de' ? 'de' : 'en']} wird als ${downloadFormat.toUpperCase()} heruntergeladen.`
-        : `Your ${data.title[downloadLanguage === 'de' ? 'de' : 'en']} will be downloaded as ${downloadFormat.toUpperCase()}.`
-    );
+    if (downloadFormat === 'pdf') {
+      await generatePDF();
+    } else {
+      // TODO: Implement Word and OpenOffice document generation
+      Alert.alert(
+        language.code === 'de' ? 'Format nicht verfügbar' : 'Format Not Available',
+        language.code === 'de' 
+          ? `${downloadFormat.toUpperCase()}-Export wird noch entwickelt. Verwenden Sie vorerst PDF.`
+          : `${downloadFormat.toUpperCase()} export is still in development. Please use PDF for now.`
+      );
+    }
   };
 
   if (!id || !data) {
@@ -168,16 +103,26 @@ const TemplateDetailPage: React.FC = () => {
       <ScrollView style={styles.content}>
         <Text style={styles.title}>{language.code === 'de' ? data.title.de : data.title.en}</Text>
 
+        <Text style={styles.subtitle}>
+          {language.code === 'de' ? data.subtitle?.de : data.subtitle?.en}
+        </Text>
+
         <Text style={styles.lead}>
+          {language.code === 'de' ? data.description?.de : data.description?.en}
+        </Text>
+
+        <Text style={styles.instructions}>
           {language.code === 'de'
-            ? 'Füllen Sie die Felder aus um Ihr personalisiertes Dokument zu erstellen.'
-            : 'Fill in the fields to create your personalized document.'}
+            ? 'Füllen Sie die Felder aus um Ihr personalisiertes Dokument zu erstellen. Felder mit * sind Pflichtfelder.'
+            : 'Fill in the fields to create your personalized document. Fields marked with * are required.'}
         </Text>
 
         <View style={styles.formSection}>
           {fields.map((field, idx) => (
             <View key={idx} style={styles.fieldContainer}>
-              <Text style={styles.fieldLabel}>{field.label}</Text>
+              <Text style={styles.fieldLabel}>
+                {field.label}{field.required ? ' *' : ''}
+              </Text>
               {field.type === 'multiline' ? (
                 <TextInput
                   style={[styles.textInput, styles.multilineInput]}
@@ -282,8 +227,9 @@ const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#fff' },
   content: { flex: 1, padding: 16, paddingBottom: 100 },
   title: { fontSize: 28, fontWeight: 'bold', marginBottom: 8, color: '#1f2937' },
-  subtitle: { fontSize: 16, color: '#6b7280', marginBottom: 20 },
-  lead: { fontSize: 16, color: '#374151', lineHeight: 24, marginBottom: 24 },
+  subtitle: { fontSize: 18, color: '#4b5563', marginBottom: 12, fontWeight: '500' },
+  lead: { fontSize: 16, color: '#374151', lineHeight: 24, marginBottom: 16 },
+  instructions: { fontSize: 14, color: '#6b7280', marginBottom: 24, fontStyle: 'italic' },
   formSection: { marginBottom: 32 },
   fieldContainer: { marginBottom: 20 },
   fieldLabel: { fontSize: 16, fontWeight: '600', color: '#1f2937', marginBottom: 8 },
