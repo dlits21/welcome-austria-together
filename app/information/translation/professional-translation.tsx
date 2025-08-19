@@ -212,6 +212,20 @@ const ProfessionalTranslationPage: React.FC = () => {
     router.push('/ask/general');
   };
 
+  const parseMarkdownText = (text: string) => {
+    const parts = text.split(/(\*\*[^*]+\*\*)/g);
+    return parts.map((part, index) => {
+      if (part.startsWith('**') && part.endsWith('**')) {
+        return (
+          <Text key={index} style={styles.boldText}>
+            {part.slice(2, -2)}
+          </Text>
+        );
+      }
+      return part;
+    });
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <PageNavigation 
