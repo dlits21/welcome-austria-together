@@ -7,8 +7,7 @@ import {
   ScrollView, 
   TouchableOpacity, 
   Alert,
-  Linking,
-  Platform
+  Linking
 } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -17,19 +16,18 @@ import { useLanguage } from '../../../contexts/LanguageContext';
 import { languages } from '../../../data/languages/common';
 import PageNavigation from '../../../components/PageNavigation';
 import LanguageModal from '../../../components/LanguageModal';
-import HelpModal from '../../../components/HelpModal';
-import UploadModal from '../../../components/UploadModal';
-import HighlightedText from '../../../components/HighlightedText';
+import VirtualAssistantModal from '../../../components/VirtualAssistantModal';
+import TutorialModal from '../../../components/TutorialModal';
+import DocumentUploadSection from '../../../components/DocumentUploadSection';
 
 const TranslateDocumentPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
-  const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
-  const [showHelpModal, setShowHelpModal] = useState(false);
-  const [showUploadModal, setShowUploadModal] = useState(false);
+  const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
+  const [showTutorial, setShowTutorial] = useState(false);
   const [sourceLanguage, setSourceLanguage] = useState('de');
   const [targetLanguage, setTargetLanguage] = useState('en');
-  const [uploadedFile, setUploadedFile] = useState<string | null>(null);
+  const [translatedText, setTranslatedText] = useState<string | null>(null);
   const router = useRouter();
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
@@ -49,37 +47,37 @@ const TranslateDocumentPage: React.FC = () => {
   const content = {
     en: {
       title: "Translate a Document",
-      description: "Upload your document or image for quick translation. Please note this is a work in progress and currently only supports typed text, not handwritten content.",
+      subtitle: "AI-Powered Document Translation",
+      description: "Upload your document or image for quick translation using advanced OCR and AI technology.",
       sourceLabel: "From Language:",
       targetLabel: "To Language:",
-      uploadButton: "Upload Document or Image",
       limitations: [
-        "• Only typed text can be translated (not handwritten)",
         "• Works best with clear, high-quality scans",
-        "• Currently supports common European and Middle Eastern languages",
-        "• For official translations, please use certified translation services"
+        "• Currently supports typed text (handwriting support coming soon)",
+        "• Supports common European and Middle Eastern languages",
+        "• For official documents, always use certified translation services"
       ],
       externalTools: "Professional Online Translation Tools:",
-      noFileSelected: "No file selected",
-      fileSelected: "File selected: ",
-      disclaimer: "⚠️ This tool is for quick reference only. For official documents, always use certified translation services."
+      disclaimer: "⚠️ This tool is for quick reference only. For official documents, always use certified translation services.",
+      translationResult: "Translation Result:",
+      noTranslation: "Upload a document to see translation results here."
     },
     de: {
       title: "Ein Dokument übersetzen",
-      description: "Laden Sie Ihr Dokument oder Bild für eine schnelle Übersetzung hoch. Bitte beachten Sie, dass dies noch in Entwicklung ist und derzeit nur getippten Text unterstützt, nicht handgeschriebenen Inhalt.",
+      subtitle: "KI-gestützte Dokumentenübersetzung",
+      description: "Laden Sie Ihr Dokument oder Bild für eine schnelle Übersetzung mit fortschrittlicher OCR- und KI-Technologie hoch.",
       sourceLabel: "Von Sprache:",
       targetLabel: "Zu Sprache:",
-      uploadButton: "Dokument oder Bild hochladen",
       limitations: [
-        "• Nur getippter Text kann übersetzt werden (nicht handgeschrieben)",
         "• Funktioniert am besten mit klaren, hochwertigen Scans",
-        "• Unterstützt derzeit gängige europäische und nahöstliche Sprachen",
-        "• Für offizielle Übersetzungen verwenden Sie bitte zertifizierte Übersetzungsdienste"
+        "• Unterstützt derzeit getippten Text (Handschriftunterstützung kommt bald)",
+        "• Unterstützt gängige europäische und nahöstliche Sprachen",
+        "• Für offizielle Übersetzungen verwenden Sie immer zertifizierte Übersetzungsdienste"
       ],
       externalTools: "Professionelle Online-Übersetzungstools:",
-      noFileSelected: "Keine Datei ausgewählt",
-      fileSelected: "Datei ausgewählt: ",
-      disclaimer: "⚠️ Dieses Tool dient nur als schnelle Referenz. Für offizielle Dokumente verwenden Sie immer zertifizierte Übersetzungsdienste."
+      disclaimer: "⚠️ Dieses Tool dient nur als schnelle Referenz. Für offizielle Dokumente verwenden Sie immer zertifizierte Übersetzungsdienste.",
+      translationResult: "Übersetzungsergebnis:",
+      noTranslation: "Laden Sie ein Dokument hoch, um hier Übersetzungsergebnisse zu sehen."
     }
   };
 
@@ -92,31 +90,30 @@ const TranslateDocumentPage: React.FC = () => {
       description: "Free online translator with document upload support"
     },
     {
-      name: "DeepL",
+      name: "DeepL", 
       url: "https://www.deepl.com/translator",
       description: "High-quality translations with document support"
     },
     {
       name: "Microsoft Translator",
-      url: "https://www.bing.com/translator",
+      url: "https://www.bing.com/translator", 
       description: "Document translation with image support"
     }
   ];
 
-  const handleImagePicked = (uri: string) => {
-    setUploadedFile(uri);
-    Alert.alert(
-      language.code === 'de' ? 'Datei hochgeladen' : 'File Uploaded',
-      language.code === 'de' ? 'Ihre Datei wurde erfolgreich hochgeladen. Die Übersetzung wird verarbeitet...' : 'Your file has been uploaded successfully. Translation is being processed...'
-    );
-  };
-
-  const handleDocumentPicked = (uri: string) => {
-    setUploadedFile(uri);
-    Alert.alert(
-      language.code === 'de' ? 'Dokument hochgeladen' : 'Document Uploaded',
-      language.code === 'de' ? 'Ihr Dokument wurde erfolgreich hochgeladen. Die Übersetzung wird verarbeitet...' : 'Your document has been uploaded successfully. Translation is being processed...'
-    );
+  const handleDocumentUploaded = (uri: string, type: 'document' | 'image') => {
+    // TODO: Implement actual OCR and translation logic
+    // This would typically involve:
+    // 1. OCR processing to extract text from image/document
+    // 2. Language detection if source language not specified
+    // 3. Translation API call (Google Translate, Azure Translator, etc.)
+    // 4. Display translated result
+    
+    const mockTranslation = language.code === 'de' 
+      ? "Dies ist eine Beispielübersetzung. In der echten Implementierung würde hier der übersetzte Text aus Ihrem hochgeladenen Dokument erscheinen."
+      : "This is a sample translation. In the real implementation, the translated text from your uploaded document would appear here.";
+    
+    setTranslatedText(mockTranslation);
   };
 
   const openExternalTool = (url: string) => {
@@ -125,11 +122,10 @@ const TranslateDocumentPage: React.FC = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <PageNavigation 
-        toggleSound={() => setSoundEnabled(!soundEnabled)}
-        soundEnabled={soundEnabled}
+      <PageNavigation
         showLanguageModal={() => setShowLanguageModal(true)}
-        showHelpModal={() => setShowHelpModal(true)}
+        showVirtualAssistant={() => setShowVirtualAssistant(true)}
+        showTutorial={() => setShowTutorial(true)}
       />
       
       <ScrollView style={styles.content}>
@@ -139,7 +135,9 @@ const TranslateDocumentPage: React.FC = () => {
 
         <Text style={styles.title}>{currentContent.title}</Text>
         
-        <Text style={styles.content}>{currentContent.description}</Text>
+        <Text style={styles.subtitle}>{currentContent.subtitle}</Text>
+        
+        <Text style={styles.description}>{currentContent.description}</Text>
 
         {/* Language Selection */}
         <View style={styles.languageSection}>
@@ -174,35 +172,36 @@ const TranslateDocumentPage: React.FC = () => {
           </View>
         </View>
 
-        {/* Upload Section */}
-        <View style={styles.uploadSection}>
-          <TouchableOpacity 
-            style={styles.uploadButton}
-            onPress={() => setShowUploadModal(true)}
-          >
-            <MaterialIcons name="cloud-upload" size={24} color="#fff" />
-            <Text style={styles.uploadButtonText}>{currentContent.uploadButton}</Text>
-          </TouchableOpacity>
+        {/* Document Upload Section */}
+        <DocumentUploadSection 
+          languageCode={language.code}
+          onDocumentUploaded={handleDocumentUploaded}
+        />
 
-          {uploadedFile ? (
-            <View style={styles.fileStatus}>
-              <MaterialIcons name="check-circle" size={20} color="#10B981" />
-              <Text style={styles.fileStatusText}>
-                {currentContent.fileSelected}{uploadedFile.split('/').pop()}
-              </Text>
+        {/* Translation Result */}
+        {translatedText && (
+          <View style={styles.resultSection}>
+            <Text style={styles.resultTitle}>{currentContent.translationResult}</Text>
+            <View style={styles.resultContainer}>
+              <Text style={styles.resultText}>{translatedText}</Text>
             </View>
-          ) : (
-            <Text style={styles.noFileText}>{currentContent.noFileSelected}</Text>
-          )}
-        </View>
+          </View>
+        )}
+
+        {!translatedText && (
+          <View style={styles.placeholderSection}>
+            <MaterialIcons name="translate" size={48} color="#D1D5DB" />
+            <Text style={styles.placeholderText}>{currentContent.noTranslation}</Text>
+          </View>
+        )}
 
         {/* Limitations */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>
-            {language.code === 'de' ? 'Einschränkungen:' : 'Limitations:'}
+            {language.code === 'de' ? 'Hinweise:' : 'Important Notes:'}
           </Text>
           {currentContent.limitations.map((limitation, index) => (
-            <Text key={index} style={styles.content}>{limitation}</Text>
+            <Text key={index} style={styles.limitationText}>{limitation}</Text>
           ))}
         </View>
 
@@ -229,14 +228,6 @@ const TranslateDocumentPage: React.FC = () => {
           ))}
         </View>
       </ScrollView>
-
-      <UploadModal
-        visible={showUploadModal}
-        onClose={() => setShowUploadModal(false)}
-        languageCode={language.code}
-        onImagePicked={handleImagePicked}
-        onDocumentPicked={handleDocumentPicked}
-      />
       
       <LanguageModal 
         visible={showLanguageModal} 
@@ -244,10 +235,17 @@ const TranslateDocumentPage: React.FC = () => {
         languageCode={language.code}
       />
       
-      <HelpModal
-        visible={showHelpModal}
-        onClose={() => setShowHelpModal(false)}
+      <VirtualAssistantModal
+        visible={showVirtualAssistant}
+        onClose={() => setShowVirtualAssistant(false)}
         languageCode={language.code}
+      />
+
+      <TutorialModal
+        visible={showTutorial}
+        onClose={() => setShowTutorial(false)}
+        languageCode={language.code}
+        tutorialData="translation"
       />
     </SafeAreaView>
   );
@@ -256,7 +254,7 @@ const TranslateDocumentPage: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#F9FAFB',
   },
   content: {
     flex: 1,
@@ -272,11 +270,23 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 28,
     fontWeight: 'bold',
-    marginBottom: 16,
-    color: '#1a1a1a',
+    marginBottom: 8,
+    color: '#1f2937',
+  },
+  subtitle: {
+    fontSize: 18,
+    fontWeight: '600',
+    color: '#4b5563',
+    marginBottom: 12,
+  },
+  description: {
+    fontSize: 16,
+    lineHeight: 24,
+    color: '#6B7280',
+    marginBottom: 24,
   },
   languageSection: {
-    marginVertical: 24,
+    marginVertical: 16,
   },
   pickerContainer: {
     marginBottom: 16,
@@ -285,54 +295,53 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
     marginBottom: 8,
-    color: '#333',
+    color: '#374151',
   },
   pickerWrapper: {
     borderWidth: 1,
-    borderColor: '#ddd',
+    borderColor: '#D1D5DB',
     borderRadius: 8,
-    backgroundColor: '#f9f9f9',
+    backgroundColor: '#fff',
   },
   picker: {
     height: 50,
   },
-  uploadSection: {
+  resultSection: {
     marginVertical: 24,
-    alignItems: 'center',
   },
-  uploadButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#3B82F6',
-    paddingHorizontal: 24,
-    paddingVertical: 12,
-    borderRadius: 8,
-    marginBottom: 16,
-  },
-  uploadButtonText: {
-    color: '#fff',
-    fontSize: 16,
+  resultTitle: {
+    fontSize: 18,
     fontWeight: '600',
-    marginLeft: 8,
+    color: '#1F2937',
+    marginBottom: 12,
   },
-  fileStatus: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    padding: 12,
-    backgroundColor: '#f0f9ff',
-    borderRadius: 8,
+  resultContainer: {
+    backgroundColor: '#fff',
+    padding: 16,
+    borderRadius: 12,
     borderWidth: 1,
-    borderColor: '#10B981',
+    borderColor: '#E5E7EB',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
   },
-  fileStatusText: {
-    marginLeft: 8,
-    color: '#059669',
-    fontSize: 14,
+  resultText: {
+    fontSize: 16,
+    lineHeight: 24,
+    color: '#374151',
   },
-  noFileText: {
-    color: '#666',
-    fontSize: 14,
-    fontStyle: 'italic',
+  placeholderSection: {
+    alignItems: 'center',
+    padding: 40,
+    marginVertical: 24,
+  },
+  placeholderText: {
+    fontSize: 16,
+    color: '#9CA3AF',
+    textAlign: 'center',
+    marginTop: 12,
   },
   section: {
     marginBottom: 24,
@@ -340,27 +349,43 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 20,
     fontWeight: '600',
-    marginBottom: 12,
-    color: '#2d2d2d',
+    marginBottom: 16,
+    color: '#1f2937',
+  },
+  limitationText: {
+    fontSize: 14,
+    lineHeight: 20,
+    color: '#6B7280',
+    marginBottom: 8,
   },
   disclaimerContainer: {
-    backgroundColor: '#fef3c7',
+    backgroundColor: '#FEF3C7',
     padding: 16,
     borderRadius: 8,
     marginVertical: 16,
     borderLeftWidth: 4,
-    borderLeftColor: '#f59e0b',
+    borderLeftColor: '#F59E0B',
+  },
+  disclaimerText: {
+    fontSize: 14,
+    color: '#92400E',
+    fontWeight: '500',
   },
   toolButton: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     padding: 16,
-    backgroundColor: '#f8fafc',
+    backgroundColor: '#fff',
     borderRadius: 8,
     marginBottom: 12,
     borderWidth: 1,
-    borderColor: '#e2e8f0',
+    borderColor: '#E5E7EB',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
+    elevation: 1,
   },
   toolContent: {
     flex: 1,
@@ -368,23 +393,12 @@ const styles = StyleSheet.create({
   toolName: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#1e293b',
+    color: '#1F2937',
     marginBottom: 4,
   },
   toolDescription: {
     fontSize: 14,
-    color: '#64748b',
-  },
-  content: {
-    fontSize: 16,
-    lineHeight: 24,
-    color: '#374151',
-    marginBottom: 8,
-  },
-  disclaimerText: {
-    fontSize: 14,
-    color: '#92400e',
-    fontWeight: '500',
+    color: '#6B7280',
   },
 });
 
