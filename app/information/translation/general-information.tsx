@@ -54,13 +54,13 @@ const GeneralInformationPage: React.FC = () => {
     text: {
       en: `Understanding translation services is crucial for newcomers to Austria. Whether you need official documents translated for work, education, or legal purposes, knowing the difference between certified and non-certified translations can save you time and money.
 
-**Types of Translation Services:**
+Types of Translation Services:
 • Certified Translation: Required for official documents like birth certificates, diplomas, marriage certificates
 • Sworn Translation: Court-certified translations for legal proceedings  
 • Simple Translation: For general understanding, not legally binding
 • Apostille Translation: For international document recognition
 
-**Documents That Need Certification:**
+Documents That Need Certification:
 • Birth, marriage, and death certificates
 • University diplomas and school certificates
 • Employment records and references
@@ -69,20 +69,20 @@ const GeneralInformationPage: React.FC = () => {
 • Criminal record certificates
 • Business licenses and contracts
 
-**What to Expect:**
+What to Expect:
 • Processing Time: 3-10 business days for certified translations
 • Cost: €25-50 per page for certified translations
 • Requirements: Original documents or certified copies
 • Validity: Certified translations are valid indefinitely unless document expires`,
       de: `Übersetzungsdienste zu verstehen ist für Neuankömmlinge in Österreich von entscheidender Bedeutung. Ob Sie offizielle Dokumente für Arbeit, Bildung oder rechtliche Zwecke übersetzen lassen müssen - der Unterschied zwischen beglaubigten und nicht-beglaubigten Übersetzungen kann Ihnen Zeit und Geld sparen.
 
-**Arten von Übersetzungsdiensten:**
+Arten von Übersetzungsdiensten:
 • Beglaubigte Übersetzung: Erforderlich für offizielle Dokumente wie Geburtsurkunden, Diplome, Heiratsurkunden
 • Beeidigte Übersetzung: Gerichtlich zertifizierte Übersetzungen für Gerichtsverfahren
 • Einfache Übersetzung: Zum allgemeinen Verständnis, nicht rechtlich bindend
 • Apostille-Übersetzung: Für internationale Dokumentenanerkennung
 
-**Dokumente, die eine Beglaubigung benötigen:**
+Dokumente, die eine Beglaubigung benötigen:
 • Geburts-, Heirats- und Sterbeurkunden
 • Universitätsdiplome und Schulzeugnisse
 • Arbeitsnachweise und Referenzen
@@ -91,7 +91,7 @@ const GeneralInformationPage: React.FC = () => {
 • Strafregisterauszüge
 • Gewerbescheine und Verträge
 
-**Was Sie erwarten können:**
+Was Sie erwarten können:
 • Bearbeitungszeit: 3-10 Werktage für beglaubigte Übersetzungen
 • Kosten: €25-50 pro Seite für beglaubigte Übersetzungen
 • Anforderungen: Originaldokumente oder beglaubigte Kopien

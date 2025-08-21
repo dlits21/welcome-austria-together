@@ -68,54 +68,54 @@ const GeneralInformationPage: React.FC = () => {
     text: {
       en: `Understanding the financial system in Austria is essential for managing your daily life and planning your future. This guide covers the fundamental aspects of money and banking in Austria.
 
-**Currency and Cash:**
+Currency and Cash:
 Austria uses the Euro (€) as its official currency. Coins come in denominations of 1, 2, 5, 10, 20, and 50 cents, plus 1 and 2 Euro coins. Banknotes are available in 5, 10, 20, 50, 100, 200, and 500 Euro denominations.
 
-**Payment Methods:**
+Payment Methods:
 • Cash is still widely used, especially for small purchases
 • Debit cards (Bankomatkarte) are accepted almost everywhere
 • Credit cards are less common but increasingly accepted
 • Contactless payments are becoming standard
 • Mobile payment apps are growing in popularity
 
-**Banking Basics:**
+Banking Basics:
 Every Austrian bank account has an IBAN (International Bank Account Number) for transfers. Austrian IBANs start with "AT" followed by numbers. You'll need your IBAN for salary payments, rent, and other regular transactions.
 
-**Common Financial Terms:**
+Common Financial Terms:
 • Girokonto: Current/checking account
 • Sparbuch: Savings account  
 • Überweisung: Bank transfer
 • Lastschrift: Direct debit
 • Kontostand: Account balance
 
-**Important Notes:**
+Important Notes:
 • Banks typically charge monthly account fees
 • ATM withdrawals from your own bank are usually free
 • Cross-border EU transfers are treated like domestic transfers
 • Most bills can be paid via bank transfer or direct debit`,
       de: `Das Verständnis des Finanzsystems in Österreich ist für die Bewältigung Ihres täglichen Lebens und die Planung Ihrer Zukunft unerlässlich. Dieser Leitfaden behandelt die grundlegenden Aspekte von Geld und Banking in Österreich.
 
-**Währung und Bargeld:**
+Währung und Bargeld:
 Österreich verwendet den Euro (€) als offizielle Währung. Münzen gibt es in Stückelungen von 1, 2, 5, 10, 20 und 50 Cent sowie 1 und 2 Euro-Münzen. Banknoten sind in 5, 10, 20, 50, 100, 200 und 500 Euro-Denominationen verfügbar.
 
-**Zahlungsmethoden:**
+Zahlungsmethoden:
 • Bargeld wird noch weit verbreitet verwendet, insbesondere für kleine Einkäufe
 • Bankomatkarten werden fast überall akzeptiert
 • Kreditkarten sind weniger verbreitet, werden aber zunehmend akzeptiert
 • Kontaktlose Zahlungen werden zum Standard
 • Mobile Payment-Apps werden immer beliebter
 
-**Banking-Grundlagen:**
+Banking-Grundlagen:
 Jedes österreichische Bankkonto hat eine IBAN (Internationale Bankkontonummer) für Überweisungen. Österreichische IBANs beginnen mit "AT" gefolgt von Zahlen. Sie benötigen Ihre IBAN für Gehaltszahlungen, Miete und andere regelmäßige Transaktionen.
 
-**Häufige Finanzbegriffe:**
+Häufige Finanzbegriffe:
 • Girokonto: Laufendes Konto
 • Sparbuch: Sparkonto
 • Überweisung: Banküberweisung
 • Lastschrift: Bankeinzug
 • Kontostand: Kontostand
 
-**Wichtige Hinweise:**
+Wichtige Hinweise:
 • Banken erheben normalerweise monatliche Kontoführungsgebühren
 • Bargeldabhebungen von der eigenen Bank sind meist kostenlos
 • Grenzüberschreitende EU-Überweisungen werden wie inländische behandelt
