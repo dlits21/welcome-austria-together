@@ -208,6 +208,8 @@ const ProfessionalTranslationPage: React.FC = () => {
     Linking.openURL(url);
   };
 
+  const router = useRouter();
+
   const navigateToAskGeneral = () => {
     router.push('/ask/general');
   };
@@ -237,13 +239,15 @@ const ProfessionalTranslationPage: React.FC = () => {
       <ScrollView style={styles.content}>
         <Text style={styles.title}>{currentContent.title}</Text>
         
-        <Text style={styles.content}>{currentContent.intro}</Text>
+        <Text style={styles.introText}>{currentContent.intro}</Text>
 
         {currentContent.sections.map((section, index) => (
           <View key={index} style={styles.section}>
             <Text style={styles.sectionTitle}>{section.title}</Text>
             {section.content.map((item, itemIndex) => (
-              <Text key={itemIndex} style={styles.content}>{item}</Text>
+              <Text key={itemIndex} style={styles.bulletText}>
+                {parseMarkdownText(item)}
+              </Text>
             ))}
           </View>
         ))}
@@ -443,11 +447,20 @@ const styles = StyleSheet.create({
     marginVertical: 24,
     color: '#1a1a1a',
   },
-  content: {
+  introText: {
+    fontSize: 16,
+    lineHeight: 24,
+    color: '#374151',
+    marginBottom: 16,
+  },
+  bulletText: {
     fontSize: 16,
     lineHeight: 24,
     color: '#374151',
     marginBottom: 8,
+  },
+  boldText: {
+    fontWeight: 'bold',
   },
 });
 

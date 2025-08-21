@@ -45,10 +45,16 @@ const securityTiles: SecurityTile[] = [
     icon: '🔒'
   },
   {
-    id: 'online-protection',
-    title: { en: 'How to protect myself online', de: 'Online-Schutz' },
+    id: 'domestic-violence',
+    title: { en: 'Domestic Violence', de: 'Häusliche Gewalt' },
     color: '#8B5CF6',
-    icon: '💻'
+    icon: '🏠'
+  },
+  {
+    id: 'sexual-violence',
+    title: { en: 'Sexual Violence', de: 'Sexuelle Gewalt' },
+    color: '#EC4899',
+    icon: '⚠️'
   },
   {
     id: 'emergency-services',
