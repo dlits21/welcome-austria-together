@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, TouchableOpacity, Linking, Alert } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
 import { useLanguage } from '../../../contexts/LanguageContext';
 import { languages } from '../../../data/languages/common';
 import PageNavigation from '../../../components/PageNavigation';
@@ -9,6 +10,7 @@ import HelpModal from '../../../components/HelpModal';
 
 const EmergencyServicesPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
+  const router = useRouter();
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showHelpModal, setShowHelpModal] = useState(false);
@@ -225,8 +227,19 @@ Rufen Sie Notrufnummern nur bei echten Notfällen an - Situationen, in denen sof
         
         <View style={styles.linksSection}>
           <Text style={styles.sectionTitle}>
-            {language.code === 'de' ? 'Nützliche Links' : 'Useful Links'}
+            {language.code === 'de' ? 'Weitere Hilfe' : 'Additional Help'}
           </Text>
+          
+          <TouchableOpacity 
+            style={styles.emergencyButton}
+            onPress={() => router.push('/ask/emergency')}
+          >
+            <MaterialIcons name="help" size={24} color="#fff" />
+            <Text style={styles.emergencyButtonText}>
+              {language.code === 'de' ? 'Personalisierte Notfallhilfe' : 'Personalized Emergency Help'}
+            </Text>
+            <MaterialIcons name="arrow-forward" size={20} color="#fff" />
+          </TouchableOpacity>
           
           {content.links.map((link, index) => (
             <TouchableOpacity 
@@ -348,6 +361,21 @@ const styles = StyleSheet.create({
     color: '#3B82F6',
     marginLeft: 12,
     fontWeight: '500',
+  },
+  emergencyButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#EF4444',
+    padding: 16,
+    borderRadius: 8,
+    marginBottom: 16,
+  },
+  emergencyButtonText: {
+    flex: 1,
+    fontSize: 16,
+    color: '#fff',
+    marginLeft: 12,
+    fontWeight: '600',
   },
 });
 

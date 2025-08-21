@@ -135,19 +135,6 @@ const GeneralInformationPage: React.FC = () => {
     ]
   };
 
-  const parseMarkdownText = (text: string) => {
-    const parts = text.split(/(\*\*[^*]+\*\*)/g);
-    return parts.map((part, index) => {
-      if (part.startsWith('**') && part.endsWith('**')) {
-        return (
-          <Text key={index} style={styles.boldText}>
-            {part.slice(2, -2)}
-          </Text>
-        );
-      }
-      return part;
-    });
-  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -171,7 +158,9 @@ const GeneralInformationPage: React.FC = () => {
           definitions={definitions}
           language={language.code}
         >
-          {language.code === 'de' ? content.text.de : content.text.en}
+          <Text style={styles.text}>
+            {language.code === 'de' ? content.text.de : content.text.en}
+          </Text>
         </HighlightedText>
         
         <View style={styles.linksSection}>
@@ -289,6 +278,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginVertical: 24,
     color: '#1f2937',
+  },
+  text: {
+    fontSize: 16,
+    lineHeight: 24,
+    color: '#374151',
+    marginBottom: 32,
   },
 });
 
