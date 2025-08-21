@@ -208,9 +208,7 @@ Spezielle Programme helfen Einwanderern, das österreichische Finanzsystem zu ve
           definitions={definitions}
           language={language.code}
         >
-          <Text style={styles.text}>
-            {language.code === 'de' ? content.text.de : content.text.en}
-          </Text>
+          {language.code === 'de' ? content.text.de : content.text.en}
         </HighlightedText>
         
         {content.resourceCategories.map((category, categoryIndex) => (

@@ -197,37 +197,9 @@ Rufen Sie Notrufnummern nur bei echten Notfällen an - Situationen, in denen sof
           {parseMarkdownText(language.code === 'de' ? content.text.de : content.text.en)}
         </Text>
         
-        <View style={styles.servicesSection}>
+        <View style={styles.emergencySection}>
           <Text style={styles.sectionTitle}>
-            {language.code === 'de' ? 'Notdienste' : 'Emergency Services'}
-          </Text>
-          
-          {content.emergencyServices.map((service, index) => (
-            <TouchableOpacity 
-              key={index}
-              style={[styles.serviceCard, { borderLeftColor: service.color }]}
-              onPress={() => handleEmergencyCall(
-                service.number, 
-                language.code === 'de' ? service.name.de : service.name.en
-              )}
-            >
-              <View style={styles.serviceInfo}>
-                <Text style={styles.serviceName}>
-                  {language.code === 'de' ? service.name.de : service.name.en}
-                </Text>
-                <Text style={styles.serviceNumber}>{service.number}</Text>
-                <Text style={styles.serviceDescription}>
-                  {language.code === 'de' ? service.description.de : service.description.en}
-                </Text>
-              </View>
-              <MaterialIcons name="phone" size={24} color={service.color} />
-            </TouchableOpacity>
-          ))}
-        </View>
-        
-        <View style={styles.linksSection}>
-          <Text style={styles.sectionTitle}>
-            {language.code === 'de' ? 'Weitere Hilfe' : 'Additional Help'}
+            {language.code === 'de' ? 'Personalisierte Notfallhilfe' : 'Personalized Emergency Help'}
           </Text>
           
           <TouchableOpacity 
@@ -236,10 +208,23 @@ Rufen Sie Notrufnummern nur bei echten Notfällen an - Situationen, in denen sof
           >
             <MaterialIcons name="help" size={24} color="#fff" />
             <Text style={styles.emergencyButtonText}>
-              {language.code === 'de' ? 'Personalisierte Notfallhilfe' : 'Personalized Emergency Help'}
+              {language.code === 'de' ? 'Notfallhilfe erhalten' : 'Get Emergency Help'}
             </Text>
             <MaterialIcons name="arrow-forward" size={20} color="#fff" />
           </TouchableOpacity>
+          
+          <Text style={styles.emergencyDescription}>
+            {language.code === 'de' 
+              ? 'Erhalten Sie personalisierte Hilfe und die richtigen Kontakte für Ihre spezifische Notfallsituation.'
+              : 'Get personalized help and the right contacts for your specific emergency situation.'
+            }
+          </Text>
+        </View>
+        
+        <View style={styles.linksSection}>
+          <Text style={styles.sectionTitle}>
+            {language.code === 'de' ? 'Weitere Informationen' : 'Additional Information'}
+          </Text>
           
           {content.links.map((link, index) => (
             <TouchableOpacity 
@@ -302,8 +287,15 @@ const styles = StyleSheet.create({
   boldText: {
     fontWeight: 'bold',
   },
-  servicesSection: {
+  emergencySection: {
     marginBottom: 32,
+  },
+  emergencyDescription: {
+    fontSize: 14,
+    color: '#6b7280',
+    marginTop: 12,
+    textAlign: 'center',
+    lineHeight: 20,
   },
   sectionTitle: {
     fontSize: 20,

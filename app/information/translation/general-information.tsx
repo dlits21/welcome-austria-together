@@ -158,9 +158,7 @@ const GeneralInformationPage: React.FC = () => {
           definitions={definitions}
           language={language.code}
         >
-          <Text style={styles.text}>
-            {language.code === 'de' ? content.text.de : content.text.en}
-          </Text>
+          {language.code === 'de' ? content.text.de : content.text.en}
         </HighlightedText>
         
         <View style={styles.linksSection}>

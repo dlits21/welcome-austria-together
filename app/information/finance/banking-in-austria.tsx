@@ -238,9 +238,7 @@ Bankomatkarten sind bei den meisten Konten inbegriffen und funktionieren in ganz
           definitions={definitions}
           language={language.code}
         >
-          <Text style={styles.text}>
-            {language.code === 'de' ? content.text.de : content.text.en}
-          </Text>
+          {language.code === 'de' ? content.text.de : content.text.en}
         </HighlightedText>
         
         <View style={styles.banksSection}>
