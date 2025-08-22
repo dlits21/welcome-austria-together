@@ -147,7 +147,7 @@ const WomensEmploymentPage: React.FC = () => {
                 Research typical salaries for your role and negotiate confidently. You deserve fair compensation for your skills and experience.
               </Text>
             </View>
-          </div>
+          </View>
         </View>
 
         <View style={styles.section}>
@@ -179,7 +179,7 @@ const WomensEmploymentPage: React.FC = () => {
             <Text style={styles.trainingText}>
               If you want to start your own business, special programs support women entrepreneurs with training, mentoring, and sometimes funding.
             </Text>
-          </div>
+          </View>
         </View>
 
         <View style={styles.section}>
@@ -213,7 +213,7 @@ const WomensEmploymentPage: React.FC = () => {
               • Attend workshops and training sessions
               • Celebrate your achievements and progress
             </Text>
-          </div>
+          </View>
         </View>
 
         <View style={styles.section}>
