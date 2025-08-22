@@ -11,7 +11,7 @@ import {
 import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useLanguage } from '../../../contexts/LanguageContext';
-import { languages } from '../../../data/languages/common';
+import { languages } from '../../../data/language/common';
 import PageNavigation from '../../../components/PageNavigation';
 import LanguageModal from '../../../components/LanguageModal';
 import VirtualAssistantModal from '../../../components/VirtualAssistantModal';
@@ -23,7 +23,6 @@ const OnlineToolsPage: React.FC = () => {
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
   const [showTutorial, setShowTutorial] = useState(false);
-  const router = useRouter();
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
@@ -277,9 +276,6 @@ const OnlineToolsPage: React.FC = () => {
       />
       
       <ScrollView style={styles.content}>
-        <TouchableOpacity onPress={() => router.back()} style={styles.backButton}>
-          <Text style={styles.backText}>← {language.code === 'de' ? 'Zurück' : 'Back'}</Text>
-        </TouchableOpacity>
 
         <Text style={styles.title}>{currentContent.title}</Text>
         <Text style={styles.subtitle}>{currentContent.subtitle}</Text>

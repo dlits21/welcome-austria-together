@@ -15,7 +15,7 @@ import LanguageModal from './LanguageModal';
 import HelpModal from './HelpModal';
 import MapView from './MapView';
 import { MaterialIcons } from '@expo/vector-icons';
-import { getEnrollNow, getContactInformation, getLocation } from '../data/languages/common';
+import { getEnrollNow, getContactInformation, getLocation } from '../data/language/common';
 
 const GenericGermanCoursePage = ({ courseData }) => {
   const { currentLanguage } = useLanguage();

@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, SafeAreaView, ScrollView, TextInput, TouchableO
 import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useLanguage } from '../../contexts/LanguageContext';
-import { languages, getWhatWouldYouWantToKnow } from '../../data/languages/common';
+import { languages, getWhatWouldYouWantToKnow } from '../../data/language/common';
 import PageNavigation from '../../components/PageNavigation';
 import LanguageModal from '../../components/LanguageModal';
 import HelpModal from '../../components/HelpModal';
@@ -63,10 +63,10 @@ const financeTiles: FinanceTile[] = [
     icon: '📋'
   },
   {
-    id: 'investments',
-    title: { en: 'Investments', de: 'Investitionen' },
+    id: 'paying-as-asylum-seeker',
+    title: { en: 'Money and Asylum', de: 'Geld und Asyl' },
     color: '#84CC16',
-    icon: '📈'
+    icon: '💳'
   }
 ];
 

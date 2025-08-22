@@ -3,10 +3,11 @@ import { StyleSheet, Text, View, SafeAreaView, ScrollView, TextInput, TouchableO
 import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { useLanguage } from '../../contexts/LanguageContext';
-import { languages, getWhatWouldYouWantToKnow } from '../../data/languages/common';
+import { languages, getWhatWouldYouWantToKnow } from '../../data/language/common';
 import PageNavigation from '../../components/PageNavigation';
 import LanguageModal from '../../components/LanguageModal';
-import HelpModal from '../../components/HelpModal';
+import VirtualAssistantModal from '../../components/VirtualAssistantModal';
+import TutorialModal from '../../components/TutorialModal';
 import childrenData from '../../data/language/information/children.json';
 
 interface ChildrenTile {
@@ -36,10 +37,10 @@ const childrenTiles: ChildrenTile[] = [
     icon: '🏥'
   },
   {
-    id: 'child-protection',
-    title: 'child-protection',
+    id: 'mental-health',
+    title: 'mental-health',
     color: '#EF4444',
-    icon: '🛡️'
+    icon: '🧠'
   },
   {
     id: 'childcare',
@@ -60,8 +61,8 @@ const childrenTiles: ChildrenTile[] = [
     icon: '🌱'
   },
   {
-    id: 'emergency-support',
-    title: 'emergency-support',
+    id: 'child-protection',
+    title: 'child-protection',
     color: '#F97316',
     icon: '🚨'
   }
@@ -69,18 +70,14 @@ const childrenTiles: ChildrenTile[] = [
 
 const ChildrenPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
-  const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
-  const [showHelpModal, setShowHelpModal] = useState(false);
+  const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
+  const [showTutorial, setShowTutorial] = useState(false);
   const [searchInput, setSearchInput] = useState('');
   const router = useRouter();
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
   const content = childrenData[currentLanguage as keyof typeof childrenData] || childrenData.en;
-
-  const toggleSound = () => {
-    setSoundEnabled(!soundEnabled);
-  };
 
   const handleSearch = () => {
     if (searchInput.trim()) {
@@ -109,11 +106,10 @@ const ChildrenPage: React.FC = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <PageNavigation 
-        toggleSound={toggleSound}
-        soundEnabled={soundEnabled}
+      <PageNavigation
         showLanguageModal={() => setShowLanguageModal(true)}
-        showHelpModal={() => setShowHelpModal(true)}
+        showVirtualAssistant={() => setShowVirtualAssistant(true)}
+        showTutorial={() => setShowTutorial(true)}
       />
       
       <ScrollView style={styles.content}>
@@ -147,18 +143,24 @@ const ChildrenPage: React.FC = () => {
       </ScrollView>
       
       {/* Language Modal */}
-      <LanguageModal 
-        visible={showLanguageModal} 
-        onClose={() => setShowLanguageModal(false)} 
-        languageCode={language.code}
-      />
-      
-      {/* Help Modal */}
-      <HelpModal
-        visible={showHelpModal}
-        onClose={() => setShowHelpModal(false)}
-        languageCode={language.code}
-      />
+       <LanguageModal
+         visible={showLanguageModal}
+         onClose={() => setShowLanguageModal(false)}
+         languageCode={language.code}
+       />
+
+       <VirtualAssistantModal
+         visible={showVirtualAssistant}
+         onClose={() => setShowVirtualAssistant(false)}
+         languageCode={language.code}
+       />
+
+       <TutorialModal
+         visible={showTutorial}
+         onClose={() => setShowTutorial(false)}
+         languageCode={language.code}
+         tutorialData="translation"
+       />
     </SafeAreaView>
   );
 };

@@ -10,7 +10,7 @@ import {
   useWindowDimensions
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import { languages } from '../data/languages/common';
+import { languages } from '../data/language/common';
 import { useLanguage } from '../contexts/LanguageContext';
 import { getGlobalText } from '../utils/languageUtils';
 

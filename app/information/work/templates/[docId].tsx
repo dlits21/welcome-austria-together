@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View, Linking, TextInput, Alert } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useLanguage } from '../../../../contexts/LanguageContext';
-import { languages } from '../../../../data/languages/common';
+import { languages } from '../../../../data/language/common';
 import PageNavigation from '../../../../components/PageNavigation';
 import LanguageModal from '../../../../components/LanguageModal';
 import VirtualAssistantModal from '../../../../components/VirtualAssistantModal';

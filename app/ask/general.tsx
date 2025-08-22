@@ -7,7 +7,7 @@ import {
   SafeAreaView,
 } from 'react-native';
 import { useLanguage } from '../../contexts/LanguageContext';
-import { languages } from '../../data/languages/common';
+import { languages } from '../../data/language/common';
 import PageNavigation from '../../components/PageNavigation';
 import LanguageModal from '../../components/LanguageModal';
 import VirtualAssistantModal from '../../components/VirtualAssistantModal';

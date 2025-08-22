@@ -10,7 +10,7 @@ import {
   useWindowDimensions,
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import { languages, Language } from '../data/languages/common';
+import { languages, Language } from '../data/language/common';
 
 interface VirtualAssistantLanguageSwitcherProps {
   currentLanguage: string;

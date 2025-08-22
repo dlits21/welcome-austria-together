@@ -22,7 +22,7 @@ import {
   GeorgianFlag,
   AlbanianFlag
 } from "../components/Flags";
-import { getWelcomeText } from '../data/languages/common';
+import { getWelcomeText } from '../data/language/common';
 import { useLanguage } from '../contexts/LanguageContext';
 import { getGlobalText, getIndexText } from '../utils/languageUtils';
 

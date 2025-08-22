@@ -18,7 +18,7 @@ import TutorialModal from './TutorialModal';
 import VirtualAssistantLanguageSwitcher from './VirtualAssistantLanguageSwitcher';
 import { getAssistantText } from '../utils/languageUtils';
 import { getCharacterImage } from '../utils/assistantUtils';
-import { languages } from '../data/languages/common';
+import { languages } from '../data/language/common';
 import { useLanguage } from '../contexts/LanguageContext';
 
 interface Message {

@@ -10,7 +10,7 @@
       "childcare": "Childcare Services",
       "family-support": "Family Support",
       "developmental-services": "Developmental Services",
-      "emergency-support": "Emergency Support"
+      "mental-health": "Mental Health"
     }
   },
   "de": {
@@ -24,7 +24,7 @@
       "childcare": "Kinderbetreuung",
       "family-support": "Familienunterstützung",
       "developmental-services": "Entwicklungsdienste",
-      "emergency-support": "Notfallunterstützung"
+      "mental-health": "Mentale Gesundheit"
     }
   },
   "ru": {
@@ -38,7 +38,7 @@
       "childcare": "Услуги по уходу за детьми",
       "family-support": "Поддержка семьи",
       "developmental-services": "Развивающие услуги",
-      "emergency-support": "Экстренная поддержка"
+      "mental-health": "Mental Health"
     }
   },
   "ce": {
@@ -52,7 +52,7 @@
       "childcare": "Берийн хьал болийн хилам",
       "family-support": "Доьзалан гIо",
       "developmental-services": "Хьокхийн хилам",
-      "emergency-support": "Малхбузан гIо"
+      "mental-health": "Mental Health"
     }
   },
   "prs": {
@@ -66,7 +66,7 @@
       "childcare": "خدمات مراقبت از کودک",
       "family-support": "حمایت از خانواده",
       "developmental-services": "خدمات رشد",
-      "emergency-support": "حمایت اضطراری"
+      "mental-health": "Mental Health"
     }
   },
   "ps": {
@@ -80,7 +80,7 @@
       "childcare": "د ماشومانو پاملرنې خدمات",
       "family-support": "د کورنۍ ملاتړ",
       "developmental-services": "پرمختیایی خدمات",
-      "emergency-support": "بیړني ملاتړ"
+      "mental-health": "Mental Health"
     }
   },
   "fa": {
@@ -94,7 +94,7 @@
       "childcare": "خدمات مراقبت از کودک",
       "family-support": "حمایت خانواده",
       "developmental-services": "خدمات توسعه‌ای",
-      "emergency-support": "حمایت اضطراری"
+      "mental-health": "Mental Health"
     }
   },
   "ar": {
@@ -108,7 +108,7 @@
       "childcare": "خدمات رعاية الأطفال",
       "family-support": "دعم الأسرة",
       "developmental-services": "الخدمات التنموية",
-      "emergency-support": "الدعم الطارئ"
+      "mental-health": "Mental Health"
     }
   },
   "ku": {
@@ -122,7 +122,7 @@
       "childcare": "خزمەتگوزاری چاودێری منداڵ",
       "family-support": "پشتگیری خێزان",
       "developmental-services": "خزمەتگوزاری گەشەپێدان",
-      "emergency-support": "پشتگیری فریاکەوتن"
+      "mental-health": "Mental Health"
     }
   },
   "so": {
@@ -136,7 +136,7 @@
       "childcare": "Adeegyada Daryeelka Carruurta",
       "family-support": "Taageero Qoyska",
       "developmental-services": "Adeegyada Horumarka",
-      "emergency-support": "Taageero Degdegga ah"
+      "mental-health": "Mental Health"
     }
   },
   "ka": {
@@ -150,7 +150,7 @@
       "childcare": "ბავშვთა მოვლის სერვისები",
       "family-support": "ოჯახის მხარდაჭერა",
       "developmental-services": "განვითარების სერვისები",
-      "emergency-support": "გადაუდებელი მხარდაჭერა"
+      "mental-health": "Mental Health"
     }
   },
   "sq": {
@@ -164,7 +164,7 @@
       "childcare": "Shërbimet e Kujdesit ndaj Fëmijëve",
       "family-support": "Mbështetja e Familjes",
       "developmental-services": "Shërbimet e Zhvillimit",
-      "emergency-support": "Mbështetja Emergjente"
+      "mental-health": "Mental Health"
     }
   }
 }

@@ -9,7 +9,7 @@ import {
   Dimensions 
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import { getYes, getNo } from '../data/languages/common'
+import { getYes, getNo } from '../data/language/common'
 
 interface LanguageConfirmationProps {
   selectedLanguage: any;

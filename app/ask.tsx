@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, ScrollView } fr
 import { useRouter } from 'expo-router';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useLanguage } from '../contexts/LanguageContext';
-import { languages } from '../data/languages/common';
+import { languages } from '../data/language/common';
 import Header from '../components/Header';
 import PageNavigation from '../components/PageNavigation';
 import LanguageModal from '../components/LanguageModal';

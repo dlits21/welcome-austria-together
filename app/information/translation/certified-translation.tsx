@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useLanguage } from '../../../contexts/LanguageContext';
-import { languages } from '../../../data/languages/common';
+import { languages } from '../../../data/language/common';
 import PageNavigation from '../../../components/PageNavigation';
 import LanguageModal from '../../../components/LanguageModal';
 import VirtualAssistantModal from '../../../components/VirtualAssistantModal';
@@ -25,7 +25,6 @@ const CertifiedTranslationPage: React.FC = () => {
   const [showQuiz, setShowQuiz] = useState(true);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [filters, setFilters] = useState<Record<string, any>>({});
-  const router = useRouter();
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
@@ -256,9 +255,6 @@ const CertifiedTranslationPage: React.FC = () => {
       />
       
       <ScrollView style={styles.content}>
-        <TouchableOpacity onPress={() => router.back()} style={styles.backButton}>
-          <Text style={styles.backText}>← {language.code === 'de' ? 'Zurück' : 'Back'}</Text>
-        </TouchableOpacity>
 
         <Text style={styles.title}>{currentContent.title}</Text>
         <Text style={styles.subtitle}>{currentContent.subtitle}</Text>
