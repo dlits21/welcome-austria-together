@@ -10,6 +10,7 @@ import enIndex from '../../assets/locales/en/index.json';
 import enInformation from '../../assets/locales/en/information.json';
 import enEveryday from '../../assets/locales/en/everyday.json';
 import enEverydayChildren from '../../assets/locales/en/children.json';
+import enHealth from '../../assets/locales/en/health.json';
 
 
 import deCommon from '../../assets/locales/de/common.json';
@@ -46,6 +47,7 @@ export const resources = {
       information: enInformation,
       everyday: enEveryday,
       children: enEverydayChildren,
+      health: enHealth,
        },
   de: { common: deCommon,
       ask: deAsk,
