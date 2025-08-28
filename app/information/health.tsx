@@ -18,6 +18,7 @@ import LanguageModal from '../../components/LanguageModal';
 import VirtualAssistantModal from '../../components/VirtualAssistantModal';
 import TutorialModal from '../../components/TutorialModal';
 import CategoryCard from "../../components/CategoryCard";
+import SwipeableTiles from "../../components/SwipeableTiles";
 
 // Prominent health topics - visually emphasized
 const PROMINENT_TOPICS = [
@@ -154,11 +155,14 @@ export default function Health() {
           </Pressable>
         </View>
 
-        {/* Prominent health topics */}
+        {/* Prominent health topics - swipeable */}
         <Text style={styles.sectionTitle}>{t("essentialHealth")}</Text>
-        <View style={styles.grid}>
-          {PROMINENT_TOPICS.map((topic) => renderTopic(topic, true))}
-        </View>
+        <SwipeableTiles
+          topics={PROMINENT_TOPICS}
+          onTilePress={(route) => router.push(route)}
+          onTileLongPress={speak}
+          getText={t}
+        />
 
         {/* Secondary health topics */}
         <Text style={styles.sectionTitle}>{t("additionalServices")}</Text>
