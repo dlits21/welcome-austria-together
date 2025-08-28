@@ -147,8 +147,10 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#EBF4FF',
     borderRadius: 16,
-    padding: 16,
+    padding: 24,
+    paddingVertical: 32,
     marginVertical: 16,
+    minHeight: 280,
   },
   navigationContainer: {
     flexDirection: 'row',
