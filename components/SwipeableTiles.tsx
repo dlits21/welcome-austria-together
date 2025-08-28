@@ -75,7 +75,7 @@ const SwipeableTiles: React.FC<SwipeableTilesProps> = ({
             onPress={() => onTilePress(topic.route)}
             onLongPress={() => onTileLongPress(`${title}. ${subtitle}`)}
             padding={12}
-            width={tileWidth - 16}
+            width={tileWidth - 20}
             columns={1}
           />
         </Pressable>
@@ -183,10 +183,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   scrollContent: {
-    paddingHorizontal: 8,
+    paddingHorizontal: 12,
+    alignItems: 'center',
   },
   tileContainer: {
-    paddingHorizontal: 4,
+    paddingHorizontal: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   tileWrapper: {
     backgroundColor: '#FFFFFF',
@@ -198,6 +201,10 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
+    minHeight: 180,
+    maxHeight: 180,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   pagination: {
     flexDirection: 'row',
