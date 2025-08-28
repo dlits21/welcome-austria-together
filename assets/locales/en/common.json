@@ -1,0 +1,8 @@
+{
+  "appName": "Welcome Austria",
+  "actions": { "back": "Back", "next": "Next", "save": "Save" },
+  "lang": { "en": "English", "de": "German", "ar": "Arabic", "fa": "Farsi" },
+  "choose_language": "Choose language",
+  "language_selected": "Language selected",
+  "close": "Close"
+}

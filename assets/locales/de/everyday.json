@@ -1,0 +1,61 @@
+{
+  "pageTitle": "Alltag",
+  "introShort": "Kurze Hilfe für den Alltag. Tippe ein Thema an, um schnelle, klare Schritte zu bekommen.",
+  "playTips": "Kurze Tipps anhören",
+  "myJourney": "Meine Reise begleiten",
+  "quickHelp": "Schnelle Hilfe",
+  "tts_lang": "de-DE",
+  "tts_intro": "Hier sind schnelle Alltagstipps.",
+  "topics": {
+    "school": {
+      "title": "Schule & Bildung",
+      "subtitle": "Kinder anmelden, Papierkram, Kontakt zur Schule",
+      "tip": "Zur Anmeldung dein Ausweis und Wohnsitznachweis mitbringen. Frag die Schule nach einem Dolmetscher."
+    },
+    "kids": {
+      "title": "Kinder & Betreuung",
+      "subtitle": "Kindergarten, Spielgruppen, Kinderleistungen",
+      "tip": "Probier die lokalen Eltern-Kind-Gruppen. Sie helfen oft bei der Anmeldung."
+    },
+    "women": {
+      "title": "Unterstützung für Frauen",
+      "subtitle": "Gesundheit, Sicherheit und Hilfsangebote",
+      "tip": "Wenn du Hilfe brauchst, wende dich an Frauenhäuser und Gesundheitszentren, die unter Kontakte aufgelistet sind."
+    },
+    "sim": {
+      "title": "SIM-Karten & Handys",
+      "subtitle": "Wo kaufen, Prepaid, Guthaben-Tipps",
+      "tip": "Kauf eine Prepaid-SIM in Supermärkten oder Kiosken; Ausweis mitbringen."
+    },
+    "recycling": {
+      "title": "Recycling & Müll",
+      "subtitle": "Wie man Müll in Österreich trennt",
+      "tip": "Papier, Plastik, Glas und Bio-Müll in getrennte Behälter werfen."
+    },
+    "transport": {
+      "title": "Öffentliche Verkehrsmittel",
+      "subtitle": "Tickets, Kurzzeitkarten, wie man fährt",
+      "tip": "Ein Einzelticket vor dem Einsteigen kaufen oder die offizielle App nutzen."
+    },
+    "culture": {
+      "title": "Kultur & Veranstaltungen",
+      "subtitle": "Kostenlose Events, Museen, Gemeinschaftsgruppen",
+      "tip": "Such im Kalender lokaler NGOs nach kostenlosen Gemeinschaftsveranstaltungen."
+    },
+    "sport": {
+      "title": "Sport & Vereine",
+      "subtitle": "Wie man lokalen Sportgruppen beitritt",
+      "tip": "Viele Sportvereine bieten Schnupperstunden an—frag nach günstigen Mitgliedschaften."
+    },
+    "political": {
+      "title": "Politische Bildung",
+      "subtitle": "Wahlregeln, Rechte, Beteiligung",
+      "tip": "Nicht-Staatsbürger können an Bürgerbeteiligungen teilnehmen; die Grundlagen in lokalen Bürgerzentren lernen."
+    },
+    "climate": {
+      "title": "Klima & Umwelt",
+      "subtitle": "Lokale Klima-Gewohnheiten und Sicherheitstipps",
+      "tip": "Für den Winter vorbereiten: Schichten tragen und lokale Wetterhinweise beachten."
+    }
+  }
+}

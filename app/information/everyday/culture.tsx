@@ -1,73 +1,76 @@
+
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, TextInput, TouchableOpacity, FlatList } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
-import { useLanguage } from '../../contexts/LanguageContext';
-import { languages, getWhatWouldYouWantToKnow } from '../../data/language/common';
-import PageNavigation from '../../components/PageNavigation';
-import LanguageModal from '../../components/LanguageModal';
-import HelpModal from '../../components/HelpModal';
-import womenData from '../../data/language/information/women.json';
+import { useLanguage } from '../../../contexts/LanguageContext';
+import { languages, getWhatWouldYouWantToKnow } from '../../../data/language/common';
+import PageNavigation from '../../../components/PageNavigation';
+import LanguageModal from '../../../components/LanguageModal';
+import HelpModal from '../../../components/HelpModal';
 
-interface WomenTile {
+interface CultureTile {
   id: string;
-  title: string;
+  title: {
+    en: string;
+    de: string;
+  };
   color: string;
   icon: string;
 }
 
-const womenTiles: WomenTile[] = [
+const cultureTiles: CultureTile[] = [
   {
-    id: 'womens-rights',
-    title: 'womens-rights',
+    id: 'general-information',
+    title: { en: 'General Information', de: 'Allgemeine Informationen' },
     color: '#3B82F6',
-    icon: '⚖️'
+    icon: 'ℹ️'
   },
   {
-    id: 'domestic-violence',
-    title: 'domestic-violence',
-    color: '#EF4444',
-    icon: '🚨'
-  },
-  {
-    id: 'healthcare',
-    title: 'healthcare',
+    id: 'cultural-integration',
+    title: { en: 'Cultural Integration', de: 'Kulturelle Integration' },
     color: '#10B981',
-    icon: '🏥'
+    icon: '🤝'
   },
   {
-    id: 'employment',
-    title: 'employment',
+    id: 'explore-and-discover',
+    title: { en: 'Explore and Discover', de: 'Entdecken und Erkunden' },
     color: '#F59E0B',
-    icon: '💼'
+    icon: '🗺️'
   },
   {
-    id: 'legal-support',
-    title: 'legal-support',
-    color: '#8B5CF6',
-    icon: '📋'
-  },
-  {
-    id: 'childcare',
-    title: 'childcare',
-    color: '#06B6D4',
-    icon: '👶'
-  },
-  {
-    id: 'education',
-    title: 'education',
-    color: '#84CC16',
+    id: 'resources',
+    title: { en: 'Resources', de: 'Ressourcen' },
+    color: '#EF4444',
     icon: '📚'
   },
   {
-    id: 'financial-independence',
-    title: 'financial-independence',
+    id: 'events',
+    title: { en: 'Events', de: 'Veranstaltungen' },
+    color: '#8B5CF6',
+    icon: '🎉'
+  },
+  {
+    id: 'museums',
+    title: { en: 'Museums', de: 'Museen' },
     color: '#F97316',
-    icon: '💰'
+    icon: '🏛️'
+  },
+  {
+    id: 'festivals',
+    title: { en: 'Festivals', de: 'Festivals' },
+    color: '#06B6D4',
+    icon: '🎭'
+  },
+  {
+    id: 'sports',
+    title: { en: 'Sports', de: 'Sport' },
+    color: '#84CC16',
+    icon: '⚽'
   }
 ];
 
-const WomenPage: React.FC = () => {
+const CulturePage: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
@@ -76,7 +79,6 @@ const WomenPage: React.FC = () => {
   const router = useRouter();
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
-  const content = womenData[currentLanguage as keyof typeof womenData] || womenData.en;
 
   const toggleSound = () => {
     setSoundEnabled(!soundEnabled);
@@ -90,10 +92,15 @@ const WomenPage: React.FC = () => {
 
   const handleTilePress = (tileId: string) => {
     console.log(`Selected tile: ${tileId}`);
-    router.push(`/information/women/${tileId}`);
+    router.push(`/information/culture/${tileId}`);
   };
 
-  const renderTile = ({ item }: { item: WomenTile }) => (
+  const pageTitle = language.code === 'de' ? 'Kultur und Freizeit' : 'Culture and Leisure';
+  const pageDescription = language.code === 'de' 
+    ? 'Kulturelle Aktivitäten, Veranstaltungen, Sport und Freizeitmöglichkeiten.'
+    : 'Cultural activities, events, sports, and recreational opportunities.';
+
+  const renderTile = ({ item }: { item: CultureTile }) => (
     <TouchableOpacity 
       style={[styles.tile, { borderColor: item.color + '40' }]}
       onPress={() => handleTilePress(item.id)}
@@ -102,7 +109,7 @@ const WomenPage: React.FC = () => {
         <Text style={styles.tileIcon}>{item.icon}</Text>
       </View>
       <Text style={styles.tileTitle}>
-        {content.tiles[item.title as keyof typeof content.tiles]}
+        {language.code === 'de' ? item.title.de : item.title.en}
       </Text>
     </TouchableOpacity>
   );
@@ -117,8 +124,8 @@ const WomenPage: React.FC = () => {
       />
       
       <ScrollView style={styles.content}>
-        <Text style={styles.title}>{content.title}</Text>
-        <Text style={styles.description}>{content.description}</Text>
+        <Text style={styles.title}>{pageTitle}</Text>
+        <Text style={styles.description}>{pageDescription}</Text>
         
         {/* Search Bar */}
         <View style={styles.searchContainer}>
@@ -137,7 +144,7 @@ const WomenPage: React.FC = () => {
 
         {/* Tiles Grid */}
         <FlatList
-          data={womenTiles}
+          data={cultureTiles}
           renderItem={renderTile}
           keyExtractor={(item) => item.id}
           numColumns={2}
@@ -237,4 +244,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default WomenPage;
+export default CulturePage;

@@ -1,0 +1,23 @@
+{
+  "pageTitle": "Children & Family",
+  "introShort": "Find practical help for school, health, childcare, and protection.",
+  "searchPlaceholder": "What do you need help with?",
+  "quickHelp": "Need help now?",
+  "a11y": {
+    "openDetail": "Opens detailed help and local support options",
+    "listenSection": "Listen to this section",
+    "search": "Search",
+    "searchHint": "Type what you need help with. Long press tiles to hear them."
+  },
+  "tts_lang": "en-US",
+  "tiles": {
+    "child-protection": { "title": "Child Protection", "subtitle": "Emergency and safe contacts" },
+    "childrens-rights": { "title": "Children’s Rights", "subtitle": "Know your rights in Austria" },
+    "healthcare": { "title": "Healthcare", "subtitle": "Doctors, insurance, vaccinations" },
+    "mental-health": { "title": "Mental Health", "subtitle": "Support for children and parents" },
+    "education": { "title": "Education", "subtitle": "Enrollment, language support" },
+    "childcare": { "title": "Childcare", "subtitle": "Kindergarten, costs, spots" },
+    "family-support": { "title": "Family Support", "subtitle": "Money, counseling, NGOs" },
+    "developmental-services": { "title": "Developmental Services", "subtitle": "Therapies and assistance" }
+  }
+}

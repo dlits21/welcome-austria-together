@@ -9,8 +9,6 @@ import {
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useLanguage } from '../contexts/LanguageContext';
-import { languages } from '../data/language/common';
-import { getHomeText } from '../utils/languageUtils';
 
 // Import refactored components
 import Header from '../components/Header';
@@ -19,33 +17,24 @@ import CategoryGrid from '../components/CategoryGrid';
 import TutorialModal from '../components/TutorialModal';
 import LanguageModal from '../components/LanguageModal';
 import VirtualAssistantModal from '../components/VirtualAssistantModal';
+import { useTranslation } from 'react-i18next';
 
 const Home: React.FC = () => {
-  const { currentLanguage, selectedLanguage } = useLanguage();
+  const { currentLanguage } = useLanguage();
+  const { t } = useTranslation('home');
   const router = useRouter();
+
   const [searchInput, setSearchInput] = useState('');
-  const [soundEnabled, setSoundEnabled] = useState(true);
+  const [searchQuery, setSearchQuery] = useState<string>('');
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showTutorialModal, setShowTutorialModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
-  const [searchQuery, setSearchQuery] = useState<string>('');
-  
-  // Find the current language object, but don't default to English
-  const language = languages.find(lang => lang.code === currentLanguage);
-  
-  // If no language is found, something is wrong with the language context
-  if (!language) {
-    console.error('No language found for code:', currentLanguage);
-  }
-  else {console.log('Language:', language, "found for code", currentLanguage, selectedLanguage);}
 
   const handleSearch = () => {
     if (searchInput.trim()) {
       setSearchQuery(searchInput);
       setShowVirtualAssistant(true);
       setSearchInput('');
-    } else {
-      alert('Please enter a search term');
     }
   };
 
@@ -53,66 +42,42 @@ const Home: React.FC = () => {
     router.push(`/${category}`);
   };
 
-  const toggleSound = () => {
-    setSoundEnabled(!soundEnabled);
-    alert(soundEnabled ? 'Sound disabled' : 'Sound enabled');
-  };
-
   const handleVirtualAssistantClose = () => {
     setShowVirtualAssistant(false);
     setSearchQuery('');
   };
 
-  // Get translations using the new utility functions
-  const askTitle = getHomeText('categories.ask.title', currentLanguage);
-  const askSubtitle = getHomeText('categories.ask.subtitle', currentLanguage);
-    
-  const infoTitle = getHomeText('categories.information.title', currentLanguage);
-  const infoSubtitle = getHomeText('categories.information.subtitle', currentLanguage);
-    
-  const learnTitle = getHomeText('categories.learn.title', currentLanguage);
-  const learnSubtitle = getHomeText('categories.learn.subtitle', currentLanguage);
-    
-  const communityTitle = getHomeText('categories.community.title', currentLanguage);
-  const communitySubtitle = getHomeText('categories.community.subtitle', currentLanguage);
-
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" />
-      
+
       {/* Header with Logo and Icons */}
       <Header
         showLanguageModal={() => setShowLanguageModal(true)}
         showHelpModal={() => setShowTutorialModal(true)}
         showVirtualAssistant={() => setShowVirtualAssistant(true)}
       />
-      
+
       {/* Main Content */}
-      <ScrollView 
+      <ScrollView
         contentContainerStyle={styles.contentContainer}
         showsVerticalScrollIndicator={false}
       >
         {/* Title */}
-        <Text style={styles.title}>{getHomeText('howCanIHelp', currentLanguage)}</Text>
-        
+        <Text style={styles.title}>
+          {t('howCanIHelp')}
+        </Text>
+
         {/* Search Bar */}
-        <SearchSection 
+        <SearchSection
           searchInput={searchInput}
           onSearchInputChange={setSearchInput}
           onSearch={handleSearch}
-          placeholder={getHomeText('searchPlaceholder', currentLanguage)}
+          placeholder={t('searchPlaceholder')}
         />
-        
-        {/* Category Cards */}
-        <CategoryGrid 
-          askTitle={askTitle}
-          askSubtitle={askSubtitle}
-          infoTitle={infoTitle}
-          infoSubtitle={infoSubtitle}
-          learnTitle={learnTitle}
-          learnSubtitle={learnSubtitle}
-          communityTitle={communityTitle}
-          communitySubtitle={communitySubtitle}
+
+        {/* Category Cards with extra "Guide" tile */}
+        <CategoryGrid
           onCategoryClick={handleCategoryClick}
         />
       </ScrollView>

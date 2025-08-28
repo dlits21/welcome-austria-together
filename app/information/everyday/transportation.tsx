@@ -1,83 +1,88 @@
+
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, TextInput, TouchableOpacity, FlatList } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
-import { useLanguage } from '../../contexts/LanguageContext';
-import { languages, getWhatWouldYouWantToKnow } from '../../data/language/common';
-import PageNavigation from '../../components/PageNavigation';
-import LanguageModal from '../../components/LanguageModal';
-import VirtualAssistantModal from '../../components/VirtualAssistantModal';
-import TutorialModal from '../../components/TutorialModal';
-import childrenData from '../../data/language/information/children.json';
+import { useLanguage } from '../../../contexts/LanguageContext';
+import { languages, getWhatWouldYouWantToKnow } from '../../../data/language/common';
+import PageNavigation from '../../../components/PageNavigation';
+import LanguageModal from '../../../components/LanguageModal';
+import HelpModal from '../../../components/HelpModal';
 
-interface ChildrenTile {
+interface MobilityTile {
   id: string;
-  title: string;
+  title: {
+    en: string;
+    de: string;
+  };
   color: string;
   icon: string;
 }
 
-const childrenTiles: ChildrenTile[] = [
+const mobilityTiles: MobilityTile[] = [
   {
-    id: 'childrens-rights',
-    title: 'childrens-rights',
+    id: 'general-information',
+    title: { en: 'General Information', de: 'Allgemeine Informationen' },
     color: '#3B82F6',
-    icon: '⚖️'
+    icon: 'ℹ️'
   },
   {
-    id: 'education',
-    title: 'education',
+    id: 'mobility-and-transport',
+    title: { en: 'Mobility and Transport', de: 'Mobilität und Transport' },
     color: '#10B981',
-    icon: '🎓'
+    icon: '🚌'
   },
   {
-    id: 'healthcare',
-    title: 'healthcare',
+    id: 'subsidies',
+    title: { en: 'Subsidies', de: 'Förderungen' },
     color: '#F59E0B',
-    icon: '🏥'
+    icon: '💰'
   },
   {
-    id: 'mental-health',
-    title: 'mental-health',
+    id: 'resources',
+    title: { en: 'Resources', de: 'Ressourcen' },
     color: '#EF4444',
-    icon: '🧠'
+    icon: '📚'
   },
   {
-    id: 'childcare',
-    title: 'childcare',
+    id: 'public-transport',
+    title: { en: 'Public Transport', de: 'Öffentliche Verkehrsmittel' },
     color: '#8B5CF6',
-    icon: '👶'
+    icon: '🚊'
   },
   {
-    id: 'family-support',
-    title: 'family-support',
-    color: '#06B6D4',
-    icon: '👨‍👩‍👧‍👦'
-  },
-  {
-    id: 'developmental-services',
-    title: 'developmental-services',
-    color: '#84CC16',
-    icon: '🌱'
-  },
-  {
-    id: 'child-protection',
-    title: 'child-protection',
+    id: 'driving-license',
+    title: { en: 'Driving License', de: 'Führerschein' },
     color: '#F97316',
-    icon: '🚨'
+    icon: '🚗'
+  },
+  {
+    id: 'cycling',
+    title: { en: 'Cycling', de: 'Radfahren' },
+    color: '#06B6D4',
+    icon: '🚴'
+  },
+  {
+    id: 'travel-tips',
+    title: { en: 'Travel Tips', de: 'Reisetipps' },
+    color: '#84CC16',
+    icon: '✈️'
   }
 ];
 
-const ChildrenPage: React.FC = () => {
+const MobilityPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
+  const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
-  const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
-  const [showTutorial, setShowTutorial] = useState(false);
+  const [showHelpModal, setShowHelpModal] = useState(false);
   const [searchInput, setSearchInput] = useState('');
   const router = useRouter();
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
-  const content = childrenData[currentLanguage as keyof typeof childrenData] || childrenData.en;
+
+  const toggleSound = () => {
+    setSoundEnabled(!soundEnabled);
+  };
 
   const handleSearch = () => {
     if (searchInput.trim()) {
@@ -87,10 +92,15 @@ const ChildrenPage: React.FC = () => {
 
   const handleTilePress = (tileId: string) => {
     console.log(`Selected tile: ${tileId}`);
-    router.push(`/information/children/${tileId}`);
+    router.push(`/information/everyday/transportation/${tileId}`);
   };
 
-  const renderTile = ({ item }: { item: ChildrenTile }) => (
+  const pageTitle = language.code === 'de' ? 'Mobilität' : 'Mobility';
+  const pageDescription = language.code === 'de' 
+    ? 'Öffentliche Verkehrsmittel, Führerscheine und Fortbewegung in Österreich.'
+    : 'Public transportation, driving licenses, and getting around Austria.';
+
+  const renderTile = ({ item }: { item: MobilityTile }) => (
     <TouchableOpacity 
       style={[styles.tile, { borderColor: item.color + '40' }]}
       onPress={() => handleTilePress(item.id)}
@@ -99,22 +109,23 @@ const ChildrenPage: React.FC = () => {
         <Text style={styles.tileIcon}>{item.icon}</Text>
       </View>
       <Text style={styles.tileTitle}>
-        {content.tiles[item.title as keyof typeof content.tiles]}
+        {language.code === 'de' ? item.title.de : item.title.en}
       </Text>
     </TouchableOpacity>
   );
 
   return (
     <SafeAreaView style={styles.container}>
-      <PageNavigation
+      <PageNavigation 
+        toggleSound={toggleSound}
+        soundEnabled={soundEnabled}
         showLanguageModal={() => setShowLanguageModal(true)}
-        showVirtualAssistant={() => setShowVirtualAssistant(true)}
-        showTutorial={() => setShowTutorial(true)}
+        showHelpModal={() => setShowHelpModal(true)}
       />
       
       <ScrollView style={styles.content}>
-        <Text style={styles.title}>{content.title}</Text>
-        <Text style={styles.description}>{content.description}</Text>
+        <Text style={styles.title}>{pageTitle}</Text>
+        <Text style={styles.description}>{pageDescription}</Text>
         
         {/* Search Bar */}
         <View style={styles.searchContainer}>
@@ -133,7 +144,7 @@ const ChildrenPage: React.FC = () => {
 
         {/* Tiles Grid */}
         <FlatList
-          data={childrenTiles}
+          data={mobilityTiles}
           renderItem={renderTile}
           keyExtractor={(item) => item.id}
           numColumns={2}
@@ -143,24 +154,18 @@ const ChildrenPage: React.FC = () => {
       </ScrollView>
       
       {/* Language Modal */}
-       <LanguageModal
-         visible={showLanguageModal}
-         onClose={() => setShowLanguageModal(false)}
-         languageCode={language.code}
-       />
-
-       <VirtualAssistantModal
-         visible={showVirtualAssistant}
-         onClose={() => setShowVirtualAssistant(false)}
-         languageCode={language.code}
-       />
-
-       <TutorialModal
-         visible={showTutorial}
-         onClose={() => setShowTutorial(false)}
-         languageCode={language.code}
-         tutorialData="translation"
-       />
+      <LanguageModal 
+        visible={showLanguageModal} 
+        onClose={() => setShowLanguageModal(false)} 
+        languageCode={language.code}
+      />
+      
+      {/* Help Modal */}
+      <HelpModal
+        visible={showHelpModal}
+        onClose={() => setShowHelpModal(false)}
+        languageCode={language.code}
+      />
     </SafeAreaView>
   );
 };
@@ -239,4 +244,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ChildrenPage;
+export default MobilityPage;

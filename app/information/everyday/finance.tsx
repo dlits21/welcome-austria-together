@@ -3,13 +3,13 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, TextInput, TouchableOpacity, FlatList } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
-import { useLanguage } from '../../contexts/LanguageContext';
-import { languages, getWhatWouldYouWantToKnow } from '../../data/language/common';
-import PageNavigation from '../../components/PageNavigation';
-import LanguageModal from '../../components/LanguageModal';
-import HelpModal from '../../components/HelpModal';
+import { useLanguage } from '../../../contexts/LanguageContext';
+import { languages, getWhatWouldYouWantToKnow } from '../../../data/language/common';
+import PageNavigation from '../../../components/PageNavigation';
+import LanguageModal from '../../../components/LanguageModal';
+import HelpModal from '../../../components/HelpModal';
 
-interface VolunteeringTile {
+interface FinanceTile {
   id: string;
   title: {
     en: string;
@@ -19,7 +19,7 @@ interface VolunteeringTile {
   icon: string;
 }
 
-const volunteeringTiles: VolunteeringTile[] = [
+const financeTiles: FinanceTile[] = [
   {
     id: 'general-information',
     title: { en: 'General Information', de: 'Allgemeine Informationen' },
@@ -27,38 +27,50 @@ const volunteeringTiles: VolunteeringTile[] = [
     icon: 'ℹ️'
   },
   {
-    id: 'how-to-volunteer',
-    title: { en: 'How to Volunteer', de: 'Wie man sich engagiert' },
+    id: 'financial-support',
+    title: { en: 'Financial Support', de: 'Finanzielle Unterstützung' },
     color: '#10B981',
-    icon: '🤝'
+    icon: '💰'
   },
   {
-    id: 'volunteer-opportunities',
-    title: { en: 'Volunteer Opportunities', de: 'Freiwilligenmöglichkeiten' },
+    id: 'banking-in-austria',
+    title: { en: 'Banking in Austria', de: 'Bankwesen in Österreich' },
     color: '#F59E0B',
-    icon: '🌟'
+    icon: '🏦'
   },
   {
-    id: 'organizations',
-    title: { en: 'Organizations', de: 'Organisationen' },
+    id: 'resources',
+    title: { en: 'Resources', de: 'Ressourcen' },
     color: '#EF4444',
-    icon: '🏢'
+    icon: '📚'
   },
   {
-    id: 'benefits-volunteering',
-    title: { en: 'Benefits of Volunteering', de: 'Vorteile des Freiwilligendienstes' },
+    id: 'budgeting',
+    title: { en: 'Budgeting', de: 'Budgetplanung' },
     color: '#8B5CF6',
-    icon: '💪'
+    icon: '📊'
   },
   {
-    id: 'time-commitment',
-    title: { en: 'Time Commitment', de: 'Zeitaufwand' },
+    id: 'insurance',
+    title: { en: 'Insurance', de: 'Versicherung' },
     color: '#F97316',
-    icon: '⏰'
+    icon: '🛡️'
+  },
+  {
+    id: 'taxes',
+    title: { en: 'Taxes', de: 'Steuern' },
+    color: '#06B6D4',
+    icon: '📋'
+  },
+  {
+    id: 'paying-as-asylum-seeker',
+    title: { en: 'Money and Asylum', de: 'Geld und Asyl' },
+    color: '#84CC16',
+    icon: '💳'
   }
 ];
 
-const VolunteeringPage: React.FC = () => {
+const FinancePage: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
@@ -80,15 +92,15 @@ const VolunteeringPage: React.FC = () => {
 
   const handleTilePress = (tileId: string) => {
     console.log(`Selected tile: ${tileId}`);
-    router.push(`/information/volunteering/${tileId}`);
+    router.push(`/information/finance/${tileId}`);
   };
 
-  const pageTitle = language.code === 'de' ? 'Mithelfen' : 'Volunteering';
+  const pageTitle = language.code === 'de' ? 'Finanzen' : 'Finance';
   const pageDescription = language.code === 'de' 
-    ? 'Ehrenamtliche Möglichkeiten, einschließlich Gemeinschaftsdienst und gemeinnützige Arbeit.'
-    : 'Volunteer opportunities, including community service and charitable work.';
+    ? 'Bankwesen, Steuern, finanzielle Unterstützung und Umgang mit Ihrem Geld.'
+    : 'Banking, taxes, financial assistance, and managing your money.';
 
-  const renderTile = ({ item }: { item: VolunteeringTile }) => (
+  const renderTile = ({ item }: { item: FinanceTile }) => (
     <TouchableOpacity 
       style={[styles.tile, { borderColor: item.color + '40' }]}
       onPress={() => handleTilePress(item.id)}
@@ -115,6 +127,7 @@ const VolunteeringPage: React.FC = () => {
         <Text style={styles.title}>{pageTitle}</Text>
         <Text style={styles.description}>{pageDescription}</Text>
         
+        {/* Search Bar */}
         <View style={styles.searchContainer}>
           <TextInput
             style={styles.searchInput}
@@ -129,8 +142,9 @@ const VolunteeringPage: React.FC = () => {
           </TouchableOpacity>
         </View>
 
+        {/* Tiles Grid */}
         <FlatList
-          data={volunteeringTiles}
+          data={financeTiles}
           renderItem={renderTile}
           keyExtractor={(item) => item.id}
           numColumns={2}
@@ -139,12 +153,14 @@ const VolunteeringPage: React.FC = () => {
         />
       </ScrollView>
       
+      {/* Language Modal */}
       <LanguageModal 
         visible={showLanguageModal} 
         onClose={() => setShowLanguageModal(false)} 
         languageCode={language.code}
       />
       
+      {/* Help Modal */}
       <HelpModal
         visible={showHelpModal}
         onClose={() => setShowHelpModal(false)}
@@ -228,4 +244,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default VolunteeringPage;
+export default FinancePage;

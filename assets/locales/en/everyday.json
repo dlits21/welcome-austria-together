@@ -1,0 +1,61 @@
+{
+  "pageTitle": "Everyday",
+  "introShort": "Short help for daily life. Tap a topic to get quick, clear steps.",
+  "playTips": "Listen to short tips",
+  "myJourney": "Guide my journey",
+  "quickHelp": "Immediate help",
+  "tts_lang": "en-US",
+  "tts_intro": "Here are quick everyday tips.",
+  "topics": {
+    "school": {
+      "title": "School & Education",
+      "subtitle": "Enroll kids, paperwork, contact school",
+      "tip": "To register your child, bring ID and residence papers. Ask the school for an interpreter."
+    },
+    "kids": {
+      "title": "Kids & Childcare",
+      "subtitle": "Daycare, playgroups, child benefits",
+      "tip": "Try the local parent-and-child groups. They often help with registration."
+    },
+    "women": {
+      "title": "Support for Women",
+      "subtitle": "Health, safety and support services",
+      "tip": "If you need help, contact local women's shelters and health centers listed on Contacts."
+    },
+    "sim": {
+      "title": "SIM Cards & Phones",
+      "subtitle": "Where to buy, prepaid, balance tips",
+      "tip": "Buy a prepaid SIM at supermarkets or kiosks; bring your ID."
+    },
+    "recycling": {
+      "title": "Recycling & Waste",
+      "subtitle": "How to sort waste in Austria",
+      "tip": "Sort paper, plastic, glass, organic waste in separate bins."
+    },
+    "transport": {
+      "title": "Public Transport",
+      "subtitle": "Tickets, short-term passes, how to ride",
+      "tip": "Buy a single ticket before boarding or use the official mobile app."
+    },
+    "culture": {
+      "title": "Culture & Events",
+      "subtitle": "Free events, museums, community groups",
+      "tip": "Search local NGO calendars for free community events."
+    },
+    "sport": {
+      "title": "Sport & Clubs",
+      "subtitle": "How to join local sports groups",
+      "tip": "Many sports clubs offer trial sessions—ask about low-cost memberships."
+    },
+    "political": {
+      "title": "Civic & Political Education",
+      "subtitle": "Voting rules, rights, participation",
+      "tip": "Non-citizens can join community consultations; learn the basics at local civic centers."
+    },
+    "climate": {
+      "title": "Climate & Environment",
+      "subtitle": "Local climate habits and safety tips",
+      "tip": "Prepare for winter: wear layers and check local weather advisories."
+    }
+  }
+}

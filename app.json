@@ -5,6 +5,7 @@
         "projectId": "c25c92ad-ac36-4ee4-81f7-5e642179b4ff"
       }
     },
+    "plugins": ["expo-localization"],
     "android": {
       "package": "com.dlits.willkompass"
     },

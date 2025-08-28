@@ -1,73 +1,64 @@
+
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, TextInput, TouchableOpacity, FlatList } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
-import { useLanguage } from '../../contexts/LanguageContext';
-import { languages, getWhatWouldYouWantToKnow } from '../../data/language/common';
-import PageNavigation from '../../components/PageNavigation';
-import LanguageModal from '../../components/LanguageModal';
-import HelpModal from '../../components/HelpModal';
-import climateData from '../../data/language/information/climate-change.json';
+import { useLanguage } from '../../../contexts/LanguageContext';
+import { languages, getWhatWouldYouWantToKnow } from '../../../data/language/common';
+import PageNavigation from '../../../components/PageNavigation';
+import LanguageModal from '../../../components/LanguageModal';
+import HelpModal from '../../../components/HelpModal';
 
-interface ClimateTile {
+interface VolunteeringTile {
   id: string;
-  title: string;
+  title: {
+    en: string;
+    de: string;
+  };
   color: string;
   icon: string;
 }
 
-const climateTiles: ClimateTile[] = [
+const volunteeringTiles: VolunteeringTile[] = [
   {
-    id: 'climate-science',
-    title: 'climate-science',
+    id: 'general-information',
+    title: { en: 'General Information', de: 'Allgemeine Informationen' },
     color: '#3B82F6',
-    icon: '🔬'
+    icon: 'ℹ️'
   },
   {
-    id: 'environmental-protection',
-    title: 'environmental-protection',
+    id: 'how-to-volunteer',
+    title: { en: 'How to Volunteer', de: 'Wie man sich engagiert' },
     color: '#10B981',
-    icon: '🌍'
+    icon: '🤝'
   },
   {
-    id: 'sustainability',
-    title: 'sustainability',
+    id: 'volunteer-opportunities',
+    title: { en: 'Volunteer Opportunities', de: 'Freiwilligenmöglichkeiten' },
     color: '#F59E0B',
-    icon: '♻️'
+    icon: '🌟'
   },
   {
-    id: 'renewable-energy',
-    title: 'renewable-energy',
+    id: 'organizations',
+    title: { en: 'Organizations', de: 'Organisationen' },
     color: '#EF4444',
-    icon: '⚡'
+    icon: '🏢'
   },
   {
-    id: 'waste-management',
-    title: 'waste-management',
+    id: 'benefits-volunteering',
+    title: { en: 'Benefits of Volunteering', de: 'Vorteile des Freiwilligendienstes' },
     color: '#8B5CF6',
-    icon: '🗑️'
+    icon: '💪'
   },
   {
-    id: 'green-transportation',
-    title: 'green-transportation',
-    color: '#06B6D4',
-    icon: '🚲'
-  },
-  {
-    id: 'climate-adaptation',
-    title: 'climate-adaptation',
-    color: '#84CC16',
-    icon: '🌱'
-  },
-  {
-    id: 'environmental-activism',
-    title: 'environmental-activism',
+    id: 'time-commitment',
+    title: { en: 'Time Commitment', de: 'Zeitaufwand' },
     color: '#F97316',
-    icon: '✊'
+    icon: '⏰'
   }
 ];
 
-const ClimateChangePage: React.FC = () => {
+const VolunteeringPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
@@ -76,7 +67,6 @@ const ClimateChangePage: React.FC = () => {
   const router = useRouter();
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
-  const content = climateData[currentLanguage as keyof typeof climateData] || climateData.en;
 
   const toggleSound = () => {
     setSoundEnabled(!soundEnabled);
@@ -90,10 +80,15 @@ const ClimateChangePage: React.FC = () => {
 
   const handleTilePress = (tileId: string) => {
     console.log(`Selected tile: ${tileId}`);
-    router.push(`/information/climate-change/${tileId}`);
+    router.push(`/information/volunteering/${tileId}`);
   };
 
-  const renderTile = ({ item }: { item: ClimateTile }) => (
+  const pageTitle = language.code === 'de' ? 'Mithelfen' : 'Volunteering';
+  const pageDescription = language.code === 'de' 
+    ? 'Ehrenamtliche Möglichkeiten, einschließlich Gemeinschaftsdienst und gemeinnützige Arbeit.'
+    : 'Volunteer opportunities, including community service and charitable work.';
+
+  const renderTile = ({ item }: { item: VolunteeringTile }) => (
     <TouchableOpacity 
       style={[styles.tile, { borderColor: item.color + '40' }]}
       onPress={() => handleTilePress(item.id)}
@@ -102,7 +97,7 @@ const ClimateChangePage: React.FC = () => {
         <Text style={styles.tileIcon}>{item.icon}</Text>
       </View>
       <Text style={styles.tileTitle}>
-        {content.tiles[item.title as keyof typeof content.tiles]}
+        {language.code === 'de' ? item.title.de : item.title.en}
       </Text>
     </TouchableOpacity>
   );
@@ -117,10 +112,9 @@ const ClimateChangePage: React.FC = () => {
       />
       
       <ScrollView style={styles.content}>
-        <Text style={styles.title}>{content.title}</Text>
-        <Text style={styles.description}>{content.description}</Text>
+        <Text style={styles.title}>{pageTitle}</Text>
+        <Text style={styles.description}>{pageDescription}</Text>
         
-        {/* Search Bar */}
         <View style={styles.searchContainer}>
           <TextInput
             style={styles.searchInput}
@@ -135,9 +129,8 @@ const ClimateChangePage: React.FC = () => {
           </TouchableOpacity>
         </View>
 
-        {/* Tiles Grid */}
         <FlatList
-          data={climateTiles}
+          data={volunteeringTiles}
           renderItem={renderTile}
           keyExtractor={(item) => item.id}
           numColumns={2}
@@ -146,14 +139,12 @@ const ClimateChangePage: React.FC = () => {
         />
       </ScrollView>
       
-      {/* Language Modal */}
       <LanguageModal 
         visible={showLanguageModal} 
         onClose={() => setShowLanguageModal(false)} 
         languageCode={language.code}
       />
       
-      {/* Help Modal */}
       <HelpModal
         visible={showHelpModal}
         onClose={() => setShowHelpModal(false)}
@@ -237,4 +228,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ClimateChangePage;
+export default VolunteeringPage;

@@ -18,20 +18,24 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
   icon,
   onPress,
   color = '#3B82F6',
+  tutorialIconSize = 64,
+  width = Dimensions.get('window').width,
+  columns = 2,
+  padding = 48,
   isInTutorial = false
 }) => {
   if (isInTutorial) {
     // Fixed sizing for tutorial mode
     return (
-      <TouchableOpacity 
-        style={styles.tutorialCard} 
+      <TouchableOpacity
+        style={styles.tutorialCard}
         onPress={onPress}
       >
         <View style={[styles.tutorialIconContainer, { backgroundColor: `${color}15` }]}>
-          <MaterialIcons 
-            name={icon} 
-            size={64} 
-            color={color} 
+          <MaterialIcons
+            name={icon}
+            size={tutorialIconSize}
+            color={color}
           />
         </View>
         <Text style={styles.title}>{title}</Text>
@@ -41,20 +45,19 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
   }
 
   // Responsive sizing for main grid
-  const screenWidth = Dimensions.get('window').width;
-  const cardWidth = (screenWidth - 48) / 2; // 2 columns with padding
+  const cardWidth = (width - padding * columns) / columns; // 2 columns with padding
   const iconSize = Math.min(Math.max(32, cardWidth * 0.3), 200); // Responsive icon size, minimum 32
 
   return (
-    <TouchableOpacity 
-      style={[styles.card, { width: cardWidth }]} 
+    <TouchableOpacity
+      style={[styles.card, { width: cardWidth }]}
       onPress={onPress}
     >
       <View style={[styles.iconContainer, { backgroundColor: `${color}15`, width: cardWidth * 0.9, height: Math.min(iconSize*3, 300)}]}>
-        <MaterialIcons 
-          name={icon} 
-          size={iconSize} 
-          color={color} 
+        <MaterialIcons
+          name={icon}
+          size={iconSize}
+          color={color}
         />
       </View>
       <Text style={styles.title}>{title}</Text>

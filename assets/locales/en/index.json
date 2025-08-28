@@ -1,0 +1,13 @@
+{
+  "welcomeTitle": "Welcome",
+  "chooseLanguageInstruction": "Choose your language",
+  "confirmShort": "Do you understand this language? Press Confirm to continue.",
+  "confirmLong": "Do you understand this language? The app will switch to this language. Press Confirm to continue or Cancel to choose another.",
+  "confirmTitle": "Confirm language",
+  "switchTo": "Switch to {{nativeName}}",
+  "buttons": {
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "help": "Help / Emergency"
+  }
+}

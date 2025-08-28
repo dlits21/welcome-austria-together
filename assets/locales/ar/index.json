@@ -1,0 +1,13 @@
+{
+  "welcomeTitle": "أهلاً وسهلاً",
+  "chooseLanguageInstruction": "اختر لغتك",
+  "confirmShort": "بتفهم هاللغة؟ اضغط متابعة لتكمل.",
+  "confirmLong": "بتفهم هاللغة؟ التطبيق رح يتحول لهاللغة. اضغط تأكيد لتكمل أو إلغاء لتختار غيرها.",
+  "confirmTitle": "تأكيد اللغة",
+  "switchTo": "تغيير إلى {{nativeName}}",
+  "buttons": {
+    "confirm": "تأكيد",
+    "cancel": "إلغاء",
+    "help": "مساعدة / طوارئ"
+  }
+}

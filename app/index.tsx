@@ -1,16 +1,23 @@
-import React, { useState, useEffect, useRef } from "react";
+// app/data/index.tsx
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   View,
-  Pressable,
+  TouchableOpacity,
   SafeAreaView,
   StatusBar,
-  Modal,
-  Animated,
-  Dimensions,
   Text,
+  Platform,
+  I18nManager,
+  Image,
+  ScrollView,
+  useWindowDimensions,
 } from "react-native";
 import { useRouter } from "expo-router";
+import * as Speech from "expo-speech";
+import { useTranslation } from "react-i18next";
+import i18n from "./i18n"; // adjust path if your i18n export is elsewhere
+import { useLanguage } from "../contexts/LanguageContext";
 import {
   GermanFlag,
   GBFlag,
@@ -20,337 +27,326 @@ import {
   SyrianFlag,
   SomaliFlag,
   GeorgianFlag,
-  AlbanianFlag
+  AlbanianFlag,
 } from "../components/Flags";
-import { getWelcomeText } from '../data/language/common';
-import { useLanguage } from '../contexts/LanguageContext';
-import { getGlobalText, getIndexText } from '../utils/languageUtils';
 
-// Import our components
-import LanguageSelectionHeader from "../components/LanguageSelectionHeader";
-import LanguageSelectionGrid from "../components/LanguageSelectionGrid";
-import HoverTooltip from "../components/HoverTooltip";
-import LanguageConfirmation from "../components/LanguageConfirmation";
-import VirtualAssistantModal from "../components/VirtualAssistantModal";
-import TutorialModal from "../components/TutorialModal";
-
-// Language data with correct flags and languages
-// (English, German, Russian, Chechen, Dari, Pashto, Persian, Arabic, Kurdish, Somali, Georgian, Albanian)
-const languages = [
-  { code: "de", name: "Deutsch", flag: GermanFlag }, // German
-  { code: "en", name: "English", flag: GBFlag }, // English
-  { code: "ru", name: "Русский", flag: RussianFlag }, // Russian
-  { code: "ce", name: "Нохчийн", flag: RussianFlag }, // Chechen
-  { code: "prs", name: "دری", flag: AfghaniFlag }, // Dari
-  { code: "ps", name: "پښتو", flag: AfghaniFlag }, // Pashto
-  { code: "fa", name: "فارسی", flag: IranianFlag }, // Persian
-  { code: "ar", name: "العربية", flag: SyrianFlag }, // Arabic
-  { code: "ku", name: "Kurdî", flag: SyrianFlag }, // Kurdish
-  { code: "so", name: "Soomaali", flag: SomaliFlag }, // Somali
-  { code: "ka", name: "ქართული", flag: GeorgianFlag }, // Georgian
-  { code: "sq", name: "Shqip", flag: AlbanianFlag }, // Albanian
-];
-
-// Type definition for language
+// Minimal Language type
 interface Language {
   code: string;
   name: string;
-  flag: any; // Using 'any' for simplicity with require()
+  flag: any;
+  ttsLocale?: string;
 }
 
-// Confirmation messages in each language
-const confirmationMessages: Record<string, string> = {
-  de: "Verstehst du Deutsch?\nDiese App wird ab jetzt auf Deutsch sein.\n Du kannst das später ändern.",
-  en: "Do you understand English?\n This app will be in English from now on.\n You can change this later.",
-  ru: "Вы понимаете русский?\n Это приложение теперь будет на русском языке.\n Вы можете изменить это позже.",
-  ce: "Хьуна нохчийн мотт хаъий?\n Хӏара приложение хӏинца дуьйна нохчийн маттахь хир ю.\n Хьо и тӏаьхьо хийца йиш ю.",
-  prs: "آیا دری را میفهمید؟ این برنامه از این به بعد به زبان دری خواهد بود. شما می‌توانید بعداً این را تغییر دهید.",
-  ps: "ایا تاسو پښتو پوهیږئ؟ دا اپلیکیشن به له دې وروسته په پښتو وي. تاسو کولی شئ دا وروسته بدل کړئ.",
-  fa: "آیا فارسی را میفهمید؟ این برنامه از این به بعد به زبان فارسی خواهد بود. شما می‌توانید ان را تغییر دهید.",
-  ar: "هل تفهم العربية؟ سيكون هذا التطبيق باللغة العربية من الآن فصاعدًا. يمكنك تغيير ذلك لاحقًا.",
-  ku: "Tu Kurdî fêm dikî?\n Ev sepan ji niha û pê ve bi Kurdî be.\n Tu dikarî vê paşê biguherînî.",
-  so: "Ma fahmaysaa Soomaali?\n Abkan wuxuu noqon doonaa Soomaali hadda.\n Waxaad bedeli kartaa mar dambe.",
-  ka: "გესმით ქართული? ეს აპლიკაცია ამიერიდან ქართულ ენაზე იქნება.\n შეგიძლიათ ეს შეცვალოთ მოგვიანებით.",
-  sq: "A e kuptoni shqip?\n Ky aplikacion do të jetë në shqip nga tani e tutje.\n Mund ta ndryshoni këtë më vonë.",
-};
+/** --- LANGUAGES: add/remove as needed --- **/
+const LANGUAGES: Language[] = [
+  { code: "de", name: "Deutsch", flag: GermanFlag, ttsLocale: "de-DE" },
+  { code: "en", name: "English", flag: GBFlag, ttsLocale: "en-US" },
+  { code: "ru", name: "Русский", flag: RussianFlag, ttsLocale: "ru-RU" },
+  { code: "ce", name: "Нохчийн", flag: RussianFlag, ttsLocale: "ru-RU" },
+  { code: "prs", name: "دری", flag: AfghaniFlag, ttsLocale: "fa-AF" },
+  { code: "ps", name: "پښتو", flag: AfghaniFlag, ttsLocale: "ps-AF" },
+  { code: "fa", name: "فارسی", flag: IranianFlag, ttsLocale: "fa-IR" },
+  { code: "ar", name: "العربية", flag: SyrianFlag, ttsLocale: "ar-SA" },
+  { code: "ku", name: "کوردی", flag: SyrianFlag, ttsLocale: "ar-SA" },
+  { code: "so", name: "Soomaali", flag: SomaliFlag, ttsLocale: "so-SO" },
+  { code: "ka", name: "ქართული", flag: GeorgianFlag, ttsLocale: "ka-GE" },
+  { code: "sq", name: "Shqip", flag: AlbanianFlag, ttsLocale: "sq-AL" },
+];
 
 export default function LanguageSelectionScreen() {
   const router = useRouter();
   const { setSelectedLanguage, currentLanguage } = useLanguage();
-  console.log('Current language in selection screen:', currentLanguage);
-  const [currentWelcomeIndex, setCurrentWelcomeIndex] = useState(0);
-  const [soundEnabled, setSoundEnabled] = useState(true);
-  const [showInfo, setShowInfo] = useState(false);
-  const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
-  const [showTutorial, setShowTutorial] = useState(false);
-  const [selectedLanguageState, setSelectedLanguageState] = useState<Language | null>(null);
-  const [hoverLanguage, setHoverLanguage] = useState<Language | null>(null);
-  const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
+  const { t } = useTranslation(); // default app language translations
+  const { width } = useWindowDimensions();
 
-  const animatedScale = useRef(new Animated.Value(1)).current;
-  const animatedOpacity = useRef(new Animated.Value(0)).current;
-  const countdownProgress = useRef(new Animated.Value(1)).current;
-  const countdownTimer = useRef<NodeJS.Timeout | null>(null);
-  const hoverTimeout = useRef<NodeJS.Timeout | null>(null);
+  // Ensure German default; if context already has a language, respect it
+  const defaultLangCode = "de";
+  const initialSelectedCode = currentLanguage || defaultLangCode;
+  const initialSelected = LANGUAGES.find((l) => l.code === initialSelectedCode) || LANGUAGES[0];
 
-  // Rotate through welcome messages
+  const [selected, setSelected] = useState<Language | null>(initialSelected);
+
+  // If no currentLanguage in context, set German globally on mount
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentWelcomeIndex((prevIndex) => (prevIndex + 1) % languages.length);
-    }, 5000);
-    return () => clearInterval(interval);
+    if (!currentLanguage) {
+      setSelectedLanguage(defaultLangCode);
+      i18n.changeLanguage(defaultLangCode).catch(() => {});
+    } else {
+      // ensure i18n and selected reflect context
+      i18n.changeLanguage(currentLanguage).catch(() => {});
+      const match = LANGUAGES.find((l) => l.code === currentLanguage);
+      if (match) setSelected(match);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Handle language selection
-  const handleLanguageSelect = (language: Language) => {
-    setSelectedLanguageState(language);
-
-    // Animate scaling
-    Animated.timing(animatedScale, {
-      toValue: 1.2,
-      duration: 300,
-      useNativeDriver: true,
-    }).start();
-
-    // Animate opacity
-    Animated.timing(animatedOpacity, {
-      toValue: 1,
-      duration: 300,
-      useNativeDriver: true,
-    }).start();
-
-    // Start countdown
-    Animated.timing(countdownProgress, {
-      toValue: 0,
-      duration: 20000, // 20 seconds
-      useNativeDriver: false,
-    }).start();
-
-    // Set timeout to close after 20s
-    countdownTimer.current = setTimeout(() => {
-      closeLanguageDetail();
-    }, 20000);
+  // Determine columns: web uses 4 by default and uses full width; otherwise responsive
+  const getColumns = () => {
+    if (Platform.OS === "web") return 4;
+    if (width < 600) return 2;
+    if (width < 900) return 3;
+    return 4;
   };
+  const columns = getColumns();
+   const tileBasisPercent = `${(95)/ columns}%`;
 
-  // Close language detail view
-  const closeLanguageDetail = () => {
-    Animated.parallel([
-      Animated.timing(animatedScale, {
-        toValue: 1,
-        duration: 300,
-        useNativeDriver: true,
-      }),
-      Animated.timing(animatedOpacity, {
-        toValue: 0,
-        duration: 300,
-        useNativeDriver: true,
-      }),
-    ]).start(() => {
-      setSelectedLanguageState(null);
-      countdownProgress.setValue(1);
-      if (countdownTimer.current) {
-        clearTimeout(countdownTimer.current);
-      }
-    });
-  };
+  const isRTL = I18nManager.isRTL;
 
-  // Confirm language selection
-  const confirmLanguage = (code: string) => {
-    console.log(`Confirming language selection: ${code}`);
-    if (countdownTimer.current) {
-      clearTimeout(countdownTimer.current);
-    }
+  // Use translator fixed to selected language (to show UI text in that language)
+  const tSelected = (langCode?: string) =>
+    langCode ? i18n.getFixedT(langCode, "index") : i18n.getFixedT(i18n.language, "index");
 
-    // Set the global language
-    setSelectedLanguage(code);  // This will trigger the updateLanguage function
-    console.log('Language set to:', code);
-
-    closeLanguageDetail();
-    // Navigate to homepage
-    router.push('/home');
-  };
-
-  // Updated hover handlers with 5-second delay
-  const handlePressIn = (language: Language, event: any) => {
-    // For mobile devices, show on press
-    if ('ontouchstart' in window) {
-      setHoverLanguage(language);
-      setHoverPosition({
-        x: event.nativeEvent.pageX || event.nativeEvent.locationX + 50,
-        y: event.nativeEvent.pageY || event.nativeEvent.locationY,
-      });
+  // Speak short confirmation / announcement in selected language
+  const speakSelection = (lang: Language) => {
+    const msg =
+      tSelected(lang.code)("confirmShort") ||
+      fallbackConfirmText(lang.code, lang.name);
+    const options: Speech.SpeechOptions = {
+      language: lang.ttsLocale ?? mapCodeToLocale(lang.code),
+      pitch: 1,
+      rate: 1,
+    };
+    try {
+      Speech.stop();
+      Speech.speak(msg, options);
+    } catch (e) {
+      console.warn("TTS failed:", e);
     }
   };
 
-  const handlePressOut = () => {
-    if ('ontouchstart' in window) {
-      setHoverLanguage(null);
-    }
+  // Selecting tile => immediately switch app language
+  const onSelectLanguage = (lang: Language) => {
+    setSelected(lang);
+    // persist via context + change i18n immediately
+    setSelectedLanguage(lang.code);
+    i18n.changeLanguage(lang.code).catch(() => {});
+    speakSelection(lang);
   };
 
-  // Updated hover handlers for web with 5-second delay
-  const handleMouseEnter = (language: Language, event: any) => {
-    if (!('ontouchstart' in window)) {
-      setIsHovering(true);
-      
-      // Clear any existing timeout
-      if (hoverTimeout.current) {
-        clearTimeout(hoverTimeout.current);
-      }
-      
-      // Set a 5-second delay before showing tooltip
-      hoverTimeout.current = setTimeout(() => {
-        if (isHovering) {
-          setHoverLanguage(language);
-          setHoverPosition({
-            x: event.nativeEvent.pageX || event.nativeEvent.clientX,
-            y: event.nativeEvent.pageY || event.nativeEvent.clientY,
-          });
-        }
-      }, 5000);
-    }
+  const onContinue = () => {
+    router.push("/home");
   };
 
-  const handleMouseLeave = () => {
-    if (!('ontouchstart' in window)) {
-      setIsHovering(false);
-      setHoverLanguage(null);
-      
-      // Clear the timeout if mouse leaves before 5 seconds
-      if (hoverTimeout.current) {
-        clearTimeout(hoverTimeout.current);
-      }
-    }
+  const onEmergency = () => {
+    router.push("/emergency"); // ensure route exists or adjust accordingly
   };
 
-  // Handle virtual assistant close
-  const handleVirtualAssistantClose = () => {
-    setShowVirtualAssistant(false);
-  };
+  // Welcome text renders using current i18n language (which is set to selected on selection)
+  const welcomeText = t("index:welcomeTitle", "Welcome");
 
-  // Handle virtual assistant from tutorial
-  const handleTutorialVirtualAssistant = () => {
-    setShowTutorial(false);
-    setShowVirtualAssistant(true);
-  };
-
-  // Get current welcome message based on index
-  const currentWelcomeCode = languages[currentWelcomeIndex]?.code;
-  const currentWelcomeMessage = getWelcomeText(currentWelcomeCode);
-
-  // Get hover messages from language file
-  const hoverMessages: Record<string, string> = {};
-  languages.forEach(lang => {
-    hoverMessages[lang.code] = getIndexText('hoverInstructions', lang.code);
-  });
+  // Footer button labels — prefer selected language keys if present
+  const confirmLabel = selected ? tSelected(selected.code)("buttons.confirm") || t("buttons.continue", "Continue") : t("buttons.continue", "Continue");
+  const emergencyLabel = selected ? tSelected(selected.code)("buttons.help") || t("buttons.help", "Help / Emergency") : t("buttons.help", "Help / Emergency");
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.safe}>
       <StatusBar barStyle="dark-content" />
+      <View style={styles.container}>
+        {/* Header */}
+        <View style={styles.header}>
+          <Text
+            selectable={false}
+            accessibilityRole="header"
+            accessibilityLabel={welcomeText}
+            style={[styles.welcomeTitle, { textAlign: isRTL ? "right" : "center" }]}
+          >
+            {welcomeText}
+          </Text>
 
-      {/* Header */}
-      <LanguageSelectionHeader
-        currentWelcomeMessage={currentWelcomeMessage}
-        setShowInfo={setShowInfo}
-        soundEnabled={soundEnabled}
-        setSoundEnabled={setSoundEnabled}
-        showVirtualAssistant={() => setShowVirtualAssistant(true)}
-        showTutorial={() => setShowTutorial(true)}
-      />
-
-      {/* Welcome Title */}
-        <View style={styles.welcomeContainer}>
-          <Text style={styles.welcomeTitle}>{currentWelcomeMessage}</Text>
+          <TouchableOpacity
+            style={styles.emergencyBtn}
+            onPress={onEmergency}
+            accessibilityRole="button"
+            accessibilityLabel={emergencyLabel}
+          >
+            <Text style={styles.emergencyText}>{emergencyLabel}</Text>
+          </TouchableOpacity>
         </View>
 
+        {/* Short instruction */}
+        <View style={styles.instruction}>
+          <Text
+            style={[styles.instructionText, { textAlign: isRTL ? "right" : "center" }]}
+            accessibilityLabel={t("index:chooseLanguageInstruction", "Choose your language")}
+          >
+            {t("index:chooseLanguageInstruction", "Choose your language")}
+          </Text>
+        </View>
 
-      {/* Language Grid with updated hover props */}
-      <LanguageSelectionGrid
-        languages={languages}
-        handleLanguageSelect={handleLanguageSelect}
-        handlePressIn={handlePressIn}
-        handlePressOut={handlePressOut}
-        handleMouseEnter={handleMouseEnter}
-        handleMouseLeave={handleMouseLeave}
-      />
+        {/* Language grid */}
+        <ScrollView contentContainerStyle={[styles.grid, { paddingBottom: 120 }]} keyboardShouldPersistTaps="handled">
+          <View style={styles.gridInner}>
+            {LANGUAGES.map((lang) => {
+              const isSelected = selected?.code === lang.code;
+              return (
+                <TouchableOpacity
+                  key={lang.code}
+                  onPress={() => onSelectLanguage(lang)}
+                  accessibilityRole="button"
+                  accessibilityLabel={tSelected(lang.code)("index:switchTo", { nativeName: lang.name })}
+                  // use flexBasis and maxWidth percent — prevents leftover gap on wide screens
+                  style={[
+                    styles.tile,
+                    {
+                      flexBasis: tileBasisPercent,
+                      maxWidth: tileBasisPercent,
+                      backgroundColor: isSelected ? "#eaf7ea" : "#f7f7f7",
+                      borderColor: isSelected ? "#2b8a3e" : "#e6e6e6",
+                      borderWidth: isSelected ? 2 : 1,
+                    },
+                  ]}
+                >
+                  <View style={styles.flagWrap} accessible accessibilityLabel={`${lang.name} flag`}>
+                    {typeof lang.flag === "function" ? (
+                      // @ts-ignore render component flags
+                      <lang.flag width={64} height={64} />
+                    ) : (
+                      <Image source={lang.flag} style={styles.flagImage} />
+                    )}
+                  </View>
 
-      {/* Hover tooltip */}
-      <HoverTooltip
-        hoverLanguage={hoverLanguage}
-        hoverPosition={hoverPosition}
-        hoverMessages={hoverMessages}
-      />
-
-      {/* Language Detail Modal */}
-      <Modal
-        visible={selectedLanguageState !== null}
-        transparent={true}
-        animationType="fade"
-        onRequestClose={closeLanguageDetail}
-      >
-        <Pressable style={styles.modalOverlay} onPress={closeLanguageDetail}>
-          <View style={styles.centeredView}>
-            <LanguageConfirmation
-              selectedLanguage={selectedLanguageState}
-              closeLanguageDetail={closeLanguageDetail}
-              confirmLanguage={confirmLanguage}
-              animatedScale={animatedScale}
-              countdownProgress={countdownProgress}
-              confirmationMessages={confirmationMessages}
-            />
+                  <Text style={styles.langName} numberOfLines={1}>
+                    {lang.name}
+                  </Text>
+                </TouchableOpacity>
+              );
+            })}
           </View>
-        </Pressable>
-      </Modal>
+        </ScrollView>
 
+        {/* Footer with Emergency / Continue */}
+        <View style={styles.footer}>
+          <TouchableOpacity
+            onPress={onEmergency}
+            style={[styles.footerBtn, styles.cancelFooterBtn]}
+            accessibilityRole="button"
+            accessibilityLabel={emergencyLabel}
+          >
+            <Text style={styles.cancelFooterText}>{emergencyLabel}</Text>
+          </TouchableOpacity>
 
-
-      {/* Virtual Assistant Modal - Default to voice mode from index */}
-      <VirtualAssistantModal
-        visible={showVirtualAssistant}
-        onClose={handleVirtualAssistantClose}
-        languageCode={currentLanguage}
-        defaultMode="voice"
-      />
-
-      {/* Tutorial Modal */}
-      <TutorialModal
-        visible={showTutorial}
-        onClose={() => setShowTutorial(false)}
-        languageCode={currentLanguage}
-        tutorialData="index"
-        onVirtualAssistant={handleTutorialVirtualAssistant}
-      />
-
+          <TouchableOpacity
+            onPress={onContinue}
+            disabled={!selected}
+            style={[
+              styles.footerBtn,
+              styles.confirmFooterBtn,
+              !selected && styles.footerBtnDisabled,
+            ]}
+            accessibilityRole="button"
+            accessibilityLabel={confirmLabel}
+          >
+            <Text style={styles.confirmFooterText}>{confirmLabel}</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
     </SafeAreaView>
   );
 }
 
+/** Helpers **/
+function fallbackConfirmText(code: string, nativeName: string) {
+  return `Do you understand ${nativeName}? This app will switch to ${nativeName}.`;
+}
+
+function mapCodeToLocale(code?: string) {
+  switch (code) {
+    case "de":
+      return "de-DE";
+    case "en":
+      return "en-US";
+    case "ru":
+      return "ru-RU";
+    case "ar":
+      return "ar-SA";
+    case "fa":
+    case "prs":
+      return "fa-IR";
+    case "ps":
+      return "ps-AF";
+    case "so":
+      return "so-SO";
+    case "ka":
+      return "ka-GE";
+    case "sq":
+      return "sq-AL";
+    default:
+      return undefined;
+  }
+}
+
+/** Styles **/
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
+  safe: { flex: 1, backgroundColor: "#ffffff" },
+  container: { flex: 1, paddingHorizontal: 16, paddingTop: 12 },
+  header: { alignItems: "center", marginBottom: 8 },
+  welcomeTitle: { fontSize: 26, fontWeight: "700", color: "#222", marginBottom: 8 },
+  emergencyBtn: {
+    marginTop: 6,
+    paddingVertical: 10,
+    paddingHorizontal: 18,
+    borderRadius: 8,
+    backgroundColor: "#D9534F",
   },
-  welcomeContainer: {
-    paddingHorizontal: 16,
-    paddingVertical: 20,
-    alignItems: 'center',
+  emergencyText: { color: "#fff", fontWeight: "700" },
+  instruction: { marginVertical: 10, alignItems: "center" },
+  instructionText: { fontSize: 16, color: "#333" },
+  grid: { paddingVertical: 8,
+      paddingHorizontal: 16,
+      justifyContent: "center",
+      alignItems: "center",
+      alignSelf: "center"},
+  gridInner: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    alignItems: "flex-start",
   },
-  welcomeTitle: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#333',
-    textAlign: 'center',
-  },
-  modalOverlay: {
-    flex: 1,
-    backgroundColor: "rgba(0,0,0,0.5)",
+  tile: {
+    paddingHorizontal: 8,
+    paddingVertical: 14,
+    marginVertical: 8,
+    borderRadius: 10,
+    alignItems: "center",
     justifyContent: "center",
+    margin: 6
+  },
+  flagWrap: { marginBottom: 10, width: 72, height: 72, alignItems: "center", justifyContent: "center" },
+  flagImage: { width: 72, height: 72, resizeMode: "contain" },
+  langName: { fontSize: 18, fontWeight: "600", color: "#111" },
+
+  footer: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    bottom: 0,
+    height: 92,
+    flexDirection: "row",
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    backgroundColor: "#fff",
+    borderTopWidth: 1,
+    borderColor: "#eee",
+    justifyContent: "space-between",
     alignItems: "center",
   },
-  centeredView: {
+  footerBtn: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center"
+    marginHorizontal: 6,
+    paddingVertical: 14,
+    borderRadius: 8,
+    alignItems: "center",
   },
+  cancelFooterBtn: {
+    backgroundColor: "#f1f3f5",
+  },
+  confirmFooterBtn: {
+    backgroundColor: "#218838",
+  },
+  footerBtnDisabled: {
+    opacity: 0.5,
+  },
+  cancelFooterText: { color: "#333", fontWeight: "700" },
+  confirmFooterText: { color: "#fff", fontWeight: "700" },
+
 });

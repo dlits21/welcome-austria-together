@@ -3,13 +3,13 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, TextInput, TouchableOpacity, FlatList } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
-import { useLanguage } from '../../contexts/LanguageContext';
-import { languages, getWhatWouldYouWantToKnow } from '../../data/language/common';
-import PageNavigation from '../../components/PageNavigation';
-import LanguageModal from '../../components/LanguageModal';
-import HelpModal from '../../components/HelpModal';
+import { useLanguage } from '../../../contexts/LanguageContext';
+import { languages, getWhatWouldYouWantToKnow } from '../../../data/language/common';
+import PageNavigation from '../../../components/PageNavigation';
+import LanguageModal from '../../../components/LanguageModal';
+import HelpModal from '../../../components/HelpModal';
 
-interface FinanceTile {
+interface PoliticalTile {
   id: string;
   title: {
     en: string;
@@ -19,58 +19,94 @@ interface FinanceTile {
   icon: string;
 }
 
-const financeTiles: FinanceTile[] = [
+const politicalTiles: PoliticalTile[] = [
   {
-    id: 'general-information',
-    title: { en: 'General Information', de: 'Allgemeine Informationen' },
+    id: '101-political-education',
+    title: { en: '101 Political Education', de: 'Politische Bildung 101' },
     color: '#3B82F6',
-    icon: 'ℹ️'
-  },
-  {
-    id: 'financial-support',
-    title: { en: 'Financial Support', de: 'Finanzielle Unterstützung' },
-    color: '#10B981',
-    icon: '💰'
-  },
-  {
-    id: 'banking-in-austria',
-    title: { en: 'Banking in Austria', de: 'Bankwesen in Österreich' },
-    color: '#F59E0B',
-    icon: '🏦'
-  },
-  {
-    id: 'resources',
-    title: { en: 'Resources', de: 'Ressourcen' },
-    color: '#EF4444',
     icon: '📚'
   },
   {
-    id: 'budgeting',
-    title: { en: 'Budgeting', de: 'Budgetplanung' },
-    color: '#8B5CF6',
-    icon: '📊'
+    id: 'democracy',
+    title: { en: 'Democracy', de: 'Demokratie' },
+    color: '#10B981',
+    icon: '🗳️'
   },
   {
-    id: 'insurance',
-    title: { en: 'Insurance', de: 'Versicherung' },
+    id: 'politics-in-austria',
+    title: { en: 'Politics in Austria', de: 'Politik in Österreich' },
+    color: '#F59E0B',
+    icon: '🇦🇹'
+  },
+  {
+    id: 'human-rights',
+    title: { en: 'Human Rights', de: 'Menschenrechte' },
+    color: '#EF4444',
+    icon: '⚖️'
+  },
+  {
+    id: 'womens-rights',
+    title: { en: "Women's Rights", de: 'Frauenrechte' },
+    color: '#8B5CF6',
+    icon: '👩'
+  },
+  {
+    id: 'children-rights',
+    title: { en: "Children's Rights", de: 'Kinderrechte' },
     color: '#F97316',
+    icon: '👶'
+  },
+  {
+    id: 'online-workshops',
+    title: { en: 'Online Workshops', de: 'Online-Workshops' },
+    color: '#06B6D4',
+    icon: '💻'
+  },
+  {
+    id: 'voting-system',
+    title: { en: 'Voting System', de: 'Wahlsystem' },
+    color: '#84CC16',
+    icon: '🗳️'
+  },
+  {
+    id: 'constitution',
+    title: { en: 'Austrian Constitution', de: 'Österreichische Verfassung' },
+    color: '#DC2626',
+    icon: '📜'
+  },
+  {
+    id: 'civic-duties',
+    title: { en: 'Civic Duties', de: 'Bürgerpflichten' },
+    color: '#7C3AED',
+    icon: '🤝'
+  },
+  {
+    id: 'integration-process',
+    title: { en: 'Integration Process', de: 'Integrationsprozess' },
+    color: '#059669',
+    icon: '🌍'
+  },
+  {
+    id: 'legal-system',
+    title: { en: 'Legal System', de: 'Rechtssystem' },
+    color: '#0891B2',
+    icon: '⚖️'
+  },
+  {
+    id: 'anti-discrimination',
+    title: { en: 'Anti-Discrimination', de: 'Antidiskriminierung' },
+    color: '#EC4899',
     icon: '🛡️'
   },
   {
-    id: 'taxes',
-    title: { en: 'Taxes', de: 'Steuern' },
-    color: '#06B6D4',
-    icon: '📋'
-  },
-  {
-    id: 'paying-as-asylum-seeker',
-    title: { en: 'Money and Asylum', de: 'Geld und Asyl' },
-    color: '#84CC16',
-    icon: '💳'
+    id: 'report-abuses',
+    title: { en: 'How to report Abuses', de: 'Wie man Missbrauch meldet' },
+    color: '#F43F5E',
+    icon: '📢'
   }
 ];
 
-const FinancePage: React.FC = () => {
+const PoliticalEducationPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
@@ -92,15 +128,15 @@ const FinancePage: React.FC = () => {
 
   const handleTilePress = (tileId: string) => {
     console.log(`Selected tile: ${tileId}`);
-    router.push(`/information/finance/${tileId}`);
+    router.push(`/information/political-education/${tileId}`);
   };
 
-  const pageTitle = language.code === 'de' ? 'Finanzen' : 'Finance';
+  const pageTitle = language.code === 'de' ? 'Politische Bildung' : 'Political Education';
   const pageDescription = language.code === 'de' 
-    ? 'Bankwesen, Steuern, finanzielle Unterstützung und Umgang mit Ihrem Geld.'
-    : 'Banking, taxes, financial assistance, and managing your money.';
+    ? 'Erfahren Sie mehr über das österreichische politische System, Ihre Rechte und Pflichten.'
+    : 'Learn about the Austrian political system, your rights and responsibilities.';
 
-  const renderTile = ({ item }: { item: FinanceTile }) => (
+  const renderTile = ({ item }: { item: PoliticalTile }) => (
     <TouchableOpacity 
       style={[styles.tile, { borderColor: item.color + '40' }]}
       onPress={() => handleTilePress(item.id)}
@@ -144,7 +180,7 @@ const FinancePage: React.FC = () => {
 
         {/* Tiles Grid */}
         <FlatList
-          data={financeTiles}
+          data={politicalTiles}
           renderItem={renderTile}
           keyExtractor={(item) => item.id}
           numColumns={2}
@@ -244,4 +280,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default FinancePage;
+export default PoliticalEducationPage;
