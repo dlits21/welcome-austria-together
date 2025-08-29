@@ -1,0 +1,98 @@
+{
+  "pageTitle": "Education & Learning",
+  "introShort": "Find information about schools, qualifications, language courses, and educational support services.",
+  "essential": "Essential Services",
+  "additionalServices": "All Services",
+  "playTips": "🔊 Play Tips",
+  "emergency": "Emergency",
+  "quickHelp": "Need Help Now?",
+  "tts_lang": "en-US",
+  "tts_intro": "Welcome to Education and Learning information. Here you can find school enrollment, qualification recognition, and educational support services.",
+  "topics": {
+    "qualification-recognition": {
+      "title": "Recognition of Qualifications & Vocational Training",
+      "subtitle": "Get your foreign qualifications recognized and find adult education programs",
+      "tip": "Professional qualification recognition services and vocational training opportunities"
+    },
+    "school-enrollment": {
+      "title": "School Enrollment",
+      "subtitle": "How to register your child for school",
+      "tip": "Step-by-step guide to enrolling children in Austrian schools"
+    },
+    "language-integration": {
+      "title": "Language Courses & Integration Classes",
+      "subtitle": "German language courses from A1 to C2 levels",
+      "tip": "Free and affordable German language learning programs"
+    },
+    "school-types": {
+      "title": "School Types & Where to Send Kids",
+      "subtitle": "Understanding the Austrian school system",
+      "tip": "Guide to different school types and choosing the right one for your child"
+    },
+    "special-education": {
+      "title": "Special Education & Additional Support",
+      "subtitle": "Support for children with special educational needs",
+      "tip": "Specialized educational programs and support services"
+    },
+    "childcare-early-education": {
+      "title": "Childcare & Early Childhood Education",
+      "subtitle": "Daycare, kindergarten and early learning programs",
+      "tip": "Early childhood education options and childcare services"
+    },
+    "school-costs": {
+      "title": "School Costs & Entitlements",
+      "subtitle": "Information about school meals, transport, and fees",
+      "tip": "What's free, what costs money, and available financial support"
+    },
+    "homework-support": {
+      "title": "After-school & Homework Support",
+      "subtitle": "Tutoring and academic support programs",
+      "tip": "Free homework help and after-school learning programs"
+    },
+    "behavior-safety": {
+      "title": "Behavior, Bullying & Safety at School",
+      "subtitle": "Addressing behavioral issues and ensuring school safety",
+      "tip": "How to handle bullying and create a safe learning environment"
+    },
+    "parent-engagement": {
+      "title": "Parent Engagement & Communication",
+      "subtitle": "How to communicate effectively with teachers and school staff",
+      "tip": "Building positive relationships with your child's school"
+    },
+    "exams-certificates": {
+      "title": "Exams, Certificates & Progress",
+      "subtitle": "Understanding the grading system and academic progress",
+      "tip": "How Austrian school grading and assessment works"
+    },
+    "school-calendar": {
+      "title": "School Calendar & Holidays",
+      "subtitle": "Important dates, holidays, and school schedules",
+      "tip": "Austrian school year calendar and holiday schedules"
+    },
+    "mental-health-counselling": {
+      "title": "Mental Health & Counselling at School",
+      "subtitle": "Psychological support and counseling services for students",
+      "tip": "Mental health resources and counseling available in schools"
+    },
+    "transport-routes": {
+      "title": "Transport & Safe Routes to School",
+      "subtitle": "School transportation options and safe travel routes",
+      "tip": "Public transport for students and safe walking routes"
+    },
+    "digital-access": {
+      "title": "Digital Access & Remote Learning",
+      "subtitle": "Devices, internet access, and online learning support",
+      "tip": "Technology support for students and digital learning resources"
+    },
+    "scholarships-support": {
+      "title": "Scholarships & Extra Support",
+      "subtitle": "Financial aid for sports, cultural activities, and academic excellence",
+      "tip": "Scholarships and funding for extracurricular activities"
+    },
+    "legal-rights": {
+      "title": "Legal Rights & Complaints",
+      "subtitle": "Education law basics and how to file complaints",
+      "tip": "Your rights in the education system and complaint procedures"
+    }
+  }
+}
