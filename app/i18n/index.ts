@@ -16,6 +16,7 @@ import enHousing from '../../assets/locales/en/housing.json';
 import enFood from '../../assets/locales/en/food.json';
 import enEducation from '../../assets/locales/en/education.json';
 import enJobs from '../../assets/locales/en/jobs.json';
+import enContacts from '../../assets/locales/en/contacts.json';
 
 import deCommon from '../../assets/locales/de/common.json';
 import deAsk from '../../assets/locales/de/ask.json';
@@ -57,6 +58,7 @@ export const resources = {
        food: enFood,
        education: enEducation,
        jobs: enJobs,
+       contacts: enContacts,
        },
   de: { common: deCommon,
       ask: deAsk,
@@ -108,7 +110,7 @@ export async function initI18n() {
       lng: lang,
       fallbackLng: 'de',
       supportedLngs: SUPPORTED as unknown as string[],
-      ns: ['common','ask', 'home', 'housing', 'food', 'education', 'jobs'],
+      ns: ['common','ask', 'home', 'housing', 'food', 'education', 'jobs', 'contacts'],
       defaultNS: 'common',
       interpolation: { escapeValue: false },
       returnNull: false,

@@ -1,0 +1,62 @@
+{
+  "title": "Contacts & Support",
+  "subtitle": "Find help and support services",
+  "intro": "Access essential contact information for emergency services, legal help, housing support, and community resources.",
+  "playTipsButton": "Play All Tips",
+  "emergencyButton": "Emergency Help",
+  "quickHelpButton": "Quick Help",
+  "tutorial": {
+    "title": "Contacts Guide",
+    "description": "Learn how to find and use emergency contacts and support services"
+  },
+  "emergency-crisis-hotlines": {
+    "title": "Emergency & Crisis Hotlines",
+    "description": "24/7 emergency numbers and crisis support lines",
+    "tip": "Save these numbers in your phone for immediate access during emergencies"
+  },
+  "legal-asylum-help": {
+    "title": "Legal & Asylum Help",
+    "description": "Legal assistance and asylum support organizations",
+    "tip": "Contact legal NGOs for free consultation about your asylum case"
+  },
+  "housing-shelter-hotlines": {
+    "title": "Housing & Shelter Hotlines",
+    "description": "Emergency housing and shelter assistance contacts",
+    "tip": "Call housing hotlines if you need immediate shelter or housing support"
+  },
+  "healthcare-support-lines": {
+    "title": "Healthcare Support Lines",
+    "description": "Medical assistance and healthcare service contacts",
+    "tip": "Use healthcare support lines for medical emergencies and health guidance"
+  },
+  "food-essentials": {
+    "title": "Food & Essentials",
+    "description": "Food banks and essential services contact information",
+    "tip": "Contact food services for meals and essential supplies"
+  },
+  "children-family-support": {
+    "title": "Children & Family Support",
+    "description": "Family services and child support organizations",
+    "tip": "Reach out to family support services for help with children and family issues"
+  },
+  "work-exploitation": {
+    "title": "Work & Exploitation",
+    "description": "Labor rights and exploitation reporting contacts",
+    "tip": "Report workplace exploitation and get help with labor rights issues"
+  },
+  "everyday-life-help": {
+    "title": "Everyday Life Help",
+    "description": "General assistance for daily life challenges",
+    "tip": "Get help with everyday problems and practical life support"
+  },
+  "community-integration-ngos": {
+    "title": "Community & Integration NGOs",
+    "description": "Community organizations and integration support services",
+    "tip": "Connect with community NGOs for integration and social support"
+  },
+  "directory-quick-access": {
+    "title": "Directory & Quick Access",
+    "description": "Comprehensive contact directory and quick access numbers",
+    "tip": "Use the directory for quick access to all important contact numbers"
+  }
+}
