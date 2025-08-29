@@ -7,7 +7,6 @@ import {
   useWindowDimensions,
   StyleSheet,
 } from 'react-native';
-import CategoryCard from './CategoryCard';
 
 interface SwipeableTilesProps {
   topics: Array<{
@@ -63,21 +62,15 @@ const SwipeableTiles: React.FC<SwipeableTilesProps> = ({
         <Pressable
           onPress={() => onTilePress(topic.route)}
           onLongPress={() => onTileLongPress(`${title}. ${subtitle}`)}
-          style={styles.tileWrapper}
+          style={[styles.gridTile, { borderColor: topic.color + '40' }]}
           accessibilityRole="button"
           accessibilityLabel={`${title}. ${subtitle}`}
         >
-          <CategoryCard
-            title={title}
-            subtitle={subtitle}
-            icon={topic.icon}
-            color={topic.color}
-            onPress={() => onTilePress(topic.route)}
-            onLongPress={() => onTileLongPress(`${title}. ${subtitle}`)}
-            padding={12}
-            width={tileWidth - 20}
-            columns={1}
-          />
+          <View style={[styles.gridIconContainer, { backgroundColor: topic.color + '20' }]}>
+            <Text style={styles.gridIcon}>{topic.icon}</Text>
+          </View>
+          <Text style={styles.gridTitle}>{title}</Text>
+          <Text style={styles.gridSubtitle} numberOfLines={2}>{subtitle}</Text>
         </Pressable>
       </View>
     );
@@ -193,20 +186,37 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  tileWrapper: {
-    backgroundColor: '#FFFFFF',
+  gridTile: {
+    flex: 1,
+    margin: 6,
     borderRadius: 12,
     borderWidth: 2,
-    borderColor: '#3B82F6',
-    elevation: 3,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    minHeight: 180,
-    maxHeight: 180,
+    padding: 12,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    minHeight: 140,
+  },
+  gridIconContainer: {
+    width: '100%',
+    aspectRatio: 4/3,
+    borderRadius: 8,
+    marginBottom: 8,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  gridIcon: {
+    fontSize: 80,
+  },
+  gridTitle: {
+    fontSize: 14,
+    fontWeight: '500',
+    textAlign: 'center',
+    marginBottom: 4,
+  },
+  gridSubtitle: {
+    fontSize: 12,
+    color: '#666',
+    textAlign: 'center',
   },
   pagination: {
     flexDirection: 'row',
