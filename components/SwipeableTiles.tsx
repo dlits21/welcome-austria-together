@@ -18,6 +18,7 @@ interface SwipeableTilesProps {
   onTilePress: (route: string) => void;
   onTileLongPress: (text: string) => void;
   getText: (key: string) => string;
+  renderTile: (topic: any, tileWidth: number) => React.ReactNode;
   containerStyle?: any;
 }
 
@@ -26,6 +27,7 @@ const SwipeableTiles: React.FC<SwipeableTilesProps> = ({
   onTilePress,
   onTileLongPress,
   getText,
+  renderTile,
   containerStyle,
 }) => {
   const { width } = useWindowDimensions();
@@ -51,29 +53,6 @@ const SwipeableTiles: React.FC<SwipeableTilesProps> = ({
 
   const scrollRight = () => {
     scrollToIndex(Math.min(maxIndex, currentIndex + 1));
-  };
-
-  const renderTile = (topic: any) => {
-    const title = getText(`topics.${topic.key}.title`);
-    const subtitle = getText(`topics.${topic.key}.subtitle`);
-    
-    return (
-      <View key={topic.key} style={[styles.tileContainer, { width: tileWidth }]}>
-        <Pressable
-          onPress={() => onTilePress(topic.route)}
-          onLongPress={() => onTileLongPress(`${title}. ${subtitle}`)}
-          style={[styles.gridTile, { borderColor: topic.color + '40' }]}
-          accessibilityRole="button"
-          accessibilityLabel={`${title}. ${subtitle}`}
-        >
-          <View style={[styles.gridIconContainer, { backgroundColor: topic.color + '20' }]}>
-            <Text style={styles.gridIcon}>{topic.icon}</Text>
-          </View>
-          <Text style={styles.gridTitle}>{title}</Text>
-          <Text style={styles.gridSubtitle} numberOfLines={2}>{subtitle}</Text>
-        </Pressable>
-      </View>
-    );
   };
 
   return (
@@ -105,7 +84,7 @@ const SwipeableTiles: React.FC<SwipeableTilesProps> = ({
               setCurrentIndex(Math.max(0, Math.min(maxIndex, newIndex)));
             }}
           >
-            {topics.map(renderTile)}
+            {topics.map((topic) => renderTile(topic, tileWidth))}
           </ScrollView>
         </View>
 
