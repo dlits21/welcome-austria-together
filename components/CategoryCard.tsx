@@ -21,6 +21,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
   tutorialIconSize = 64,
   width = Dimensions.get('window').width,
   columns = 2,
+  height = 450,
   padding = 48,
   isInTutorial = false
 }) => {
@@ -50,7 +51,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
 
   return (
     <TouchableOpacity
-      style={[styles.card, { width: cardWidth }]}
+      style={[styles.card, { width: cardWidth, height: height }]}
       onPress={onPress}
     >
       <View style={[styles.iconContainer, { backgroundColor: `${color}15`, width: cardWidth * 0.9, height: Math.min(iconSize*3, 300)}]}>

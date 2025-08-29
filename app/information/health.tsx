@@ -123,6 +123,7 @@ export default function Health() {
           onLongPress={() => speak(`${title}. ${subtitle}`)}
           padding={padding}
           width={width - padding}
+          height={450}
           columns={columns}
         />
       </Pressable>
