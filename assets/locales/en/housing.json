@@ -1,0 +1,89 @@
+{
+  "pageTitle": "Housing",
+  "introShort": "Find emergency shelter, long-term housing, and understand your tenant rights.",
+  "essential": "Essential Housing Services",
+  "additionalServices": "Additional Housing Services",
+  "playTips": "🔊 Play All Tips",
+  "emergency": "🚨 Emergency",
+  "quickHelp": "Need Emergency Housing?",
+  "tts_lang": "en-US",
+  "tts_intro": "Here are the essential housing services and information you need to know.",
+  
+  "topics": {
+    "emergency-shelter": {
+      "title": "Emergency Shelter / Night Shelters",
+      "subtitle": "Immediate safe accommodation when you have nowhere to stay",
+      "tip": "Available 24/7 for crisis situations, no advance booking required"
+    },
+    "asylum-accommodation": {
+      "title": "Short-term Reception & Asylum Accommodation",
+      "subtitle": "Temporary housing during asylum process",
+      "tip": "Government-provided accommodation while your asylum application is processed"
+    },
+    "social-housing": {
+      "title": "Long-term Housing / Social Housing",
+      "subtitle": "Affordable permanent housing options",
+      "tip": "Apply early as waiting lists can be long, income requirements apply"
+    },
+    "temporary-rentals": {
+      "title": "Temporary & Short-Term Rentals",
+      "subtitle": "Shared flats, sublets, and temporary housing solutions",
+      "tip": "Great transition option while searching for permanent housing"
+    },
+    "eviction-prevention": {
+      "title": "Eviction Prevention & Tenant Rights",
+      "subtitle": "Know your rights and get help if facing eviction",
+      "tip": "Legal protections exist - get help immediately if threatened with eviction"
+    },
+    "women-family-shelters": {
+      "title": "Women & Family-Specific Shelters",
+      "subtitle": "Safe housing for women, families, and children in need",
+      "tip": "Specialized support services available for vulnerable groups"
+    },
+    "housing-benefits": {
+      "title": "Affordability & Benefits",
+      "subtitle": "Housing allowance, rent subsidy, and financial assistance",
+      "tip": "You may qualify for financial help with rent and utilities"
+    },
+    "utilities-moving": {
+      "title": "Utilities & Moving-In Basics",
+      "subtitle": "Setting up electricity, gas, internet, and essential services",
+      "tip": "Register utilities immediately after moving in to avoid service interruption"
+    },
+    "registration-address": {
+      "title": "Registration / Address & Residency Requirements",
+      "subtitle": "Legal requirements for registering your address",
+      "tip": "You must register your address within 3 days of moving in Austria"
+    },
+    "housing-scams": {
+      "title": "Housing Scams & Safe Search Practices",
+      "subtitle": "Avoid fraud and find legitimate housing options",
+      "tip": "Never pay deposits before viewing the property and meeting the landlord"
+    },
+    "maintenance-disputes": {
+      "title": "Maintenance, Repairs & Landlord Disputes",
+      "subtitle": "Understanding responsibilities and resolving conflicts",
+      "tip": "Document all issues and communicate in writing with your landlord"
+    },
+    "accessible-housing": {
+      "title": "Accessible & Disability-Friendly Housing",
+      "subtitle": "Housing options for people with disabilities",
+      "tip": "Specialized housing and modifications available for accessibility needs"
+    },
+    "storage-documents": {
+      "title": "Temporary Storage & Document Safety",
+      "subtitle": "Safe storage for belongings and important documents",
+      "tip": "Keep important documents in a secure, waterproof location"
+    },
+    "community-housing": {
+      "title": "Community Housing & Integration Programs",
+      "subtitle": "Supportive housing with integration services",
+      "tip": "Combined housing and social support to help with community integration"
+    },
+    "neighborhood-info": {
+      "title": "Local Neighborhood Info & Safety",
+      "subtitle": "Understanding your area, safety, and local resources",
+      "tip": "Get to know your neighbors and local community centers for support"
+    }
+  }
+}
