@@ -26,19 +26,29 @@ interface Topic {
 }
 
 interface InformationPageTemplateProps {
-  prominentTopics: Topic[];
-  secondaryTopics: Topic[];
+  prominentTopics?: Topic[];
+  secondaryTopics?: Topic[];
+  allTopics?: Topic[];
   translationNamespace: string;
   tutorialData: string;
   emergencyRoute?: string;
+  secondaryButtonRoute?: string;
+  secondaryButtonKey?: string;
+  secondaryButtonColor?: string;
+  hideSwipeableSection?: boolean;
 }
 
 export default function InformationPageTemplate({
-  prominentTopics,
-  secondaryTopics,
+  prominentTopics = [],
+  secondaryTopics = [],
+  allTopics = [],
   translationNamespace,
   tutorialData,
-  emergencyRoute = "/ask/emergency"
+  emergencyRoute = "/ask/emergency",
+  secondaryButtonRoute,
+  secondaryButtonKey = "emergency",
+  secondaryButtonColor = "#DC2626",
+  hideSwipeableSection = false
 }: InformationPageTemplateProps) {
   const { t } = useTranslation(translationNamespace);
   const { width } = useWindowDimensions();
@@ -46,6 +56,9 @@ export default function InformationPageTemplate({
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
   const [showTutorial, setShowTutorial] = useState(false);
+
+  // Use allTopics if provided, otherwise combine prominent and secondary
+  const topicsToUse = allTopics.length > 0 ? allTopics : [...prominentTopics, ...secondaryTopics];
 
   // Responsive columns: mobile 2, tablet 3, web 4
   const columns = width < 600 ? 2 : width < 900 ? 3 : 4;
@@ -77,7 +90,7 @@ export default function InformationPageTemplate({
       Speech.speak(t("tts_intro"), { language: ttsLang });
       // then speak each short tip (space out by callback)
       // simple sequential approach: speak with a small timeout
-      [...prominentTopics, ...secondaryTopics].forEach((topic, i) => {
+      topicsToUse.forEach((topic, i) => {
         const text = `${t(`topics.${topic.key}.title`)}. ${t(`topics.${topic.key}.tip`)}`;
         setTimeout(() => {
           Speech.speak(text, { language: ttsLang });
@@ -132,37 +145,43 @@ export default function InformationPageTemplate({
       <ScrollView contentContainerStyle={styles.container}>
         <Text style={styles.intro}>{t("introShort")}</Text>
 
-        {/* Action row: Play audio tips + quick emergency button */}
+        {/* Action row: Play audio tips + secondary button */}
         <View style={styles.actionsRow}>
           <Pressable style={styles.audioBtn} onPress={speakAllTips}>
             <Text style={styles.audioBtnText}>{t("playTips")}</Text>
           </Pressable>
 
           <Pressable
-            style={styles.emergencyBtn}
-            onPress={() => router.push(emergencyRoute)}
+            style={[styles.emergencyBtn, { backgroundColor: secondaryButtonColor }]}
+            onPress={() => router.push(secondaryButtonRoute || emergencyRoute)}
           >
-            <Text style={styles.emergencyBtnText}>{t("emergency")}</Text>
+            <Text style={styles.emergencyBtnText}>{t(secondaryButtonKey)}</Text>
           </Pressable>
         </View>
 
-        {/* Prominent topics - swipeable */}
-        <Text style={styles.sectionTitle}>{t("essentialHealth")}</Text>
-        <SwipeableTiles
-          topics={prominentTopics}
-          onTilePress={(route) => router.push(route)}
-          onTileLongPress={speak}
-          getText={t}
-          renderTile={renderTopic}
-        />
+        {/* Prominent topics - swipeable (only show if we have prominent topics) */}
+        {!hideSwipeableSection && prominentTopics.length > 0 && (
+          <>
+            <Text style={styles.sectionTitle}>{t("essentialHealth")}</Text>
+            <SwipeableTiles
+              topics={prominentTopics}
+              onTilePress={(route) => router.push(route)}
+              onTileLongPress={speak}
+              getText={t}
+              renderTile={renderTopic}
+            />
+          </>
+        )}
 
-        {/* All topics */}
-        <Text style={styles.sectionTitle}>{t("additionalServices")}</Text>
+        {/* All topics grid */}
+        <Text style={styles.sectionTitle}>
+          {prominentTopics.length > 0 ? t("additionalServices") : t("allTopics", { defaultValue: "All Topics" })}
+        </Text>
         <View style={styles.grid}>
-          {[...prominentTopics, ...secondaryTopics].map((topic) => renderTopic(topic, false))}
+          {topicsToUse.map((topic) => renderTopic(topic, false))}
         </View>
 
-        {/* Footer with emergency help quick link */}
+        {/* Footer with help quick link */}
         <View style={styles.footer}>
           <Pressable style={styles.helpBtn} onPress={() => router.push(emergencyRoute)}>
             <Text style={styles.helpBtnText}>{t("quickHelp")}</Text>
