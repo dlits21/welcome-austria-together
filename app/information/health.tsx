@@ -165,10 +165,10 @@ export default function Health() {
           renderTile={renderTopic}
         />
 
-        {/* Secondary health topics */}
+        {/* All health topics */}
         <Text style={styles.sectionTitle}>{t("additionalServices")}</Text>
         <View style={styles.grid}>
-          {SECONDARY_TOPICS.map((topic) => renderTopic(topic, false))}
+          {[...PROMINENT_TOPICS, ...SECONDARY_TOPICS].map((topic) => renderTopic(topic, false))}
         </View>
 
         {/* Footer with emergency help quick link */}

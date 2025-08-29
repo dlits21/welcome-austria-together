@@ -159,6 +159,7 @@ const styles = StyleSheet.create({
   scrollContent: {
     paddingHorizontal: 12,
     alignItems: 'center',
+    gap: 16,
   },
   tileContainer: {
     paddingHorizontal: 8,
