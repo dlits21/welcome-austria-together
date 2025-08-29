@@ -1,118 +1,93 @@
 {
-  "pageTitle": "Asylum",
-  "introShort": "Access healthcare services, find doctors, and get support for your health needs.",
-  "playTips": "Listen to health tips",
-  "emergency": "Emergency",
-  "quickHelp": "Emergency help",
-  "essential": "Essential Health Services",
-  "additionalServices": "Additional Health Services",
+  "pageTitle": "Asylum & Legal Rights",
+  "introShort": "Navigate the asylum process, understand your legal rights, and access legal support services in Austria.",
+  "playTips": "Listen to legal tips",
+  "emergency": "Legal Emergency",
+  "quickHelp": "Emergency legal help",
+  "essential": "Essential Legal Services",
+  "additionalServices": "Additional Legal Support",
   "tts_lang": "en-US",
-  "tts_intro": "Here are important health services and tips.",
+  "tts_intro": "Here are important legal rights and asylum procedures.",
   "topics": {
-    "emergency": {
-      "title": "Emergency & Urgent Help",
-      "subtitle": "Call 144 for medical emergencies",
-      "tip": "For medical emergencies, call 144. Have your address ready and speak slowly."
+    "emergencyLegalHelp": {
+      "title": "Emergency Legal Help",
+      "subtitle": "Immediate legal assistance and detention rights",
+      "tip": "If detained or facing deportation, you have the right to a lawyer. Contact legal aid immediately at 01 544 08 60."
     },
-    "findDoctor": {
-      "title": "Find a Doctor",
-      "subtitle": "How to see a doctor in Austria",
-      "tip": "Bring your e-card and ID to any doctor. Call ahead to make an appointment."
+    "asylumProcess": {
+      "title": "Asylum Process Guide",
+      "subtitle": "Step-by-step asylum procedure",
+      "tip": "The asylum process has 3 main stages: registration, interview, and decision. Each step has specific deadlines and requirements."
     },
-    "mentalHealth": {
-      "title": "Mental Health Support",
-      "subtitle": "Counseling and psychological help",
-      "tip": "Mental health support is available. Call 142 for crisis support or contact your local health center."
+    "appealsReview": {
+      "title": "Appeals & Judicial Review",
+      "subtitle": "Challenge negative decisions",
+      "tip": "You have 2 weeks to appeal a negative asylum decision. Legal representation significantly improves your chances."
     },
-    "children": {
-      "title": "Children & Pediatric Care",
-      "subtitle": "Child health services and doctors",
-      "tip": "Children's health services include regular checkups and vaccinations. Find a pediatrician in your area."
+    "interviewPrep": {
+      "title": "Interview Preparation",
+      "subtitle": "Get ready for your asylum interview",
+      "tip": "Prepare your story chronologically. Bring all documents and evidence. You have the right to an interpreter."
     },
-    "trustedContacts": {
-      "title": "Trusted Contacts & NGOs",
-      "subtitle": "Organizations that can help",
-      "tip": "Many NGOs provide health support for migrants and refugees. Contact local health advocacy groups."
+    "documentation": {
+      "title": "Documentation & Evidence",
+      "subtitle": "Gather and organize your case materials",
+      "tip": "Collect identity documents, country evidence, medical reports, and witness statements to support your asylum claim."
     },
-    "healthSystem": {
-      "title": "Health System in Austria",
-      "subtitle": "Understanding Austrian healthcare",
-      "tip": "Austria has universal healthcare. Register with your local health insurance to get an e-card."
+    "legalStatus": {
+      "title": "Legal Status Types",
+      "subtitle": "Understand different protection statuses",
+      "tip": "Austria grants asylum, subsidiary protection, or temporary residence. Each status has different rights and obligations."
     },
-    "physicalHealth": {
-      "title": "Physical Health",
-      "subtitle": "General health and wellness",
-      "tip": "Regular checkups and preventive care are covered by insurance. Stay active and eat well."
+    "familyReunification": {
+      "title": "Family Reunification",
+      "subtitle": "Bring family members to Austria",
+      "tip": "Recognized refugees can apply for family reunification within 3 months for faster processing without income requirements."
     },
-    "wantToTalk": {
-      "title": "Do you want to talk?",
-      "subtitle": "Someone to listen and support you",
-      "tip": "If you need someone to talk to, call 142 or visit a local counseling center."
+    "workRights": {
+      "title": "Work Rights & Employment",
+      "subtitle": "Understanding your employment rights",
+      "tip": "Your work authorization depends on your legal status. Some permits allow unrestricted work, others have limitations."
     },
-    "urgentHelp": {
-      "title": "Immediate Help",
-      "subtitle": "When you need help right now",
-      "tip": "For urgent medical help, go to the nearest hospital emergency room or call 144."
+    "housingBenefits": {
+      "title": "Housing & Social Benefits",
+      "subtitle": "Access housing support and social services",
+      "tip": "You may be entitled to basic care, housing allowance, and other social benefits depending on your status."
     },
-    "crisisSupport": {
-      "title": "Mental Health Crisis Support",
-      "subtitle": "24/7 crisis intervention",
-      "tip": "Crisis hotlines are available 24/7. Call 142 for immediate mental health support."
+    "legalAidDirectory": {
+      "title": "Legal Aid Directory",
+      "subtitle": "Find free legal assistance and NGOs",
+      "tip": "Many NGOs provide free legal advice: Diakonie, Caritas, Asylkoordination, and Rechtsberatung Wien."
     },
-    "prescriptions": {
-      "title": "Prescriptions & Pharmacy",
-      "subtitle": "Getting medicines and pharmacy basics",
-      "tip": "Take your prescription to any pharmacy (Apotheke). Emergency pharmacies are open at night."
+    "policeRights": {
+      "title": "Police Encounters & ID Checks",
+      "subtitle": "Know your rights during police stops",
+      "tip": "You must carry ID documents. Police can check your status but cannot detain you without cause. Ask for a lawyer if arrested."
     },
-    "vaccinations": {
-      "title": "Vaccinations & Prevention",
-      "subtitle": "Immunizations and preventive care",
-      "tip": "Childhood vaccinations are free. Adults can get travel vaccines and annual flu shots."
+    "criminalCharges": {
+      "title": "Criminal Charges & Deportation",
+      "subtitle": "Legal consequences and deportation risks",
+      "tip": "Criminal convictions can affect your asylum case. Serious crimes may lead to deportation even for recognized refugees."
     },
-    "reproductive": {
-      "title": "Reproductive & Sexual Health",
-      "subtitle": "Maternal health and family planning",
-      "tip": "Gynecologists provide reproductive health services. Pregnancy care is covered by insurance."
+    "dataPrivacy": {
+      "title": "Data Privacy & Consent",
+      "subtitle": "Your personal information rights",
+      "tip": "Authorities must protect your personal data. You can request information about data stored about you."
     },
-    "genderViolence": {
-      "title": "Violence Support",
-      "subtitle": "Help for gender-based violence",
-      "tip": "If you experience violence, call the women's helpline 0800 222 555 or go to a safe place."
+    "caseTracking": {
+      "title": "Case Tracking Dashboard",
+      "subtitle": "Monitor your asylum case progress",
+      "tip": "Track your case status online or by phone. Keep all official correspondence and note important dates."
     },
-    "chronicCare": {
-      "title": "Chronic Conditions Care",
-      "subtitle": "Diabetes, hypertension, ongoing care",
-      "tip": "Chronic disease management includes regular monitoring and medication. Work with your doctor on a care plan."
+    "faqsGlossary": {
+      "title": "FAQs & Legal Definitions",
+      "subtitle": "Common questions and legal terms explained",
+      "tip": "Understanding legal terminology helps you navigate the asylum system. Ask for clarification if something is unclear."
     },
-    "dental": {
-      "title": "Dental & Vision Care",
-      "subtitle": "Teeth and eye health services",
-      "tip": "Basic dental care is partially covered. Eye exams and glasses may need additional insurance."
-    },
-    "addiction": {
-      "title": "Addiction & Substance Support",
-      "subtitle": "Help with substance use problems",
-      "tip": "Addiction treatment is confidential and available. Contact local addiction counseling centers."
-    },
-    "disability": {
-      "title": "Disability & Rehabilitation",
-      "subtitle": "Support for disabilities and recovery",
-      "tip": "Disability services include assistive devices and rehabilitation programs. Apply through social services."
-    },
-    "healthRights": {
-      "title": "Health Rights & Entitlements",
-      "subtitle": "Your rights in the healthcare system",
-      "tip": "You have the right to quality healthcare, interpreters, and respectful treatment regardless of status."
-    },
-    "logistics": {
-      "title": "Practical Health Logistics",
-      "subtitle": "Transport, costs, registration help",
-      "tip": "Healthcare costs are mostly covered with insurance. Public transport to hospitals is usually available."
-    },
-    "publicHealth": {
-      "title": "Public Health Alerts",
-      "subtitle": "Seasonal advice and safety tips",
-      "tip": "Follow public health guidance for seasonal illnesses and safety. Check local health department updates."
+    "templates": {
+      "title": "Templates & Letters",
+      "subtitle": "Downloadable legal document templates",
+      "tip": "Use standardized templates for appeals, applications, and legal correspondence to ensure proper formatting."
     }
   }
 }
