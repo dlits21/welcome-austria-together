@@ -147,7 +147,7 @@ export default function InformationPageTemplate({
         </View>
 
         {/* Prominent topics - swipeable */}
-        <Text style={styles.sectionTitle}>{t("essentialHealth")}</Text>
+        <Text style={styles.sectionTitle}>{t("essential")}</Text>
         <SwipeableTiles
           topics={prominentTopics}
           onTilePress={(route) => router.push(route)}

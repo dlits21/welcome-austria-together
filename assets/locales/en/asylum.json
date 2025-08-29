@@ -1,68 +1,118 @@
 {
-  "title": "Asylum & Legal Support",
-  "subtitle": "Legal guidance and support for asylum seekers",
-  "emergencyLegalHelp": {
-    "title": "Emergency Legal Help",
-    "subtitle": "Detention & immediate rights support"
-  },
-  "asylumProcess": {
-    "title": "Asylum Process",
-    "subtitle": "Step-by-step guidance through the asylum procedure"
-  },
-  "appealsReview": {
-    "title": "Appeals & Judicial Review", 
-    "subtitle": "Understanding your options for challenging decisions"
-  },
-  "interviewPrep": {
-    "title": "Interview Preparation",
-    "subtitle": "How to prepare for your asylum interview"
-  },
-  "documentation": {
-    "title": "Documentation & Evidence",
-    "subtitle": "What documents you need and how to gather evidence"
-  },
-  "legalStatus": {
-    "title": "Legal Status Types",
-    "subtitle": "Understanding different statuses and their consequences"
-  },
-  "familyReunification": {
-    "title": "Family Reunification",
-    "subtitle": "Bringing family members and child protection rights"
-  },
-  "workRights": {
-    "title": "Work Permits & Rights",
-    "subtitle": "Employment law and work authorization information"
-  },
-  "housingBenefits": {
-    "title": "Housing & Social Benefits",
-    "subtitle": "Legal info on entitlements and appeals processes"
-  },
-  "legalAidDirectory": {
-    "title": "Legal Aid & NGOs Directory",
-    "subtitle": "Find legal assistance and NGO support services"
-  },
-  "policeRights": {
-    "title": "Police Stops & ID Checks",
-    "subtitle": "Know your rights during police interactions"
-  },
-  "criminalCharges": {
-    "title": "Criminal Charges & Deportation",
-    "subtitle": "Understanding criminal procedures and deportation risks"
-  },
-  "dataPrivacy": {
-    "title": "Data Privacy & Consent",
-    "subtitle": "Your privacy rights and data protection information"
-  },
-  "caseTracking": {
-    "title": "Appeals & Case Tracking",
-    "subtitle": "Dashboard to track your case timeline and status"
-  },
-  "faqsGlossary": {
-    "title": "FAQs & Glossary",
-    "subtitle": "Common questions and legal definitions simplified"
-  },
-  "templates": {
-    "title": "Templates & Letters",
-    "subtitle": "Downloadable legal document templates"
+  "pageTitle": "Asylum",
+  "introShort": "Access healthcare services, find doctors, and get support for your health needs.",
+  "playTips": "Listen to health tips",
+  "emergency": "Emergency",
+  "quickHelp": "Emergency help",
+  "essential": "Essential Health Services",
+  "additionalServices": "Additional Health Services",
+  "tts_lang": "en-US",
+  "tts_intro": "Here are important health services and tips.",
+  "topics": {
+    "emergency": {
+      "title": "Emergency & Urgent Help",
+      "subtitle": "Call 144 for medical emergencies",
+      "tip": "For medical emergencies, call 144. Have your address ready and speak slowly."
+    },
+    "findDoctor": {
+      "title": "Find a Doctor",
+      "subtitle": "How to see a doctor in Austria",
+      "tip": "Bring your e-card and ID to any doctor. Call ahead to make an appointment."
+    },
+    "mentalHealth": {
+      "title": "Mental Health Support",
+      "subtitle": "Counseling and psychological help",
+      "tip": "Mental health support is available. Call 142 for crisis support or contact your local health center."
+    },
+    "children": {
+      "title": "Children & Pediatric Care",
+      "subtitle": "Child health services and doctors",
+      "tip": "Children's health services include regular checkups and vaccinations. Find a pediatrician in your area."
+    },
+    "trustedContacts": {
+      "title": "Trusted Contacts & NGOs",
+      "subtitle": "Organizations that can help",
+      "tip": "Many NGOs provide health support for migrants and refugees. Contact local health advocacy groups."
+    },
+    "healthSystem": {
+      "title": "Health System in Austria",
+      "subtitle": "Understanding Austrian healthcare",
+      "tip": "Austria has universal healthcare. Register with your local health insurance to get an e-card."
+    },
+    "physicalHealth": {
+      "title": "Physical Health",
+      "subtitle": "General health and wellness",
+      "tip": "Regular checkups and preventive care are covered by insurance. Stay active and eat well."
+    },
+    "wantToTalk": {
+      "title": "Do you want to talk?",
+      "subtitle": "Someone to listen and support you",
+      "tip": "If you need someone to talk to, call 142 or visit a local counseling center."
+    },
+    "urgentHelp": {
+      "title": "Immediate Help",
+      "subtitle": "When you need help right now",
+      "tip": "For urgent medical help, go to the nearest hospital emergency room or call 144."
+    },
+    "crisisSupport": {
+      "title": "Mental Health Crisis Support",
+      "subtitle": "24/7 crisis intervention",
+      "tip": "Crisis hotlines are available 24/7. Call 142 for immediate mental health support."
+    },
+    "prescriptions": {
+      "title": "Prescriptions & Pharmacy",
+      "subtitle": "Getting medicines and pharmacy basics",
+      "tip": "Take your prescription to any pharmacy (Apotheke). Emergency pharmacies are open at night."
+    },
+    "vaccinations": {
+      "title": "Vaccinations & Prevention",
+      "subtitle": "Immunizations and preventive care",
+      "tip": "Childhood vaccinations are free. Adults can get travel vaccines and annual flu shots."
+    },
+    "reproductive": {
+      "title": "Reproductive & Sexual Health",
+      "subtitle": "Maternal health and family planning",
+      "tip": "Gynecologists provide reproductive health services. Pregnancy care is covered by insurance."
+    },
+    "genderViolence": {
+      "title": "Violence Support",
+      "subtitle": "Help for gender-based violence",
+      "tip": "If you experience violence, call the women's helpline 0800 222 555 or go to a safe place."
+    },
+    "chronicCare": {
+      "title": "Chronic Conditions Care",
+      "subtitle": "Diabetes, hypertension, ongoing care",
+      "tip": "Chronic disease management includes regular monitoring and medication. Work with your doctor on a care plan."
+    },
+    "dental": {
+      "title": "Dental & Vision Care",
+      "subtitle": "Teeth and eye health services",
+      "tip": "Basic dental care is partially covered. Eye exams and glasses may need additional insurance."
+    },
+    "addiction": {
+      "title": "Addiction & Substance Support",
+      "subtitle": "Help with substance use problems",
+      "tip": "Addiction treatment is confidential and available. Contact local addiction counseling centers."
+    },
+    "disability": {
+      "title": "Disability & Rehabilitation",
+      "subtitle": "Support for disabilities and recovery",
+      "tip": "Disability services include assistive devices and rehabilitation programs. Apply through social services."
+    },
+    "healthRights": {
+      "title": "Health Rights & Entitlements",
+      "subtitle": "Your rights in the healthcare system",
+      "tip": "You have the right to quality healthcare, interpreters, and respectful treatment regardless of status."
+    },
+    "logistics": {
+      "title": "Practical Health Logistics",
+      "subtitle": "Transport, costs, registration help",
+      "tip": "Healthcare costs are mostly covered with insurance. Public transport to hospitals is usually available."
+    },
+    "publicHealth": {
+      "title": "Public Health Alerts",
+      "subtitle": "Seasonal advice and safety tips",
+      "tip": "Follow public health guidance for seasonal illnesses and safety. Check local health department updates."
+    }
   }
 }

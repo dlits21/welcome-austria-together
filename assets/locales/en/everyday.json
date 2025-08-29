@@ -4,6 +4,8 @@
   "playTips": "Listen to short tips",
   "myJourney": "Guide my journey",
   "quickHelp": "Immediate help",
+  "essential": "Essential Services",
+  "additionalServices": "Additional Services",
   "tts_lang": "en-US",
   "tts_intro": "Here are quick everyday tips.",
   "topics": {
