@@ -4,49 +4,49 @@ import InformationPageTemplate from '../../components/InformationPageTemplate';
 const prominentTopics = [
   {
     key: "emergencyLegalHelp",
-    icon: "🚨",
+    icon: "warning",
     color: "#DC2626",
     route: "/ask/legal-support"
   },
   {
     key: "asylumProcess",
-    icon: "📋",
+    icon: "assignment",
     color: "#2563EB",
     route: "/information/asylum/process"
   },
   {
     key: "appealsReview",
-    icon: "⚖️",
+    icon: "gavel",
     color: "#7C3AED",
     route: "/information/asylum/appeals"
   },
   {
     key: "interviewPrep",
-    icon: "🗣️",
+    icon: "record-voice-over",
     color: "#059669",
     route: "/information/asylum/interview"
   },
   {
     key: "documentation",
-    icon: "📄",
+    icon: "description",
     color: "#EA580C",
     route: "/information/asylum/documentation"
   },
   {
     key: "legalStatus",
-    icon: "🏛️",
+    icon: "account-balance",
     color: "#0891B2",
     route: "/information/asylum/status"
   },
   {
     key: "familyReunification",
-    icon: "👨‍👩‍👧‍👦",
+    icon: "family-restroom",
     color: "#DB2777",
     route: "/information/asylum/family"
   },
   {
     key: "workRights",
-    icon: "💼",
+    icon: "work",
     color: "#16A34A",
     route: "/information/asylum/work"
   }
@@ -55,49 +55,49 @@ const prominentTopics = [
 const secondaryTopics = [
   {
     key: "housingBenefits",
-    icon: "🏠",
+    icon: "home",
     color: "#6366F1",
     route: "/information/asylum/housing"
   },
   {
     key: "legalAidDirectory",
-    icon: "📞",
+    icon: "phone",
     color: "#8B5CF6",
     route: "/information/asylum/legal-aid"
   },
   {
     key: "policeRights",
-    icon: "👮‍♂️",
+    icon: "local-police",
     color: "#F59E0B",
     route: "/information/asylum/police"
   },
   {
     key: "criminalCharges",
-    icon: "⚠️",
+    icon: "report",
     color: "#EF4444",
     route: "/information/asylum/criminal"
   },
   {
     key: "dataPrivacy",
-    icon: "🔒",
+    icon: "lock",
     color: "#64748B",
     route: "/information/asylum/privacy"
   },
   {
     key: "caseTracking",
-    icon: "📊",
+    icon: "timeline",
     color: "#10B981",
     route: "/information/asylum/tracking"
   },
   {
     key: "faqsGlossary",
-    icon: "❓",
+    icon: "help",
     color: "#F97316",
     route: "/information/asylum/faqs"
   },
   {
     key: "templates",
-    icon: "📝",
+    icon: "edit-note",
     color: "#06B6D4",
     route: "/information/asylum/templates"
   }

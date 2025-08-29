@@ -1,0 +1,68 @@
+{
+  "title": "Asylum & Legal Support",
+  "subtitle": "Legal guidance and support for asylum seekers",
+  "emergencyLegalHelp": {
+    "title": "Emergency Legal Help",
+    "subtitle": "Detention & immediate rights support"
+  },
+  "asylumProcess": {
+    "title": "Asylum Process",
+    "subtitle": "Step-by-step guidance through the asylum procedure"
+  },
+  "appealsReview": {
+    "title": "Appeals & Judicial Review", 
+    "subtitle": "Understanding your options for challenging decisions"
+  },
+  "interviewPrep": {
+    "title": "Interview Preparation",
+    "subtitle": "How to prepare for your asylum interview"
+  },
+  "documentation": {
+    "title": "Documentation & Evidence",
+    "subtitle": "What documents you need and how to gather evidence"
+  },
+  "legalStatus": {
+    "title": "Legal Status Types",
+    "subtitle": "Understanding different statuses and their consequences"
+  },
+  "familyReunification": {
+    "title": "Family Reunification",
+    "subtitle": "Bringing family members and child protection rights"
+  },
+  "workRights": {
+    "title": "Work Permits & Rights",
+    "subtitle": "Employment law and work authorization information"
+  },
+  "housingBenefits": {
+    "title": "Housing & Social Benefits",
+    "subtitle": "Legal info on entitlements and appeals processes"
+  },
+  "legalAidDirectory": {
+    "title": "Legal Aid & NGOs Directory",
+    "subtitle": "Find legal assistance and NGO support services"
+  },
+  "policeRights": {
+    "title": "Police Stops & ID Checks",
+    "subtitle": "Know your rights during police interactions"
+  },
+  "criminalCharges": {
+    "title": "Criminal Charges & Deportation",
+    "subtitle": "Understanding criminal procedures and deportation risks"
+  },
+  "dataPrivacy": {
+    "title": "Data Privacy & Consent",
+    "subtitle": "Your privacy rights and data protection information"
+  },
+  "caseTracking": {
+    "title": "Appeals & Case Tracking",
+    "subtitle": "Dashboard to track your case timeline and status"
+  },
+  "faqsGlossary": {
+    "title": "FAQs & Glossary",
+    "subtitle": "Common questions and legal definitions simplified"
+  },
+  "templates": {
+    "title": "Templates & Letters",
+    "subtitle": "Downloadable legal document templates"
+  }
+}
