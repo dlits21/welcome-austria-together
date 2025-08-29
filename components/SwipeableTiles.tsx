@@ -18,7 +18,7 @@ interface SwipeableTilesProps {
   onTilePress: (route: string) => void;
   onTileLongPress: (text: string) => void;
   getText: (key: string) => string;
-  renderTile: (topic: any, tileWidth: number) => React.ReactNode;
+  renderTile: (topic: any) => React.ReactNode;
   containerStyle?: any;
 }
 
@@ -84,7 +84,7 @@ const SwipeableTiles: React.FC<SwipeableTilesProps> = ({
               setCurrentIndex(Math.max(0, Math.min(maxIndex, newIndex)));
             }}
           >
-            {topics.map((topic) => renderTile(topic, tileWidth))}
+            {topics.map((topic) => renderTile(topic))}
           </ScrollView>
         </View>
 

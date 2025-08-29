@@ -162,6 +162,7 @@ export default function Health() {
           onTilePress={(route) => router.push(route)}
           onTileLongPress={speak}
           getText={t}
+          renderTile={renderTopic}
         />
 
         {/* Secondary health topics */}

@@ -47,7 +47,7 @@ const Information: React.FC = () => {
       key: 'healthcare',
       icon: 'local-hospital',
       color: '#10B981',
-      route: '/information/healthcare',
+      route: '/information/health',
     },
     {
       key: 'food',
