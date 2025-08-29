@@ -1,0 +1,83 @@
+{
+  "pageTitle": "Food & Essential Services",
+  "introShort": "Find food assistance, hygiene facilities, and essential services to meet your basic needs.",
+  "essential": "Emergency Services",
+  "additionalServices": "All Services",
+  "playTips": "🔊 Play Tips",
+  "emergency": "Emergency",
+  "quickHelp": "Need Help Now?",
+  "tts_lang": "en-US",
+  "tts_intro": "Welcome to Food and Essential Services information. Here you can find emergency food help, meal programs, and other basic necessities.",
+  "topics": {
+    "emergency-food": {
+      "title": "Emergency Food",
+      "subtitle": "Same-day food assistance and emergency meals",
+      "tip": "Available 24/7 for immediate hunger relief"
+    },
+    "food-banks": {
+      "title": "Food Banks & Meal Programs",
+      "subtitle": "Regular food distribution and community meals",
+      "tip": "Weekly food packages and hot meals at community centers"
+    },
+    "payment-cards": {
+      "title": "Asylum Payment Cards",
+      "subtitle": "How to use and manage your food assistance cards",
+      "tip": "Information on card activation, spending limits, and accepted locations"
+    },
+    "hygiene-facilities": {
+      "title": "Hygiene & Shower Facilities",
+      "subtitle": "Clean facilities for personal hygiene needs",
+      "tip": "Free shower facilities and hygiene kits available"
+    },
+    "clothing-distribution": {
+      "title": "Clothing & Winter Gear",
+      "subtitle": "Free clothing and seasonal gear distribution",
+      "tip": "Warm clothing, shoes, and winter essentials available"
+    },
+    "baby-essentials": {
+      "title": "Baby & Child Essentials",
+      "subtitle": "Diapers, formula, baby food and child care items",
+      "tip": "Free baby supplies for families with young children"
+    },
+    "menstrual-health": {
+      "title": "Hygiene & Menstrual Health",
+      "subtitle": "Period products and personal hygiene items",
+      "tip": "Free menstrual products and hygiene supplies available"
+    },
+    "shopping-assistance": {
+      "title": "Shopping Assistance & Vouchers",
+      "subtitle": "Food stamps, supermarket vouchers and shopping help",
+      "tip": "Assistance with grocery shopping and food vouchers"
+    },
+    "affordable-food": {
+      "title": "Affordable Food Options",
+      "subtitle": "Low-cost kitchens and budget-friendly meal options",
+      "tip": "Community kitchens and affordable meal programs"
+    },
+    "nutrition-advice": {
+      "title": "Nutrition & Diet Advice",
+      "subtitle": "Practical nutrition guidance and healthy eating tips",
+      "tip": "Simple nutrition advice for healthy eating on a budget"
+    },
+    "food-safety": {
+      "title": "Food Safety & Storage",
+      "subtitle": "Safe food handling, storage and allergen information",
+      "tip": "Important food safety tips to prevent illness"
+    },
+    "food-delivery": {
+      "title": "Food Delivery Services",
+      "subtitle": "Delivery services for elderly, disabled or vulnerable people",
+      "tip": "Home delivery of meals and groceries for those who cannot travel"
+    },
+    "donate-volunteer": {
+      "title": "Donate & Volunteer",
+      "subtitle": "How to give back to the community",
+      "tip": "Opportunities to help others and contribute to food programs"
+    },
+    "legal-rights": {
+      "title": "Legal Rights & Aid Entitlements",
+      "subtitle": "Your rights regarding food assistance and aid",
+      "tip": "Know your legal entitlements and how to report discrimination"
+    }
+  }
+}
