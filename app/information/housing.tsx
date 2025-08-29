@@ -4,19 +4,19 @@ import InformationPageTemplate from '../../components/InformationPageTemplate';
 const PROMINENT_TOPICS = [
   {
     key: 'emergency-shelter',
-    icon: '🏠',
+    icon: 'home',
     color: '#DC2626',
     route: '/information/housing/emergency-shelter'
   },
   {
     key: 'asylum-accommodation',
-    icon: '🏢',
+    icon: 'business',
     color: '#2563EB',
     route: '/information/housing/asylum-accommodation'
   },
   {
     key: 'social-housing',
-    icon: '🏘️',
+    icon: 'apartment',
     color: '#059669',
     route: '/information/housing/social-housing'
   }
@@ -25,73 +25,73 @@ const PROMINENT_TOPICS = [
 const SECONDARY_TOPICS = [
   {
     key: 'temporary-rentals',
-    icon: '🏃‍♂️',
+    icon: 'access-time',
     color: '#7C3AED',
     route: '/information/housing/temporary-rentals'
   },
   {
     key: 'eviction-prevention',
-    icon: '⚖️',
+    icon: 'gavel',
     color: '#DC2626',
     route: '/information/housing/eviction-prevention'
   },
   {
     key: 'women-family-shelters',
-    icon: '👪',
+    icon: 'family-restroom',
     color: '#EC4899',
     route: '/information/housing/women-family-shelters'
   },
   {
     key: 'housing-benefits',
-    icon: '💰',
+    icon: 'attach-money',
     color: '#059669',
     route: '/information/housing/housing-benefits'
   },
   {
     key: 'utilities-moving',
-    icon: '🔧',
+    icon: 'build',
     color: '#EA580C',
     route: '/information/housing/utilities-moving'
   },
   {
     key: 'registration-address',
-    icon: '📋',
+    icon: 'assignment',
     color: '#2563EB',
     route: '/information/housing/registration-address'
   },
   {
     key: 'housing-scams',
-    icon: '⚠️',
+    icon: 'warning',
     color: '#DC2626',
     route: '/information/housing/housing-scams'
   },
   {
     key: 'maintenance-disputes',
-    icon: '🔨',
+    icon: 'construction',
     color: '#7C2D12',
     route: '/information/housing/maintenance-disputes'
   },
   {
     key: 'accessible-housing',
-    icon: '♿',
+    icon: 'accessible',
     color: '#2563EB',
     route: '/information/housing/accessible-housing'
   },
   {
     key: 'storage-documents',
-    icon: '📦',
+    icon: 'storage',
     color: '#059669',
     route: '/information/housing/storage-documents'
   },
   {
     key: 'community-housing',
-    icon: '🤝',
+    icon: 'handshake',
     color: '#7C3AED',
     route: '/information/housing/community-housing'
   },
   {
     key: 'neighborhood-info',
-    icon: '🏘️',
+    icon: 'location-city',
     color: '#EA580C',
     route: '/information/housing/neighborhood-info'
   }
