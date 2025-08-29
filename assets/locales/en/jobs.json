@@ -1,0 +1,88 @@
+{
+  "pageTitle": "Work & Employment",
+  "introShort": "Find work permits, understand your rights, and access safe employment opportunities",
+  "playTips": "🔊 Play Audio Tips",
+  "emergency": "🚨 Emergency Help",
+  "essential": "Essential Services",
+  "additionalServices": "Additional Resources",
+  "quickHelp": "Need Help Now?",
+  "tts_lang": "en-US",
+  "tts_intro": "Here are the most important work and employment resources",
+  "topics": {
+    "work-permit-eligibility": {
+      "title": "Can I Work? — Permit Eligibility Checker",
+      "subtitle": "Check if you can legally work and what permits you need",
+      "tip": "Use our eligibility checker to understand your work rights"
+    },
+    "permits-guide": {
+      "title": "Quick Permits Guide: How to Apply",
+      "subtitle": "Step-by-step guide to applying for work permits",
+      "tip": "Get clear instructions on the permit application process"
+    },
+    "worker-rights": {
+      "title": "Worker Rights",
+      "subtitle": "Pay, hours, leave, contracts, and social security",
+      "tip": "Know your rights as a worker in Austria"
+    },
+    "verified-employers": {
+      "title": "Safe Employers Directory",
+      "subtitle": "Find verified, trustworthy employers",
+      "tip": "Access our directory of safe, verified employers"
+    },
+    "job-search": {
+      "title": "Job Search & Matching",
+      "subtitle": "NGO-first, low-barrier job opportunities",
+      "tip": "Find job opportunities that welcome refugees and migrants"
+    },
+    "contract-templates": {
+      "title": "Contract Review & Templates",
+      "subtitle": "CV, cover letter, and complaint templates",
+      "tip": "Get templates and help reviewing contracts"
+    },
+    "exploitation-report": {
+      "title": "Exploitation & Wage Theft — Report & Get Help",
+      "subtitle": "Report workplace abuse and get support",
+      "tip": "Know how to report exploitation and get help"
+    },
+    "health-safety": {
+      "title": "Health & Safety at Work",
+      "subtitle": "Your right to a safe workplace",
+      "tip": "Understand workplace safety rights and protections"
+    },
+    "taxes-payroll": {
+      "title": "Taxes, Social Security, Payroll Basics",
+      "subtitle": "Understanding your paycheck and deductions",
+      "tip": "Learn about taxes and social security contributions"
+    },
+    "specific-groups": {
+      "title": "Rights for Specific Groups",
+      "subtitle": "Women, undocumented, minors, seasonal workers",
+      "tip": "Special protections for vulnerable worker groups"
+    },
+    "discrimination": {
+      "title": "Workplace Discrimination & Harassment",
+      "subtitle": "Recognize and report discrimination",
+      "tip": "Know your rights against workplace discrimination"
+    },
+    "skills-training": {
+      "title": "Skills Recognition & Training",
+      "subtitle": "Apprenticeships and skill development",
+      "tip": "Get your skills recognized and find training opportunities"
+    },
+    "informal-work": {
+      "title": "Cash-in-Hand / Informal Work Safety",
+      "subtitle": "Staying safe in informal employment",
+      "tip": "Safety tips for informal work situations"
+    },
+    "unions-support": {
+      "title": "Unions & Collective Support",
+      "subtitle": "Worker organizations and collective bargaining",
+      "tip": "Connect with unions and worker support groups"
+    },
+    "employer-vetting": {
+      "title": "Employer Vetting Tools",
+      "subtitle": "Background checks and employer verification",
+      "tip": "Tools to verify employers before accepting jobs"
+    }
+  }
+}
