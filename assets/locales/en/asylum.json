@@ -1,68 +1,119 @@
 {
   "title": "Asylum & Legal Support",
-  "subtitle": "Legal guidance and support for asylum seekers",
+  "subtitle": "Comprehensive legal guidance and support for asylum seekers navigating the Austrian system",
   "emergencyLegalHelp": {
     "title": "Emergency Legal Help",
-    "subtitle": "Detention & immediate rights support"
+    "subtitle": "Immediate assistance for detention, deportation threats, and urgent legal situations. Available 24/7 emergency hotlines and rapid response legal aid.",
+    "description": "If you are detained, facing deportation, or in immediate legal danger, this section provides emergency contact numbers, your rights during detention, and steps to take immediately. Includes multilingual emergency legal hotlines.",
+    "urgency": "Immediate response required"
   },
   "asylumProcess": {
-    "title": "Asylum Process",
-    "subtitle": "Step-by-step guidance through the asylum procedure"
+    "title": "Asylum Process Guide",
+    "subtitle": "Complete step-by-step walkthrough of the Austrian asylum procedure from application to decision",
+    "description": "Detailed guide covering: initial application, registration, admissibility procedure, main procedure, interview process, decision types, and next steps. Includes timelines and what to expect at each stage.",
+    "timeframe": "Process typically 6-24 months"
   },
   "appealsReview": {
     "title": "Appeals & Judicial Review", 
-    "subtitle": "Understanding your options for challenging decisions"
+    "subtitle": "Understanding your legal options when challenging negative asylum decisions",
+    "description": "How to file appeals to the Federal Administrative Court (BVwG), judicial review procedures, deadlines for appeals, legal representation requirements, and suspension of deportation during appeals.",
+    "deadline": "Appeals must be filed within specific timeframes"
   },
   "interviewPrep": {
-    "title": "Interview Preparation",
-    "subtitle": "How to prepare for your asylum interview"
+    "title": "Asylum Interview Preparation",
+    "subtitle": "Essential preparation for your asylum interview - what to expect and how to present your case",
+    "description": "Comprehensive guide on preparing your personal story, organizing evidence, understanding interview procedures, your rights during the interview, interpreter services, and common questions asked.",
+    "importance": "Critical for successful asylum application"
   },
   "documentation": {
     "title": "Documentation & Evidence",
-    "subtitle": "What documents you need and how to gather evidence"
+    "subtitle": "Essential documents needed and how to gather supporting evidence for your asylum case",
+    "description": "Complete checklist of required documents, how to obtain missing papers, acceptable forms of evidence, country of origin information, medical reports, and how to authenticate foreign documents.",
+    "requirement": "Proper documentation significantly improves case outcomes"
   },
   "legalStatus": {
-    "title": "Legal Status Types",
-    "subtitle": "Understanding different statuses and their consequences"
+    "title": "Legal Status Types & Rights",
+    "subtitle": "Understanding different protection statuses in Austria and what rights each provides",
+    "description": "Detailed explanation of asylum status, subsidiary protection, humanitarian protection, tolerated stay, and associated rights including residence permits, family reunification eligibility, and path to citizenship.",
+    "duration": "Rights vary by status type"
   },
   "familyReunification": {
-    "title": "Family Reunification",
-    "subtitle": "Bringing family members and child protection rights"
+    "title": "Family Reunification & Child Protection",
+    "subtitle": "Bringing family members to Austria and protecting children's rights in asylum procedures",
+    "description": "Family reunification procedures, eligible family members, documentation requirements, children's rights in asylum processes, unaccompanied minor protections, and guardianship procedures.",
+    "eligibility": "Available for recognized refugees and subsidiary protection holders"
   },
   "workRights": {
-    "title": "Work Permits & Rights",
-    "subtitle": "Employment law and work authorization information"
+    "title": "Work Permits & Employment Rights",
+    "subtitle": "Understanding work authorization, employment rights, and labor protections for asylum seekers",
+    "description": "Work permit requirements during asylum process, employment rights after protection granted, accessing job market, recognition of qualifications, workplace rights, and reporting exploitation.",
+    "access": "Work rights depend on current legal status"
   },
   "housingBenefits": {
-    "title": "Housing & Social Benefits",
-    "subtitle": "Legal info on entitlements and appeals processes"
+    "title": "Housing & Social Benefits Legal Info",
+    "subtitle": "Your legal entitlements to housing, social benefits, and how to appeal decisions",
+    "description": "Housing assistance during asylum process, social benefit entitlements, healthcare access, education rights, appealing benefit decisions, and transitioning from basic care to integration support.",
+    "coverage": "Benefits vary by status and location"
   },
   "legalAidDirectory": {
-    "title": "Legal Aid & NGOs Directory",
-    "subtitle": "Find legal assistance and NGO support services"
+    "title": "Legal Aid & NGO Directory",
+    "subtitle": "Comprehensive directory of legal assistance providers and support organizations",
+    "description": "NGO-focused directory of legal aid organizations, free legal consultation services, specialized lawyers, pro bono programs, multilingual legal support, and regional legal aid offices across Austria.",
+    "cost": "Many services available free of charge"
   },
   "policeRights": {
-    "title": "Police Stops & ID Checks",
-    "subtitle": "Know your rights during police interactions"
+    "title": "Police Encounters & Your Rights",
+    "subtitle": "Know your rights during police stops, ID checks, and interactions with law enforcement",
+    "description": "Your rights during police stops, ID check procedures, what police can and cannot do, when you must provide documents, legal protections, and how to report police misconduct.",
+    "key": "Knowing your rights protects you from violations"
   },
   "criminalCharges": {
-    "title": "Criminal Charges & Deportation",
-    "subtitle": "Understanding criminal procedures and deportation risks"
+    "title": "Criminal Charges & Deportation Risk",
+    "subtitle": "Understanding how criminal proceedings can affect your asylum case and residence status",
+    "description": "Impact of criminal charges on asylum applications, deportation risks, criminal defense rights, legal representation in criminal cases, and how convictions affect protection status.",
+    "warning": "Criminal issues can severely impact asylum cases"
   },
   "dataPrivacy": {
-    "title": "Data Privacy & Consent",
-    "subtitle": "Your privacy rights and data protection information"
+    "title": "Data Privacy & Consent Rights",
+    "subtitle": "Your privacy rights and how your personal information is protected in asylum procedures",
+    "description": "Data protection rights under GDPR, what information authorities collect, how data is shared, consent requirements, accessing your files, and protecting sensitive personal information.",
+    "protection": "Strong privacy rights exist under Austrian and EU law"
   },
   "caseTracking": {
-    "title": "Appeals & Case Tracking",
-    "subtitle": "Dashboard to track your case timeline and status"
+    "title": "Case Tracking Dashboard",
+    "subtitle": "Track your asylum case progress, deadlines, and important milestones",
+    "description": "Personal dashboard to monitor case status, upcoming deadlines, required actions, document submissions, interview dates, and decision notifications. Set reminders for important dates.",
+    "benefit": "Stay organized and never miss critical deadlines"
   },
   "faqsGlossary": {
-    "title": "FAQs & Glossary",
-    "subtitle": "Common questions and legal definitions simplified"
+    "title": "FAQs & Legal Glossary",
+    "subtitle": "Common questions answered and legal terms explained in simple language",
+    "description": "Frequently asked questions about asylum procedures, simple explanations of complex legal terms, practical guidance on common situations, and troubleshooting typical problems asylum seekers face.",
+    "clarity": "Complex legal concepts explained simply"
   },
   "templates": {
-    "title": "Templates & Letters",
-    "subtitle": "Downloadable legal document templates"
+    "title": "Legal Templates & Forms",
+    "subtitle": "Downloadable document templates, sample letters, and form completion guides",
+    "description": "Ready-to-use templates for appeals, applications, formal letters to authorities, complaint forms, and step-by-step guides for completing official forms. Available in multiple languages.",
+    "availability": "Templates updated regularly to reflect current requirements"
+  },
+  "emergencyContacts": {
+    "title": "Emergency Legal Contacts",
+    "subtitle": "24/7 emergency legal hotlines and immediate assistance contacts"
+  },
+  "commonPhrases": {
+    "searchPlaceholder": "Search asylum information...",
+    "emergencyButton": "Emergency Legal Help",
+    "backButton": "Back to Information",
+    "downloadTemplate": "Download Template",
+    "contactLawyer": "Find Legal Aid",
+    "trackCase": "Track My Case",
+    "prepareInterview": "Prepare for Interview"
+  },
+  "alerts": {
+    "urgentHelp": "Need urgent legal help? Call our 24/7 emergency hotline.",
+    "deadlineWarning": "Important: Many asylum procedures have strict deadlines. Don't delay seeking help.",
+    "freeServices": "Most legal aid services for asylum seekers are free of charge.",
+    "languageSupport": "Interpreters are available for all official procedures."
   }
 }
