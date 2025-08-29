@@ -117,6 +117,7 @@ export default function EducationPage() {
       translationNamespace="education"
       tutorialData="education"
       emergencyRoute="/ask/emergency"
+      height={500}
     />
   );
 }

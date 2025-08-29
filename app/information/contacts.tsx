@@ -1,7 +1,8 @@
-import React from 'react';
-import { InformationPageTemplate } from '../../components/InformationPageTemplate';
+// app/everyday.tsx
+import React from "react";
+import InformationPageTemplate from '../../components/InformationPageTemplate';
 
-const prominentTopics = [
+const PROMINENT_TOPICS = [
   {
     key: 'emergency-crisis-hotlines',
     icon: 'emergency',
@@ -34,7 +35,7 @@ const prominentTopics = [
   }
 ];
 
-const secondaryTopics = [
+const SECONDARY_TOPICS = [
   {
     key: 'children-family-support',
     icon: 'family_restroom',
@@ -67,19 +68,14 @@ const secondaryTopics = [
   }
 ];
 
-const ContactsScreen = () => {
+export default function Contacts() {
   return (
     <InformationPageTemplate
-      prominentTopics={prominentTopics}
-      secondaryTopics={secondaryTopics}
+      prominentTopics={PROMINENT_TOPICS}
+      secondaryTopics={SECONDARY_TOPICS}
       translationNamespace="contacts"
-      tutorialData={{
-        title: "contacts.tutorial.title",
-        description: "contacts.tutorial.description",
-        steps: []
-      }}
+      tutorialData="home"
+      emergencyRoute="/ask/emergency"
     />
   );
-};
-
-export default ContactsScreen;
+}

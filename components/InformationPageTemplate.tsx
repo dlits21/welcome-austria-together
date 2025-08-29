@@ -38,7 +38,8 @@ export default function InformationPageTemplate({
   secondaryTopics,
   translationNamespace,
   tutorialData,
-  emergencyRoute = "/ask/emergency"
+  emergencyRoute = "/ask/emergency",
+  height = 450
 }: InformationPageTemplateProps) {
   const { t } = useTranslation(translationNamespace);
   const { width } = useWindowDimensions();
@@ -113,7 +114,7 @@ export default function InformationPageTemplate({
           onLongPress={() => speak(`${title}. ${subtitle}`)}
           padding={padding}
           width={width - padding}
-          height={450}
+          height={height}
           columns={columns}
         />
       </Pressable>

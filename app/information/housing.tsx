@@ -19,16 +19,16 @@ const PROMINENT_TOPICS = [
     icon: 'apartment',
     color: '#059669',
     route: '/information/housing/social-housing'
-  }
+  },
+    {
+      key: 'temporary-rentals',
+      icon: 'access-time',
+      color: '#7C3AED',
+      route: '/information/housing/temporary-rentals'
+    },
 ];
 
 const SECONDARY_TOPICS = [
-  {
-    key: 'temporary-rentals',
-    icon: 'access-time',
-    color: '#7C3AED',
-    route: '/information/housing/temporary-rentals'
-  },
   {
     key: 'eviction-prevention',
     icon: 'gavel',
