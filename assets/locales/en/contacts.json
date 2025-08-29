@@ -1,63 +1,63 @@
 {
-  "pageTitle": "Everyday",
-  "introShort": "Short help for daily life. Tap a topic to get quick, clear steps.",
-  "playTips": "Listen to short tips",
+  "pageTitle": "Contacts",
+  "introShort": "Essential contacts and hotlines. Tap for immediate help and support services.",
+  "playTips": "Listen to contact info",
   "myJourney": "Guide my journey",
-  "quickHelp": "Immediate help",
-  "essential": "Essential Services",
-  "additionalServices": "Additional Services",
+  "quickHelp": "Emergency help",
+  "essential": "Emergency Services",
+  "additionalServices": "Support Services",
   "tts_lang": "en-US",
-  "tts_intro": "Here are quick everyday tips.",
+  "tts_intro": "Here are essential emergency contacts and support services.",
   "topics": {
-    "school": {
-      "title": "School & Education",
-      "subtitle": "Enroll kids, paperwork, contact school",
-      "tip": "To register your child, bring ID and residence papers. Ask the school for an interpreter."
+    "emergency-crisis-hotlines": {
+      "title": "Emergency & Crisis Hotlines",
+      "subtitle": "24/7 crisis support, suicide prevention, urgent help",
+      "tip": "Call 112 for emergencies. Mental health crisis lines are available 24/7."
     },
-    "kids": {
-      "title": "Kids & Childcare",
-      "subtitle": "Daycare, playgroups, child benefits",
-      "tip": "Try the local parent-and-child groups. They often help with registration."
+    "legal-asylum-help": {
+      "title": "Legal & Asylum Help",
+      "subtitle": "Free legal advice, asylum support, NGO assistance",
+      "tip": "Contact Diakonie or Caritas for free legal consultation and asylum support."
     },
-    "women": {
-      "title": "Support for Women",
-      "subtitle": "Health, safety and support services",
-      "tip": "If you need help, contact local women's shelters and health centers listed on Contacts."
+    "housing-shelter-hotlines": {
+      "title": "Housing & Shelter Hotlines",
+      "subtitle": "Emergency housing, homelessness prevention, shelter support",
+      "tip": "Call housing assistance hotlines immediately if facing eviction or homelessness."
     },
-    "sim": {
-      "title": "SIM Cards & Phones",
-      "subtitle": "Where to buy, prepaid, balance tips",
-      "tip": "Buy a prepaid SIM at supermarkets or kiosks; bring your ID."
+    "healthcare-support-lines": {
+      "title": "Healthcare Support Lines",
+      "subtitle": "Medical emergencies, health insurance, doctor referrals",
+      "tip": "Call 1450 for medical advice or visit emergency rooms for urgent care."
     },
-    "recycling": {
-      "title": "Recycling & Waste",
-      "subtitle": "How to sort waste in Austria",
-      "tip": "Sort paper, plastic, glass, organic waste in separate bins."
+    "food-essentials": {
+      "title": "Food & Essentials",
+      "subtitle": "Food banks, essential supplies, emergency assistance",
+      "tip": "Visit local Caritas or food banks for free meals and essential supplies."
     },
-    "transport": {
-      "title": "Public Transport",
-      "subtitle": "Tickets, short-term passes, how to ride",
-      "tip": "Buy a single ticket before boarding or use the official mobile app."
+    "children-family-support": {
+      "title": "Children & Family Support",
+      "subtitle": "Child protection, family counseling, parenting help",
+      "tip": "Contact child welfare services for protection and family support programs."
     },
-    "culture": {
-      "title": "Culture & Events",
-      "subtitle": "Free events, museums, community groups",
-      "tip": "Search local NGO calendars for free community events."
+    "work-exploitation": {
+      "title": "Work & Exploitation",
+      "subtitle": "Labor rights, wage theft, workplace abuse reporting",
+      "tip": "Report workplace exploitation to labor inspection or worker rights organizations."
     },
-    "sport": {
-      "title": "Sport & Clubs",
-      "subtitle": "How to join local sports groups",
-      "tip": "Many sports clubs offer trial sessions—ask about low-cost memberships."
+    "everyday-life-help": {
+      "title": "Everyday Life Help",
+      "subtitle": "General assistance, bureaucracy help, translation services",
+      "tip": "NGOs offer translation and bureaucratic assistance for daily life challenges."
     },
-    "political": {
-      "title": "Civic & Political Education",
-      "subtitle": "Voting rules, rights, participation",
-      "tip": "Non-citizens can join community consultations; learn the basics at local civic centers."
+    "community-integration-ngos": {
+      "title": "Community & Integration NGOs",
+      "subtitle": "Integration support, community programs, cultural help",
+      "tip": "Join community integration programs offered by local NGOs for social support."
     },
-    "climate": {
-      "title": "Climate & Environment",
-      "subtitle": "Local climate habits and safety tips",
-      "tip": "Prepare for winter: wear layers and check local weather advisories."
+    "directory-quick-access": {
+      "title": "Directory & Quick Access",
+      "subtitle": "Phone directory, online resources, service finder",
+      "tip": "Use online directories and service finders to quickly locate help in your area."
     }
   }
 }
