@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity } from 'react-native';
-import { useLanguage } from '../../contexts/LanguageContext';
-import { languages } from '../../data/language/common';
-import PageNavigation from '../../components/PageNavigation';
-import LanguageModal from '../../components/LanguageModal';
-import HelpModal from '../../components/HelpModal';
-import GermanLearningList from '../../components/GermanLearningList';
-import QuizModal from '../../components/QuizModal';
-import QuizControls from '../../components/QuizControls';
-import FilterSection from '../../components/FilterSection';
-import VirtualAssistantModal from '../../components/VirtualAssistantModal';
-import TutorialModal from '../../components/TutorialModal';
-import coursesData from '../../data/courses/german-learning-courses.json';
-import { getInformationGermanLearningText, getGlobalText } from '../../utils/languageUtils';
+import { useLanguage } from '../../../contexts/LanguageContext';
+import { languages } from '../../../data/language/common';
+import PageNavigation from '../../../components/PageNavigation';
+import LanguageModal from '../../../components/LanguageModal';
+import HelpModal from '../../../components/HelpModal';
+import GermanLearningList from '../../../components/GermanLearningList';
+import QuizModal from '../../../components/QuizModal';
+import QuizControls from '../../../components/QuizControls';
+import FilterSection from '../../../components/FilterSection';
+import VirtualAssistantModal from '../../../components/VirtualAssistantModal';
+import TutorialModal from '../../../components/TutorialModal';
+import coursesData from '../../../data/courses/german-learning-courses.json';
+import { getInformationGermanLearningText, getGlobalText } from '../../../utils/languageUtils';
 
 interface GermanCourse {
   id: string;

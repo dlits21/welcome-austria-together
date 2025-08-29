@@ -18,7 +18,7 @@ const PROMINENT_TOPICS = [
     key: 'language-integration',
     icon: 'translate',
     color: '#2563EB',
-    route: '/information/education/language-integration'
+    route: '/information/education/language-courses'
   },
   {
     key: 'school-types',
