@@ -1,0 +1,36 @@
+{
+  "pageTitle": "Vaccination Information",
+  "pageIntro": "Important vaccination resources and guidance for you and your family",
+  "exampleVideoId": "dQw4w9WgXcQ",
+  "tiles": {
+    "child_vaccines_title": "Child Vaccinations",
+    "child_vaccines_sub": "Essential vaccines for infants, children, and teens",
+    "adult_vaccines_title": "Adult Vaccinations", 
+    "adult_vaccines_sub": "Recommended vaccines for adults and elderly",
+    "free_vaccines_title": "Free Vaccination Sites",
+    "free_vaccines_sub": "Where to get vaccinations at no cost",
+    "documentation_title": "Required Documents",
+    "documentation_sub": "What to bring for vaccination appointments",
+    "faq_title": "Vaccination FAQ",
+    "faq_sub": "Common questions and concerns answered",
+    "travel_vaccines_title": "Travel Vaccinations",
+    "travel_vaccines_sub": "Special vaccines for international travel",
+    "pregnancy_vaccines_title": "Pregnancy Vaccinations",
+    "pregnancy_vaccines_sub": "Safe vaccines during pregnancy and breastfeeding",
+    "schedule_title": "Vaccination Schedule",
+    "schedule_sub": "When to get each vaccine by age"
+  },
+  "trusted": {
+    "health_ministry": "Ministry of Health Austria",
+    "health_phone": "0800 555 621",
+    "health_url": "https://www.sozialministerium.at",
+    "health_sub": "Official vaccination information and schedules",
+    "vaccination_hotline": "Vaccination Information Hotline",
+    "hotline_phone": "1450",
+    "hotline_sub": "24/7 health advice and vaccination guidance",
+    "immunization_service": "Austrian Immunization Service",
+    "immunization_phone": "01 531 37-0",
+    "immunization_url": "https://www.ages.at",
+    "immunization_sub": "Professional vaccination services and consultation"
+  }
+}
