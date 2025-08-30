@@ -38,6 +38,7 @@ export default function HowToRegisterGP() {
 
   return (
     <StepPageTemplate
+      translationNamespace="doctorGP"
       steps={steps}
       checklist={checklist}
       videoId="Q607TYRBxFU" // Example GP registration video

@@ -71,5 +71,9 @@ export default function WhenToSeeGP() {
     ],
   };
 
-  return <DecisionTemplate slides={slides} startKey="start" extraInfo={extraInfo} />;
+  return <DecisionTemplate
+            translationNamespace="doctorGP"
+            slides={slides}
+            startKey="start"
+            extraInfo={extraInfo} />;
 }

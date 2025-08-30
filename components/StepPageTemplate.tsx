@@ -15,13 +15,18 @@ interface Step {
 }
 
 interface Props {
+  translationNamespace: string;
   steps: Step[];
   videoId?: string;
   checklist?: string[];
 }
 
-export default function StepPageTemplate({ steps, videoId, checklist }: Props) {
-  const { t } = useTranslation("healthcare");
+export default function StepPageTemplate({
+    translationNamespace,
+    steps,
+    videoId,
+    checklist }: Props) {
+  const { t } = useTranslation(translationNamespace);
   const [expanded, setExpanded] = useState<number | null>(null);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
@@ -30,7 +35,7 @@ export default function StepPageTemplate({ steps, videoId, checklist }: Props) {
   return (
     <SafeAreaView style={styles.safe}>
       <PageNavigation
-        title={t("gp.howToRegister", { defaultValue: "How to Register" })}
+        title={t("stepPage.title", { defaultValue: "How to Register" })}
         showLanguageModal={() => setShowLanguageModal(true)}
         showVirtualAssistant={() => setShowVirtualAssistant(true)}
         showTutorial={() => setShowTutorial(true)}
@@ -67,7 +72,7 @@ export default function StepPageTemplate({ steps, videoId, checklist }: Props) {
         {checklist && (
           <View style={styles.checklist}>
             <Text style={styles.checklistTitle}>
-              {t("gp.checklist", { defaultValue: "Checklist before registering:" })}
+              {t("stepPage.checklist", { defaultValue: "Checklist before registering:" })}
             </Text>
             {checklist.map((item, i) => (
               <Text key={i} style={styles.checkItem}>✅ {item}</Text>

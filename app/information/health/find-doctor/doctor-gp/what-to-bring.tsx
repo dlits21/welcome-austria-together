@@ -17,6 +17,7 @@ export default function WhatToBringGP() {
   return (
     <ChecklistPageTemplate
       title="What to Bring"
+      translationNamespace="doctorGP"
       required={required}
       optional={optional}
       warningNote="⚠️ If you don’t have documents, you can still try to register. Ask the GP clinic or NGOs for help."

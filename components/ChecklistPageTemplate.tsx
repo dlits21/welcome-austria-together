@@ -14,14 +14,20 @@ interface ChecklistItem {
 }
 
 interface Props {
+  translationNamespace: string;
   title: string;
   required: ChecklistItem[];
   optional?: ChecklistItem[];
   warningNote?: string;
 }
 
-export default function ChecklistPageTemplate({ title, required, optional, warningNote }: Props) {
-  const { t } = useTranslation("healthcare");
+export default function ChecklistPageTemplate({
+    translationNamespace,
+    title,
+    required,
+    optional,
+    warningNote }: Props) {
+  const { t } = useTranslation(translationNamespace);
   const [checked, setChecked] = useState<string[]>([]);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
@@ -57,12 +63,12 @@ export default function ChecklistPageTemplate({ title, required, optional, warni
       />
 
       <ScrollView contentContainerStyle={styles.container}>
-        <Text style={styles.sectionTitle}>{t("required", { defaultValue: "Required" })}</Text>
+        <Text style={styles.sectionTitle}>{t("checklist.required", { defaultValue: "Required" })}</Text>
         {required.map(renderItem)}
 
         {optional && (
           <>
-            <Text style={styles.sectionTitle}>{t("optional", { defaultValue: "Helpful but not mandatory" })}</Text>
+            <Text style={styles.sectionTitle}>{t("checklist.optional", { defaultValue: "Helpful but not mandatory" })}</Text>
             {optional.map(renderItem)}
           </>
         )}

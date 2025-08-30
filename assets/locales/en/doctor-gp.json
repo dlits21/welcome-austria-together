@@ -68,5 +68,27 @@
         "List of symptoms or concerns"
       ]
     }
+  },
+  "slides": {
+    "title": "What GPs Do",
+    "doNot":{
+      "title": "GPs usually do NOT…",
+      "slide1": "Do surgery themselves",
+      "slide2": "Handle life-threatening emergencies",
+      "slide3": "Provide specialist treatment"
+    }
+
+  },
+  "checklist": {
+    "required": "Required",
+    "optional": "Helpful but not mandatory",
+  },
+  "decision": {
+    "title": "When to See a GP",
+    "end": "That’s all!"
+  },
+  "stepPage": {
+    "title": "How to Register",
+    "checklist": "Checklist before registering:"
   }
 }

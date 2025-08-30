@@ -8,6 +8,7 @@ import VirtualAssistantModal from './VirtualAssistantModal';
 import YoutubePlayer from "react-native-youtube-iframe";
 
 interface RoleCard {
+  translationNamespace: string;
   icon: string;
   title: string;
   text: string;
@@ -18,8 +19,11 @@ interface Props {
   videoId?: string;
 }
 
-export default function SlidesTemplate({ roles, videoId }: Props) {
-  const { t } = useTranslation("healthcare");
+export default function SlidesTemplate({
+    translationNamespace,
+    roles,
+    videoId }: Props) {
+  const { t } = useTranslation(translationNamespace);
   const [expanded, setExpanded] = useState<string | null>(null);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
@@ -28,7 +32,7 @@ export default function SlidesTemplate({ roles, videoId }: Props) {
   return (
     <SafeAreaView style={styles.safe}>
       <PageNavigation
-        title={t("gp.whatTheyDo", { defaultValue: "What GPs Do" })}
+        title={t("slides.title", { defaultValue: "Slides Title" })}
         showLanguageModal={() => setShowLanguageModal(true)}
         showVirtualAssistant={() => setShowVirtualAssistant(true)}
         showTutorial={() => setShowTutorial(true)}
@@ -61,11 +65,11 @@ export default function SlidesTemplate({ roles, videoId }: Props) {
         {/* Quick checklist */}
         <View style={styles.checklist}>
           <Text style={styles.checklistTitle}>
-            {t("gp.checklist", { defaultValue: "GPs usually do NOT…" })}
+            {t("slides.doNot.title", { defaultValue: "Watch Out" })}
           </Text>
-          <Text style={styles.checkItem}>❌ {t("gp.no_surgery", { defaultValue: "Do surgery themselves" })}</Text>
-          <Text style={styles.checkItem}>❌ {t("gp.no_emergency", { defaultValue: "Handle life-threatening emergencies" })}</Text>
-          <Text style={styles.checkItem}>❌ {t("gp.no_specialist", { defaultValue: "Provide specialist treatment" })}</Text>
+          <Text style={styles.checkItem}>❌ {t("gp.doNot.slide1", { defaultValue: "Do not 1" })}</Text>
+          <Text style={styles.checkItem}>❌ {t("gp.doNot.slide2", { defaultValue: "Do not 2" })}</Text>
+          <Text style={styles.checkItem}>❌ {t("gp.doNot.slide3", { defaultValue: "Do not 3" })}</Text>
         </View>
       </ScrollView>
       <LanguageModal

@@ -15,13 +15,14 @@ interface Slide {
 }
 
 interface Props {
+  translationNamespace: string;
   slides: Slide[];
   startKey: string;
   extraInfo?: { title: string; sections: { icon: string; heading: string; text: string }[] };
 }
 
-export default function DecisionTemplate({ slides, startKey, extraInfo }: Props) {
-  const { t } = useTranslation("healthcare");
+export default function DecisionTemplate({ translationNamespace, slides, startKey, extraInfo }: Props) {
+  const { t } = useTranslation(translationNamespace);
   const [currentKey, setCurrentKey] = useState(startKey);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
@@ -36,7 +37,7 @@ export default function DecisionTemplate({ slides, startKey, extraInfo }: Props)
   return (
     <SafeAreaView style={styles.safe}>
       <PageNavigation
-        title={t("gp.whenToSee", { defaultValue: "When to See a GP" })}
+        title={t("decision.title", { defaultValue: "When to See a GP" })}
         showLanguageModal={() => setShowLanguageModal(true)}
         showVirtualAssistant={() => setShowVirtualAssistant(true)}
         showTutorial={() => setShowTutorial(true)}
@@ -69,7 +70,7 @@ export default function DecisionTemplate({ slides, startKey, extraInfo }: Props)
             </View>
           </View>
         ) : (
-          <Text style={styles.title}>{t("gp.end", { defaultValue: "That’s all!" })}</Text>
+          <Text style={styles.title}>{t("decision.end", { defaultValue: "That’s all!" })}</Text>
         )}
 
         {/* Extra information (long text) */}

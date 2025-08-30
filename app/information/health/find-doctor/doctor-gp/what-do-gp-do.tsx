@@ -32,6 +32,7 @@ export default function WhatGPsDo() {
 
   return (
     <SlidesTemplate
+      translationNamespace="doctorGP"
       roles={roles}
       videoId="Q607TYRBxFU" // Example GP explainer video
     />

@@ -195,7 +195,7 @@ export default function HealthPageTemplate({
   return (
     <SafeAreaView style={styles.safe}>
       <PageNavigation
-        title={t("pageTitle", { defaultValue: "Health Information" })}
+        title={t("pageTitle", { defaultValue: "Header" })}
         showLanguageModal={() => setShowLanguageModal(true)}
         showVirtualAssistant={() => setShowVirtualAssistant(true)}
         showTutorial={() => setShowTutorial(true)}
@@ -204,8 +204,8 @@ export default function HealthPageTemplate({
 
       <ScrollView contentContainerStyle={styles.container}>
         {/* Intro */}
-        <Text style={styles.title}>{t("pageTitle", { defaultValue: "Health Information" })}</Text>
-        <Text style={styles.lead}>{t("pageIntro", { defaultValue: "Important health information and resources." })}</Text>
+        <Text style={styles.title}>{t("pageTitle", { defaultValue: "Header" })}</Text>
+        <Text style={styles.lead}>{t("pageIntro", { defaultValue: "Intro" })}</Text>
 
         {/* Actions */}
         <View style={styles.actionsRow}>
