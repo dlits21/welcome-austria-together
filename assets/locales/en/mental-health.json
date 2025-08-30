@@ -16,6 +16,181 @@
     "hotlines_title": "Emergency Hotlines",
     "hotlines_sub": "Call immediately if someone is at risk"
   },
+  "doctor": {
+    "gp": {
+      "videoId": "Q607TYRBxFU",
+      "tiles": {
+        "when_title": "When to see a GP",
+        "when_sub": "For non-emergencies, everyday health issues",
+        "what_title": "What GPs do",
+        "what_sub": "Exams, prescriptions, referrals",
+        "register_title": "How to register",
+        "register_sub": "Choose a doctor near you, bring ID + insurance",
+        "bring_title": "What to bring",
+        "bring_sub": "Insurance card, ID, medical documents"
+      },
+      "contacts": {
+        "directory": "Find a GP – Doctor Directory",
+        "directory_url": "https://www.arztsuche.at",
+        "directory_sub": "Search GPs by location and language",
+        "hotline": "Health Hotline 1450",
+        "hotline_sub": "Advice & info on nearest available doctor"
+      },
+      "registration": {
+        "steps": [
+          {
+            "title": "Find a GP clinic near you",
+            "text": "Search online or ask local NGOs / neighbors which GP practices accept new patients."
+          },
+          {
+            "title": "Fill out a registration form",
+            "text": "Most clinics have a paper form or online form. Staff can help if your language is different."
+          },
+          {
+            "title": "Bring documents",
+            "text": "Usually an ID or passport and proof of address (like a letter, bill, or asylum papers)."
+          },
+          {
+            "title": "Confirmation",
+            "text": "The clinic will confirm and send you a letter or card once you are registered."
+          }
+        ],
+        "checklist": [
+          "Passport or ID (if available)",
+          "Proof of address (rental contract, bill, asylum letter)",
+          "Previous medical info (if you have it)",
+          "Interpreter or support person if language is a barrier"
+        ]
+      },
+      "whatToBring": {
+        "required": [
+          {
+            "title": "ID or Passport",
+            "note": "If you have one"
+          },
+          {
+            "title": "Proof of Address",
+            "note": "Letter, bill, or asylum papers"
+          }
+        ],
+        "optional": [
+          {
+            "title": "Health / Insurance Card"
+          },
+          {
+            "title": "List of Medications",
+            "note": "Names, dosages if possible"
+          },
+          {
+            "title": "Previous Medical Records",
+            "note": "If you have them"
+          },
+          {
+            "title": "Interpreter or Support Person"
+          }
+        ],
+        "warningNote": "⚠️ If you don't have documents, you can still try to register. Ask the GP clinic or NGOs for help."
+      },
+      "whatGPsDo": {
+        "roles": [
+          {
+            "title": "First point of contact",
+            "text": "GPs are usually your first stop for health problems. They listen and decide what to do next."
+          },
+          {
+            "title": "Prescriptions",
+            "text": "They can give prescriptions for medicine you need."
+          },
+          {
+            "title": "Basic checks",
+            "text": "They do blood pressure, blood tests, or simple examinations."
+          },
+          {
+            "title": "Referrals",
+            "text": "If you need a specialist, they write you a referral."
+          },
+          {
+            "title": "Family care",
+            "text": "They care for both adults and children, often the whole family."
+          }
+        ]
+      },
+      "whenToSee": {
+        "decision": {
+          "start": {
+            "title": "Do you have a very high fever (over 39°C)?",
+            "options": [
+              {
+                "text": "Yes",
+                "result": "gp"
+              },
+              {
+                "text": "No",
+                "next": "injury"
+              }
+            ]
+          },
+          "injury": {
+            "title": "Do you have a serious injury or heavy bleeding?",
+            "options": [
+              {
+                "text": "Yes",
+                "result": "emergency"
+              },
+              {
+                "text": "No",
+                "next": "chronic"
+              }
+            ]
+          },
+          "chronic": {
+            "title": "Do you have ongoing symptoms (cough, pain, skin issues)?",
+            "options": [
+              {
+                "text": "Yes",
+                "result": "gp"
+              },
+              {
+                "text": "No, it's something small",
+                "result": "self"
+              }
+            ]
+          }
+        },
+        "results": {
+          "gp": {
+            "title": "You should see a GP.",
+            "subtitle": "They can examine you and refer you if needed."
+          },
+          "emergency": {
+            "title": "This is an emergency.",
+            "subtitle": "Call 112 immediately or go to the nearest hospital."
+          },
+          "self": {
+            "title": "Self-care may be enough.",
+            "subtitle": "Rest, drink water, try paracetamol for fever or pain."
+          }
+        },
+        "extraInfo": {
+          "title": "More Information",
+          "sections": [
+            {
+              "heading": "Book an Appointment",
+              "text": "Most GP practices require you to book an appointment in advance. Some also have online booking."
+            },
+            {
+              "heading": "Walk-in Clinics",
+              "text": "If you cannot reach your GP, you can visit a walk-in clinic for urgent but not life-threatening issues."
+            },
+            {
+              "heading": "Bring Important Documents",
+              "text": "Take your health card, ID, and any medical records or medication you are using."
+            }
+          ]
+        }
+      }
+    }
+  },
   "trusted": {
     "ngo_name": "Pro Mente Austria",
     "ngo_phone": "0800 100 100",
