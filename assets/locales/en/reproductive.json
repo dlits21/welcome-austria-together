@@ -1,0 +1,39 @@
+{
+  "pageTitle": "Reproductive Health & Safety",
+  "pageIntro": "Confidential reproductive health care, pregnancy support, and safety resources for women",
+  "confidentialityNotice": "All reproductive health services are confidential. Your privacy is protected by law.",
+  "exampleVideoId": "dQw4w9WgXcQ",
+  "tiles": {
+    "pregnancy_care_title": "Pregnancy Care",
+    "pregnancy_care_sub": "Where to find prenatal care and maternity support",
+    "antenatal_title": "Antenatal Checklist", 
+    "antenatal_sub": "Essential appointments and tests during pregnancy",
+    "contraception_title": "Contraception",
+    "contraception_sub": "Birth control options and emergency contraception",
+    "emergency_contraception_title": "Emergency Contraception",
+    "emergency_contraception_sub": "Morning-after pill and where to get it",
+    "women_ngos_title": "Women's Support NGOs",
+    "women_ngos_sub": "One-tap referral to specialized women's organizations",
+    "shelter_title": "Women's Shelters",
+    "shelter_sub": "Safe housing and emergency accommodation",
+    "sexual_violence_title": "Sexual Violence Support",
+    "sexual_violence_sub": "Crisis support and specialized counseling",
+    "reporting_title": "Reporting Sexual Assault",
+    "reporting_sub": "Safe reporting options prioritizing NGO support",
+    "reproductive_rights_title": "Reproductive Rights",
+    "reproductive_rights_sub": "Know your legal rights and protections"
+  },
+  "trusted": {
+    "women_helpline_name": "Women's Helpline Austria",
+    "women_helpline_phone": "0800 222 555",
+    "women_helpline_url": "https://www.frauenhelpline.at",
+    "women_helpline_sub": "24/7 confidential support for women in crisis",
+    "pregnancy_support": "Pregnancy Support Service", 
+    "pregnancy_phone": "0800 600 700",
+    "pregnancy_sub": "Free pregnancy counseling and support",
+    "sexual_violence_center": "Sexual Violence Crisis Center",
+    "sexual_violence_phone": "01 523 22 22",
+    "sexual_violence_url": "https://www.frauenberatung.at",
+    "sexual_violence_sub": "Specialized support for survivors of sexual violence"
+  }
+}
