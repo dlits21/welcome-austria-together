@@ -1,0 +1,37 @@
+{
+  "pageTitle": "Prescription Information",
+  "pageIntro": "Complete guide to prescriptions, medications, and pharmacy services in Austria",
+  "exampleVideoId": "dQw4w9WgXcQ",
+  "tiles": {
+    "how_to_get_title": "How to Get a Prescription",
+    "how_to_get_sub": "Doctor visits, online consultations, emergency prescriptions",
+    "required_meds_title": "What Meds Require a Prescription",
+    "required_meds_sub": "Antibiotics, controlled substances, chronic disease medications",
+    "pharmacy_emergency_title": "Pharmacy Emergencies",
+    "pharmacy_emergency_sub": "Night pharmacies, emergency medication access",
+    "financial_support_title": "Get Financial Support for Medication",
+    "financial_support_sub": "Insurance coverage, assistance programs, cost reduction",
+    "otc_vs_prescription_title": "OTC vs Prescription",
+    "otc_vs_prescription_sub": "Understanding medication categories and availability",
+    "prescription_format_title": "Prescription Format",
+    "prescription_format_sub": "Understanding Austrian prescription requirements",
+    "explain_prescription_title": "Explain a Prescription",
+    "explain_prescription_sub": "Reading and understanding your medication instructions"
+  },
+  "trusted": {
+    "pharmacy_association_name": "Austrian Pharmacists Association",
+    "pharmacy_association_phone": "01 404 14 28",
+    "pharmacy_association_url": "https://www.apothekerkammer.at",
+    "pharmacy_association_sub": "Official pharmacy information and guidance",
+    "emergency_pharmacy_name": "Emergency Pharmacy Service",
+    "emergency_pharmacy_phone": "1455",
+    "emergency_pharmacy_sub": "24/7 emergency pharmacy locator service",
+    "health_insurance_name": "Austrian Health Insurance",
+    "health_insurance_phone": "050 124 411",
+    "health_insurance_url": "https://www.gesundheitskasse.at",
+    "health_insurance_sub": "Medication coverage and reimbursement information",
+    "medication_helpline_name": "Medication Information Helpline",
+    "medication_helpline_phone": "0800 201 530",
+    "medication_helpline_sub": "Professional advice on medications and interactions"
+  }
+}

@@ -93,5 +93,10 @@ export const getAskDocumentText = (key: string, languageCode: string): string =>
 export const getInformationGermanLearningText = (key: string, languageCode: string): string => {
   const translation = informationGermanLearningTranslations[key as keyof typeof informationGermanLearningTranslations];
   return translation?.[languageCode as keyof typeof translation] || translation?.de || key;
+};
 
+export const getPrescriptionText = (key: string, languageCode: string): string => {
+  // This function can be used for prescription-specific translations if needed
+  // For now, we use the standard i18n hook in the component
+  return key;
 };
