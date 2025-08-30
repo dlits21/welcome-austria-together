@@ -1,6 +1,6 @@
 {
-  "title": "Find a Doctor",
-  "description": "How to find and access healthcare services in Austria",
+  "pageTitle": "Find a Doctor",
+  "pageIntro": "How to find and access healthcare services in Austria",
   "exampleVideoId": "Q607TYRBxFU",
   "doctor": {
     "tiles": {

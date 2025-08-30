@@ -16,6 +16,9 @@ import { useTranslation } from "react-i18next";
 import * as Speech from "expo-speech";
 import { useRouter } from "expo-router";
 import PageNavigation from "./PageNavigation";
+import TutorialModal from './TutorialModal';
+import LanguageModal from './LanguageModal';
+import VirtualAssistantModal from './VirtualAssistantModal';
 import YoutubePlayer from "react-native-youtube-iframe";
 
 interface InfoTileData {
@@ -133,6 +136,9 @@ export default function HealthPageTemplate({
 }: HealthPageTemplateProps) {
   const { t, i18n } = useTranslation(translationNamespace);
   const router = useRouter();
+  const [showLanguageModal, setShowLanguageModal] = useState(false);
+  const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
+  const [showTutorial, setShowTutorial] = useState(false);
   const { width } = useWindowDimensions();
 
   // Short helper to speak text using the currently selected language TTS.
@@ -190,10 +196,10 @@ export default function HealthPageTemplate({
     <SafeAreaView style={styles.safe}>
       <PageNavigation
         title={t("pageTitle", { defaultValue: "Health Information" })}
-        showBackButton
-        showLanguageModal={() => {}}
-        showTutorial={() => {}}
-        showVirtualAssistant={() => {}}
+        showLanguageModal={() => setShowLanguageModal(true)}
+        showVirtualAssistant={() => setShowVirtualAssistant(true)}
+        showTutorial={() => setShowTutorial(true)}
+        showBackButton={true}
       />
 
       <ScrollView contentContainerStyle={styles.container}>
@@ -256,6 +262,21 @@ export default function HealthPageTemplate({
           </Pressable>
         </View>
       </ScrollView>
+      <LanguageModal
+        visible={showLanguageModal}
+        onClose={() => setShowLanguageModal(false)}
+      />
+
+      <VirtualAssistantModal
+        visible={showVirtualAssistant}
+        onClose={() => setShowVirtualAssistant(false)}
+      />
+
+      <TutorialModal
+        visible={showTutorial}
+        onClose={() => setShowTutorial(false)}
+        tutorialData="home"
+      />
     </SafeAreaView>
   );
 }

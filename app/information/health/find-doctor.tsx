@@ -12,50 +12,50 @@ export default function FindDoctor() {
       {
         key: "when-to-see",
         icon: "❓",
-        title: t("doctor.tiles.when_title", { defaultValue: "When should I see a doctor?" }),
-        sub: t("doctor.tiles.when_sub", { defaultValue: "Colds, injuries, pain – what’s urgent?" }),
+        title: t("doctor.tiles.when_title"),
+        sub: t("doctor.tiles.when_sub"),
         onPress: () => router.push("/information/healthcare/when-to-see-doctor"),
       },
     {
       key: "insurance",
       icon: "💳",
-      title: t("doctor.tiles.insurance_title", { defaultValue: "Do I need insurance?" }),
-      sub: t("doctor.tiles.insurance_sub", { defaultValue: "Most doctors require health insurance" }),
+      title: t("doctor.tiles.insurance_title"),
+      sub: t("doctor.tiles.insurance_sub"),
       onPress: () => router.push("/information/healthcare/doctor-insurance"),
     },
     {
       key: "gp",
       icon: "👩‍⚕️",
-      title: t("doctor.tiles.gp_title", { defaultValue: "Family / GP doctor" }),
-      sub: t("doctor.tiles.gp_sub", { defaultValue: "Your first contact for health issues" }),
-      onPress: () => router.push("/information/healthcare/doctor-gp"),
+      title: t("doctor.tiles.gp_title"),
+      sub: t("doctor.tiles.gp_sub"),
+      onPress: () => router.push("/information/health/find-doctor/doctor-gp"),
     },
     {
       key: "walkin",
       icon: "🚶",
-      title: t("doctor.tiles.walkin_title", { defaultValue: "Walk-in clinics" }),
-      sub: t("doctor.tiles.walkin_sub", { defaultValue: "Places you can go without appointment" }),
+      title: t("doctor.tiles.walkin_title"),
+      sub: t("doctor.tiles.walkin_sub"),
       onPress: () => router.push("/information/healthcare/doctor-walkin"),
     },
     {
       key: "specialist",
       icon: "🩺",
-      title: t("doctor.tiles.specialist_title", { defaultValue: "Specialist doctors" }),
-      sub: t("doctor.tiles.specialist_sub", { defaultValue: "Referred by GP or direct access" }),
+      title: t("doctor.tiles.specialist_title"),
+      sub: t("doctor.tiles.specialist_sub"),
       onPress: () => router.push("/information/healthcare/doctor-specialist"),
     },
     {
       key: "children",
       icon: "👶",
-      title: t("doctor.tiles.children_title", { defaultValue: "Pediatricians" }),
-      sub: t("doctor.tiles.children_sub", { defaultValue: "Doctors for children & teens" }),
+      title: t("doctor.tiles.children_title"),
+      sub: t("doctor.tiles.children_sub"),
       onPress: () => router.push("/information/healthcare/doctor-children"),
     },
     {
       key: "hotlines",
       icon: "☎️",
-      title: t("doctor.tiles.hotlines_title", { defaultValue: "Hotlines & directories" }),
-      sub: t("doctor.tiles.hotlines_sub", { defaultValue: "Call for nearest open doctor" }),
+      title: t("doctor.tiles.hotlines_title"),
+      sub: t("doctor.tiles.hotlines_sub"),
       onPress: () => router.push("/information/contacts"),
     },
   ];
@@ -63,30 +63,30 @@ export default function FindDoctor() {
   // Official contacts & directories
   const contacts = [
     {
-      name: t("doctor.contacts.national_hotline", { defaultValue: "National Health Hotline 1450" }),
+      name: t("doctor.contacts.national_hotline"),
       phone: "1450",
-      subtitle: t("doctor.contacts.national_sub", { defaultValue: "Call for medical advice & nearest open doctor" }),
+      subtitle: t("doctor.contacts.national_sub"),
     },
     {
-      name: t("doctor.contacts.directory", { defaultValue: "Online Doctor Directory" }),
-      url: t("doctor.contacts.directory_url", { defaultValue: "https://www.arztsuche.at" }),
+      name: t("doctor.contacts.directory"),
+      url: t("doctor.contacts.directory_url"),
       subtitle: t("doctor.contacts.directory_sub", { defaultValue: "Search doctors by area and specialty" }),
     },
     {
-      name: t("doctor.contacts.redcross", { defaultValue: "Red Cross health centers" }),
-      url: t("doctor.contacts.redcross_url", { defaultValue: "https://www.roteskreuz.at" }),
-      subtitle: t("doctor.contacts.redcross_sub", { defaultValue: "Walk-in clinics and first aid" }),
+      name: t("doctor.contacts.redcross"),
+      url: t("doctor.contacts.redcross_url"),
+      subtitle: t("doctor.contacts.redcross_sub"),
     },
     {
-      name: t("doctor.contacts.ngo_name", { defaultValue: "NGO health advice" }),
-      phone: t("doctor.contacts.ngo_phone", { defaultValue: "0800 111 222" }),
-      subtitle: t("doctor.contacts.ngo_sub", { defaultValue: "Support for refugees without insurance" }),
+      name: t("doctor.contacts.ngo_name"),
+      phone: t("doctor.contacts.ngo_phone"),
+      subtitle: t("doctor.contacts.ngo_sub"),
     },
   ];
 
   return (
     <SummaryPageTemplate
-      translationNamespace="healthcare"
+      translationNamespace="findDoctor"
       videoId={t("exampleVideoId", { defaultValue: "Q607TYRBxFU" })}
       tiles={tiles}
       contacts={contacts}
