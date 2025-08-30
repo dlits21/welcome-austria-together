@@ -19,6 +19,7 @@ import enJobs from '../../assets/locales/en/jobs.json';
 import enContacts from '../../assets/locales/en/contacts.json';
 import enMentalHealth from '../../assets/locales/en/mental-health.json';
 import enFindDoctor from '../../assets/locales/en/find-doctor.json';
+import enDoctorGP from '../../assets/locales/en/doctor-gp.json';
 
 import deCommon from '../../assets/locales/de/common.json';
 import deAsk from '../../assets/locales/de/ask.json';
@@ -63,6 +64,7 @@ export const resources = {
       contacts: enContacts,
       mentalHealth: enMentalHealth,
       findDoctor: enFindDoctor,
+      doctorGP: enDoctorGP,
        },
   de: { common: deCommon,
       ask: deAsk,

@@ -53,7 +53,7 @@ export default function DoctorGP() {
 
   return (
     <SummaryPageTemplate
-      translationNamespace="healthcare"
+      translationNamespace="doctorGP"
       videoId={t("doctor.gp.videoId", { defaultValue: "Q607TYRBxFU" })}
       tiles={tiles}
       contacts={contacts}
