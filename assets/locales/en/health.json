@@ -89,6 +89,16 @@
       "subtitle": "Teeth and eye health services",
       "tip": "Basic dental care is partially covered. Eye exams and glasses may need additional insurance."
     },
+    "insurance": {
+      "title": "Insurance",
+      "subtitle": "Health insurance and protection",
+      "tip": "Most people must have health insurance. If you work, you are insured. Children are covered with a parent. Bring your e-card to the doctor."
+    },
+    "generalInformation": {
+      "title": "General Information",
+      "subtitle": "Basic rules and help",
+      "tip": "Basics on documents, costs, rights, and where to get free support nearby."
+    },
     "addiction": {
       "title": "Addiction & Substance Support",
       "subtitle": "Help with substance use problems",

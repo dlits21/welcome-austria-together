@@ -1,11 +1,11 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "expo-router";
-import HealthPageTemplate from "../../../components/HealthPageTemplate";
+import SummaryPageTemplate from "../../../components/SummaryPageTemplate";
 
 
 export default function MentalHealthBasics() {
-  const { t } = useTranslation("healthcare");
+  const { t } = useTranslation("mentalHealth");
   const router = useRouter();
 
   // Tiles content (short entries)
@@ -76,7 +76,7 @@ export default function MentalHealthBasics() {
   ];
 
   return (
-    <HealthPageTemplate
+    <SummaryPageTemplate
       translationNamespace="healthcare"
       videoId={t("exampleVideoId", { defaultValue: "Q607TYRBxFU" })}
       tiles={tiles}

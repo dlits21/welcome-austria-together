@@ -9,6 +9,8 @@ const PROMINENT_TOPICS = [
   { key: "mentalHealth", icon: "psychology", color: "#8B5CF6", route: "/information/health/mental-health" },
   { key: "children", icon: "child-care", color: "#F59E0B", route: "/information/health/children" },
   { key: "trustedContacts", icon: "contact-phone", color: "#059669", route: "/information/health/contacts" },
+  { key: 'generalInformation', color: '#3B82F6', icon: 'help', route: "/information/health/generalInformation" },
+  { key: 'insurance', color: '#059669', icon: 'attach-money', route: "/information/health/insurance" }
 ];
 
 // Secondary health topics

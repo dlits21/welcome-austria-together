@@ -20,54 +20,6 @@ interface HealthTile {
 }
 
 const healthTiles: HealthTile[] = [
-  {
-    id: 'general-information',
-    title: { en: 'General Information', de: 'Allgemeine Informationen' },
-    color: '#3B82F6',
-    icon: 'ℹ️'
-  },
-  {
-    id: 'health-system-austria',
-    title: { en: 'Health System in Austria', de: 'Gesundheitssystem in Österreich' },
-    color: '#10B981',
-    icon: '🏥'
-  },
-  {
-    id: 'physical-health',
-    title: { en: 'Physical Health', de: 'Körperliche Gesundheit' },
-    color: '#F59E0B',
-    icon: '💪'
-  },
-  {
-    id: 'mental-health',
-    title: { en: 'Mental Health', de: 'Psychische Gesundheit' },
-    color: '#EF4444',
-    icon: '🧠'
-  },
-  {
-    id: 'do-you-want-to-talk',
-    title: { en: 'Do you want to talk', de: 'Möchten Sie sprechen' },
-    color: '#8B5CF6',
-    icon: '💬'
-  },
-  {
-    id: 'resources',
-    title: { en: 'Resources', de: 'Ressourcen' },
-    color: '#F97316',
-    icon: '📚'
-  },
-  {
-    id: 'emergency-services',
-    title: { en: 'Emergency Services', de: 'Notdienste' },
-    color: '#DC2626',
-    icon: '🚨'
-  },
-  {
-    id: 'insurance',
-    title: { en: 'Health Insurance', de: 'Krankenversicherung' },
-    color: '#059669',
-    icon: '🛡️'
-  }
 ];
 
 const HealthPage: React.FC = () => {
