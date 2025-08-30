@@ -1,0 +1,33 @@
+{
+  "pageTitle": "Children & Pediatric Care",
+  "introShort": "Essential health information for children and families in Austria.",
+  "confidentiality": "All children's health information is confidential and protected. Your privacy and your child's safety are our priority.",
+  "exampleVideoId": "Q607TYRBxFU",
+  "tiles": {
+    "red_flags_title": "Warning Signs",
+    "red_flags_sub": "When to seek urgent medical care for children",
+    "clinic_finder_title": "Find Child Clinic",
+    "clinic_finder_sub": "Locate pediatricians and child-friendly clinics",
+    "immunisation_title": "Vaccination Records",
+    "immunisation_sub": "Track and manage your child's immunisations",
+    "pediatrician_title": "Pediatrician Finder",
+    "pediatrician_sub": "Find specialists for children's health needs",
+    "development_title": "Development Milestones",
+    "development_sub": "Track your child's growth and development",
+    "emergency_title": "Children's Emergency",
+    "emergency_sub": "24/7 pediatric emergency services and contacts"
+  },
+  "trusted": {
+    "pediatric_hospital": "St. Anna Children's Hospital",
+    "pediatric_phone": "+43 1 40170",
+    "pediatric_url": "https://www.stanna.at",
+    "pediatric_sub": "Leading pediatric care in Vienna",
+    "child_health_line": "Children's Health Hotline",
+    "child_health_phone": "116 117",
+    "child_health_sub": "24/7 medical advice for children",
+    "family_support": "Family Support Services",
+    "family_phone": "+43 1 4000-8011",
+    "family_url": "https://www.wien.gv.at/menschen/kind-familie/",
+    "family_sub": "Municipal family and child services"
+  }
+}
