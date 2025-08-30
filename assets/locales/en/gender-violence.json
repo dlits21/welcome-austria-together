@@ -1,0 +1,38 @@
+{
+  "pageTitle": "Sexual & Gender-Based Violence Support",
+  "pageIntro": "Confidential support and resources for survivors of sexual and gender-based violence",
+  "confidentialityAssurance": "All services listed prioritize your safety and confidentiality. You control what information you share and when.",
+  "exampleVideoId": "dQw4w9WgXcQ",
+  "tiles": {
+    "immediate_title": "Immediate Safety",
+    "immediate_sub": "Safe escape routes and emergency contacts",
+    "evidence_title": "Preserve Evidence",
+    "evidence_sub": "Steps to document and preserve evidence safely",
+    "crisis_title": "Crisis Hotlines",
+    "crisis_sub": "24/7 confidential crisis support numbers",
+    "legal_title": "Legal Aid",
+    "legal_sub": "Free legal assistance and advocacy services",
+    "shelter_title": "Safe Housing",
+    "shelter_sub": "Emergency shelters and safe accommodation",
+    "counseling_title": "Trauma Counseling",
+    "counseling_sub": "Specialized therapy and support groups",
+    "reporting_title": "Reporting Options",
+    "reporting_sub": "Understanding your options - no pressure to report",
+    "support_title": "Ongoing Support",
+    "support_sub": "Long-term recovery and empowerment programs"
+  },
+  "trusted": {
+    "women_shelter": "Women's Emergency Shelter",
+    "women_phone": "0800 222 555",
+    "women_url": "https://www.frauenhelpline.at",
+    "women_sub": "24/7 safe housing and crisis intervention",
+    "legal_aid": "Legal Aid for Women",
+    "legal_phone": "0800 100 200",
+    "legal_url": "https://www.rechtsberatung-frauen.at",
+    "legal_sub": "Free legal consultation and court support",
+    "crisis_hotline": "Violence Prevention Hotline",
+    "crisis_phone": "0800 800 300",
+    "crisis_url": "https://www.gewaltpraevention.at",
+    "crisis_sub": "Confidential crisis intervention and safety planning"
+  }
+}

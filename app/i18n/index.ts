@@ -24,6 +24,7 @@ import enPrescription from '../../assets/locales/en/prescription.json';
 import enVaccinations from '../../assets/locales/en/vaccinations.json';
 import enReproductive from '../../assets/locales/en/reproductive.json';
 import enChildrenHealth from '../../assets/locales/en/children-health.json';
+import enGenderViolence from '../../assets/locales/en/gender-violence.json';
 
 import deCommon from '../../assets/locales/de/common.json';
 import deAsk from '../../assets/locales/de/ask.json';
@@ -73,6 +74,7 @@ export const resources = {
       vaccinations: enVaccinations,
       reproductive: enReproductive,
       childrenHealth: enChildrenHealth,
+      genderViolence: enGenderViolence,
        },
   de: { common: deCommon,
       ask: deAsk,
@@ -124,7 +126,7 @@ export async function initI18n() {
       lng: lang,
       fallbackLng: 'de',
       supportedLngs: SUPPORTED as unknown as string[],
-      ns: ['common','ask', 'home', 'housing', 'food', 'education', 'jobs', 'contacts', 'mentalHealth', 'findDoctor', 'prescription', 'vaccinations', 'reproductive', 'childrenHealth'],
+      ns: ['common','ask', 'home', 'housing', 'food', 'education', 'jobs', 'contacts', 'mentalHealth', 'findDoctor', 'prescription', 'vaccinations', 'reproductive', 'childrenHealth', 'genderViolence'],
       defaultNS: 'common',
       interpolation: { escapeValue: false },
       returnNull: false,
