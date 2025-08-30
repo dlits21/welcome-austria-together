@@ -19,6 +19,227 @@
     "hotline": "Health Hotline 1450",
     "hotline_sub": "Advice & info on nearest available doctor"
   },
+  "whatGPsDo": {
+    "roles": [
+      {
+        "icon": "👂",
+        "title": "First point of contact",
+        "text": "GPs are usually your first stop for health problems. They listen and decide what to do next."
+      },
+      {
+        "icon": "💊",
+        "title": "Prescriptions",
+        "text": "They can give prescriptions for medicine you need."
+      },
+      {
+        "icon": "🩺",
+        "title": "Basic checks",
+        "text": "They do blood pressure, blood tests, or simple examinations."
+      },
+      {
+        "icon": "📜",
+        "title": "Referrals",
+        "text": "If you need a specialist, they write you a referral."
+      },
+      {
+        "icon": "👨‍👩‍👧",
+        "title": "Family care",
+        "text": "They care for both adults and children, often the whole family."
+      }
+    ]
+  },
+  "howToRegister": {
+    "title": "How to register with a GP",
+    "steps": [
+      {
+        "number": 1,
+        "icon": "📍",
+        "title": "Find a GP clinic near you",
+        "text": "Search online or ask local NGOs / neighbors which GP practices accept new patients."
+      },
+      {
+        "number": 2,
+        "icon": "📝",
+        "title": "Fill out a registration form",
+        "text": "Most clinics have a paper form or online form. Staff can help if your language is different."
+      },
+      {
+        "number": 3,
+        "icon": "🪪",
+        "title": "Bring documents",
+        "text": "Usually an ID or passport and proof of address (like a letter, bill, or asylum papers)."
+      },
+      {
+        "number": 4,
+        "icon": "✅",
+        "title": "Confirmation",
+        "text": "The clinic will confirm and send you a letter or card once you are registered."
+      }
+    ],
+    "checklist": [
+      "Passport or ID (if available)",
+      "Proof of address (rental contract, bill, asylum letter)",
+      "Previous medical info (if you have it)",
+      "Interpreter or support person if language is a barrier"
+    ]
+  },
+  "whatToBring": {
+    "title": "What to Bring",
+    "required": [
+      {
+        "id": "id",
+        "icon": "🪪",
+        "title": "ID or Passport",
+        "note": "If you have one"
+      },
+      {
+        "id": "address",
+        "icon": "📍",
+        "title": "Proof of Address",
+        "note": "Letter, bill, or asylum papers"
+      }
+    ],
+    "optional": [
+      {
+        "id": "healthCard",
+        "icon": "💳",
+        "title": "Health / Insurance Card"
+      },
+      {
+        "id": "medications",
+        "icon": "💊",
+        "title": "List of Medications",
+        "note": "Names, dosages if possible"
+      },
+      {
+        "id": "records",
+        "icon": "📂",
+        "title": "Previous Medical Records",
+        "note": "If you have them"
+      },
+      {
+        "id": "interpreter",
+        "icon": "🗣️",
+        "title": "Interpreter or Support Person"
+      }
+    ],
+    "warningNote": "⚠️ If you don't have documents, you can still try to register. Ask the GP clinic or NGOs for help."
+  },
+  "whenToSee": {
+    "slides": {
+      "start": {
+        "icon": "🩺",
+        "title": "Do you need to see a doctor?",
+        "options": [
+          {
+            "text": "Emergency - I need help right now!",
+            "highlight": true,
+            "nextKey": "emergency"
+          },
+          {
+            "text": "I have health concerns but it's not urgent",
+            "nextKey": "nonUrgent"
+          },
+          {
+            "text": "I need regular check-up or preventive care",
+            "nextKey": "preventive"
+          }
+        ]
+      },
+      "emergency": {
+        "icon": "🚨",
+        "title": "Call Emergency Services",
+        "subtitle": "For life-threatening situations, call 144 immediately",
+        "options": [
+          {
+            "text": "Call 144 (Ambulance)",
+            "highlight": true
+          },
+          {
+            "text": "Go to nearest hospital emergency room",
+            "highlight": true
+          }
+        ]
+      },
+      "nonUrgent": {
+        "icon": "📞",
+        "title": "Contact your GP or Health Hotline",
+        "options": [
+          {
+            "text": "I have a GP already",
+            "nextKey": "contactGP"
+          },
+          {
+            "text": "I don't have a GP yet",
+            "nextKey": "findGP"
+          },
+          {
+            "text": "I'm not sure what to do",
+            "nextKey": "hotline"
+          }
+        ]
+      },
+      "preventive": {
+        "icon": "🏥",
+        "title": "Preventive Care & Check-ups",
+        "subtitle": "Regular health maintenance",
+        "options": [
+          {
+            "text": "Book appointment with your GP",
+            "nextKey": "contactGP"
+          },
+          {
+            "text": "Find a GP near you",
+            "nextKey": "findGP"
+          }
+        ]
+      },
+      "contactGP": {
+        "icon": "📱",
+        "title": "Contact Your GP",
+        "subtitle": "Call during office hours or use online booking if available"
+      },
+      "findGP": {
+        "icon": "🔍",
+        "title": "Find a GP",
+        "subtitle": "Use the doctor directory or ask for recommendations"
+      },
+      "hotline": {
+        "icon": "☎️",
+        "title": "Health Hotline 1450",
+        "subtitle": "Get advice on what to do next"
+      }
+    },
+    "extraInfo": {
+      "booking": {
+        "title": "📅 Booking Appointments",
+        "content": [
+          "Call during office hours (usually 8-12, 14-18)",
+          "Some clinics offer online booking",
+          "Be prepared to wait - popular doctors may be busy",
+          "Mention if it's urgent or routine"
+        ]
+      },
+      "walkIn": {
+        "title": "🚶 Walk-in Clinics",
+        "content": [
+          "Some GPs accept walk-in patients",
+          "Expect longer waiting times",
+          "Best for non-urgent matters",
+          "Call ahead to check availability"
+        ]
+      },
+      "documents": {
+        "title": "📋 What to Bring",
+        "content": [
+          "Health insurance card (e-card)",
+          "Photo ID or passport", 
+          "Previous medical records if relevant",
+          "List of current medications"
+        ]
+      }
+    }
+  },
   "details": {
     "when": {
       "title": "When should you see a GP?",
