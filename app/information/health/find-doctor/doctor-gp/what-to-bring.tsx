@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import ChecklistPageTemplate from "../../../../../components/ChecklistPageTemplate";
 
 export default function WhatToBringGP() {
-  const { t } = useTranslation("doctor-gp");
+  const { t } = useTranslation("doctorGP");
 
   const required = t("whatToBring.required", { returnObjects: true }) as Array<{
     id: string;
@@ -22,7 +22,7 @@ export default function WhatToBringGP() {
   return (
     <ChecklistPageTemplate
       title={t("whatToBring.title")}
-      translationNamespace="doctor-gp"
+      translationNamespace="doctorGP"
       required={required}
       optional={optional}
       warningNote={t("whatToBring.warningNote")}

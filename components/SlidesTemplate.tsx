@@ -67,9 +67,9 @@ export default function SlidesTemplate({
           <Text style={styles.checklistTitle}>
             {t("slides.doNot.title", { defaultValue: "Watch Out" })}
           </Text>
-          <Text style={styles.checkItem}>❌ {t("gp.doNot.slide1", { defaultValue: "Do not 1" })}</Text>
-          <Text style={styles.checkItem}>❌ {t("gp.doNot.slide2", { defaultValue: "Do not 2" })}</Text>
-          <Text style={styles.checkItem}>❌ {t("gp.doNot.slide3", { defaultValue: "Do not 3" })}</Text>
+          <Text style={styles.checkItem}>❌ {t("slides.doNot.slide1", { defaultValue: "Do not 1" })}</Text>
+          <Text style={styles.checkItem}>❌ {t("slides.doNot.slide2", { defaultValue: "Do not 2" })}</Text>
+          <Text style={styles.checkItem}>❌ {t("slides.doNot.slide3", { defaultValue: "Do not 3" })}</Text>
         </View>
       </ScrollView>
       <LanguageModal

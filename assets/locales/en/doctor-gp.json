@@ -212,7 +212,8 @@
     },
     "extraInfo": {
       "booking": {
-        "title": "📅 Booking Appointments",
+        "title": "Booking Appointments",
+        "icon": "📆",
         "content": [
           "Call during office hours (usually 8-12, 14-18)",
           "Some clinics offer online booking",
@@ -221,7 +222,8 @@
         ]
       },
       "walkIn": {
-        "title": "🚶 Walk-in Clinics",
+        "title": "Walk-in Clinics",
+        "icon": "🚶",
         "content": [
           "Some GPs accept walk-in patients",
           "Expect longer waiting times",
@@ -230,7 +232,8 @@
         ]
       },
       "documents": {
-        "title": "📋 What to Bring",
+        "title": "What to Bring",
+        "icon": "📝",
         "content": [
           "Health insurance card (e-card)",
           "Photo ID or passport", 
@@ -302,7 +305,7 @@
   },
   "checklist": {
     "required": "Required",
-    "optional": "Helpful but not mandatory",
+    "optional": "Helpful but not mandatory"
   },
   "decision": {
     "title": "When to See a GP",

@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import StepPageTemplate from "../../../../../components/StepPageTemplate";
 
 export default function HowToRegisterGP() {
-  const { t } = useTranslation("doctor-gp");
+  const { t } = useTranslation("doctorGP");
 
   const steps = t("howToRegister.steps", { returnObjects: true }) as Array<{
     number: number;
@@ -14,9 +14,11 @@ export default function HowToRegisterGP() {
 
   const checklist = t("howToRegister.checklist", { returnObjects: true }) as string[];
 
+  console.log("steps", steps)
+  console.log("checklist", checklist)
   return (
     <StepPageTemplate
-      translationNamespace="doctor-gp"
+      translationNamespace="doctorGP"
       steps={steps}
       checklist={checklist}
       videoId={t("videoId")}

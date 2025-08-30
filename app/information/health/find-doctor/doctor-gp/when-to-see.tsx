@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import DecisionTemplate from "../../../../../components/DecisionTemplate";
 
 export default function WhenToSeeGP() {
-  const { t } = useTranslation("doctor-gp");
+  const { t } = useTranslation("doctorGP");
 
   // Transform the slides object to array format expected by DecisionTemplate
   const slidesData = t("whenToSee.slides", { returnObjects: true }) as Record<string, any>;
@@ -16,14 +16,14 @@ export default function WhenToSeeGP() {
   const extraInfo = {
     title: "More Information",
     sections: Object.values(extraInfoData).map((section: any) => ({
-      icon: section.title.charAt(0), // Extract emoji from title
+      icon: section.icon, // Extract emoji from title
       heading: section.title.replace(/^.+ /, ""), // Remove emoji from title
       text: Array.isArray(section.content) ? section.content.join(". ") : section.content
     }))
   };
 
   return <DecisionTemplate
-            translationNamespace="doctor-gp"
+            translationNamespace="doctorGP"
             slides={slides}
             startKey="start"
             extraInfo={extraInfo} />;

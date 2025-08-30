@@ -4,7 +4,7 @@ import { useRouter } from "expo-router";
 import SummaryPageTemplate from "../../../../components/SummaryPageTemplate";
 
 export default function DoctorGP() {
-  const { t } = useTranslation("healthcare");
+  const { t } = useTranslation("doctorGP");
   const router = useRouter();
 
   const tiles = [

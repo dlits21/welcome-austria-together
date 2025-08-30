@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import SlidesTemplate from "../../../../../components/SlidesTemplate";
 
 export default function WhatGPsDo() {
-  const { t } = useTranslation("doctor-gp");
+  const { t } = useTranslation("doctorGP");
 
   const roles = t("whatGPsDo.roles", { returnObjects: true }) as Array<{
     icon: string;
@@ -13,7 +13,7 @@ export default function WhatGPsDo() {
 
   return (
     <SlidesTemplate
-      translationNamespace="doctor-gp"
+      translationNamespace="doctorGP"
       roles={roles}
       videoId={t("videoId")}
     />
