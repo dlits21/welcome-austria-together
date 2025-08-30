@@ -20,7 +20,7 @@ const SECONDARY_TOPICS = [
   { key: "wantToTalk", icon: "chat", color: "#EC4899", route: "/information/health/talk" },
   { key: "urgentHelp", icon: "emergency", color: "#EF4444", route: "/ask/emergency" },
   { key: "crisisSupport", icon: "support", color: "#7C3AED", route: "/information/health/crisis" },
-  { key: "prescriptions", icon: "local-pharmacy", color: "#0891B2", route: "/information/health/pharmacy" },
+  { key: "prescriptions", icon: "local-pharmacy", color: "#0891B2", route: "/information/health/prescription" },
   { key: "vaccinations", icon: "vaccines", color: "#22C55E", route: "/information/health/vaccinations" },
   { key: "reproductive", icon: "pregnant-woman", color: "#F97316", route: "/information/health/reproductive" },
   { key: "genderViolence", icon: "shield", color: "#BE185D", route: "/information/health/violence-support" },

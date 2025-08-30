@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, SafeAreaView, ScrollView, Alert, Linking } from 'react-native';
+import { useTranslation } from "react-i18next";
 import { MaterialIcons } from '@expo/vector-icons';
-import { useRouter } from 'expo-router';
-import { useLanguage } from '../../../contexts/LanguageContext';
-import { useTranslation } from '../../../hooks/useTranslation';
-import SummaryPageTemplate from '../../../components/SummaryPageTemplate';
+import { useRouter } from "expo-router";
+import SummaryPageTemplate from "../../../components/SummaryPageTemplate";
 
-const ReproductivePage: React.FC = () => {
-  const { currentLanguage } = useLanguage();
-  const t = useTranslation('reproductive');
+export default function ReproductivePage() {
+  const { t } = useTranslation("reproductive");
   const router = useRouter();
 
   // Handle emergency calls with privacy notice
@@ -29,51 +27,59 @@ const ReproductivePage: React.FC = () => {
   // Tiles data with reproductive health topics
   const tiles = [
     {
-      icon: 'pregnant-woman' as keyof typeof MaterialIcons.glyphMap,
+      key: 'pregnant-woman',
+      icon:  <MaterialIcons name="pregnant-woman" size={24} color="#3B82F6" />,
       title: t('tiles.pregnancy_care_title'),
-      subtitle: t('tiles.pregnancy_care_sub'),
+      sub: t('tiles.pregnancy_care_sub'),
       onPress: () => console.log('Pregnancy care pressed')
     },
     {
-      icon: 'assignment' as keyof typeof MaterialIcons.glyphMap,
+      key: "signs",
+      icon:  <MaterialIcons name="signs" size={24} color="#DC2626" />,
       title: t('tiles.antenatal_title'),
-      subtitle: t('tiles.antenatal_sub'),
+      sub: t('tiles.antenatal_sub'),
       onPress: () => console.log('Antenatal checklist pressed')
     },
     {
-      icon: 'medical-services' as keyof typeof MaterialIcons.glyphMap,
+      key: 'medical-services',
+      icon:  <MaterialIcons name="medical-services" size={24} color="#F59E0B" />,
       title: t('tiles.contraception_title'),
-      subtitle: t('tiles.contraception_sub'),
+      sub: t('tiles.contraception_sub'),
       onPress: () => console.log('Contraception pressed')
     },
     {
-      icon: 'emergency' as keyof typeof MaterialIcons.glyphMap,
+      key: 'emergency',
+      icon:  <MaterialIcons name="emergency" size={24} color="#059669" />,
       title: t('tiles.emergency_contraception_title'),
-      subtitle: t('tiles.emergency_contraception_sub'),
+      sub: t('tiles.emergency_contraception_sub'),
       onPress: () => console.log('Emergency contraception pressed')
     },
     {
-      icon: 'support' as keyof typeof MaterialIcons.glyphMap,
+      key: 'support',
+      icon:  <MaterialIcons name="support" size={24} color="#7C3AED" />,
       title: t('tiles.women_ngos_title'),
-      subtitle: t('tiles.women_ngos_sub'),
+      sub: t('tiles.women_ngos_sub'),
       onPress: () => handleEmergencyCall(t('trusted.women_helpline_phone'))
     },
     {
-      icon: 'home' as keyof typeof MaterialIcons.glyphMap,
+      key: 'home',
+      icon:  <MaterialIcons name="home" size={24} color="#0891B2" />,
       title: t('tiles.shelter_title'),
-      subtitle: t('tiles.shelter_sub'),
+      sub: t('tiles.shelter_sub'),
       onPress: () => console.log('Shelter pressed')
     },
     {
-      icon: 'security' as keyof typeof MaterialIcons.glyphMap,
+      key: 'security',
+      icon:  <MaterialIcons name="security" size={24} color="#EA580C" />,
       title: t('tiles.sexual_violence_title'),
-      subtitle: t('tiles.sexual_violence_sub'),
+      sub: t('tiles.sexual_violence_sub'),
       onPress: () => handleEmergencyCall(t('trusted.sexual_violence_phone'))
     },
     {
-      icon: 'gavel' as keyof typeof MaterialIcons.glyphMap,
+      key: 'gavel',
       title: t('tiles.reproductive_rights_title'),
-      subtitle: t('tiles.reproductive_rights_sub'),
+      icon:  <MaterialIcons name="gavel" size={24} color="#856404" />,
+      sub: t('tiles.reproductive_rights_sub'),
       onPress: () => console.log('Reproductive rights pressed')
     }
   ];
@@ -146,5 +152,3 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
 });
-
-export default ReproductivePage;
