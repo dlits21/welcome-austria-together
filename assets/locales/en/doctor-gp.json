@@ -1,0 +1,72 @@
+{
+  "pageTitle": "General Practitioner (GP)",
+  "pageIntro": "Everything you need to know about finding and visiting a family doctor in Austria",
+  "videoId": "Q607TYRBxFU",
+  "tiles": {
+    "when_title": "When to see a GP",
+    "when_sub": "For non-emergencies, everyday health issues",
+    "what_title": "What GPs do",
+    "what_sub": "Exams, prescriptions, referrals",
+    "register_title": "How to register",
+    "register_sub": "Choose a doctor near you, bring ID + insurance",
+    "bring_title": "What to bring",
+    "bring_sub": "Insurance card, ID, medical documents"
+  },
+  "contacts": {
+    "directory": "Find a GP – Doctor Directory",
+    "directory_url": "https://www.arztsuche.at",
+    "directory_sub": "Search GPs by location and language",
+    "hotline": "Health Hotline 1450",
+    "hotline_sub": "Advice & info on nearest available doctor"
+  },
+  "details": {
+    "when": {
+      "title": "When should you see a GP?",
+      "content": [
+        "Cold, flu, or fever symptoms",
+        "Minor injuries or cuts",
+        "Stomach problems or nausea",
+        "Skin conditions or rashes",
+        "Headaches or body pain",
+        "Regular check-ups and vaccinations",
+        "Prescription renewals",
+        "Mental health concerns"
+      ]
+    },
+    "what": {
+      "title": "What do GPs do?",
+      "content": [
+        "Physical examinations and health assessments",
+        "Diagnose common illnesses and conditions",
+        "Prescribe medications",
+        "Provide vaccinations",
+        "Refer to specialist doctors when needed",
+        "Health counseling and prevention advice",
+        "Manage chronic conditions",
+        "Issue medical certificates"
+      ]
+    },
+    "register": {
+      "title": "How to register with a GP",
+      "steps": [
+        "Find a GP near your home or workplace",
+        "Call or visit during office hours",
+        "Bring your e-card (insurance card)",
+        "Bring photo ID (passport or residence permit)",
+        "Fill out registration forms",
+        "Some doctors may have waiting lists"
+      ]
+    },
+    "bring": {
+      "title": "What to bring to your GP appointment",
+      "items": [
+        "e-card (health insurance card)",
+        "Photo identification",
+        "Previous medical records",
+        "List of current medications",
+        "Referral letter (if you have one)",
+        "List of symptoms or concerns"
+      ]
+    }
+  }
+}
