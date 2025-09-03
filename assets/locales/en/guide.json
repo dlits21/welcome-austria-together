@@ -1,0 +1,147 @@
+{
+  "pageTitle": "Your Austria Guide",
+  "pageIntro": "Get personalized information based on your journey in Austria",
+  "selectTimeframe": "How long have you been in Austria?",
+  "options": {
+    "not_arrived": {
+      "title": "I haven't arrived yet",
+      "subtitle": "Prepare for your journey to Austria"
+    },
+    "one_week": {
+      "title": "About a week",
+      "subtitle": "Essential first steps in Austria"
+    },
+    "one_month": {
+      "title": "About a month",
+      "subtitle": "Settling in and next steps"
+    },
+    "longer": {
+      "title": "Longer than a month",
+      "subtitle": "Long-term integration and opportunities"
+    }
+  },
+  "content": {
+    "not_arrived": {
+      "title": "Preparing for Austria",
+      "subtitle": "Essential information before your arrival",
+      "sections": [
+        {
+          "icon": "📄",
+          "title": "Documents to Prepare",
+          "description": "Gather important documents like passport, birth certificates, and any educational certificates",
+          "route": "/information/document"
+        },
+        {
+          "icon": "💰",
+          "title": "Financial Planning",
+          "description": "Understand costs of living and available financial support",
+          "route": "/information/finance"
+        },
+        {
+          "icon": "🏠",
+          "title": "Housing Research",
+          "description": "Learn about housing options and accommodation types",
+          "route": "/information/housing"
+        },
+        {
+          "icon": "🏥",
+          "title": "Healthcare System",
+          "description": "Understand Austria's healthcare system and insurance",
+          "route": "/information/health"
+        }
+      ]
+    },
+    "one_week": {
+      "title": "Your First Week",
+      "subtitle": "Immediate priorities for new arrivals",
+      "sections": [
+        {
+          "icon": "🆔",
+          "title": "Register Your Arrival",
+          "description": "Complete residence registration (Meldezettel) within 3 days",
+          "route": "/information/asylum"
+        },
+        {
+          "icon": "🏥",
+          "title": "Emergency Services",
+          "description": "Know emergency numbers and nearest hospital",
+          "route": "/ask/emergency"
+        },
+        {
+          "icon": "🍽️",
+          "title": "Food & Basic Needs",
+          "description": "Find food banks, grocery stores, and essential services",
+          "route": "/information/food"
+        },
+        {
+          "icon": "📱",
+          "title": "Communication",
+          "description": "Get a SIM card and stay connected",
+          "route": "/information/contacts"
+        }
+      ]
+    },
+    "one_month": {
+      "title": "Getting Settled",
+      "subtitle": "Building your foundation in Austria",
+      "sections": [
+        {
+          "icon": "🎓",
+          "title": "Start Learning German",
+          "description": "Enroll in German classes and language programs",
+          "route": "/learn"
+        },
+        {
+          "icon": "👥",
+          "title": "Community Integration",
+          "description": "Connect with local communities and support groups",
+          "route": "/community"
+        },
+        {
+          "icon": "🏛️",
+          "title": "Legal Support",
+          "description": "Understand your rights and legal processes",
+          "route": "/ask/legal-support"
+        },
+        {
+          "icon": "👶",
+          "title": "Children's Needs",
+          "description": "School enrollment and child-specific services",
+          "route": "/information/education"
+        }
+      ]
+    },
+    "longer": {
+      "title": "Long-term Integration",
+      "subtitle": "Building your future in Austria",
+      "sections": [
+        {
+          "icon": "💼",
+          "title": "Career Development",
+          "description": "Job search, professional training, and career counseling",
+          "route": "/information/jobs"
+        },
+        {
+          "icon": "🎓",
+          "title": "Advanced Education",
+          "description": "University preparation and professional qualifications",
+          "route": "/information/education"
+        },
+        {
+          "icon": "🏛️",
+          "title": "Civic Participation",
+          "description": "Understand Austrian politics and civic duties",
+          "route": "/information/everyday/political-education"
+        },
+        {
+          "icon": "🌍",
+          "title": "Cultural Integration",
+          "description": "Deep cultural understanding and social participation",
+          "route": "/information/everyday/culture"
+        }
+      ]
+    }
+  },
+  "back": "Back to options",
+  "tts_lang": "en-US"
+}
