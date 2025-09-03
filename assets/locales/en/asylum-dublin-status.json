@@ -1,0 +1,41 @@
+{
+  "start": {
+    "title": "Dublin Regulation",
+    "subtitle": "What does this mean for you?",
+    "options": {
+      "learn": "Learn about Dublin rules",
+      "rights": "What are my rights?"
+    }
+  },
+  "rules": {
+    "title": "Dublin Rules", 
+    "subtitle": "The first EU country where you applied is responsible for your case",
+    "options": {
+      "transfer": "When can I be transferred?",
+      "appeal": "Can I appeal?"
+    }
+  },
+  "rights": {
+    "title": "Your Rights",
+    "subtitle": "Even under Dublin regulation, you have important rights",
+    "options": {
+      "stay": "Right to stay during process",
+      "legal": "Right to legal assistance"
+    }
+  },
+  "transfer": {
+    "title": "Transfer Process",
+    "subtitle": "You have 6 months to be transferred, after which responsibility shifts to current country", 
+    "options": {
+      "prevent": "How to prevent transfer?"
+    }
+  },
+  "appeal": {
+    "title": "Appeal Options",
+    "subtitle": "You can challenge Dublin decisions in court"
+  },
+  "protection": {
+    "title": "Protection During Process", 
+    "subtitle": "You cannot be deported while your case is pending"
+  }
+}

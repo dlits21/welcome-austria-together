@@ -1,0 +1,24 @@
+{
+  "videoId": "subsidiary-protection-explained",
+  "temporary": {
+    "title": "Temporary Status",
+    "desc": "Subsidiary protection is granted for one year initially and can be renewed if conditions in your home country remain dangerous. You must apply for renewal before your status expires."
+  },
+  "work": {
+    "title": "Limited Work Access", 
+    "desc": "You can work but may need additional permits for certain jobs. Some employment programs may have restrictions. Check with employment services about specific requirements for your situation."
+  },
+  "healthcare": {
+    "title": "Healthcare Access",
+    "desc": "You have access to essential healthcare services including emergency treatment, basic medical care, and mental health services. Coverage may be more limited than for refugees."
+  },
+  "family": {
+    "title": "Family Reunification",
+    "desc": "Family reunification is possible but may take longer and have more restrictions than for recognized refugees. Income and housing requirements may be stricter."
+  },
+  "checklist": {
+    "renew": "Remember to renew your status before expiry",
+    "documents": "Keep all official documents safe and updated", 
+    "legal": "Seek legal advice if your situation changes"
+  }
+}

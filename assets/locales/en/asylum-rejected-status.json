@@ -1,0 +1,32 @@
+{
+  "pageTitle": "After Rejection - Act Fast",
+  "warning": "⚠️ TIME IS CRITICAL: Most appeals must be filed within 7-14 days. Do not delay seeking help.",
+  "required": {
+    "appeal": {
+      "title": "File Appeal Immediately",
+      "note": "You usually have only 7-14 days to appeal the decision"
+    },
+    "legal": {
+      "title": "Get Legal Assistance", 
+      "note": "Contact a lawyer or NGO specializing in asylum law immediately"
+    },
+    "documents": {
+      "title": "Gather All Documents",
+      "note": "Collect all papers related to your case and rejection notice"
+    }
+  },
+  "optional": {
+    "evidence": {
+      "title": "New Evidence",
+      "note": "Any new proof about your situation that wasn't considered before"
+    },
+    "medical": {
+      "title": "Medical Documentation",
+      "note": "Medical reports that support your case, especially for trauma or health issues"
+    },
+    "witnesses": {
+      "title": "Witness Statements",
+      "note": "Letters from people who can confirm your story or situation"
+    }
+  }
+}

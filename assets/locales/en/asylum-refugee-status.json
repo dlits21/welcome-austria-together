@@ -1,0 +1,19 @@
+{
+  "videoId": "refugee-status-rights-explained",
+  "protection": {
+    "title": "Full Protection",
+    "text": "As a recognized refugee, you receive comprehensive protection under international law. You cannot be returned to your home country where you face persecution. This status gives you the strongest legal protection available to asylum seekers."
+  },
+  "work": {
+    "title": "Work Rights", 
+    "text": "You have unrestricted access to the labor market. You can work in any job, start your own business, and access employment support services. No work permits needed - you have the same employment rights as citizens."
+  },
+  "housing": {
+    "title": "Housing Rights",
+    "text": "You can access social housing programs, rental assistance, and housing subsidies. You have the right to live wherever you choose and can sign rental contracts. Local authorities must provide housing support if needed."
+  },
+  "family": {
+    "title": "Family Reunification",
+    "text": "You can apply to bring your spouse and unmarried children under 18 to join you. The process is generally faster and has fewer restrictions compared to other statuses. Extended family may also be eligible in some cases."
+  }
+}

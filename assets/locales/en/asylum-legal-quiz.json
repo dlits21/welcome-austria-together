@@ -1,0 +1,62 @@
+{
+  "pageTitle": "Find Your Legal Status",
+  "quiz": {
+    "title": "Which status do I have?"
+  },
+  "comparison": {
+    "title": "Rights Comparison",
+    "rights": "Rights"
+  },
+  "status": {
+    "refugee": {
+      "title": "Refugee Status",
+      "short": "Refugee", 
+      "desc": "Full protection and comprehensive rights",
+      "rights": {
+        "work": "✅ Full access",
+        "housing": "✅ Full access", 
+        "healthcare": "✅ Full access",
+        "family": "✅ Yes"
+      }
+    },
+    "subsidiary": {
+      "title": "Subsidiary Protection",
+      "short": "Subsidiary",
+      "desc": "Temporary protection with limited rights", 
+      "rights": {
+        "work": "⚠️ Restricted",
+        "housing": "⚠️ Limited",
+        "healthcare": "✅ Essential only",
+        "family": "⚠️ Restricted"
+      }
+    },
+    "dublin": {
+      "title": "Dublin Case", 
+      "short": "Dublin",
+      "desc": "May be transferred to first EU country",
+      "rights": {
+        "work": "❌ No access",
+        "housing": "⚠️ Basic only",
+        "healthcare": "⚠️ Emergency only", 
+        "family": "❌ No"
+      }
+    },
+    "rejected": {
+      "title": "Rejected",
+      "short": "Rejected",
+      "desc": "Denied asylum - appeal quickly",
+      "rights": {
+        "work": "❌ No access",
+        "housing": "❌ No access",
+        "healthcare": "⚠️ Emergency only",
+        "family": "❌ No"
+      }
+    }
+  },
+  "rights": {
+    "work": "Work Rights",
+    "housing": "Housing Access", 
+    "healthcare": "Healthcare",
+    "family": "Family Reunification"
+  }
+}
