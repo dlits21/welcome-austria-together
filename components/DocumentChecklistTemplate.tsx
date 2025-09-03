@@ -9,6 +9,7 @@ import {
   Pressable,
   Alert,
   Modal,
+  useWindowDimensions
 } from "react-native";
 import { useTranslation } from "react-i18next";
 import { MaterialIcons } from "@expo/vector-icons";
@@ -50,6 +51,7 @@ export default function DocumentChecklistTemplate({
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
   const [showTutorial, setShowTutorial] = useState(false);
+  const { width } = useWindowDimensions();
 
   const toggle = (id: string) => {
     setChecked((prev) =>
@@ -125,19 +127,13 @@ export default function DocumentChecklistTemplate({
         showLanguageModal={() => setShowLanguageModal(true)}
         showVirtualAssistant={() => setShowVirtualAssistant(true)}
         showTutorial={() => setShowTutorial(true)}
-        showBackButton={true}
+        showBackButton
       />
 
       <ScrollView contentContainerStyle={styles.container}>
-        {videoId && (
-          <View style={styles.videoContainer}>
-            <YoutubePlayer
-              height={220}
-              play={false}
-              videoId={videoId}
-            />
-          </View>
-        )}
+        <View style={styles.videoContainer}>
+          <YoutubePlayer width={width*0.7} height={width*0.4} play={false} videoId={"Q607TYRBxFU"} />
+        </View>
 
         <Text style={styles.sectionTitle}>
           {t("checklist.required", { defaultValue: "Required documents" })}

@@ -4,6 +4,7 @@
     "required": "Required",
     "optional": "Helpful but not mandatory"
   },
+  "videoUrl": "Q607TYRBxFU",
   "required": {
     "passport_id_title": "Passport or ID (if available)",
     "passport_id_note": "Bring any travel or identification documents you have.",
