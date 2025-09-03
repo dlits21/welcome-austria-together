@@ -15,8 +15,14 @@
   "optional": {
     "proof_origin_title": "Proof of Origin",
     "proof_origin_note": "Any document showing where you are from (birth certificate, residency card, etc.).",
+    "birth_title": "Birth certificate",
+    "birth_title_note": "Bring originals if possible",
+    "marriage_title": "Marriage certificate",
+    "marriage_title_note": "Only if relevant",
     "medical_records_title": "Medical Records",
     "medical_records_note": "Bring records of ongoing treatments, prescriptions, or health conditions.",
+    "proof_photos_title": "Photos / videos",
+    "proof_photos_title_note": "Proof of events or threats",
     "school_work_certificates_title": "School or Work Certificates",
     "school_work_certificates_note": "Evidence of your education or employment history."
   },
