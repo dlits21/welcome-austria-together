@@ -126,6 +126,34 @@ export default function Guide() {
             </Pressable>
           ))}
         </View>
+
+        {/* Navigation Buttons */}
+        <View style={styles.bottomButtons}>
+          <Pressable
+            style={styles.navigationButton}
+            onPress={() => router.push("/information/contacts")}
+          >
+            <MaterialIcons name="contact-support" size={24} color="#fff" />
+            <Text style={styles.navigationButtonText}>
+              {t("navigation.trustedNGO")}
+            </Text>
+          </Pressable>
+          
+          <Pressable
+            style={[styles.navigationButton, styles.peerButton]}
+            onPress={() => router.push("/ask")}
+          >
+            <MaterialIcons name="group" size={24} color="#fff" />
+            <Text style={styles.navigationButtonText}>
+              {t("navigation.peerSystem")}
+            </Text>
+          </Pressable>
+        </View>
+
+        {/* Extra Info */}
+        <View style={styles.extraInfo}>
+          <Text style={styles.extraInfoText}>{t("extraInfo")}</Text>
+        </View>
       </View>
     );
   };
@@ -307,5 +335,44 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: "#6B7280",
     lineHeight: 20
-  }
+  },
+  bottomButtons: {
+    flexDirection: "row",
+    gap: 12,
+    marginTop: 24,
+    paddingHorizontal: 4,
+  },
+  navigationButton: {
+    flex: 1,
+    backgroundColor: "#2563EB",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 16,
+    borderRadius: 12,
+    gap: 8,
+  },
+  peerButton: {
+    backgroundColor: "#059669",
+  },
+  navigationButtonText: {
+    color: "#fff",
+    fontSize: 14,
+    fontWeight: "600",
+    textAlign: "center",
+  },
+  extraInfo: {
+    backgroundColor: "#f0f9ff",
+    padding: 16,
+    borderRadius: 12,
+    marginTop: 20,
+    borderWidth: 1,
+    borderColor: "#bfdbfe",
+  },
+  extraInfoText: {
+    fontSize: 14,
+    color: "#1f2937",
+    textAlign: "center",
+    lineHeight: 20,
+  },
 });

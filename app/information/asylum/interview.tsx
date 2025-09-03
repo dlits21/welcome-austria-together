@@ -105,11 +105,17 @@ export default function AsylumInterview() {
       question: t("roleplay.q1", {
         defaultValue: "Why did you leave your country?",
       }),
+      answer: t("roleplay.q1_answer", {
+        defaultValue: "Be honest about your situation. Mention specific threats, persecution, or dangers you faced. Provide details about who threatened you and why.",
+      }),
     },
     {
       id: "q2",
       question: t("roleplay.q2", {
         defaultValue: "Do you fear going back? Why?",
+      }),
+      answer: t("roleplay.q2_answer", {
+        defaultValue: "Explain what would happen if you returned. Be specific about the risks you would face and why the situation hasn't changed.",
       }),
     },
     {
@@ -117,11 +123,47 @@ export default function AsylumInterview() {
       question: t("roleplay.q3", {
         defaultValue: "What happened to you on your journey?",
       }),
+      answer: t("roleplay.q3_answer", {
+        defaultValue: "Describe your journey chronologically. Include important stops, any documents you had, and significant events that occurred.",
+      }),
     },
     {
       id: "q4",
       question: t("roleplay.q4", {
         defaultValue: "Who are your family members here or abroad?",
+      }),
+      answer: t("roleplay.q4_answer", {
+        defaultValue: "List all family members, their locations, and their status. Include information about any family members who are already in Austria or Europe.",
+      }),
+    },
+  ];
+
+  // Trusted NGOs
+  const trustedNGOs = [
+    {
+      id: "caritas",
+      name: t("trustedNGOs.caritas.name", { defaultValue: "Caritas Austria" }),
+      phone: t("trustedNGOs.caritas.phone", { defaultValue: "05 1776 0" }),
+      url: t("trustedNGOs.caritas.url", { defaultValue: "https://www.caritas.at" }),
+      description: t("trustedNGOs.caritas.description", {
+        defaultValue: "Legal advice and support for asylum seekers in multiple languages",
+      }),
+    },
+    {
+      id: "diakonie",
+      name: t("trustedNGOs.diakonie.name", { defaultValue: "Diakonie Refugee Service" }),
+      phone: t("trustedNGOs.diakonie.phone", { defaultValue: "01 409 8001" }),
+      url: t("trustedNGOs.diakonie.url", { defaultValue: "https://diakonie.at" }),
+      description: t("trustedNGOs.diakonie.description", {
+        defaultValue: "Comprehensive support including legal aid and interview preparation",
+      }),
+    },
+    {
+      id: "volkshilfe",
+      name: t("trustedNGOs.volkshilfe.name", { defaultValue: "Volkshilfe Austria" }),
+      phone: t("trustedNGOs.volkshilfe.phone", { defaultValue: "01 402 6209" }),
+      description: t("trustedNGOs.volkshilfe.description", {
+        defaultValue: "Free legal consultation and asylum procedure guidance",
       }),
     },
   ];
@@ -133,6 +175,7 @@ export default function AsylumInterview() {
       slides={slides}
       checklist={checklist}
       roleplay={roleplay}
+      trustedNGOs={trustedNGOs}
     />
   );
 }

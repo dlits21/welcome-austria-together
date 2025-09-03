@@ -143,5 +143,10 @@
     }
   },
   "back": "Back to options",
-  "tts_lang": "en-US"
+  "tts_lang": "en-US",
+  "extraInfo": "All information provided is confidential and will help us give you the most relevant guidance for your situation in Austria.",
+  "navigation": {
+    "trustedNGO": "Trusted NGO Support",
+    "peerSystem": "Peer Support System"
+  }
 }

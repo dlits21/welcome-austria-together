@@ -43,6 +43,15 @@ interface ChecklistItem {
 interface RoleplayQuestion {
   id: string;
   question: string;
+  answer?: string;
+}
+
+interface TrustedNGO {
+  id: string;
+  name: string;
+  phone: string;
+  url?: string;
+  description: string;
 }
 
 interface Props {
@@ -51,6 +60,7 @@ interface Props {
   slides: Slide[];
   checklist: ChecklistItem[];
   roleplay: RoleplayQuestion[];
+  trustedNGOs: TrustedNGO[];
 }
 
 export default function InterviewPrepTemplate({
@@ -59,13 +69,14 @@ export default function InterviewPrepTemplate({
   slides,
   checklist,
   roleplay,
+  trustedNGOs,
 }: Props) {
   const { t } = useTranslation(translationNamespace);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
   const [showTutorial, setShowTutorial] = useState(false);
   const [checked, setChecked] = useState<string[]>([]);
-  const [answers, setAnswers] = useState<{ [id: string]: string }>({});
+  const [expandedQuestions, setExpandedQuestions] = useState<string[]>([]);
 
   const toggleCheck = (id: string) => {
     setChecked((prev) =>
@@ -73,28 +84,12 @@ export default function InterviewPrepTemplate({
     );
   };
 
-  const speak = (text: string) => {
-    if (!text) return;
-    const ttsLang = t("tts_lang", { defaultValue: "de-DE" });
-    Speech.stop();
-    Speech.speak(text, { language: ttsLang });
+  const toggleQuestion = (id: string) => {
+    setExpandedQuestions((prev) =>
+      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
+    );
   };
 
-  const saveAnswers = async () => {
-    try {
-      const fileUri = FileSystem.documentDirectory + "interview_answers.txt";
-      let content = "My Practice Answers:\n\n";
-      Object.entries(answers).forEach(([q, a]) => {
-        content += `${q}:\n${a}\n\n`;
-      });
-      await FileSystem.writeAsStringAsync(fileUri, content);
-      if (await Sharing.isAvailableAsync()) {
-        await Sharing.shareAsync(fileUri);
-      }
-    } catch (e) {
-      console.warn("Error saving answers:", e);
-    }
-  };
 
   return (
     <SafeAreaView style={styles.safe}>
@@ -123,9 +118,13 @@ export default function InterviewPrepTemplate({
         <Text style={styles.sectionTitle}>{t("sections.slides")}</Text>
         {slides.map((sl) => (
           <View key={sl.id} style={styles.card}>
-            <Text style={styles.slideIcon}>{sl.icon}</Text>
-            <Text style={styles.cardTitle}>{sl.title}</Text>
-            <Text style={styles.cardText}>{sl.text}</Text>
+            <View style={styles.slideHeader}>
+              <Text style={styles.slideIcon}>{sl.icon}</Text>
+              <View style={{ flex: 1 }}>
+                <Text style={styles.cardTitle}>{sl.title}</Text>
+                <Text style={styles.cardText}>{sl.text}</Text>
+              </View>
+            </View>
           </View>
         ))}
 
@@ -151,35 +150,50 @@ export default function InterviewPrepTemplate({
           </Pressable>
         ))}
 
-        {/* Role-play Practice */}
+        {/* Questions & Answers */}
         <Text style={styles.sectionTitle}>{t("sections.roleplay")}</Text>
         {roleplay.map((q) => (
           <View key={q.id} style={styles.card}>
-            <Text style={styles.cardTitle}>{q.question}</Text>
-            <View style={styles.roleplayActions}>
-              <Pressable style={styles.ttsBtn} onPress={() => speak(q.question)}>
-                <MaterialIcons name="record-voice-over" size={24} color="#fff" />
-                <Text style={styles.btnText}>{t("listen")}</Text>
-              </Pressable>
-              <Pressable
-                style={styles.answerBtn}
-                onPress={() =>
-                  setAnswers((prev) => ({
-                    ...prev,
-                    [q.question]: t("answer_placeholder"),
-                  }))
-                }
-              >
-                <MaterialIcons name="edit" size={24} color="#fff" />
-                <Text style={styles.btnText}>{t("write")}</Text>
-              </Pressable>
-            </View>
+            <Pressable
+              style={styles.questionHeader}
+              onPress={() => toggleQuestion(q.id)}
+            >
+              <Text style={styles.cardTitle}>{q.question}</Text>
+              <MaterialIcons
+                name={expandedQuestions.includes(q.id) ? "expand-less" : "expand-more"}
+                size={24}
+                color="#666"
+              />
+            </Pressable>
+            {expandedQuestions.includes(q.id) && q.answer && (
+              <View style={styles.answerSection}>
+                <Text style={styles.answerText}>{q.answer}</Text>
+              </View>
+            )}
           </View>
         ))}
 
-        <Pressable style={styles.saveBtn} onPress={saveAnswers}>
-          <Text style={styles.saveBtnText}>{t("saveAnswers")}</Text>
-        </Pressable>
+        {/* Trusted NGOs */}
+        <Text style={styles.sectionTitle}>{t("sections.trustedNGOs")}</Text>
+        {trustedNGOs.map((ngo) => (
+          <View key={ngo.id} style={styles.ngoCard}>
+            <View style={styles.ngoHeader}>
+              <MaterialIcons name="support-agent" size={24} color="#2563EB" />
+              <Text style={styles.ngoName}>{ngo.name}</Text>
+            </View>
+            <Text style={styles.ngoDescription}>{ngo.description}</Text>
+            <View style={styles.ngoContact}>
+              <MaterialIcons name="phone" size={18} color="#059669" />
+              <Text style={styles.ngoPhone}>{ngo.phone}</Text>
+            </View>
+            {ngo.url && (
+              <View style={styles.ngoContact}>
+                <MaterialIcons name="language" size={18} color="#059669" />
+                <Text style={styles.ngoUrl}>{ngo.url}</Text>
+              </View>
+            )}
+          </View>
+        ))}
       </ScrollView>
 
       <LanguageModal visible={showLanguageModal} onClose={() => setShowLanguageModal(false)} />
@@ -204,7 +218,8 @@ const styles = StyleSheet.create({
   cardIcon: { marginBottom: 6 },
   cardTitle: { fontSize: 16, fontWeight: "700", marginBottom: 4 },
   cardText: { fontSize: 14, color: "#555" },
-  slideIcon: { fontSize: 26, marginBottom: 6, textAlign: "center" },
+  slideHeader: { flexDirection: "row", alignItems: "flex-start" },
+  slideIcon: { fontSize: 26, marginRight: 12, marginTop: 2 },
   item: {
     flexDirection: "row",
     alignItems: "center",
@@ -220,29 +235,30 @@ const styles = StyleSheet.create({
   itemTitle: { fontSize: 16, fontWeight: "600" },
   itemNote: { fontSize: 13, color: "#666" },
   checkbox: { fontSize: 20, marginLeft: 8 },
-  roleplayActions: { flexDirection: "row", marginTop: 8, gap: 10 },
-  ttsBtn: {
+  questionHeader: {
     flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: "#2563EB",
-    padding: 8,
-    borderRadius: 6,
-    marginRight: 6,
-  },
-  answerBtn: {
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: "#10B981",
-    padding: 8,
-    borderRadius: 6,
-  },
-  btnText: { color: "#fff", marginLeft: 6 },
-  saveBtn: {
-    marginTop: 20,
-    backgroundColor: "#F59E0B",
-    padding: 12,
-    borderRadius: 8,
+    justifyContent: "space-between",
     alignItems: "center",
   },
-  saveBtnText: { color: "#fff", fontWeight: "700" },
+  answerSection: { 
+    marginTop: 10,
+    paddingTop: 10,
+    borderTopWidth: 1,
+    borderTopColor: "#eee",
+  },
+  answerText: { fontSize: 14, color: "#555", lineHeight: 20 },
+  ngoCard: {
+    backgroundColor: "#f0f9ff",
+    borderRadius: 12,
+    padding: 16,
+    marginBottom: 12,
+    borderWidth: 1,
+    borderColor: "#bfdbfe",
+  },
+  ngoHeader: { flexDirection: "row", alignItems: "center", marginBottom: 8 },
+  ngoName: { fontSize: 16, fontWeight: "700", marginLeft: 8 },
+  ngoDescription: { fontSize: 14, color: "#374151", marginBottom: 8 },
+  ngoContact: { flexDirection: "row", alignItems: "center", marginTop: 4 },
+  ngoPhone: { fontSize: 14, color: "#059669", marginLeft: 4, fontWeight: "600" },
+  ngoUrl: { fontSize: 12, color: "#059669", marginLeft: 4 },
 });
