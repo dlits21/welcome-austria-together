@@ -86,6 +86,34 @@ export default function Guide() {
             </Pressable>
           ))}
         </View>
+
+        {/* Navigation Buttons */}
+        <View style={styles.bottomButtons}>
+          <Pressable
+            style={styles.navigationButton}
+            onPress={() => router.push("/information/contacts")}
+          >
+            <MaterialIcons name="contact-support" size={24} color="#fff" />
+            <Text style={styles.navigationButtonText}>
+              {t("navigation.trustedNGO")}
+            </Text>
+          </Pressable>
+          
+          <Pressable
+            style={[styles.navigationButton, styles.peerButton]}
+            onPress={() => router.push("/ask")}
+          >
+            <MaterialIcons name="group" size={24} color="#fff" />
+            <Text style={styles.navigationButtonText}>
+              {t("navigation.peerSystem")}
+            </Text>
+          </Pressable>
+        </View>
+
+        {/* Extra Info */}
+        <View style={styles.extraInfo}>
+          <Text style={styles.extraInfoText}>{t("extraInfo")}</Text>
+        </View>
       </View>
     );
   };
@@ -95,16 +123,6 @@ export default function Guide() {
     
     return (
       <View style={styles.container}>
-        <View style={styles.contentHeader}>
-          <Pressable 
-            style={styles.backButton}
-            onPress={() => setSelectedTimeframe(null)}
-          >
-            <MaterialIcons name="arrow-back" size={24} color="#2563EB" />
-            <Text style={styles.backText}>{t("back")}</Text>
-          </Pressable>
-        </View>
-
         <Text style={styles.contentTitle}>{t(`content.${timeframe}.title`)}</Text>
         <Text style={styles.contentSubtitle}>{t(`content.${timeframe}.subtitle`)}</Text>
 
@@ -165,7 +183,8 @@ export default function Guide() {
         showLanguageModal={() => setShowLanguageModal(true)}
         showVirtualAssistant={() => setShowVirtualAssistant(true)}
         showTutorial={() => setShowTutorial(true)}
-        showBackButton={true}
+        showBackButton={selectedTimeframe !== null}
+        onBackPress={selectedTimeframe ? () => setSelectedTimeframe(null) : undefined}
       />
 
       <ScrollView contentContainerStyle={styles.scrollContainer}>
@@ -262,36 +281,17 @@ const styles = StyleSheet.create({
     opacity: 0.9,
     lineHeight: 20
   },
-  contentHeader: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 20
-  },
-  backButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingVertical: 8,
-    paddingHorizontal: 12,
-    borderRadius: 8,
-    backgroundColor: "#F3F4F6"
-  },
-  backText: {
-    marginLeft: 8,
+  contentSubtitle: {
     fontSize: 16,
-    fontWeight: "600",
-    color: "#2563EB"
+    color: "#6B7280",
+    marginBottom: 24,
+    lineHeight: 24
   },
   contentTitle: {
     fontSize: 24,
     fontWeight: "800",
     marginBottom: 8,
     color: "#111"
-  },
-  contentSubtitle: {
-    fontSize: 16,
-    color: "#6B7280",
-    marginBottom: 24,
-    lineHeight: 24
   },
   sectionsContainer: {
     gap: 12
