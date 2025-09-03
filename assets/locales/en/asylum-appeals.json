@@ -1,0 +1,25 @@
+{
+  "pageTitle": "Appeals & Judicial Review",
+  "pageIntro": "If your asylum claim was rejected, you may have the right to appeal. Deadlines are short, and you should seek legal advice immediately.",
+  "tiles": {
+    "deadlines_title": "Deadlines",
+    "deadlines_sub": "Understand the time limits for filing",
+    "guide_title": "Step-by-step Guide",
+    "guide_sub": "What to expect in the appeal process",
+    "templates_title": "Appeal Templates",
+    "templates_sub": "Fill-in sample letters (not legal advice)",
+    "contacts_title": "Get Help",
+    "contacts_sub": "Find pro-bono lawyers and NGOs"
+  },
+  "trusted": {
+    "lawyer_service": "Pro-bono Asylum Lawyers",
+    "lawyer_phone": "+123456789",
+    "lawyer_url": "https://asylumlawyers.org",
+    "lawyer_sub": "Free legal advice for asylum seekers",
+    "ngo_legal": "Legal Aid NGO",
+    "ngo_phone": "+987654321",
+    "ngo_url": "https://ngohelp.org",
+    "ngo_sub": "Support in multiple languages"
+  },
+  "exampleVideoId": "abcd1234"
+}

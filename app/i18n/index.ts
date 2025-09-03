@@ -25,6 +25,14 @@ import enVaccinations from '../../assets/locales/en/vaccinations.json';
 import enReproductive from '../../assets/locales/en/reproductive.json';
 import enChildrenHealth from '../../assets/locales/en/children-health.json';
 import enGenderViolence from '../../assets/locales/en/gender-violence.json';
+import enAsylumProcess from '../../assets/locales/en/asylum-process.json';
+import enAsylumApply from '../../assets/locales/en/asylum-apply.json';
+import enAsylumRights from '../../assets/locales/en/asylum-rights.json';
+import enAsylumAppeals from '../../assets/locales/en/asylum-appeals.json';
+import enAsylumAppealsDeadlines from '../../assets/locales/en/asylum-appeals-deadlines.json';
+import enAsylumProcessAppeals from '../../assets/locales/en/asylum-process-appeals.json';
+import enAsylumDocuments from '../../assets/locales/en/asylum-documents.json';
+import enAsylumInterview from '../../assets/locales/en/asylum-interview.json';
 
 import deCommon from '../../assets/locales/de/common.json';
 import deAsk from '../../assets/locales/de/ask.json';
@@ -62,6 +70,14 @@ export const resources = {
       children: enEverydayChildren,
       health: enHealth,
       asylum: enAsylum,
+      asylumProcess: enAsylumProcess,
+      asylumApply: enAsylumApply,
+      asylumRights: enAsylumRights,
+      asylumAppeals: enAsylumAppeals,
+      asylumAppealsDeadlines: enAsylumAppealsDeadlines,
+      asylumProcessAppeals: enAsylumProcessAppeals,
+      asylumDocuments: enAsylumDocuments,
+      asylumInterview: enAsylumInterview,
       housing: enHousing,
       food: enFood,
       education: enEducation,

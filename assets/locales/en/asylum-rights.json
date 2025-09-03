@@ -1,0 +1,25 @@
+{
+  "slides": {
+    "title": "Your Rights During the Asylum Process",
+
+    "rights1_title": "Legal Protection",
+    "rights1_text": "You cannot be deported while your asylum case is being processed. You also have the right to appeal if rejected.",
+
+    "rights2_title": "Healthcare Access",
+    "rights2_text": "You have the right to emergency medical treatment and essential healthcare.",
+
+    "rights3_title": "Education",
+    "rights3_text": "Children have the right to attend school while the asylum process is ongoing.",
+
+    "rights4_title": "Basic Needs",
+    "rights4_text": "You have the right to housing, food, and basic financial or material support while waiting for a decision.",
+
+    "doNot": {
+      "title": "Watch Out",
+      "slide1": "Do not ignore official letters. Missing an appointment can harm your case.",
+      "slide2": "Do not pay people promising faster asylum results — this may be a scam.",
+      "slide3": "Do not move without informing authorities. Always keep your address updated."
+    }
+  },
+  "videoId": "GkZ5e6b2u4w"
+}

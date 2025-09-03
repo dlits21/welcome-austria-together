@@ -1,0 +1,22 @@
+{
+  "title": "How to Appeal an Asylum Decision",
+  "checklist": {
+    "required": "Required",
+    "optional": "Helpful but not mandatory"
+  },
+  "required": {
+    "appeal_letter_title": "Formal Appeal Letter",
+    "appeal_letter_note": "You must submit this to challenge the rejection.",
+    "rejection_notice_title": "Official Rejection Notice",
+    "rejection_notice_note": "Attach the letter you received with the rejection reasons.",
+    "legal_help_title": "Legal Representation",
+    "legal_help_note": "Seek advice from a lawyer or NGO to guide you through the process."
+  },
+  "optional": {
+    "supporting_documents_title": "Supporting Documents",
+    "supporting_documents_note": "Any new evidence about your situation can strengthen your appeal.",
+    "witness_statements_title": "Witness Statements",
+    "witness_statements_note": "Letters or statements from people who can confirm your story."
+  },
+  "warning": "⚠️ Appeals are time-sensitive. You usually have only a few days to submit your appeal after receiving the rejection. Do not delay."
+}

@@ -23,7 +23,7 @@ const SECONDARY_TOPICS = [
   { key: "prescriptions", icon: "local-pharmacy", color: "#0891B2", route: "/information/health/prescription" },
   { key: "vaccinations", icon: "vaccines", color: "#22C55E", route: "/information/health/vaccinations" },
   { key: "reproductive", icon: "pregnant-woman", color: "#F97316", route: "/information/health/reproductive" },
-  { key: "genderViolence", icon: "shield", color: "#BE185D", route: "/information/health/violence-support" },
+  { key: "genderViolence", icon: "shield", color: "#BE185D", route: "/information/health/genderViolence" },
   { key: "chronicCare", icon: "monitor-heart", color: "#65A30D", route: "/information/health/chronic" },
   { key: "dental", icon: "medical-services", color: "#0284C7", route: "/information/health/dental" },
   { key: "addiction", icon: "healing", color: "#7C2D12", route: "/information/health/addiction" },

@@ -14,8 +14,6 @@ export default function HowToRegisterGP() {
 
   const checklist = t("howToRegister.checklist", { returnObjects: true }) as string[];
 
-  console.log("steps", steps)
-  console.log("checklist", checklist)
   return (
     <StepPageTemplate
       translationNamespace="doctorGP"

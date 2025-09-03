@@ -232,12 +232,14 @@ const styles = StyleSheet.create({
     marginLeft: 4,
   },
   flagWrapper: {
+    width: 20,
+    height: 15,
     marginRight: 3,
     borderRadius: 1,
     overflow: 'hidden',
     alignItems: 'center',
     justifyContent: 'center',
-  },
+  }
 });
 
 export default ExpertCard;

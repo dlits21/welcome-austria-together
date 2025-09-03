@@ -1,0 +1,15 @@
+{
+  "stepPage": {
+    "title": "Appeal Deadlines"
+  },
+  "expired": "Deadline passed",
+  "days_left": "days left",
+  "steps": {
+    "notice_title": "1. File Notice of Appeal",
+    "notice_desc": "You must inform the court within 7 days after rejection.",
+    "submit_title": "2. Submit Written Appeal",
+    "submit_desc": "Provide reasons and documents within 14 days.",
+    "hearing_title": "3. Hearing Date",
+    "hearing_desc": "You will be notified of the hearing schedule."
+  }
+}

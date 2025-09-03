@@ -1,0 +1,18 @@
+{
+  "pageTitle": "How to Apply for Asylum",
+  "pageIntro": "Applying for asylum is a process with several important steps. Here is what you need to do.",
+
+  "steps": {
+    "register_title": "Step 1: Register",
+    "register_desc": "Go to the asylum office or border authority to register your request.",
+    "submit_title": "Step 2: Submit Application",
+    "submit_desc": "Fill out the official asylum form. You may need help from a translator or NGO.",
+    "interview_title": "Step 3: Interview",
+    "interview_desc": "You will be asked about your story and reasons for seeking asylum. Be honest and detailed.",
+    "decision_title": "Step 4: Decision",
+    "decision_desc": "Authorities will decide if your application is accepted or denied. You can appeal if rejected."
+  },
+
+  "videoTitle": "Explainer: Applying for Asylum",
+  "exampleVideoId": "T7Csf2cO1-0"
+}

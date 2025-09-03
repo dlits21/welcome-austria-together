@@ -8,10 +8,11 @@ import VirtualAssistantModal from './VirtualAssistantModal';
 import YoutubePlayer from "react-native-youtube-iframe";
 
 interface Step {
-  number: number;
-  icon: string;
+  id: string;
+  icon: React.ReactNode;
   title: string;
-  text: string;
+  description: string;
+  deadlineDate?: string; // optional: ISO string for countdown
 }
 
 interface Props {
@@ -63,7 +64,7 @@ export default function StepPageTemplate({
               <Text style={styles.stepTitle}>{step.title}</Text>
             </View>
             {expanded === step.number && (
-              <Text style={styles.stepText}>{step.text}</Text>
+              <Text style={styles.stepText}>{step.description}</Text>
             )}
           </Pressable>
         ))}
@@ -80,21 +81,10 @@ export default function StepPageTemplate({
           </View>
         )}
       </ScrollView>
-      <LanguageModal
-        visible={showLanguageModal}
-        onClose={() => setShowLanguageModal(false)}
-      />
 
-      <VirtualAssistantModal
-        visible={showVirtualAssistant}
-        onClose={() => setShowVirtualAssistant(false)}
-      />
-
-      <TutorialModal
-        visible={showTutorial}
-        onClose={() => setShowTutorial(false)}
-        tutorialData="home"
-      />
+      <LanguageModal visible={showLanguageModal} onClose={() => setShowLanguageModal(false)} />
+      <VirtualAssistantModal visible={showVirtualAssistant} onClose={() => setShowVirtualAssistant(false)} />
+      <TutorialModal visible={showTutorial} onClose={() => setShowTutorial(false)} tutorialData="home" />
     </SafeAreaView>
   );
 }

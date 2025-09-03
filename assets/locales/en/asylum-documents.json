@@ -1,0 +1,24 @@
+{
+  "title": "Documents Needed for Asylum Application",
+  "checklist": {
+    "required": "Required",
+    "optional": "Helpful but not mandatory"
+  },
+  "required": {
+    "passport_id_title": "Passport or ID (if available)",
+    "passport_id_note": "Bring any travel or identification documents you have.",
+    "application_form_title": "Asylum Application Form",
+    "application_form_note": "You will receive this from the asylum office.",
+    "photos_title": "Passport-sized Photos",
+    "photos_note": "Bring recent photos that meet ID requirements."
+  },
+  "optional": {
+    "proof_origin_title": "Proof of Origin",
+    "proof_origin_note": "Any document showing where you are from (birth certificate, residency card, etc.).",
+    "medical_records_title": "Medical Records",
+    "medical_records_note": "Bring records of ongoing treatments, prescriptions, or health conditions.",
+    "school_work_certificates_title": "School or Work Certificates",
+    "school_work_certificates_note": "Evidence of your education or employment history."
+  },
+  "warning": "⚠️ Do not worry if you cannot provide all documents. Authorities must still accept and process your asylum request."
+}

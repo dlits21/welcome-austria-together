@@ -1,0 +1,35 @@
+{
+  "pageTitle": "Asylum Process",
+  "pageIntro": "Learn how to apply for asylum, your rights during the process, documents you need, and what to do if your claim is rejected.",
+  "tiles": {
+    "apply_title": "How to Apply",
+    "apply_sub": "Steps for starting your asylum application",
+    "rights_title": "Your Rights",
+    "rights_sub": "What rights you have while waiting",
+    "documents_title": "Documents Needed",
+    "documents_sub": "Papers and proofs you should prepare",
+    "appeals_title": "Appeals",
+    "appeals_sub": "What to do if your claim is rejected"
+  },
+  "trustedTitle": "Trusted Help",
+  "trusted": {
+    "unhcr_name": "UNHCR Office",
+    "unhcr_phone": "0800 123 456",
+    "unhcr_url": "https://www.unhcr.org",
+    "unhcr_sub": "Official refugee protection support",
+    "refugee_ngoname": "Local Refugee NGO",
+    "refugee_phone": "0800 987 654",
+    "refugee_url": "https://refugeengo.org",
+    "refugee_sub": "Free legal advice and translation",
+    "legal_aid": "Legal Aid Service",
+    "legal_phone": "0800 555 999",
+    "legal_sub": "Support with asylum appeals and rights"
+  },
+
+  "playTips": "Listen to tips",
+  "emergency": "Emergency",
+  "moreContacts": "More contacts",
+  "emergency_number": "112",
+  "cannot_call": "Cannot open phone dialer",
+  "videoTitle": "Explainer: The Asylum Process"
+}
