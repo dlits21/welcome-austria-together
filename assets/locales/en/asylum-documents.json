@@ -26,5 +26,30 @@
     "school_work_certificates_title": "School or Work Certificates",
     "school_work_certificates_note": "Evidence of your education or employment history."
   },
-  "warning": "⚠️ Do not worry if you cannot provide all documents. Authorities must still accept and process your asylum request."
+  "warning": "⚠️ Do not worry if you cannot provide all documents. Authorities must still accept and process your asylum request.",
+  "docs": {
+    "passport": {
+      "info_title": "About Passport or ID",
+      "info_text": "Any official identification from your country of origin. If you don't have it, you can still apply for asylum. Explain your situation to the authorities."
+    },
+    "birth": {
+      "info_title": "About Asylum Application Form",
+      "info_text": "This form will be provided by the asylum office during your interview. Don't worry about bringing it yourself - they will give it to you to fill out."
+    },
+    "photos": {
+      "info_title": "About Passport Photos",
+      "info_text": "Standard passport-sized photos (45mm x 35mm). You can get these taken at any photo booth or photography studio. Usually 4-6 photos are needed."
+    },
+    "marriage": {
+      "info_title": "About Supporting Documents",
+      "info_text": "Any official documents that support your case. These can be from your home country or from your journey. Copies are acceptable if originals are not available."
+    },
+    "medical": {
+      "info_title": "About Medical Documents",
+      "info_text": "Medical records, prescriptions, or doctor's notes that relate to your asylum case. This could include evidence of persecution or ongoing health conditions that need treatment."
+    }
+  },
+  "trusted_ngos": "Trusted NGOs",
+  "peer_support": "Peer Support",
+  "close": "Close"
 }
