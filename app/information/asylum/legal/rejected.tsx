@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import ChecklistPageTemplate from "../../../components/ChecklistPageTemplate";
+import ChecklistPageTemplate from "../../../../components/ChecklistPageTemplate";
 
 export default function LegalRejectedPage() {
   const { t } = useTranslation("asylumRejectedStatus");
@@ -53,6 +53,7 @@ export default function LegalRejectedPage() {
       title={t("pageTitle", { defaultValue: "After Rejection - Act Fast" })}
       requiredItems={requiredItems}
       optionalItems={optionalItems}
+      videoId={t("videoUrl", { defaultValue: "Q607TYRBxFU" })}
       warningNote={t("warning", { defaultValue: "⚠️ TIME IS CRITICAL: Most appeals must be filed within 7-14 days. Do not delay seeking help." })}
     />
   );

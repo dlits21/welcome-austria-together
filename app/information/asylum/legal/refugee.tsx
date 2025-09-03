@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import SlidesTemplate from "../../../components/SlidesTemplate";
+import SlidesTemplate from "../../../../components/SlidesTemplate";
 
 export default function LegalRefugeePage() {
   const { t } = useTranslation("asylumRefugeeStatus");
@@ -35,7 +35,7 @@ export default function LegalRefugeePage() {
   return (
     <SlidesTemplate 
       roles={roles}
-      videoId={t("videoId", { defaultValue: "refugee-status-explained" })}
+      videoId={t("videoUrl", { defaultValue: "Q607TYRBxFU" })}
     />
   );
 }

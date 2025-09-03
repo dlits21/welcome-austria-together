@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import DecisionTemplate from "../../../components/DecisionTemplate";
+import DecisionTemplate from "../../../../components/DecisionTemplate";
 
 export default function LegalDublinPage() {
   const { t } = useTranslation("asylumDublinStatus");
@@ -87,6 +87,7 @@ export default function LegalDublinPage() {
       translationNamespace="asylumDublinStatus"
       slides={slides}
       startKey="start"
+      videoId={t("videoUrl", { defaultValue: "Q607TYRBxFU" })}
     />
   );
 }
