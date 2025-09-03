@@ -183,8 +183,7 @@ export default function Guide() {
         showLanguageModal={() => setShowLanguageModal(true)}
         showVirtualAssistant={() => setShowVirtualAssistant(true)}
         showTutorial={() => setShowTutorial(true)}
-        showBackButton={selectedTimeframe !== null}
-        onBackPress={selectedTimeframe ? () => setSelectedTimeframe(null) : undefined}
+        showBackButton
       />
 
       <ScrollView contentContainerStyle={styles.scrollContainer}>
