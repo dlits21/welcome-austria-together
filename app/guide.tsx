@@ -120,11 +120,28 @@ export default function Guide() {
 
   const renderTimeframeContent = (timeframe: TimeframeOption) => {
     const sections: GuideSection[] = t(`content.${timeframe}.sections`, { returnObjects: true }) as GuideSection[];
+    const videoUrl = t(`content.${timeframe}.videoUrl`);
     
     return (
       <View style={styles.container}>
         <Text style={styles.contentTitle}>{t(`content.${timeframe}.title`)}</Text>
         <Text style={styles.contentSubtitle}>{t(`content.${timeframe}.subtitle`)}</Text>
+
+        {/* YouTube Video */}
+        <View style={styles.videoContainer}>
+          <Text style={styles.videoTitle}>{t("videoSection.title")}</Text>
+          <Pressable
+            style={styles.videoButton}
+            onPress={() => {
+              // Open YouTube video in browser
+              // Note: In a real React Native app, you'd use Linking.openURL
+              window.open(videoUrl, '_blank');
+            }}
+          >
+            <MaterialIcons name="play-circle-fill" size={48} color="#FF0000" />
+            <Text style={styles.videoButtonText}>{t("videoSection.watchVideo")}</Text>
+          </Pressable>
+        </View>
 
         <View style={styles.sectionsContainer}>
           {sections.map((section, index) => (
@@ -373,5 +390,39 @@ const styles = StyleSheet.create({
     color: "#1f2937",
     textAlign: "center",
     lineHeight: 20,
+  },
+  videoContainer: {
+    backgroundColor: "#f8fafc",
+    padding: 20,
+    borderRadius: 12,
+    marginBottom: 24,
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "#e2e8f0",
+  },
+  videoTitle: {
+    fontSize: 18,
+    fontWeight: "700",
+    color: "#1e293b",
+    marginBottom: 16,
+    textAlign: "center",
+  },
+  videoButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#fff",
+    padding: 16,
+    borderRadius: 8,
+    gap: 12,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
+  },
+  videoButtonText: {
+    fontSize: 16,
+    fontWeight: "600",
+    color: "#1e293b",
   },
 });
