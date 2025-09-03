@@ -32,6 +32,7 @@ import enAsylumAppeals from '../../assets/locales/en/asylum-appeals.json';
 import enAsylumAppealsDeadlines from '../../assets/locales/en/asylum-appeals-deadlines.json';
 import enAsylumProcessAppeals from '../../assets/locales/en/asylum-process-appeals.json';
 import enAsylumDocuments from '../../assets/locales/en/asylum-documents.json';
+import enAsylumLegal from '../../assets/locales/en/asylum-legal.json';
 import enAsylumInterview from '../../assets/locales/en/asylum-interview.json';
 import enGuide from '../../assets/locales/en/guide.json';
 
@@ -78,6 +79,7 @@ export const resources = {
       asylumAppealsDeadlines: enAsylumAppealsDeadlines,
       asylumProcessAppeals: enAsylumProcessAppeals,
       asylumDocuments: enAsylumDocuments,
+      asylumLegal: enAsylumLegal,
       asylumInterview: enAsylumInterview,
       housing: enHousing,
       food: enFood,

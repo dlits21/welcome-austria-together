@@ -1,0 +1,39 @@
+{
+  "pageTitle": "Legal Status & Consequences",
+  "pageIntro": "Understand your asylum status and what rights come with it.",
+  "videoTitle": "Quick explanation of asylum status types",
+  "tiles": {
+    "quiz_title": "What is my type?",
+    "quiz_sub": "Find out your legal status"
+  },
+  "status": {
+    "refugee": {
+      "title": "Refugee",
+      "desc": "You receive full protection and most rights (work, housing, healthcare, family reunification)."
+    },
+    "subsidiary": {
+      "title": "Subsidiary protection",
+      "desc": "Temporary protection with limited rights."
+    },
+    "dublin": {
+      "title": "Dublin",
+      "desc": "You may be transferred to the EU country where you first applied."
+    },
+    "rejected": {
+      "title": "Rejected",
+      "desc": "Your asylum was denied. Act quickly — appeal deadlines are short."
+    }
+  },
+  "trustedTitle": "Trusted support",
+  "trusted": {
+    "refugee_council": "Refugee Council",
+    "refugee_phone": "+43 123 456 789",
+    "refugee_url": "https://refugee-council.example.org",
+    "refugee_sub": "Free legal advice & caseworkers",
+    "legal_aid": "Legal Aid Austria",
+    "legal_phone": "+43 987 654 321",
+    "legal_sub": "Help with asylum procedures & appeals"
+  },
+  "moreContacts": "More contacts",
+  "emergency_number": "112"
+}
