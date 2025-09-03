@@ -38,7 +38,7 @@ const getCountryFlag = (language: string) => {
   };
   
   const FlagComponent = flagMap[language];
-  return FlagComponent ? <FlagComponent width={20} height={15} /> : null;
+  return FlagComponent ? <FlagComponent width={12} height={9} /> : null;
 };
 
 const ExpertCard: React.FC<ExpertCardProps> = ({
@@ -232,9 +232,11 @@ const styles = StyleSheet.create({
     marginLeft: 4,
   },
   flagWrapper: {
-    marginRight: 4,
-    borderRadius: 2,
+    marginRight: 3,
+    borderRadius: 1,
     overflow: 'hidden',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 
