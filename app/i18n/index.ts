@@ -33,7 +33,15 @@ import enAsylumAppealsDeadlines from '../../assets/locales/en/asylum-appeals-dea
 import enAsylumProcessAppeals from '../../assets/locales/en/asylum-process-appeals.json';
 import enAsylumDocuments from '../../assets/locales/en/asylum-documents.json';
 import enAsylumLegal from '../../assets/locales/en/asylum-legal.json';
+import enAsylumDublinStatus from '../../assets/locales/en/asylum-dublin-status.json';
+import enAsylumHousing from '../../assets/locales/en/asylum-housing.json';
+import enAsylumLegalQuiz from '../../assets/locales/en/asylum-legal-quiz.json';
+import enAsylumRefugeeStatus from '../../assets/locales/en/asylum-refugee-status.json';
+import enAsylumRejectedStatus from '../../assets/locales/en/asylum-rejected-status.json';
+import enAsylumSubsidiaryStatus from '../../assets/locales/en/asylum-subsidiary-status.json';
+import enAsylumReunification from '../../assets/locales/en/asylum-reunification.json';
 import enAsylumInterview from '../../assets/locales/en/asylum-interview.json';
+import enAsylumWorkPermits from '../../assets/locales/en/asylum-work-permits.json';
 import enGuide from '../../assets/locales/en/guide.json';
 
 import deCommon from '../../assets/locales/de/common.json';
@@ -77,10 +85,18 @@ export const resources = {
       asylumRights: enAsylumRights,
       asylumAppeals: enAsylumAppeals,
       asylumAppealsDeadlines: enAsylumAppealsDeadlines,
+      asylumHousing: enAsylumHousing,
       asylumProcessAppeals: enAsylumProcessAppeals,
       asylumDocuments: enAsylumDocuments,
       asylumLegal: enAsylumLegal,
+      asylumLegalQuiz: enAsylumLegalQuiz,
+      asylumDublinStatus: enAsylumDublinStatus,
+      asylumSubsidiaryStatus: enAsylumSubsidiaryStatus,
+      asylumRefugeeStatus: enAsylumRefugeeStatus,
+      asylumReunification: enAsylumReunification,
+      asylumRejectedStatus: enAsylumRejectedStatus,
       asylumInterview: enAsylumInterview,
+      asylumWorkPermits: enAsylumWorkPermits,
       housing: enHousing,
       food: enFood,
       education: enEducation,

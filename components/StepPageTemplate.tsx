@@ -20,13 +20,15 @@ interface Props {
   steps: Step[];
   videoId?: string;
   checklist?: string[];
+  header?: bool;
 }
 
 export default function StepPageTemplate({
     translationNamespace,
     steps,
     videoId,
-    checklist }: Props) {
+    checklist,
+    header }: Props) {
   const { t } = useTranslation(translationNamespace);
   const [expanded, setExpanded] = useState<number | null>(null);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
@@ -35,13 +37,16 @@ export default function StepPageTemplate({
 
   return (
     <SafeAreaView style={styles.safe}>
-      <PageNavigation
-        title={t("stepPage.title", { defaultValue: "How to Register" })}
-        showLanguageModal={() => setShowLanguageModal(true)}
-        showVirtualAssistant={() => setShowVirtualAssistant(true)}
-        showTutorial={() => setShowTutorial(true)}
-        showBackButton={true}
-      />
+       {header && (
+         <PageNavigation
+           title={t("stepPage.title", { defaultValue: "How to Register" })}
+           showLanguageModal={() => setShowLanguageModal(true)}
+           showVirtualAssistant={() => setShowVirtualAssistant(true)}
+           showTutorial={() => setShowTutorial(true)}
+           showBackButton={true}
+         />
+       )}
+
 
       <ScrollView contentContainerStyle={styles.container}>
         {/* Video intro */}

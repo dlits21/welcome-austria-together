@@ -1,0 +1,30 @@
+{
+  "pageTitle": "Family Reunification & Child Protection",
+  "pageIntro": "Reuniting families and protecting children is a top priority. Here is how you can apply and get help.",
+
+  "tiles": {
+    "guide_title": "Step-by-step Guide",
+    "guide_sub": "Understand the reunification process",
+
+    "documents_title": "Documents Needed",
+    "documents_sub": "Birth, marriage, IDs, custody papers",
+
+    "child_protection_title": "Child Protection",
+    "child_protection_sub": "Special rights for children and minors",
+
+    "checklist_title": "My Checklist",
+    "checklist_sub": "Generate a personalized checklist",
+
+    "ngo_support_title": "NGO Support",
+    "ngo_support_sub": "Who can help me apply?"
+  },
+
+  "contacts": {
+    "redCross": "Red Cross Family Tracing Service",
+    "redCross_sub": "Helps reconnect families across borders",
+    "caritas": "Caritas Family Support",
+    "caritas_sub": "Legal advice and help with applications"
+  },
+
+  "videoId": "Q607TYRBxFU"
+}

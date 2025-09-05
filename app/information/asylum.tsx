@@ -63,7 +63,7 @@ const secondaryTopics = [
     key: "legalAidDirectory",
     icon: "phone",
     color: "#8B5CF6",
-    route: "/information/asylum/legal-aid"
+    route: "/ask/legal-support"
   },
   {
     key: "policeRights",

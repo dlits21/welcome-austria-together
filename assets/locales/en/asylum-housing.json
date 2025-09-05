@@ -1,0 +1,29 @@
+{
+  "pageTitle": "Housing & Social Benefits",
+  "pageIntro": "Learn about your rights to housing and benefits, how to appeal decisions, and where to find urgent help.",
+
+  "tiles": {
+    "eligibility_title": "Who gets housing?",
+    "eligibility_sub": "Rules based on asylum status",
+
+    "appeals_title": "Appealing a decision",
+    "appeals_sub": "What to do if housing is refused",
+
+    "benefits_title": "Social benefits",
+    "benefits_sub": "Monthly support and entitlements",
+
+    "urgent_title": "Urgent shelter",
+    "urgent_sub": "Where to go tonight if homeless"
+  },
+
+  "contacts": {
+    "housing_office": "Local Housing Office",
+    "housing_office_sub": "Apply or check eligibility",
+    "social_benefits": "Social Benefits Office",
+    "social_benefits_sub": "Financial aid and appeals",
+    "ngo": "Housing NGO",
+    "ngo_sub": "Emergency help and advocacy"
+  },
+
+  "videoId": "Q607TYRBxFU"
+}

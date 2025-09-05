@@ -1,0 +1,35 @@
+{
+  "pageTitle": "Work Permits, Rights & Employment Law",
+  "pageIntro": "Understanding your right to work is key for integration and survival. Learn how to apply for a permit, know your rights, and protect yourself from unsafe employers.",
+
+  "tiles": {
+    "can_i_work_title": "Can I work?",
+    "can_i_work_sub": "Who is allowed to work and when",
+
+    "apply_permit_title": "How to apply",
+    "apply_permit_sub": "Steps to get a work permit",
+
+    "rights_title": "Worker rights",
+    "rights_sub": "Minimum wage, working hours, contracts",
+
+    "unsafe_title": "Unsafe employers",
+    "unsafe_sub": "Red flags and exploitation signs",
+
+    "report_title": "Report exploitation",
+    "report_sub": "Where and how to report unsafe employers",
+
+    "complaint_title": "Complaint template",
+    "complaint_sub": "Generate a letter or email"
+  },
+
+  "contacts": {
+    "labor_office": "Public Labor Office",
+    "labor_office_sub": "Official permits and employment advice",
+    "union": "Trade Union",
+    "union_sub": "Protecting workers' rights",
+    "ngo": "Migrant Support NGO",
+    "ngo_sub": "Free legal and work advice"
+  },
+
+  "videoId": "abcd1234"
+}
