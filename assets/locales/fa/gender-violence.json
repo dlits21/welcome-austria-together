@@ -1,0 +1,38 @@
+{
+  "pageTitle": "حمایت در برابر خشونت جنسی و جنسیتی",
+  "pageIntro": "حمایت محرمانه و منابع برای بازماندگان خشونت جنسی و جنسیتی",
+  "confidentialityAssurance": "تمام خدمات ارائه‌شده امنیت و محرمانگی شما را در اولویت قرار می‌دهند. شما تصمیم می‌گیرید چه اطلاعاتی را به اشتراک بگذارید و چه زمانی.",
+  "exampleVideoId": "dQw4w9WgXcQ",
+  "tiles": {
+    "immediate_title": "ایمنی فوری",
+    "immediate_sub": "مسیرهای خروج امن و تماس‌های اضطراری",
+    "evidence_title": "حفظ شواهد",
+    "evidence_sub": "مراحل مستندسازی و نگهداری امن شواهد",
+    "crisis_title": "خطوط بحران",
+    "crisis_sub": "پشتیبانی محرمانه ۲۴ ساعته",
+    "legal_title": "کمک حقوقی",
+    "legal_sub": "مشاوره حقوقی رایگان و خدمات حمایتی",
+    "shelter_title": "مسکن امن",
+    "shelter_sub": "پناهگاه‌های اضطراری و اسکان امن",
+    "counseling_title": "مشاوره تروما",
+    "counseling_sub": "درمان تخصصی و گروه‌های حمایتی",
+    "reporting_title": "گزینه‌های گزارش",
+    "reporting_sub": "آشنایی با گزینه‌های شما – بدون اجبار به گزارش",
+    "support_title": "حمایت بلندمدت",
+    "support_sub": "برنامه‌های بهبودی و توانمندسازی بلندمدت"
+  },
+  "trusted": {
+    "women_shelter": "پناهگاه اضطراری زنان",
+    "women_phone": "0800 222 555",
+    "women_url": "https://www.frauenhelpline.at",
+    "women_sub": "اسکان امن و مداخله در بحران ۲۴ ساعته",
+    "legal_aid": "کمک حقوقی برای زنان",
+    "legal_phone": "0800 100 200",
+    "legal_url": "https://www.rechtsberatung-frauen.at",
+    "legal_sub": "مشاوره رایگان حقوقی و حمایت در دادگاه",
+    "crisis_hotline": "خط پیشگیری از خشونت",
+    "crisis_phone": "0800 800 300",
+    "crisis_url": "https://www.gewaltpraevention.at",
+    "crisis_sub": "مداخله محرمانه در بحران و برنامه‌ریزی ایمنی"
+  }
+}

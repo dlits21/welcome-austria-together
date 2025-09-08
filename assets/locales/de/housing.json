@@ -1,0 +1,89 @@
+{
+  "pageTitle": "Wohnen",
+  "introShort": "Finde Notunterkünfte, langfristiges Wohnen und erfahre deine Mieterrechte.",
+  "essential": "Wichtige Wohnservices",
+  "additionalServices": "Weitere Wohnservices",
+  "playTips": "🔊 Alle Tipps anhören",
+  "emergency": "🚨 Notfall",
+  "quickHelp": "Brauchst du eine Notunterkunft?",
+  "tts_lang": "de-DE",
+  "tts_intro": "Hier sind die wichtigsten Wohnservices und Informationen, die du wissen solltest.",
+
+  "topics": {
+    "emergency-shelter": {
+      "title": "Notunterkünfte / Nachtquartiere",
+      "subtitle": "Sichere Unterkunft sofort, wenn du keinen Schlafplatz hast",
+      "tip": "24/7 verfügbar für Krisensituationen, keine Voranmeldung notwendig"
+    },
+    "asylum-accommodation": {
+      "title": "Kurzzeit- & Asylunterkünfte",
+      "subtitle": "Vorübergehendes Wohnen während des Asylverfahrens",
+      "tip": "Unterkunft vom Staat während der Bearbeitung des Asylantrags"
+    },
+    "social-housing": {
+      "title": "Langfristiges Wohnen / Sozialwohnungen",
+      "subtitle": "Bezahlbare, dauerhafte Wohnmöglichkeiten",
+      "tip": "Frühzeitig bewerben, da Wartelisten lang sein können. Einkommensgrenzen gelten."
+    },
+    "temporary-rentals": {
+      "title": "Zwischenmiete & Kurzzeitwohnungen",
+      "subtitle": "Wohngemeinschaften, Untermieten und Übergangslösungen",
+      "tip": "Gute Übergangslösung während der Wohnungssuche"
+    },
+    "eviction-prevention": {
+      "title": "Delogierungsprävention & Mieterrechte",
+      "subtitle": "Kenne deine Rechte und hole Hilfe bei drohendem Rauswurf",
+      "tip": "Rechtlicher Schutz besteht – sofort Hilfe suchen, wenn Kündigung droht"
+    },
+    "women-family-shelters": {
+      "title": "Frauen- & Familienunterkünfte",
+      "subtitle": "Sichere Wohnplätze für Frauen, Familien und Kinder",
+      "tip": "Spezialisierte Unterstützung für besonders gefährdete Gruppen"
+    },
+    "housing-benefits": {
+      "title": "Leistungen & Beihilfen",
+      "subtitle": "Wohnbeihilfe, Mietzuschüsse und finanzielle Unterstützung",
+      "tip": "Möglicherweise Anspruch auf Unterstützung für Miete und Betriebskosten"
+    },
+    "utilities-moving": {
+      "title": "Strom, Gas & Einzug",
+      "subtitle": "Anmeldung von Strom, Gas, Internet und Basisdiensten",
+      "tip": "Unbedingt sofort anmelden, um Unterbrechungen zu vermeiden"
+    },
+    "registration-address": {
+      "title": "Anmeldung / Adresse & Wohnsitzpflicht",
+      "subtitle": "Gesetzliche Pflicht zur Adressanmeldung",
+      "tip": "Adresse muss innerhalb von 3 Tagen nach Einzug gemeldet werden"
+    },
+    "housing-scams": {
+      "title": "Wohnungsbetrug & sichere Suche",
+      "subtitle": "Betrug vermeiden und seriöse Angebote finden",
+      "tip": "Keine Kaution zahlen, bevor du die Wohnung gesehen und den Vermieter getroffen hast"
+    },
+    "maintenance-disputes": {
+      "title": "Reparaturen & Streit mit Vermietern",
+      "subtitle": "Verantwortlichkeiten verstehen und Konflikte lösen",
+      "tip": "Alle Probleme dokumentieren und schriftlich mit dem Vermieter kommunizieren"
+    },
+    "accessible-housing": {
+      "title": "Barrierefreies Wohnen",
+      "subtitle": "Wohnmöglichkeiten für Menschen mit Behinderungen",
+      "tip": "Spezielle Wohnungen und Anpassungen für Barrierefreiheit verfügbar"
+    },
+    "storage-documents": {
+      "title": "Lagerung & Dokumentensicherheit",
+      "subtitle": "Sichere Aufbewahrung für Sachen und wichtige Dokumente",
+      "tip": "Wichtige Dokumente wasserdicht und sicher aufbewahren"
+    },
+    "community-housing": {
+      "title": "Gemeinschaftswohnen & Integrationsprojekte",
+      "subtitle": "Wohnen mit sozialer Unterstützung",
+      "tip": "Wohnung kombiniert mit Integrations- und Sozialangeboten"
+    },
+    "neighborhood-info": {
+      "title": "Info & Sicherheit in der Nachbarschaft",
+      "subtitle": "Dein Umfeld, Sicherheit und lokale Ressourcen kennenlernen",
+      "tip": "Lerne deine Nachbarn und Gemeindezentren kennen für mehr Unterstützung"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "pageTitle": "Hausärztin / Hausarzt",
+  "pageIntro": "Alles, was du über das Finden und den Besuch einer Hausärztin / eines Hausarztes in Österreich wissen musst",
+  "videoId": "Q607TYRBxFU",
+  "tiles": {
+    "when_title": "Wann zum Hausarzt gehen",
+    "when_sub": "Bei nicht akuten Beschwerden, alltäglichen Gesundheitsproblemen",
+    "what_title": "Was Hausärzte machen",
+    "what_sub": "Untersuchungen, Rezepte, Überweisungen",
+    "register_title": "Wie registrieren",
+    "register_sub": "Arzt in deiner Nähe wählen, Ausweis + Versicherung mitbringen",
+    "bring_title": "Was mitbringen",
+    "bring_sub": "e-card, Ausweis, medizinische Unterlagen"
+  },
+  "contacts": {
+    "directory": "Hausarzt finden – ÄrztInnenverzeichnis",
+    "directory_url": "https://www.arztsuche.at",
+    "directory_sub": "Ärzte nach Ort und Sprache suchen",
+    "hotline": "Gesundheitshotline 1450",
+    "hotline_sub": "Beratung & Info über den nächstgelegenen Arzt"
+  },
+  "checklist": {
+    "required": "Erforderlich",
+    "optional": "Hilfreich, aber nicht zwingend"
+  },
+  "decision": {
+    "title": "Wann zum Hausarzt gehen",
+    "end": "Das war’s!"
+  },
+  "stepPage": {
+    "title": "So registrierst du dich",
+    "checklist": "Checkliste vor der Anmeldung:"
+  }
+}

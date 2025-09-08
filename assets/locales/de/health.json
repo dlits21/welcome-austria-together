@@ -1,0 +1,128 @@
+{
+  "pageTitle": "Gesundheit",
+  "introShort": "Zugang zu Gesundheitsdiensten, ÄrztInnen finden und Unterstützung für deine Gesundheitsbedürfnisse.",
+  "playTips": "Gesundheitstipps anhören",
+  "emergency": "Notfall",
+  "quickHelp": "Notfallhilfe",
+  "essential": "Wichtige Gesundheitsdienste",
+  "additionalServices": "Weitere Gesundheitsdienste",
+  "tts_lang": "de-DE",
+  "tts_intro": "Hier sind wichtige Gesundheitsdienste und Tipps.",
+  "topics": {
+    "emergency": {
+      "title": "Notfall & dringende Hilfe",
+      "subtitle": "Ruf 144 bei medizinischen Notfällen",
+      "tip": "Bei medizinischen Notfällen ruf 144. Halte deine Adresse bereit und sprich langsam."
+    },
+    "findDoctor": {
+      "title": "Arzt finden",
+      "subtitle": "Wie man in Österreich eine/n Arzt/Ärztin aufsucht",
+      "tip": "Bring deine e-card und einen Ausweis mit. Ruf vorher an, um einen Termin zu vereinbaren."
+    },
+    "mentalHealth": {
+      "title": "Psychische Gesundheit",
+      "subtitle": "Beratung und psychologische Hilfe",
+      "tip": "Unterstützung bei psychischer Gesundheit ist verfügbar. Ruf 142 an oder wende dich an dein lokales Gesundheitszentrum."
+    },
+    "children": {
+      "title": "Kinder & Pädiatrie",
+      "subtitle": "Gesundheitsdienste für Kinder",
+      "tip": "Kindergesundheitsdienste beinhalten Vorsorgeuntersuchungen und Impfungen. Finde einen Kinderarzt in deiner Nähe."
+    },
+    "trustedContacts": {
+      "title": "Vertrauenswürdige Kontakte & NGOs",
+      "subtitle": "Organisationen, die helfen können",
+      "tip": "Viele NGOs bieten Gesundheitsunterstützung für MigrantInnen und Geflüchtete."
+    },
+    "healthSystem": {
+      "title": "Gesundheitssystem in Österreich",
+      "subtitle": "Das österreichische System verstehen",
+      "tip": "Österreich hat ein universelles Gesundheitssystem. Melde dich bei deiner Krankenkasse an, um eine e-card zu bekommen."
+    },
+    "physicalHealth": {
+      "title": "Körperliche Gesundheit",
+      "subtitle": "Allgemeine Gesundheit & Wohlbefinden",
+      "tip": "Regelmäßige Vorsorgeuntersuchungen sind von der Versicherung gedeckt. Bleib aktiv und ernähre dich gesund."
+    },
+    "wantToTalk": {
+      "title": "Möchtest du reden?",
+      "subtitle": "Jemand hört dir zu und unterstützt dich",
+      "tip": "Wenn du jemanden zum Reden brauchst, ruf 142 an oder geh zu einer Beratungsstelle."
+    },
+    "urgentHelp": {
+      "title": "Soforthilfe",
+      "subtitle": "Wenn du jetzt Hilfe brauchst",
+      "tip": "Bei dringender medizinischer Hilfe geh ins nächste Krankenhaus oder ruf 144."
+    },
+    "crisisSupport": {
+      "title": "Krisenhilfe psychische Gesundheit",
+      "subtitle": "24/7 Krisenintervention",
+      "tip": "Krisenhotlines sind rund um die Uhr verfügbar. Ruf 142 für sofortige Unterstützung an."
+    },
+    "prescriptions": {
+      "title": "Rezepte & Apotheke",
+      "subtitle": "Medikamente bekommen",
+      "tip": "Bring dein Rezept in eine Apotheke. Notfallapotheken haben nachts geöffnet."
+    },
+    "vaccinations": {
+      "title": "Impfungen & Prävention",
+      "subtitle": "Immunisierung und Vorsorge",
+      "tip": "Kinderimpfungen sind kostenlos. Erwachsene können Reiseimpfungen und Grippeimpfungen erhalten."
+    },
+    "reproductive": {
+      "title": "Reproduktive & sexuelle Gesundheit",
+      "subtitle": "Schwangerschaft & Familienplanung",
+      "tip": "GynäkologInnen bieten reproduktive Gesundheitsdienste. Schwangerschaftsversorgung ist versichert."
+    },
+    "genderViolence": {
+      "title": "Unterstützung bei Gewalt",
+      "subtitle": "Hilfe bei geschlechtsbasierter Gewalt",
+      "tip": "Wenn du Gewalt erfährst, ruf die Frauenhelpline 0800 222 555 an oder geh an einen sicheren Ort."
+    },
+    "chronicCare": {
+      "title": "Chronische Erkrankungen",
+      "subtitle": "Diabetes, Bluthochdruck, Langzeitpflege",
+      "tip": "Chronische Krankheiten erfordern regelmäßige Kontrolle. Erstelle mit deinem Arzt einen Behandlungsplan."
+    },
+    "dental": {
+      "title": "Zahn- & Augenversorgung",
+      "subtitle": "Gesundheit von Zähnen und Augen",
+      "tip": "Basis-Zahnbehandlungen sind teilweise gedeckt. Brillen brauchen oft Zusatzversicherung."
+    },
+    "insurance": {
+      "title": "Versicherung",
+      "subtitle": "Krankenversicherung & Schutz",
+      "tip": "Fast alle müssen versichert sein. Kinder sind über die Eltern mitversichert. Bring deine e-card zum Arzt."
+    },
+    "generalInformation": {
+      "title": "Allgemeine Informationen",
+      "subtitle": "Grundregeln & Hilfe",
+      "tip": "Infos zu Dokumenten, Kosten, Rechten und kostenloser Unterstützung in deiner Nähe."
+    },
+    "addiction": {
+      "title": "Sucht & Unterstützung",
+      "subtitle": "Hilfe bei Abhängigkeit",
+      "tip": "Suchtbehandlung ist vertraulich und verfügbar. Wende dich an lokale Beratungsstellen."
+    },
+    "disability": {
+      "title": "Behinderung & Rehabilitation",
+      "subtitle": "Unterstützung bei Behinderungen und Genesung",
+      "tip": "Leistungen umfassen Hilfsmittel und Reha-Programme. Antrag über Sozialdienste stellen."
+    },
+    "healthRights": {
+      "title": "Gesundheitsrechte",
+      "subtitle": "Deine Rechte im System",
+      "tip": "Du hast Anspruch auf gute Versorgung, DolmetscherInnen und respektvolle Behandlung."
+    },
+    "logistics": {
+      "title": "Praktische Organisation",
+      "subtitle": "Transport, Kosten, Anmeldung",
+      "tip": "Mit Versicherung sind Kosten weitgehend gedeckt. Öffentliche Verkehrsmittel zu Spitälern sind meist verfügbar."
+    },
+    "publicHealth": {
+      "title": "Öffentliche Gesundheitshinweise",
+      "subtitle": "Saisonale Tipps & Sicherheit",
+      "tip": "Folge Gesundheitshinweisen bei Grippewellen oder anderen Erkrankungen. Sieh auf der Website des Gesundheitsamts nach."
+    }
+  }
+}

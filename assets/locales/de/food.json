@@ -1,0 +1,83 @@
+{
+  "pageTitle": "Lebensmittel & Grundversorgung",
+  "introShort": "Finde Lebensmittelhilfe, Hygieneeinrichtungen und grundlegende Dienste für deine Bedürfnisse.",
+  "essential": "Notfalldienste",
+  "additionalServices": "Alle Angebote",
+  "playTips": "🔊 Tipps anhören",
+  "emergency": "Notfall",
+  "quickHelp": "Brauchst du jetzt Hilfe?",
+  "tts_lang": "de-DE",
+  "tts_intro": "Willkommen bei Lebensmittel- und Grundversorgungsinformationen. Hier findest du Notfallhilfe, Essensprogramme und andere Grundbedürfnisse.",
+  "topics": {
+    "emergency-food": {
+      "title": "Notfall-Lebensmittel",
+      "subtitle": "Soforthilfe und Notfallmahlzeiten",
+      "tip": "24/7 verfügbar für sofortige Hungerhilfe"
+    },
+    "food-banks": {
+      "title": "Lebensmitteltafeln & Essensprogramme",
+      "subtitle": "Regelmäßige Lebensmittelausgabe und Gemeinschaftsessen",
+      "tip": "Wöchentliche Lebensmittelpakete und warme Mahlzeiten in Gemeindezentren"
+    },
+    "payment-cards": {
+      "title": "Asyl-Zahlungskarten",
+      "subtitle": "Wie man Unterstützungskarten nutzt und verwaltet",
+      "tip": "Infos zur Kartenaktivierung, Ausgabelimits und Akzeptanzstellen"
+    },
+    "hygiene-facilities": {
+      "title": "Hygiene- & Duschmöglichkeiten",
+      "subtitle": "Saubere Einrichtungen für persönliche Hygiene",
+      "tip": "Kostenlose Duschen und Hygienesets verfügbar"
+    },
+    "clothing-distribution": {
+      "title": "Kleidung & Winterausstattung",
+      "subtitle": "Kostenlose Kleidung und saisonale Artikel",
+      "tip": "Warme Kleidung, Schuhe und Winterbedarf verfügbar"
+    },
+    "baby-essentials": {
+      "title": "Baby- & Kinderausstattung",
+      "subtitle": "Windeln, Babynahrung, Pflegeartikel",
+      "tip": "Kostenlose Babyartikel für Familien mit Kleinkindern"
+    },
+    "menstrual-health": {
+      "title": "Hygiene & Menstruationsgesundheit",
+      "subtitle": "Periodenprodukte und Hygieneartikel",
+      "tip": "Kostenlose Menstruationsprodukte und Hygieneartikel verfügbar"
+    },
+    "shopping-assistance": {
+      "title": "Einkaufshilfe & Gutscheine",
+      "subtitle": "Lebensmittelmarken, Supermarktgutscheine und Unterstützung beim Einkauf",
+      "tip": "Hilfe beim Lebensmitteleinkauf und Lebensmittelgutscheine"
+    },
+    "affordable-food": {
+      "title": "Günstige Essensangebote",
+      "subtitle": "Preiswerte Küchen und Mahlzeiten",
+      "tip": "Gemeinschaftsküchen und günstige Essensprogramme"
+    },
+    "nutrition-advice": {
+      "title": "Ernährungsberatung",
+      "subtitle": "Praktische Tipps für gesunde Ernährung",
+      "tip": "Einfache Ernährungstipps für gesundes Essen mit kleinem Budget"
+    },
+    "food-safety": {
+      "title": "Lebensmittelsicherheit & Lagerung",
+      "subtitle": "Sicherer Umgang mit Lebensmitteln und Allergieinfos",
+      "tip": "Wichtige Sicherheitstipps zur Vermeidung von Krankheiten"
+    },
+    "food-delivery": {
+      "title": "Lebensmittel-Lieferdienste",
+      "subtitle": "Lieferungen für ältere, behinderte oder vulnerable Personen",
+      "tip": "Hauslieferung von Mahlzeiten und Lebensmitteln für Menschen, die nicht reisen können"
+    },
+    "donate-volunteer": {
+      "title": "Spenden & Freiwilligenarbeit",
+      "subtitle": "Wie man der Gemeinschaft etwas zurückgibt",
+      "tip": "Möglichkeiten, anderen zu helfen und Essensprogramme zu unterstützen"
+    },
+    "legal-rights": {
+      "title": "Rechte & Anspruch auf Unterstützung",
+      "subtitle": "Deine Rechte bei Lebensmittelhilfe und Sozialleistungen",
+      "tip": "Kenne deine Ansprüche und wie du Diskriminierung meldest"
+    }
+  }
+}

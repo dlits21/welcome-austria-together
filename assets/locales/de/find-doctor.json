@@ -1,0 +1,36 @@
+{
+  "pageTitle": "Arzt finden",
+  "pageIntro": "Wie man in Österreich medizinische Versorgung findet und nutzt",
+  "exampleVideoId": "Q607TYRBxFU",
+  "doctor": {
+    "tiles": {
+      "when_title": "Wann sollte ich zum Arzt gehen?",
+      "when_sub": "Erkältung, Verletzungen, Schmerzen – was ist dringend?",
+      "insurance_title": "Brauche ich eine Versicherung?",
+      "insurance_sub": "Die meisten ÄrztInnen verlangen eine Krankenversicherung",
+      "gp_title": "Hausarzt / Allgemeinmediziner",
+      "gp_sub": "Erste Anlaufstelle bei gesundheitlichen Problemen",
+      "walkin_title": "Ambulanzen / Walk-in-Kliniken",
+      "walkin_sub": "Orte, an die man ohne Termin gehen kann",
+      "specialist_title": "Fachärzte",
+      "specialist_sub": "Überweisung vom Hausarzt oder direkte Behandlung",
+      "children_title": "Kinderärzte",
+      "children_sub": "ÄrztInnen für Kinder und Jugendliche",
+      "hotlines_title": "Hotlines & Verzeichnisse",
+      "hotlines_sub": "Anrufen für den nächstgelegenen offenen Arzt"
+    },
+    "contacts": {
+      "national_hotline": "Gesundheitshotline 1450",
+      "national_sub": "Anrufen für medizinische Beratung & den nächstgelegenen Arzt",
+      "directory": "Online-Ärzteverzeichnis",
+      "directory_url": "https://www.arztsuche.at",
+      "directory_sub": "Ärzte nach Region und Fachgebiet suchen",
+      "redcross": "Rotes Kreuz Gesundheitszentren",
+      "redcross_url": "https://www.roteskreuz.at",
+      "redcross_sub": "Ambulanzen und Erste Hilfe",
+      "ngo_name": "Ärzte ohne Grenzen Österreich",
+      "ngo_phone": "0800 111 222",
+      "ngo_sub": "Unterstützung für Geflüchtete ohne Versicherung"
+    }
+  }
+}

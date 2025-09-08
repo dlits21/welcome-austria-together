@@ -1,0 +1,36 @@
+{
+  "pageTitle": "معلومات التطعيم",
+  "pageIntro": "موارد وإرشادات مهمة للتطعيم لك ولعائلتك",
+  "exampleVideoId": "Q607TYRBxFU",
+  "tiles": {
+    "child_vaccines_title": "تطعيمات الأطفال",
+    "child_vaccines_sub": "التطعيمات الأساسية للرضع والأطفال والمراهقين",
+    "adult_vaccines_title": "تطعيمات الكبار",
+    "adult_vaccines_sub": "التطعيمات الموصى بها للبالغين وكبار السن",
+    "free_vaccines_title": "مراكز التطعيم المجانية",
+    "free_vaccines_sub": "أماكن الحصول على التطعيم مجاناً",
+    "documentation_title": "المستندات المطلوبة",
+    "documentation_sub": "ما يجب إحضاره لمواعيد التطعيم",
+    "faq_title": "الأسئلة الشائعة عن التطعيم",
+    "faq_sub": "إجابات على الأسئلة والمخاوف الشائعة",
+    "travel_vaccines_title": "تطعيمات السفر",
+    "travel_vaccines_sub": "تطعيمات خاصة للسفر الدولي",
+    "pregnancy_vaccines_title": "تطعيمات أثناء الحمل",
+    "pregnancy_vaccines_sub": "تطعيمات آمنة أثناء الحمل والرضاعة",
+    "schedule_title": "جدول التطعيم",
+    "schedule_sub": "متى يجب أخذ كل تطعيم حسب العمر"
+  },
+  "trusted": {
+    "health_ministry": "وزارة الصحة النمساوية",
+    "health_phone": "0800 555 621",
+    "health_url": "https://www.sozialministerium.at",
+    "health_sub": "معلومات وجداول التطعيم الرسمية",
+    "vaccination_hotline": "الخط الساخن لمعلومات التطعيم",
+    "hotline_phone": "1450",
+    "hotline_sub": "استشارات صحية على مدار الساعة وإرشادات التطعيم",
+    "immunization_service": "خدمة التطعيم النمساوية",
+    "immunization_phone": "01 531 37-0",
+    "immunization_url": "https://www.ages.at",
+    "immunization_sub": "خدمات واستشارات التطعيم المهنية"
+  }
+}

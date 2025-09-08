@@ -1,0 +1,39 @@
+{
+  "pageTitle": "Reproduktive Gesundheit & Sicherheit",
+  "pageIntro": "Vertrauliche reproduktive Gesundheitsversorgung, Schwangerschaftsunterstützung und Sicherheitsressourcen für Frauen",
+  "confidentialityNotice": "Alle reproduktiven Gesundheitsdienste sind vertraulich. Deine Privatsphäre ist gesetzlich geschützt.",
+  "exampleVideoId": "Q607TYRBxFU",
+  "tiles": {
+    "pregnancy_care_title": "Schwangerschaftsbetreuung",
+    "pregnancy_care_sub": "Wo du Vorsorge und Unterstützung findest",
+    "antenatal_title": "Checkliste Schwangerschaft",
+    "antenatal_sub": "Wichtige Termine und Untersuchungen während der Schwangerschaft",
+    "contraception_title": "Verhütung",
+    "contraception_sub": "Verhütungsmethoden und Notfallverhütung",
+    "emergency_contraception_title": "Notfallverhütung",
+    "emergency_contraception_sub": "Pille danach und wo man sie bekommt",
+    "women_ngos_title": "Frauenorganisationen",
+    "women_ngos_sub": "Direkter Kontakt zu spezialisierten Frauenorganisationen",
+    "shelter_title": "Frauenhäuser",
+    "shelter_sub": "Sichere Unterkünfte und Notfallunterbringung",
+    "sexual_violence_title": "Unterstützung bei sexueller Gewalt",
+    "sexual_violence_sub": "Krisenhilfe und spezialisierte Beratung",
+    "reporting_title": "Sexuelle Gewalt melden",
+    "reporting_sub": "Sichere Meldeoptionen mit Fokus auf NGO-Unterstützung",
+    "reproductive_rights_title": "Reproduktive Rechte",
+    "reproductive_rights_sub": "Kenne deine gesetzlichen Rechte und deinen Schutz"
+  },
+  "trusted": {
+    "women_helpline_name": "Frauenhelpline Österreich",
+    "women_helpline_phone": "0800 222 555",
+    "women_helpline_url": "https://www.frauenhelpline.at",
+    "women_helpline_sub": "24/7 vertrauliche Unterstützung für Frauen in Krisen",
+    "pregnancy_support": "Schwangerschaftsberatungsdienst",
+    "pregnancy_phone": "0800 600 700",
+    "pregnancy_sub": "Kostenlose Schwangerschaftsberatung und Unterstützung",
+    "sexual_violence_center": "Krisenzentrum sexuelle Gewalt",
+    "sexual_violence_phone": "01 523 22 22",
+    "sexual_violence_url": "https://www.frauenberatung.at",
+    "sexual_violence_sub": "Spezialisierte Unterstützung für Betroffene sexueller Gewalt"
+  }
+}

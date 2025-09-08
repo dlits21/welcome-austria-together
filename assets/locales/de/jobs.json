@@ -1,0 +1,88 @@
+{
+  "pageTitle": "Arbeit & Beschäftigung",
+  "introShort": "Finde Arbeitserlaubnisse, verstehe deine Rechte und erhalte Zugang zu sicheren Arbeitsmöglichkeiten",
+  "playTips": "🔊 Audio-Tipps abspielen",
+  "emergency": "🚨 Notfallhilfe",
+  "essential": "Wichtige Dienste",
+  "additionalServices": "Weitere Ressourcen",
+  "quickHelp": "Brauchst du sofort Hilfe?",
+  "tts_lang": "de-DE",
+  "tts_intro": "Hier sind die wichtigsten Arbeits- und Beschäftigungsressourcen",
+  "topics": {
+    "work-permit-eligibility": {
+      "title": "Darf ich arbeiten? — Prüfer für Arbeitserlaubnis",
+      "subtitle": "Überprüfe, ob du legal arbeiten darfst und welche Genehmigungen du brauchst",
+      "tip": "Nutze unser Tool, um deine Arbeitsrechte zu verstehen"
+    },
+    "permits-guide": {
+      "title": "Schneller Leitfaden: Arbeitserlaubnis beantragen",
+      "subtitle": "Schritt-für-Schritt-Anleitung für die Antragstellung",
+      "tip": "Erhalte klare Anweisungen zum Ablauf des Antrags"
+    },
+    "worker-rights": {
+      "title": "Arbeiterrechte",
+      "subtitle": "Lohn, Arbeitszeiten, Urlaub, Verträge und Sozialversicherung",
+      "tip": "Kenne deine Rechte als Arbeitnehmer in Österreich"
+    },
+    "verified-employers": {
+      "title": "Verzeichnis sicherer Arbeitgeber",
+      "subtitle": "Finde geprüfte, vertrauenswürdige Arbeitgeber",
+      "tip": "Greife auf unser Verzeichnis geprüfter Arbeitgeber zu"
+    },
+    "job-search": {
+      "title": "Jobsuche & Vermittlung",
+      "subtitle": "NGO-orientierte, niedrigschwellige Jobangebote",
+      "tip": "Finde Jobmöglichkeiten, die Geflüchtete und Migranten willkommen heißen"
+    },
+    "contract-templates": {
+      "title": "Verträge & Vorlagen",
+      "subtitle": "Lebenslauf, Bewerbungsschreiben und Beschwerdevorlagen",
+      "tip": "Hole dir Vorlagen und Unterstützung bei der Vertragsprüfung"
+    },
+    "exploitation-report": {
+      "title": "Ausbeutung & Lohnraub — Melden & Hilfe bekommen",
+      "subtitle": "Missbrauch am Arbeitsplatz melden und Unterstützung erhalten",
+      "tip": "Erfahre, wie du Ausbeutung melden und Hilfe bekommen kannst"
+    },
+    "health-safety": {
+      "title": "Gesundheit & Sicherheit am Arbeitsplatz",
+      "subtitle": "Dein Recht auf einen sicheren Arbeitsplatz",
+      "tip": "Verstehe deine Rechte und Schutzmaßnahmen"
+    },
+    "taxes-payroll": {
+      "title": "Steuern, Sozialversicherung, Gehaltsabrechnung",
+      "subtitle": "Deine Lohnabrechnung und Abzüge verstehen",
+      "tip": "Lerne die Grundlagen zu Steuern und Sozialversicherungsbeiträgen"
+    },
+    "specific-groups": {
+      "title": "Rechte für bestimmte Gruppen",
+      "subtitle": "Frauen, undokumentierte Personen, Minderjährige, Saisonarbeiter",
+      "tip": "Spezielle Schutzrechte für besonders gefährdete Gruppen"
+    },
+    "discrimination": {
+      "title": "Diskriminierung & Belästigung am Arbeitsplatz",
+      "subtitle": "Erkennen und melden",
+      "tip": "Kenne deine Rechte gegen Diskriminierung"
+    },
+    "skills-training": {
+      "title": "Anerkennung & Ausbildung",
+      "subtitle": "Lehre und Weiterbildung",
+      "tip": "Lass deine Qualifikationen anerkennen und finde Trainingsmöglichkeiten"
+    },
+    "informal-work": {
+      "title": "Arbeit ohne Vertrag / Schwarzarbeit",
+      "subtitle": "Sicher bleiben bei informeller Arbeit",
+      "tip": "Tipps für deine Sicherheit in solchen Arbeitsverhältnissen"
+    },
+    "unions-support": {
+      "title": "Gewerkschaften & kollektive Unterstützung",
+      "subtitle": "Arbeiterorganisationen und Tarifverhandlungen",
+      "tip": "Vernetze dich mit Gewerkschaften und Unterstützungsgruppen"
+    },
+    "employer-vetting": {
+      "title": "Arbeitgeberprüfung",
+      "subtitle": "Hintergrundchecks und Verifizierung",
+      "tip": "Prüfe Arbeitgeber, bevor du Jobs annimmst"
+    }
+  }
+}

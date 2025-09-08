@@ -1,0 +1,38 @@
+{
+  "pageTitle": "دعم العنف الجنسي والقائم على النوع الاجتماعي",
+  "pageIntro": "دعم سري وموارد للناجيات من العنف الجنسي والقائم على النوع الاجتماعي",
+  "confidentialityAssurance": "جميع الخدمات المذكورة تعطي الأولوية لسلامتك وسريتك. أنتِ تتحكمين بما تشاركينه ومتى.",
+  "exampleVideoId": "dQw4w9WgXcQ",
+  "tiles": {
+    "immediate_title": "السلامة الفورية",
+    "immediate_sub": "طرق هروب آمنة وجهات اتصال طارئة",
+    "evidence_title": "حفظ الأدلة",
+    "evidence_sub": "خطوات لتوثيق وحفظ الأدلة بشكل آمن",
+    "crisis_title": "خطوط الأزمات",
+    "crisis_sub": "أرقام دعم سرية على مدار 24 ساعة",
+    "legal_title": "المساعدة القانونية",
+    "legal_sub": "استشارات قانونية مجانية وخدمات دعم",
+    "shelter_title": "السكن الآمن",
+    "shelter_sub": "ملاجئ طارئة وسكن آمن",
+    "counseling_title": "الاستشارة النفسية (الصدمة)",
+    "counseling_sub": "علاج متخصص ومجموعات دعم",
+    "reporting_title": "خيارات الإبلاغ",
+    "reporting_sub": "التعرف على خياراتك – بدون ضغط للتبليغ",
+    "support_title": "الدعم المستمر",
+    "support_sub": "برامج للتعافي والتمكين على المدى الطويل"
+  },
+  "trusted": {
+    "women_shelter": "مأوى الطوارئ للنساء",
+    "women_phone": "0800 222 555",
+    "women_url": "https://www.frauenhelpline.at",
+    "women_sub": "سكن آمن وتدخل في الأزمات على مدار 24 ساعة",
+    "legal_aid": "المساعدة القانونية للنساء",
+    "legal_phone": "0800 100 200",
+    "legal_url": "https://www.rechtsberatung-frauen.at",
+    "legal_sub": "استشارة قانونية مجانية ودعم قضائي",
+    "crisis_hotline": "الخط الساخن لمنع العنف",
+    "crisis_phone": "0800 800 300",
+    "crisis_url": "https://www.gewaltpraevention.at",
+    "crisis_sub": "تدخل سري في الأزمات وخطط للسلامة"
+  }
+}

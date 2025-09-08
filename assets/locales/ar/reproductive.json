@@ -1,0 +1,39 @@
+{
+  "pageTitle": "الصحة الإنجابية والسلامة",
+  "pageIntro": "رعاية صحية إنجابية سرية، دعم الحمل، وموارد السلامة للنساء",
+  "confidentialityNotice": "جميع خدمات الصحة الإنجابية سرية. خصوصيتك محمية بموجب القانون.",
+  "exampleVideoId": "Q607TYRBxFU",
+  "tiles": {
+    "pregnancy_care_title": "رعاية الحمل",
+    "pregnancy_care_sub": "أين تجد رعاية ما قبل الولادة ودعم الأمومة",
+    "antenatal_title": "قائمة فحوصات الحمل",
+    "antenatal_sub": "المواعيد والفحوصات الأساسية أثناء الحمل",
+    "contraception_title": "وسائل منع الحمل",
+    "contraception_sub": "خيارات تنظيم النسل ومنع الحمل الطارئ",
+    "emergency_contraception_title": "منع الحمل الطارئ",
+    "emergency_contraception_sub": "حبوب الصباح التالي وأماكن الحصول عليها",
+    "women_ngos_title": "منظمات دعم المرأة",
+    "women_ngos_sub": "تحويل مباشر إلى منظمات نسائية متخصصة",
+    "shelter_title": "ملاجئ النساء",
+    "shelter_sub": "سكن آمن وإيواء طارئ",
+    "sexual_violence_title": "دعم العنف الجنسي",
+    "sexual_violence_sub": "دعم الأزمات واستشارات متخصصة",
+    "reporting_title": "الإبلاغ عن الاعتداء الجنسي",
+    "reporting_sub": "خيارات إبلاغ آمنة تركز على دعم المنظمات",
+    "reproductive_rights_title": "الحقوق الإنجابية",
+    "reproductive_rights_sub": "تعرفي على حقوقك القانونية وحمايتك"
+  },
+  "trusted": {
+    "women_helpline_name": "الخط الساخن للنساء في النمسا",
+    "women_helpline_phone": "0800 222 555",
+    "women_helpline_url": "https://www.frauenhelpline.at",
+    "women_helpline_sub": "دعم سري على مدار الساعة للنساء في الأزمات",
+    "pregnancy_support": "خدمة دعم الحمل",
+    "pregnancy_phone": "0800 600 700",
+    "pregnancy_sub": "استشارات ودعم مجاني للحمل",
+    "sexual_violence_center": "مركز أزمة العنف الجنسي",
+    "sexual_violence_phone": "01 523 22 22",
+    "sexual_violence_url": "https://www.frauenberatung.at",
+    "sexual_violence_sub": "دعم متخصص للناجيات من العنف الجنسي"
+  }
+}

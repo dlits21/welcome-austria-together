@@ -1,0 +1,36 @@
+{
+  "pageTitle": "Impfinformationen",
+  "pageIntro": "Wichtige Impfressourcen und Leitfäden für dich und deine Familie",
+  "exampleVideoId": "Q607TYRBxFU",
+  "tiles": {
+    "child_vaccines_title": "Kinderimpfungen",
+    "child_vaccines_sub": "Wichtige Impfungen für Säuglinge, Kinder und Jugendliche",
+    "adult_vaccines_title": "Erwachsenenimpfungen",
+    "adult_vaccines_sub": "Empfohlene Impfungen für Erwachsene und ältere Menschen",
+    "free_vaccines_title": "Kostenlose Impfstellen",
+    "free_vaccines_sub": "Wo man Impfungen kostenlos erhält",
+    "documentation_title": "Erforderliche Dokumente",
+    "documentation_sub": "Was du zu Impfterminen mitbringen musst",
+    "faq_title": "Impf-FAQ",
+    "faq_sub": "Häufige Fragen und Antworten",
+    "travel_vaccines_title": "Reiseimpfungen",
+    "travel_vaccines_sub": "Spezielle Impfungen für internationale Reisen",
+    "pregnancy_vaccines_title": "Impfungen in der Schwangerschaft",
+    "pregnancy_vaccines_sub": "Sichere Impfungen während Schwangerschaft und Stillzeit",
+    "schedule_title": "Impfplan",
+    "schedule_sub": "Wann welche Impfung nach Alter empfohlen ist"
+  },
+  "trusted": {
+    "health_ministry": "Bundesministerium für Gesundheit Österreich",
+    "health_phone": "0800 555 621",
+    "health_url": "https://www.sozialministerium.at",
+    "health_sub": "Offizielle Impfungen und Impfpläne",
+    "vaccination_hotline": "Impfinformations-Hotline",
+    "hotline_phone": "1450",
+    "hotline_sub": "24/7 Gesundheitsberatung und Impfhinweise",
+    "immunization_service": "Österreichischer Impfdienst",
+    "immunization_phone": "01 531 37-0",
+    "immunization_url": "https://www.ages.at",
+    "immunization_sub": "Professionelle Impfberatung und -dienste"
+  }
+}

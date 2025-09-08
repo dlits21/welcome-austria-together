@@ -1,0 +1,25 @@
+{
+  "pageTitle": "Berufung & gerichtliche Überprüfung",
+  "pageIntro": "Wenn dein Asylantrag abgelehnt wurde, hast du möglicherweise das Recht, Berufung einzulegen. Die Fristen sind kurz – hole dir sofort rechtliche Unterstützung.",
+  "tiles": {
+    "deadlines_title": "Fristen",
+    "deadlines_sub": "Verstehe die Zeitlimits für die Einreichung",
+    "guide_title": "Schritt-für-Schritt-Leitfaden",
+    "guide_sub": "Was dich im Berufungsverfahren erwartet",
+    "templates_title": "Berufungsvorlagen",
+    "templates_sub": "Ausfüllbare Musterbriefe (keine Rechtsberatung)",
+    "contacts_title": "Hilfe erhalten",
+    "contacts_sub": "Finde Pro-Bono-Anwälte und NGOs"
+  },
+  "trusted": {
+    "lawyer_service": "Pro-Bono-Asylanwälte",
+    "lawyer_phone": "+123456789",
+    "lawyer_url": "https://asylumlawyers.org",
+    "lawyer_sub": "Kostenlose Rechtsberatung für Asylsuchende",
+    "ngo_legal": "Rechtsberatungs-NGO",
+    "ngo_phone": "+987654321",
+    "ngo_url": "https://ngohelp.org",
+    "ngo_sub": "Unterstützung in mehreren Sprachen"
+  },
+  "exampleVideoId": "abcd1234"
+}

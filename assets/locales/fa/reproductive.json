@@ -1,0 +1,39 @@
+{
+  "pageTitle": "سلامت و ایمنی باروری",
+  "pageIntro": "مراقبت‌های محرمانه باروری، حمایت بارداری و منابع ایمنی برای زنان",
+  "confidentialityNotice": "تمام خدمات سلامت باروری محرمانه هستند. حریم خصوصی شما تحت قانون محافظت می‌شود.",
+  "exampleVideoId": "Q607TYRBxFU",
+  "tiles": {
+    "pregnancy_care_title": "مراقبت بارداری",
+    "pregnancy_care_sub": "کجا مراقبت‌های دوران بارداری و حمایت مادران پیدا کنید",
+    "antenatal_title": "چک‌لیست دوران بارداری",
+    "antenatal_sub": "مهم‌ترین وقت‌ها و آزمایش‌ها در دوران بارداری",
+    "contraception_title": "پیشگیری از بارداری",
+    "contraception_sub": "روش‌های جلوگیری و پیشگیری اضطراری",
+    "emergency_contraception_title": "پیشگیری اضطراری",
+    "emergency_contraception_sub": "قرص روز بعد و محل دریافت آن",
+    "women_ngos_title": "سازمان‌های حمایت از زنان",
+    "women_ngos_sub": "ارتباط مستقیم با سازمان‌های تخصصی زنان",
+    "shelter_title": "خانه‌های امن زنان",
+    "shelter_sub": "اسکان امن و اضطراری",
+    "sexual_violence_title": "حمایت در خشونت جنسی",
+    "sexual_violence_sub": "حمایت بحران و مشاوره تخصصی",
+    "reporting_title": "گزارش خشونت جنسی",
+    "reporting_sub": "گزینه‌های گزارش امن با تمرکز بر حمایت سازمان‌ها",
+    "reproductive_rights_title": "حقوق باروری",
+    "reproductive_rights_sub": "حقوق قانونی و حمایت‌های خود را بشناسید"
+  },
+  "trusted": {
+    "women_helpline_name": "خط کمک زنان اتریش",
+    "women_helpline_phone": "0800 222 555",
+    "women_helpline_url": "https://www.frauenhelpline.at",
+    "women_helpline_sub": "پشتیبانی محرمانه ۲۴ ساعته برای زنان در بحران",
+    "pregnancy_support": "خدمات حمایت بارداری",
+    "pregnancy_phone": "0800 600 700",
+    "pregnancy_sub": "مشاوره و حمایت رایگان بارداری",
+    "sexual_violence_center": "مرکز بحران خشونت جنسی",
+    "sexual_violence_phone": "01 523 22 22",
+    "sexual_violence_url": "https://www.frauenberatung.at",
+    "sexual_violence_sub": "حمایت تخصصی برای بازماندگان خشونت جنسی"
+  }
+}

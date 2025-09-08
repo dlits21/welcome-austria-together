@@ -1,0 +1,63 @@
+{
+  "pageTitle": "Kontakte",
+  "introShort": "Wichtige Kontakte und Hotlines. Tippe für sofortige Hilfe und Unterstützungsdienste.",
+  "playTips": "Kontaktdaten anhören",
+  "myJourney": "Meinen Weg begleiten",
+  "quickHelp": "Soforthilfe",
+  "essential": "Notfalldienste",
+  "additionalServices": "Unterstützungsdienste",
+  "tts_lang": "de-DE",
+  "tts_intro": "Hier sind wichtige Notfallkontakte und Unterstützungsdienste.",
+  "topics": {
+    "emergency-crisis-hotlines": {
+      "title": "Notfall- & Krisenhotlines",
+      "subtitle": "24/7 Krisenhilfe, Suizidprävention, dringende Unterstützung",
+      "tip": "Wähle 112 im Notfall. Psychische Krisenhotlines sind rund um die Uhr verfügbar."
+    },
+    "legal-asylum-help": {
+      "title": "Rechts- & Asylhilfe",
+      "subtitle": "Kostenlose Rechtsberatung, Asylunterstützung, NGO-Hilfe",
+      "tip": "Kontaktiere Diakonie oder Caritas für kostenlose Rechtsberatung und Asylhilfe."
+    },
+    "housing-shelter-hotlines": {
+      "title": "Wohnungs- & Unterkunftshotlines",
+      "subtitle": "Notunterkünfte, Wohnungslosigkeitsprävention, Wohnhilfe",
+      "tip": "Rufe sofort die Wohnungs-Hotlines an, wenn du von Delogierung oder Obdachlosigkeit bedroht bist."
+    },
+    "healthcare-support-lines": {
+      "title": "Gesundheits-Hotlines",
+      "subtitle": "Medizinische Notfälle, Krankenversicherung, Arztvermittlung",
+      "tip": "Rufe 1450 für medizinische Beratung an oder gehe in die Notaufnahme."
+    },
+    "food-essentials": {
+      "title": "Lebensmittel & Notwendiges",
+      "subtitle": "Tafeln, Grundversorgung, Soforthilfe",
+      "tip": "Besuche Caritas oder Tafeln für kostenlose Mahlzeiten und wichtige Dinge."
+    },
+    "children-family-support": {
+      "title": "Kinder- & Familienhilfe",
+      "subtitle": "Kinderschutz, Familienberatung, Unterstützung für Eltern",
+      "tip": "Kontaktiere die Kinder- und Jugendhilfe für Schutz und Unterstützungsprogramme."
+    },
+    "work-exploitation": {
+      "title": "Arbeit & Ausbeutung",
+      "subtitle": "Arbeitsrechte, Lohnbetrug, Missbrauch am Arbeitsplatz melden",
+      "tip": "Melde Ausbeutung an die Arbeitsinspektion oder Arbeiterorganisationen."
+    },
+    "everyday-life-help": {
+      "title": "Alltagsunterstützung",
+      "subtitle": "Allgemeine Hilfe, Amtswege, Übersetzungsdienste",
+      "tip": "NGOs bieten Unterstützung bei Übersetzungen und Behördenwegen."
+    },
+    "community-integration-ngos": {
+      "title": "Gemeinschaft & Integration",
+      "subtitle": "Integrationshilfe, Gemeinschaftsprogramme, kulturelle Unterstützung",
+      "tip": "Nimm an Integrationsprogrammen von NGOs teil, um soziale Unterstützung zu erhalten."
+    },
+    "directory-quick-access": {
+      "title": "Verzeichnis & Schnellzugriff",
+      "subtitle": "Telefonbuch, Online-Ressourcen, Service-Finder",
+      "tip": "Nutze Online-Verzeichnisse, um Hilfe in deiner Nähe schnell zu finden."
+    }
+  }
+}

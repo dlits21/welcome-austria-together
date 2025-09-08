@@ -1,0 +1,32 @@
+{
+  "pageTitle": "دعم الصحة النفسية",
+  "pageIntro": "موارد أساسية ومعلومات لدعم الصحة النفسية",
+  "exampleVideoId": "Q607TYRBxFU",
+  "tiles": {
+    "signs_title": "علامات التحذير",
+    "signs_sub": "تغييرات في النوم، الأكل، المزاج والسلوك",
+    "what_title": "ما يمكنك فعله",
+    "what_sub": "خطوات بسيطة لتحسين الصحة النفسية",
+    "seek_title": "أين تحصل على المساعدة",
+    "seek_sub": "منظمات، عيادات، ودعم مهني",
+    "self_title": "نصائح للعناية الذاتية",
+    "self_sub": "تمارين التنفس، المشي، الروتين اليومي",
+    "parents_title": "دعم الأطفال",
+    "parents_sub": "كيفية مساعدة الأطفال في مشاكل الصحة النفسية",
+    "hotlines_title": "الخطوط الساخنة الطارئة",
+    "hotlines_sub": "اتصل فوراً إذا كان هناك خطر على أحد"
+  },
+  "trusted": {
+    "ngo_name": "Pro Mente Austria",
+    "ngo_phone": "0800 100 100",
+    "ngo_url": "https://www.promente-austria.at",
+    "ngo_sub": "دعم للصحة النفسية بعدة لغات",
+    "child_services": "خدمات الطفل والشباب",
+    "child_phone": "0800 240 264",
+    "child_sub": "خدمات دعم للأطفال والعائلات",
+    "national_hotline": "خدمة الهاتف النفسي في النمسا",
+    "national_phone": "142",
+    "national_url": "https://www.telefonseelsorge.at",
+    "national_sub": "خط تدخل في الأزمات على مدار الساعة"
+  }
+}

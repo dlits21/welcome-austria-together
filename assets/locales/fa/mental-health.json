@@ -1,0 +1,32 @@
+{
+  "pageTitle": "حمایت سلامت روان",
+  "pageIntro": "منابع ضروری و اطلاعات برای حمایت از سلامت روان",
+  "exampleVideoId": "Q607TYRBxFU",
+  "tiles": {
+    "signs_title": "علائم هشدار",
+    "signs_sub": "تغییرات در خواب، غذا، خلق‌وخو و رفتار",
+    "what_title": "چه کاری می‌توانی انجام دهی",
+    "what_sub": "گام‌های ساده برای بهبود سلامت روان",
+    "seek_title": "کجا کمک بگیری",
+    "seek_sub": "سازمان‌ها، کلینیک‌ها و حمایت حرفه‌ای",
+    "self_title": "نکات خودمراقبتی",
+    "self_sub": "تمرین تنفس، پیاده‌روی، برنامه روزانه",
+    "parents_title": "حمایت از کودکان",
+    "parents_sub": "چگونه به کودکان در مشکلات روانی کمک کنیم",
+    "hotlines_title": "شماره‌های اضطراری",
+    "hotlines_sub": "اگر کسی در خطر است فوراً تماس بگیر"
+  },
+  "trusted": {
+    "ngo_name": "Pro Mente Austria",
+    "ngo_phone": "0800 100 100",
+    "ngo_url": "https://www.promente-austria.at",
+    "ngo_sub": "حمایت سلامت روان به چند زبان",
+    "child_services": "خدمات کودک و نوجوان",
+    "child_phone": "0800 240 264",
+    "child_sub": "خدمات حمایتی برای کودکان و خانواده‌ها",
+    "national_hotline": "تلفن مشاوره اتریش",
+    "national_phone": "142",
+    "national_url": "https://www.telefonseelsorge.at",
+    "national_sub": "خط مداخله در بحران ۲۴ ساعته"
+  }
+}

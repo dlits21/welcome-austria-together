@@ -1,0 +1,38 @@
+{
+  "pageTitle": "Unterstützung bei sexualisierter und geschlechtsbasierter Gewalt",
+  "pageIntro": "Vertrauliche Unterstützung und Ressourcen für Betroffene von sexualisierter und geschlechtsbasierter Gewalt",
+  "confidentialityAssurance": "Alle aufgeführten Dienste stellen deine Sicherheit und Vertraulichkeit in den Vordergrund. Du entscheidest, welche Informationen du teilst und wann.",
+  "exampleVideoId": "dQw4w9WgXcQ",
+  "tiles": {
+    "immediate_title": "Unmittelbare Sicherheit",
+    "immediate_sub": "Sichere Fluchtwege und Notfallkontakte",
+    "evidence_title": "Beweise sichern",
+    "evidence_sub": "Schritte zum sicheren Dokumentieren und Aufbewahren von Beweisen",
+    "crisis_title": "Krisenhotlines",
+    "crisis_sub": "24/7 vertrauliche Krisennummern",
+    "legal_title": "Rechtliche Hilfe",
+    "legal_sub": "Kostenlose Rechtsberatung und Unterstützungsdienste",
+    "shelter_title": "Sicheres Wohnen",
+    "shelter_sub": "Notunterkünfte und sichere Unterbringung",
+    "counseling_title": "Traumaberatung",
+    "counseling_sub": "Spezialisierte Therapie und Selbsthilfegruppen",
+    "reporting_title": "Meldemöglichkeiten",
+    "reporting_sub": "Information zu deinen Optionen – kein Druck zur Anzeige",
+    "support_title": "Langfristige Unterstützung",
+    "support_sub": "Programme zur Erholung und Stärkung"
+  },
+  "trusted": {
+    "women_shelter": "Frauen-Notunterkunft",
+    "women_phone": "0800 222 555",
+    "women_url": "https://www.frauenhelpline.at",
+    "women_sub": "24/7 sichere Unterbringung und Krisenintervention",
+    "legal_aid": "Rechtshilfe für Frauen",
+    "legal_phone": "0800 100 200",
+    "legal_url": "https://www.rechtsberatung-frauen.at",
+    "legal_sub": "Kostenlose Rechtsberatung und Unterstützung vor Gericht",
+    "crisis_hotline": "Hotline Gewaltprävention",
+    "crisis_phone": "0800 800 300",
+    "crisis_url": "https://www.gewaltpraevention.at",
+    "crisis_sub": "Vertrauliche Krisenhilfe und Sicherheitsplanung"
+  }
+}

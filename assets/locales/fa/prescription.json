@@ -1,0 +1,37 @@
+{
+  "pageTitle": "اطلاعات نسخه پزشکی",
+  "pageIntro": "راهنمای کامل نسخه‌ها، داروها و خدمات داروخانه در اتریش",
+  "exampleVideoId": "Q607TYRBxFU",
+  "tiles": {
+    "how_to_get_title": "چگونه نسخه بگیرم؟",
+    "how_to_get_sub": "ویزیت پزشک، مشاوره آنلاین، نسخه‌های اضطراری",
+    "required_meds_title": "چه داروهایی نیاز به نسخه دارند؟",
+    "required_meds_sub": "آنتی‌بیوتیک‌ها، داروهای کنترل‌شده، داروهای بیماری‌های مزمن",
+    "pharmacy_emergency_title": "اورژانس داروخانه",
+    "pharmacy_emergency_sub": "داروخانه‌های شبانه، دسترسی به داروهای اضطراری",
+    "financial_support_title": "حمایت مالی برای دارو",
+    "financial_support_sub": "بیمه، برنامه‌های حمایتی، کاهش هزینه‌ها",
+    "otc_vs_prescription_title": "داروی بدون نسخه در برابر داروی نسخه‌ای",
+    "otc_vs_prescription_sub": "شناخت دسته‌بندی داروها و دسترسی",
+    "prescription_format_title": "فرمت نسخه پزشکی",
+    "prescription_format_sub": "شناخت الزامات نسخه در اتریش",
+    "explain_prescription_title": "توضیح نسخه",
+    "explain_prescription_sub": "چگونه دستور مصرف دارو را بخوانیم و بفهمیم"
+  },
+  "trusted": {
+    "pharmacy_association_name": "انجمن داروسازان اتریش",
+    "pharmacy_association_phone": "01 404 14 28",
+    "pharmacy_association_url": "https://www.apothekerkammer.at",
+    "pharmacy_association_sub": "اطلاعات و راهنمایی رسمی داروخانه‌ها",
+    "emergency_pharmacy_name": "خدمات داروخانه اضطراری",
+    "emergency_pharmacy_phone": "1455",
+    "emergency_pharmacy_sub": "خدمات پیدا کردن داروخانه‌های اضطراری ۲۴/۷",
+    "health_insurance_name": "بیمه سلامت اتریش",
+    "health_insurance_phone": "050 124 411",
+    "health_insurance_url": "https://www.gesundheitskasse.at",
+    "health_insurance_sub": "اطلاعات پوشش دارو و بازپرداخت هزینه",
+    "medication_helpline_name": "خط اطلاعات دارو",
+    "medication_helpline_phone": "0800 201 530",
+    "medication_helpline_sub": "مشاوره حرفه‌ای درباره داروها و تداخل‌ها"
+  }
+}
