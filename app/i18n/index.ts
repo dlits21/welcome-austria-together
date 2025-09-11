@@ -44,7 +44,7 @@ import enAsylumInterview from '../../assets/locales/en/asylum-interview.json';
 import enAsylumWorkPermits from '../../assets/locales/en/asylum-work-permits.json';
 import enGuide from '../../assets/locales/en/guide.json';
 import enAskEmergency from '../../assets/locales/en/ask-emergency.json';
-import enGeneralAsk from '../../assets/locales/en/general-ask.json';
+import enAskGeneral from '../../assets/locales/en/ask-general.json';
 
 import deCommon from '../../assets/locales/de/common.json';
 import deAsk from '../../assets/locales/de/ask.json';
@@ -87,6 +87,7 @@ import deAsylumInterview from '../../assets/locales/de/asylum-interview.json';
 import deAsylumWorkPermits from '../../assets/locales/de/asylum-work-permits.json';
 import deGuide from '../../assets/locales/de/guide.json';
 import deAskEmergency from '../../assets/locales/de/ask-emergency.json';
+import deAskGeneral from '../../assets/locales/de/ask-general.json';
 
 import arCommon from '../../assets/locales/ar/common.json';
 import arAsk from '../../assets/locales/ar/ask.json';
@@ -129,6 +130,7 @@ import arAsylumInterview from '../../assets/locales/ar/asylum-interview.json';
 import arAsylumWorkPermits from '../../assets/locales/ar/asylum-work-permits.json';
 import arGuide from '../../assets/locales/ar/guide.json';
 import arAskEmergency from '../../assets/locales/ar/ask-emergency.json';
+import arAskGeneral from '../../assets/locales/ar/ask-general.json';
 
 import faCommon from '../../assets/locales/fa/common.json';
 import faAsk from '../../assets/locales/fa/ask.json';
@@ -171,7 +173,7 @@ import faAsylumInterview from '../../assets/locales/fa/asylum-interview.json';
 import faAsylumWorkPermits from '../../assets/locales/fa/asylum-work-permits.json';
 import faGuide from '../../assets/locales/fa/guide.json';
 import faAskEmergency from '../../assets/locales/fa/ask-emergency.json';
-
+import faAskGeneral from '../../assets/locales/fa/ask-general.json';
 
 export const resources = {
   en: { common: enCommon,
@@ -215,7 +217,7 @@ export const resources = {
       genderViolence: enGenderViolence,
       guide: enGuide,
       askEmergency: enAskEmergency,
-      generalAsk: enGeneralAsk,
+      askGeneral: enAskGeneral,
        },
   de: { common: deCommon,
         ask: deAsk,
@@ -258,6 +260,7 @@ export const resources = {
         genderViolence: deGenderViolence,
         guide: deGuide,
         askEmergency: deAskEmergency,
+        askGeneral: deAskGeneral,
       },
   ar: { common: arCommon,
         ask: arAsk,
@@ -300,6 +303,7 @@ export const resources = {
         genderViolence: arGenderViolence,
         guide: arGuide,
         askEmergency: arAskEmergency,
+        askGeneral: arAskGeneral,
       },
   fa: { common: faCommon,
         ask: faAsk,
@@ -342,6 +346,7 @@ export const resources = {
         genderViolence: faGenderViolence,
         guide: faGuide,
         askEmergency: faAskEmergency,
+        askGeneral: faAskGeneral,
         },
 };
 

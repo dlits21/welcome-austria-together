@@ -26,7 +26,7 @@ import { useTranslation } from 'react-i18next';
 
 const GeneralSupport: React.FC = () => {
   const { currentLanguage } = useLanguage();
-  const { t } = useTranslation('generalAsk');
+  const { t } = useTranslation('askGeneral');
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
   const [showTutorial, setShowTutorial] = useState(false);
