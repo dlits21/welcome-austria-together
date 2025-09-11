@@ -1,3 +1,20 @@
 {
-  "support": "Unterstützung"
+  "askForHelp": "درخواست کمک",
+  "chooseArea": "منطقه‌ای را که نیاز به پشتیبانی دارید، انتخاب کنید.",
+  "general": "عمومی",
+  "generalDescription": "پشتیبانی و مشاوره عمومی",
+  "emergencySupport": "پشتیبانی اضطراری",
+  "emergencyDescription": "کمک فوری در شرایط اضطراری",
+  "legalSupport": "پشتیبانی حقوقی",
+  "legalDescription": "مشاوره حقوقی و کمک قانونی",
+  "healthMentalHealth": "پشتیبانی سلامت جسمی و روانی",
+  "healthDescription": "پشتیبانی پزشکی و روان‌شناختی",
+  "financialLiteracy": "آموزش و پشتیبانی مالی",
+  "financialDescription": "کمک در مدیریت مالی و بودجه‌بندی",
+  "culturalOrientation": "آشنایی فرهنگی و برنامه‌های ادغام",
+  "culturalDescription": "برنامه‌هایی برای ادغام فرهنگی",
+  "integrationPathways": "راه‌های ادغام و مشاوره شغلی",
+  "careerDescription": "مشاوره شغلی و کمک به ادغام",
+  "documentCertification": "مدیریت مدارک و گواهی‌ها",
+  "documentDescription": "کمک در مدارک و گواهی‌ها"
 }

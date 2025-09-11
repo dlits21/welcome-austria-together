@@ -85,6 +85,7 @@ import deAsylumReunification from '../../assets/locales/de/asylum-reunification.
 import deAsylumInterview from '../../assets/locales/de/asylum-interview.json';
 import deAsylumWorkPermits from '../../assets/locales/de/asylum-work-permits.json';
 import deGuide from '../../assets/locales/de/guide.json';
+import deAskEmergency from '../../assets/locales/de/ask-emergency.json';
 
 import arCommon from '../../assets/locales/ar/common.json';
 import arAsk from '../../assets/locales/ar/ask.json';
@@ -126,6 +127,7 @@ import arAsylumReunification from '../../assets/locales/ar/asylum-reunification.
 import arAsylumInterview from '../../assets/locales/ar/asylum-interview.json';
 import arAsylumWorkPermits from '../../assets/locales/ar/asylum-work-permits.json';
 import arGuide from '../../assets/locales/ar/guide.json';
+import arAskEmergency from '../../assets/locales/ar/ask-emergency.json';
 
 import faCommon from '../../assets/locales/fa/common.json';
 import faAsk from '../../assets/locales/fa/ask.json';
@@ -167,6 +169,8 @@ import faAsylumReunification from '../../assets/locales/fa/asylum-reunification.
 import faAsylumInterview from '../../assets/locales/fa/asylum-interview.json';
 import faAsylumWorkPermits from '../../assets/locales/fa/asylum-work-permits.json';
 import faGuide from '../../assets/locales/fa/guide.json';
+import faAskEmergency from '../../assets/locales/fa/ask-emergency.json';
+
 
 export const resources = {
   en: { common: enCommon,
@@ -251,6 +255,7 @@ export const resources = {
         childrenHealth: deChildrenHealth,
         genderViolence: deGenderViolence,
         guide: deGuide,
+        askEmergency: deAskEmergency,
       },
   ar: { common: arCommon,
         ask: arAsk,
@@ -292,6 +297,7 @@ export const resources = {
         childrenHealth: arChildrenHealth,
         genderViolence: arGenderViolence,
         guide: arGuide,
+        askEmergency: arAskEmergency,
       },
   fa: { common: faCommon,
         ask: faAsk,
@@ -332,7 +338,9 @@ export const resources = {
         reproductive: faReproductive,
         childrenHealth: faChildrenHealth,
         genderViolence: faGenderViolence,
-        guide: faGuide,},
+        guide: faGuide,
+        askEmergency: faAskEmergency,
+        },
 };
 
 const SUPPORTED = ['en','de','ar','fa'] as const;

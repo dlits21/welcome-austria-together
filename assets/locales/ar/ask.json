@@ -1,3 +1,20 @@
 {
-  "support": "Unterstützung"
+  "askForHelp": "اطلب المساعدة",
+  "chooseArea": "اختر المجال الذي تحتاج فيه إلى الدعم.",
+  "general": "عام",
+  "generalDescription": "الدعم العام والاستشارة",
+  "emergencySupport": "الدعم الطارئ",
+  "emergencyDescription": "المساعدة الفورية في الحالات الطارئة",
+  "legalSupport": "الدعم القانوني",
+  "legalDescription": "الاستشارة القانونية والمساعدة القضائية",
+  "healthMentalHealth": "الدعم الصحي والنفسي",
+  "healthDescription": "الدعم الطبي والنفسي",
+  "financialLiteracy": "الدعم المالي والتثقيف المالي",
+  "financialDescription": "المساعدة في الأمور المالية وإعداد الميزانية",
+  "culturalOrientation": "التوجيه الثقافي وبرامج الاندماج",
+  "culturalDescription": "برامج للاندماج الثقافي",
+  "integrationPathways": "مسارات الاندماج والاستشارة المهنية",
+  "careerDescription": "الاستشارة المهنية والمساعدة في الاندماج",
+  "documentCertification": "إدارة الوثائق والشهادات",
+  "documentDescription": "المساعدة في الوثائق والشهادات"
 }

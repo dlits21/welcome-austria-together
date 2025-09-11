@@ -1,3 +1,20 @@
 {
-  "support": "Unterstützung"
+  "askForHelp": "Um Hilfe bitten",
+  "chooseArea": "Wählen Sie den Bereich, in dem Sie Unterstützung benötigen.",
+  "general": "Allgemein",
+  "generalDescription": "Allgemeine Unterstützung und Beratung",
+  "emergencySupport": "Notfallunterstützung",
+  "emergencyDescription": "Soforthilfe in Notfällen",
+  "legalSupport": "Rechtliche Unterstützung",
+  "legalDescription": "Rechtsberatung und juristische Hilfe",
+  "healthMentalHealth": "Gesundheits- & Psychische Unterstützung",
+  "healthDescription": "Medizinische und psychologische Unterstützung",
+  "financialLiteracy": "Finanzielle Bildung und Unterstützung",
+  "financialDescription": "Hilfe bei Finanzen und Budgetplanung",
+  "culturalOrientation": "Kulturelle Orientierung und Integrationsprogramme",
+  "culturalDescription": "Programme zur kulturellen Integration",
+  "integrationPathways": "Integrationswege und Berufsberatung",
+  "careerDescription": "Berufsberatung und Integrationshilfe",
+  "documentCertification": "Dokumenten- und Zertifikatsmanagement",
+  "documentDescription": "Hilfe bei Dokumenten und Zertifikaten"
 }
