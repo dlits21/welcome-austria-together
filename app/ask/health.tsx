@@ -7,7 +7,7 @@ import {
   SafeAreaView, 
 } from 'react-native';
 import { useLanguage } from '../../contexts/LanguageContext';
-import { languages } from '../../data/language/common';
+import { useTranslation } from 'react-i18next';
 import PageNavigation from '../../components/PageNavigation';
 import LanguageModal from '../../components/LanguageModal';
 import BaseQuizModal from '../../components/BaseQuizModal';
@@ -17,7 +17,7 @@ import HealthSupportList from '../../components/HealthSupportList';
 import VirtualAssistantModal from '../../components/VirtualAssistantModal';
 import TutorialModal from '../../components/TutorialModal';
 import healthEntitiesData from '../../data/courses/health-support-entities.json';
-import { getAskHealthText, getGlobalText } from '../../utils/languageUtils';
+
 
 interface HealthSupportEntity {
   id: string;
@@ -37,6 +37,7 @@ interface HealthSupportEntity {
 
 const HealthSupportPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
+  const { t } = useTranslation(['askHealth', 'common']);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
   const [showTutorial, setShowTutorial] = useState(false);
@@ -58,7 +59,7 @@ const HealthSupportPage: React.FC = () => {
   const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
   const [showFilters, setShowFilters] = useState(false);
   
-  const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
+  
 
   // Extract unique locations and support types
   const locations = Array.from(new Set(healthSupportEntities.map(entity => entity.location)));
@@ -74,31 +75,31 @@ const HealthSupportPage: React.FC = () => {
   // Quiz questions with multi-lingual support
   const quizQuestions = [
     {
-      question: getAskHealthText('howUrgentlyNeedSupport', currentLanguage),
+      question: t('askHealth:howUrgentlyNeedSupport'),
       answers: [
-        { key: 'immediate', value: getGlobalText('immediate', currentLanguage) },
-        { key: 'soon', value: getGlobalText('soon', currentLanguage) },
-        { key: 'routine', value: getAskHealthText('routine', currentLanguage) }
+        { key: 'immediate', value: t('common:immediate') },
+        { key: 'soon', value: t('common:soon') },
+        { key: 'routine', value: t('askHealth:routine') }
       ],
       key: 'urgency' as keyof typeof quizAnswers
     },
     {
-      question: getAskHealthText('whatTypeHealthSupport', currentLanguage),
+      question: t('askHealth:whatTypeHealthSupport'),
       answers: [
-        { key: 'generalPractice', value: getAskHealthText('generalPractice', currentLanguage) },
-        { key: 'mentalHealth', value: getAskHealthText('mentalHealth', currentLanguage) },
-        { key: 'specializedCare', value: getAskHealthText('specializedCare', currentLanguage) },
-        { key: 'emergency', value: getAskHealthText('emergency', currentLanguage) },
-        { key: 'womenHealth', value: getAskHealthText('womenHealth', currentLanguage) },
-        { key: 'dental', value: getAskHealthText('dental', currentLanguage) },
-        { key: 'pharmacy', value: getAskHealthText('pharmacy', currentLanguage) },
-        { key: 'community', value: getAskHealthText('community', currentLanguage) }
+        { key: 'generalPractice', value: t('askHealth:generalPractice') },
+        { key: 'mentalHealth', value: t('askHealth:mentalHealth') },
+        { key: 'specializedCare', value: t('askHealth:specializedCare') },
+        { key: 'emergency', value: t('askHealth:emergency') },
+        { key: 'womenHealth', value: t('askHealth:womenHealth') },
+        { key: 'dental', value: t('askHealth:dental') },
+        { key: 'pharmacy', value: t('askHealth:pharmacy') },
+        { key: 'community', value: t('askHealth:community') }
       ],
       key: 'supportType' as keyof typeof quizAnswers
     },
     {
-      question: getAskHealthText('whereAreYouLocated', currentLanguage),
-      answers: locations.map(location => ({ key: location.toLowerCase(), value: getGlobalText(location.toLowerCase().replace(" ", ""), currentLanguage) })),
+      question: t('askHealth:whereAreYouLocated'),
+      answers: locations.map(location => ({ key: location.toLowerCase(), value: t(`common:${location.toLowerCase().replace(" ", "")}`) })),
       key: 'location' as keyof typeof quizAnswers
     }
   ];
@@ -168,13 +169,13 @@ const HealthSupportPage: React.FC = () => {
     setSelectedLocations([]);
   };
 
-  const pageTitle = getAskHealthText('healthSupport', currentLanguage);
-  const pageDescription = getAskHealthText('findHealthServices', currentLanguage);
+  const pageTitle = t('askHealth:healthSupport');
+  const pageDescription = t('askHealth:findHealthServices');
 
   // Filter groups for FilterSection with multi-lingual labels
   const filterGroups = [
     {
-      title: getAskHealthText('supportType', currentLanguage),
+      title: t('askHealth:supportType'),
       items: supportTypes,
       selectedItems: selectedSupportTypes,
       onToggle: toggleSupportType,
@@ -184,7 +185,7 @@ const HealthSupportPage: React.FC = () => {
       }), {})
     },
     {
-      title: getGlobalText('location', currentLanguage),
+      title: t('common:location'),
       items: locations,
       selectedItems: selectedLocations,
       onToggle: toggleLocation
@@ -207,9 +208,9 @@ const HealthSupportPage: React.FC = () => {
           visible={showQuiz}
           currentQuestion={currentQuestion}
           questions={quizQuestions}
-          languageCode={language.code}
-          title={getAskHealthText('healthSupportAssistant', currentLanguage)}
-          subtitle={getAskHealthText('answerQuestionsForHealthServices', currentLanguage)}
+          languageCode={currentLanguage}
+          title={t('askHealth:healthSupportAssistant')}
+          subtitle={t('askHealth:answerQuestionsForHealthServices')}
           onAnswer={handleQuizAnswer}
           onSkip={handleSkipQuiz}
           onClose={handleCloseQuiz}
@@ -217,7 +218,7 @@ const HealthSupportPage: React.FC = () => {
         
         {!showQuiz && (
           <QuizControls
-            languageCode={language.code}
+            languageCode={currentLanguage}
             onResetQuiz={resetQuiz}
             onToggleFilters={() => setShowFilters(!showFilters)}
           />
@@ -225,17 +226,17 @@ const HealthSupportPage: React.FC = () => {
 
         <FilterSection
           visible={!showQuiz && showFilters}
-          title={getGlobalText('filters', currentLanguage)}
-          languageCode={language.code}
+          title={t('common:filters')}
+          languageCode={currentLanguage}
           filterGroups={filterGroups}
           onClearFilters={clearFilters}
-          getTranslation={getAskHealthText}
+          getTranslation={(key: string) => t(`askHealth:${key}`)}
         />
         
         {!showQuiz && (
           <HealthSupportList 
             filters={filters}
-            languageCode={language.code}
+            languageCode={currentLanguage}
             onResetFilters={clearFilters}
           />
         )}
@@ -245,21 +246,21 @@ const HealthSupportPage: React.FC = () => {
       <LanguageModal
         visible={showLanguageModal}
         onClose={() => setShowLanguageModal(false)}
-        languageCode={language.code}
+        languageCode={currentLanguage}
       />
 
       {/* Virtual Assistant Modal */}
       <VirtualAssistantModal
         visible={showVirtualAssistant}
         onClose={() => setShowVirtualAssistant(false)}
-        languageCode={language.code}
+        languageCode={currentLanguage}
       />
 
       {/* Tutorial Modal */}
       <TutorialModal
         visible={showTutorial}
         onClose={() => setShowTutorial(false)}
-        languageCode={language.code}
+        languageCode={currentLanguage}
         tutorialData="ask-health"
       />
     </SafeAreaView>

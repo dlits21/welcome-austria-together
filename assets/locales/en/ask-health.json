@@ -1,0 +1,20 @@
+{
+  "healthSupport": "Health Support",
+  "findHealthServices": "Find health services and support near you",
+  "healthSupportAssistant": "Health Support Assistant",
+  "answerQuestionsForHealthServices": "Answer a few questions to help us find the best health services for you",
+  "howUrgentlyNeedSupport": "How urgently do you need health support?",
+  "whatTypeHealthSupport": "What type of health support do you need?",
+  "whereAreYouLocated": "Where are you located?",
+  "routine": "Routine/Non-urgent",
+  "generalPractice": "General Practice (GP)",
+  "mentalHealth": "Mental Health",
+  "specializedCare": "Specialized Care",
+  "emergency": "Emergency",
+  "womenHealth": "Women's Health",
+  "dental": "Dental Care",
+  "pharmacy": "Pharmacy",
+  "community": "Community Health",
+  "supportType": "Support Type",
+  "noHealthSupportEntitiesFound": "No health support services found matching your criteria."
+}
