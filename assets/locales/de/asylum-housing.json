@@ -1,0 +1,29 @@
+{
+  "pageTitle": "Wohnen & Sozialleistungen",
+  "pageIntro": "Erfahre mehr über deine Rechte auf Unterkunft und Leistungen, wie du Entscheidungen anfechten kannst und wo du im Notfall Hilfe findest.",
+
+  "tiles": {
+    "eligibility_title": "Wer bekommt Wohnraum?",
+    "eligibility_sub": "Regeln basierend auf Asylstatus",
+
+    "appeals_title": "Entscheidung anfechten",
+    "appeals_sub": "Was tun, wenn Unterkunft abgelehnt wird",
+
+    "benefits_title": "Sozialleistungen",
+    "benefits_sub": "Monatliche Unterstützung und Ansprüche",
+
+    "urgent_title": "Dringende Unterkunft",
+    "urgent_sub": "Wohin heute Nacht, wenn du obdachlos bist"
+  },
+
+  "contacts": {
+    "housing_office": "Lokales Wohnungsamt",
+    "housing_office_sub": "Antrag stellen oder Anspruch prüfen",
+    "social_benefits": "Sozialleistungsamt",
+    "social_benefits_sub": "Finanzielle Hilfe und Berufungen",
+    "ngo": "Wohnungs-NGO",
+    "ngo_sub": "Notfallhilfe und Interessenvertretung"
+  },
+
+  "videoId": "Q607TYRBxFU"
+}

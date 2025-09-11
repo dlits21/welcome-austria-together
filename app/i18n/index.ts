@@ -31,9 +31,9 @@ import enAsylumRights from '../../assets/locales/en/asylum-rights.json';
 import enAsylumAppeals from '../../assets/locales/en/asylum-appeals.json';
 import enAsylumAppealsDeadlines from '../../assets/locales/en/asylum-appeals-deadlines.json';
 import enAsylumProcessAppeals from '../../assets/locales/en/asylum-process-appeals.json';
+import enAsylumDublinStatus from '../../assets/locales/en/asylum-dublin-status.json';
 import enAsylumDocuments from '../../assets/locales/en/asylum-documents.json';
 import enAsylumLegal from '../../assets/locales/en/asylum-legal.json';
-import enAsylumDublinStatus from '../../assets/locales/en/asylum-dublin-status.json';
 import enAsylumHousing from '../../assets/locales/en/asylum-housing.json';
 import enAsylumLegalQuiz from '../../assets/locales/en/asylum-legal-quiz.json';
 import enAsylumRefugeeStatus from '../../assets/locales/en/asylum-refugee-status.json';
@@ -65,6 +65,13 @@ import deJobs from '../../assets/locales/de/jobs.json';
 import dePrescription from '../../assets/locales/de/prescription.json';
 import deVaccinations from '../../assets/locales/de/vaccinations.json';
 import deReproductive from '../../assets/locales/de/reproductive.json';
+import deAsylumDublinStatus from '../../assets/locales/de/asylum-dublin-status.json';
+import deAsylumDocuments from '../../assets/locales/de/asylum-documents.json';
+import deAsylumLegal from '../../assets/locales/de/asylum-legal.json';
+import deAsylumHousing from '../../assets/locales/de/asylum-housing.json';
+import deAsylumLegalQuiz from '../../assets/locales/de/asylum-legal-quiz.json';
+import deAsylumApply from '../../assets/locales/de/asylum-apply.json';
+import deAsylumInterview from '../../assets/locales/de/asylum-interview.json';
 
 import arCommon from '../../assets/locales/ar/common.json';
 import arAsk from '../../assets/locales/ar/ask.json';
@@ -87,6 +94,13 @@ import arJobs from '../../assets/locales/ar/jobs.json';
 import arPrescription from '../../assets/locales/ar/prescription.json';
 import arVaccinations from '../../assets/locales/ar/vaccinations.json';
 import arReproductive from '../../assets/locales/ar/reproductive.json';
+import arAsylumDublinStatus from '../../assets/locales/ar/asylum-dublin-status.json';
+import arAsylumDocuments from '../../assets/locales/ar/asylum-documents.json';
+import arAsylumLegal from '../../assets/locales/ar/asylum-legal.json';
+import arAsylumHousing from '../../assets/locales/ar/asylum-housing.json';
+import arAsylumLegalQuiz from '../../assets/locales/ar/asylum-legal-quiz.json';
+import arAsylumApply from '../../assets/locales/ar/asylum-apply.json';
+import arAsylumInterview from '../../assets/locales/ar/asylum-interview.json';
 
 import faCommon from '../../assets/locales/fa/common.json';
 import faAsk from '../../assets/locales/fa/ask.json';
@@ -109,6 +123,13 @@ import faJobs from '../../assets/locales/fa/jobs.json';
 import faPrescription from '../../assets/locales/fa/prescription.json';
 import faVaccinations from '../../assets/locales/fa/vaccinations.json';
 import faReproductive from '../../assets/locales/fa/reproductive.json';
+import faAsylumDublinStatus from '../../assets/locales/fa/asylum-dublin-status.json';
+import faAsylumDocuments from '../../assets/locales/fa/asylum-documents.json';
+import faAsylumLegal from '../../assets/locales/fa/asylum-legal.json';
+import faAsylumHousing from '../../assets/locales/fa/asylum-housing.json';
+import faAsylumLegalQuiz from '../../assets/locales/fa/asylum-legal-quiz.json';
+import faAsylumApply from '../../assets/locales/fa/asylum-apply.json';
+import faAsylumInterview from '../../assets/locales/fa/asylum-interview.json';
 
 export const resources = {
   en: { common: enCommon,
@@ -173,6 +194,13 @@ export const resources = {
       prescription: dePrescription,
       vaccinations: deVaccinations,
       reproductive: deReproductive,
+      asylumDocuments: deAsylumDocuments,
+      asylumLegal: deAsylumLegal,
+      asylumLegalQuiz: deAsylumLegalQuiz,
+      asylumDublinStatus: deAsylumDublinStatus,
+      asylumHousing: deAsylumHousing,
+      asylumInterview: deAsylumInterview,
+      asylumApply: deAsylumApply,
       },
   ar: { common: arCommon,
       ask: arAsk,
@@ -195,6 +223,13 @@ export const resources = {
       prescription: arPrescription,
       vaccinations: arVaccinations,
       reproductive: arReproductive,
+      asylumDocuments: arAsylumDocuments,
+      asylumLegal: arAsylumLegal,
+      asylumLegalQuiz: arAsylumLegalQuiz,
+      asylumDublinStatus: arAsylumDublinStatus,
+      asylumHousing: arAsylumHousing,
+      asylumInterview: arAsylumInterview,
+      asylumApply: arAsylumApply,
       },
   fa: { common: faCommon,
       ask: faAsk,
@@ -216,7 +251,14 @@ export const resources = {
       mentalHealth: faMentalHealth,
       prescription: faPrescription,
       vaccinations: faVaccinations,
-      reproductive: faReproductive,},
+      reproductive: faReproductive,
+      asylumDocuments: faAsylumDocuments,
+      asylumLegal: faAsylumLegal,
+      asylumLegalQuiz: faAsylumLegalQuiz,
+      asylumDublinStatus: faAsylumDublinStatus,
+      asylumHousing: faAsylumHousing,
+      asylumInterview: faAsylumInterview,
+      asylumApply: faAsylumApply,},
 };
 
 const SUPPORTED = ['en','de','ar','fa'] as const;

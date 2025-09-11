@@ -1,0 +1,63 @@
+{
+  "pageTitle": "Finde deinen Rechtsstatus",
+  "quiz": {
+    "title": "Welchen Status habe ich?"
+  },
+  "comparison": {
+    "title": "Rechtevergleich",
+    "rights": "Rechte"
+  },
+  "status": {
+    "refugee": {
+      "title": "Flüchtlingsstatus",
+      "short": "Flüchtling",
+      "desc": "Voller Schutz und umfassende Rechte",
+      "rights": {
+        "work": "✅ Voller Zugang",
+        "housing": "✅ Voller Zugang",
+        "healthcare": "✅ Voller Zugang",
+        "family": "✅ Ja"
+      }
+    },
+    "subsidiary": {
+      "title": "Subsidiärer Schutz",
+      "short": "Subsidiär",
+      "desc": "Vorübergehender Schutz mit eingeschränkten Rechten",
+      "rights": {
+        "work": "⚠️ Eingeschränkt",
+        "housing": "⚠️ Begrenzt",
+        "healthcare": "✅ Nur Grundversorgung",
+        "family": "⚠️ Eingeschränkt"
+      }
+    },
+    "videoUrl": "Q607TYRBxFU",
+    "dublin": {
+      "title": "Dublin-Fall",
+      "short": "Dublin",
+      "desc": "Kann in das erste EU-Land überstellt werden",
+      "rights": {
+        "work": "❌ Kein Zugang",
+        "housing": "⚠️ Nur Basisversorgung",
+        "healthcare": "⚠️ Nur Notfallversorgung",
+        "family": "❌ Nein"
+      }
+    },
+    "rejected": {
+      "title": "Abgelehnt",
+      "short": "Abgelehnt",
+      "desc": "Asyl abgelehnt – schnell Berufung einlegen",
+      "rights": {
+        "work": "❌ Kein Zugang",
+        "housing": "❌ Kein Zugang",
+        "healthcare": "⚠️ Nur Notfallversorgung",
+        "family": "❌ Nein"
+      }
+    }
+  },
+  "rights": {
+    "work": "Arbeitsrechte",
+    "housing": "Wohnzugang",
+    "healthcare": "Gesundheitsversorgung",
+    "family": "Familiennachzug"
+  }
+}

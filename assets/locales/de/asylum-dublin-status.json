@@ -1,0 +1,42 @@
+{
+  "start": {
+    "title": "Dublin-Verordnung",
+    "subtitle": "Was bedeutet das für dich?",
+    "options": {
+      "learn": "Mehr über die Dublin-Regeln erfahren",
+      "rights": "Was sind meine Rechte?"
+    }
+  },
+  "rules": {
+    "title": "Dublin-Regeln",
+    "subtitle": "Das erste EU-Land, in dem du Asyl beantragt hast, ist für dein Verfahren verantwortlich",
+    "options": {
+      "transfer": "Wann kann ich überstellt werden?",
+      "appeal": "Kann ich Berufung einlegen?"
+    }
+  },
+  "rights": {
+    "title": "Deine Rechte",
+    "subtitle": "Auch unter der Dublin-Verordnung hast du wichtige Rechte",
+    "options": {
+      "stay": "Recht auf Verbleib während des Verfahrens",
+      "legal": "Recht auf Rechtsbeistand"
+    }
+  },
+  "transfer": {
+    "title": "Überstellungsverfahren",
+    "subtitle": "Du kannst innerhalb von 6 Monaten überstellt werden – danach ist das aktuelle Land zuständig",
+    "options": {
+      "prevent": "Wie kann ich eine Überstellung verhindern?"
+    }
+  },
+  "appeal": {
+    "title": "Berufungsmöglichkeiten",
+    "subtitle": "Du kannst Dublin-Entscheidungen vor Gericht anfechten"
+  },
+  "protection": {
+    "title": "Schutz während des Verfahrens",
+    "subtitle": "Du kannst nicht abgeschoben werden, solange dein Verfahren läuft"
+  },
+  "videoUrl": "Q607TYRBxFU"
+}
