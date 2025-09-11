@@ -7,35 +7,9 @@
       "subtitleKey": "universalEmergencyNumber",
       "contacts": [
         {
-          "name": {
-            "en": "European Emergency Number",
-            "de": "Europäische Notrufnummer",
-            "ru": "Общеевропейский номер экстренных служб",
-            "ce": "Европан гӏайгӏа номер",
-            "prs": "شماره اضطراری اروپایی",
-            "ps": "د اروپا بیړني شمیره",
-            "fa": "شماره اضطراری اروپا",
-            "ar": "رقم الطوارئ الأوروبي",
-            "ku": "ژمارەی ئەورووپی لەناکاو",
-            "so": "Nambarka Degdegga Yurub",
-            "ka": "ევროპული გადაუდებელი ნომერი",
-            "sq": "Numri i urgjencës evropiane"
-          },
+          "nameKey": "europeanEmergencyNumber",
           "phone": "112",
-          "description": {
-            "en": "Universal emergency number for all services",
-            "de": "Universelle Notrufnummer für alle Dienste",
-            "ru": "Универсальный номер экстренных служб для всех служб",
-            "ce": "Массо хlуманаш оьшура йалаш гӏайгӏа номер",
-            "prs": "شماره جهانی اضطراری برای همه خدمات",
-            "ps": "د ټولو خدماتو لپاره نړیوال بیړني شمیره",
-            "fa": "شماره جهانی اضطراری برای همه خدمات",
-            "ar": "الرقم العالمي للطوارئ لجميع الخدمات",
-            "ku": "ژمارەی جیهانی لەناکاو بۆ هەموو خزمەتگوزارییەکان",
-            "so": "Nambarka caalamiga ah ee degdegga dhamaan adeegyada",
-            "ka": "უნივერსალური გადაუდებელი ნომერი ყველა სერვისისთვის",
-            "sq": "Numri universal i urgjencës për të gjitha shërbimet"
-          },
+          "descriptionKey": "universalEmergencyDescription",
           "type": "general"
         }
       ]
@@ -47,35 +21,9 @@
       "subtitleKey": "firesExplosionsRescue",
       "contacts": [
         {
-          "name": {
-            "en": "Fire Department",
-            "de": "Feuerwehr",
-            "ru": "Пожарная служба",
-            "ce": "Цlе даккхарг",
-            "prs": "آتش‌نشانی",
-            "ps": "د اور وژونکي",
-            "fa": "آتش‌نشانی",
-            "ar": "إطفائية",
-            "ku": "ئاگرکوژێنەوە",
-            "so": "Dab-demiska",
-            "ka": "სახანძრო სამსახური",
-            "sq": "Zjarrfikëset"
-          },
+          "nameKey": "fireDepartment",
           "phone": "122",
-          "description": {
-            "en": "For fires, explosions, and rescue operations",
-            "de": "Für Brände, Explosionen und Rettungsoperationen",
-            "ru": "Для пожаров, взрывов и спасательных операций",
-            "ce": "Цlенаш, хелаш, гlотор болхаш",
-            "prs": "برای آتش‌سوزی، انفجار و عملیات نجات",
-            "ps": "د اور وژنې، چاودنې او د ژغورنې عملیاتو لپاره",
-            "fa": "برای آتش‌سوزی، انفجار و عملیات نجات",
-            "ar": "للحرائق والانفجارات وعمليات الإنقاذ",
-            "ku": "بۆ ئاگر، تەقینەوە و کارەکانی فریاکەوتن",
-            "so": "Dab, qarax, iyo hawlgallada badbaadinta",
-            "ka": "ხანძარი, აფეთქება და სამაშველო ოპერაციებისთვის",
-            "sq": "Për zjarret, shpërthimet dhe operacionet e shpëtimit"
-          },
+          "descriptionKey": "fireDescription",
           "type": "fire"
         }
       ]
@@ -87,35 +35,9 @@
       "subtitleKey": "crimeAccidentsSecurity",
       "contacts": [
         {
-          "name": {
-            "en": "Police",
-            "de": "Polizei",
-            "ru": "Полиция",
-            "ce": "Полици",
-            "prs": "پولیس",
-            "ps": "پولیس",
-            "fa": "پلیس",
-            "ar": "الشرطة",
-            "ku": "پۆلیس",
-            "so": "Booliska",
-            "ka": "პოლიცია",
-            "sq": "Policia"
-          },
+          "nameKey": "police",
           "phone": "133",
-          "description": {
-            "en": "For crimes, accidents, and security emergencies",
-            "de": "Für Verbrechen, Unfälle und Sicherheitsnotfälle",
-            "ru": "Для преступлений, аварий и чрезвычайных ситуаций безопасности",
-            "ce": "Зулам, автобехк, хlоттина гӏайгӏашка",
-            "prs": "برای جرائم، تصادفات و اضطرارات امنیتی",
-            "ps": "د جرمونو، پیښو او امنیتي بیړنیو وضعیتونو لپاره",
-            "fa": "برای جرائم، تصادفات و اضطرارات امنیتی",
-            "ar": "للجرائم والحوادث وحالات الطوارئ الأمنية",
-            "ku": "بۆ تاوان، ڕووداو و لەناکاوە ئاسایشییەکان",
-            "so": "Dambiyada, shilalka, iyo degdegga amniga",
-            "ka": "დანაშაულები, ავარიები და უსაფრთხოების გადაუდებელი შემთხვევებისთვის",
-            "sq": "Për krimet, aksidentet dhe urgjenca sigurie"
-          },
+          "descriptionKey": "policeDescription",
           "type": "police"
         }
       ]
@@ -127,35 +49,9 @@
       "subtitleKey": "healthEmergenciesAmbulance",
       "contacts": [
         {
-          "name": {
-            "en": "Emergency Medical Services",
-            "de": "Rettungsdienst",
-            "ru": "Служба скорой медицинской помощи",
-            "ce": "Синдоктораш гlайгlа хlума",
-            "prs": "خدمات طبی اضطراری",
-            "ps": "د بیړني درملتون خدمات",
-            "fa": "خدمات پزشکی اضطراری",
-            "ar": "خدمات الطوارئ الطبية",
-            "ku": "خزمەتگوزارییە پزیشکییە لەناکاوەکان",
-            "so": "Adeegyada Caafimaadka Degdegga",
-            "ka": "სასწრაფო სამედიცინო მომსახურება",
-            "sq": "Shërbimet mjekësore të urgjencës"
-          },
+          "nameKey": "emergencyMedicalServices",
           "phone": "144",
-          "description": {
-            "en": "For medical emergencies and ambulance",
-            "de": "Für medizinische Notfälle und Krankenwagen",
-            "ru": "Для медицинских чрезвычайных ситуаций и скорой помощи",
-            "ce": "Синдоктораш гlайгlаш а машен а",
-            "prs": "برای اضطرارات طبی و آمبولانس",
-            "ps": "د درملتون بیړنیو وضعیتونو او امبولانس لپاره",
-            "fa": "برای اضطرارات پزشکی و آمبولانس",
-            "ar": "للطوارئ الطبية والإسعاف",
-            "ku": "بۆ لەناکاوە پزیشکییەکان و ئەمبولانس",
-            "so": "Degdegga caafimaadka iyo ambalaaska",
-            "ka": "სამედიცინო გადაუდებელი შემთხვევებისა და სასწრაფო დახმარებისთვის",
-            "sq": "Për urgjenca mjekësore dhe ambulancë"
-          },
+          "descriptionKey": "medicalDescription",
           "type": "medical"
         }
       ]
@@ -167,35 +63,9 @@
       "subtitleKey": "domesticViolenceSupport",
       "contacts": [
         {
-          "name": {
-            "en": "Women's Emergency Hotline",
-            "de": "Frauen-Notruf",
-            "ru": "Горячая линия для женщин",
-            "ce": "Зударшна гӏайгӏа телефон",
-            "prs": "خط تماس اضطراری زنان",
-            "ps": "د میرمنو بیړني ټیلیفون",
-            "fa": "خط تماس اضطراری زنان",
-            "ar": "الخط الساخن للنساء",
-            "ku": "تەلەفۆنی لەناکاوی ژنان",
-            "so": "Khadka Degdegga Haweenka",
-            "ka": "ქალების გადაუდებელი ხაზი",
-            "sq": "Linja e urgjencës për gratë"
-          },
+          "nameKey": "womensEmergencyHotline",
           "phone": "0800 222 555",
-          "description": {
-            "en": "24/7 support for domestic violence victims",
-            "de": "24/7 Unterstützung für Opfer häuslicher Gewalt",
-            "ru": "Круглосуточная поддержка жертв домашнего насилия",
-            "ce": "Доьзална зулам хийцарш 24/7 гlо",
-            "prs": "حمایت ۲۴/۷ برای قربانیان خشونت خانگی",
-            "ps": "د کورنۍ تاوتریخوالۍ د قربانیانو لپاره ۲۴/۷ ملاتړ",
-            "fa": "پشتیبانی ۲۴/۷ برای قربانیان خشونت خانگی",
-            "ar": "دعم على مدار الساعة لضحايا العنف المنزلي",
-            "ku": "پشتگیری ۲۴/۷ بۆ قوربانیانی توندوتیژی ماڵەوە",
-            "so": "Taageero 24/7 dhibanayaasha rabshada guriga",
-            "ka": "24/7 მხარდაჭერა ოჯახური ძალადობის მსხვერპლთათვის",
-            "sq": "Mbështetje 24/7 për viktimat e dhunës në familje"
-          },
+          "descriptionKey": "domesticViolenceDescription",
           "type": "domestic-violence"
         }
       ]
@@ -207,35 +77,9 @@
       "subtitleKey": "psychologicalCrisisSuicidePrevention",
       "contacts": [
         {
-          "name": {
-            "en": "Crisis Intervention Center",
-            "de": "Kriseninterventionszentrum",
-            "ru": "Центр кризисного вмешательства",
-            "ce": "Кризисан цlе йохурш центр",
-            "prs": "مرکز مداخله بحران",
-            "ps": "د بحران د مداخلې مرکز",
-            "fa": "مرکز مداخله بحران",
-            "ar": "مركز التدخل في الأزمات",
-            "ku": "ناوەندی دەستتێوەردانی قەیران",
-            "so": "Xarunta Faragelinta Dhibaatada",
-            "ka": "კრიზისული ინტერვენციის ცენტრი",
-            "sq": "Qendra e ndërhyrjes në krizë"
-          },
+          "nameKey": "crisisInterventionCenter",
           "phone": "01 406 95 95",
-          "description": {
-            "en": "For psychological crises and suicide prevention",
-            "de": "Für psychische Krisen und Suizidprävention",
-            "ru": "Для психологических кризисов и предотвращения самоубийств",
-            "ce": "Психологически кризисаш а, шуьйра доцуш дlахьедар а",
-            "prs": "برای بحران‌های روانی و پیشگیری از خودکشی",
-            "ps": "د رواني کړکېچونو او د ځان وژنې مخنیوي لپاره",
-            "fa": "برای بحران‌های روانی و پیشگیری از خودکشی",
-            "ar": "للأزمات النفسية ومنع الانتحار",
-            "ku": "بۆ قەیرانی دەرونی و ڕێگریکردن لە خۆکوژی",
-            "so": "Dhibaatada maskaxda iyo ka-hortagga is-dilka",
-            "ka": "ფსიქოლოგიური კრიზისებისა და თვითმკვლელობის პრევენციისთვის",
-            "sq": "Për krizat psikologjike dhe parandalimin e vetëvrasjes"
-          },
+          "descriptionKey": "mentalHealthDescription",
           "type": "mental"
         }
       ]
@@ -247,35 +91,9 @@
       "subtitleKey": "spiritualEmotionalSupport",
       "contacts": [
         {
-          "name": {
-            "en": "Telefonseelsorge",
-            "de": "Telefonseelsorge",
-            "ru": "Телефон духовной поддержки",
-            "ce": "Роьхlин кхерам телефон",
-            "prs": "مشاوره تلفنی معنوی",
-            "ps": "د تلیفون روحاني مرسته",
-            "fa": "مشاوره تلفنی معنوی",
-            "ar": "الإرشاد الروحي الهاتفي",
-            "ku": "چاودێری تەلەفۆنی ڕۆحی",
-            "so": "La-talinta telefoonka ruuxa",
-            "ka": "ტელეფონური სულიერი კონსულტაცია",
-            "sq": "Këshillimi shpirtëror telefonik"
-          },
+          "nameKey": "telefonseelsorge",
           "phone": "142",
-          "description": {
-            "en": "Spiritual care and emotional support",
-            "de": "Seelsorge und emotionale Unterstützung",
-            "ru": "Духовная забота и эмоциональная поддержка",
-            "ce": "Роьхlин кхерам а, сенаlон гlо а",
-            "prs": "مراقبت معنوی و حمایت عاطفی",
-            "ps": "روحاني پاملرنه او احساساتي ملاتړ",
-            "fa": "مراقبت معنوی و حمایت عاطفی",
-            "ar": "الرعاية الروحية والدعم العاطفي",
-            "ku": "چاودێری ڕۆحی و پشتگیری سۆزداری",
-            "so": "Daryeelka ruuxa iyo taageerada dareenka",
-            "ka": "სულიერი მზრუნველობა და ემოციური მხარდაჭერა",
-            "sq": "Kujdesi shpirtëror dhe mbështetja emocionale"
-          },
+          "descriptionKey": "soulCareDescription",
           "type": "soul-care"
         }
       ]
@@ -287,35 +105,9 @@
       "subtitleKey": "supportForChildrenAndYouth",
       "contacts": [
         {
-          "name": {
-            "en": "Rat auf Draht",
-            "de": "Rat auf Draht",
-            "ru": "Совет по проводу",
-            "ce": "Берийн совет",
-            "prs": "مشاوره تلفنی",
-            "ps": "د تار په اوږدو کې مشوره",
-            "fa": "مشاوره تلفنی",
-            "ar": "النصيحة عبر السلك",
-            "ku": "ڕاوێژکاری تەلەفۆنی",
-            "so": "Talo telefoon",
-            "ka": "რჩევა მავთულზე",
-            "sq": "Këshilla në tel"
-          },
+          "nameKey": "ratAufDraht",
           "phone": "147",
-          "description": {
-            "en": "Emergency hotline for children and youth",
-            "de": "Notruf für Kinder und Jugendliche",
-            "ru": "Горячая линия экстренной помощи для детей и молодежи",
-            "ce": "Берашна а, зударшна а гlайгlа телефон",
-            "prs": "خط تماس اضطراری برای کودکان و جوانان",
-            "ps": "د ماشومانو او ځوانانو لپاره بیړني ټیلیفون",
-            "fa": "خط تماس اضطراری برای کودکان و جوانان",
-            "ar": "الخط الساخن للأطفال والشباب",
-            "ku": "خەتی گەرمی لەناکاو بۆ منداڵان و گەنجان",
-            "so": "Khadka degdegga carruurta iyo dhallinyarada",
-            "ka": "გადაუდებელი ხაზი ბავშვებისა და ახალგაზრდებისთვის",
-            "sq": "Linja e urgjencës për fëmijët dhe të rinjtë"
-          },
+          "descriptionKey": "youthDescription",
           "type": "youth"
         }
       ]
