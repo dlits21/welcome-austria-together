@@ -46,6 +46,7 @@ import enGuide from '../../assets/locales/en/guide.json';
 import enAskEmergency from '../../assets/locales/en/ask-emergency.json';
 import enAskGeneral from '../../assets/locales/en/ask-general.json';
 import enAskLegal from '../../assets/locales/en/ask-legal.json';
+import enAskHealth from '../../assets/locales/en/ask-health.json';
 
 import deCommon from '../../assets/locales/de/common.json';
 import deAsk from '../../assets/locales/de/ask.json';
@@ -224,6 +225,7 @@ export const resources = {
       askEmergency: enAskEmergency,
       askGeneral: enAskGeneral,
       askLegal: enAskLegal,
+      askHealth: enAskHealth,
        },
   de: { common: deCommon,
         ask: deAsk,
