@@ -45,6 +45,7 @@ import enAsylumWorkPermits from '../../assets/locales/en/asylum-work-permits.jso
 import enGuide from '../../assets/locales/en/guide.json';
 import enAskEmergency from '../../assets/locales/en/ask-emergency.json';
 import enAskGeneral from '../../assets/locales/en/ask-general.json';
+import enAskLegal from '../../assets/locales/en/ask-legal.json';
 
 import deCommon from '../../assets/locales/de/common.json';
 import deAsk from '../../assets/locales/de/ask.json';
@@ -218,6 +219,7 @@ export const resources = {
       guide: enGuide,
       askEmergency: enAskEmergency,
       askGeneral: enAskGeneral,
+      askLegal: enAskLegal,
        },
   de: { common: deCommon,
         ask: deAsk,

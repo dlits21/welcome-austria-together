@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { languages } from '../../data/language/common';
+import { useTranslation } from 'react-i18next';
 import PageNavigation from '../../components/PageNavigation';
 import LanguageModal from '../../components/LanguageModal';
 import BaseQuizModal from '../../components/BaseQuizModal';
@@ -16,7 +17,6 @@ import LegalSupportList from '../../components/LegalSupportList';
 import VirtualAssistantModal from '../../components/VirtualAssistantModal';
 import TutorialModal from '../../components/TutorialModal';
 import legalSupportEntitiesData from '../../data/courses/legal-support-entities.json';
-import { getAskLegalText, getGlobalText } from '../../utils/languageUtils';
 
 
 interface LegalSupportEntity {
@@ -37,6 +37,7 @@ interface LegalSupportEntity {
 
 const LegalSupportPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
+  const { t } = useTranslation(['askLegal', 'common']);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
   const [showTutorial, setShowTutorial] = useState(false);
@@ -73,24 +74,24 @@ const LegalSupportPage: React.FC = () => {
   // Quiz questions with multi-lingual support
   const quizQuestions = [
     {
-      question: getAskLegalText('whatLegalSupportNeeded', currentLanguage),
+      question: t('askLegal:whatLegalSupportNeeded'),
       answers: [
-        { key: 'general', value: getAskLegalText('general', currentLanguage)},
-        { key: 'asylum-procedures', value: getAskLegalText('asylumProcedures', currentLanguage)},
-        { key: 'appeals', value: getAskLegalText('appeals', currentLanguage)},
-        { key: 'residence-permits',value: getAskLegalText('residencePermits', currentLanguage)},
-        { key: 'family-reunification',  value: getAskLegalText('familyReunification', currentLanguage)},
-        { key: 'citizenship', value: getAskLegalText('citizenship', currentLanguage)},
-        { key: 'detention', value: getAskLegalText('detention', currentLanguage)},
-        { key: 'discrimination', value: getAskLegalText('discrimination', currentLanguage)},
-        { key: 'work-rights', value: getAskLegalText('workRights', currentLanguage)},
-        { key: 'legal-representation', value: getAskLegalText('legalRepresentation', currentLanguage)}
+        { key: 'general', value: t('askLegal:general')},
+        { key: 'asylum-procedures', value: t('askLegal:asylumProcedures')},
+        { key: 'appeals', value: t('askLegal:appeals')},
+        { key: 'residence-permits', value: t('askLegal:residencePermits')},
+        { key: 'family-reunification', value: t('askLegal:familyReunification')},
+        { key: 'citizenship', value: t('askLegal:citizenship')},
+        { key: 'detention', value: t('askLegal:detention')},
+        { key: 'discrimination', value: t('askLegal:discrimination')},
+        { key: 'work-rights', value: t('askLegal:workRights')},
+        { key: 'legal-representation', value: t('askLegal:legalRepresentation')}
       ],
       key: 'supportType' as keyof typeof quizAnswers
     },
     {
-      question: getAskLegalText('whereAreYouLocated', currentLanguage),
-      answers: locations.map(location => ({ key: location.toLowerCase(), value: getGlobalText(location.toLowerCase().replace(" ", ""), currentLanguage)})),
+      question: t('askLegal:whereAreYouLocated'),
+      answers: locations.map(location => ({ key: location.toLowerCase(), value: t(`common:${location.toLowerCase().replace(" ", "")}`)})),
       key: 'location' as keyof typeof quizAnswers
     }
   ];
@@ -160,13 +161,13 @@ const LegalSupportPage: React.FC = () => {
     setSelectedLocations([]);
   };
 
-  const pageTitle = getAskLegalText('legalSupport', currentLanguage);
-  const pageDescription = getAskLegalText('findLegalCounseling', currentLanguage);
+  const pageTitle = t('askLegal:legalSupport');
+  const pageDescription = t('askLegal:findLegalCounseling');
 
   // Filter groups for FilterSection with multi-lingual labels
   const filterGroups = [
     {
-      title: getAskLegalText('supportType', currentLanguage),
+      title: t('askLegal:supportType'),
       items: supportTypes,
       selectedItems: selectedSupportTypes,
       onToggle: toggleSupportType,
@@ -176,7 +177,7 @@ const LegalSupportPage: React.FC = () => {
       }), {})
     },
     {
-      title: getGlobalText('location', currentLanguage),
+      title: t('common:location'),
       items: locations,
       selectedItems: selectedLocations,
       onToggle: toggleLocation
@@ -200,8 +201,8 @@ const LegalSupportPage: React.FC = () => {
           currentQuestion={currentQuestion}
           questions={quizQuestions}
           languageCode={language.code}
-          title={getAskLegalText('legalSupportAssistant', currentLanguage)}
-          subtitle={getAskLegalText('answerQuestionsForLegalCounseling', currentLanguage)}
+          title={t('askLegal:legalSupportAssistant')}
+          subtitle={t('askLegal:answerQuestionsForLegalCounseling')}
           onAnswer={handleQuizAnswer}
           onSkip={handleSkipQuiz}
           onClose={handleCloseQuiz}
@@ -217,11 +218,11 @@ const LegalSupportPage: React.FC = () => {
 
         <FilterSection
           visible={!showQuiz && showFilters}
-          title={getGlobalText('filters', currentLanguage)}
+          title={t('common:filters')}
           languageCode={language.code}
           filterGroups={filterGroups}
           onClearFilters={clearFilters}
-          getTranslation={getAskLegalText}
+          getTranslation={(key: string) => t(`askLegal:${key}`)}
         />
         
         {!showQuiz && (
