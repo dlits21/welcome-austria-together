@@ -12,6 +12,7 @@ import {
   ScrollView
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { languages } from '../../data/language/common';
 import PageNavigation from '../../components/PageNavigation';
@@ -19,14 +20,8 @@ import LanguageModal from '../../components/LanguageModal';
 import VirtualAssistantModal from '../../components/VirtualAssistantModal';
 import TutorialModal from '../../components/TutorialModal';
 
-// Import emergency translations and data
-import emergencyTranslations from '../../data/language/ask/emergency.json';
+// Import emergency data
 import emergencyData from '../../data/ask/emergency.json';
-
-const getEmergencyText = (key: string, languageCode: string): string => {
-  const translation = emergencyTranslations[key as keyof typeof emergencyTranslations];
-  return translation?.[languageCode as keyof typeof translation] || translation?.en || key;
-};
 
 interface EmergencyContact {
   name: { [key: string]: string };
@@ -44,6 +39,7 @@ interface EmergencyCategory {
 }
 
 const EmergencySupport: React.FC = () => {
+  const { t } = useTranslation('askEmergency');
   const { currentLanguage } = useLanguage();
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [showLanguageModal, setShowLanguageModal] = useState(false);
@@ -78,19 +74,15 @@ const EmergencySupport: React.FC = () => {
             Linking.openURL(phoneUrl);
           } else {
             Alert.alert(
-              getEmergencyText('error', currentLanguage) || (language.code === 'de' ? 'Fehler' : 'Error'),
-              getEmergencyText('phoneNotSupported', currentLanguage) || (language.code === 'de' 
-                ? 'Anrufe werden auf diesem Gerät nicht unterstützt'
-                : 'Phone calls are not supported on this device')
+              t('error'),
+              t('phoneNotSupported')
             );
           }
         })
         .catch(() => {
           Alert.alert(
-            getEmergencyText('error', currentLanguage) || (language.code === 'de' ? 'Fehler' : 'Error'),
-            getEmergencyText('phoneError', currentLanguage) || (language.code === 'de' 
-              ? 'Fehler beim Öffnen der Telefon-App'
-              : 'Error opening phone app')
+            t('error'),
+            t('phoneError')
           );
         });
     }
@@ -116,10 +108,10 @@ const EmergencySupport: React.FC = () => {
       
       <View style={styles.content}>
         <Text style={styles.title}>
-          {getEmergencyText('emergencyContacts', currentLanguage)}
+          {t('emergencyContacts')}
         </Text>
         <Text style={styles.description}>
-          {getEmergencyText('quickAccess', currentLanguage)}
+          {t('quickAccess')}
         </Text>
 
         <ScrollView style={styles.gridContainer} showsVerticalScrollIndicator={false}>
@@ -132,10 +124,10 @@ const EmergencySupport: React.FC = () => {
               >
                 <Text style={styles.emergencyEmoji}>{category.emoji}</Text>
                 <Text style={styles.emergencyTitle}>
-                  {getEmergencyText(category.titleKey, currentLanguage)}
+                  {t(category.titleKey)}
                 </Text>
                 <Text style={styles.emergencySubtitle}>
-                  {getEmergencyText(category.subtitleKey, currentLanguage)}
+                  {t(category.subtitleKey)}
                 </Text>
               </TouchableOpacity>
             ))}
@@ -179,9 +171,7 @@ const EmergencySupport: React.FC = () => {
                   </TouchableOpacity>
 
                   <Text style={styles.callInstruction}>
-                    {getEmergencyText('tapToCall', currentLanguage) || (currentLanguage === 'de' 
-                      ? 'Tippen Sie auf die Nummer, um anzurufen'
-                      : 'Tap the number to call')}
+                    {t('tapToCall')}
                   </Text>
                 </>
               )}
@@ -191,7 +181,7 @@ const EmergencySupport: React.FC = () => {
                 onPress={resetQuiz}
               >
                 <Text style={styles.resetButtonText}>
-                  {getEmergencyText('chooseDifferentEmergency', currentLanguage) || (currentLanguage === 'de' ? 'Anderen Notfall wählen' : 'Choose Different Emergency')}
+                  {t('chooseDifferentEmergency')}
                 </Text>
               </TouchableOpacity>
             </View>

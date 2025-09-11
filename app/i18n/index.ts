@@ -43,6 +43,7 @@ import enAsylumReunification from '../../assets/locales/en/asylum-reunification.
 import enAsylumInterview from '../../assets/locales/en/asylum-interview.json';
 import enAsylumWorkPermits from '../../assets/locales/en/asylum-work-permits.json';
 import enGuide from '../../assets/locales/en/guide.json';
+import enAskEmergency from '../../assets/locales/en/ask-emergency.json';
 
 import deCommon from '../../assets/locales/de/common.json';
 import deAsk from '../../assets/locales/de/ask.json';
@@ -172,6 +173,7 @@ export const resources = {
       childrenHealth: enChildrenHealth,
       genderViolence: enGenderViolence,
       guide: enGuide,
+      askEmergency: enAskEmergency,
        },
   de: { common: deCommon,
       ask: deAsk,
@@ -286,7 +288,7 @@ export async function initI18n() {
       lng: lang,
       fallbackLng: 'de',
       supportedLngs: SUPPORTED as unknown as string[],
-      ns: ['common','ask', 'home', 'housing', 'food', 'education', 'jobs', 'contacts', 'mentalHealth', 'findDoctor', 'prescription', 'vaccinations', 'reproductive', 'childrenHealth', 'genderViolence', 'guide'],
+      ns: ['common','ask', 'home', 'housing', 'food', 'education', 'jobs', 'contacts', 'mentalHealth', 'findDoctor', 'prescription', 'vaccinations', 'reproductive', 'childrenHealth', 'genderViolence', 'guide', 'askEmergency'],
       defaultNS: 'common',
       interpolation: { escapeValue: false },
       returnNull: false,
