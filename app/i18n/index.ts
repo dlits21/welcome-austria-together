@@ -31,9 +31,9 @@ import enAsylumRights from '../../assets/locales/en/asylum-rights.json';
 import enAsylumAppeals from '../../assets/locales/en/asylum-appeals.json';
 import enAsylumAppealsDeadlines from '../../assets/locales/en/asylum-appeals-deadlines.json';
 import enAsylumProcessAppeals from '../../assets/locales/en/asylum-process-appeals.json';
+import enAsylumDublinStatus from '../../assets/locales/en/asylum-dublin-status.json';
 import enAsylumDocuments from '../../assets/locales/en/asylum-documents.json';
 import enAsylumLegal from '../../assets/locales/en/asylum-legal.json';
-import enAsylumDublinStatus from '../../assets/locales/en/asylum-dublin-status.json';
 import enAsylumHousing from '../../assets/locales/en/asylum-housing.json';
 import enAsylumLegalQuiz from '../../assets/locales/en/asylum-legal-quiz.json';
 import enAsylumRefugeeStatus from '../../assets/locales/en/asylum-refugee-status.json';
@@ -51,6 +51,27 @@ import deIndex from '../../assets/locales/de/index.json';
 import deInformation from '../../assets/locales/de/information.json';
 import deEveryday from '../../assets/locales/de/everyday.json';
 import deEverydayChildren from '../../assets/locales/de/children.json';
+import deContacts from '../../assets/locales/de/contacts.json';
+import deDoctorGP from '../../assets/locales/de/doctor-gp.json';
+import deEducation from '../../assets/locales/de/education.json';
+import deFindDoctor from '../../assets/locales/de/find-doctor.json';
+import deFood from '../../assets/locales/de/food.json';
+import deGenderViolence from '../../assets/locales/de/gender-violence.json';
+import deGuide from '../../assets/locales/de/guide.json';
+import deHealth from '../../assets/locales/de/health.json';
+import deHousing from '../../assets/locales/de/housing.json';
+import deMentalHealth from '../../assets/locales/de/mental-health.json';
+import deJobs from '../../assets/locales/de/jobs.json';
+import dePrescription from '../../assets/locales/de/prescription.json';
+import deVaccinations from '../../assets/locales/de/vaccinations.json';
+import deReproductive from '../../assets/locales/de/reproductive.json';
+import deAsylumDublinStatus from '../../assets/locales/de/asylum-dublin-status.json';
+import deAsylumDocuments from '../../assets/locales/de/asylum-documents.json';
+import deAsylumLegal from '../../assets/locales/de/asylum-legal.json';
+import deAsylumHousing from '../../assets/locales/de/asylum-housing.json';
+import deAsylumLegalQuiz from '../../assets/locales/de/asylum-legal-quiz.json';
+import deAsylumApply from '../../assets/locales/de/asylum-apply.json';
+import deAsylumInterview from '../../assets/locales/de/asylum-interview.json';
 
 import arCommon from '../../assets/locales/ar/common.json';
 import arAsk from '../../assets/locales/ar/ask.json';
@@ -59,7 +80,27 @@ import arIndex from '../../assets/locales/ar/index.json';
 import arInformation from '../../assets/locales/ar/information.json';
 import arEveryday from '../../assets/locales/ar/everyday.json';
 import arEverydayChildren from '../../assets/locales/ar/children.json';
-
+import arContacts from '../../assets/locales/ar/contacts.json';
+import arDoctorGP from '../../assets/locales/ar/doctor-gp.json';
+import arEducation from '../../assets/locales/ar/education.json';
+import arFindDoctor from '../../assets/locales/ar/find-doctor.json';
+import arFood from '../../assets/locales/ar/food.json';
+import arGenderViolence from '../../assets/locales/ar/gender-violence.json';
+import arGuide from '../../assets/locales/ar/guide.json';
+import arHealth from '../../assets/locales/ar/health.json';
+import arHousing from '../../assets/locales/ar/housing.json';
+import arMentalHealth from '../../assets/locales/ar/mental-health.json';
+import arJobs from '../../assets/locales/ar/jobs.json';
+import arPrescription from '../../assets/locales/ar/prescription.json';
+import arVaccinations from '../../assets/locales/ar/vaccinations.json';
+import arReproductive from '../../assets/locales/ar/reproductive.json';
+import arAsylumDublinStatus from '../../assets/locales/ar/asylum-dublin-status.json';
+import arAsylumDocuments from '../../assets/locales/ar/asylum-documents.json';
+import arAsylumLegal from '../../assets/locales/ar/asylum-legal.json';
+import arAsylumHousing from '../../assets/locales/ar/asylum-housing.json';
+import arAsylumLegalQuiz from '../../assets/locales/ar/asylum-legal-quiz.json';
+import arAsylumApply from '../../assets/locales/ar/asylum-apply.json';
+import arAsylumInterview from '../../assets/locales/ar/asylum-interview.json';
 
 import faCommon from '../../assets/locales/fa/common.json';
 import faAsk from '../../assets/locales/fa/ask.json';
@@ -68,7 +109,27 @@ import faIndex from '../../assets/locales/fa/index.json';
 import faInformation from '../../assets/locales/fa/information.json';
 import faEveryday from '../../assets/locales/fa/everyday.json';
 import faEverydayChildren from '../../assets/locales/fa/children.json';
-
+import faContacts from '../../assets/locales/fa/contacts.json';
+import faDoctorGP from '../../assets/locales/fa/doctor-gp.json';
+import faEducation from '../../assets/locales/fa/education.json';
+import faFindDoctor from '../../assets/locales/fa/find-doctor.json';
+import faFood from '../../assets/locales/fa/food.json';
+import faGenderViolence from '../../assets/locales/fa/gender-violence.json';
+import faGuide from '../../assets/locales/fa/guide.json';
+import faHealth from '../../assets/locales/fa/health.json';
+import faHousing from '../../assets/locales/fa/housing.json';
+import faMentalHealth from '../../assets/locales/fa/mental-health.json';
+import faJobs from '../../assets/locales/fa/jobs.json';
+import faPrescription from '../../assets/locales/fa/prescription.json';
+import faVaccinations from '../../assets/locales/fa/vaccinations.json';
+import faReproductive from '../../assets/locales/fa/reproductive.json';
+import faAsylumDublinStatus from '../../assets/locales/fa/asylum-dublin-status.json';
+import faAsylumDocuments from '../../assets/locales/fa/asylum-documents.json';
+import faAsylumLegal from '../../assets/locales/fa/asylum-legal.json';
+import faAsylumHousing from '../../assets/locales/fa/asylum-housing.json';
+import faAsylumLegalQuiz from '../../assets/locales/fa/asylum-legal-quiz.json';
+import faAsylumApply from '../../assets/locales/fa/asylum-apply.json';
+import faAsylumInterview from '../../assets/locales/fa/asylum-interview.json';
 
 export const resources = {
   en: { common: enCommon,
@@ -119,6 +180,27 @@ export const resources = {
       information: deInformation,
       everyday: deEveryday,
       children: deEverydayChildren,
+      contacts: deContacts,
+      doctorGP: deDoctorGP,
+      education: deEducation,
+      findDoctor: deFindDoctor,
+      food: deFood,
+      genderViolence: deGenderViolence,
+      guide: deGuide,
+      health: deHealth,
+      housing: deHousing,
+      jobs: deJobs,
+      mentalHealth: deMentalHealth,
+      prescription: dePrescription,
+      vaccinations: deVaccinations,
+      reproductive: deReproductive,
+      asylumDocuments: deAsylumDocuments,
+      asylumLegal: deAsylumLegal,
+      asylumLegalQuiz: deAsylumLegalQuiz,
+      asylumDublinStatus: deAsylumDublinStatus,
+      asylumHousing: deAsylumHousing,
+      asylumInterview: deAsylumInterview,
+      asylumApply: deAsylumApply,
       },
   ar: { common: arCommon,
       ask: arAsk,
@@ -127,6 +209,27 @@ export const resources = {
       information: arInformation,
       everyday: arEveryday,
       children: arEverydayChildren,
+      contacts: arContacts,
+      doctorGP: arDoctorGP,
+      education: arEducation,
+      findDoctor: arFindDoctor,
+      food: arFood,
+      genderViolence: arGenderViolence,
+      guide: arGuide,
+      health: arHealth,
+      housing: arHousing,
+      jobs: arJobs,
+      mentalHealth: arMentalHealth,
+      prescription: arPrescription,
+      vaccinations: arVaccinations,
+      reproductive: arReproductive,
+      asylumDocuments: arAsylumDocuments,
+      asylumLegal: arAsylumLegal,
+      asylumLegalQuiz: arAsylumLegalQuiz,
+      asylumDublinStatus: arAsylumDublinStatus,
+      asylumHousing: arAsylumHousing,
+      asylumInterview: arAsylumInterview,
+      asylumApply: arAsylumApply,
       },
   fa: { common: faCommon,
       ask: faAsk,
@@ -135,7 +238,27 @@ export const resources = {
       information: faInformation,
       everyday: faEveryday,
       children: faEverydayChildren,
-      },
+      contacts: faContacts,
+      doctorGP: faDoctorGP,
+      education: faEducation,
+      findDoctor: faFindDoctor,
+      food: faFood,
+      genderViolence: faGenderViolence,
+      guide: faGuide,
+      health: faHealth,
+      housing: faHousing,
+      jobs: faJobs,
+      mentalHealth: faMentalHealth,
+      prescription: faPrescription,
+      vaccinations: faVaccinations,
+      reproductive: faReproductive,
+      asylumDocuments: faAsylumDocuments,
+      asylumLegal: faAsylumLegal,
+      asylumLegalQuiz: faAsylumLegalQuiz,
+      asylumDublinStatus: faAsylumDublinStatus,
+      asylumHousing: faAsylumHousing,
+      asylumInterview: faAsylumInterview,
+      asylumApply: faAsylumApply,},
 };
 
 const SUPPORTED = ['en','de','ar','fa'] as const;

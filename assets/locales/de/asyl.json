@@ -1,0 +1,93 @@
+{
+  "pageTitle": "Asyl & Rechte",
+  "introShort": "Finde dich im Asylverfahren zurecht, verstehe deine Rechte und erhalte Zugang zu rechtlicher Unterstützung in Österreich.",
+  "playTips": "Rechtstipps anhören",
+  "emergency": "Rechtlicher Notfall",
+  "quickHelp": "Soforthilfe Recht",
+  "essential": "Wichtige Rechtsdienste",
+  "additionalServices": "Zusätzliche Rechtsunterstützung",
+  "tts_lang": "de-DE",
+  "tts_intro": "Hier sind wichtige rechtliche Informationen und Asylverfahren.",
+  "topics": {
+    "emergencyLegalHelp": {
+      "title": "Notfall-Rechtsberatung",
+      "subtitle": "Sofortige rechtliche Hilfe und Rechte bei Haft",
+      "tip": "Bei Festnahme oder Abschiebung hast du Recht auf einen Anwalt. Kontaktiere sofort die Rechtsberatung: 01 544 08 60."
+    },
+    "asylumProcess": {
+      "title": "Asylverfahren-Leitfaden",
+      "subtitle": "Schritt-für-Schritt-Asylverfahren",
+      "tip": "Das Asylverfahren hat 3 Phasen: Registrierung, Interview, Entscheidung. Jede Phase hat Fristen und Anforderungen."
+    },
+    "appealsReview": {
+      "title": "Berufungen & Überprüfungen",
+      "subtitle": "Negative Entscheidungen anfechten",
+      "tip": "Du hast 2 Wochen Zeit, um eine negative Entscheidung anzufechten. Mit Anwalt steigen deine Chancen erheblich."
+    },
+    "interviewPrep": {
+      "title": "Vorbereitung auf das Interview",
+      "subtitle": "Bereite dich auf dein Asylinterview vor",
+      "tip": "Erzähle deine Geschichte chronologisch. Bringe alle Dokumente und Beweise mit. Du hast Recht auf einen Dolmetscher."
+    },
+    "documentation": {
+      "title": "Dokumente & Beweise",
+      "subtitle": "Sammeln und organisieren",
+      "tip": "Sammle Ausweisdokumente, Länderberichte, medizinische Gutachten und Zeugenaussagen für deinen Asylantrag."
+    },
+    "legalStatus": {
+      "title": "Rechtliche Statusarten",
+      "subtitle": "Unterschiedliche Schutzarten verstehen",
+      "tip": "Österreich vergibt Asyl, subsidiären Schutz oder befristeten Aufenthalt. Jeder Status hat eigene Rechte und Pflichten."
+    },
+    "familyReunification": {
+      "title": "Familienzusammenführung",
+      "subtitle": "Familienangehörige nach Österreich holen",
+      "tip": "Anerkannte Flüchtlinge können innerhalb von 3 Monaten Familiennachzug beantragen – ohne Einkommensnachweis."
+    },
+    "workRights": {
+      "title": "Arbeitsrechte",
+      "subtitle": "Deine Rechte in der Beschäftigung",
+      "tip": "Deine Arbeitsbewilligung hängt von deinem Status ab. Manche erlauben volle Arbeit, andere haben Einschränkungen."
+    },
+    "housingBenefits": {
+      "title": "Wohn- & Sozialleistungen",
+      "subtitle": "Zugang zu Wohnunterstützung und Sozialhilfe",
+      "tip": "Je nach Status hast du Anspruch auf Grundversorgung, Wohnbeihilfe und weitere Sozialleistungen."
+    },
+    "legalAidDirectory": {
+      "title": "Verzeichnis Rechtsberatung",
+      "subtitle": "Kostenlose Rechtsberatung und NGOs",
+      "tip": "Viele NGOs bieten kostenlose Beratung: Diakonie, Caritas, Asylkoordination, Rechtsberatung Wien."
+    },
+    "policeRights": {
+      "title": "Polizei & Ausweiskontrollen",
+      "subtitle": "Deine Rechte bei Polizeikontrollen",
+      "tip": "Du musst Ausweise bei dir tragen. Polizei darf kontrollieren, aber nicht ohne Grund festhalten. Bei Verhaftung: Anwalt verlangen."
+    },
+    "criminalCharges": {
+      "title": "Straftaten & Abschiebung",
+      "subtitle": "Rechtliche Folgen und Abschiebungsrisiken",
+      "tip": "Verurteilungen können dein Asylverfahren beeinflussen. Schwere Straftaten können auch bei anerkannten Flüchtlingen zur Abschiebung führen."
+    },
+    "dataPrivacy": {
+      "title": "Datenschutz & Einwilligung",
+      "subtitle": "Deine Rechte bei persönlichen Daten",
+      "tip": "Behörden müssen deine Daten schützen. Du kannst Auskunft über gespeicherte Daten verlangen."
+    },
+    "caseTracking": {
+      "title": "Fall-Tracking",
+      "subtitle": "Verfolge dein Asylverfahren",
+      "tip": "Du kannst deinen Status online oder telefonisch abfragen. Bewahre alle Schreiben auf und notiere wichtige Termine."
+    },
+    "faqsGlossary": {
+      "title": "FAQs & Begriffe",
+      "subtitle": "Häufige Fragen und juristische Begriffe erklärt",
+      "tip": "Verstehe die Fachbegriffe im Asylrecht. Frag nach, wenn dir etwas unklar ist."
+    },
+    "templates": {
+      "title": "Vorlagen & Briefe",
+      "subtitle": "Herunterladbare Musterdokumente",
+      "tip": "Nutze Vorlagen für Berufungen, Anträge und rechtliche Schreiben für korrektes Format."
+    }
+  }
+}

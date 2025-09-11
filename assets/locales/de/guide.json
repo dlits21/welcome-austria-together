@@ -1,0 +1,160 @@
+{
+  "pageTitle": "Dein Österreich-Guide",
+  "pageIntro": "Erhalte persönliche Informationen passend zu deiner Situation in Österreich",
+  "selectTimeframe": "Wie lange bist du schon in Österreich?",
+  "options": {
+    "not_arrived": {
+      "title": "Ich bin noch nicht angekommen",
+      "subtitle": "Vorbereitung auf deine Reise nach Österreich"
+    },
+    "one_week": {
+      "title": "Etwa eine Woche",
+      "subtitle": "Wichtige erste Schritte in Österreich"
+    },
+    "one_month": {
+      "title": "Etwa ein Monat",
+      "subtitle": "Ankommen und nächste Schritte"
+    },
+    "longer": {
+      "title": "Länger als ein Monat",
+      "subtitle": "Langfristige Integration und Chancen"
+    }
+  },
+  "videoSection": {
+    "title": "Schau dir unseren hilfreichen Videoguide an",
+    "watchVideo": "Auf YouTube ansehen"
+  },
+  "content": {
+    "not_arrived": {
+      "title": "Vorbereitung auf Österreich",
+      "subtitle": "Wichtige Infos vor deiner Ankunft",
+      "videoUrl": "Q607TYRBxFU",
+      "sections": [
+        {
+          "icon": "📄",
+          "title": "Dokumente vorbereiten",
+          "description": "Sammle wichtige Dokumente wie Reisepass, Geburtsurkunden und Ausbildungsnachweise",
+          "route": "/information/document"
+        },
+        {
+          "icon": "💰",
+          "title": "Finanzielle Planung",
+          "description": "Verstehe Lebenshaltungskosten und verfügbare finanzielle Unterstützung",
+          "route": "/information/finance"
+        },
+        {
+          "icon": "🏠",
+          "title": "Wohnungssuche",
+          "description": "Informiere dich über Wohnmöglichkeiten und Unterkunftsarten",
+          "route": "/information/housing"
+        },
+        {
+          "icon": "🏥",
+          "title": "Gesundheitssystem",
+          "description": "Verstehe das österreichische Gesundheitssystem und die Krankenversicherung",
+          "route": "/information/health"
+        }
+      ]
+    },
+    "one_week": {
+      "title": "Deine erste Woche",
+      "subtitle": "Unmittelbare Prioritäten für Neuankömmlinge",
+      "videoUrl": "Q607TYRBxFU",
+      "sections": [
+        {
+          "icon": "🆔",
+          "title": "Anmeldung",
+          "description": "Wohnsitzanmeldung (Meldezettel) innerhalb von 3 Tagen erledigen",
+          "route": "/information/asylum"
+        },
+        {
+          "icon": "🏥",
+          "title": "Notfalldienste",
+          "description": "Notrufnummern und nächstes Krankenhaus kennen",
+          "route": "/ask/emergency"
+        },
+        {
+          "icon": "🍽️",
+          "title": "Essen & Grundversorgung",
+          "description": "Finde Tafeln, Supermärkte und wichtige Dienste",
+          "route": "/information/food"
+        },
+        {
+          "icon": "📱",
+          "title": "Kommunikation",
+          "description": "Besorge dir eine SIM-Karte und bleib erreichbar",
+          "route": "/information/contacts"
+        }
+      ]
+    },
+    "one_month": {
+      "title": "Einleben",
+      "subtitle": "Deine Basis in Österreich aufbauen",
+      "videoUrl": "Q607TYRBxFU",
+      "sections": [
+        {
+          "icon": "🎓",
+          "title": "Deutsch lernen",
+          "description": "Melde dich für Deutschkurse und Sprachprogramme an",
+          "route": "/learn"
+        },
+        {
+          "icon": "👥",
+          "title": "Gemeinschaft & Integration",
+          "description": "Komm mit lokalen Communities und Unterstützungsgruppen in Kontakt",
+          "route": "/community"
+        },
+        {
+          "icon": "🏛️",
+          "title": "Rechtliche Unterstützung",
+          "description": "Verstehe deine Rechte und rechtlichen Prozesse",
+          "route": "/ask/legal-support"
+        },
+        {
+          "icon": "👶",
+          "title": "Kinder & Schule",
+          "description": "Schuleinschreibung und kindgerechte Angebote",
+          "route": "/information/education"
+        }
+      ]
+    },
+    "longer": {
+      "title": "Langfristige Integration",
+      "subtitle": "Baue deine Zukunft in Österreich auf",
+      "videoUrl": "Q607TYRBxFU",
+      "sections": [
+        {
+          "icon": "💼",
+          "title": "Beruf & Karriere",
+          "description": "Jobsuche, Ausbildung und Berufsberatung",
+          "route": "/information/jobs"
+        },
+        {
+          "icon": "🎓",
+          "title": "Weiterführende Bildung",
+          "description": "Studiumsvorbereitung und Anerkennung von Abschlüssen",
+          "route": "/information/education"
+        },
+        {
+          "icon": "🏛️",
+          "title": "Politische Teilhabe",
+          "description": "Verstehe Politik und Bürgerpflichten in Österreich",
+          "route": "/information/everyday/political-education"
+        },
+        {
+          "icon": "🌍",
+          "title": "Kulturelle Integration",
+          "description": "Tiefe kulturelle Einblicke und soziale Teilhabe",
+          "route": "/information/everyday/culture"
+        }
+      ]
+    }
+  },
+  "back": "Zurück zur Auswahl",
+  "tts_lang": "de-DE",
+  "extraInfo": "Alle Informationen sind vertraulich und helfen uns, dir passende Unterstützung für deine Situation in Österreich zu geben.",
+  "navigation": {
+    "trustedNGO": "Vertrauenswürdige NGO-Unterstützung",
+    "peerSystem": "Peer-Support-System"
+  }
+}

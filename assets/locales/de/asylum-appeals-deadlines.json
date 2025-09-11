@@ -1,0 +1,15 @@
+{
+  "stepPage": {
+    "title": "Fristen für Berufung"
+  },
+  "expired": "Frist abgelaufen",
+  "days_left": "Tage verbleibend",
+  "steps": {
+    "notice_title": "1. Berufung anmelden",
+    "notice_desc": "Du musst das Gericht innerhalb von 7 Tagen nach Ablehnung informieren.",
+    "submit_title": "2. Schriftliche Berufung einreichen",
+    "submit_desc": "Begründe deinen Antrag und reiche Dokumente innerhalb von 14 Tagen ein.",
+    "hearing_title": "3. Anhörungstermin",
+    "hearing_desc": "Du wirst über den Anhörungstermin informiert."
+  }
+}

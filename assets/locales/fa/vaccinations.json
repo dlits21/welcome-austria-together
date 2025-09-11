@@ -1,0 +1,36 @@
+{
+  "pageTitle": "اطلاعات واکسیناسیون",
+  "pageIntro": "منابع و راهنمایی‌های مهم واکسیناسیون برای شما و خانواده‌تان",
+  "exampleVideoId": "Q607TYRBxFU",
+  "tiles": {
+    "child_vaccines_title": "واکسن کودکان",
+    "child_vaccines_sub": "واکسن‌های ضروری برای نوزادان، کودکان و نوجوانان",
+    "adult_vaccines_title": "واکسن بزرگسالان",
+    "adult_vaccines_sub": "واکسن‌های توصیه‌شده برای بزرگسالان و سالمندان",
+    "free_vaccines_title": "مراکز واکسیناسیون رایگان",
+    "free_vaccines_sub": "محل دریافت واکسن به صورت رایگان",
+    "documentation_title": "مدارک مورد نیاز",
+    "documentation_sub": "چه مدارکی را باید برای وقت واکسن همراه داشته باشید",
+    "faq_title": "سؤالات متداول درباره واکسن",
+    "faq_sub": "پاسخ به پرسش‌ها و نگرانی‌های رایج",
+    "travel_vaccines_title": "واکسن‌های سفر",
+    "travel_vaccines_sub": "واکسن‌های ویژه برای سفرهای بین‌المللی",
+    "pregnancy_vaccines_title": "واکسن‌های دوران بارداری",
+    "pregnancy_vaccines_sub": "واکسن‌های ایمن در دوران بارداری و شیردهی",
+    "schedule_title": "برنامه واکسیناسیون",
+    "schedule_sub": "زمان دریافت هر واکسن بر اساس سن"
+  },
+  "trusted": {
+    "health_ministry": "وزارت بهداشت اتریش",
+    "health_phone": "0800 555 621",
+    "health_url": "https://www.sozialministerium.at",
+    "health_sub": "اطلاعات و برنامه‌های رسمی واکسیناسیون",
+    "vaccination_hotline": "خط اطلاعات واکسن",
+    "hotline_phone": "1450",
+    "hotline_sub": "مشاوره بهداشتی ۲۴ ساعته و راهنمای واکسیناسیون",
+    "immunization_service": "سرویس واکسیناسیون اتریش",
+    "immunization_phone": "01 531 37-0",
+    "immunization_url": "https://www.ages.at",
+    "immunization_sub": "خدمات و مشاوره تخصصی واکسیناسیون"
+  }
+}

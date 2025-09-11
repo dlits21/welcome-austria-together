@@ -1,0 +1,39 @@
+{
+  "pageTitle": "Rechtsstatus & Konsequenzen",
+  "pageIntro": "Verstehe deinen Asylstatus und welche Rechte damit verbunden sind.",
+  "videoTitle": "Kurze Erklärung der Asylstatus-Arten",
+  "tiles": {
+    "quiz_title": "Welcher Typ bin ich?",
+    "quiz_sub": "Finde deinen Rechtsstatus heraus"
+  },
+  "status": {
+    "refugee": {
+      "title": "Flüchtling",
+      "desc": "Du erhältst vollen Schutz und die meisten Rechte (Arbeit, Wohnen, Gesundheitsversorgung, Familiennachzug)."
+    },
+    "subsidiary": {
+      "title": "Subsidiärer Schutz",
+      "desc": "Vorübergehender Schutz mit eingeschränkten Rechten."
+    },
+    "dublin": {
+      "title": "Dublin",
+      "desc": "Du kannst in das EU-Land überstellt werden, in dem du zuerst Asyl beantragt hast."
+    },
+    "rejected": {
+      "title": "Abgelehnt",
+      "desc": "Dein Asylantrag wurde abgelehnt. Handle schnell — die Fristen für Berufungen sind kurz."
+    }
+  },
+  "trustedTitle": "Vertrauenswürdige Unterstützung",
+  "trusted": {
+    "refugee_council": "Flüchtlingsrat",
+    "refugee_phone": "+43 123 456 789",
+    "refugee_url": "https://refugee-council.example.org",
+    "refugee_sub": "Kostenlose Rechtsberatung & Fallbetreuung",
+    "legal_aid": "Rechtsberatung Österreich",
+    "legal_phone": "+43 987 654 321",
+    "legal_sub": "Hilfe bei Asylverfahren & Berufungen"
+  },
+  "moreContacts": "Weitere Kontakte",
+  "emergency_number": "112"
+}

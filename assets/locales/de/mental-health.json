@@ -1,0 +1,32 @@
+{
+  "pageTitle": "Psychische Gesundheit & Unterstützung",
+  "pageIntro": "Wichtige Ressourcen und Informationen zur psychischen Gesundheit",
+  "exampleVideoId": "Q607TYRBxFU",
+  "tiles": {
+    "signs_title": "Warnsignale",
+    "signs_sub": "Veränderungen bei Schlaf, Essen, Stimmung, Verhalten",
+    "what_title": "Was du tun kannst",
+    "what_sub": "Einfache Schritte für mehr Wohlbefinden",
+    "seek_title": "Wo du Hilfe bekommst",
+    "seek_sub": "NGOs, Kliniken, professionelle Unterstützung",
+    "self_title": "Tipps zur Selbstfürsorge",
+    "self_sub": "Atemübungen, Spaziergänge, Tagesroutinen",
+    "parents_title": "Kinder unterstützen",
+    "parents_sub": "So hilfst du Kindern bei psychischen Problemen",
+    "hotlines_title": "Notrufnummern",
+    "hotlines_sub": "Sofort anrufen, wenn jemand gefährdet ist"
+  },
+  "trusted": {
+    "ngo_name": "Pro Mente Austria",
+    "ngo_phone": "0800 100 100",
+    "ngo_url": "https://www.promente-austria.at",
+    "ngo_sub": "Psychische Unterstützung in mehreren Sprachen",
+    "child_services": "Kinder- und Jugendhilfe",
+    "child_phone": "0800 240 264",
+    "child_sub": "Unterstützung für Kinder und Familien",
+    "national_hotline": "Telefonseelsorge Österreich",
+    "national_phone": "142",
+    "national_url": "https://www.telefonseelsorge.at",
+    "national_sub": "24/7 Krisenintervention"
+  }
+}

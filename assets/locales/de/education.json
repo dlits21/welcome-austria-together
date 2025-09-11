@@ -1,0 +1,98 @@
+{
+  "pageTitle": "Bildung & Lernen",
+  "introShort": "Finde Informationen zu Schulen, Abschlüssen, Sprachkursen und Unterstützungsangeboten im Bildungsbereich.",
+  "essential": "Wichtige Dienste",
+  "additionalServices": "Alle Angebote",
+  "playTips": "🔊 Tipps anhören",
+  "emergency": "Notfall",
+  "quickHelp": "Brauchen Sie jetzt Hilfe?",
+  "tts_lang": "de-DE",
+  "tts_intro": "Willkommen bei Bildung und Lernen. Hier finden Sie Informationen zu Schuleinschreibung, Anerkennung von Abschlüssen und Unterstützungsangeboten im Bildungsbereich.",
+  "topics": {
+    "qualification-recognition": {
+      "title": "Anerkennung von Abschlüssen & Berufsausbildung",
+      "subtitle": "Lassen Sie Ihre ausländischen Abschlüsse anerkennen und finden Sie Erwachsenenbildungsprogramme",
+      "tip": "Dienste zur Anerkennung von Berufsabschlüssen und Möglichkeiten der Berufsausbildung"
+    },
+    "school-enrollment": {
+      "title": "Schuleinschreibung",
+      "subtitle": "Wie Sie Ihr Kind in der Schule anmelden",
+      "tip": "Schritt-für-Schritt-Anleitung für die Einschreibung in österreichischen Schulen"
+    },
+    "language-integration": {
+      "title": "Sprachkurse & Integrationsklassen",
+      "subtitle": "Deutschkurse von A1 bis C2",
+      "tip": "Kostenlose und günstige Deutschlernprogramme"
+    },
+    "school-types": {
+      "title": "Schularten & Wohin mit den Kindern",
+      "subtitle": "Das österreichische Schulsystem verstehen",
+      "tip": "Leitfaden zu den verschiedenen Schultypen und der richtigen Wahl für Ihr Kind"
+    },
+    "special-education": {
+      "title": "Sonderpädagogik & zusätzliche Unterstützung",
+      "subtitle": "Unterstützung für Kinder mit besonderen Bedürfnissen",
+      "tip": "Spezialisierte Bildungsprogramme und Unterstützungsdienste"
+    },
+    "childcare-early-education": {
+      "title": "Kinderbetreuung & Frühkindliche Bildung",
+      "subtitle": "Kinderkrippe, Kindergarten und Frühförderung",
+      "tip": "Optionen der frühkindlichen Bildung und Betreuungsangebote"
+    },
+    "school-costs": {
+      "title": "Schulkosten & Ansprüche",
+      "subtitle": "Informationen zu Schulessen, Transport und Gebühren",
+      "tip": "Was kostenlos ist, was kostet und welche finanzielle Unterstützung es gibt"
+    },
+    "homework-support": {
+      "title": "Nachmittagsbetreuung & Hausaufgabenhilfe",
+      "subtitle": "Nachhilfe- und Lernunterstützungsprogramme",
+      "tip": "Kostenlose Hausaufgabenhilfe und Lernangebote am Nachmittag"
+    },
+    "behavior-safety": {
+      "title": "Verhalten, Mobbing & Sicherheit in der Schule",
+      "subtitle": "Umgang mit Problemen und Sicherheit an Schulen",
+      "tip": "Wie man Mobbing bekämpft und eine sichere Lernumgebung schafft"
+    },
+    "parent-engagement": {
+      "title": "Elternbeteiligung & Kommunikation",
+      "subtitle": "Wie Sie effektiv mit Lehrkräften und Schulpersonal kommunizieren",
+      "tip": "Positive Beziehungen zur Schule Ihres Kindes aufbauen"
+    },
+    "exams-certificates": {
+      "title": "Prüfungen, Zeugnisse & Fortschritt",
+      "subtitle": "Das österreichische Notensystem und Leistungsentwicklung verstehen",
+      "tip": "Wie das österreichische Bewertungssystem funktioniert"
+    },
+    "school-calendar": {
+      "title": "Schulkalender & Ferien",
+      "subtitle": "Wichtige Termine, Ferien und Stundenpläne",
+      "tip": "Kalender des Schuljahres und Ferienzeiten in Österreich"
+    },
+    "mental-health-counselling": {
+      "title": "Psychische Gesundheit & Beratung in der Schule",
+      "subtitle": "Psychologische Unterstützung und Beratungsdienste für SchülerInnen",
+      "tip": "Psychologische Hilfsangebote und Beratung an Schulen"
+    },
+    "transport-routes": {
+      "title": "Transport & sichere Schulwege",
+      "subtitle": "Optionen für Schultransport und sichere Wege",
+      "tip": "Öffentliche Verkehrsmittel für SchülerInnen und sichere Fußwege"
+    },
+    "digital-access": {
+      "title": "Digitaler Zugang & Fernlernen",
+      "subtitle": "Geräte, Internetzugang und Online-Unterstützung",
+      "tip": "Technische Unterstützung und digitale Lernressourcen"
+    },
+    "scholarships-support": {
+      "title": "Stipendien & zusätzliche Unterstützung",
+      "subtitle": "Finanzielle Hilfe für Sport, Kultur und schulische Leistungen",
+      "tip": "Stipendien und Förderungen für außerschulische Aktivitäten"
+    },
+    "legal-rights": {
+      "title": "Rechte & Beschwerden",
+      "subtitle": "Grundlagen des Bildungsrechts und Beschwerdemöglichkeiten",
+      "tip": "Ihre Rechte im Bildungssystem und wie Sie Beschwerden einreichen können"
+    }
+  }
+}

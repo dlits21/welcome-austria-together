@@ -1,0 +1,37 @@
+{
+  "pageTitle": "Information zu Rezepten",
+  "pageIntro": "Vollständiger Leitfaden zu Rezepten, Medikamenten und Apotheken in Österreich",
+  "exampleVideoId": "Q607TYRBxFU",
+  "tiles": {
+    "how_to_get_title": "Wie bekomme ich ein Rezept?",
+    "how_to_get_sub": "Arztbesuche, Online-Konsultationen, Notfallrezepte",
+    "required_meds_title": "Welche Medikamente brauchen ein Rezept?",
+    "required_meds_sub": "Antibiotika, Suchtmittel, Medikamente bei chronischen Krankheiten",
+    "pharmacy_emergency_title": "Apotheken-Notfälle",
+    "pharmacy_emergency_sub": "Nachtapotheken, Zugang zu Notfallmedikamenten",
+    "financial_support_title": "Finanzielle Unterstützung für Medikamente",
+    "financial_support_sub": "Versicherung, Unterstützungsprogramme, Kostenreduktion",
+    "otc_vs_prescription_title": "Rezeptfrei vs. Rezeptpflichtig",
+    "otc_vs_prescription_sub": "Medikamentenkategorien und Verfügbarkeit verstehen",
+    "prescription_format_title": "Rezept-Format",
+    "prescription_format_sub": "Österreichische Rezeptanforderungen verstehen",
+    "explain_prescription_title": "Rezept erklären",
+    "explain_prescription_sub": "Anleitung und Medikamentenhinweise richtig lesen"
+  },
+  "trusted": {
+    "pharmacy_association_name": "Österreichische Apothekerkammer",
+    "pharmacy_association_phone": "01 404 14 28",
+    "pharmacy_association_url": "https://www.apothekerkammer.at",
+    "pharmacy_association_sub": "Offizielle Informationen und Beratung zu Apotheken",
+    "emergency_pharmacy_name": "Apotheken-Notdienst",
+    "emergency_pharmacy_phone": "1455",
+    "emergency_pharmacy_sub": "24/7 Notfall-Apothekenfinder",
+    "health_insurance_name": "Österreichische Gesundheitskasse",
+    "health_insurance_phone": "050 124 411",
+    "health_insurance_url": "https://www.gesundheitskasse.at",
+    "health_insurance_sub": "Information zu Kostenübernahme und Rückerstattung",
+    "medication_helpline_name": "Medikamenten-Infohotline",
+    "medication_helpline_phone": "0800 201 530",
+    "medication_helpline_sub": "Fachberatung zu Medikamenten und Wechselwirkungen"
+  }
+}

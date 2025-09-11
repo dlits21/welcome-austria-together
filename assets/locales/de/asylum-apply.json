@@ -1,0 +1,18 @@
+{
+  "pageTitle": "Wie beantrage ich Asyl",
+  "pageIntro": "Ein Asylantrag ist ein Verfahren mit mehreren wichtigen Schritten. Hier erfährst du, was du tun musst.",
+
+  "steps": {
+    "register_title": "Schritt 1: Registrierung",
+    "register_desc": "Gehe zum Asylamt oder zur Grenzbehörde, um deinen Antrag zu registrieren.",
+    "submit_title": "Schritt 2: Antrag einreichen",
+    "submit_desc": "Fülle das offizielle Asylformular aus. Möglicherweise brauchst du Hilfe von einem Übersetzer oder einer NGO.",
+    "interview_title": "Schritt 3: Anhörung",
+    "interview_desc": "Du wirst nach deiner Geschichte und deinen Asylgründen gefragt. Sei ehrlich und detailliert.",
+    "decision_title": "Schritt 4: Entscheidung",
+    "decision_desc": "Die Behörden entscheiden, ob dein Antrag angenommen oder abgelehnt wird. Bei Ablehnung kannst du Berufung einlegen."
+  },
+
+  "videoTitle": "Erklärung: Asyl beantragen",
+  "exampleVideoId": "T7Csf2cO1-0"
+}

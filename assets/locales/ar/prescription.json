@@ -1,0 +1,37 @@
+{
+  "pageTitle": "معلومات الوصفات الطبية",
+  "pageIntro": "دليل كامل للوصفات، الأدوية وخدمات الصيدلية في النمسا",
+  "exampleVideoId": "Q607TYRBxFU",
+  "tiles": {
+    "how_to_get_title": "كيف أحصل على وصفة طبية؟",
+    "how_to_get_sub": "زيارة الطبيب، الاستشارات عبر الإنترنت، وصفات الطوارئ",
+    "required_meds_title": "ما هي الأدوية التي تحتاج وصفة؟",
+    "required_meds_sub": "المضادات الحيوية، المواد الخاضعة للرقابة، أدوية الأمراض المزمنة",
+    "pharmacy_emergency_title": "حالات الطوارئ الصيدلانية",
+    "pharmacy_emergency_sub": "صيدليات الليل، الوصول إلى الأدوية الطارئة",
+    "financial_support_title": "الدعم المالي للأدوية",
+    "financial_support_sub": "التأمين الصحي، برامج المساعدة، تخفيض التكاليف",
+    "otc_vs_prescription_title": "الأدوية بدون وصفة مقابل الأدوية بوصفة",
+    "otc_vs_prescription_sub": "فهم فئات الأدوية وتوفرها",
+    "prescription_format_title": "شكل الوصفة الطبية",
+    "prescription_format_sub": "فهم متطلبات الوصفات في النمسا",
+    "explain_prescription_title": "تفسير الوصفة",
+    "explain_prescription_sub": "كيفية قراءة وفهم تعليمات الأدوية"
+  },
+  "trusted": {
+    "pharmacy_association_name": "رابطة الصيادلة النمساوية",
+    "pharmacy_association_phone": "01 404 14 28",
+    "pharmacy_association_url": "https://www.apothekerkammer.at",
+    "pharmacy_association_sub": "معلومات وإرشادات رسمية عن الصيدليات",
+    "emergency_pharmacy_name": "خدمة الطوارئ الصيدلانية",
+    "emergency_pharmacy_phone": "1455",
+    "emergency_pharmacy_sub": "خدمة تحديد مواقع الصيدليات الطارئة 24/7",
+    "health_insurance_name": "التأمين الصحي النمساوي",
+    "health_insurance_phone": "050 124 411",
+    "health_insurance_url": "https://www.gesundheitskasse.at",
+    "health_insurance_sub": "معلومات حول تغطية الأدوية والتعويضات",
+    "medication_helpline_name": "الخط الساخن لمعلومات الأدوية",
+    "medication_helpline_phone": "0800 201 530",
+    "medication_helpline_sub": "استشارات مهنية حول الأدوية والتفاعلات"
+  }
+}

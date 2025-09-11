@@ -1,0 +1,56 @@
+{
+  "title": "Erforderliche Dokumente für den Asylantrag",
+  "checklist": {
+    "required": "Erforderlich",
+    "optional": "Hilfreich, aber nicht verpflichtend"
+  },
+  "videoUrl": "Q607TYRBxFU",
+  "required": {
+    "passport_id_title": "Reisepass oder Ausweis (falls vorhanden)",
+    "passport_id_note": "Bringe alle vorhandenen Reise- oder Identitätsdokumente mit.",
+    "application_form_title": "Asylantragsformular",
+    "application_form_note": "Dieses erhältst du vom Asylamt.",
+    "photos_title": "Passfotos",
+    "photos_note": "Bringe aktuelle Fotos mit, die den Ausweisanforderungen entsprechen."
+  },
+  "optional": {
+    "proof_origin_title": "Nachweis der Herkunft",
+    "proof_origin_note": "Jedes Dokument, das zeigt, woher du kommst (Geburtsurkunde, Aufenthaltstitel usw.).",
+    "birth_title": "Geburtsurkunde",
+    "birth_title_note": "Bringe nach Möglichkeit Originale mit",
+    "marriage_title": "Heiratsurkunde",
+    "marriage_title_note": "Nur falls relevant",
+    "medical_records_title": "Medizinische Unterlagen",
+    "medical_records_note": "Nachweise über laufende Behandlungen, Rezepte oder Gesundheitszustände.",
+    "proof_photos_title": "Fotos / Videos",
+    "proof_photos_title_note": "Beweise für Ereignisse oder Bedrohungen",
+    "school_work_certificates_title": "Schul- oder Arbeitszeugnisse",
+    "school_work_certificates_note": "Nachweise über Ausbildung oder Berufserfahrung."
+  },
+  "warning": "⚠️ Keine Sorge, wenn du nicht alle Dokumente vorlegen kannst. Die Behörden müssen deinen Asylantrag trotzdem annehmen und bearbeiten.",
+  "docs": {
+    "passport": {
+      "info_title": "Über Reisepass oder Ausweis",
+      "info_text": "Jedes offizielle Identitätsdokument aus deinem Herkunftsland. Auch ohne Dokumente kannst du Asyl beantragen – erkläre einfach deine Situation den Behörden."
+    },
+    "birth": {
+      "info_title": "Über das Asylantragsformular",
+      "info_text": "Dieses Formular wird dir beim Interview vom Asylamt zur Verfügung gestellt. Du musst es nicht selbst mitbringen."
+    },
+    "photos": {
+      "info_title": "Über Passfotos",
+      "info_text": "Standard-Passfotos (45mm x 35mm). Diese kannst du in Fotokabinen oder Fotostudios machen lassen. Meistens werden 4–6 Fotos benötigt."
+    },
+    "marriage": {
+      "info_title": "Über unterstützende Dokumente",
+      "info_text": "Alle offiziellen Dokumente, die deinen Fall unterstützen. Sie können aus deinem Heimatland oder von deiner Flucht stammen. Kopien sind akzeptabel, wenn Originale fehlen."
+    },
+    "medical": {
+      "info_title": "Über medizinische Unterlagen",
+      "info_text": "Medizinische Berichte, Rezepte oder Arztbriefe, die für deinen Asylfall relevant sind. Dazu können Nachweise über Verfolgung oder Krankheiten gehören, die behandelt werden müssen."
+    }
+  },
+  "trusted_ngos": "Vertrauenswürdige NGOs",
+  "peer_support": "Peer-Unterstützung",
+  "close": "Schließen"
+}
