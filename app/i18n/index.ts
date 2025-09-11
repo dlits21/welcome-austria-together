@@ -89,6 +89,7 @@ import deAsylumWorkPermits from '../../assets/locales/de/asylum-work-permits.jso
 import deGuide from '../../assets/locales/de/guide.json';
 import deAskEmergency from '../../assets/locales/de/ask-emergency.json';
 import deAskGeneral from '../../assets/locales/de/ask-general.json';
+import deAskLegal from '../../assets/locales/de/ask-legal.json';
 
 import arCommon from '../../assets/locales/ar/common.json';
 import arAsk from '../../assets/locales/ar/ask.json';
@@ -132,6 +133,7 @@ import arAsylumWorkPermits from '../../assets/locales/ar/asylum-work-permits.jso
 import arGuide from '../../assets/locales/ar/guide.json';
 import arAskEmergency from '../../assets/locales/ar/ask-emergency.json';
 import arAskGeneral from '../../assets/locales/ar/ask-general.json';
+import arAskLegal from '../../assets/locales/ar/ask-legal.json';
 
 import faCommon from '../../assets/locales/fa/common.json';
 import faAsk from '../../assets/locales/fa/ask.json';
@@ -175,6 +177,8 @@ import faAsylumWorkPermits from '../../assets/locales/fa/asylum-work-permits.jso
 import faGuide from '../../assets/locales/fa/guide.json';
 import faAskEmergency from '../../assets/locales/fa/ask-emergency.json';
 import faAskGeneral from '../../assets/locales/fa/ask-general.json';
+import faAskLegal from '../../assets/locales/fa/ask-legal.json';
+
 
 export const resources = {
   en: { common: enCommon,
@@ -263,6 +267,7 @@ export const resources = {
         guide: deGuide,
         askEmergency: deAskEmergency,
         askGeneral: deAskGeneral,
+        askLegal: deAskLegal,
       },
   ar: { common: arCommon,
         ask: arAsk,
@@ -306,6 +311,7 @@ export const resources = {
         guide: arGuide,
         askEmergency: arAskEmergency,
         askGeneral: arAskGeneral,
+        askLegal: arAskLegal,
       },
   fa: { common: faCommon,
         ask: faAsk,
@@ -349,6 +355,7 @@ export const resources = {
         guide: faGuide,
         askEmergency: faAskEmergency,
         askGeneral: faAskGeneral,
+        askLegal: faAskLegal,
         },
 };
 
