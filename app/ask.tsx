@@ -9,77 +9,74 @@ import PageNavigation from '../components/PageNavigation';
 import LanguageModal from '../components/LanguageModal';
 import VirtualAssistantModal from '../components/VirtualAssistantModal';
 import TutorialModal from '../components/TutorialModal';
-import { getAskText } from '../utils/languageUtils';
+import { useTranslation } from 'react-i18next';
 
 
 const AskPage: React.FC = () => {
   const { currentLanguage } = useLanguage();
   const router = useRouter();
+  const { t } = useTranslation('ask');
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
   const [showTutorial, setShowTutorial] = useState(false);
 
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
-  const toggleSound = () => {
-    setSoundEnabled(!soundEnabled);
-  };
-
   const supportCategories = [
     {
       id: 'general',
       icon: 'help',
-      title: getAskText('general', currentLanguage),
-      description: getAskText('generalDescription', currentLanguage),
+      title: t('general'),
+      description: t('generalDescription'),
       route: '/ask/general'
     },
     {
       id: 'emergency',
       icon: 'emergency',
-      title: getAskText('emergencySupport', currentLanguage),
-      description: getAskText('emergencyDescription', currentLanguage),
+      title: t('emergencySupport'),
+      description: t('emergencyDescription'),
       route: '/ask/emergency'
     },
     {
       id: 'legal',
       icon: 'gavel',
-      title: getAskText('legalSupport', currentLanguage),
-      description: getAskText('legalDescription', currentLanguage),
+      title: t('legalSupport'),
+      description: t('legalDescription'),
       route: '/ask/legal-support'
     },
     {
       id: 'health',
       icon: 'local-hospital',
-      title: getAskText('healthMentalHealth', currentLanguage),
-      description: getAskText('healthDescription', currentLanguage),
+      title: t('healthMentalHealth'),
+      description: t('healthDescription'),
       route: '/ask/health'
     },
     {
       id: 'financial',
       icon: 'account-balance',
-      title: getAskText('financialLiteracy', currentLanguage),
-      description: getAskText('financialDescription', currentLanguage),
+      title: t('financialLiteracy'),
+      description: t('financialDescription'),
       route: '/ask/financial'
     },
     {
       id: 'cultural',
       icon: 'groups',
-      title: getAskText('culturalOrientation', currentLanguage),
-      description: getAskText('culturalDescription', currentLanguage),
+      title: t('culturalOrientation'),
+      description: t('culturalDescription'),
       route: '/ask/cultural'
     },
     {
       id: 'career',
       icon: 'work',
-      title: getAskText('integrationPathways', currentLanguage),
-      description: getAskText('careerDescription', currentLanguage),
+      title: t('integrationPathways'),
+      description: t('careerDescription'),
       route: '/ask/career'
     },
     {
       id: 'document',
       icon: 'description',
-      title: getAskText('documentCertification', currentLanguage),
-      description: getAskText('documentDescription', currentLanguage),
+      title: t('documentCertification'),
+      description: t('documentDescription'),
       route: '/ask/document'
     }
   ];
@@ -99,10 +96,10 @@ const AskPage: React.FC = () => {
       
       <ScrollView style={styles.content}>
         <Text style={styles.title}>
-          {getAskText('askForHelp', currentLanguage)}
+          {t('askForHelp')}
         </Text>
         <Text style={styles.description}>
-          {getAskText('chooseArea', currentLanguage)}
+          {t('chooseArea')}
         </Text>
 
         <View style={styles.categoriesGrid}>

@@ -1,3 +1,20 @@
 {
-  "support": "Unterstützung"
+  "askForHelp": "Ask for Help",
+  "chooseArea": "Choose the area where you need support.",
+  "general": "General",
+  "generalDescription": "General support and counseling",
+  "emergencySupport": "Emergency Support",
+  "emergencyDescription": "Immediate help in emergencies",
+  "legalSupport": "Legal Support",
+  "legalDescription": "Legal counseling and juridical help",
+  "healthMentalHealth": "Health & Mental Health Support",
+  "healthDescription": "Medical and psychological support",
+  "financialLiteracy": "Financial Literacy Support",
+  "financialDescription": "Help with finances and budgeting",
+  "culturalOrientation": "Cultural Orientation and Integration Programs",
+  "culturalDescription": "Programs for cultural integration",
+  "integrationPathways": "Integration Pathways and Career Counseling",
+  "careerDescription": "Career counseling and integration assistance",
+  "documentCertification": "Document and Certification Management",
+  "documentDescription": "Help with documents and certificates"
 }
