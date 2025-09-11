@@ -44,6 +44,7 @@ import enAsylumInterview from '../../assets/locales/en/asylum-interview.json';
 import enAsylumWorkPermits from '../../assets/locales/en/asylum-work-permits.json';
 import enGuide from '../../assets/locales/en/guide.json';
 import enAskEmergency from '../../assets/locales/en/ask-emergency.json';
+import enGeneralAsk from '../../assets/locales/en/general-ask.json';
 
 import deCommon from '../../assets/locales/de/common.json';
 import deAsk from '../../assets/locales/de/ask.json';
@@ -214,6 +215,7 @@ export const resources = {
       genderViolence: enGenderViolence,
       guide: enGuide,
       askEmergency: enAskEmergency,
+      generalAsk: enGeneralAsk,
        },
   de: { common: deCommon,
         ask: deAsk,

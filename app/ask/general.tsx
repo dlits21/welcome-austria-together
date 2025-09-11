@@ -22,19 +22,11 @@ import FacebookIcon from '../../assets/images/facebook.svg';
 import SignalIcon from '../../assets/images/signal.svg';
 import WhatsAppIcon from '../../assets/images/whatsapp.svg';
 import TelegramIcon from '../../assets/images/telegram.svg';
-import { getGlobalText } from '../../utils/languageUtils';
-
-// Import general support translations
-import generalTranslations from '../../data/language/ask/general.json';
-
-const getGeneralText = (key: string, languageCode: string): string => {
-  const translation = generalTranslations[key as keyof typeof generalTranslations];
-  return translation?.[languageCode as keyof typeof translation] || translation?.en || key;
-};
+import { useTranslation } from 'react-i18next';
 
 const GeneralSupport: React.FC = () => {
   const { currentLanguage } = useLanguage();
-  const [soundEnabled, setSoundEnabled] = useState(true);
+  const { t } = useTranslation('generalAsk');
   const [showLanguageModal, setShowLanguageModal] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
   const [showTutorial, setShowTutorial] = useState(false);
@@ -43,10 +35,6 @@ const GeneralSupport: React.FC = () => {
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
   
   const language = languages.find(lang => lang.code === currentLanguage) || languages[1];
-
-  const toggleSound = () => {
-    setSoundEnabled(!soundEnabled);
-  };
 
   const toggleSection = (section: string) => {
     if (expandedSection === section) {
@@ -81,27 +69,27 @@ const GeneralSupport: React.FC = () => {
   const onlineExperts = [
     {
       name: 'Dr. Sarah Mueller',
-      specialization: getGeneralText('legalSupport', currentLanguage),
+      specialization: t('legalSupport'),
       languages: ['German', 'English', 'French']
     },
     {
       name: 'Ahmed Hassan',
-      specialization: getGeneralText('migrationExperience', currentLanguage),
+      specialization: t('migrationExperience'),
       languages: ['Arabic', 'German', 'English']
     },
     {
       name: 'Maria Gonzalez',
-      specialization: getGeneralText('educationCounseling', currentLanguage),
+      specialization: t('educationCounseling'),
       languages: ['Spanish', 'German', 'English']
     },
     {
       name: 'Dr. Fatima Al-Rashid',
-      specialization: getGeneralText('healthcare', currentLanguage),
+      specialization: t('healthcare'),
       languages: ['Persian', 'German', 'English']
     },
     {
       name: 'Viktor Petrov',
-      specialization: getGeneralText('jobMarket', currentLanguage),
+      specialization: t('jobMarket'),
       languages: ['Russian', 'German', 'English']
     }
   ];
@@ -109,20 +97,20 @@ const GeneralSupport: React.FC = () => {
   // Multi-lingual FAQ data using translations
   const faqData = [
     {
-      question: getGeneralText('faqQuestion1', currentLanguage),
-      answer: getGeneralText('faqAnswer1', currentLanguage)
+      question: t('faqQuestion1'),
+      answer: t('faqAnswer1')
     },
     {
-      question: getGeneralText('faqQuestion2', currentLanguage),
-      answer: getGeneralText('faqAnswer2', currentLanguage)
+      question: t('faqQuestion2'),
+      answer: t('faqAnswer2')
     },
     {
-      question: getGeneralText('faqQuestion3', currentLanguage),
-      answer: getGeneralText('faqAnswer3', currentLanguage)
+      question: t('faqQuestion3'),
+      answer: t('faqAnswer3')
     },
     {
-      question: getGeneralText('faqQuestion4', currentLanguage),
-      answer: getGeneralText('faqAnswer4', currentLanguage)
+      question: t('faqQuestion4'),
+      answer: t('faqAnswer4')
     }
   ];
 
@@ -135,14 +123,14 @@ const GeneralSupport: React.FC = () => {
       />
       
       <View style={styles.titleContainer}>
-        <Text style={styles.title}>{getGeneralText('generalSupport', currentLanguage)}</Text>
-        <Text style={styles.subtitle}>{getGeneralText('reachOutDirectly', currentLanguage)}</Text>
+        <Text style={styles.title}>{t('generalSupport')}</Text>
+        <Text style={styles.subtitle}>{t('reachOutDirectly')}</Text>
       </View>
 
       <ScrollView style={styles.scrollView} contentContainerStyle={styles.contentContainer}>
         {/* Talk to a mentor */}
         <AccordionItem
-          title={getGeneralText('talkToMentor', currentLanguage)}
+          title={t('talkToMentor')}
           icon="question-answer"
           iconColor="#3B82F6"
           expanded={expandedSection === 'mentor'}
@@ -182,7 +170,7 @@ const GeneralSupport: React.FC = () => {
         
         {/* Ask the community */}
         <AccordionItem
-          title={getGeneralText('askCommunity', currentLanguage)}
+          title={t('askCommunity')}
           icon="people"
           iconColor="#10B981"
           expanded={expandedSection === 'community'}
@@ -212,7 +200,7 @@ const GeneralSupport: React.FC = () => {
 
         {/* Visit us online */}
         <AccordionItem
-          title={getGeneralText('visitUsOnline', currentLanguage)}
+          title={t('visitUsOnline')}
           icon="computer"
           iconColor="#666"
           expanded={expandedSection === 'online'}
@@ -234,7 +222,7 @@ const GeneralSupport: React.FC = () => {
         
         {/* Visit in person */}
         <AccordionItem
-          title={getGeneralText('visitInPerson', currentLanguage)}
+          title={t('visitInPerson')}
           icon="location-on"
           iconColor="#8B5CF6"
           expanded={expandedSection === 'visit'}
@@ -251,14 +239,14 @@ const GeneralSupport: React.FC = () => {
 
         {/* Virtual Chatbots */}
         <AccordionItem
-          title={getGeneralText('talkToVirtualChatbots', currentLanguage)}
+          title={t('talkToVirtualChatbots')}
           icon="android"
           iconColor="#9C27B0"
           expanded={expandedSection === 'chatbots'}
           onPress={() => toggleSection('chatbots')}
         >
           <ContactButton 
-            title={getGeneralText('talkToVirtualChatbots', currentLanguage)}
+            title={t('talkToVirtualChatbots')}
             icon="android" 
             onPress={() => setShowVirtualAssistant(true)}
           />
@@ -266,7 +254,7 @@ const GeneralSupport: React.FC = () => {
 
         {/* FAQ Section */}
         <AccordionItem
-          title={getGeneralText('faq', currentLanguage)}
+          title={t('faq')}
           icon="help"
           iconColor="#F59E0B"
           expanded={expandedSection === 'faq'}
