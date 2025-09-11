@@ -1,0 +1,22 @@
+{
+  "title": "كيفية تقديم استئناف على قرار اللجوء",
+  "checklist": {
+    "required": "مطلوب",
+    "optional": "مفيد لكنه غير إلزامي"
+  },
+  "required": {
+    "appeal_letter_title": "خطاب استئناف رسمي",
+    "appeal_letter_note": "يجب تقديم هذا الطّلب للطعن في الرفض.",
+    "rejection_notice_title": "إشعار الرفض الرسمي",
+    "rejection_notice_note": "أرفق الرسالة التي تلقيتها مع أسباب الرفض.",
+    "legal_help_title": "التمثيل القانوني",
+    "legal_help_note": "اطلب المشورة من محامٍ أو منظمة غير حكومية لتوجيهك خلال العملية."
+  },
+  "optional": {
+    "supporting_documents_title": "المستندات الداعمة",
+    "supporting_documents_note": "أي أدلة جديدة حول وضعك يمكن أن تقوي الاستئناف.",
+    "witness_statements_title": "شهادات الشهود",
+    "witness_statements_note": "رسائل أو بيانات من أشخاص يمكنهم تأكيد قصتك."
+  },
+  "warning": "⚠️ الاستئنافات محددة بالوقت. عادةً لديك بضعة أيام فقط لتقديم استئنافك بعد تلقي الرفض. لا تؤجل."
+}

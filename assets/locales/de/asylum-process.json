@@ -1,0 +1,35 @@
+{
+  "pageTitle": "Asylverfahren",
+  "pageIntro": "Erfahre, wie du Asyl beantragst, welche Rechte du hast, welche Dokumente wichtig sind und was du tun kannst, wenn dein Antrag abgelehnt wird.",
+  "tiles": {
+    "apply_title": "Asyl beantragen",
+    "apply_sub": "Schritte für deinen Asylantrag",
+    "rights_title": "Deine Rechte",
+    "rights_sub": "Welche Rechte du im Verfahren hast",
+    "documents_title": "Wichtige Dokumente",
+    "documents_sub": "Papiere und Nachweise, die du brauchst",
+    "appeals_title": "Beschwerde einlegen",
+    "appeals_sub": "Was tun bei einer Ablehnung"
+  },
+  "trustedTitle": "Vertrauenswürdige Hilfe",
+  "trusted": {
+    "unhcr_name": "UNHCR Büro",
+    "unhcr_phone": "0800 123 456",
+    "unhcr_url": "https://www.unhcr.org",
+    "unhcr_sub": "Offizielle Unterstützung für Flüchtlinge",
+    "refugee_ngoname": "Lokale Flüchtlings-NGO",
+    "refugee_phone": "0800 987 654",
+    "refugee_url": "https://refugeengo.org",
+    "refugee_sub": "Kostenlose Rechtsberatung und Übersetzung",
+    "legal_aid": "Rechtsberatungsstelle",
+    "legal_phone": "0800 555 999",
+    "legal_sub": "Hilfe bei Beschwerden und Rechten im Asylverfahren"
+  },
+
+  "playTips": "Tipps anhören",
+  "emergency": "Notfall",
+  "moreContacts": "Weitere Kontakte",
+  "emergency_number": "112",
+  "cannot_call": "Telefon kann nicht geöffnet werden",
+  "videoTitle": "Erklärung: Das Asylverfahren"
+}

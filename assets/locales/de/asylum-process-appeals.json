@@ -1,0 +1,22 @@
+{
+  "title": "Wie man gegen eine Asylentscheidung Berufung einlegt",
+  "checklist": {
+    "required": "Erforderlich",
+    "optional": "Hilfreich, aber nicht verpflichtend"
+  },
+  "required": {
+    "appeal_letter_title": "Formeller Berufungsbrief",
+    "appeal_letter_note": "Sie müssen diesen einreichen, um die Ablehnung anzufechten.",
+    "rejection_notice_title": "Offizieller Ablehnungsbescheid",
+    "rejection_notice_note": "Fügen Sie das Schreiben bei, das Sie mit den Ablehnungsgründen erhalten haben.",
+    "legal_help_title": "Rechtliche Vertretung",
+    "legal_help_note": "Suchen Sie Rat bei einem Anwalt oder einer NGO, um durch den Prozess geführt zu werden."
+  },
+  "optional": {
+    "supporting_documents_title": "Unterstützende Dokumente",
+    "supporting_documents_note": "Neue Nachweise zu Ihrer Situation können Ihre Berufung stärken.",
+    "witness_statements_title": "Zeugenaussagen",
+    "witness_statements_note": "Schreiben oder Aussagen von Personen, die Ihre Geschichte bestätigen können."
+  },
+  "warning": "⚠️ Berufungen sind zeitkritisch. Sie haben normalerweise nur wenige Tage, um Ihre Berufung nach Erhalt der Ablehnung einzureichen. Verzögern Sie dies nicht."
+}

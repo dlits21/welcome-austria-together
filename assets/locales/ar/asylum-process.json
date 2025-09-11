@@ -1,0 +1,35 @@
+{
+  "pageTitle": "إجراءات اللجوء",
+  "pageIntro": "تعرّف كيف تطلب اللجوء، ما هي حقوقك، ما هي الأوراق المهمة، وماذا تفعل إذا تم رفض طلبك.",
+  "tiles": {
+    "apply_title": "تقديم طلب لجوء",
+    "apply_sub": "خطوات تقديم طلب اللجوء",
+    "rights_title": "حقوقك",
+    "rights_sub": "ما هي حقوقك أثناء الانتظار",
+    "documents_title": "الأوراق المطلوبة",
+    "documents_sub": "المستندات والإثباتات التي تحتاجها",
+    "appeals_title": "الاستئناف",
+    "appeals_sub": "ماذا تفعل إذا رُفض طلبك"
+  },
+  "trustedTitle": "مساعدة موثوقة",
+  "trusted": {
+    "unhcr_name": "مكتب المفوضية UNHCR",
+    "unhcr_phone": "0800 123 456",
+    "unhcr_url": "https://www.unhcr.org",
+    "unhcr_sub": "دعم رسمي لحماية اللاجئين",
+    "refugee_ngoname": "منظمة محلية للاجئين",
+    "refugee_phone": "0800 987 654",
+    "refugee_url": "https://refugeengo.org",
+    "refugee_sub": "استشارة قانونية مجانية وترجمة",
+    "legal_aid": "خدمة المساعدة القانونية",
+    "legal_phone": "0800 555 999",
+    "legal_sub": "مساعدة في الاستئناف والحقوق أثناء اللجوء"
+  },
+
+  "playTips": "استمع إلى النصائح",
+  "emergency": "حالة طارئة",
+  "moreContacts": "مزيد من الأرقام",
+  "emergency_number": "112",
+  "cannot_call": "لا يمكن فتح الهاتف للاتصال",
+  "videoTitle": "شرح: إجراءات اللجوء"
+}

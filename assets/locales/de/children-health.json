@@ -1,0 +1,33 @@
+{
+  "pageTitle": "Kinder & Pädiatrische Versorgung",
+  "introShort": "Wichtige Gesundheitsinformationen für Kinder und Familien in Österreich.",
+  "confidentiality": "Alle Gesundheitsinformationen über Kinder sind vertraulich und geschützt. Ihre Privatsphäre und die Sicherheit Ihres Kindes haben höchste Priorität.",
+  "exampleVideoId": "Q607TYRBxFU",
+  "tiles": {
+    "red_flags_title": "Warnsignale",
+    "red_flags_sub": "Wann Sie dringend medizinische Hilfe für Kinder suchen sollten",
+    "clinic_finder_title": "Kinderklinik finden",
+    "clinic_finder_sub": "Pädiater und kinderfreundliche Kliniken lokalisieren",
+    "immunisation_title": "Impfaufzeichnungen",
+    "immunisation_sub": "Impfungen Ihres Kindes verfolgen und verwalten",
+    "pediatrician_title": "Kinderarzt-Finder",
+    "pediatrician_sub": "Spezialisten für die Gesundheit von Kindern finden",
+    "development_title": "Entwicklungsmeilensteine",
+    "development_sub": "Das Wachstum und die Entwicklung Ihres Kindes verfolgen",
+    "emergency_title": "Kinder-Notfall",
+    "emergency_sub": "24/7 pädiatrische Notdienste und Kontakte"
+  },
+  "trusted": {
+    "pediatric_hospital": "St. Anna Kinderspital",
+    "pediatric_phone": "+43 1 40170",
+    "pediatric_url": "https://www.stanna.at",
+    "pediatric_sub": "Führende pädiatrische Versorgung in Wien",
+    "child_health_line": "Kindergesundheits-Hotline",
+    "child_health_phone": "116 117",
+    "child_health_sub": "24/7 medizinische Beratung für Kinder",
+    "family_support": "Familienunterstützungsdienste",
+    "family_phone": "+43 1 4000-8011",
+    "family_url": "https://www.wien.gv.at/menschen/kind-familie/",
+    "family_sub": "Kommunale Dienste für Kinder und Familien"
+  }
+}

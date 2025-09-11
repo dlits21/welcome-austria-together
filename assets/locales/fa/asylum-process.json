@@ -1,0 +1,35 @@
+{
+  "pageTitle": "روند پناهندگی",
+  "pageIntro": "یاد بگیر چگونه برای پناهندگی درخواست کنی، چه حقوقی داری، چه مدارکی لازم است و اگر درخواستت رد شد چه کار کنی.",
+  "tiles": {
+    "apply_title": "چگونه درخواست کنم",
+    "apply_sub": "مراحل شروع درخواست پناهندگی",
+    "rights_title": "حقوق تو",
+    "rights_sub": "حقوقی که در زمان انتظار داری",
+    "documents_title": "مدارک لازم",
+    "documents_sub": "کاغذها و مدارکی که باید آماده کنی",
+    "appeals_title": "اعتراض",
+    "appeals_sub": "اگر درخواستت رد شد چه کار کنی"
+  },
+  "trustedTitle": "کمک‌های مطمئن",
+  "trusted": {
+    "unhcr_name": "دفتر UNHCR",
+    "unhcr_phone": "0800 123 456",
+    "unhcr_url": "https://www.unhcr.org",
+    "unhcr_sub": "حمایت رسمی از پناهندگان",
+    "refugee_ngoname": "انجمن محلی پناهندگان",
+    "refugee_phone": "0800 987 654",
+    "refugee_url": "https://refugeengo.org",
+    "refugee_sub": "مشاوره رایگان حقوقی و ترجمه",
+    "legal_aid": "خدمات کمک حقوقی",
+    "legal_phone": "0800 555 999",
+    "legal_sub": "پشتیبانی برای اعتراض و حقوق پناهندگی"
+  },
+
+  "playTips": "گوش بده به نکات",
+  "emergency": "اورژانس",
+  "moreContacts": "شماره‌های بیشتر",
+  "emergency_number": "112",
+  "cannot_call": "امکان تماس از طریق تلفن نیست",
+  "videoTitle": "توضیح: روند پناهندگی"
+}

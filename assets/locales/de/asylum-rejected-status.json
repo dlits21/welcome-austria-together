@@ -1,0 +1,33 @@
+{
+  "pageTitle": "Nach der Ablehnung – handeln Sie schnell",
+  "warning": "⚠️ Zeit ist kritisch: Die meisten Berufungen müssen innerhalb von 7–14 Tagen eingereicht werden. Zögern Sie nicht, Hilfe zu suchen.",
+  "required": {
+    "appeal": {
+      "title": "Berufung sofort einreichen",
+      "note": "In der Regel haben Sie nur 7–14 Tage Zeit, um gegen die Entscheidung Berufung einzulegen"
+    },
+    "legal": {
+      "title": "Rechtliche Unterstützung erhalten",
+      "note": "Kontaktieren Sie sofort einen Anwalt oder eine NGO, die auf Asylrecht spezialisiert ist"
+    },
+    "documents": {
+      "title": "Alle Dokumente sammeln",
+      "note": "Sammeln Sie alle Unterlagen zu Ihrem Fall und zum Ablehnungsbescheid"
+    }
+  },
+  "optional": {
+    "evidence": {
+      "title": "Neue Beweise",
+      "note": "Jeder neue Nachweis über Ihre Situation, der zuvor nicht berücksichtigt wurde"
+    },
+    "medical": {
+      "title": "Medizinische Unterlagen",
+      "note": "Medizinische Berichte, die Ihren Fall unterstützen, insbesondere bei Traumata oder gesundheitlichen Problemen"
+    },
+    "witnesses": {
+      "title": "Zeugenaussagen",
+      "note": "Briefe von Personen, die Ihre Geschichte oder Situation bestätigen können"
+    }
+  },
+  "videoUrl": "Q607TYRBxFU"
+}

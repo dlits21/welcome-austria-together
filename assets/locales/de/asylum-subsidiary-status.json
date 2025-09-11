@@ -1,0 +1,25 @@
+{
+  "videoId": "subsidiary-protection-explained",
+  "temporary": {
+    "title": "Vorläufiger Status",
+    "desc": "Der subsidiäre Schutz wird zunächst für ein Jahr gewährt und kann verlängert werden, wenn die Bedingungen in Ihrem Heimatland weiterhin gefährlich sind. Sie müssen die Verlängerung beantragen, bevor Ihr Status abläuft."
+  },
+  "work": {
+    "title": "Begrenzter Zugang zur Arbeit",
+    "desc": "Sie dürfen arbeiten, benötigen jedoch möglicherweise zusätzliche Genehmigungen für bestimmte Berufe. Einige Beschäftigungsprogramme können Einschränkungen haben. Informieren Sie sich bei den Arbeitsämtern über die spezifischen Anforderungen für Ihre Situation."
+  },
+  "healthcare": {
+    "title": "Zugang zu Gesundheitsversorgung",
+    "desc": "Sie haben Zugang zu wichtigen Gesundheitsdiensten, einschließlich Notfallversorgung, grundlegender medizinischer Versorgung und psychischer Gesundheitsdienste. Der Umfang der Leistungen kann eingeschränkter sein als bei Flüchtlingen."
+  },
+  "family": {
+    "title": "Familienzusammenführung",
+    "desc": "Eine Familienzusammenführung ist möglich, kann jedoch länger dauern und strengere Einschränkungen haben als bei anerkannten Flüchtlingen. Einkommens- und Wohnanforderungen können strenger sein."
+  },
+  "checklist": {
+    "renew": "Denken Sie daran, Ihren Status vor Ablauf zu verlängern",
+    "documents": "Bewahren Sie alle offiziellen Dokumente sicher und aktuell auf",
+    "legal": "Holen Sie rechtlichen Rat ein, wenn sich Ihre Situation ändert"
+  },
+  "videoUrl": "Q607TYRBxFU"
+}

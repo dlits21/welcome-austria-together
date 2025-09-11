@@ -1,0 +1,30 @@
+{
+  "pageTitle": "Familienzusammenführung & Kinderschutz",
+  "pageIntro": "Die Wiedervereinigung von Familien und der Schutz von Kindern haben oberste Priorität. Hier erfahren Sie, wie Sie sich bewerben und Hilfe erhalten können.",
+
+  "tiles": {
+    "guide_title": "Schritt-für-Schritt-Anleitung",
+    "guide_sub": "Den Ablauf der Zusammenführung verstehen",
+
+    "documents_title": "Benötigte Dokumente",
+    "documents_sub": "Geburtsurkunden, Heiratsurkunden, Ausweise, Sorgerechtsdokumente",
+
+    "child_protection_title": "Kinderschutz",
+    "child_protection_sub": "Besondere Rechte für Kinder und Minderjährige",
+
+    "checklist_title": "Meine Checkliste",
+    "checklist_sub": "Eine personalisierte Checkliste erstellen",
+
+    "ngo_support_title": "Unterstützung durch NGOs",
+    "ngo_support_sub": "Wer kann mir bei der Antragstellung helfen?"
+  },
+
+  "contacts": {
+    "redCross": "Familiennachverfolgung – Rotes Kreuz",
+    "redCross_sub": "Hilft, Familien über Grenzen hinweg wieder zu verbinden",
+    "caritas": "Familienunterstützung – Caritas",
+    "caritas_sub": "Rechtsberatung und Hilfe bei Anträgen"
+  },
+
+  "videoId": "Q607TYRBxFU"
+}

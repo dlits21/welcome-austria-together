@@ -1,0 +1,33 @@
+{
+  "pageTitle": "رعاية الأطفال والطب",
+  "introShort": "معلومات صحية أساسية للأطفال والعائلات في النمسا.",
+  "confidentiality": "جميع المعلومات الصحية الخاصة بالأطفال سرّية ومحمية. خصوصيتك وسلامة طفلك هي أولويتنا.",
+  "exampleVideoId": "Q607TYRBxFU",
+  "tiles": {
+    "red_flags_title": "علامات الخطر",
+    "red_flags_sub": "متى يجب طلب رعاية طبية عاجلة للأطفال",
+    "clinic_finder_title": "ابحث عن عيادة للأطفال",
+    "clinic_finder_sub": "اعثر على أطباء الأطفال والعيادات الصديقة للأطفال",
+    "immunisation_title": "سجلات التطعيم",
+    "immunisation_sub": "تتبع وإدارة تطعيمات طفلك",
+    "pediatrician_title": "البحث عن طبيب أطفال",
+    "pediatrician_sub": "اعثر على أخصائيين لصحة الأطفال",
+    "development_title": "مراحل النمو",
+    "development_sub": "تتبع نمو وتطور طفلك",
+    "emergency_title": "طوارئ الأطفال",
+    "emergency_sub": "خدمات الطوارئ للأطفال على مدار الساعة وجهات الاتصال"
+  },
+  "trusted": {
+    "pediatric_hospital": "مستشفى سانت آنا للأطفال",
+    "pediatric_phone": "+43 1 40170",
+    "pediatric_url": "https://www.stanna.at",
+    "pediatric_sub": "رعاية طبية رائدة للأطفال في فيينا",
+    "child_health_line": "الخط الساخن لصحة الأطفال",
+    "child_health_phone": "116 117",
+    "child_health_sub": "استشارات طبية للأطفال على مدار الساعة",
+    "family_support": "خدمات دعم الأسرة",
+    "family_phone": "+43 1 4000-8011",
+    "family_url": "https://www.wien.gv.at/menschen/kind-familie/",
+    "family_sub": "الخدمات البلدية للأطفال والأسر"
+  }
+}

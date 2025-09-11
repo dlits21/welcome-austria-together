@@ -1,0 +1,35 @@
+{
+  "pageTitle": "Arbeitserlaubnisse, Rechte & Arbeitsrecht",
+  "pageIntro": "Ihr Recht auf Arbeit zu verstehen, ist entscheidend für Integration und Überleben. Erfahren Sie, wie Sie eine Genehmigung beantragen, Ihre Rechte kennen und sich vor unsicheren Arbeitgebern schützen.",
+
+  "tiles": {
+    "can_i_work_title": "Darf ich arbeiten?",
+    "can_i_work_sub": "Wer darf arbeiten und wann",
+
+    "apply_permit_title": "Wie man beantragt",
+    "apply_permit_sub": "Schritte zur Erlangung einer Arbeitserlaubnis",
+
+    "rights_title": "Arbeiterrechte",
+    "rights_sub": "Mindestlohn, Arbeitszeiten, Verträge",
+
+    "unsafe_title": "Unsichere Arbeitgeber",
+    "unsafe_sub": "Warnsignale und Anzeichen von Ausbeutung",
+
+    "report_title": "Ausbeutung melden",
+    "report_sub": "Wo und wie unsichere Arbeitgeber gemeldet werden",
+
+    "complaint_title": "Beschwerdevorlage",
+    "complaint_sub": "Einen Brief oder eine E-Mail erstellen"
+  },
+
+  "contacts": {
+    "labor_office": "Öffentliches Arbeitsamt",
+    "labor_office_sub": "Offizielle Genehmigungen und Beratung zur Beschäftigung",
+    "union": "Gewerkschaft",
+    "union_sub": "Schutz der Rechte von Arbeitnehmern",
+    "ngo": "NGO für Migrantenunterstützung",
+    "ngo_sub": "Kostenlose Rechts- und Arbeitsberatung"
+  },
+
+  "videoId": "abcd1234"
+}

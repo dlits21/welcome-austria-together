@@ -1,0 +1,33 @@
+{
+  "pageTitle": "مراقبت از کودکان و اطفال",
+  "introShort": "اطلاعات اساسی صحی برای کودکان و خانواده‌ها در اتریش.",
+  "confidentiality": "تمام اطلاعات صحی کودکان محرمانه و محفوظ است. حفظ حریم خصوصی شما و امنیت کودک‌تان اولویت ما است.",
+  "exampleVideoId": "Q607TYRBxFU",
+  "tiles": {
+    "red_flags_title": "نشانه‌های خطر",
+    "red_flags_sub": "چه زمانی باید برای کودکان به داکتر عاجل مراجعه کرد",
+    "clinic_finder_title": "پیدا کردن کلینیک کودکان",
+    "clinic_finder_sub": "پیدا کردن داکتران اطفال و کلینیک‌های مناسب کودکان",
+    "immunisation_title": "ثبت واکسین‌ها",
+    "immunisation_sub": "پیگیری و مدیریت واکسین‌های کودک شما",
+    "pediatrician_title": "پیدا کردن داکتر اطفال",
+    "pediatrician_sub": "یافتن متخصصین برای نیازهای صحی کودکان",
+    "development_title": "مراحل رشد",
+    "development_sub": "پیگیری رشد و تکامل کودک شما",
+    "emergency_title": "فوریت‌های کودکان",
+    "emergency_sub": "خدمات عاجل برای کودکان و شماره‌های تماس ۲۴ ساعته"
+  },
+  "trusted": {
+    "pediatric_hospital": "شفاخانه اطفال سنت آنا",
+    "pediatric_phone": "+43 1 40170",
+    "pediatric_url": "https://www.stanna.at",
+    "pediatric_sub": "معتبرترین مراقبت صحی کودکان در وین",
+    "child_health_line": "خط صحی کودکان",
+    "child_health_phone": "116 117",
+    "child_health_sub": "مشاوره صحی برای کودکان در ۲۴ ساعت",
+    "family_support": "خدمات حمایت از خانواده",
+    "family_phone": "+43 1 4000-8011",
+    "family_url": "https://www.wien.gv.at/menschen/kind-familie/",
+    "family_sub": "خدمات شهری برای کودکان و خانواده‌ها"
+  }
+}
