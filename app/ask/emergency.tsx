@@ -24,9 +24,9 @@ import TutorialModal from '../../components/TutorialModal';
 import emergencyData from '../../data/ask/emergency.json';
 
 interface EmergencyContact {
-  name: { [key: string]: string };
+  nameKey: string;
   phone: string;
-  description: { [key: string]: string };
+  descriptionKey: string;
   type: string;
 }
 
@@ -153,11 +153,11 @@ const EmergencySupport: React.FC = () => {
               {selectedEmergency && (
                 <>
                   <Text style={styles.contactTitle}>
-                    {selectedEmergency.name[currentLanguage] || selectedEmergency.name.en}
+                    {t(selectedEmergency.nameKey)}
                   </Text>
                   
                   <Text style={styles.contactDescription}>
-                    {selectedEmergency.description[currentLanguage] || selectedEmergency.description.en}
+                    {t(selectedEmergency.descriptionKey)}
                   </Text>
 
                   <TouchableOpacity 

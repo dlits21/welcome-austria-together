@@ -21,5 +21,21 @@
   "chooseDifferentEmergency": "Choose Different Emergency",
   "error": "Error",
   "phoneNotSupported": "Phone calls are not supported on this device",
-  "phoneError": "Error opening phone app"
+  "phoneError": "Error opening phone app",
+  "europeanEmergencyNumber": "European Emergency Number",
+  "universalEmergencyDescription": "Universal emergency number for all services",
+  "fireDepartment": "Fire Department",
+  "fireDescription": "For fires, explosions, and rescue operations",
+  "police": "Police",
+  "policeDescription": "For crimes, accidents, and security emergencies",
+  "emergencyMedicalServices": "Emergency Medical Services",
+  "medicalDescription": "For medical emergencies and ambulance",
+  "womensEmergencyHotline": "Women's Emergency Hotline",
+  "domesticViolenceDescription": "24/7 support for domestic violence victims",
+  "crisisInterventionCenter": "Crisis Intervention Center",
+  "mentalHealthDescription": "For psychological crises and suicide prevention",
+  "telefonseelsorge": "Telefonseelsorge",
+  "soulCareDescription": "Spiritual care and emotional support",
+  "ratAufDraht": "Rat auf Draht",
+  "youthDescription": "Emergency hotline for children and youth"
 }
