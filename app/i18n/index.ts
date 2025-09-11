@@ -134,7 +134,8 @@ export const resources = {
       index: faIndex,
       information: faInformation,
       everyday: faEveryday,
-      children: faEverydayChildren,},
+      children: faEverydayChildren,
+      },
 };
 
 const SUPPORTED = ['en','de','ar','fa'] as const;

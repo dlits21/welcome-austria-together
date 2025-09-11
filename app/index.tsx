@@ -129,7 +129,7 @@ export default function LanguageSelectionScreen() {
   };
 
   const onEmergency = () => {
-    router.push("/emergency"); // ensure route exists or adjust accordingly
+    router.push("/ask/emergency"); // ensure route exists or adjust accordingly
   };
 
   // Welcome text renders using current i18n language (which is set to selected on selection)
