@@ -83,13 +83,13 @@ export default function LanguageSelectionScreen() {
 
   // Determine columns: web uses 4 by default and uses full width; otherwise responsive
   const getColumns = () => {
-    if (Platform.OS === "web") return 4;
-    if (width < 600) return 2;
+    if (width < 450) return 2;
+    if (width < 600) return 3;
     if (width < 900) return 3;
     return 4;
   };
   const columns = getColumns();
-   const tileBasisPercent = `${(95)/ columns}%`;
+  const tileBasisPercent = `${(90)/ columns}%`;
 
   const isRTL = I18nManager.isRTL;
 

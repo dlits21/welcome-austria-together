@@ -53,7 +53,9 @@ const LanguageModal: React.FC<LanguageModalProps> = ({ visible, onClose }) => {
   const { width } = useWindowDimensions();
   const [tempLanguage, setTempLanguage] = useState(i18n.language);
 
-  const numColumns = width > 1100 ? 4 : width > 800 ? 3 : width > 500 ? 2 : 1;
+  const numColumns = width > 500 ? 4 : 3;
+  const modalWidth = width > 660 ? 600 : 350;
+  const languageFontSize = width > 500 ? 24 : 14;
 
   const speak = (text: string) => {
     if (text) Speech.speak(text, { language: 'de-DE' });
@@ -90,8 +92,8 @@ const LanguageModal: React.FC<LanguageModalProps> = ({ visible, onClose }) => {
         <View style={styles.flagContainer}>
           <item.flag width={64} height={48} />
         </View>
-        <Text style={styles.languageText}>
-          {t(`languages.${item.code}`, { defaultValue: item.name })}
+        <Text style={[styles.languageText, {fontSize: languageFontSize}]}>
+          {t(`languages.${item.code}`, { defaultValue: item.name})}
         </Text>
       </Pressable>
     );
@@ -116,7 +118,8 @@ const LanguageModal: React.FC<LanguageModalProps> = ({ visible, onClose }) => {
             numColumns={numColumns}
             contentContainerStyle={[
               styles.grid,
-              { justifyContent: numColumns === 1 ? 'center' : 'space-between' }
+              { width: modalWidth,
+                  justifyContent: 'space-between' }
             ]}
           />
 
@@ -137,17 +140,17 @@ const LanguageModal: React.FC<LanguageModalProps> = ({ visible, onClose }) => {
 
 const styles = StyleSheet.create({
   overlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', justifyContent: 'center', alignItems: 'center' },
-  container: { flex: 1, margin: 24, backgroundColor: '#fff', borderRadius: 12, padding: 16, alignItems: 'center' },
+  container: { flex: 1, margin: 24, backgroundColor: '#fff', borderRadius: 12, padding: 16, alignItems: 'center', maxHeight: "90%" },
   header: { width: '100%', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 },
   title: { fontSize: 24, fontWeight: 'bold', alignItems: 'center' },
   closeX: { padding: 4 },
   closeXText: { fontSize: 22, fontWeight: 'bold' },
   grid: { width: '100%', gap: 16 },
-  tile: { flex: 1, margin: 8, paddingVertical: 24, paddingHorizontal: 16, backgroundColor: '#E5E7EB', borderRadius: 12, alignItems: 'center', justifyContent: 'center' },
+  tile: { flex: 1, margin: 8, paddingVertical: 24, paddingHorizontal: 16, backgroundColor: '#E5E7EB', borderRadius: 12, alignItems: 'center', justifyContent: 'center', minWidth: 100 },
   currentTile: { borderWidth: 2, borderColor: '#3B82F6' },
   selectedTile: { backgroundColor: '#3B82F6' },
   flagContainer: { width: 64, height: 48, alignItems: 'center', justifyContent: 'center' },
-  languageText: { marginTop: 12, fontSize: 18, textAlign: 'center', color: '#111' },
+  languageText: { marginTop: 12, textAlign: 'center', color: '#111'},
   footer: { flexDirection: 'row', marginTop: 16, justifyContent: 'space-between', width: '100%' },
   cancelButton: { flex: 1, marginRight: 8, paddingVertical: 14, backgroundColor: '#9CA3AF', borderRadius: 8, alignItems: 'center' },
   confirmButton: { flex: 1, marginLeft: 8, paddingVertical: 14, backgroundColor: '#10B981', borderRadius: 8, alignItems: 'center' },

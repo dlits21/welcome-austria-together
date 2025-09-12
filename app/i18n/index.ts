@@ -91,6 +91,7 @@ import deGuide from '../../assets/locales/de/guide.json';
 import deAskEmergency from '../../assets/locales/de/ask-emergency.json';
 import deAskGeneral from '../../assets/locales/de/ask-general.json';
 import deAskLegal from '../../assets/locales/de/ask-legal.json';
+import deAskHealth from '../../assets/locales/de/ask-health.json';
 
 import arCommon from '../../assets/locales/ar/common.json';
 import arAsk from '../../assets/locales/ar/ask.json';
@@ -135,6 +136,8 @@ import arGuide from '../../assets/locales/ar/guide.json';
 import arAskEmergency from '../../assets/locales/ar/ask-emergency.json';
 import arAskGeneral from '../../assets/locales/ar/ask-general.json';
 import arAskLegal from '../../assets/locales/ar/ask-legal.json';
+import arAskHealth from '../../assets/locales/ar/ask-health.json';
+
 
 import faCommon from '../../assets/locales/fa/common.json';
 import faAsk from '../../assets/locales/fa/ask.json';
@@ -179,7 +182,7 @@ import faGuide from '../../assets/locales/fa/guide.json';
 import faAskEmergency from '../../assets/locales/fa/ask-emergency.json';
 import faAskGeneral from '../../assets/locales/fa/ask-general.json';
 import faAskLegal from '../../assets/locales/fa/ask-legal.json';
-
+import faAskHealth from '../../assets/locales/fa/ask-health.json';
 
 export const resources = {
   en: { common: enCommon,
@@ -270,6 +273,7 @@ export const resources = {
         askEmergency: deAskEmergency,
         askGeneral: deAskGeneral,
         askLegal: deAskLegal,
+        askHealth: deAskHealth,
       },
   ar: { common: arCommon,
         ask: arAsk,
@@ -314,6 +318,7 @@ export const resources = {
         askEmergency: arAskEmergency,
         askGeneral: arAskGeneral,
         askLegal: arAskLegal,
+        askHealth: arAskHealth,
       },
   fa: { common: faCommon,
         ask: faAsk,
@@ -358,6 +363,7 @@ export const resources = {
         askEmergency: faAskEmergency,
         askGeneral: faAskGeneral,
         askLegal: faAskLegal,
+        askHealth: faAskHealth,
         },
 };
 

@@ -1,0 +1,20 @@
+{
+  "healthSupport": "الدعم الصحي",
+  "findHealthServices": "ابحث عن خدمات الدعم الصحي بالقرب منك",
+  "healthSupportAssistant": "مساعد الدعم الصحي",
+  "answerQuestionsForHealthServices": "أجب على بعض الأسئلة لمساعدتنا في العثور على أفضل خدمات صحية لك",
+  "howUrgentlyNeedSupport": "ما مدى حاجتك للدعم الصحي بشكل عاجل؟",
+  "whatTypeHealthSupport": "ما نوع الدعم الصحي الذي تحتاجه؟",
+  "whereAreYouLocated": "أين تتواجد؟",
+  "routine": "روتيني / غير عاجل",
+  "generalPractice": "ممارسة عامة (طبيب عام)",
+  "mentalHealth": "الصحة النفسية",
+  "specializedCare": "الرعاية المتخصصة",
+  "emergency": "طارئ",
+  "womenHealth": "صحة المرأة",
+  "dental": "رعاية الأسنان",
+  "pharmacy": "صيدلية",
+  "community": "الصحة المجتمعية",
+  "supportType": "نوع الدعم",
+  "noHealthSupportEntitiesFound": "لم يتم العثور على خدمات دعم صحي تطابق معاييرك."
+}

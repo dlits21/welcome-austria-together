@@ -204,8 +204,7 @@ export default function HealthPageTemplate({
 
       <ScrollView contentContainerStyle={styles.container}>
         {/* Intro */}
-        <Text style={styles.title}>{t("pageTitle", { defaultValue: "Header" })}</Text>
-        <Text style={styles.lead}>{t("pageIntro", { defaultValue: "Intro" })}</Text>
+        <Text style={styles.title}>{t("pageIntro", { defaultValue: "Intro" })}</Text>
 
         {/* Actions */}
         <View style={styles.actionsRow}>
@@ -284,8 +283,8 @@ export default function HealthPageTemplate({
 const styles = StyleSheet.create({
   safe: { flex: 1, backgroundColor: "#fff" },
   container: { paddingHorizontal: 16, paddingBottom: 48, paddingTop: 12 },
-  title: { fontSize: 22, fontWeight: "700", textAlign: "center", marginBottom: 6 },
-  lead: { fontSize: 15, textAlign: "center", color: "#444", marginBottom: 12 },
+  title: { fontSize: 18, fontWeight: "700", textAlign: "center", marginBottom: 6 },
+  lead: { fontSize: 22, textAlign: "center", color: "#444", marginBottom: 12 },
 
   actionsRow: { flexDirection: "row", justifyContent: "center", gap: 12, marginVertical: 10 },
   primaryBtn: { flex: 1, backgroundColor: "#2563EB", paddingVertical: 12, borderRadius: 8, alignItems: "center", marginRight: 8 },

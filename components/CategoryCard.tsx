@@ -21,8 +21,9 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
   tutorialIconSize = 64,
   width = Dimensions.get('window').width,
   columns = 2,
-  height = 450,
-  padding = 48,
+  height = null,
+  tileWidth = null,
+  padding = null,
   isInTutorial = false
 }) => {
   if (isInTutorial) {
@@ -46,12 +47,14 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
   }
 
   // Responsive sizing for main grid
-  const cardWidth = (width - padding * columns) / columns; // 2 columns with padding
+  const cardHeight = height ?? (width < 600 ? 300 : 480);
+  const cardPadding = padding ?? width < 600 ? 24 : 48;
+  const cardWidth = tileWidth ?? (width - cardPadding * columns) / columns; // 2 columns with padding
   const iconSize = Math.min(Math.max(32, cardWidth * 0.3), 200); // Responsive icon size, minimum 32
 
   return (
     <TouchableOpacity
-      style={[styles.card, { width: cardWidth, height: height }]}
+      style={[styles.card, { width: cardWidth, height: cardHeight}]}
       onPress={onPress}
     >
       <View style={[styles.iconContainer, { backgroundColor: `${color}15`, width: cardWidth * 0.9, height: Math.min(iconSize*3, 300)}]}>

@@ -30,6 +30,7 @@ export default function Everyday() {
       translationNamespace="everyday"
       tutorialData="everyday"
       emergencyRoute="/ask/emergency"
+      height={350}
     />
   );
 }

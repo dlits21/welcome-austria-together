@@ -105,6 +105,8 @@ export default function Jobs() {
       translationNamespace="jobs"
       tutorialData="jobs"
       emergencyRoute="/ask/emergency"
+      primaryHeight={440}
+      height={400}
     />
   );
 }

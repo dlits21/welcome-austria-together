@@ -1,0 +1,20 @@
+{
+  "healthSupport": "Gesundheitsunterstützung",
+  "findHealthServices": "Finden Sie Gesundheitsdienste und Unterstützung in Ihrer Nähe",
+  "healthSupportAssistant": "Assistent für Gesundheitsunterstützung",
+  "answerQuestionsForHealthServices": "Beantworten Sie einige Fragen, damit wir die besten Gesundheitsdienste für Sie finden können",
+  "howUrgentlyNeedSupport": "Wie dringend benötigen Sie Gesundheitsunterstützung?",
+  "whatTypeHealthSupport": "Welche Art von Gesundheitsunterstützung benötigen Sie?",
+  "whereAreYouLocated": "Wo befinden Sie sich?",
+  "routine": "Routine / Nicht dringend",
+  "generalPractice": "Allgemeinarzt (Hausarzt)",
+  "mentalHealth": "Psychische Gesundheit",
+  "specializedCare": "Spezialisierte Versorgung",
+  "emergency": "Notfall",
+  "womenHealth": "Frauengesundheit",
+  "dental": "Zahnmedizinische Versorgung",
+  "pharmacy": "Apotheke",
+  "community": "Gemeindegesundheit",
+  "supportType": "Art der Unterstützung",
+  "noHealthSupportEntitiesFound": "Keine Gesundheitsdienste gefunden, die Ihren Kriterien entsprechen."
+}

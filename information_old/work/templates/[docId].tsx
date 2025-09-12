@@ -8,7 +8,7 @@ import LanguageModal from '../../../../components/LanguageModal';
 import VirtualAssistantModal from '../../../../components/VirtualAssistantModal';
 import TutorialModal from '../../../../components/TutorialModal';
 import { Picker } from '@react-native-picker/picker';
-// import PDFLib from 'react-native-pdf-lib'; // TODO: Implement PDF generation
+
 import templatesData from '../../../../data/information/work/templates.json';
 
 type TemplateKey = keyof typeof templatesData;

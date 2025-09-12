@@ -1,0 +1,20 @@
+{
+  "healthSupport": "پشتیبانی سلامت",
+  "findHealthServices": "پیدا کردن خدمات و پشتیبانی سلامت در نزدیکی شما",
+  "healthSupportAssistant": "دستیار پشتیبانی سلامت",
+  "answerQuestionsForHealthServices": "چند سوال را پاسخ دهید تا بهترین خدمات سلامت برای شما پیدا شود",
+  "howUrgentlyNeedSupport": "چقدر فوری به پشتیبانی سلامت نیاز دارید؟",
+  "whatTypeHealthSupport": "به چه نوع پشتیبانی سلامت نیاز دارید؟",
+  "whereAreYouLocated": "شما کجا هستید؟",
+  "routine": "روتین / غیر فوری",
+  "generalPractice": "پزشک عمومی",
+  "mentalHealth": "سلامت روان",
+  "specializedCare": "مراقبت تخصصی",
+  "emergency": "اورژانس",
+  "womenHealth": "سلامت زنان",
+  "dental": "دندانپزشکی",
+  "pharmacy": "داروخانه",
+  "community": "سلامت جامعه",
+  "supportType": "نوع پشتیبانی",
+  "noHealthSupportEntitiesFound": "هیچ خدمات پشتیبانی سلامت مطابق معیارهای شما پیدا نشد."
+}

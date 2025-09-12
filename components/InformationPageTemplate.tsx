@@ -39,7 +39,8 @@ export default function InformationPageTemplate({
   translationNamespace,
   tutorialData,
   emergencyRoute = "/ask/emergency",
-  height = 450
+  height = 450,
+  primaryHeight=400
 }: InformationPageTemplateProps) {
   const { t } = useTranslation(translationNamespace);
   const { width } = useWindowDimensions();
@@ -51,8 +52,9 @@ export default function InformationPageTemplate({
   // Responsive columns: mobile 2, tablet 3, web 4
   const columns = width < 600 ? 2 : width < 900 ? 3 : 4;
   const padding = 24;
-  // percentage for each tile to avoid leftovers
-  const cardWidth = (width - padding*columns) / columns;
+  const gap = 12;
+  const totalGap = gap * (columns - 1);
+  const cardWidth = (width - padding * 2 - totalGap) / columns;
 
   // Play single tip via TTS (long-press usage)
   const speak = useCallback(
@@ -89,7 +91,7 @@ export default function InformationPageTemplate({
     }
   };
 
-  const renderTopic = (topic: Topic, isProminent = false) => {
+  const renderTopic = (topic: Topic, tileWidth: number, cardPadding: number, cardHeight: number, cardMargin:number, isProminent = false) => {
     const title = t(`topics.${topic.key}.title`);
     const subtitle = t(`topics.${topic.key}.subtitle`);
     return (
@@ -98,9 +100,9 @@ export default function InformationPageTemplate({
         onPress={() => router.push(topic.route)}
         onLongPress={() => speak(`${title}. ${subtitle}`)}
         style={[
-          styles.tile, 
-          { flexBasis: cardWidth, maxWidth: cardWidth },
-          isProminent && styles.prominentTile
+          styles.tile,
+          { flexBasis: tileWidth, maxWidth: tileWidth, marginRight: gap, },
+          isProminent && styles.prominentTile &&  {marginLeft: cardMargin}
         ]}
         accessibilityRole="button"
         accessibilityLabel={`${title}. ${subtitle}`}
@@ -112,9 +114,9 @@ export default function InformationPageTemplate({
           color={topic.color}
           onPress={() => router.push(topic.route)}
           onLongPress={() => speak(`${title}. ${subtitle}`)}
-          padding={padding}
-          width={width - padding}
-          height={height}
+          padding={cardPadding}
+          tileWidth={tileWidth}
+          height={cardHeight}
           columns={columns}
         />
       </Pressable>
@@ -155,12 +157,13 @@ export default function InformationPageTemplate({
           onTileLongPress={speak}
           getText={t}
           renderTile={renderTopic}
+          primaryHeight={primaryHeight}
         />
 
         {/* All topics */}
         <Text style={styles.sectionTitle}>{t("additionalServices")}</Text>
         <View style={styles.grid}>
-          {[...prominentTopics, ...secondaryTopics].map((topic) => renderTopic(topic, false))}
+          {[...prominentTopics, ...secondaryTopics].map((topic) => renderTopic(topic, cardWidth, null, height, 130))}
         </View>
 
         {/* Footer with emergency help quick link */}
@@ -232,12 +235,14 @@ const styles = StyleSheet.create({
   },
 
   grid: {
-    marginTop: 8,
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
-    gap: 12,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
   },
+  ourColumnGrid: {},
+  threeColumnGrid: {},
+  twoColumnGrid: {},
+  oneColumnGrid: {},
 
   tile: {
     paddingHorizontal: 8,

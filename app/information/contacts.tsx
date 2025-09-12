@@ -76,6 +76,8 @@ export default function Contacts() {
       translationNamespace="contacts"
       tutorialData="home"
       emergencyRoute="/ask/emergency"
+      primaryHeight={440}
+      height={370}
     />
   );
 }

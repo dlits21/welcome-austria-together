@@ -99,6 +99,8 @@ export default function FoodPage() {
       translationNamespace="food"
       tutorialData="food"
       emergencyRoute="/ask/emergency"
+      primaryHeight={440}
+      height={370}
     />
   );
 }

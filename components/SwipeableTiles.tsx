@@ -4,6 +4,7 @@ import {
   Text,
   Pressable,
   ScrollView,
+  Platform,
   useWindowDimensions,
   StyleSheet,
 } from 'react-native';
@@ -18,7 +19,7 @@ interface SwipeableTilesProps {
   onTilePress: (route: string) => void;
   onTileLongPress: (text: string) => void;
   getText: (key: string) => string;
-  renderTile: (topic: any) => React.ReactNode;
+  renderTile: (topic: any, tileWidth: int, padding: int) => React.ReactNode;
   containerStyle?: any;
 }
 
@@ -29,15 +30,18 @@ const SwipeableTiles: React.FC<SwipeableTilesProps> = ({
   getText,
   renderTile,
   containerStyle,
+  primaryHeight,
 }) => {
   const { width } = useWindowDimensions();
   const scrollViewRef = useRef<ScrollView>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Calculate how many tiles fit on screen (3 on mobile, more on larger screens)
-  const tilesPerView = width < 600 ? 3 : width < 900 ? 4 : 5;
-  const tileWidth = (width - 80) / tilesPerView; // Account for padding and gaps
+  const tilesPerView = width < 600 ? 1 : width < 900 ? 4 : 5;
+  const tileWidth = (width - 130) / tilesPerView; // Account for padding and gaps
   const maxIndex = Math.max(0, topics.length - tilesPerView);
+  const web = (Platform.OS === "web")
+  console.log(tileWidth)
 
   const scrollToIndex = (index: number) => {
     if (scrollViewRef.current && index >= 0 && index <= maxIndex) {
@@ -59,7 +63,8 @@ const SwipeableTiles: React.FC<SwipeableTilesProps> = ({
     <View style={[styles.container, containerStyle]}>
       {/* Navigation arrows */}
       <View style={styles.navigationContainer}>
-        <Pressable
+
+        {web && <Pressable
           style={[styles.navButton, currentIndex === 0 && styles.navButtonDisabled]}
           onPress={scrollLeft}
           disabled={currentIndex === 0}
@@ -67,28 +72,29 @@ const SwipeableTiles: React.FC<SwipeableTilesProps> = ({
           <Text style={[styles.navButtonText, currentIndex === 0 && styles.navButtonTextDisabled]}>
             ‹
           </Text>
-        </Pressable>
+        </Pressable>}
 
         <View style={styles.scrollContainer}>
           <ScrollView
             ref={scrollViewRef}
             horizontal
             showsHorizontalScrollIndicator={false}
-            contentContainerStyle={styles.scrollContent}
+            contentContainerStyle={styles.scrollContent, {gap: 30}}
             scrollEventThrottle={16}
             decelerationRate="fast"
-            snapToInterval={tileWidth}
+            snapToInterval={tileWidth + 60}
             snapToAlignment="start"
             onMomentumScrollEnd={(event) => {
-              const newIndex = Math.round(event.nativeEvent.contentOffset.x / tileWidth);
+              const newIndex = Math.round(event.nativeEvent.contentOffset.x / (tileWidth + 30));
               setCurrentIndex(Math.max(0, Math.min(maxIndex, newIndex)));
             }}
           >
-            {topics.map((topic) => renderTile(topic))}
+            {topics.map((topic) => renderTile(topic, tileWidth, 10, primaryHeight, 16, true))}
           </ScrollView>
         </View>
 
-        <Pressable
+        {web &&
+            <Pressable
           style={[styles.navButton, currentIndex === maxIndex && styles.navButtonDisabled]}
           onPress={scrollRight}
           disabled={currentIndex === maxIndex}
@@ -96,7 +102,7 @@ const SwipeableTiles: React.FC<SwipeableTilesProps> = ({
           <Text style={[styles.navButtonText, currentIndex === maxIndex && styles.navButtonTextDisabled]}>
             ›
           </Text>
-        </Pressable>
+        </Pressable>}
       </View>
 
       {/* Pagination dots */}

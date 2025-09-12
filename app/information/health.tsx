@@ -41,6 +41,7 @@ export default function Health() {
       translationNamespace="health"
       tutorialData="health"
       emergencyRoute="/ask/emergency"
+      height={350}
     />
   );
 }

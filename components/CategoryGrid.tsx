@@ -23,6 +23,11 @@ const CategoryGrid: React.FC<CategoryGridProps> = ({ onCategoryClick }) => {
     containerStyle = styles.twoColumnGrid; // 2 cards per row
   }
   const size = width < 420 ? 'small' : width < 800 ? 'medium' : 'large';
+  let cardHeight = 400;
+  if (width > 1100) cardHeight= 420;
+  else if (width > 800) cardHeight= 440;
+  else if (width > 500) cardHeight= 400;
+  else cardHeight= 350;
 
   const speak = (text: string) => {
     if (text) {
@@ -39,6 +44,7 @@ const CategoryGrid: React.FC<CategoryGridProps> = ({ onCategoryClick }) => {
         color="#3B82F6" // blue
         onPress={() => onCategoryClick('ask')}
         onLongPress={() => speak(`${t('support_title')} ${t('support_subtitle')}`)}
+        height={cardHeight}
       />
 
       <CategoryCard
@@ -48,6 +54,7 @@ const CategoryGrid: React.FC<CategoryGridProps> = ({ onCategoryClick }) => {
         color="#F59E0B" // amber
         onPress={() => onCategoryClick('guide')}
         onLongPress={() => speak(`${t('guide_title')} ${t('guide_subtitle')}`)}
+        height={cardHeight}
       />
 
       <CategoryCard
@@ -57,6 +64,7 @@ const CategoryGrid: React.FC<CategoryGridProps> = ({ onCategoryClick }) => {
         color="#10B981" // green
         onPress={() => onCategoryClick('information')}
         onLongPress={() => speak(`${t('info_title')} ${t('info_subtitle')}`)}
+        height={cardHeight}
       />
 
       <CategoryCard
@@ -66,6 +74,7 @@ const CategoryGrid: React.FC<CategoryGridProps> = ({ onCategoryClick }) => {
         color="#8B5CF6" // purple
         onPress={() => onCategoryClick('learn')}
         onLongPress={() => speak(`${t('learn_title')} ${t('learn_subtitle')}`)}
+        height={cardHeight}
       />
 
       <CategoryCard
@@ -75,6 +84,7 @@ const CategoryGrid: React.FC<CategoryGridProps> = ({ onCategoryClick }) => {
         color="#F97316" // orange
         onPress={() => onCategoryClick('community')}
         onLongPress={() => speak(`${t('community_title')} ${t('community_subtitle')}`)}
+        height={cardHeight}
       />
     </View>
   );

@@ -62,8 +62,7 @@ export default function Guide() {
     
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>{t("pageTitle")}</Text>
-        <Text style={styles.subtitle}>{t("pageIntro")}</Text>
+        <Text style={styles.title}>{t("pageIntro")}</Text>
         
         <Text style={styles.questionTitle}>{t("selectTimeframe")}</Text>
         

@@ -105,6 +105,8 @@ export default function Housing() {
       translationNamespace="housing"
       tutorialData="housing"
       emergencyRoute="/ask/emergency"
+      height={425}
+      primaryHeight={450}
     />
   );
 }

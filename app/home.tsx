@@ -79,6 +79,7 @@ const Home: React.FC = () => {
         {/* Category Cards with extra "Guide" tile */}
         <CategoryGrid
           onCategoryClick={handleCategoryClick}
+
         />
       </ScrollView>
       

@@ -19,10 +19,12 @@ const Information: React.FC = () => {
   const router = useRouter();
 
   // Columns depending on screen size
-  let containerStyle = styles.oneColumnGrid;
-  if (width > 1100) containerStyle = styles.fourColumnGrid;
-  else if (width > 800) containerStyle = styles.threeColumnGrid;
-  else if (width > 500) containerStyle = styles.twoColumnGrid;
+  let cardHeight = 400;
+  if (width > 1100) cardHeight= 420;
+  else if (width > 800) cardHeight= 440;
+  else if (width > 500) cardHeight= 400;
+  else cardHeight= 350;
+  console.log("Width",width, cardHeight)
 
   const speak = (text: string) => {
     if (text) {
@@ -92,7 +94,7 @@ const Information: React.FC = () => {
       />
 
       <ScrollView contentContainerStyle={styles.scrollContent}>
-        <View style={[styles.grid, containerStyle]}>
+        <View style={[styles.grid]}>
           {categories.map(cat => (
             <CategoryCard
               key={cat.key}
@@ -102,6 +104,7 @@ const Information: React.FC = () => {
               color={cat.color}
               onPress={() => router.push(cat.route)}
               onLongPress={() => speak(`${t(`${cat.key}_title`)} ${t(`${cat.key}_subtitle`)}`)}
+              height={cardHeight}
             />
           ))}
         </View>
@@ -138,20 +141,7 @@ const styles = StyleSheet.create({
   grid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'center',
-    gap: 16,
-  },
-  fourColumnGrid: {
     justifyContent: 'space-between',
-  },
-  threeColumnGrid: {
-    justifyContent: 'space-between',
-  },
-  twoColumnGrid: {
-    justifyContent: 'space-between',
-  },
-  oneColumnGrid: {
-    flexDirection: 'column',
   },
 });
 
