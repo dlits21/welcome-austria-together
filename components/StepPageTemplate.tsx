@@ -72,10 +72,11 @@ export default function StepPageTemplate({
     
     const interval = setInterval(() => {
       if (player.playing) {
-        setCurrentTime(player.currentTime);
-        setDuration(player.duration);
+        setCurrentTime(player.currentTime || 0);
+        setDuration(player.duration || 0);
         setIsPlaying(true);
-      } else if (isPlaying) {
+      } else if (isPlaying && player.currentTime === 0) {
+        // Audio finished playing
         setIsPlaying(false);
       }
     }, 100);
@@ -83,10 +84,11 @@ export default function StepPageTemplate({
     return () => clearInterval(interval);
   }, [player, audioSource, isPlaying]);
 
-  // Apply volume changes
+  // Apply volume changes immediately
   useEffect(() => {
     if (audioSource && player) {
-      player.volume = isMuted ? 0 : volume / 100;
+      const newVolume = (isMuted || volume === 0) ? 0 : volume / 100;
+      player.volume = newVolume;
     }
   }, [volume, isMuted, audioSource, player]);
 
@@ -143,17 +145,21 @@ export default function StepPageTemplate({
   };
 
   const handleVolumeChange = (value: number) => {
-    setVolume(value);
+    const newVolume = Math.round(value);
+    setVolume(newVolume);
+    
     // Auto unmute if volume is changed from 0
-    if (value > 0 && isMuted) {
+    if (newVolume > 0 && isMuted) {
       setIsMuted(false);
     }
     // Auto mute if volume is 0
-    if (value === 0 && !isMuted) {
+    if (newVolume === 0 && !isMuted) {
       setIsMuted(true);
     }
+    
+    // Apply volume immediately to audio player
     if (audioSource && player) {
-      player.volume = value === 0 ? 0 : value / 100;
+      player.volume = newVolume === 0 ? 0 : newVolume / 100;
     }
   };
 
@@ -299,7 +305,7 @@ export default function StepPageTemplate({
               <View style={styles.progressBar}>
                 <View 
                   style={[styles.progressFill, { 
-                    width: duration > 0 ? `${(currentTime / duration) * 100}%` : '0%' 
+                    width: duration > 0 && currentTime > 0 ? `${Math.min((currentTime / duration) * 100, 100)}%` : '0%' 
                   }]} 
                 />
               </View>
