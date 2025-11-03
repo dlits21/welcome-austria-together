@@ -74,21 +74,79 @@ export default function StepPageTemplate({
   };
 
   const playAudio = async () => {
-    // In a real implementation, you would generate or fetch audio based on audioText and language
-    // For now, this is a placeholder implementation
-    setIsPlaying(!isPlaying);
-  };
+    try {
+      if (sound) {
+        const status = await sound.getStatusAsync();
+        if (status.isLoaded) {
+          if (isPlaying) {
+            await sound.pauseAsync();
+            setIsPlaying(false);
+          } else {
+            await sound.playAsync();
+            setIsPlaying(true);
+          }
+          return;
+        }
+      }
 
-  const toggleMute = () => {
-    if (sound) {
-      sound.setVolumeAsync(isMuted ? 1.0 : 0.0);
+      // Try to load static audio file first
+      const audioFileName = translationNamespace.replace(/[\/\\]/g, '-');
+      const audioPath = `../assets/audio/${audioFileName}-${i18n.language}.mp3`;
+      
+      let audioSource;
+      let useStaticFile = false;
+      
+      try {
+        // Try to load static audio file
+        audioSource = require(audioPath);
+        useStaticFile = true;
+      } catch {
+        // Static file doesn't exist, will use TTS
+        console.log('No static audio file found, using TTS');
+      }
+
+      if (useStaticFile && audioSource) {
+        // Load and play static audio file
+        const { sound: newSound } = await Audio.Sound.createAsync(
+          audioSource,
+          { shouldPlay: true },
+          onPlaybackStatusUpdate
+        );
+        setSound(newSound);
+        setIsPlaying(true);
+      } else {
+        // Generate TTS audio
+        // This requires a backend endpoint - for now, just show alert
+        console.log('TTS would generate audio for:', audioText, 'in language:', i18n.language);
+        alert('TTS functionality requires backend setup. Please add static audio files to /assets/audio/');
+      }
+    } catch (error) {
+      console.error('Error playing audio:', error);
     }
-    setIsMuted(!isMuted);
   };
 
-  const replay = () => {
+  const onPlaybackStatusUpdate = (status: any) => {
+    if (status.isLoaded) {
+      setDuration(status.durationMillis || 0);
+      setProgress(status.durationMillis ? (status.positionMillis / status.durationMillis) * 100 : 0);
+      
+      if (status.didJustFinish) {
+        setIsPlaying(false);
+        setProgress(0);
+      }
+    }
+  };
+
+  const toggleMute = async () => {
     if (sound) {
-      sound.replayAsync();
+      await sound.setVolumeAsync(isMuted ? 1.0 : 0.0);
+      setIsMuted(!isMuted);
+    }
+  };
+
+  const replay = async () => {
+    if (sound) {
+      await sound.replayAsync();
       setIsPlaying(true);
     }
   };
@@ -329,7 +387,7 @@ const styles = StyleSheet.create({
     zIndex: 5,
   },
   leftPanel: {
-    flex: 1,
+    width: "50%",
     backgroundColor: "transparent",
   },
   stepsContainer: {
