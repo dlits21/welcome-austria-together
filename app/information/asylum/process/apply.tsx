@@ -46,7 +46,7 @@ export default function AsylumApply() {
       title={t("pageTitle", { defaultValue: "How to Apply for Asylum" })}
       helperText={t("helperText", { defaultValue: "Click the buttons." })}
       steps={steps}
-      imagePath={require("../../../../assets/images/assistant.jpg")}
+      imagePath={require("../../../../assets/images/Images/refugee_rights.jpg")}
       homePath="/home"
       audioText={t("audioText", { defaultValue: "Welcome to the asylum application process. Follow these steps to complete your application." })}
       audioPath={getAudioPath()}

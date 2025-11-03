@@ -3,7 +3,8 @@ import { StyleSheet, View, Text, SafeAreaView, ScrollView, Pressable, Platform, 
 import { useTranslation } from "react-i18next";
 import { useRouter } from "expo-router";
 import { MaterialIcons } from '@expo/vector-icons';
-import { Audio } from 'expo-av';
+import { useAudioPlayer } from 'expo-audio';
+import * as Speech from 'expo-speech';
 import HelpModal from './HelpModal';
 
 interface Step {
@@ -18,10 +19,10 @@ interface Props {
   title: string;
   helperText: string;
   steps: Step[];
-  imagePath: any;
+  imagePath?: any;
   homePath: string;
   audioText: string;
-  audioPath?: any;
+  audioSource?: any;
   tutorialContent?: string;
   colorPalette?: {
     primary: string;
@@ -39,7 +40,7 @@ export default function StepPageTemplate({
   imagePath,
   homePath,
   audioText,
-  audioPath,
+  audioSource,
   tutorialContent,
   colorPalette = {
     primary: '#7c3aed',
@@ -54,21 +55,13 @@ export default function StepPageTemplate({
   const [showHelp, setShowHelp] = useState(false);
   
   // Audio player state
-  const [sound, setSound] = useState<Audio.Sound | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
+  const player = useAudioPlayer(audioSource);
 
   const isWeb = Platform.OS === 'web';
-
-  useEffect(() => {
-    return sound
-      ? () => {
-          sound.unloadAsync();
-        }
-      : undefined;
-  }, [sound]);
 
   const handleStepPress = (step: Step) => {
     setCompletedSteps(prev => new Set(prev).add(step.id));
@@ -77,48 +70,13 @@ export default function StepPageTemplate({
 
   const playAudio = async () => {
     try {
-      if (sound) {
-        const status = await sound.getStatusAsync();
-        if (status.isLoaded) {
-          if (isPlaying) {
-            await sound.pauseAsync();
-            setIsPlaying(false);
-          } else {
-            await sound.playAsync();
-            setIsPlaying(true);
-          }
-          return;
-        }
-      }
-
-      // Use provided audioPath or try to find static file
-      let audioSource = audioPath;
-      
-      if (!audioSource) {
-        // Try to load static audio file
-        const audioFileName = translationNamespace.replace(/[\/\\]/g, '-');
-        const fallbackPath = `../assets/audio/${audioFileName}-${i18n.language}.mp3`;
-        
-        try {
-          audioSource = require(fallbackPath);
-        } catch {
-          console.log('No static audio file found, using TTS');
-        }
-      }
-
-      if (audioSource) {
+       if (!audioSource) {
+         console.log("Using TTS")
+         Speech.speak(audioText);
+       } else {
+        console.log("Using AudioPlayer")
         // Load and play audio file
-        const { sound: newSound } = await Audio.Sound.createAsync(
-          audioSource,
-          { shouldPlay: true },
-          onPlaybackStatusUpdate
-        );
-        setSound(newSound);
-        setIsPlaying(true);
-      } else {
-        // Generate TTS audio
-        console.log('TTS would generate audio for:', audioText, 'in language:', i18n.language);
-        alert('TTS functionality requires backend setup. Please add static audio files to /assets/audio/');
+        player.play()
       }
     } catch (error) {
       console.error('Error playing audio:', error);
@@ -138,17 +96,18 @@ export default function StepPageTemplate({
   };
 
   const toggleMute = async () => {
-    if (sound) {
-      await sound.setVolumeAsync(isMuted ? 1.0 : 0.0);
-      setIsMuted(!isMuted);
+    if (!audioSource) {
+        Speech.volume = isMuted ? 1.0 : 0.0;
+    } else {
+        player.volume = isMuted ? 1.0 : 0.0;
     }
+
+    setIsMuted(!isMuted);
   };
 
   const replay = async () => {
-    if (sound) {
-      await sound.replayAsync();
-      setIsPlaying(true);
-    }
+    player.seekTo(0);
+    playAudio()
   };
 
   if (!isWeb) {
