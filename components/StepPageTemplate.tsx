@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Text, SafeAreaView, ScrollView, Pressable, Platform, Image } from "react-native";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "expo-router";
 import { MaterialIcons } from '@expo/vector-icons';
 import { useAudioPlayer } from 'expo-audio';
 import * as Speech from 'expo-speech';
+import Slider from '@react-native-community/slider';
 import HelpModal from './HelpModal';
 
 interface Step {
@@ -57,57 +58,116 @@ export default function StepPageTemplate({
   // Audio player state
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
-  const [progress, setProgress] = useState(0);
+  const [volume, setVolume] = useState(100);
+  const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [usingTTS, setUsingTTS] = useState(false);
   const player = useAudioPlayer(audioSource);
 
   const isWeb = Platform.OS === 'web';
+
+  // Update audio player progress
+  useEffect(() => {
+    if (!audioSource) return;
+    
+    const interval = setInterval(() => {
+      if (player.playing) {
+        setCurrentTime(player.currentTime);
+        setDuration(player.duration);
+        setIsPlaying(true);
+      } else if (isPlaying) {
+        setIsPlaying(false);
+      }
+    }, 100);
+
+    return () => clearInterval(interval);
+  }, [player, audioSource, isPlaying]);
+
+  // Apply volume changes
+  useEffect(() => {
+    if (audioSource && player) {
+      player.volume = isMuted ? 0 : volume / 100;
+    }
+  }, [volume, isMuted, audioSource, player]);
 
   const handleStepPress = (step: Step) => {
     setCompletedSteps(prev => new Set(prev).add(step.id));
     router.push(step.route);
   };
 
-  const playAudio = async () => {
+  const togglePlayPause = async () => {
     try {
-       if (!audioSource) {
-         console.log("Using TTS")
-         Speech.speak(audioText);
-       } else {
-        console.log("Using AudioPlayer")
-        // Load and play audio file
-        player.play()
+      if (!audioSource) {
+        // Using TTS
+        setUsingTTS(true);
+        if (isPlaying) {
+          Speech.stop();
+          setIsPlaying(false);
+          setCurrentTime(0);
+        } else {
+          Speech.speak(audioText, {
+            volume: isMuted ? 0 : volume / 100,
+            onDone: () => {
+              setIsPlaying(false);
+              setCurrentTime(0);
+            },
+            onStopped: () => {
+              setIsPlaying(false);
+            }
+          });
+          setIsPlaying(true);
+          // Simulate duration for TTS (estimate)
+          setDuration(audioText.length * 0.05); // Rough estimate
+        }
+      } else {
+        // Using audio file
+        setUsingTTS(false);
+        if (player.playing) {
+          player.pause();
+          setIsPlaying(false);
+        } else {
+          player.play();
+          setIsPlaying(true);
+        }
       }
     } catch (error) {
-      console.error('Error playing audio:', error);
+      console.error('Error toggling audio:', error);
     }
   };
 
-  const onPlaybackStatusUpdate = (status: any) => {
-    if (status.isLoaded) {
-      setDuration(status.durationMillis || 0);
-      setProgress(status.durationMillis ? (status.positionMillis / status.durationMillis) * 100 : 0);
-      
-      if (status.didJustFinish) {
-        setIsPlaying(false);
-        setProgress(0);
-      }
-    }
-  };
-
-  const toggleMute = async () => {
-    if (!audioSource) {
-        Speech.volume = isMuted ? 1.0 : 0.0;
-    } else {
-        player.volume = isMuted ? 1.0 : 0.0;
-    }
-
+  const toggleMute = () => {
     setIsMuted(!isMuted);
+    if (audioSource && player) {
+      player.volume = !isMuted ? 0 : volume / 100;
+    }
   };
 
-  const replay = async () => {
-    player.seekTo(0);
-    playAudio()
+  const handleVolumeChange = (value: number) => {
+    setVolume(value);
+    if (audioSource && player) {
+      player.volume = isMuted ? 0 : value / 100;
+    }
+  };
+
+  const replay = () => {
+    if (audioSource && player) {
+      player.seekTo(0);
+      player.play();
+      setIsPlaying(true);
+    } else {
+      // Restart TTS
+      Speech.stop();
+      setCurrentTime(0);
+      setIsPlaying(false);
+      setTimeout(() => togglePlayPause(), 100);
+    }
+  };
+
+  const formatTime = (seconds: number) => {
+    if (!seconds || isNaN(seconds)) return "0:00";
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
 
   if (!isWeb) {
@@ -215,18 +275,24 @@ export default function StepPageTemplate({
 
           {/* Audio player */}
           <View style={styles.audioPlayer}>
-            <Pressable onPress={playAudio} style={styles.audioButton}>
+            <Pressable onPress={togglePlayPause} style={styles.audioButton}>
               <MaterialIcons 
                 name={isPlaying ? "pause" : "play-arrow"} 
-                size={24} 
+                size={28} 
                 color="#333" 
               />
             </Pressable>
 
             <View style={styles.progressContainer}>
+              <View style={styles.timeDisplay}>
+                <Text style={styles.timeText}>{formatTime(currentTime)}</Text>
+                <Text style={styles.timeText}>{formatTime(duration)}</Text>
+              </View>
               <View style={styles.progressBar}>
                 <View 
-                  style={[styles.progressFill, { width: `${progress}%` }]} 
+                  style={[styles.progressFill, { 
+                    width: duration > 0 ? `${(currentTime / duration) * 100}%` : '0%' 
+                  }]} 
                 />
               </View>
             </View>
@@ -235,13 +301,27 @@ export default function StepPageTemplate({
               <MaterialIcons name="replay" size={24} color="#333" />
             </Pressable>
 
-            <Pressable onPress={toggleMute} style={styles.audioButton}>
-              <MaterialIcons 
-                name={isMuted ? "volume-off" : "volume-up"} 
-                size={24} 
-                color="#333" 
+            <View style={styles.volumeContainer}>
+              <Pressable onPress={toggleMute} style={styles.audioButton}>
+                <MaterialIcons 
+                  name={isMuted ? "volume-off" : "volume-up"} 
+                  size={24} 
+                  color="#333" 
+                />
+              </Pressable>
+              <Slider
+                style={styles.volumeSlider}
+                minimumValue={0}
+                maximumValue={100}
+                value={volume}
+                onValueChange={handleVolumeChange}
+                minimumTrackTintColor="#3b82f6"
+                maximumTrackTintColor="#e5e7eb"
+                thumbTintColor="#3b82f6"
+                disabled={isMuted}
               />
-            </Pressable>
+              <Text style={styles.volumeText}>{Math.round(volume)}</Text>
+            </View>
           </View>
         </View>
       </View>
@@ -421,7 +501,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     paddingHorizontal: 24,
     paddingVertical: 12,
-    gap: 12,
+    gap: 16,
     borderTopWidth: 1,
     borderTopColor: "#e5e7eb",
   },
@@ -433,15 +513,43 @@ const styles = StyleSheet.create({
   },
   progressContainer: {
     flex: 1,
+    gap: 4,
+  },
+  timeDisplay: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingHorizontal: 4,
+  },
+  timeText: {
+    fontSize: 12,
+    color: "#6b7280",
+    fontWeight: "500",
   },
   progressBar: {
-    height: 4,
+    height: 6,
     backgroundColor: "#e5e7eb",
-    borderRadius: 2,
+    borderRadius: 3,
     overflow: "hidden",
   },
   progressFill: {
     height: "100%",
     backgroundColor: "#3b82f6",
+    borderRadius: 3,
+  },
+  volumeContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+  },
+  volumeSlider: {
+    width: 120,
+    height: 40,
+  },
+  volumeText: {
+    fontSize: 12,
+    color: "#6b7280",
+    fontWeight: "600",
+    width: 30,
+    textAlign: "right",
   },
 });
