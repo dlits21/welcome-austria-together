@@ -7,6 +7,7 @@ import { useAudioPlayer } from 'expo-audio';
 import * as Speech from 'expo-speech';
 import Slider from '@react-native-community/slider';
 import HelpModal from './HelpModal';
+import PageNavigation from './PageNavigation';
 
 interface Step {
   id: string;
@@ -272,121 +273,134 @@ export default function StepPageTemplate({
   // Web layout matching the image
   return (
     <SafeAreaView style={styles.safe}>
-      <View style={styles.webContainer}>
-        {/* Background Image - using imagePath */}
-        <Image
-          source={imagePath}
-          style={styles.backgroundImage}
-          resizeMode="cover"
-        />
+      <View style={styles.outerContainer}>
+        {/* Main content wrapper with white background */}
+        <View style={styles.contentWrapper}>
+          <View style={styles.webContainer}>
+            {/* Background Image - using imagePath */}
+            <Image
+              source={imagePath}
+              style={styles.backgroundImage}
+              resizeMode="cover"
+            />
 
-        {/* Header with custom shape - only 50% width */}
-        <View style={styles.headerContainer}>
-          <View style={[styles.homeIconBox, { backgroundColor: colorPalette.accent }]}>
-            <Pressable
-              style={styles.homeButton}
-              onPress={() => router.push(homePath)}
-            >
-              <MaterialIcons name="home" size={32} color="#fff" />
-            </Pressable>
-          </View>
-          <View style={[styles.headerMain, { backgroundColor: colorPalette.primary }]}>
-            <Text style={styles.headerTitle}>{title}</Text>
-          </View>
-        </View>
-
-        <View style={styles.contentContainer}>
-          {/* Steps panel */}
-          <View style={styles.leftPanel}>
-            <ScrollView contentContainerStyle={styles.stepsContainer}>
-              <View style={styles.helperTextBox}>
-                <Text style={styles.helperText}>{helperText}</Text>
+            {/* Header with custom shape - only 50% width */}
+            <View style={styles.headerContainer}>
+              <View style={[styles.homeIconBox, { backgroundColor: colorPalette.accent }]}>
+                <Pressable
+                  style={styles.homeButton}
+                  onPress={() => router.push(homePath)}
+                >
+                  <MaterialIcons name="home" size={32} color="#fff" />
+                </Pressable>
               </View>
-
-              <View style={styles.stepsBox}>
-                {steps.map((step) => (
-                  <Pressable
-                    key={step.id}
-                    style={styles.stepItem}
-                    onPress={() => handleStepPress(step)}
-                  >
-                    <Text style={styles.stepNumber}>{step.number}</Text>
-                    <Text style={styles.stepTitle}>{step.title}</Text>
-                    {completedSteps.has(step.id) && (
-                      <MaterialIcons
-                        name="check"
-                        size={32}
-                        color="#10B981"
-                        style={styles.checkmark}
-                      />
-                    )}
-                  </Pressable>
-                ))}
+              <View style={[styles.headerMain, { backgroundColor: colorPalette.primary }]}>
+                <Text style={styles.headerTitle}>{title}</Text>
               </View>
-            </ScrollView>
-          </View>
-        </View>
-
-        {/* Footer spanning entire page */}
-        <View style={styles.footerContainer}>
-          {/* Bottom navigation bar */}
-          <View style={styles.bottomNav}>
-            <Pressable
-              style={styles.bottomNavButton}
-              onPress={() => setShowHelp(true)}
-            >
-              <MaterialIcons name="help-outline" size={28} color="#fff" />
-            </Pressable>
-            <View style={{ flex: 1 }} />
-            <Pressable
-              style={styles.bottomNavButton}
-              onPress={() => router.back()}
-            >
-              <MaterialIcons name="arrow-back" size={28} color="#fff" />
-            </Pressable>
-          </View>
-
-          {/* Audio player */}
-          <View style={styles.audioPlayer}>
-            <Pressable onPress={togglePlayPause} style={styles.audioButton}>
-              <MaterialIcons
-                name={isPlaying ? "pause" : "play-arrow"}
-                size={28}
-                color="#333"
-              />
-            </Pressable>
-
-            <Pressable onPress={replay} style={styles.audioButton}>
-              <MaterialIcons name="replay" size={24} color="#333" />
-            </Pressable>
-
-            <View style={styles.progressContainer}>
-              <View style={styles.timeDisplay}>
-                <Text style={styles.timeText}>{formatTime(currentTime)}</Text>
-                <Text style={styles.timeText}>{formatTime(duration)}</Text>
-              </View>
-              <Slider
-                style={styles.progressSlider}
-                minimumValue={0}
-                maximumValue={duration || 1}
-                value={currentTime}
-                onValueChange={handleSeek}
-                onSlidingComplete={handleSeekComplete}
-                minimumTrackTintColor="#3b82f6"
-                maximumTrackTintColor="#e5e7eb"
-                thumbTintColor="#3b82f6"
-                disabled={usingTTS} // Disable seeking for TTS since it's not supported
-              />
             </View>
 
-            <Pressable onPress={toggleMute} style={styles.audioButton}>
-              <MaterialIcons
-                name={isMuted ? "volume-off" : "volume-up"}
-                size={24}
-                color="#333"
-              />
-            </Pressable>
+            <View style={styles.contentContainer}>
+              {/* Steps panel */}
+              <View style={styles.leftPanel}>
+                <ScrollView contentContainerStyle={styles.stepsContainer}>
+                  <View style={styles.helperTextBox}>
+                    <Text style={styles.helperText}>{helperText}</Text>
+                  </View>
+
+                  <View style={styles.stepsBox}>
+                    {steps.map((step) => (
+                      <Pressable
+                        key={step.id}
+                        style={styles.stepItem}
+                        onPress={() => handleStepPress(step)}
+                      >
+                        <Text style={styles.stepNumber}>{step.number}</Text>
+                        <Text style={styles.stepTitle}>{step.title}</Text>
+                        {completedSteps.has(step.id) && (
+                          <MaterialIcons
+                            name="check"
+                            size={32}
+                            color="#10B981"
+                            style={styles.checkmark}
+                          />
+                        )}
+                      </Pressable>
+                    ))}
+                  </View>
+                </ScrollView>
+              </View>
+            </View>
+
+            {/* Footer navigation bar */}
+            <View style={styles.footerContainer}>
+              <View style={styles.bottomNav}>
+                <Pressable
+                  style={styles.bottomNavButton}
+                  onPress={() => setShowHelp(true)}
+                >
+                  <MaterialIcons name="help-outline" size={28} color="#fff" />
+                </Pressable>
+                <View style={{ flex: 1 }} />
+                <Pressable
+                  style={[styles.bottomNavButton, styles.backButton]}
+                  onPress={() => router.back()}
+                >
+                  <MaterialIcons name="arrow-back" size={28} color="#fff" />
+                </Pressable>
+              </View>
+            </View>
           </View>
+
+          {/* Page Navigation */}
+          <PageNavigation 
+            showLanguageModal={() => {}}
+            showVirtualAssistant={() => {}}
+            showTutorial={() => setShowHelp(true)}
+            showBackButton={false}
+            title={title}
+          />
+        </View>
+
+        {/* Audio player spanning full width - outside content wrapper */}
+        <View style={styles.audioPlayer}>
+          <Pressable onPress={togglePlayPause} style={styles.audioButton}>
+            <MaterialIcons
+              name={isPlaying ? "pause" : "play-arrow"}
+              size={28}
+              color="#333"
+            />
+          </Pressable>
+
+          <Pressable onPress={replay} style={styles.audioButton}>
+            <MaterialIcons name="replay" size={24} color="#333" />
+          </Pressable>
+
+          <View style={styles.progressContainer}>
+            <View style={styles.timeDisplay}>
+              <Text style={styles.timeText}>{formatTime(currentTime)}</Text>
+              <Text style={styles.timeText}>{formatTime(duration)}</Text>
+            </View>
+            <Slider
+              style={styles.progressSlider}
+              minimumValue={0}
+              maximumValue={duration || 1}
+              value={currentTime}
+              onValueChange={handleSeek}
+              onSlidingComplete={handleSeekComplete}
+              minimumTrackTintColor="#3b82f6"
+              maximumTrackTintColor="#e5e7eb"
+              thumbTintColor="#3b82f6"
+              disabled={usingTTS}
+            />
+          </View>
+
+          <Pressable onPress={toggleMute} style={styles.audioButton}>
+            <MaterialIcons
+              name={volume === 0 || isMuted ? "volume-off" : "volume-up"}
+              size={24}
+              color="#333"
+            />
+          </Pressable>
         </View>
       </View>
 
@@ -403,6 +417,14 @@ const styles = StyleSheet.create({
   safe: {
     flex: 1,
     backgroundColor: "#fff"
+  },
+  outerContainer: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
+  contentWrapper: {
+    flex: 1,
+    backgroundColor: "#fff",
   },
 
   // Mobile styles
@@ -552,12 +574,16 @@ const styles = StyleSheet.create({
     backgroundColor: "#1f2937",
     paddingHorizontal: 24,
     paddingVertical: 16,
+    alignItems: "center",
   },
   bottomNavButton: {
     width: 48,
     height: 48,
     justifyContent: "center",
     alignItems: "center",
+  },
+  backButton: {
+    marginRight: 80, // Space for forward navigation arrow
   },
   audioPlayer: {
     flexDirection: "row",
@@ -568,6 +594,11 @@ const styles = StyleSheet.create({
     gap: 16,
     borderTopWidth: 1,
     borderTopColor: "#e5e7eb",
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
+    zIndex: 20,
   },
   audioButton: {
     width: 40,
