@@ -123,17 +123,25 @@ export default function StepPageTemplate({
   return (
     <SafeAreaView style={styles.safe}>
       <View style={styles.webContainer}>
-        {/* Header */}
-        <View style={[styles.header, { backgroundColor: colorPalette.primary }]}>
-          <Pressable 
-            style={[styles.homeButton, { backgroundColor: colorPalette.accent }]}
-            onPress={() => router.push(homePath)}
-          >
-            <MaterialIcons name="home" size={28} color="#fff" />
-          </Pressable>
-          <Text style={styles.headerTitle}>{title}</Text>
-          <View style={styles.badge}>
-            <Text style={styles.badgeText}>{badgeText}</Text>
+        {/* Background Image */}
+        <Image 
+          source={require('../assets/images/Images/refugee_rights.png')}
+          style={styles.backgroundImage}
+          resizeMode="cover"
+        />
+
+        {/* Header with custom shape */}
+        <View style={styles.headerContainer}>
+          <View style={[styles.homeIconBox, { backgroundColor: colorPalette.accent }]}>
+            <Pressable 
+              style={styles.homeButton}
+              onPress={() => router.push(homePath)}
+            >
+              <MaterialIcons name="home" size={32} color="#fff" />
+            </Pressable>
+          </View>
+          <View style={[styles.headerMain, { backgroundColor: colorPalette.primary }]}>
+            <Text style={styles.headerTitle}>{title}</Text>
           </View>
         </View>
 
@@ -156,7 +164,7 @@ export default function StepPageTemplate({
                       <MaterialIcons 
                         name="check" 
                         size={32} 
-                        color="#fff" 
+                        color="#10B981" 
                         style={styles.checkmark}
                       />
                     )}
@@ -164,54 +172,6 @@ export default function StepPageTemplate({
                 ))}
               </View>
             </ScrollView>
-
-            {/* Bottom navigation bar */}
-            <View style={styles.bottomNav}>
-              <Pressable 
-                style={styles.bottomNavButton}
-                onPress={() => setShowHelp(true)}
-              >
-                <MaterialIcons name="help-outline" size={28} color="#fff" />
-              </Pressable>
-              <View style={{ flex: 1 }} />
-              <Pressable 
-                style={styles.bottomNavButton}
-                onPress={() => router.back()}
-              >
-                <MaterialIcons name="arrow-back" size={28} color="#fff" />
-              </Pressable>
-            </View>
-
-            {/* Audio player */}
-            <View style={styles.audioPlayer}>
-              <Pressable onPress={playAudio} style={styles.audioButton}>
-                <MaterialIcons 
-                  name={isPlaying ? "pause" : "play-arrow"} 
-                  size={24} 
-                  color="#333" 
-                />
-              </Pressable>
-
-              <View style={styles.progressContainer}>
-                <View style={styles.progressBar}>
-                  <View 
-                    style={[styles.progressFill, { width: `${progress}%` }]} 
-                  />
-                </View>
-              </View>
-
-              <Pressable onPress={replay} style={styles.audioButton}>
-                <MaterialIcons name="replay" size={24} color="#333" />
-              </Pressable>
-
-              <Pressable onPress={toggleMute} style={styles.audioButton}>
-                <MaterialIcons 
-                  name={isMuted ? "volume-off" : "volume-up"} 
-                  size={24} 
-                  color="#333" 
-                />
-              </Pressable>
-            </View>
           </View>
 
           {/* Right side - Image */}
@@ -221,6 +181,57 @@ export default function StepPageTemplate({
               style={styles.mainImage}
               resizeMode="cover"
             />
+          </View>
+        </View>
+
+        {/* Footer spanning entire page */}
+        <View style={styles.footerContainer}>
+          {/* Bottom navigation bar */}
+          <View style={styles.bottomNav}>
+            <Pressable 
+              style={styles.bottomNavButton}
+              onPress={() => setShowHelp(true)}
+            >
+              <MaterialIcons name="help-outline" size={28} color="#fff" />
+            </Pressable>
+            <View style={{ flex: 1 }} />
+            <Pressable 
+              style={styles.bottomNavButton}
+              onPress={() => router.back()}
+            >
+              <MaterialIcons name="arrow-back" size={28} color="#fff" />
+            </Pressable>
+          </View>
+
+          {/* Audio player */}
+          <View style={styles.audioPlayer}>
+            <Pressable onPress={playAudio} style={styles.audioButton}>
+              <MaterialIcons 
+                name={isPlaying ? "pause" : "play-arrow"} 
+                size={24} 
+                color="#333" 
+              />
+            </Pressable>
+
+            <View style={styles.progressContainer}>
+              <View style={styles.progressBar}>
+                <View 
+                  style={[styles.progressFill, { width: `${progress}%` }]} 
+                />
+              </View>
+            </View>
+
+            <Pressable onPress={replay} style={styles.audioButton}>
+              <MaterialIcons name="replay" size={24} color="#333" />
+            </Pressable>
+
+            <Pressable onPress={toggleMute} style={styles.audioButton}>
+              <MaterialIcons 
+                name={isMuted ? "volume-off" : "volume-up"} 
+                size={24} 
+                color="#333" 
+              />
+            </Pressable>
           </View>
         </View>
       </View>
@@ -277,48 +288,55 @@ const styles = StyleSheet.create({
   // Web layout styles
   webContainer: {
     flex: 1,
-    backgroundColor: "#fff"
+    backgroundColor: "#fff",
+    position: "relative",
   },
-  header: {
+  backgroundImage: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    width: "100%",
+    height: "100%",
+  },
+  headerContainer: {
     flexDirection: "row",
+    height: 80,
+    zIndex: 10,
+  },
+  homeIconBox: {
+    width: 80,
+    height: 80,
+    justifyContent: "center",
     alignItems: "center",
-    paddingHorizontal: 24,
-    paddingVertical: 16,
-    gap: 16,
   },
   homeButton: {
-    width: 48,
-    height: 48,
-    borderRadius: 8,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  headerTitle: {
-    fontSize: 24,
-    fontWeight: "700",
-    color: "#fff",
-    flex: 1,
-  },
-  badge: {
     width: 56,
     height: 56,
-    borderRadius: 28,
-    backgroundColor: "#581c87",
     justifyContent: "center",
     alignItems: "center",
   },
-  badgeText: {
-    color: "#fff",
-    fontSize: 18,
+  headerMain: {
+    flex: 1,
+    justifyContent: "center",
+    paddingLeft: 24,
+    clipPath: "polygon(0 0, 100% 0, 95% 100%, 0% 100%)",
+  },
+  headerTitle: {
+    fontSize: 32,
     fontWeight: "700",
+    color: "#fff",
+    letterSpacing: 1,
   },
   contentContainer: {
     flex: 1,
     flexDirection: "row",
+    zIndex: 5,
   },
   leftPanel: {
     flex: 1,
-    backgroundColor: "#f8f9fa",
+    backgroundColor: "transparent",
   },
   stepsContainer: {
     padding: 32,
@@ -328,17 +346,19 @@ const styles = StyleSheet.create({
     fontStyle: "italic",
     color: "#ef4444",
     marginBottom: 24,
+    fontWeight: "600",
   },
   stepsBox: {
-    backgroundColor: "#e5e7eb",
+    backgroundColor: "rgba(229, 231, 235, 0.85)",
     borderRadius: 12,
     padding: 16,
     gap: 12,
+    backdropFilter: "blur(8px)",
   },
   stepItem: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#9ca3af",
+    backgroundColor: "rgba(156, 163, 175, 0.9)",
     paddingVertical: 16,
     paddingHorizontal: 20,
     borderRadius: 8,
@@ -359,6 +379,13 @@ const styles = StyleSheet.create({
   checkmark: {
     marginLeft: "auto",
   },
+  footerContainer: {
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
+    zIndex: 10,
+  },
   bottomNav: {
     flexDirection: "row",
     backgroundColor: "#1f2937",
@@ -375,7 +402,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "#fff",
-    paddingHorizontal: 16,
+    paddingHorizontal: 24,
     paddingVertical: 12,
     gap: 12,
     borderTopWidth: 1,
@@ -402,7 +429,7 @@ const styles = StyleSheet.create({
   },
   rightPanel: {
     flex: 1,
-    backgroundColor: "#ddd",
+    backgroundColor: "transparent",
   },
   mainImage: {
     width: "100%",
