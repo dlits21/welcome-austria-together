@@ -123,14 +123,14 @@ export default function StepPageTemplate({
   return (
     <SafeAreaView style={styles.safe}>
       <View style={styles.webContainer}>
-        {/* Background Image */}
+        {/* Background Image - using imagePath */}
         <Image 
-          source={require('../assets/images/Images/refugee_rights.png')}
+          source={imagePath}
           style={styles.backgroundImage}
           resizeMode="cover"
         />
 
-        {/* Header with custom shape */}
+        {/* Header with custom shape - only 50% width */}
         <View style={styles.headerContainer}>
           <View style={[styles.homeIconBox, { backgroundColor: colorPalette.accent }]}>
             <Pressable 
@@ -146,10 +146,12 @@ export default function StepPageTemplate({
         </View>
 
         <View style={styles.contentContainer}>
-          {/* Left side - Steps */}
+          {/* Steps panel */}
           <View style={styles.leftPanel}>
             <ScrollView contentContainerStyle={styles.stepsContainer}>
-              <Text style={styles.helperText}>{helperText}</Text>
+              <View style={styles.helperTextBox}>
+                <Text style={styles.helperText}>{helperText}</Text>
+              </View>
               
               <View style={styles.stepsBox}>
                 {steps.map((step) => (
@@ -172,15 +174,6 @@ export default function StepPageTemplate({
                 ))}
               </View>
             </ScrollView>
-          </View>
-
-          {/* Right side - Image */}
-          <View style={styles.rightPanel}>
-            <Image 
-              source={imagePath} 
-              style={styles.mainImage}
-              resizeMode="cover"
-            />
           </View>
         </View>
 
@@ -304,6 +297,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     height: 80,
     zIndex: 10,
+    width: "50%",
   },
   homeIconBox: {
     width: 80,
@@ -341,11 +335,17 @@ const styles = StyleSheet.create({
   stepsContainer: {
     padding: 32,
   },
+  helperTextBox: {
+    backgroundColor: "rgba(255, 255, 255, 0.75)",
+    borderRadius: 8,
+    padding: 16,
+    marginBottom: 24,
+    backdropFilter: "blur(8px)",
+  },
   helperText: {
     fontSize: 18,
     fontStyle: "italic",
     color: "#ef4444",
-    marginBottom: 24,
     fontWeight: "600",
   },
   stepsBox: {
@@ -426,13 +426,5 @@ const styles = StyleSheet.create({
   progressFill: {
     height: "100%",
     backgroundColor: "#3b82f6",
-  },
-  rightPanel: {
-    flex: 1,
-    backgroundColor: "transparent",
-  },
-  mainImage: {
-    width: "100%",
-    height: "100%",
   },
 });
