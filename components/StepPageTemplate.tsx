@@ -103,10 +103,9 @@ export default function StepPageTemplate({
         if (isPlaying) {
           Speech.stop();
           setIsPlaying(false);
-          setCurrentTime(0);
         } else {
           Speech.speak(audioText, {
-            volume: isMuted ? 0 : volume / 100,
+            volume: isMuted || volume === 0 ? 0 : volume / 100,
             onDone: () => {
               setIsPlaying(false);
               setCurrentTime(0);
@@ -136,16 +135,25 @@ export default function StepPageTemplate({
   };
 
   const toggleMute = () => {
-    setIsMuted(!isMuted);
+    const newMuted = !isMuted;
+    setIsMuted(newMuted);
     if (audioSource && player) {
-      player.volume = !isMuted ? 0 : volume / 100;
+      player.volume = newMuted ? 0 : volume / 100;
     }
   };
 
   const handleVolumeChange = (value: number) => {
     setVolume(value);
+    // Auto unmute if volume is changed from 0
+    if (value > 0 && isMuted) {
+      setIsMuted(false);
+    }
+    // Auto mute if volume is 0
+    if (value === 0 && !isMuted) {
+      setIsMuted(true);
+    }
     if (audioSource && player) {
-      player.volume = isMuted ? 0 : value / 100;
+      player.volume = value === 0 ? 0 : value / 100;
     }
   };
 
@@ -304,7 +312,7 @@ export default function StepPageTemplate({
             <View style={styles.volumeContainer}>
               <Pressable onPress={toggleMute} style={styles.audioButton}>
                 <MaterialIcons 
-                  name={isMuted ? "volume-off" : "volume-up"} 
+                  name={isMuted || volume === 0 ? "volume-off" : "volume-up"} 
                   size={24} 
                   color="#333" 
                 />
