@@ -2,6 +2,14 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import StepPageTemplate from "../../../../components/StepPageTemplate";
 
+const getAudioPath = () => {
+  try {
+    return require("../../../../assets/audio/asylum-apply.mp3");
+  } catch {
+    return undefined;
+  }
+};
+
 export default function AsylumApply() {
   const { t } = useTranslation("asylum-apply");
 
@@ -41,7 +49,7 @@ export default function AsylumApply() {
       imagePath={require("../../../../assets/images/assistant.jpg")}
       homePath="/home"
       audioText={t("audioText", { defaultValue: "Welcome to the asylum application process. Follow these steps to complete your application." })}
-      audioPath={require("../../../../assets/audio/asylum-apply.mp3")}
+      audioPath={getAudioPath()}
       tutorialContent={t("tutorialContent", { defaultValue: "This guide will walk you through each step of the asylum application process. Click on each step to learn more." })}
       badgeText={t("badgeText", { defaultValue: "A1" })}
       colorPalette={{
