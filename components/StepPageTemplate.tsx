@@ -21,6 +21,7 @@ interface Props {
   imagePath: any;
   homePath: string;
   audioText: string;
+  audioPath?: any;
   tutorialContent?: string;
   colorPalette?: {
     primary: string;
@@ -38,6 +39,7 @@ export default function StepPageTemplate({
   imagePath,
   homePath,
   audioText,
+  audioPath,
   tutorialContent,
   colorPalette = {
     primary: '#7c3aed',
@@ -89,24 +91,23 @@ export default function StepPageTemplate({
         }
       }
 
-      // Try to load static audio file first
-      const audioFileName = translationNamespace.replace(/[\/\\]/g, '-');
-      const audioPath = `../assets/audio/${audioFileName}-${i18n.language}.mp3`;
+      // Use provided audioPath or try to find static file
+      let audioSource = audioPath;
       
-      let audioSource;
-      let useStaticFile = false;
-      
-      try {
+      if (!audioSource) {
         // Try to load static audio file
-        audioSource = require(audioPath);
-        useStaticFile = true;
-      } catch {
-        // Static file doesn't exist, will use TTS
-        console.log('No static audio file found, using TTS');
+        const audioFileName = translationNamespace.replace(/[\/\\]/g, '-');
+        const fallbackPath = `../assets/audio/${audioFileName}-${i18n.language}.mp3`;
+        
+        try {
+          audioSource = require(fallbackPath);
+        } catch {
+          console.log('No static audio file found, using TTS');
+        }
       }
 
-      if (useStaticFile && audioSource) {
-        // Load and play static audio file
+      if (audioSource) {
+        // Load and play audio file
         const { sound: newSound } = await Audio.Sound.createAsync(
           audioSource,
           { shouldPlay: true },
@@ -116,7 +117,6 @@ export default function StepPageTemplate({
         setIsPlaying(true);
       } else {
         // Generate TTS audio
-        // This requires a backend endpoint - for now, just show alert
         console.log('TTS would generate audio for:', audioText, 'in language:', i18n.language);
         alert('TTS functionality requires backend setup. Please add static audio files to /assets/audio/');
       }

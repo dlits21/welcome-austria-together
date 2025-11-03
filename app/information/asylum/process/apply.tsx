@@ -41,6 +41,7 @@ export default function AsylumApply() {
       imagePath={require("../../../../assets/images/assistant.jpg")}
       homePath="/home"
       audioText={t("audioText", { defaultValue: "Welcome to the asylum application process. Follow these steps to complete your application." })}
+      audioPath={require("../../../../assets/audio/asylum-apply.mp3")}
       tutorialContent={t("tutorialContent", { defaultValue: "This guide will walk you through each step of the asylum application process. Click on each step to learn more." })}
       badgeText={t("badgeText", { defaultValue: "A1" })}
       colorPalette={{
