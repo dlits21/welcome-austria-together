@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { StyleSheet, View, Text, SafeAreaView, ScrollView, Pressable, Platform, Image } from "react-native";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "expo-router";
@@ -54,43 +54,62 @@ export default function StepPageTemplate({
   const router = useRouter();
   const [completedSteps, setCompletedSteps] = useState<Set<string>>(new Set());
   const [showHelp, setShowHelp] = useState(false);
-  
+
   // Audio player state
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
-  const [volume, setVolume] = useState(100);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [usingTTS, setUsingTTS] = useState(false);
+  const [isSeeking, setIsSeeking] = useState(false);
   const player = useAudioPlayer(audioSource);
+  const progressInterval = useRef<NodeJS.Timeout | null>(null);
 
   const isWeb = Platform.OS === 'web';
 
   // Update audio player progress
   useEffect(() => {
     if (!audioSource) return;
-    
-    const interval = setInterval(() => {
-      if (player.playing) {
+    const updateProgress = () => {
+      if (player.playing && !isSeeking) {
         setCurrentTime(player.currentTime || 0);
         setDuration(player.duration || 0);
         setIsPlaying(true);
-      } else if (isPlaying && player.currentTime === 0) {
+      } else if (isPlaying && player.currentTime === 0 && !isSeeking) {
         // Audio finished playing
         setIsPlaying(false);
+        setCurrentTime(0);
       }
-    }, 100);
+    };
 
-    return () => clearInterval(interval);
-  }, [player, audioSource, isPlaying]);
+    // Clear existing interval
+    if (progressInterval.current) {
+      clearInterval(progressInterval.current);
+    }
+
+    // Set up new interval
+    progressInterval.current = setInterval(updateProgress, 100);
+
+    return () => {
+      if (progressInterval.current) {
+        clearInterval(progressInterval.current);
+      }
+    };
+  }, [player, audioSource, isPlaying, isSeeking]);
+
+  // Initialize duration when audio source loads
+  useEffect(() => {
+    if (audioSource && player) {
+      setDuration(player.duration || 0);
+    }
+  }, [audioSource, player]);
 
   // Apply volume changes immediately
   useEffect(() => {
     if (audioSource && player) {
-      const newVolume = (isMuted || volume === 0) ? 0 : volume / 100;
-      player.volume = newVolume;
+      player.volume = isMuted ? 0 : 1;
     }
-  }, [volume, isMuted, audioSource, player]);
+  }, [isMuted, audioSource, player]);
 
   const handleStepPress = (step: Step) => {
     setCompletedSteps(prev => new Set(prev).add(step.id));
@@ -107,7 +126,7 @@ export default function StepPageTemplate({
           setIsPlaying(false);
         } else {
           Speech.speak(audioText, {
-            volume: isMuted || volume === 0 ? 0 : volume / 100,
+            volume: isMuted ? 0 : 1,
             onDone: () => {
               setIsPlaying(false);
               setCurrentTime(0);
@@ -117,8 +136,25 @@ export default function StepPageTemplate({
             }
           });
           setIsPlaying(true);
-          // Simulate duration for TTS (estimate)
-          setDuration(audioText.length * 0.05); // Rough estimate
+          // Simulate duration for TTS (estimate based on word count)
+          const wordCount = audioText.split(' ').length;
+          setDuration(wordCount * 0.5); // Rough estimate: 0.5 seconds per word
+
+          // Simulate progress for TTS
+          let simulatedTime = 0;
+          const ttsInterval = setInterval(() => {
+            if (isPlaying) {
+              simulatedTime += 0.1;
+              setCurrentTime(simulatedTime);
+              if (simulatedTime >= wordCount * 0.5) {
+                clearInterval(ttsInterval);
+                setIsPlaying(false);
+                setCurrentTime(0);
+              }
+            } else {
+              clearInterval(ttsInterval);
+            }
+          }, 100);
         }
       } else {
         // Using audio file
@@ -139,33 +175,34 @@ export default function StepPageTemplate({
   const toggleMute = () => {
     const newMuted = !isMuted;
     setIsMuted(newMuted);
-    if (audioSource && player) {
-      player.volume = newMuted ? 0 : volume / 100;
-    }
-  };
 
-  const handleVolumeChange = (value: number) => {
-    const newVolume = Math.round(value);
-    setVolume(newVolume);
-    
-    // Auto unmute if volume is changed from 0
-    if (newVolume > 0 && isMuted) {
-      setIsMuted(false);
-    }
-    // Auto mute if volume is 0
-    if (newVolume === 0 && !isMuted) {
-      setIsMuted(true);
-    }
-    
-    // Apply volume immediately to audio player
     if (audioSource && player) {
-      player.volume = newVolume === 0 ? 0 : newVolume / 100;
+      player.volume = newMuted ? 0 : 1;
+    } else if (usingTTS && isPlaying) {
+      // For TTS, we need to stop and restart with new volume
+      Speech.stop();
+      setIsPlaying(false);
+      // Restart with new volume after a brief delay
+      setTimeout(() => {
+        Speech.speak(audioText, {
+          volume: newMuted ? 0 : 1,
+          onDone: () => {
+            setIsPlaying(false);
+            setCurrentTime(0);
+          },
+          onStopped: () => {
+            setIsPlaying(false);
+          }
+        });
+        setIsPlaying(true);
+      }, 100);
     }
   };
 
   const replay = () => {
     if (audioSource && player) {
       player.seekTo(0);
+      setCurrentTime(0);
       player.play();
       setIsPlaying(true);
     } else {
@@ -175,6 +212,28 @@ export default function StepPageTemplate({
       setIsPlaying(false);
       setTimeout(() => togglePlayPause(), 100);
     }
+  };
+
+  const handleSeek = (value: number) => {
+    if (audioSource && player) {
+      setIsSeeking(true);
+      setCurrentTime(value);
+    }
+    // Note: TTS doesn't support seeking, so we don't handle that case
+  };
+
+  const handleSeekComplete = (value: number) => {
+    if (audioSource && player) {
+      player.seekTo(value);
+      setCurrentTime(value);
+      setIsSeeking(false);
+
+      // If we were playing before seeking, continue playing
+      if (isPlaying) {
+        player.play();
+      }
+    }
+    // Note: TTS doesn't support seeking, so we don't handle that case
   };
 
   const formatTime = (seconds: number) => {
@@ -215,7 +274,7 @@ export default function StepPageTemplate({
     <SafeAreaView style={styles.safe}>
       <View style={styles.webContainer}>
         {/* Background Image - using imagePath */}
-        <Image 
+        <Image
           source={imagePath}
           style={styles.backgroundImage}
           resizeMode="cover"
@@ -224,7 +283,7 @@ export default function StepPageTemplate({
         {/* Header with custom shape - only 50% width */}
         <View style={styles.headerContainer}>
           <View style={[styles.homeIconBox, { backgroundColor: colorPalette.accent }]}>
-            <Pressable 
+            <Pressable
               style={styles.homeButton}
               onPress={() => router.push(homePath)}
             >
@@ -243,7 +302,7 @@ export default function StepPageTemplate({
               <View style={styles.helperTextBox}>
                 <Text style={styles.helperText}>{helperText}</Text>
               </View>
-              
+
               <View style={styles.stepsBox}>
                 {steps.map((step) => (
                   <Pressable
@@ -254,10 +313,10 @@ export default function StepPageTemplate({
                     <Text style={styles.stepNumber}>{step.number}</Text>
                     <Text style={styles.stepTitle}>{step.title}</Text>
                     {completedSteps.has(step.id) && (
-                      <MaterialIcons 
-                        name="check" 
-                        size={32} 
-                        color="#10B981" 
+                      <MaterialIcons
+                        name="check"
+                        size={32}
+                        color="#10B981"
                         style={styles.checkmark}
                       />
                     )}
@@ -272,14 +331,14 @@ export default function StepPageTemplate({
         <View style={styles.footerContainer}>
           {/* Bottom navigation bar */}
           <View style={styles.bottomNav}>
-            <Pressable 
+            <Pressable
               style={styles.bottomNavButton}
               onPress={() => setShowHelp(true)}
             >
               <MaterialIcons name="help-outline" size={28} color="#fff" />
             </Pressable>
             <View style={{ flex: 1 }} />
-            <Pressable 
+            <Pressable
               style={styles.bottomNavButton}
               onPress={() => router.back()}
             >
@@ -290,11 +349,15 @@ export default function StepPageTemplate({
           {/* Audio player */}
           <View style={styles.audioPlayer}>
             <Pressable onPress={togglePlayPause} style={styles.audioButton}>
-              <MaterialIcons 
-                name={isPlaying ? "pause" : "play-arrow"} 
-                size={28} 
-                color="#333" 
+              <MaterialIcons
+                name={isPlaying ? "pause" : "play-arrow"}
+                size={28}
+                color="#333"
               />
+            </Pressable>
+
+            <Pressable onPress={replay} style={styles.audioButton}>
+              <MaterialIcons name="replay" size={24} color="#333" />
             </Pressable>
 
             <View style={styles.progressContainer}>
@@ -302,40 +365,27 @@ export default function StepPageTemplate({
                 <Text style={styles.timeText}>{formatTime(currentTime)}</Text>
                 <Text style={styles.timeText}>{formatTime(duration)}</Text>
               </View>
-              <View style={styles.progressBar}>
-                <View 
-                  style={[styles.progressFill, { 
-                    width: duration > 0 && currentTime > 0 ? `${Math.min((currentTime / duration) * 100, 100)}%` : '0%' 
-                  }]} 
-                />
-              </View>
-            </View>
-
-            <Pressable onPress={replay} style={styles.audioButton}>
-              <MaterialIcons name="replay" size={24} color="#333" />
-            </Pressable>
-
-            <View style={styles.volumeContainer}>
-              <Pressable onPress={toggleMute} style={styles.audioButton}>
-                <MaterialIcons 
-                  name={isMuted || volume === 0 ? "volume-off" : "volume-up"} 
-                  size={24} 
-                  color="#333" 
-                />
-              </Pressable>
               <Slider
-                style={styles.volumeSlider}
+                style={styles.progressSlider}
                 minimumValue={0}
-                maximumValue={100}
-                value={volume}
-                onValueChange={handleVolumeChange}
+                maximumValue={duration || 1}
+                value={currentTime}
+                onValueChange={handleSeek}
+                onSlidingComplete={handleSeekComplete}
                 minimumTrackTintColor="#3b82f6"
                 maximumTrackTintColor="#e5e7eb"
                 thumbTintColor="#3b82f6"
-                disabled={isMuted}
+                disabled={usingTTS} // Disable seeking for TTS since it's not supported
               />
-              <Text style={styles.volumeText}>{Math.round(volume)}</Text>
             </View>
+
+            <Pressable onPress={toggleMute} style={styles.audioButton}>
+              <MaterialIcons
+                name={isMuted ? "volume-off" : "volume-up"}
+                size={24}
+                color="#333"
+              />
+            </Pressable>
           </View>
         </View>
       </View>
@@ -350,14 +400,14 @@ export default function StepPageTemplate({
 }
 
 const styles = StyleSheet.create({
-  safe: { 
-    flex: 1, 
-    backgroundColor: "#fff" 
+  safe: {
+    flex: 1,
+    backgroundColor: "#fff"
   },
-  
+
   // Mobile styles
-  mobileContainer: { 
-    padding: 16 
+  mobileContainer: {
+    padding: 16
   },
   mobileTitle: {
     fontSize: 24,
@@ -371,8 +421,8 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     marginBottom: 12,
   },
-  mobileStepHeader: { 
-    flexDirection: "row", 
+  mobileStepHeader: {
+    flexDirection: "row",
     alignItems: "center",
     gap: 12
   },
@@ -382,8 +432,8 @@ const styles = StyleSheet.create({
     color: "#374151",
     width: 32,
   },
-  mobileStepTitle: { 
-    fontSize: 16, 
+  mobileStepTitle: {
+    fontSize: 16,
     fontWeight: "600",
     flex: 1,
     color: "#1f2937"
@@ -539,31 +589,8 @@ const styles = StyleSheet.create({
     color: "#6b7280",
     fontWeight: "500",
   },
-  progressBar: {
-    height: 6,
-    backgroundColor: "#e5e7eb",
-    borderRadius: 3,
-    overflow: "hidden",
-  },
-  progressFill: {
-    height: "100%",
-    backgroundColor: "#3b82f6",
-    borderRadius: 3,
-  },
-  volumeContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 8,
-  },
-  volumeSlider: {
-    width: 120,
+  progressSlider: {
+    width: '100%',
     height: 40,
-  },
-  volumeText: {
-    fontSize: 12,
-    color: "#6b7280",
-    fontWeight: "600",
-    width: 30,
-    textAlign: "right",
   },
 });
