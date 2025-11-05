@@ -285,7 +285,7 @@ export default function StepPageTemplate({
         showLanguageModal={() => {}}
         showVirtualAssistant={() => {}}
         showTutorial={() => setShowHelp(true)}
-        showBackButton={false}
+        showBackButton={true}
         title={title}
       />
 
@@ -335,7 +335,7 @@ export default function StepPageTemplate({
                         {completedSteps.has(step.id) && (
                           <MaterialIcons
                             name="check"
-                            size={40}
+                            size={32}
                             color="#1f2937"
                             fontWeight="700"
                             style={styles.checkmark}
@@ -482,13 +482,13 @@ const styles = StyleSheet.create({
   },
   headerContainer: {
     flexDirection: "row",
-    height: 80,
+    height: 60,
     zIndex: 10,
     width: "50%",
   },
   homeIconBox: {
-    width: 80,
-    height: 80,
+    width: 60,
+    height: 60,
     justifyContent: "center",
     alignItems: "center",
   },
@@ -547,13 +547,13 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     backgroundColor: "rgba(156, 163, 175, 0.9)",
-    paddingVertical: 16,
+    paddingVertical: 8,
     paddingHorizontal: 20,
     borderRadius: 8,
     gap: 16,
   },
   stepNumber: {
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: "700",
     color: "#1f2937",
     width: 32,
@@ -573,7 +573,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     zIndex: 10,
-    height: 54,
+    height: 108,
   },
   bottomNav: {
     flexDirection: "row",
@@ -583,12 +583,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   bottomNavButton: {
-    width: 44,
-    height: 44,
+    width: 32,
+    height: 32,
     justifyContent: "center",
     alignItems: "center",
   },
   backButton: {
-    marginLeft: 60, // Space from left edge for forward navigation arrow
+    marginRight: 100, // Space from left edge for forward navigation arrow
   },
 });

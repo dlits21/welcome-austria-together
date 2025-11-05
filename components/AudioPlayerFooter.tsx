@@ -50,9 +50,10 @@ export default function AudioPlayerFooter({
           value={currentTime}
           onValueChange={onSeek}
           onSlidingComplete={onSeekComplete}
-          minimumTrackTintColor="#3b82f6"
+          minimumTrackTintColor="#333"
           maximumTrackTintColor="#e5e7eb"
-          thumbTintColor="#3b82f6"
+          thumbTintColor="#333"
+          thumbSi
           disabled={usingTTS}
         />
       </View>

@@ -37,6 +37,12 @@ export default function AsylumApply() {
       number: 4,
       title: t("steps.decision_title", { defaultValue: "Await decision" }),
       route: "/information/asylum/process/apply/decision"
+    },
+    {
+      id: "summary",
+      number: 5,
+      title: t("steps.summary", { defaultValue: "Summary" }),
+      route: "/information/asylum/process/apply/summary"
     }
   ];
 
