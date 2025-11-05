@@ -13,11 +13,23 @@ import VirtualAssistantModal from '../components/VirtualAssistantModal';
 import TutorialModal from '../components/TutorialModal';
 
 
+interface SlideContent {
+  number: number;
+  text: string;
+}
+
 interface Step {
   id: string;
   number: number;
   title: string;
   route: string;
+  navigationType?: 'route' | 'slides';
+  slideData?: {
+    subtitle: string;
+    imagePath: any;
+    imagePosition?: 'left' | 'right';
+    slideContent: SlideContent[];
+  };
 }
 
 interface Props {
@@ -121,7 +133,28 @@ export default function StepPageTemplate({
 
   const handleStepPress = (step: Step) => {
     setCompletedSteps(prev => new Set(prev).add(step.id));
-    router.push(step.route);
+    
+    if (step.navigationType === 'slides' && step.slideData) {
+      // Navigate to slides view with data passed as route params
+      router.push({
+        pathname: '/slides-information',
+        params: {
+          stepNumber: step.number,
+          title: step.title,
+          subtitle: step.slideData.subtitle,
+          imagePath: step.slideData.imagePath,
+          imagePosition: step.slideData.imagePosition || 'right',
+          slideContent: JSON.stringify(step.slideData.slideContent),
+          helperText: helperText,
+          translationNamespace: translationNamespace,
+          colorPalette: JSON.stringify(colorPalette),
+          badgeText: badgeText
+        }
+      });
+    } else {
+      // Default route navigation
+      router.push(step.route);
+    }
   };
 
   const togglePlayPause = async () => {
