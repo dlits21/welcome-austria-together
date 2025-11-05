@@ -8,6 +8,10 @@ import * as Speech from 'expo-speech';
 import HelpModal from './HelpModal';
 import PageNavigation from './PageNavigation';
 import AudioPlayerFooter from './AudioPlayerFooter';
+import LanguageModal from '../components/LanguageModal';
+import VirtualAssistantModal from '../components/VirtualAssistantModal';
+import TutorialModal from '../components/TutorialModal';
+
 
 interface Step {
   id: string;
@@ -55,6 +59,9 @@ export default function StepPageTemplate({
   const router = useRouter();
   const [completedSteps, setCompletedSteps] = useState<Set<string>>(new Set());
   const [showHelp, setShowHelp] = useState(false);
+  const [showLanguageModal, setShowLanguageModal] = useState(false);
+  const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
+  const [showTutorial, setShowTutorial] = useState(false);
 
   // Audio player state
   const [isPlaying, setIsPlaying] = useState(false);
@@ -260,7 +267,7 @@ export default function StepPageTemplate({
                 <Text style={styles.mobileStepNumber}>{step.number}</Text>
                 <Text style={styles.mobileStepTitle}>{step.title}</Text>
                 {completedSteps.has(step.id) && (
-                  <MaterialIcons name="check" size={24} color="#10B981" />
+                  <MaterialIcons name="check" size={24} color="#1f2937" />
                 )}
               </View>
             </Pressable>
@@ -273,6 +280,15 @@ export default function StepPageTemplate({
   // Web layout matching the image
   return (
     <SafeAreaView style={styles.safe}>
+      {/* Page Navigation */}
+      <PageNavigation
+        showLanguageModal={() => {}}
+        showVirtualAssistant={() => {}}
+        showTutorial={() => setShowHelp(true)}
+        showBackButton={false}
+        title={title}
+      />
+
       <View style={styles.outerContainer}>
         {/* Main content wrapper with white background */}
         <View style={styles.contentWrapper}>
@@ -320,7 +336,8 @@ export default function StepPageTemplate({
                           <MaterialIcons
                             name="check"
                             size={32}
-                            color="#10B981"
+                            color="#1f2937"
+                            fontWeight="700"
                             style={styles.checkmark}
                           />
                         )}
@@ -350,15 +367,6 @@ export default function StepPageTemplate({
               </View>
             </View>
           </View>
-
-          {/* Page Navigation */}
-          <PageNavigation 
-            showLanguageModal={() => {}}
-            showVirtualAssistant={() => {}}
-            showTutorial={() => setShowHelp(true)}
-            showBackButton={false}
-            title={title}
-          />
         </View>
 
         {/* Audio player spanning full width - outside content wrapper */}
@@ -381,6 +389,22 @@ export default function StepPageTemplate({
         onClose={() => setShowHelp(false)}
         content={tutorialContent || t('tutorial', { defaultValue: 'Tutorial content' })}
       />
+
+      <LanguageModal
+        visible={showLanguageModal}
+        onClose={() => setShowLanguageModal(false)}
+      />
+
+      <VirtualAssistantModal
+        visible={showVirtualAssistant}
+        onClose={() => setShowVirtualAssistant(false)}
+      />
+
+      <TutorialModal
+        visible={showTutorial}
+        onClose={() => setShowTutorial(false)}
+        tutorialData="ask"
+      />
     </SafeAreaView>
   );
 }
@@ -390,6 +414,11 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff"
   },
+  pageNavigation: {
+    flex: 1,
+    alignItems: "center",
+    width: "95%",
+  },
   outerContainer: {
     flex: 1,
     backgroundColor: "#fff",
@@ -397,6 +426,7 @@ const styles = StyleSheet.create({
   contentWrapper: {
     flex: 1,
     backgroundColor: "#fff",
+    alignItems: 'center'
   },
 
   // Mobile styles
@@ -438,6 +468,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     position: "relative",
+    width: "95%",
+    alignItems: "left"
   },
   backgroundImage: {
     position: "absolute",
@@ -470,10 +502,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     paddingLeft: 24,
-    clipPath: "polygon(0 0, 100% 0, 95% 100%, 0% 100%)",
+    clipPath: "polygon(0 0, 90% 0, 85% 100%, 0% 100%)",
   },
   headerTitle: {
-    fontSize: 32,
+    fontSize: 28,
     fontWeight: "700",
     color: "#fff",
     letterSpacing: 1,
