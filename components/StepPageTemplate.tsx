@@ -335,7 +335,7 @@ export default function StepPageTemplate({
                         {completedSteps.has(step.id) && (
                           <MaterialIcons
                             name="check"
-                            size={32}
+                            size={40}
                             color="#1f2937"
                             fontWeight="700"
                             style={styles.checkmark}
@@ -514,6 +514,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     zIndex: 5,
+    marginBottom: 60, // Space for bottom navigation bar
   },
   leftPanel: {
     width: "50%",
@@ -572,6 +573,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     zIndex: 10,
+    height: 54,
   },
   bottomNav: {
     flexDirection: "row",
