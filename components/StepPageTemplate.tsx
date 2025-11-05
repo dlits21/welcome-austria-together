@@ -5,9 +5,9 @@ import { useRouter } from "expo-router";
 import { MaterialIcons } from '@expo/vector-icons';
 import { useAudioPlayer } from 'expo-audio';
 import * as Speech from 'expo-speech';
-import Slider from '@react-native-community/slider';
 import HelpModal from './HelpModal';
 import PageNavigation from './PageNavigation';
+import AudioPlayerFooter from './AudioPlayerFooter';
 
 interface Step {
   id: string;
@@ -362,46 +362,18 @@ export default function StepPageTemplate({
         </View>
 
         {/* Audio player spanning full width - outside content wrapper */}
-        <View style={styles.audioPlayer}>
-          <Pressable onPress={togglePlayPause} style={styles.audioButton}>
-            <MaterialIcons
-              name={isPlaying ? "pause" : "play-arrow"}
-              size={28}
-              color="#333"
-            />
-          </Pressable>
-
-          <Pressable onPress={replay} style={styles.audioButton}>
-            <MaterialIcons name="replay" size={24} color="#333" />
-          </Pressable>
-
-          <View style={styles.progressContainer}>
-            <View style={styles.timeDisplay}>
-              <Text style={styles.timeText}>{formatTime(currentTime)}</Text>
-              <Text style={styles.timeText}>{formatTime(duration)}</Text>
-            </View>
-            <Slider
-              style={styles.progressSlider}
-              minimumValue={0}
-              maximumValue={duration || 1}
-              value={currentTime}
-              onValueChange={handleSeek}
-              onSlidingComplete={handleSeekComplete}
-              minimumTrackTintColor="#3b82f6"
-              maximumTrackTintColor="#e5e7eb"
-              thumbTintColor="#3b82f6"
-              disabled={usingTTS}
-            />
-          </View>
-
-          <Pressable onPress={toggleMute} style={styles.audioButton}>
-            <MaterialIcons
-              name={volume === 0 || isMuted ? "volume-off" : "volume-up"}
-              size={24}
-              color="#333"
-            />
-          </Pressable>
-        </View>
+        <AudioPlayerFooter
+          isPlaying={isPlaying}
+          isMuted={isMuted}
+          currentTime={currentTime}
+          duration={duration}
+          usingTTS={usingTTS}
+          onTogglePlayPause={togglePlayPause}
+          onReplay={replay}
+          onToggleMute={toggleMute}
+          onSeek={handleSeek}
+          onSeekComplete={handleSeekComplete}
+        />
       </View>
 
       <HelpModal
@@ -573,55 +545,16 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     backgroundColor: "#1f2937",
     paddingHorizontal: 24,
-    paddingVertical: 16,
+    paddingVertical: 10,
     alignItems: "center",
   },
   bottomNavButton: {
-    width: 48,
-    height: 48,
+    width: 44,
+    height: 44,
     justifyContent: "center",
     alignItems: "center",
   },
   backButton: {
-    marginRight: 80, // Space for forward navigation arrow
-  },
-  audioPlayer: {
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: "#fff",
-    paddingHorizontal: 24,
-    paddingVertical: 12,
-    gap: 16,
-    borderTopWidth: 1,
-    borderTopColor: "#e5e7eb",
-    position: "absolute",
-    bottom: 0,
-    left: 0,
-    right: 0,
-    zIndex: 20,
-  },
-  audioButton: {
-    width: 40,
-    height: 40,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  progressContainer: {
-    flex: 1,
-    gap: 4,
-  },
-  timeDisplay: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    paddingHorizontal: 4,
-  },
-  timeText: {
-    fontSize: 12,
-    color: "#6b7280",
-    fontWeight: "500",
-  },
-  progressSlider: {
-    width: '100%',
-    height: 40,
+    marginLeft: 60, // Space from left edge for forward navigation arrow
   },
 });
