@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { MaterialIcons } from "@expo/vector-icons";
-import SlidesTemplate from "../../../../components/SlidesTemplate";
+import SlidesTemplateOld from "../../../../components/SlidesTemplateOld";
 
 export default function AsylumRights() {
   const { t } = useTranslation("asylumRights");
@@ -30,7 +30,7 @@ export default function AsylumRights() {
   ];
 
   return (
-    <SlidesTemplate
+    <SlidesTemplateOld
       translationNamespace="asylumRights"
       roles={roles}
       videoId={t("videoId", { defaultValue: "GkZ5e6b2u4w" })}

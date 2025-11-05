@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import StepPageTemplate from "../../../../components/StepPageTemplate";
+import SlidesTemplate from "../../../../components/SlidesTemplate";
 
 const getAudioPath = () => {
   try {
@@ -47,7 +47,7 @@ export default function AsylumApply() {
   ];
 
   return (
-    <StepPageTemplate
+    <SlidesTemplate
       translationNamespace="asylum-apply"
       title={t("pageTitle", { defaultValue: "How to Apply for Asylum" })}
       helperText={t("helperText", { defaultValue: "Click the buttons." })}

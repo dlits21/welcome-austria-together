@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import StepPageTemplate from "../../../../../components/StepPageTemplate";
+import SlidesTemplate from "../../../../../components/SlidesTemplate";
 
 export default function HowToRegisterGP() {
   const { t } = useTranslation("doctorGP");
@@ -15,7 +15,7 @@ export default function HowToRegisterGP() {
   const checklist = t("howToRegister.checklist", { returnObjects: true }) as string[];
 
   return (
-    <StepPageTemplate
+    <SlidesTemplate
       translationNamespace="doctorGP"
       steps={steps}
       checklist={checklist}

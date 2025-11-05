@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import SlidesTemplate from "../../../../../components/SlidesTemplate";
+import SlidesTemplateOld from "../../../../../components/SlidesTemplateOld";
 
 export default function WhatGPsDo() {
   const { t } = useTranslation("doctorGP");
@@ -12,7 +12,7 @@ export default function WhatGPsDo() {
   }>;
 
   return (
-    <SlidesTemplate
+    <SlidesTemplateOld
       translationNamespace="doctorGP"
       roles={roles}
       videoId={t("videoId")}

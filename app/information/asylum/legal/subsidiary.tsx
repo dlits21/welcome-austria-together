@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import StepPageTemplate from "../../../../components/StepPageTemplate";
+import SlidesTemplate from "../../../../components/SlidesTemplate";
 
 export default function LegalSubsidiaryPage() {
   const { t } = useTranslation("asylumSubsidiaryStatus");
@@ -39,7 +39,7 @@ export default function LegalSubsidiaryPage() {
   ];
 
   return (
-    <StepPageTemplate
+    <SlidesTemplate
       translationNamespace="asylumSubsidiaryStatus"
       steps={steps}
       videoId={t("videoUrl", { defaultValue: "Q607TYRBxFU" })}

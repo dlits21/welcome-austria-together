@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { MaterialIcons } from "@expo/vector-icons";
-import StepPageTemplate from "../../../../components/StepPageTemplate";
+import SlidesTemplate from "../../../../components/SlidesTemplate";
 
 export default function AsylumAppealsDeadlines() {
   const { t } = useTranslation("asylumAppealsDeadlines");
@@ -27,7 +27,7 @@ export default function AsylumAppealsDeadlines() {
     },
   ];
 
-  return <StepPageTemplate
+  return <SlidesTemplate
     translationNamespace="asylumAppealsDeadlines"
     steps={steps}
     videoId={t("exampleVideoId", { defaultValue: "T7Csf2cO1-0" })}/>;
