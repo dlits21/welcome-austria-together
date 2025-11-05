@@ -323,11 +323,11 @@ export default function StepPageTemplate({
                     <Text style={styles.helperText}>{helperText}</Text>
                   </View>
 
-                  <View style={styles.stepsBox}>
+                  <View style={[styles.stepsBox, steps.length > 5 && styles.stepsBoxTwoColumn]}>
                     {steps.map((step) => (
                       <Pressable
                         key={step.id}
-                        style={styles.stepItem}
+                        style={[styles.stepItem, steps.length > 5 && styles.stepItemTwoColumn]}
                         onPress={() => handleStepPress(step)}
                       >
                         <Text style={styles.stepNumber}>{step.number}</Text>
@@ -543,6 +543,10 @@ const styles = StyleSheet.create({
     gap: 12,
     backdropFilter: "blur(8px)",
   },
+  stepsBoxTwoColumn: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+  },
   stepItem: {
     flexDirection: "row",
     alignItems: "center",
@@ -551,6 +555,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     borderRadius: 8,
     gap: 16,
+  },
+  stepItemTwoColumn: {
+    width: "48%",
   },
   stepNumber: {
     fontSize: 22,
