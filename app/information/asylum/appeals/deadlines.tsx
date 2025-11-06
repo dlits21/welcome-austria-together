@@ -6,7 +6,7 @@ import SlidesTemplate from "../../../../components/SlidesTemplate";
 export default function AsylumAppealsDeadlines() {
   const { t } = useTranslation("asylumAppealsDeadlines");
 
-  const steps = [
+  const slides = [
     {
       number: 1,
       icon: <MaterialIcons name="announcement" size={28} color="#3B82F6" />,
@@ -29,6 +29,6 @@ export default function AsylumAppealsDeadlines() {
 
   return <SlidesTemplate
     translationNamespace="asylumAppealsDeadlines"
-    steps={steps}
+    slides={steps}
     videoId={t("exampleVideoId", { defaultValue: "T7Csf2cO1-0" })}/>;
 }

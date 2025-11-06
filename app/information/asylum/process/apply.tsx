@@ -13,7 +13,7 @@ const getAudioPath = () => {
 export default function AsylumApply() {
   const { t } = useTranslation("asylum-apply");
 
-  const steps = [
+  const slides = [
     {
       id: "register",
       number: 1,
@@ -131,7 +131,7 @@ export default function AsylumApply() {
       translationNamespace="asylum-apply"
       title={t("pageTitle", { defaultValue: "How to Apply for Asylum" })}
       helperText={t("helperText", { defaultValue: "Click the buttons." })}
-      steps={steps}
+      slides={slides}
       imagePath={require("../../../../assets/images/Images/refugee_rights.jpg")}
       homePath="/home"
       audioText={t("audioText", { defaultValue: "Welcome to the asylum application process. Follow these steps to complete your application." })}

@@ -18,7 +18,7 @@ interface SlideContent {
   text: string;
 }
 
-interface Step {
+interface Slide {
   id: string;
   number: number;
   title: string;
@@ -36,7 +36,7 @@ interface Props {
   translationNamespace: string;
   title: string;
   helperText: string;
-  steps: Step[];
+  slides: Slide[];
   imagePath?: any;
   homePath: string;
   audioText: string;
@@ -54,7 +54,7 @@ export default function SlidesTemplate({
   translationNamespace,
   title,
   helperText,
-  steps,
+  slides,
   imagePath,
   homePath,
   audioText,
@@ -290,7 +290,7 @@ export default function SlidesTemplate({
       <SafeAreaView style={styles.safe}>
         <ScrollView contentContainerStyle={styles.mobileContainer}>
           <Text style={styles.mobileTitle}>{title}</Text>
-          {steps.map((step) => (
+          {slides.map((step) => (
             <Pressable
               key={step.id}
               style={styles.mobileStepCard}
@@ -356,11 +356,11 @@ export default function SlidesTemplate({
                     <Text style={styles.helperText}>{helperText}</Text>
                   </View>
 
-                  <View style={[styles.stepsBox, steps.length > 5 && styles.stepsBoxTwoColumn]}>
-                    {steps.map((step) => (
+                  <View style={[styles.stepsBox, slides.length > 5 && styles.stepsBoxTwoColumn]}>
+                    {slides.map((step) => (
                       <Pressable
                         key={step.id}
-                        style={[styles.stepItem, steps.length > 5 && styles.stepItemTwoColumn]}
+                        style={[styles.stepItem, slides.length > 5 && styles.stepItemTwoColumn]}
                         onPress={() => handleStepPress(step)}
                       >
                         <Text style={styles.stepNumber}>{step.number}</Text>
