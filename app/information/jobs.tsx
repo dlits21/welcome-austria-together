@@ -106,7 +106,7 @@ export default function Jobs() {
       tutorialData="jobs"
       emergencyRoute="/ask/emergency"
       primaryHeight={440}
-      height={400}
+      height={460}
     />
   );
 }

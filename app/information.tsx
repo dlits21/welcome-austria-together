@@ -51,36 +51,36 @@ const Information: React.FC = () => {
       color: '#10B981',
       route: '/information/health',
     },
-    {
-      key: 'food',
-      icon: 'restaurant',
-      color: '#F59E0B',
-      route: '/information/food',
-    },
-    {
-      key: 'education',
-      icon: 'school',
-      color: '#8B5CF6',
-      route: '/information/education',
-    },
+//     {
+//       key: 'food',
+//       icon: 'restaurant',
+//       color: '#F59E0B',
+//       route: '/information/food',
+//     },
+//     {
+//       key: 'education',
+//       icon: 'school',
+//       color: '#8B5CF6',
+//       route: '/information/education',
+//     },
     {
       key: 'jobs',
       icon: 'work',
       color: '#EC4899',
       route: '/information/jobs',
     },
-    {
-      key: 'everyday',
-      icon: 'directions-bus',
-      color: '#06B6D4',
-      route: '/information/everyday',
-    },
-    {
-      key: 'contacts',
-      icon: 'call',
-      color: '#84CC16',
-      route: '/information/contacts',
-    },
+//     {
+//       key: 'everyday',
+//       icon: 'directions-bus',
+//       color: '#06B6D4',
+//       route: '/information/everyday',
+//     },
+//     {
+//       key: 'contacts',
+//       icon: 'call',
+//       color: '#84CC16',
+//       route: '/information/contacts',
+//     },
   ];
 
   return (

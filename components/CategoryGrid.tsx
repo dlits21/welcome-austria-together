@@ -67,7 +67,7 @@ const CategoryGrid: React.FC<CategoryGridProps> = ({ onCategoryClick }) => {
         height={cardHeight}
       />
 
-      <CategoryCard
+       {false && <CategoryCard
         title={t('learn_title')}
         subtitle={<Trans i18nKey="learn_subtitle" ns="home" />}
         icon="menu-book"
@@ -75,8 +75,9 @@ const CategoryGrid: React.FC<CategoryGridProps> = ({ onCategoryClick }) => {
         onPress={() => onCategoryClick('learn')}
         onLongPress={() => speak(`${t('learn_title')} ${t('learn_subtitle')}`)}
         height={cardHeight}
-      />
+      />}
 
+      { false &&
       <CategoryCard
         title={t('community_title')}
         subtitle={<Trans i18nKey="community_subtitle" ns="home" />}
@@ -85,7 +86,7 @@ const CategoryGrid: React.FC<CategoryGridProps> = ({ onCategoryClick }) => {
         onPress={() => onCategoryClick('community')}
         onLongPress={() => speak(`${t('community_title')} ${t('community_subtitle')}`)}
         height={cardHeight}
-      />
+      />}
     </View>
   );
 };

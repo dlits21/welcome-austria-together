@@ -111,7 +111,7 @@ export default function AsylumInformation() {
       translationNamespace="asylum"
       tutorialData="asylum"
       emergencyRoute="/ask/legal-support"
-      height={370}
+      height={450}
     />
   );
 }

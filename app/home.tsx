@@ -76,7 +76,7 @@ const Home: React.FC = () => {
           placeholder={t('searchPlaceholder')}
         />
 
-        {/* Category Cards with extra "Guide" tile */}
+        {/* Category Cards */}
         <CategoryGrid
           onCategoryClick={handleCategoryClick}
 
