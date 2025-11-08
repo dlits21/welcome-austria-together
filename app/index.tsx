@@ -1,5 +1,5 @@
 // app/data/index.tsx
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef} from "react";
 import {
   StyleSheet,
   View,
@@ -29,29 +29,46 @@ import {
   GeorgianFlag,
   AlbanianFlag,
 } from "../components/Flags";
+import AudioPlayerFooter from '../components/AudioPlayerFooter';
+import { useAudioPlayer, useAudioPlayerStatus } from 'expo-audio';
 
 // Minimal Language type
 interface Language {
   code: string;
   name: string;
   flag: any;
-  ttsLocale?: string;
 }
+
+
+const audioFiles = {
+  'de': require("../assets/audio/index/welcome_de.mp3"),
+  'en': require("../assets/audio/index/welcome_en.mp3"),
+  'ru': require("../assets/audio/index/welcome_ru.mp3"),
+  'ce': require("../assets/audio/index/welcome_ce.mp3"),
+  'prs': require("../assets/audio/index/welcome_prs.mp3"),
+  'ps': require("../assets/audio/index/welcome_ps.mp3"),
+  'fa': require("../assets/audio/index/welcome_fa.mp3"),
+  'ar': require("../assets/audio/index/welcome_ar.mp3"),
+  'ku': require("../assets/audio/index/welcome_ku.mp3"),
+  'so': require("../assets/audio/index/welcome_so.mp3"),
+  'ka': require("../assets/audio/index/welcome_ka.mp3"),
+  'sq': require("../assets/audio/index/welcome_sq.mp3"),
+};
 
 /** --- LANGUAGES: add/remove as needed --- **/
 const LANGUAGES: Language[] = [
-  { code: "de", name: "Deutsch", flag: GermanFlag, ttsLocale: "de-DE" },
-  { code: "en", name: "English", flag: GBFlag, ttsLocale: "en-US" },
-  { code: "ru", name: "Русский", flag: RussianFlag, ttsLocale: "ru-RU" },
-  { code: "ce", name: "Нохчийн", flag: RussianFlag, ttsLocale: "ru-RU" },
-  { code: "prs", name: "دری", flag: AfghaniFlag, ttsLocale: "fa-AF" },
-  { code: "ps", name: "پښتو", flag: AfghaniFlag, ttsLocale: "ps-AF" },
-  { code: "fa", name: "فارسی", flag: IranianFlag, ttsLocale: "fa-IR" },
-  { code: "ar", name: "العربية", flag: SyrianFlag, ttsLocale: "ar-SA" },
-  { code: "ku", name: "کوردی", flag: SyrianFlag, ttsLocale: "ar-SA" },
-  { code: "so", name: "Soomaali", flag: SomaliFlag, ttsLocale: "so-SO" },
-  { code: "ka", name: "ქართული", flag: GeorgianFlag, ttsLocale: "ka-GE" },
-  { code: "sq", name: "Shqip", flag: AlbanianFlag, ttsLocale: "sq-AL" },
+  { code: "de", name: "Deutsch", flag: GermanFlag},
+  { code: "en", name: "English", flag: GBFlag},
+  { code: "ru", name: "Русский", flag: RussianFlag},
+  { code: "ce", name: "Нохчийн", flag: RussianFlag},
+  { code: "prs", name: "دری", flag: AfghaniFlag},
+  { code: "ps", name: "پښتو", flag: AfghaniFlag},
+  { code: "fa", name: "فارسی", flag: IranianFlag},
+  { code: "ar", name: "العربية", flag: SyrianFlag},
+  { code: "ku", name: "کوردی", flag: SyrianFlag},
+  { code: "so", name: "Soomaali", flag: SomaliFlag},
+  { code: "ka", name: "ქართული", flag: GeorgianFlag},
+  { code: "sq", name: "Shqip", flag: AlbanianFlag},
 ];
 
 export default function LanguageSelectionScreen() {
@@ -60,8 +77,12 @@ export default function LanguageSelectionScreen() {
   const { t } = useTranslation(); // default app language translations
   const { width } = useWindowDimensions();
 
+  // Audio player state
+  const player = useAudioPlayer(audioFiles['en']);
+  const status = useAudioPlayerStatus(player);
+
   // Ensure German default; if context already has a language, respect it
-  const defaultLangCode = "de";
+  const defaultLangCode = "en";
   const initialSelectedCode = currentLanguage || defaultLangCode;
   const initialSelected = LANGUAGES.find((l) => l.code === initialSelectedCode) || LANGUAGES[0];
 
@@ -97,31 +118,17 @@ export default function LanguageSelectionScreen() {
   const tSelected = (langCode?: string) =>
     langCode ? i18n.getFixedT(langCode, "index") : i18n.getFixedT(i18n.language, "index");
 
-  // Speak short confirmation / announcement in selected language
-  const speakSelection = (lang: Language) => {
-    const msg =
-      tSelected(lang.code)("confirmShort") ||
-      fallbackConfirmText(lang.code, lang.name);
-    const options: Speech.SpeechOptions = {
-      language: lang.ttsLocale ?? mapCodeToLocale(lang.code),
-      pitch: 1,
-      rate: 1,
-    };
-    try {
-      Speech.stop();
-      Speech.speak(msg, options);
-    } catch (e) {
-      console.warn("TTS failed:", e);
-    }
-  };
-
   // Selecting tile => immediately switch app language
   const onSelectLanguage = (lang: Language) => {
     setSelected(lang);
     // persist via context + change i18n immediately
     setSelectedLanguage(lang.code);
     i18n.changeLanguage(lang.code).catch(() => {});
-    speakSelection(lang);
+    player.pause();
+    const old_volume = player.volume;
+    player.replace(audioFiles[lang.code]);
+    player.volume = old_volume;
+    player.play();
   };
 
   const onContinue = () => {
@@ -216,7 +223,8 @@ export default function LanguageSelectionScreen() {
         </ScrollView>
 
         {/* Footer with Emergency / Continue */}
-        <View style={styles.footer}>
+        <View>
+          <View style={styles.footerConfirm}>
           <TouchableOpacity
             onPress={onEmergency}
             style={[styles.footerBtn, styles.cancelFooterBtn]}
@@ -239,15 +247,18 @@ export default function LanguageSelectionScreen() {
           >
             <Text style={styles.confirmFooterText}>{confirmLabel}</Text>
           </TouchableOpacity>
+          </View>
+
+          {/* Audio player spanning full width - outside content wrapper */}
+          <AudioPlayerFooter
+            player={player}
+            status={status}
+            usingTTS={false}
+          />
         </View>
       </View>
     </SafeAreaView>
   );
-}
-
-/** Helpers **/
-function fallbackConfirmText(code: string, nativeName: string) {
-  return `Do you understand ${nativeName}? This app will switch to ${nativeName}.`;
 }
 
 function mapCodeToLocale(code?: string) {
@@ -315,18 +326,19 @@ const styles = StyleSheet.create({
   flagImage: { width: 72, height: 72, resizeMode: "contain" },
   langName: { fontSize: 18, fontWeight: "600", color: "#111" },
 
-  footer: {
+  footerConfirm: {
     position: "absolute",
     left: 0,
     right: 0,
     bottom: 0,
-    height: 92,
+    marginBottom:50,
+    height: 70,
     flexDirection: "row",
     paddingHorizontal: 16,
-    paddingVertical: 12,
+    paddingVertical: 8,
     backgroundColor: "#fff",
-    borderTopWidth: 1,
-    borderColor: "#eee",
+    borderTopWidth: 0,
+    borderTopColor: "#e5e7eb",
     justifyContent: "space-between",
     alignItems: "center",
   },

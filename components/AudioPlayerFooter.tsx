@@ -1,44 +1,78 @@
-import React from 'react';
+import React, { useState, useEffect} from "react";
 import { View, Pressable, StyleSheet } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import Slider from '@react-native-community/slider';
 
+// https://ttsmaker.com
+// https://www.kurdishtts.com
+
 interface AudioPlayerFooterProps {
-  isPlaying: boolean;
-  isMuted: boolean;
-  currentTime: number;
-  duration: number;
-  usingTTS: boolean;
-  onTogglePlayPause: () => void;
-  onReplay: () => void;
-  onToggleMute: () => void;
-  onSeek: (value: number) => void;
-  onSeekComplete: (value: number) => void;
+  player: any;
+  status: any;
 }
 
 export default function AudioPlayerFooter({
-  isPlaying,
-  isMuted,
-  currentTime,
-  duration,
-  usingTTS,
-  onTogglePlayPause,
-  onReplay,
-  onToggleMute,
-  onSeek,
-  onSeekComplete,
+  player,
+  status,
 }: AudioPlayerFooterProps) {
+
+  const [isSeeking, setIsSeeking] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
+
+  // Apply volume changes immediately
+  useEffect(() => {
+    player.volume = isMuted ? 0 : 1;
+  }, [isMuted, player]);
+
+  const togglePlayPause = async () => {
+    try {
+      // Using audio file
+      if (status.playing) {
+        player.pause();
+      } else {
+        player.play();
+      }
+    } catch (error) {
+      console.error('Error toggling audio:', error);
+    }
+  };
+
+  const toggleMute = () => {
+    const newMuted = !isMuted;
+    setIsMuted(newMuted);
+    player.volume = newMuted ? 1. : 0.;
+  };
+
+  const replay = () => {
+    player.seekTo(0);
+    player.play();
+  };
+
+  const handleSeek = (value: number) => {
+    setIsSeeking(true);
+  };
+
+  const handleSeekComplete = (value: number) => {
+    player.seekTo(value);
+    setIsSeeking(false);
+
+    // If we were playing before seeking, continue playing
+    if (status.playing) {
+      player.play();
+    }
+  };
+
   return (
     <View style={styles.audioPlayer}>
-      <Pressable onPress={onTogglePlayPause} style={styles.audioButton}>
+      <Pressable onPress={togglePlayPause} style={styles.audioButton}>
         <MaterialIcons
-          name={isPlaying ? "pause" : "play-arrow"}
+          name={status.playing ? "pause" : "play-arrow"}
           size={28}
           color="#333"
         />
       </Pressable>
 
-      <Pressable onPress={onReplay} style={styles.audioButton}>
+      <Pressable onPress={replay} style={styles.audioButton}>
         <MaterialIcons name="replay" size={24} color="#333" />
       </Pressable>
 
@@ -46,19 +80,17 @@ export default function AudioPlayerFooter({
         <Slider
           style={styles.progressSlider}
           minimumValue={0}
-          maximumValue={duration || 1}
-          value={currentTime}
-          onValueChange={onSeek}
-          onSlidingComplete={onSeekComplete}
+          maximumValue={status.duration - 1 || 1}
+          value={status.currentTime}
+          onValueChange={handleSeek}
+          onSlidingComplete={handleSeekComplete}
           minimumTrackTintColor="#333"
           maximumTrackTintColor="#e5e7eb"
           thumbTintColor="#333"
-          thumbSi
-          disabled={usingTTS}
         />
       </View>
 
-      <Pressable onPress={onToggleMute} style={styles.audioButton}>
+      <Pressable onPress={toggleMute} style={styles.audioButton}>
         <MaterialIcons
           name={isMuted ? "volume-off" : "volume-up"}
           size={24}
@@ -75,9 +107,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#fff",
     paddingHorizontal: 24,
-    paddingVertical: 8,
+    paddingVertical: 20,
     gap: 16,
-    borderTopWidth: 1,
+    borderTopWidth: 0,
     borderTopColor: "#e5e7eb",
     position: "absolute",
     bottom: 0,
@@ -86,8 +118,8 @@ const styles = StyleSheet.create({
     zIndex: 20,
   },
   audioButton: {
-    width: 40,
-    height: 40,
+    width: 20,
+    height: 20,
     justifyContent: "center",
     alignItems: "center",
   },
@@ -96,6 +128,6 @@ const styles = StyleSheet.create({
   },
   progressSlider: {
     width: '100%',
-    height: 40,
+    height: 20,
   },
 });

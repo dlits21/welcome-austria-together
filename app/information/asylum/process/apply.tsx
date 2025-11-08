@@ -2,12 +2,19 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import SlidesTemplate from "../../../../components/SlidesTemplate";
 
-const getAudioPath = () => {
-  try {
-    return require("../../../../assets/audio/asylum-apply.mp3");
-  } catch {
-    return undefined;
-  }
+const audioFiles = {
+  'de':  require("../../../../assets/audio/index/welcome_de.mp3"),
+  'en':  require("../../../../assets/audio/index/welcome_en.mp3"),
+  'ru':  require("../../../../assets/audio/index/welcome_ru.mp3"),
+  'ce':  require("../../../../assets/audio/index/welcome_ce.mp3"),
+  'prs': require("../../../../assets/audio/index/welcome_prs.mp3"),
+  'ps':  require("../../../../assets/audio/index/welcome_ps.mp3"),
+  'fa':  require("../../../../assets/audio/index/welcome_fa.mp3"),
+  'ar':  require("../../../../assets/audio/index/welcome_ar.mp3"),
+  'ku':  require("../../../../assets/audio/index/welcome_ku.mp3"),
+  'so':  require("../../../../assets/audio/index/welcome_so.mp3"),
+  'ka':  require("../../../../assets/audio/index/welcome_ka.mp3"),
+  'sq':  require("../../../../assets/audio/index/welcome_sq.mp3"),
 };
 
 export default function AsylumApply() {
@@ -135,7 +142,7 @@ export default function AsylumApply() {
       imagePath={require("../../../../assets/images/Images/refugee_rights.jpg")}
       homePath="/home"
       audioText={t("audioText", { defaultValue: "Welcome to the asylum application process. Follow these steps to complete your application." })}
-      audioSource={getAudioPath()}
+      audioSources={audioFiles}
       tutorialContent={t("tutorialContent", { defaultValue: "This guide will walk you through each step of the asylum application process. Click on each step to learn more." })}
       badgeText={t("badgeText", { defaultValue: "A1" })}
       colorPalette={{

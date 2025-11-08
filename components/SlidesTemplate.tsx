@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, SafeAreaView, ScrollView, Pressable, Platform, 
 import { useTranslation } from "react-i18next";
 import { useRouter } from "expo-router";
 import { MaterialIcons } from '@expo/vector-icons';
-import { useAudioPlayer } from 'expo-audio';
+import { useAudioPlayer, useAudioPlayerStatus } from 'expo-audio';
 import * as Speech from 'expo-speech';
 import HelpModal from './HelpModal';
 import PageNavigation from './PageNavigation';
@@ -12,6 +12,20 @@ import LanguageModal from '../components/LanguageModal';
 import VirtualAssistantModal from '../components/VirtualAssistantModal';
 import TutorialModal from '../components/TutorialModal';
 
+const audioFiles = {
+  'de':  require("../assets/audio/index/welcome_de.mp3"),
+  'en':  require("../assets/audio/index/welcome_en.mp3"),
+  'ru':  require("../assets/audio/index/welcome_ru.mp3"),
+  'ce':  require("../assets/audio/index/welcome_ce.mp3"),
+  'prs': require("../assets/audio/index/welcome_prs.mp3"),
+  'ps':  require("../assets/audio/index/welcome_ps.mp3"),
+  'fa':  require("../assets/audio/index/welcome_fa.mp3"),
+  'ar':  require("../assets/audio/index/welcome_ar.mp3"),
+  'ku':  require("../assets/audio/index/welcome_ku.mp3"),
+  'so':  require("../assets/audio/index/welcome_so.mp3"),
+  'ka':  require("../assets/audio/index/welcome_ka.mp3"),
+  'sq':  require("../assets/audio/index/welcome_sq.mp3"),
+};
 
 interface SlideContent {
   number: number;
@@ -40,7 +54,7 @@ interface Props {
   imagePath?: any;
   homePath: string;
   audioText: string;
-  audioSource?: any;
+  audioSources?: any;
   tutorialContent?: string;
   colorPalette?: {
     primary: string;
@@ -58,7 +72,7 @@ export default function SlidesTemplate({
   imagePath,
   homePath,
   audioText,
-  audioSource,
+  audioSources,
   tutorialContent,
   colorPalette = {
     primary: '#7c3aed',
@@ -76,60 +90,10 @@ export default function SlidesTemplate({
   const [showTutorial, setShowTutorial] = useState(false);
 
   // Audio player state
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
-  const [usingTTS, setUsingTTS] = useState(false);
-  const [isSeeking, setIsSeeking] = useState(false);
-  const player = useAudioPlayer(audioSource);
-  const progressInterval = useRef<NodeJS.Timeout | null>(null);
+  const player = useAudioPlayer(audioSources[i18n.language]);
+  const status = useAudioPlayerStatus(player);
 
   const isWeb = Platform.OS === 'web';
-
-  // Update audio player progress
-  useEffect(() => {
-    if (!audioSource) return;
-    const updateProgress = () => {
-      if (player.playing && !isSeeking) {
-        setCurrentTime(player.currentTime || 0);
-        setDuration(player.duration || 0);
-        setIsPlaying(true);
-      } else if (isPlaying && player.currentTime === 0 && !isSeeking) {
-        // Audio finished playing
-        setIsPlaying(false);
-        setCurrentTime(0);
-      }
-    };
-
-    // Clear existing interval
-    if (progressInterval.current) {
-      clearInterval(progressInterval.current);
-    }
-
-    // Set up new interval
-    progressInterval.current = setInterval(updateProgress, 100);
-
-    return () => {
-      if (progressInterval.current) {
-        clearInterval(progressInterval.current);
-      }
-    };
-  }, [player, audioSource, isPlaying, isSeeking]);
-
-  // Initialize duration when audio source loads
-  useEffect(() => {
-    if (audioSource && player) {
-      setDuration(player.duration || 0);
-    }
-  }, [audioSource, player]);
-
-  // Apply volume changes immediately
-  useEffect(() => {
-    if (audioSource && player) {
-      player.volume = isMuted ? 0 : 1;
-    }
-  }, [isMuted, audioSource, player]);
 
   const handleStepPress = (step: Step) => {
     setCompletedSteps(prev => new Set(prev).add(step.id));
@@ -155,126 +119,6 @@ export default function SlidesTemplate({
       // Default route navigation
       router.push(step.route);
     }
-  };
-
-  const togglePlayPause = async () => {
-    try {
-      if (!audioSource) {
-        // Using TTS
-        setUsingTTS(true);
-        if (isPlaying) {
-          Speech.stop();
-          setIsPlaying(false);
-        } else {
-          Speech.speak(audioText, {
-            volume: isMuted ? 0 : 1,
-            onDone: () => {
-              setIsPlaying(false);
-              setCurrentTime(0);
-            },
-            onStopped: () => {
-              setIsPlaying(false);
-            }
-          });
-          setIsPlaying(true);
-          // Simulate duration for TTS (estimate based on word count)
-          const wordCount = audioText.split(' ').length;
-          setDuration(wordCount * 0.5); // Rough estimate: 0.5 seconds per word
-
-          // Simulate progress for TTS
-          let simulatedTime = 0;
-          const ttsInterval = setInterval(() => {
-            if (isPlaying) {
-              simulatedTime += 0.1;
-              setCurrentTime(simulatedTime);
-              if (simulatedTime >= wordCount * 0.5) {
-                clearInterval(ttsInterval);
-                setIsPlaying(false);
-                setCurrentTime(0);
-              }
-            } else {
-              clearInterval(ttsInterval);
-            }
-          }, 100);
-        }
-      } else {
-        // Using audio file
-        setUsingTTS(false);
-        if (player.playing) {
-          player.pause();
-          setIsPlaying(false);
-        } else {
-          player.play();
-          setIsPlaying(true);
-        }
-      }
-    } catch (error) {
-      console.error('Error toggling audio:', error);
-    }
-  };
-
-  const toggleMute = () => {
-    const newMuted = !isMuted;
-    setIsMuted(newMuted);
-
-    if (audioSource && player) {
-      player.volume = newMuted ? 0 : 1;
-    } else if (usingTTS && isPlaying) {
-      // For TTS, we need to stop and restart with new volume
-      Speech.stop();
-      setIsPlaying(false);
-      // Restart with new volume after a brief delay
-      setTimeout(() => {
-        Speech.speak(audioText, {
-          volume: newMuted ? 0 : 1,
-          onDone: () => {
-            setIsPlaying(false);
-            setCurrentTime(0);
-          },
-          onStopped: () => {
-            setIsPlaying(false);
-          }
-        });
-        setIsPlaying(true);
-      }, 100);
-    }
-  };
-
-  const replay = () => {
-    if (audioSource && player) {
-      player.seekTo(0);
-      setCurrentTime(0);
-      player.play();
-      setIsPlaying(true);
-    } else {
-      // Restart TTS
-      Speech.stop();
-      setCurrentTime(0);
-      setIsPlaying(false);
-      setTimeout(() => togglePlayPause(), 100);
-    }
-  };
-
-  const handleSeek = (value: number) => {
-    if (audioSource && player) {
-      setIsSeeking(true);
-      setCurrentTime(value);
-    }
-    // Note: TTS doesn't support seeking, so we don't handle that case
-  };
-
-  const handleSeekComplete = (value: number) => {
-    if (audioSource && player) {
-      player.seekTo(value);
-      setCurrentTime(value);
-      setIsSeeking(false);
-
-      // If we were playing before seeking, continue playing
-      if (isPlaying) {
-        player.play();
-      }
-    }
-    // Note: TTS doesn't support seeking, so we don't handle that case
   };
 
   const formatTime = (seconds: number) => {
@@ -315,9 +159,9 @@ export default function SlidesTemplate({
     <SafeAreaView style={styles.safe}>
       {/* Page Navigation */}
       <PageNavigation
-        showLanguageModal={() => {}}
-        showVirtualAssistant={() => {}}
-        showTutorial={() => setShowHelp(true)}
+        showLanguageModal={() => setShowLanguageModal(true)}
+        showVirtualAssistant={() => setShowVirtualAssistant(true)}
+        showTutorial={() => setShowTutorial(true)}
         showBackButton={true}
         title={title}
       />
@@ -403,16 +247,8 @@ export default function SlidesTemplate({
 
         {/* Audio player spanning full width - outside content wrapper */}
         <AudioPlayerFooter
-          isPlaying={isPlaying}
-          isMuted={isMuted}
-          currentTime={currentTime}
-          duration={duration}
-          usingTTS={usingTTS}
-          onTogglePlayPause={togglePlayPause}
-          onReplay={replay}
-          onToggleMute={toggleMute}
-          onSeek={handleSeek}
-          onSeekComplete={handleSeekComplete}
+          player={player}
+          status={status}
         />
       </View>
 
