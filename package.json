@@ -10,7 +10,9 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "test": "jest --watchAll",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "dev": "npm run web",
+    "build": "expo build -p web"
   },
   "jest": {
     "preset": "jest-expo"
@@ -31,6 +33,7 @@
     "eas-cli": "^16.14.0",
     "expo": "53.0.22",
     "expo-asset": "~11.1.7",
+    "expo-audio": "^1.0.15",
     "expo-blur": "~14.1.5",
     "expo-constants": "~17.1.7",
     "expo-dev-client": "~5.2.4",
