@@ -1,8 +1,0 @@
-{
-  "appName": "Willkompass Österreich",
-  "actions": { "back": "Zurück", "next": "Weiter", "save": "Speichern" },
-  "lang": { "en": "English", "de": "Deutsch", "ar": "Arabisch", "fa": "Farsi" },
-  "choose_language": "Sprache auswählen",
-  "language_selected": "Sprache ausgewählt selected",
-  "close": "Close"
-}
