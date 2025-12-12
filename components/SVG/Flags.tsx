@@ -6,8 +6,7 @@ const GermanFlag = (props: SvgProps) => (
   <Svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 640 480"
-      width={"100%"}
-      height={"100%"}
+      {...props}
     >
 
     <Path fill="#fc0" d="M0 320h640v160H0z"/>
@@ -21,9 +20,8 @@ const AlbanianFlag = (props: SvgProps, ref: Ref<SVGSVGElement>) => (
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 640 480"
-    width={"100%"}
-    height={"100%"}
     ref={ref}
+    {...props}
   >
     <Path fill="red" d="M0 0h640v480H0z" />
     <Path
@@ -33,9 +31,8 @@ const AlbanianFlag = (props: SvgProps, ref: Ref<SVGSVGElement>) => (
     />
     <Use
       xlinkHref="#a"
-      width="100%"
-      height="100%"
       transform="matrix(-1 0 0 1 640 0)"
+      {...props}
     />
   </Svg>
 )
@@ -45,8 +42,7 @@ const AfghaniFlag = (props: SvgProps) => (
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 640 480"
-    width={"100%"}
-    height={"100%"}
+    {...props}
   >
 
     <G fillRule="evenodd" strokeWidth="1pt">
@@ -151,8 +147,7 @@ const AfghaniFlag = (props: SvgProps) => (
       </G>
       <Use
         xlinkHref="#a"
-        width="100%"
-        height="100%"
+        {...props}
         x={-600}
         transform="scale(-1 1)"
       />
@@ -189,8 +184,7 @@ const GBFlag = (props: SvgProps) => (
 
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 640 480"
-    width={"100%"}
-    height={"100%"}
+    {...props}
   >
 
     <Path fill="#012169" d="M0 0h640v480H0z" />
@@ -212,8 +206,7 @@ const GeorgianFlag = (props: SvgProps) => (
 
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 640 480"
-    width={"100%"}
-    height={"100%"}
+    {...props}
   >
     <Path fill="#fff" d="M0 0h640v480H0z" />
     <Path fill="red" d="M272 0h96v480h-96z" />
@@ -231,8 +224,7 @@ const IranianFlag = (props: SvgProps) => (
 
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 640 480"
-    width={"100%"}
-    height={"100%"}
+    {...props}
   >
     <Defs>
       <ClipPath id="a">
@@ -471,8 +463,7 @@ const RussianFlag = (props: SvgProps) => (
 
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 640 480"
-    width={"100%"}
-    height={"100%"}
+    {...props}
   >
     <Path fill="#fff" d="M0 0h640v160H0z" />
     <Path fill="#0039a6" d="M0 160h640v160H0z" />
@@ -484,8 +475,7 @@ const SomaliFlag = (props: SvgProps) => (
   <Svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 640 480"
-    width={"100%"}
-    height={"100%"}
+    {...props}
   >
     <Defs>
       <ClipPath id="a">
@@ -509,12 +499,10 @@ const SomaliFlag = (props: SvgProps) => (
 
 const SyrianFlag = (props: SvgProps) => (
   <Svg
-
     xmlns="http://www.w3.org/2000/svg"
     xmlSpace="preserve"
     viewBox="0 0 640 480"
-    width={"100%"}
-    height={"100%"}
+    {...props}
   >
     <Path d="M0 0h640v480H0Z" />
     <Path fill="#fff" d="M0 0h640v320H0Z" />
@@ -526,4 +514,44 @@ const SyrianFlag = (props: SvgProps) => (
   </Svg>
 )
 
-export { GermanFlag, AlbanianFlag, AfghaniFlag, GBFlag, GeorgianFlag, IranianFlag, RussianFlag, SomaliFlag,SyrianFlag }
+const KurdishFlag = (props) => (
+  <Svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 900 600"
+      {...props}
+    >
+    <Path fill="#fff" d="M0 0h900v600H0z" />
+    <Path fill="#ed2024" d="M0 0h900v200H0z" />
+    <Path fill="#278e43" d="M0 400h900v200H0z" />
+    <Path
+      fill="#febd11"
+      d="m450 150 11.24 76.264 33.222-69.563-11.738 76.19 52.249-56.68-33.674 69.344 66.634-38.761-52.616 56.338 75.098-17.399-66.885 38.327 76.89 5.51-75.21 16.909 71.85 27.929-76.852-6.011 60.425 47.867-71.666-28.397 43.632 63.55-60.113-48.259 22.962 73.589-43.217-63.834.25 77.087L450 376.264 427.518 450l.251-77.087-43.217 63.834 22.962-73.589-60.113 48.26 43.632-63.551-71.666 28.397 60.425-47.867-76.852 6.011 71.85-27.93-75.21-16.908 76.89-5.51-66.885-38.327 75.098 17.399-52.616-56.338 66.634 38.76-33.674-69.343 52.249 56.68-11.738-76.19 33.221 69.563z"
+    />
+  </Svg>
+)
+
+const ChechenFlag = (props) => (
+   <Svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 400 300"
+      {...props}
+    >
+    <Path fill="#fff" d="M0 0h450v300H0" />
+    <Path fill="#d21" d="M42 204.2h409v96H42" />
+    <Path fill="#273" d="M42 0h409v177.2H42" />
+    <Path
+      id="a"
+      fill="none"
+      stroke="#fc0"
+      strokeLinecap="round"
+      strokeWidth={3.994}
+      d="M21.096 159.392c-3.6.903-5.6 5.418-3 9.331 2.9 4.516 9.6 4.215 13-.501 3.4-4.716 1.7-11.239-2.6-15.252-5.3-4.917-14.2-4.014-18.4 2.91-5.2 8.73-1 18.262 4.8 24.984l10.7 10.536c5.8 6.723 10.1 16.255 4.8 24.985-4.1 6.923-13 7.927-18.2 3.11-4.4-4.114-6.1-10.535-2.7-15.251 3.4-4.716 10.1-5.017 13-.502 2.5 3.913.6 8.428-3 9.332"
+    />
+    <Use xlinkHref="#a" transform="translate(0 72.548)" />
+    <Use xlinkHref="#a" transform="translate(0 -72.356)" />
+    <Use xlinkHref="#a" transform="translate(0 -144.904)" />
+  </Svg>
+)
+
+export { GermanFlag, AlbanianFlag, AfghaniFlag, GBFlag, GeorgianFlag, IranianFlag, RussianFlag, SomaliFlag, SyrianFlag,
+    KurdishFlag, ChechenFlag }

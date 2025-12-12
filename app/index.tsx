@@ -28,9 +28,12 @@ import {
   SomaliFlag,
   GeorgianFlag,
   AlbanianFlag,
+  KurdishFlag,
+  ChechenFlag
 } from "../components/SVG/Flags";
 import { VoiceSelection } from "../components/SVG/Icons";
 import AudioPlayerFooter from '../components/AudioPlayerFooter';
+import { CircleBorder } from '../components/CircleIcon';
 import { useAudioPlayer, useAudioPlayerStatus } from 'expo-audio';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Divider } from 'react-native-paper';
@@ -63,35 +66,16 @@ const LANGUAGES: Language[] = [
   { code: "de", name: "Deutsch", flag: GermanFlag},
   { code: "en", name: "English", flag: GBFlag},
   { code: "ru", name: "Русский", flag: RussianFlag},
-  { code: "ce", name: "Нохчийн", flag: RussianFlag},
+  { code: "ce", name: "Нохчийн", flag: ChechenFlag},
   { code: "prs", name: "دری", flag: AfghaniFlag},
   { code: "ps", name: "پښتو", flag: AfghaniFlag},
   { code: "fa", name: "فارسی", flag: IranianFlag},
   { code: "ar", name: "العربية", flag: SyrianFlag},
-  { code: "ku", name: "کوردی", flag: SyrianFlag},
+  { code: "ku", name: "کوردی", flag: KurdishFlag},
   { code: "so", name: "Soomaali", flag: SomaliFlag},
   { code: "ka", name: "ქართული", flag: GeorgianFlag},
   { code: "sq", name: "Shqip", flag: AlbanianFlag},
 ];
-
-const CircleBorder = ({ size, borderWidth, borderColor, children }) => (
-  <View
-    style={{
-      width: size,
-      height: size,
-      borderRadius: 0.5 * size,
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#ececec',
-      gap: 10,
-      padding: 8,
-      borderColor,
-      borderWidth,
-    }}>
-    {children}
-  </View>
-);
 
 export default function LanguageSelectionScreen() {
   const router = useRouter();
@@ -124,8 +108,8 @@ export default function LanguageSelectionScreen() {
   }, []);
 
   const isWeb  = Platform.OS == 'web'
-  const iconSize = isWeb ? 44 : 24
-  const iconContainerSize = isWeb ? 70 : 50
+  const iconSize = isWeb ? 36 : 24
+  const iconContainerSize = isWeb ? 60 : 50
   const iconContainerRadius = iconContainerSize * .5
 
   const isRTL = I18nManager.isRTL;
@@ -151,12 +135,8 @@ export default function LanguageSelectionScreen() {
 
   // switch to home page
   const onContinue = () => {
+    player.pause()
     router.push("/home");
-  };
-
-  // switch to emergency services
-  const onEmergency = () => {
-    router.push("/emergency");
   };
 
   // Welcome text renders using current i18n language (which is set to selected on selection)
@@ -212,8 +192,6 @@ export default function LanguageSelectionScreen() {
             </View>
         </View>
 
-
-
         {/* Language grid */}
         {isWeb &&
         (<ScrollView contentContainerStyle={[styles.grid, { paddingBottom: 120 }]} keyboardShouldPersistTaps="handled">
@@ -238,38 +216,38 @@ export default function LanguageSelectionScreen() {
                     },
                   ]}
                 >
-                  <View style={styles.flagWrap} accessible accessibilityLabel={`${lang.name} flag`}>
-                    {typeof lang.flag === "function" ? (
-                      // @ts-ignore render component flags
-                      <lang.flag width={64} height={64} />
-                    ) : (
-                      <Image source={lang.flag} style={styles.flagImage} />
-                    )}
-                  </View>
+                  <View style={styles.tileContainer}>
+                  <CircleBorder
+                    size={80}
+                    borderWidth={2}
+                    borderColor={'#fff'}
+                  >
+                    <lang.flag width={200} height={200} />
+                  </CircleBorder>
 
                   <Text style={styles.langName} numberOfLines={1}>
                     {lang.name}
                   </Text>
+                  </View>
                 </TouchableOpacity>
               );
             })}
-            <View style={styles.footerConfirm}>
-            <TouchableOpacity
-              onPress={onContinue}
-              disabled={!selected}
-              style={[
-                styles.footerBtn,
-                styles.confirmFooterBtn,
-                !selected && styles.footerBtnDisabled,
-              ]}
-              accessibilityRole="button"
-              accessibilityLabel={confirmLabel}
-            >
-              <Text style={styles.confirmFooterText}>{confirmLabel}</Text>
-            </TouchableOpacity>
-            </View>
-
           </View>
+          <View style={styles.footerConfirm}>
+           <TouchableOpacity
+             onPress={onContinue}
+             disabled={!selected}
+             style={[
+               styles.footerBtn,
+               styles.confirmFooterBtn,
+               !selected && styles.footerBtnDisabled,
+             ]}
+             accessibilityRole="button"
+             accessibilityLabel={confirmLabel}
+           >
+             <Text style={styles.confirmFooterText}>{confirmLabel}</Text>
+           </TouchableOpacity>
+         </View>
         </ScrollView>)
         }
 
@@ -286,7 +264,7 @@ export default function LanguageSelectionScreen() {
                   accessibilityLabel={tSelected(lang.code)("index:switchTo", { nativeName: lang.name })}
                   // use flexBasis and maxWidth percent — prevents leftover gap on wide screens
                   style={[
-                    styles.tile,
+                    styles.tileMobile,
                     {
                       flexBasis: "100%",
                       maxWidth: "100%",
@@ -296,15 +274,14 @@ export default function LanguageSelectionScreen() {
                     },
                   ]}
                 >
-                 <View style={styles.mobileTileContainer}>
-                    <View style={styles.flagWrap} accessible accessibilityLabel={`${lang.name} flag`}>
-                      {typeof lang.flag === "function" ? (
-                        // @ts-ignore render component flags
-                        <lang.flag width={64} height={64} />
-                      ) : (
-                        <Image source={lang.flag} style={styles.flagImage} />
-                      )}
-                    </View>
+                <View style={styles.mobileTileContainer}>
+                  <CircleBorder
+                    size={58}
+                    borderWidth={2}
+                    borderColor={'#fff'}
+                  >
+                    <lang.flag width={80} height={80} />
+                  </CircleBorder>
 
                     <Text style={styles.langName}>
                       {lang.name}
@@ -314,7 +291,7 @@ export default function LanguageSelectionScreen() {
               );
             })}
 
-            <View style={styles.footerConfirm}>
+            <View style={styles.footerConfirmMobile}>
             <TouchableOpacity
               onPress={onContinue}
               disabled={!selected}
@@ -329,7 +306,6 @@ export default function LanguageSelectionScreen() {
               <Text style={styles.confirmFooterText}>{confirmLabel}</Text>
             </TouchableOpacity>
             </View>
-
           </View>
         </ScrollView>)}
 
@@ -368,9 +344,19 @@ const styles = StyleSheet.create({
   gridInner: {
     flexDirection: "row",
     flexWrap: "wrap",
-    alignItems: "flex-start",
+    alignItems: "center",
+    justifyContent: "center",
   },
   tile: {
+    paddingHorizontal: 8,
+    paddingVertical: 0,
+    borderRadius: 20,
+    justifyContent: "center",
+    marginVertical: 4,
+    marginHorizontal: 4,
+    gap: 8,
+  },
+  tileMobile: {
     paddingHorizontal: 8,
     paddingVertical: 0,
     marginVertical: 0,
@@ -387,7 +373,23 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
-    marginBottom:-70,
+    height: 70,
+    flexDirection: "row",
+    paddingHorizontal: 16,
+    paddingTop: 8,
+    paddingBottom: 90,
+    backgroundColor: "#fff",
+    borderTopWidth: 0,
+    borderTopColor: "#e5e7eb",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  footerConfirmMobile: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    bottom: 0,
+    marginBottom:-60,
     height: 70,
     flexDirection: "row",
     paddingHorizontal: 16,
@@ -398,6 +400,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
   },
+
   footerBtn: {
     flex: 1,
     marginHorizontal: 6,
@@ -427,7 +430,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 24,
-    gap: 24
+    gap: 12,
+    paddingVertical: 16
+  },
+  tileContainer: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    paddingHorizontal: 24,
+    gap: 12,
+    paddingVertical: 8
   },
   confirmFooterText: { color: "#fff", fontWeight: "700" },
 });

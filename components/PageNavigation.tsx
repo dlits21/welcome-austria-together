@@ -41,11 +41,11 @@ const PageNavigation: React.FC<PageNavigationProps> = ({
       {/* Right buttons */}
       <View style={styles.rightButtons}>
         <TouchableOpacity onPress={showLanguageModal} style={styles.button}>
-          <MaterialIcons name="language" size={24} color="#333" />
+          <MaterialIcons name="language" size={24} color="#fff"/>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={showTutorial} style={styles.button}>
-          <MaterialIcons name="help" size={24} color="#333" />
+          <MaterialIcons name="help-outline" size={24} color="#fff"/>
         </TouchableOpacity>
       </View>
     </View>
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: 16,
     paddingVertical: 12,
-    backgroundColor: '#fff',
+    backgroundColor: '#A60B33',
     borderBottomWidth: 1,
     borderBottomColor: '#e0e0e0',
   },
@@ -86,7 +86,6 @@ const styles = StyleSheet.create({
     padding: 8,
     marginLeft: 8,
     borderRadius: 20,
-    backgroundColor: '#f5f5f5',
   },
 });
 

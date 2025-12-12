@@ -83,7 +83,6 @@ const LanguageModal: React.FC<LanguageModalProps> = ({ visible, onClose }) => {
       <Pressable
         style={[styles.tile, isSelected && styles.selectedTile, isCurrent && styles.currentTile]}
         onPress={() => handleTilePress(item)}
-        onLongPress={() => speak(`${item.name}. ${t('language_selected')}`)}
       >
         <View style={styles.flagContainer}>
           <item.flag width={64} height={48} />

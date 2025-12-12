@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Dimensions, Platform } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
 interface CategoryCardProps {
@@ -37,7 +36,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
           <MaterialIcons
             name={icon}
             size={tutorialIconSize}
-            color={color}
+            color={"#fff"}
           />
         </View>
         <Text style={styles.title}>{title}</Text>
@@ -52,20 +51,40 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
   const cardWidth = tileWidth ?? (width - cardPadding * columns) / columns; // 2 columns with padding
   const iconSize = Math.min(Math.max(32, cardWidth * 0.3), 200); // Responsive icon size, minimum 32
 
+  if (Platform.OS == 'web') {
+    return (
+      <TouchableOpacity
+        style={[styles.card, { width: cardWidth, height: cardHeight}]}
+        onPress={onPress}
+      >
+        <View style={[styles.iconContainer, { backgroundColor: "#fff", width: cardWidth * 0.9,
+            height: Math.min(iconSize*3, 300), borderColor: color, borderWidth: 4}]}>
+          <MaterialIcons
+            name={icon}
+            size={iconSize}
+            color={color}
+          />
+        </View>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.subtitle}>{subtitle}</Text>
+      </TouchableOpacity>
+    );
+  }
   return (
     <TouchableOpacity
-      style={[styles.card, { width: cardWidth, height: cardHeight}]}
+      style={[styles.card, { width: cardWidth, height: 250}]}
       onPress={onPress}
     >
-      <View style={[styles.iconContainer, { backgroundColor: `${color}15`, width: cardWidth * 0.9, height: Math.min(iconSize*3, 300)}]}>
+      <View style={[styles.iconContainer, { backgroundColor: color, width: 100,
+          height: 100, borderRadius: 64}]}>
         <MaterialIcons
           name={icon}
           size={iconSize}
-          color={color}
+          color={"#fff"}
         />
       </View>
-      <Text style={styles.title}>{title}</Text>
-      <Text style={styles.subtitle}>{subtitle}</Text>
+      <Text style={[styles.title, {fontSize: 18}]}>{title}</Text>
+      <Text style={[styles.subtitle, {fontSize: 14}]}>{subtitle}</Text>
     </TouchableOpacity>
   );
 };
@@ -101,11 +120,14 @@ const styles = StyleSheet.create({
     maxWidth: 280,
   },
   iconContainer: {
+    height: 64,
+    width: 64,
     borderRadius: 30,
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 8,
     marginBottom: 16,
+
   },
   tutorialIconContainer: {
     borderRadius: 30,
@@ -118,13 +140,14 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    fontWeight: '600',
-    color: '#1f2937',
+    fontWeight: '400',
+    color: '#000',
     textAlign: 'center',
     marginBottom: 8,
   },
   subtitle: {
     fontSize: 14,
+    fontWeight: '400',
     color: '#6b7280',
     textAlign: 'center',
     lineHeight: 20,

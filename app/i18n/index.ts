@@ -13,6 +13,7 @@ import enEmergency from '../../assets/locales/en/emergency.json';
 import deCommon from '../../assets/locales/de/common.json';
 import deIndex from '../../assets/locales/de/index.json';
 import deEmergency from '../../assets/locales/de/emergency.json';
+import deHome from '../../assets/locales/de/home.json';
 
 import arCommon from '../../assets/locales/ar/common.json';
 import arIndex from '../../assets/locales/ar/index.json';
@@ -30,6 +31,7 @@ export const resources = {
   de: { common: deCommon,
         index: deIndex,
         emergency: deEmergency,
+        home: deHome,
       },
   ar: { common: arCommon,
         index: arIndex,
