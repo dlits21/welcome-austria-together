@@ -1,10 +1,20 @@
 {
-  "appName": "Welcome Austria",
-  "actions": { "back": "Back", "next": "Next", "save": "Save" },
-  "lang": { "en": "English", "de": "German", "ar": "Arabic", "fa": "Farsi" },
-  "choose_language": "Choose language",
-  "language_selected": "Language selected",
-  "close": "Close",
-  "tutorial": "Tutorial",
-  "help": "Help"
+    "appName": "خوش آمدید قطب نما اتریش",
+    "actions": {
+        "back": "برگشت",
+        "next": "بیشتر",
+        "save": "ذخیره کنید"
+    },
+    "lang": {
+        "en": "انگلیسی",
+        "de": "آلمانی",
+        "ar": "عربی",
+        "fa": "فارسی"
+    },
+    "choose_language": "زبان را انتخاب کنید",
+    "language_selected": "زبان انتخاب شد",
+    "close": "بستن",
+    "tutorial": "آموزش",
+    "help": "کمک کنید",
+    "listen": "گوش کن"
 }

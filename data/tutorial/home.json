@@ -96,124 +96,58 @@
         "sq": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       },
       "category": {
-        "title": "categories.ask.title",
-        "description": "categories.ask.description",
-        "icon": "question-answer",
-        "color": "#3B82F6"
+        "title": "support_title",
+        "description": "support_subtitle",
+        "icon": "groups",
+        "color": "rgba(210, 141, 14, 0.5)"
       }
     },
     {
       "id": 3,
       "type": "category",
       "title": {
-        "de": "Informationen Bereich",
-        "en": "Information Section",
-        "ru": "Информационный раздел",
-        "ce": "Хаамийн декъам",
-        "prs": "بخش اطلاعات",
-        "ps": "د معلوماتو برخه",
-        "fa": "بخش اطلاعات",
-        "ar": "قسم المعلومات",
-        "ku": "بەشی زانیاری",
-        "so": "Qaybta Macluumaadka",
-        "ka": "ინფორმაციის სექცია",
-        "sq": "Seksioni i Informacionit"
+        "de": "Das Wichtigste für dich"
       },
       "text": {
-        "de": "Umfassende Informationen zu allen wichtigen Lebensbereichen: Gesundheit und medizinische Versorgung, Bildung und Schulwesen, Finanzen und Bankdienstleistungen, Wohnen und Immobilien, Mobilität und Verkehr, Arbeit und Beschäftigung, Kultur und Freizeitaktivitäten, Sicherheit und Notfalldienste, Übersetzungsdienste, ehrenamtliche Tätigkeiten, Fördermöglichkeiten, politische Bildung und Bürgerkunde sowie spezielle Kontakte für verschiedene Anliegen.",
-        "en": "Comprehensive information on all important life areas: health and medical care, education and schooling, finances and banking services, housing and real estate, mobility and transportation, work and employment, culture and leisure activities, security and emergency services, translation services, volunteer opportunities, funding possibilities, political education and civics, as well as special contacts for various concerns.",
-        "ru": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "ce": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "prs": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "ps": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "fa": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "ar": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "ku": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "so": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "ka": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "sq": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        "de": "Lorem Ipsum"
       },
       "category": {
-        "title": "categories.information.title",
-        "description": "categories.information.description",
-        "icon": "info",
-        "color": "#10B981"
+        "title": "guide_title",
+        "description": "guide_subtitle",
+        "icon": "map",
+        "color": "rgba(74, 118, 52, 0.5)"
       }
     },
     {
       "id": 4,
       "type": "category",
       "title": {
-        "de": "Lernen Bereich",
-        "en": "Learn Section",
-        "ru": "Раздел обучения",
-        "ce": "Дешаран декъам",
-        "prs": "بخش یادگیری",
-        "ps": "د زده کړې برخه",
-        "fa": "بخش یادگیری",
-        "ar": "قسم التعلم",
-        "ku": "بەشی فێربوون",
-        "so": "Qaybta Barashada",
-        "ka": "სწავლის სექცია",
-        "sq": "Seksioni i të Mësuarit"
+        "de": "Informationen Bereich"
       },
       "text": {
-        "de": "Vielfältige Lernmöglichkeiten für Ihre persönliche und berufliche Entwicklung: Deutschkurse für alle Niveaus von A1 bis C2, sowohl online als auch in Präsenz, Integrationskurse und kulturelle Bildung, berufliche Weiterbildung und Qualifizierung, digitale Kompetenzen und Computerkurse, sowie spezielle Programme für verschiedene Zielgruppen. Entdecken Sie passende Kurse und Bildungsangebote für Ihren individuellen Bedarf.",
-        "en": "Diverse learning opportunities for your personal and professional development: German courses for all levels from A1 to C2, both online and in-person, integration courses and cultural education, professional development and qualification, digital skills and computer courses, as well as special programs for different target groups. Discover suitable courses and educational offerings for your individual needs.",
-        "ru": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "ce": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "prs": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "ps": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "fa": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "ar": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "ku": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "so": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "ka": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "sq": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        "de": "Umfassende Informationen zu allen wichtigen Lebensbereichen: Gesundheit und medizinische Versorgung, Bildung und Schulwesen, Finanzen und Bankdienstleistungen, Wohnen und Immobilien, Mobilität und Verkehr, Arbeit und Beschäftigung, Kultur und Freizeitaktivitäten, Sicherheit und Notfalldienste, Übersetzungsdienste, ehrenamtliche Tätigkeiten, Fördermöglichkeiten, politische Bildung und Bürgerkunde sowie spezielle Kontakte für verschiedene Anliegen."
       },
       "category": {
-        "title": "categories.learn.title",
-        "description": "categories.learn.description",
-        "icon": "menu-book",
-        "color": "#8B5CF6"
+        "title": "info_title",
+        "description": "info_subtitle",
+        "icon": "info-outline",
+        "color": "rgba(221, 7, 121, 0.5)"
       }
     },
     {
       "id": 5,
       "type": "category",
       "title": {
-        "de": "Community Bereich",
-        "en": "Community Section",
-        "ru": "Раздел сообщества",
-        "ce": "Жамагlатан декъам",
-        "prs": "بخش جامعه",
-        "ps": "د ټولنې برخه",
-        "fa": "بخش جامعه",
-        "ar": "قسم المجتمع",
-        "ku": "بەشی کۆمەڵگە",
-        "so": "Qaybta Bulshada",
-        "ka": "საზოგადოების სექცია",
-        "sq": "Seksioni i Komunitetit"
+        "de": "Notfälle"
       },
       "text": {
-        "de": "Vernetzen Sie sich mit anderen und finden Sie lokale Unterstützung: Teilen Sie Ihre Fähigkeiten und helfen Sie anderen in der Community, finden Sie Menschen, die Ihnen bei spezifischen Bedürfnissen helfen können, entdecken Sie lokale Ressourcen und Dienstleistungen auf unserer interaktiven Karte, treten Sie Interessensgruppen bei und knüpfen Sie neue Kontakte. Bauen Sie ein starkes Netzwerk auf und werden Sie Teil der Gemeinschaft.",
-        "en": "Connect with others and find local support: Share your skills and help others in the community, find people who can assist you with specific needs, discover local resources and services on our interactive map, join interest groups and make new connections. Build a strong network and become part of the community.",
-        "ru": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "ce": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "prs": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "ps": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "fa": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "ar": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "ku": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "so": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "ka": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "sq": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        "de": "Umfassende Informationen zu allen wichtigen Lebensbereichen: Gesundheit und medizinische Versorgung, Bildung und Schulwesen, Finanzen und Bankdienstleistungen, Wohnen und Immobilien, Mobilität und Verkehr, Arbeit und Beschäftigung, Kultur und Freizeitaktivitäten, Sicherheit und Notfalldienste, Übersetzungsdienste, ehrenamtliche Tätigkeiten, Fördermöglichkeiten, politische Bildung und Bürgerkunde sowie spezielle Kontakte für verschiedene Anliegen."
       },
       "category": {
-        "title": "categories.community.title",
-        "description": "categories.community.description",
-        "icon": "people",
-        "color": "#F97316"
+        "title": "emergency_title",
+        "description": "emergency_subtitle",
+        "icon": "emergency",
+        "color": "rgba(166, 11, 15, 1)"
       }
     },
     {

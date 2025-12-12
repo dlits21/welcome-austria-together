@@ -2,15 +2,14 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 
 interface TutorialNavigationProps {
   currentSlide: number;
   totalSlides: number;
   onPrevious: () => void;
   onNext: () => void;
-  onPlayAudio: () => void;
   onDone: () => void;
-  languageCode: string;
 }
 
 const TutorialNavigation: React.FC<TutorialNavigationProps> = ({
@@ -20,9 +19,9 @@ const TutorialNavigation: React.FC<TutorialNavigationProps> = ({
   onNext,
   onPlayAudio,
   onDone,
-  languageCode
 }) => {
   const isLastSlide = currentSlide === totalSlides - 1;
+  const { t } = useTranslation('common');
 
   return (
     <View style={styles.navigationContainer}>
@@ -44,7 +43,7 @@ const TutorialNavigation: React.FC<TutorialNavigationProps> = ({
       >
         <MaterialIcons name="volume-up" size={24} color="#fff" />
         <Text style={styles.audioButtonText}>
-          {"Listen"}
+          {t("listen")}
         </Text>
       </TouchableOpacity>
 

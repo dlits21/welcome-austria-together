@@ -30,8 +30,8 @@ const Home: React.FC = () => {
 
   const [searchInput, setSearchInput] = useState('');
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [showLanguageModal, setShowLanguageModal] = useState(false);
-  const [showTutorialModal, setShowTutorialModal] = useState(false);
+  const [showLanguage, setShowLanguage] = useState(false);
+  const [showTutorial, setShowTutorial] = useState(false);
   const [showVirtualAssistant, setShowVirtualAssistant] = useState(false);
 
   const isWeb  = Platform.OS == 'web'
@@ -60,7 +60,7 @@ const Home: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <PageNavigation
-        showLanguageModal={() => setShowLanguageModal(true)}
+        showLanguage={() => setShowLanguage(true)}
         showTutorial={() => setShowTutorial(true)}
         showBackButton={false}
       />
@@ -114,16 +114,14 @@ const Home: React.FC = () => {
       
       {/* Language Modal */}
       <LanguageModal 
-        visible={showLanguageModal}
-        onClose={() => setShowLanguageModal(false)}
-        languageCode={currentLanguage}
+        visible={showLanguage}
+        onClose={() => setShowLanguage(false)}
       />
       
       {/* Tutorial Modal */}
       <TutorialModal
-        visible={showTutorialModal}
-        onClose={() => setShowTutorialModal(false)}
-        languageCode={currentLanguage}
+        visible={showTutorial}
+        onClose={() => setShowTutorial(false)}
       />
 
       {!isWeb && (<Menu />)}

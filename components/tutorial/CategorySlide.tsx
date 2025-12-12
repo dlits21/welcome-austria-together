@@ -3,6 +3,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import CategoryCard from '../CategoryCard';
+import { useTranslation } from 'react-i18next';
 
 interface CategorySlideProps {
   slide: any;
@@ -11,33 +12,31 @@ interface CategorySlideProps {
 }
 
 const CategorySlide: React.FC<CategorySlideProps> = ({ 
-  slide, 
-  languageCode, 
+  slide,
   isWideScreen,
-  getCategoryHelper
 }) => {
-  const { t } = useTranslation('common');
+  const { t, i18n } = useTranslation("home");
+  const currentLanguage = i18n.language;
 
   return (
     <View style={[styles.slideContent, isWideScreen && styles.slideContentWide]}>
       <View style={[styles.tileShowcase, isWideScreen && styles.tileShowcaseWide]}>
         <View style={[styles.categoryCardContainer, isWideScreen && styles.categoryCardContainerWide]}>
           <CategoryCard 
-            title={getCategoryHelper(slide.category!.title, languageCode)}
-            description={getCategoryHelper(slide.category!.description, languageCode)}
+            title={t(slide.category!.title)}
+            description={t(slide.category!.description)}
             icon={slide.category!.icon as keyof typeof MaterialIcons.glyphMap}
             color={slide.category!.color}
-            onPress={() => {}}
             isInTutorial={true}
           />
         </View>
       </View>
       <View style={[styles.slideInfo, isWideScreen && styles.slideInfoWide]}>
         <Text style={[styles.slideTitle, isWideScreen && styles.slideTitleWide]}>
-          {slide.title[languageCode] || slide.title.en}
+          {slide.title[currentLanguage] || slide.title.de}
         </Text>
         <Text style={[styles.slideText, isWideScreen && styles.slideTextWide]}>
-          {slide.text[languageCode] || slide.text.en}
+          {slide.text[currentLanguage] || slide.text.de}
         </Text>
       </View>
     </View>

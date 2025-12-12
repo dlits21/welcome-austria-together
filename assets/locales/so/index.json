@@ -1,0 +1,14 @@
+{
+    "welcomeTitle": "Soo dhowayn",
+    "language": "Jarmalka",
+    "chooseLanguageInstruction": "Xulo luqaddaada",
+    "confirmShort": "Ma fahamtay luqadan?Guji Next si aad usii socoto.",
+    "confirmLong": "Ma fahamtay luqadan?Barnaamijka waxaa loo rogi doonaa luqadan.Riix Xaqiiji si aad u sii wado ama baajiso doorashada luqad kale.",
+    "confirmTitle": "Xaqiiji luqadda",
+    "switchTo": "U beddelo {{nacemame}}",
+    "buttons": {
+        "confirm": "Ka fog",
+        "cancel": "Burin",
+        "help": "Caawinaad / Degdeg ah"
+    }
+}

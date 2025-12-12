@@ -9,6 +9,12 @@ interface CategoryCardProps {
   onPress: () => void;
   color?: string;
   isInTutorial?: boolean;
+  tutorialIconSize ?: number,
+  width ?: number,
+  columns ?: number,
+  height ?: number,
+  tileWidth ?: number,
+  padding ?: number,
 }
 
 const CategoryCard: React.FC<CategoryCardProps> = ({

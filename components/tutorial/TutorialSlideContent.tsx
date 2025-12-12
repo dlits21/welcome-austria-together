@@ -1,24 +1,19 @@
 
 import React from 'react';
-import AssistantSlide from './AssistantSlide';
 import BasicSlide from './BasicSlide';
 import ConfirmationSlide from './ConfirmationSlide';
 import CategorySlide from './CategorySlide';
 
 interface TutorialSlideContentProps {
-  data: string;
+  data: any;
   currentSlide: number;
-  languageCode: string;
   isWideScreen: boolean;
-  onVirtualAssistant?: () => void;
 }
 
 const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
   data,
   currentSlide,
-  languageCode,
   isWideScreen,
-  onVirtualAssistant
 }) => {
 
   const slide = data.slides.find(s => s.id === currentSlide);
@@ -28,19 +23,10 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
   }
 
   switch (slide.type) {
-    case 'assistant':
-      return (
-        <AssistantSlide
-          slide={slide}
-          languageCode={languageCode}
-          onVirtualAssistant={onVirtualAssistant}
-        />
-      );
     case 'confirmation':
       return (
         <ConfirmationSlide
           slide={slide}
-          languageCode={languageCode}
           isWideScreen={isWideScreen}
         />
       );
@@ -49,7 +35,6 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
       return (
         <CategorySlide
           slide={slide}
-          languageCode={languageCode}
           isWideScreen={isWideScreen}
         />
       );
@@ -59,7 +44,6 @@ const TutorialSlideContent: React.FC<TutorialSlideContentProps> = ({
           <BasicSlide
             slide={slide}
             currentSlide={currentSlide}
-            languageCode={languageCode}
             data={data}
           />
         );

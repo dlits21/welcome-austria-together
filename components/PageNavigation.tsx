@@ -4,14 +4,14 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 
 interface PageNavigationProps {
-  showLanguageModal: () => void;
+  showLanguage: () => void;
   showTutorial: () => void;
   showBackButton?: boolean;
   title?: string; // New optional title prop
 }
 
 const PageNavigation: React.FC<PageNavigationProps> = ({
-  showLanguageModal,
+  showLanguage,
   showTutorial,
   showBackButton = true,
   title,
@@ -40,7 +40,7 @@ const PageNavigation: React.FC<PageNavigationProps> = ({
 
       {/* Right buttons */}
       <View style={styles.rightButtons}>
-        <TouchableOpacity onPress={showLanguageModal} style={styles.button}>
+        <TouchableOpacity onPress={showLanguage} style={styles.button}>
           <MaterialIcons name="language" size={24} color="#fff"/>
         </TouchableOpacity>
 

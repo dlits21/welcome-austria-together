@@ -47,8 +47,8 @@ const CategoryGrid: React.FC<CategoryGridProps> = ({ onCategoryClick }) => {
       />
 
       <CategoryCard
-        title={t('info_title')}
-        subtitle={<Trans i18nKey="info_subtitle" ns="home" />}
+        title={t('emergency_title')}
+        subtitle={<Trans i18nKey="emergency_subtitle" ns="home" />}
         icon="emergency"
         color="rgba(166, 11, 15, 1)"
         onPress={() => onCategoryClick('emergency')}

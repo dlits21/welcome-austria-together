@@ -48,11 +48,10 @@ const TutorialModal: React.FC<TutorialModalProps> = ({
   const isWideScreen = width > 768;
 
   const data = getTutorialData(tutorialData);
-  const totalSlides = data.length;
+  const totalSlides = data.slides.length;
 
   const nextSlide = () => {
     if (currentSlide < totalSlides - 1) {
-      console.log("currentSlide", currentSlide)
       setCurrentSlide(currentSlide + 1);
     }
   };

@@ -1,0 +1,20 @@
+{
+    "appName": "Mirë se vini busull Austria",
+    "actions": {
+        "back": "Mbrapa",
+        "next": "Më tej",
+        "save": "Ruaj"
+    },
+    "lang": {
+        "en": "anglisht",
+        "de": "gjermanisht",
+        "ar": "arabisht",
+        "fa": "persisht"
+    },
+    "choose_language": "Zgjidhni gjuhën",
+    "language_selected": "Gjuha e zgjedhur e zgjedhur",
+    "close": "Mbylle",
+    "tutorial": "Tutorial",
+    "help": "Ndihmë",
+    "listen": "Dëgjo"
+}

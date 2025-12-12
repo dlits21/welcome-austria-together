@@ -7,8 +7,10 @@ import {
   StyleSheet,
   FlatList,
   useWindowDimensions,
+  TouchableOpacity
 } from 'react-native';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
+import { CircleBorder } from '../components/CircleIcon';
 import {
   GermanFlag,
   GBFlag,
@@ -18,10 +20,12 @@ import {
   SyrianFlag,
   SomaliFlag,
   GeorgianFlag,
-  AlbanianFlag
+  AlbanianFlag,
+  KurdishFlag,
+  ChechenFlag
 } from '../components/SVG/Flags';
 
-interface LanguageOption {
+interface Language {
   code: string;
   name: string;
   flag: any;
@@ -32,84 +36,111 @@ interface LanguageModalProps {
   onClose: () => void;
 }
 
-const languages: LanguageOption[] = [
-  { code: 'de', name: 'Deutsch', flag: GermanFlag },
-  { code: 'en', name: 'English', flag: GBFlag },
-  { code: 'ru', name: 'Русский', flag: RussianFlag },
-  { code: 'ce', name: 'Нохчийн', flag: RussianFlag },
-  { code: 'prs', name: 'دری', flag: AfghaniFlag },
-  { code: 'ps', name: 'پښتو', flag: AfghaniFlag },
-  { code: 'fa', name: 'فارسی', flag: IranianFlag },
-  { code: 'ar', name: 'العربية', flag: SyrianFlag },
-  { code: 'ku', name: 'Kurdî', flag: SyrianFlag },
-  { code: 'so', name: 'Soomaali', flag: SomaliFlag },
-  { code: 'ka', name: 'ქართული', flag: GeorgianFlag },
-  { code: 'sq', name: 'Shqip', flag: AlbanianFlag },
+const LANGUAGES: Language[] = [
+  { code: "de", name: "Deutsch", flag: GermanFlag},
+  { code: "en", name: "English", flag: GBFlag},
+  { code: "ru", name: "Русский", flag: RussianFlag},
+  { code: "ce", name: "Нохчийн", flag: ChechenFlag},
+  { code: "prs", name: "دری", flag: AfghaniFlag},
+  { code: "ps", name: "پښتو", flag: AfghaniFlag},
+  { code: "fa", name: "فارسی", flag: IranianFlag},
+  { code: "ar", name: "العربية", flag: SyrianFlag},
+  { code: "ku", name: "کوردی", flag: KurdishFlag},
+  { code: "so", name: "Soomaali", flag: SomaliFlag},
+  { code: "ka", name: "ქართული", flag: GeorgianFlag},
+  { code: "sq", name: "Shqip", flag: AlbanianFlag},
 ];
 
 const LanguageModal: React.FC<LanguageModalProps> = ({ visible, onClose }) => {
   const { t, i18n } = useTranslation('common');
   const { width } = useWindowDimensions();
-  const [tempLanguage, setTempLanguage] = useState(i18n.language);
+
+  const currentLanguage = i18n.language;
+  const initialSelected = LANGUAGES.find((l) => l.code === currentLanguage) || LANGUAGES[0];
+  const [selected, setSelected] = useState<Language | null>(initialSelected);
 
   // different specification for web and app
   const numColumns = width > 500 ? 4 : 3;
   const modalWidth = width > 660 ? 600 : 350;
   const languageFontSize = width > 500 ? 24 : 14;
 
-  const handleTilePress = (lang: LanguageOption) => {
-    setTempLanguage(lang.code);
+  // Use translator fixed to selected language (to show UI text in that language)
+  const tSelected = (langCode?: string) =>
+    langCode ? i18n.getFixedT(langCode, "index") : i18n.getFixedT(i18n.language, "index");
+
+  const handleTilePress = (lang: Language) => {
+    setSelected(lang.code);
     i18n.changeLanguage(lang.code); // temporarily switch for immediate UI feedback
   };
 
   const handleConfirm = () => {
     // Keep the temporary selection as main language
-    i18n.changeLanguage(tempLanguage);
+    i18n.changeLanguage(selected);
     onClose();
   };
 
   const handleCancel = () => {
     // Revert to original language
-    i18n.changeLanguage(i18n.language);
-    setTempLanguage(i18n.language);
+    i18n.changeLanguage(initialSelected.code);
+    setSelected(initialSelected.code);
     onClose();
   };
 
-  const renderItem = ({ item }: { item: LanguageOption }) => {
+  const renderItem = ({ item }: { item: Language }) => {
     const isCurrent = item.code === i18n.language;
-    const isSelected = item.code === tempLanguage;
+    const isSelected = item.code === selected;
 
     return (
-      <Pressable
-        style={[styles.tile, isSelected && styles.selectedTile, isCurrent && styles.currentTile]}
-        onPress={() => handleTilePress(item)}
+      <TouchableOpacity
+        key={item.code}
+        onPress={() => handleTilePress(item, isSelected)}
+        accessibilityRole="button"
+        accessibilityLabel={tSelected(item.code)("index:switchTo", { nativeName: item.name })}
+        // use flexBasis and maxWidth percent — prevents leftover gap on wide screens
+        style={[
+          styles.tile,
+          {
+            flexBasis: "22.5%",
+            maxWidth: "22.5%",
+            backgroundColor: isSelected ? 'rgba(226, 7, 30, .5)' : "#f7f7f7",
+            borderColor: isSelected ? "#A60B33" : "#e6e6e6",
+            borderWidth: isSelected ? 2 : 1,
+          },
+        ]}
       >
-        <View style={styles.flagContainer}>
-          <item.flag width={64} height={48} />
-        </View>
-        <Text style={[styles.languageText, {fontSize: languageFontSize}]}>
-          {t(`languages.${item.code}`, { defaultValue: item.name})}
+        <View style={styles.tileContainer}>
+        <CircleBorder
+          size={70}
+          borderWidth={2}
+          borderColor={'#fff'}
+        >
+          <item.flag width={150} height={150} />
+        </CircleBorder>
+
+        <Text style={styles.languageText} numberOfLines={1}>
+          {item.name}
         </Text>
-      </Pressable>
+        </View>
+      </TouchableOpacity>
     );
   };
 
   return (
-    <Modal visible={visible} transparent animationType="slide" onRequestClose={onClose}>
+    <Modal visible={visible} transparent animationType="slide" onRequestClose={handleCancel}>
       <View style={styles.overlay}>
         <View style={styles.container}>
           {/* Header with X button */}
           <View style={styles.header}>
             <Text style={styles.title}>{t('choose_language')}</Text>
-            <Pressable style={styles.closeX} onPress={onClose}>
+            <Pressable style={styles.closeX} onPress={handleCancel}>
               <Text style={styles.closeXText}>✕</Text>
             </Pressable>
           </View>
 
           <FlatList
-            data={languages}
+            data={LANGUAGES}
             renderItem={renderItem}
-            keyExtractor={(item) => item.code}
+            keyExtractor={(item) => item.key}
             numColumns={numColumns}
             contentContainerStyle={[
               styles.grid,
@@ -140,13 +171,19 @@ const styles = StyleSheet.create({
   title: { fontSize: 24, fontWeight: 'bold', alignItems: 'center' },
   closeX: { padding: 4 },
   closeXText: { fontSize: 22, fontWeight: 'bold' },
-  grid: { width: '100%', gap: 16 },
-  tile: { flex: 1, margin: 8, paddingVertical: 24, paddingHorizontal: 16, backgroundColor: '#E5E7EB', borderRadius: 12, alignItems: 'center', justifyContent: 'center', minWidth: 100 },
-  currentTile: { borderWidth: 2, borderColor: '#3B82F6' },
-  selectedTile: { backgroundColor: '#3B82F6' },
-  flagContainer: { width: 64, height: 48, alignItems: 'center', justifyContent: 'center' },
-  languageText: { marginTop: 12, textAlign: 'center', color: '#111'},
-  footer: { flexDirection: 'row', marginTop: 16, justifyContent: 'space-between', width: '100%' },
+  grid: { width: '100%', gap: 8 },
+  tile:
+     { flex: 1,
+      margin: 8,
+      paddingVertical: 16,
+      paddingHorizontal: 16,
+      backgroundColor: '#E5E7EB',
+      borderRadius: 12,
+      alignItems: 'center',
+      justifyContent: 'center',
+      minWidth: 100 },
+  languageText: { fontSize: 18, marginTop: 12, textAlign: 'center', color: '#000'},
+  footer: { flexDirection: 'row', marginTop: 12, justifyContent: 'space-between', width: '100%' },
   cancelButton: { flex: 1, marginRight: 8, paddingVertical: 14, backgroundColor: '#9CA3AF', borderRadius: 8, alignItems: 'center' },
   confirmButton: { flex: 1, marginLeft: 8, paddingVertical: 14, backgroundColor: '#10B981', borderRadius: 8, alignItems: 'center' },
   footerText: { color: '#fff', fontSize: 16, fontWeight: 'bold' },

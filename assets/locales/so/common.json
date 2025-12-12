@@ -1,0 +1,20 @@
+{
+    "appName": "Soo dhaweyn AUSTIA",
+    "actions": {
+        "back": "Xagga gadaale",
+        "next": "Ka fog",
+        "save": "Badbaadin"
+    },
+    "lang": {
+        "en": "Xiriir",
+        "de": "Jarmalka",
+        "ar": "Carabi ah",
+        "fa": "Farsi"
+    },
+    "choose_language": "Xullo luuqad",
+    "language_selected": "Luqadda la xushay",
+    "close": "Xirid",
+    "tutorial": "Qalliin",
+    "help": "Caawin",
+    "listen": "Dhegeysasho"
+}

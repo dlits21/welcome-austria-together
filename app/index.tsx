@@ -119,18 +119,22 @@ export default function LanguageSelectionScreen() {
     langCode ? i18n.getFixedT(langCode, "index") : i18n.getFixedT(i18n.language, "index");
 
   // Selecting tile => immediately switch app language
-  const onSelectLanguage = (lang: Language) => {
-    setSelected(lang);
-    // persist via context + change i18n immediately
-    setSelectedLanguage(lang.code);
-    i18n.changeLanguage(lang.code).catch(() => {});
+  const onSelectLanguage = (lang: Language, selected: bool) => {
+    if (selected) {
+        onContinue()
+    } else {
+       setSelected(lang);
+       // persist via context + change i18n immediately
+       setSelectedLanguage(lang.code);
+       i18n.changeLanguage(lang.code).catch(() => {});
 
-    // automatically play audio
-    player.pause();
-    const old_volume = player.volume;
-    player.replace(audioFiles[lang.code]);
-    player.volume = old_volume;
-    player.play();
+       // automatically play audio
+       player.pause();
+       const old_volume = player.volume;
+       player.replace(audioFiles[lang.code]);
+       player.volume = old_volume;
+       player.play();
+    }
   };
 
   // switch to home page
@@ -201,7 +205,7 @@ export default function LanguageSelectionScreen() {
               return (
                 <TouchableOpacity
                   key={lang.code}
-                  onPress={() => onSelectLanguage(lang)}
+                  onPress={() => onSelectLanguage(lang, isSelected)}
                   accessibilityRole="button"
                   accessibilityLabel={tSelected(lang.code)("index:switchTo", { nativeName: lang.name })}
                   // use flexBasis and maxWidth percent — prevents leftover gap on wide screens
@@ -259,7 +263,7 @@ export default function LanguageSelectionScreen() {
               return (
                 <TouchableOpacity
                   key={lang.code}
-                  onPress={() => onSelectLanguage(lang)}
+                  onPress={() => onSelectLanguage(lang, isSelected)}
                   accessibilityRole="button"
                   accessibilityLabel={tSelected(lang.code)("index:switchTo", { nativeName: lang.name })}
                   // use flexBasis and maxWidth percent — prevents leftover gap on wide screens

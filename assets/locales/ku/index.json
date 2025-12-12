@@ -1,0 +1,14 @@
+{
+    "welcomeTitle": "Bi xêr hatî",
+    "language": "Almanî",
+    "chooseLanguageInstruction": "Zimanê xwe hilbijêre",
+    "confirmShort": "Ma hûn ji vî zimanî fam dikin?Ji bo berdewamkirinê Next bikirtînin.",
+    "confirmLong": "Ma hûn ji vî zimanî fam dikin?Sepan dê veguhere vî zimanî.Bipejirîne Pejirandin ji bo berdewam bike an Betal bike ku zimanek din hilbijêre.",
+    "confirmTitle": "Ziman piştrast bikin",
+    "switchTo": "Biguherîne ser {{NativeName}}",
+    "buttons": {
+        "confirm": "Berdewam",
+        "cancel": "Bişûndekirin",
+        "help": "Alîkarî / acîl"
+    }
+}

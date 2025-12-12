@@ -2,7 +2,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import { useLanguage } from "../../contexts/LanguageContext";
+import { useTranslation } from "react-i18next";
 
 export const getIconForSlide = (type: string, slideIndex: number) => {
     switch (type) {
@@ -51,7 +51,8 @@ const BasicSlide: React.FC<BasicSlideProps> = ({
 }) => {
   const { icon } = getIconForSlide(slide.type, currentSlide);
   const { color } = getColorForSlide(slide.type, currentSlide)
-  const { currentLanguage } = useLanguage();
+  const { i18n } = useTranslation();
+  const currentLanguage = i18n.language;
 
   return (
     <View style={styles.slideContent}>
@@ -62,10 +63,10 @@ const BasicSlide: React.FC<BasicSlideProps> = ({
           color={color} 
         />
         <Text style={styles.slideTitle}>
-          {slide.title[currentLanguage.code] || slide.title.de}
+          {slide.title[currentLanguage] || slide.title.de}
         </Text>
         <Text style={styles.slideText}>
-          {slide.text[currentLanguage.code] || slide.text.de}
+          {slide.text[currentLanguage] || slide.text.de}
         </Text>
       </View>
     </View>

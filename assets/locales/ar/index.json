@@ -1,13 +1,14 @@
 {
-  "welcomeTitle": "أهلاً وسهلاً",
-  "chooseLanguageInstruction": "اختر لغتك",
-  "confirmShort": "بتفهم هاللغة؟ اضغط متابعة لتكمل.",
-  "confirmLong": "بتفهم هاللغة؟ التطبيق رح يتحول لهاللغة. اضغط تأكيد لتكمل أو إلغاء لتختار غيرها.",
-  "confirmTitle": "تأكيد اللغة",
-  "switchTo": "تغيير إلى {{nativeName}}",
-  "buttons": {
-    "confirm": "تأكيد",
-    "cancel": "إلغاء",
-    "help": "مساعدة / طوارئ"
-  }
+    "welcomeTitle": "مرحباً",
+    "language": "الألمانية",
+    "chooseLanguageInstruction": "اختر لغتك",
+    "confirmShort": "هل تفهم هذه اللغة؟انقر فوق التالي للمتابعة.",
+    "confirmLong": "هل تفهم هذه اللغة؟سيتم تحويل التطبيق إلى هذه اللغة.اضغط على تأكيد للمتابعة أو إلغاء لاختيار لغة أخرى.",
+    "confirmTitle": "تأكيد اللغة",
+    "switchTo": "قم بالتبديل إلى {{nativeName}}",
+    "buttons": {
+        "confirm": "إضافي",
+        "cancel": "يلغي",
+        "help": "مساعدة / الطوارئ"
+    }
 }

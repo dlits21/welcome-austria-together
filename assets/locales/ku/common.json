@@ -1,0 +1,20 @@
+{
+    "appName": "Compass Awusturya bi xêr hatî",
+    "actions": {
+        "back": "Paş",
+        "next": "Berdewam",
+        "save": "Rizgarkirin"
+    },
+    "lang": {
+        "en": "Îngilîzî",
+        "de": "Almanî",
+        "ar": "Erebî",
+        "fa": "Farsi"
+    },
+    "choose_language": "Ziman hilbijêrin",
+    "language_selected": "Ziman hat hilbijartin",
+    "close": "Nêzîkî",
+    "tutorial": "Tutorial",
+    "help": "Alîkarî",
+    "listen": "Gûhdarkirin"
+}

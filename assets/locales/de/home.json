@@ -7,6 +7,6 @@
   "searchPlaceholder": "Nach Infos suchen...",
   "guide_title": "Das Wichtigste",
   "guide_subtitle": "Schritt-für-Schritt Hilfe für deinen Weg",
-  "emergency": "Notfall",
-  "emergencySubtitle": "Schneller Zugang zu Notdiensten"
+  "emergency_title": "Notfall",
+  "emergency_subtitle": "Schneller Zugang zu Notdiensten"
 }

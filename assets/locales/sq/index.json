@@ -1,0 +1,14 @@
+{
+    "welcomeTitle": "Mirë se vini",
+    "language": "gjermanisht",
+    "chooseLanguageInstruction": "Zgjidhni gjuhën tuaj",
+    "confirmShort": "A e kuptoni këtë gjuhë?Kliko Next për të vazhduar.",
+    "confirmLong": "A e kuptoni këtë gjuhë?Aplikacioni do të konvertohet në këtë gjuhë.Shtypni Konfirmo për të vazhduar ose Anulo për të zgjedhur një gjuhë tjetër.",
+    "confirmTitle": "Konfirmo gjuhën",
+    "switchTo": "Kalo te {{nativeName}}",
+    "buttons": {
+        "confirm": "Më tej",
+        "cancel": "Anulo",
+        "help": "Ndihmë/urgjencë"
+    }
+}

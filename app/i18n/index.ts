@@ -6,44 +6,127 @@ import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { Platform, I18nManager } from 'react-native';
 
-import enCommon from '../../assets/locales/en/common.json';
-import enIndex from '../../assets/locales/en/index.json';
-import enEmergency from '../../assets/locales/en/emergency.json';
-
+// Add Json Files START
 import deCommon from '../../assets/locales/de/common.json';
-import deIndex from '../../assets/locales/de/index.json';
 import deEmergency from '../../assets/locales/de/emergency.json';
+import deIndex from '../../assets/locales/de/index.json';
 import deHome from '../../assets/locales/de/home.json';
 
+import enCommon from '../../assets/locales/en/common.json';
+import enEmergency from '../../assets/locales/en/emergency.json';
+import enIndex from '../../assets/locales/en/index.json';
+import enHome from '../../assets/locales/en/home.json';
+
+import ruCommon from '../../assets/locales/ru/common.json';
+import ruEmergency from '../../assets/locales/ru/emergency.json';
+import ruIndex from '../../assets/locales/ru/index.json';
+import ruHome from '../../assets/locales/ru/home.json';
+
 import arCommon from '../../assets/locales/ar/common.json';
-import arIndex from '../../assets/locales/ar/index.json';
 import arEmergency from '../../assets/locales/ar/emergency.json';
+import arIndex from '../../assets/locales/ar/index.json';
+import arHome from '../../assets/locales/ar/home.json';
 
 import faCommon from '../../assets/locales/fa/common.json';
-import faIndex from '../../assets/locales/fa/index.json';
 import faEmergency from '../../assets/locales/fa/emergency.json';
+import faIndex from '../../assets/locales/fa/index.json';
+import faHome from '../../assets/locales/fa/home.json';
+
+import sqCommon from '../../assets/locales/sq/common.json';
+import sqEmergency from '../../assets/locales/sq/emergency.json';
+import sqIndex from '../../assets/locales/sq/index.json';
+import sqHome from '../../assets/locales/sq/home.json';
+
+import psCommon from '../../assets/locales/ps/common.json';
+import psEmergency from '../../assets/locales/ps/emergency.json';
+import psIndex from '../../assets/locales/ps/index.json';
+import psHome from '../../assets/locales/ps/home.json';
+
+import kaCommon from '../../assets/locales/ka/common.json';
+import kaEmergency from '../../assets/locales/ka/emergency.json';
+import kaIndex from '../../assets/locales/ka/index.json';
+import kaHome from '../../assets/locales/ka/home.json';
+
+import soCommon from '../../assets/locales/so/common.json';
+import soEmergency from '../../assets/locales/so/emergency.json';
+import soIndex from '../../assets/locales/so/index.json';
+import soHome from '../../assets/locales/so/home.json';
+
+import kuCommon from '../../assets/locales/ku/common.json';
+import kuEmergency from '../../assets/locales/ku/emergency.json';
+import kuIndex from '../../assets/locales/ku/index.json';
+import kuHome from '../../assets/locales/ku/home.json';
+
+
+// Add Json Files END
 
 export const resources = {
-  en: { common: enCommon,
-        index: enIndex,
-        emergency: enEmergency,
-       },
-  de: { common: deCommon,
-        index: deIndex,
-        emergency: deEmergency,
-        home: deHome,
+  // Add Resources START
+  de: {
+      common: deCommon,
+      emergency: deEmergency,
+      index: deIndex,
+      home: deHome,
       },
-  ar: { common: arCommon,
-        index: arIndex,
-        emergency: arEmergency,
+  en: {
+      common: enCommon,
+      emergency: enEmergency,
+      index: enIndex,
+      home: enHome,
       },
-  fa: { common: faCommon,
-        index: faIndex,
-        emergency: faEmergency,
-        },
+  ru: {
+      common: ruCommon,
+      emergency: ruEmergency,
+      index: ruIndex,
+      home: ruHome,
+      },
+  ar: {
+      common: arCommon,
+      emergency: arEmergency,
+      index: arIndex,
+      home: arHome,
+      },
+  fa: {
+      common: faCommon,
+      emergency: faEmergency,
+      index: faIndex,
+      home: faHome,
+      },
+  sq: {
+      common: sqCommon,
+      emergency: sqEmergency,
+      index: sqIndex,
+      home: sqHome,
+      },
+  ps: {
+      common: psCommon,
+      emergency: psEmergency,
+      index: psIndex,
+      home: psHome,
+      },
+  ka: {
+      common: kaCommon,
+      emergency: kaEmergency,
+      index: kaIndex,
+      home: kaHome,
+      },
+  so: {
+      common: soCommon,
+      emergency: soEmergency,
+      index: soIndex,
+      home: soHome,
+      },
+  ku: {
+      common: kuCommon,
+      emergency: kuEmergency,
+      index: kuIndex,
+      home: kuHome,
+      },
+
+  // Add Resources END
 };
 
-const SUPPORTED = ['en','de','ar','fa'] as const;
+const SUPPORTED = ['en','de','ar','fa', 'ru', 'sq', 'ku', 'so', 'ka', 'ps'] as const;
 const RTL_LANGS = new Set(['ar','fa','he','ur','ps','ku']);
 
 function pickDeviceLang(): string {
