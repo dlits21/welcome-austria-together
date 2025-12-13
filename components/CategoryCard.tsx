@@ -4,9 +4,9 @@ import { MaterialIcons } from '@expo/vector-icons';
 
 interface CategoryCardProps {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   icon: keyof typeof MaterialIcons.glyphMap;
-  onPress: () => void;
+  onPress?: () => void;
   color?: string;
   isInTutorial?: boolean;
   tutorialIconSize ?: number,
@@ -15,6 +15,7 @@ interface CategoryCardProps {
   height ?: number,
   tileWidth ?: number,
   padding ?: number,
+  description?: string;
 }
 
 const CategoryCard: React.FC<CategoryCardProps> = ({

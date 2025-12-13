@@ -11,8 +11,7 @@ export const CircleBorder = ({ size, borderWidth, borderColor, children }) => (
       justifyContent: 'center',
       alignItems: 'center',
       backgroundColor: '#ececec',
-      borderColor: '#ececec',
-      borderColor,
+      borderColor: borderColor ? borderColor : '#ececec',
       borderWidth,
       overflow: "hidden"
     }}>

@@ -43,14 +43,15 @@ export const getColorForSlide = (type: string, slideIndex: number) => {
 interface BasicSlideProps {
   slide: any;
   currentSlide: number;
+  data: any;
 }
 
 const BasicSlide: React.FC<BasicSlideProps> = ({ 
   slide, 
   currentSlide
 }) => {
-  const { icon } = getIconForSlide(slide.type, currentSlide);
-  const { color } = getColorForSlide(slide.type, currentSlide)
+  const icon = getIconForSlide(slide.type, currentSlide);
+  const color  = getColorForSlide(slide.type, currentSlide)
   const { i18n } = useTranslation();
   const currentLanguage = i18n.language;
 

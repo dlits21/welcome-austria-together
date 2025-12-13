@@ -3,6 +3,7 @@ import React from 'react';
 import BasicSlide from './BasicSlide';
 import ConfirmationSlide from './ConfirmationSlide';
 import CategorySlide from './CategorySlide';
+import languageModal from "@/components/LanguageModal";
 
 interface TutorialSlideContentProps {
   data: any;
