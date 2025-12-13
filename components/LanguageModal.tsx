@@ -68,7 +68,7 @@ const LanguageModal: React.FC<LanguageModalProps> = ({ visible, onClose }) => {
   const tSelected = (langCode?: string) =>
     langCode ? i18n.getFixedT(langCode, "index") : i18n.getFixedT(i18n.language, "index");
 
-  const handleTilePress = (lang: Language) => {
+  const handleTilePress = (lang: Language, isSelected: boolean) => {
     setSelected(lang.code);
     i18n.changeLanguage(lang.code); // temporarily switch for immediate UI feedback
   };
