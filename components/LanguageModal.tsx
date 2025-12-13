@@ -182,6 +182,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
       minWidth: 100 },
+  tileContainer: {},
   languageText: { fontSize: 18, marginTop: 12, textAlign: 'center', color: '#000'},
   footer: { flexDirection: 'row', marginTop: 12, justifyContent: 'space-between', width: '100%' },
   cancelButton: { flex: 1, marginRight: 8, paddingVertical: 14, backgroundColor: '#9CA3AF', borderRadius: 8, alignItems: 'center' },
