@@ -7,7 +7,6 @@ import { useTranslation } from 'react-i18next';
 
 interface CategorySlideProps {
   slide: any;
-  languageCode: string;
   isWideScreen: boolean;
 }
 

@@ -5,13 +5,11 @@ import { GermanFlag } from '../SVG/Flags';
 
 interface ConfirmationSlideProps {
   slide: any;
-  languageCode: string;
   isWideScreen: boolean;
 }
 
 const ConfirmationSlide: React.FC<ConfirmationSlideProps> = ({ 
-  slide, 
-  languageCode, 
+  slide,
   isWideScreen 
 }) => {
   const { t } = useTranslation('index');

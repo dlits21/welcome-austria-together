@@ -57,7 +57,7 @@ const LanguageModal: React.FC<LanguageModalProps> = ({ visible, onClose }) => {
 
   const currentLanguage = i18n.language;
   const initialSelected = LANGUAGES.find((l) => l.code === currentLanguage) || LANGUAGES[0];
-  const [selected, setSelected] = useState<Language | null>(initialSelected);
+  const [selected, setSelected] = useState<string>(initialSelected.code);
 
   // different specification for web and app
   const numColumns = width > 500 ? 4 : 3;

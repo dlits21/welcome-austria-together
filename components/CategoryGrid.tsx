@@ -21,7 +21,7 @@ const CategoryGrid: React.FC<CategoryGridProps> = ({ onCategoryClick }) => {
     <View style={[styles.categoryGrid]}>
       <CategoryCard
         title={t('support_title')}
-        subtitle={<Trans i18nKey="support_subtitle" ns="home" />}
+        subtitle={t('support_subtitle')}
         icon="groups" // changed to speaking person
         color="rgba(210, 141, 14, 0.5)"
         onPress={() => onCategoryClick('support')}
@@ -30,7 +30,7 @@ const CategoryGrid: React.FC<CategoryGridProps> = ({ onCategoryClick }) => {
 
       <CategoryCard
         title={t('guide_title')}
-        subtitle={<Trans i18nKey="guide_subtitle" ns="home" />}
+        subtitle={t('guide_subtitle')}
         icon="map" // MaterialIcons "map" for journey/guide
         color="rgba(74, 118, 52, 0.5)"
         onPress={() => onCategoryClick('guide')}
@@ -39,7 +39,7 @@ const CategoryGrid: React.FC<CategoryGridProps> = ({ onCategoryClick }) => {
 
       <CategoryCard
         title={t('info_title')}
-        subtitle={<Trans i18nKey="info_subtitle" ns="home" />}
+        subtitle={t('info_subtitle')}
         icon="info-outline"
         color="rgba(221, 7, 121, 0.5)"
         onPress={() => onCategoryClick('information')}
@@ -48,7 +48,7 @@ const CategoryGrid: React.FC<CategoryGridProps> = ({ onCategoryClick }) => {
 
       <CategoryCard
         title={t('emergency_title')}
-        subtitle={<Trans i18nKey="emergency_subtitle" ns="home" />}
+        subtitle={t('emergency_subtitle')}
         icon="emergency"
         color="rgba(166, 11, 15, 1)"
         onPress={() => onCategoryClick('emergency')}

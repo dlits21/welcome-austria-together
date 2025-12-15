@@ -3,8 +3,7 @@ import { View, TouchableOpacity, StyleSheet, Text } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 
-const PageNavigation: React.FC<PageNavigationProps> = ({
-}) => {
+const PageNavigation: React.FC = () => {
   const router = useRouter();
 
   const onSupport= () => {
