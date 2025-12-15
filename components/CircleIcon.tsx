@@ -11,7 +11,7 @@ interface CircleBorderProps {
 export const CircleBorder : React.FC<CircleBorderProps> = ({
     size,
     borderWidth,
-    borderColor: '#ececec',
+    borderColor = '#ececec',
     children,
   }) => {
     return  (
