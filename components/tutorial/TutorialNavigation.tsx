@@ -10,6 +10,7 @@ interface TutorialNavigationProps {
   onPrevious: () => void;
   onNext: () => void;
   onDone: () => void;
+  onPlayAudio?: () => void;
 }
 
 const TutorialNavigation: React.FC<TutorialNavigationProps> = ({

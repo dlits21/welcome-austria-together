@@ -2,6 +2,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { GermanFlag } from '../SVG/Flags';
+import {useTranslation} from "react-i18next";
 
 interface ConfirmationSlideProps {
   slide: any;
