@@ -11,9 +11,8 @@ interface CircleBorderProps {
 export const CircleBorder : React.FC<CircleBorderProps> = ({
     size,
     borderWidth,
-    borderColor,
+    borderColor: '#ececec',
     children,
-    title,
   }) => {
     return  (
       <View
@@ -25,8 +24,7 @@ export const CircleBorder : React.FC<CircleBorderProps> = ({
           justifyContent: 'center',
           alignItems: 'center',
           backgroundColor: '#ececec',
-          borderColor: '#ececec',
-          borderColor,
+          borderColor: borderColor,
           borderWidth,
           overflow: "hidden"
         }}>
