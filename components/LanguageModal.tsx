@@ -140,7 +140,7 @@ const LanguageModal: React.FC<LanguageModalProps> = ({ visible, onClose }) => {
           <FlatList
             data={LANGUAGES}
             renderItem={renderItem}
-            keyExtractor={(item) => item.key}
+            keyExtractor={(item) => item.code}
             numColumns={numColumns}
             contentContainerStyle={[
               styles.grid,
