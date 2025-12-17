@@ -22,7 +22,7 @@ const CategoryGrid: React.FC<CategoryGridProps> = ({ onCategoryClick }) => {
       <CategoryCard
         title={t('support_title')}
         subtitle={t('support_subtitle')}
-        icon="groups" // changed to speaking person
+        icon="material.groups" // changed to speaking person
         color="rgba(210, 141, 14, 0.5)"
         onPress={() => onCategoryClick('support')}
         height={cardHeight}
@@ -31,7 +31,7 @@ const CategoryGrid: React.FC<CategoryGridProps> = ({ onCategoryClick }) => {
       <CategoryCard
         title={t('guide_title')}
         subtitle={t('guide_subtitle')}
-        icon="map" // MaterialIcons "map" for journey/guide
+        icon="material.map" // MaterialIcons "map" for journey/guide
         color="rgba(74, 118, 52, 0.5)"
         onPress={() => onCategoryClick('guide')}
         height={cardHeight}
@@ -40,7 +40,7 @@ const CategoryGrid: React.FC<CategoryGridProps> = ({ onCategoryClick }) => {
       <CategoryCard
         title={t('info_title')}
         subtitle={t('info_subtitle')}
-        icon="info-outline"
+        icon="material.info-outline"
         color="rgba(221, 7, 121, 0.5)"
         onPress={() => onCategoryClick('information')}
         height={cardHeight}
@@ -49,7 +49,7 @@ const CategoryGrid: React.FC<CategoryGridProps> = ({ onCategoryClick }) => {
       <CategoryCard
         title={t('emergency_title')}
         subtitle={t('emergency_subtitle')}
-        icon="emergency"
+        icon="material.emergency"
         color="rgba(166, 11, 15, 1)"
         onPress={() => onCategoryClick('emergency')}
         height={cardHeight}

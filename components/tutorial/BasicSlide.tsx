@@ -4,7 +4,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useTranslation } from "react-i18next";
 
-export const getIconForSlide = (type: string, slideIndex: number) => {
+export const getIconForSlide = (type: string) => {
     switch (type) {
       case 'welcome':
         return 'info';
@@ -23,7 +23,7 @@ export const getIconForSlide = (type: string, slideIndex: number) => {
     }
 };
 
-export const getColorForSlide = (type: string, slideIndex: number) => {
+export const getColorForSlide = (type: string) => {
     switch (type) {
       case 'welcome':
         return '#3B82F6';

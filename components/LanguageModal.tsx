@@ -7,6 +7,7 @@ import {
   StyleSheet,
   FlatList,
   useWindowDimensions,
+  Platform,
   TouchableOpacity
 } from 'react-native';
 import { useTranslation } from "react-i18next";
@@ -64,6 +65,11 @@ const LanguageModal: React.FC<LanguageModalProps> = ({ visible, onClose }) => {
   const modalWidth = width > 660 ? 600 : 350;
   const languageFontSize = width > 500 ? 24 : 14;
 
+  const isWeb  = Platform.OS == 'web'
+  const circleSize = isWeb ? 70 : 50;
+  const flagSize = isWeb ? 150 : 70;
+  const maxHeight = isWeb ? "90%" : "80%";
+
   // Use translator fixed to selected language (to show UI text in that language)
   const tSelected = (langCode?: string) =>
     langCode ? i18n.getFixedT(langCode, "index") : i18n.getFixedT(i18n.language, "index");
@@ -110,11 +116,11 @@ const LanguageModal: React.FC<LanguageModalProps> = ({ visible, onClose }) => {
       >
         <View style={styles.tileContainer}>
         <CircleBorder
-          size={70}
+          size={circleSize}
           borderWidth={2}
           borderColor={'#fff'}
         >
-          <item.flag width={150} height={150} />
+          <item.flag width={flagSize} height={flagSize} />
         </CircleBorder>
 
         <Text style={styles.languageText} numberOfLines={1}>
@@ -128,7 +134,7 @@ const LanguageModal: React.FC<LanguageModalProps> = ({ visible, onClose }) => {
   return (
     <Modal visible={visible} transparent animationType="slide" onRequestClose={handleCancel}>
       <View style={styles.overlay}>
-        <View style={styles.container}>
+        <View style={[styles.container, {maxHeight: maxHeight}]}>
           {/* Header with X button */}
           <View style={styles.header}>
             <Text style={styles.title}>{t('choose_language')}</Text>
@@ -166,7 +172,7 @@ const LanguageModal: React.FC<LanguageModalProps> = ({ visible, onClose }) => {
 
 const styles = StyleSheet.create({
   overlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', justifyContent: 'center', alignItems: 'center' },
-  container: { flex: 1, margin: 24, backgroundColor: '#fff', borderRadius: 12, padding: 16, alignItems: 'center', maxHeight: "90%" },
+  container: { flex: 1, margin: 24, backgroundColor: '#fff', borderRadius: 12, padding: 16, alignItems: 'center' },
   header: { width: '100%', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 },
   title: { fontSize: 24, fontWeight: 'bold', alignItems: 'center' },
   closeX: { padding: 4 },
@@ -182,7 +188,10 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
       minWidth: 100 },
-  tileContainer: {},
+  tileContainer: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      },
   languageText: { fontSize: 18, marginTop: 12, textAlign: 'center', color: '#000'},
   footer: { flexDirection: 'row', marginTop: 12, justifyContent: 'space-between', width: '100%' },
   cancelButton: { flex: 1, marginRight: 8, paddingVertical: 14, backgroundColor: '#9CA3AF', borderRadius: 8, alignItems: 'center' },

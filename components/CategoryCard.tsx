@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions, Platform } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 
 interface CategoryCardProps {
   title: string;
@@ -16,6 +17,7 @@ interface CategoryCardProps {
   tileWidth ?: number,
   padding ?: number,
   description?: string;
+  iconSize?: number;
 }
 
 const CategoryCard: React.FC<CategoryCardProps> = ({
@@ -30,8 +32,11 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
   height = null,
   tileWidth = null,
   padding = null,
-  isInTutorial = false
+  isInTutorial = false,
+  iconSize,
 }) => {
+  const parts = icon.split('.');
+
   if (isInTutorial) {
     // Fixed sizing for tutorial mode
     return (
@@ -40,11 +45,18 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
         onPress={onPress}
       >
         <View style={[styles.tutorialIconContainer, { backgroundColor: `${color}15` }]}>
-          <MaterialIcons
-            name={icon}
-            size={tutorialIconSize}
-            color={"#fff"}
-          />
+          {parts[0] == "material" &&
+              <MaterialIcons
+                name={parts[1]}
+                size={tutorialIconSize}
+                color={"#fff"}
+          />}
+          {parts[0] == "awesome6" && (
+              <FontAwesome6
+                name={"facebook"}
+                size={tutorialIconSize}
+                color={"#fff"}
+          />)}
         </View>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.subtitle}>{subtitle}</Text>
@@ -56,7 +68,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
   const cardHeight = height ?? (width < 600 ? 300 : 480);
   const cardPadding = padding ?? width < 600 ? 24 : 48;
   const cardWidth = tileWidth ?? (width - cardPadding * columns) / columns; // 2 columns with padding
-  const iconSize = Math.min(Math.max(32, cardWidth * 0.3), 200); // Responsive icon size, minimum 32
+  const iconSizes = iconSize ?? Math.min(Math.max(32, cardWidth * 0.3), 200); // Responsive icon size, minimum 32
 
   if (Platform.OS == 'web') {
     return (
@@ -65,12 +77,19 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
         onPress={onPress}
       >
         <View style={[styles.iconContainer, { backgroundColor: "#fff", width: cardWidth * 0.9,
-            height: Math.min(iconSize*3, 300), borderColor: color, borderWidth: 4}]}>
-          <MaterialIcons
-            name={icon}
-            size={iconSize}
+            flex: "1", borderColor: color, borderWidth: 4}]}>
+          {parts[0] == "material" &&
+            <MaterialIcons
+            name={parts[1]}
+            size={iconSizes}
             color={color}
-          />
+          />}
+          {parts[0] == "awesome6" && (
+            <FontAwesome6
+            name={parts[1]}
+            size={iconSizes}
+            color={color}
+          />)}
         </View>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.subtitle}>{subtitle}</Text>
@@ -84,11 +103,18 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
     >
       <View style={[styles.iconContainer, { backgroundColor: color, width: 100,
           height: 100, borderRadius: 64}]}>
-        <MaterialIcons
-          name={icon}
-          size={iconSize}
-          color={"#fff"}
-        />
+          {parts[0] == "material" &&
+            <MaterialIcons
+            name={parts[1]}
+            size={iconSizes}
+            color={"#fff"}
+          />}
+          {parts[0] == "awesome6" && (
+            <FontAwesome6
+            name={"facebook"}
+            size={iconSizes}
+            color={"#fff"}
+          />)}
       </View>
       <Text style={[styles.title, {fontSize: 18}]}>{title}</Text>
       <Text style={[styles.subtitle, {fontSize: 14}]}>{subtitle}</Text>

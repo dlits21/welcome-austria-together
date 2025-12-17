@@ -218,8 +218,7 @@ export default function LanguageSelectionScreen() {
                       borderColor: isSelected ? "#A60B33" : "#e6e6e6",
                       borderWidth: isSelected ? 2 : 1,
                     },
-                  ]}
-                >
+                  ]}>
                   <View style={styles.tileContainer}>
                   <CircleBorder
                     size={80}

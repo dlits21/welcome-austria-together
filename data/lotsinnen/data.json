@@ -1,0 +1,80 @@
+{
+  "lotsinnen": [
+    {
+      "name": "Yassin Almutlab",
+      "imagePath": "yassin",
+      "languages": ["ar", "de", "en"],
+      "subtitle": {
+        "de": "Ich bin Yassin. Ich weiß, wie verwirrend das System hier am Anfang sein kann – ich hab’s selbst erlebt. Und genau da helfe ich. Mir ist wichtig, dass niemand alleine mit seinen Fragen bleibt.",
+        "en":"I'm Yassin. I know how confusing the system can be at the beginning - I\"ve experienced it myself. And that\"s exactly where I help. It is important to me that no one is left alone with their questions.",
+        "ru": "Я Ясин. Я знаю, насколько запутанной может быть система поначалу — я испытал это на себе. И именно здесь я помогаю. Для меня важно, чтобы никто не остался один на один со своими вопросами.",
+        "ar": "انا ياسين. أعلم مدى إرباك النظام في البداية - لقد اختبرت ذلك بنفسي . وهذا هو بالضبط المكان الذي أساعد فيه. من المهم بالنسبة لي ألا يُترك أحد بمفرده مع أسئلته.",
+        "fa": "من یاسین هستم من می دانم که سیستم در ابتدا چقدر می تواند گیج کننده باشد - من خودم آن را تجربه کرده ام . و دقیقاً همان جایی است که من کمک می کنم. برای من مهم است که هیچ کس با سؤالات خود تنها نگذارد.",
+        "sq": "Unë jam Yassin. E di sa konfuz mund të jetë sistemi në fillim - e kam përjetuar vetë. Dhe pikërisht këtu ndihmoj. Për mua është e rëndësishme që askush të mos mbetet vetëm me pyetjet e tij.",
+        "ps": "زه یاسین یم زه پوهیږم چې سیسټم په پیل کې څومره مغشوش کیدی شي - ما پخپله تجربه کړې. او دا هغه ځای دی چې زه مرسته کوم. دا زما لپاره مهمه ده چې هیڅوک د دوی پوښتنو سره یوازې نه پاتې کیږي.",
+        "ka": "მე ვარ იასინი. მე ვიცი, რამდენად დამაბნეველი შეიძლება იყოს სისტემა დასაწყისში - მე თვითონ განვიცდიდი. და სწორედ აქ ვეხმარები. ჩემთვის მნიშვნელოვანია, რომ არავინ დარჩეს მარტო თავის კითხვებზე.",
+        "so": "waxaan ahay yaasiin Waan ogahay sida uu nidaamku u jahawareerin karo bilowga - aniga lafteyda ayaan la kulmay. Waana meesha aan ku caawiyo. Waxaa muhiim ii ah inaan qofna su\"aalihiisa cidlo kaga harin.",
+        "ku": "Ez Yasîn im. Ez dizanim ku di destpêkê de pergal dikare çiqas tevlihev be - min bi xwe ew ceriband. Û ez tam li wir alîkariyê dikim. Ji bo min girîng e ku kes bi pirsên xwe tenê nemîne."
+        },
+      "phone": "+43 665 65663167",
+      "email": "yassin.almutlab@gmail.com"
+    },
+    {
+      "name": "Tayyaba Kiran",
+      "imagePath": "tayyaba",
+      "languages": ["ps", "fa", "en"],
+      "subtitle": {
+        "de":"Ich bin Tayyaba. Ich berate in Urdu, Paschtu und Farsi – weil viele Frauen genau in diesen Sprachen Unterstützung suchen. Für mich ist wichtig: Jeder und jede soll die Chance haben, Infos in der eigenen Sprache zu bekommen.",
+        "en": "I am Tayyaba. I advise in Urdu, Pashto and Farsi - because many women seek support in precisely these languages. What's important to me is that everyone should have the chance to get information in their own language.",
+        "ru": "Я Тайяба. Я консультирую на урду, пушту и фарси – ведь многие женщины ищут поддержку именно на этих языках. Для меня важно, чтобы каждый имел возможность получать информацию на своем родном языке.",
+        "ar": "أنا طيبة. أنصحك باللغة الأردية والباشتو والفارسية - لأن العديد من النساء يطلبن الدعم بهذه اللغات تحديدًا. ما يهمني هو أن الجميع يجب أن تتاح لهم الفرصة للحصول على المعلومات بلغتهم الخاصة.",
+        "fa": "من طیبه هستم.من به زبان های اردو، پشتو و فارسی توصیه می کنم - زیرا بسیاری از زنان دقیقاً به این زبان ها به دنبال پشتیبانی هستند.چیزی که برای من مهم است این است که هرکسی باید این شانس را داشته باشد که به زبان خودش اطلاعات کسب کند.",
+        "sq": "Unë jam Tajaba. Unë këshilloj në urdu, pashto dhe farsi - sepse shumë gra kërkojnë mbështetje pikërisht në këto gjuhë. Ajo që është e rëndësishme për mua është që të gjithë duhet të kenë mundësinë të marrin informacion në gjuhën e tyre.",
+        "ps": "زه طیبه یم زه په اردو، پښتو او فارسي کې مشوره ورکوم - ځکه چې ډیری ښځې په دې ژبو کې د مرستې غوښتنه کوي. هغه څه چې زما لپاره مهم دي دا دي چې هرڅوک باید په خپله ژبه کې د معلوماتو ترلاسه کولو فرصت ولري.",
+        "ka": "მე ვარ ტაიაბა. მე ვურჩევ ურდუ, პუშტუ და სპარსული - რადგან ბევრი ქალი დახმარებას სწორედ ამ ენებზე ეძებს. ჩემთვის მნიშვნელოვანია ის, რომ ყველას უნდა ჰქონდეს შესაძლებლობა მიიღოს ინფორმაცია საკუთარ ენაზე.",
+        "so": "Waxaan ahay Tayyaba. Waxaan kula talinayaa Urduu, Pashto iyo Farsi - sababtoo ah dumar badan ayaa taageero ku raadsada luqadahaan. Waxa muhim ii ah waa in qof walba uu helo fursad uu ku helo macluumaadka afkiisa.",
+        "ku": "Ez Teyyaba me. Ez bi Urdu, Paşto û Farisî şîretan dikim - ji ber ku gelek jin tam bi van zimanan li piştgiriyê digerin. Ji bo min ya girîng ew e ku her kes xwedî derfet be ku bi zimanê xwe agahiyan bigire."
+      },
+      "phone": "+43 681 20619051",
+      "email": "Khanmarkt@gmail.com"
+    },
+    {
+      "name": "Ibrahim Atma",
+      "imagePath": "ibrahim",
+      "languages": ["ar", "de"],
+      "subtitle": {
+        "de": "Ich bin Ibrahim. Viele kommen mit Fragen, weil sie das österreichische System nicht kennen – ich erkläre es auf Arabisch, damit es klarer wird. Ich weiß, wie verwirrend Formulare sein können. Darum helfe ich gerne in meiner Sprache.",
+        "en":"I am Ibrahim. Many people come with questions because they don't know the Austrian system - I explain it in Arabic to make it clearer. I know how confusing forms can be. That's why I'm happy to help in my language.",
+        "ru":"Я Ибрагим. Многие приходят с вопросами, потому что не знают австрийской системы – я объясняю по-арабски, чтобы было понятнее. Я знаю, насколько запутанными могут быть формы. Вот почему я рад помочь на моем языке.",
+        "ar":"انا ابراهيم . كثير من الناس يأتون بأسئلة لأنهم لا يعرفون النظام النمساوي - أشرحه باللغة العربية ليكون أكثر وضوحا. أعرف كيف يمكن أن تكون الأشكال مربكة. ولهذا السبب يسعدني تقديم المساعدة في لغتي.",
+        "fa":"من ابراهیم هستم بسیاری از مردم با سوال می آیند زیرا سیستم اتریشی را نمی دانند - من آن را به عربی توضیح می دهم تا واضح تر شود. من می دانم که فرم ها چقدر می توانند گیج کننده باشند. به همین دلیل خوشحالم که به زبانم کمک می کنم.",
+        "sq":"Unë jam Ibrahimi. Shumë njerëz vijnë me pyetje sepse nuk e njohin sistemin austriak - e shpjegoj në arabisht për ta bërë më të qartë. E di sa konfuze mund të jenë format .Kjo është arsyeja pse unë jam i lumtur të ndihmoj në gjuhën time.",
+        "ps":"زه ابراهیم یم ډیری خلک د پوښتنو سره راځي ځکه چې دوی د اتریش سیسټم نه پوهیږي - زه یې په عربي کې تشریح کوم ترڅو روښانه شي. زه پوهیږم چې څنګه مغشوش ډولونه کیدی شي. له همدې امله زه خوشحاله یم چې زما په ژبه کې مرسته وکړم.",
+        "ka":"მე ვარ იბრაჰიმი. ბევრი ადამიანი მოდის კითხვებით, რადგან მათ არ იციან ავსტრიული სისტემა - არაბულად ავხსნი, რომ უფრო გასაგები იყოს. მე ვიცი, როგორი დამაბნეველი ფორმები შეიძლება იყოს. ამიტომაც სიამოვნებით დაგეხმარები ჩემს ენაზე.",
+        "so":"Waxaan ahay Ibraahim. Dad badan ayaa la yimaada su\"aalo sababtoo ah ma yaqaaniin nidaamka Austrian - waxaan ku sharaxay Carabi si aan u caddeeyo. Waan ogahay sida foomamka jahawareerku u noqon karaan. Taasi waa sababta aan ugu faraxsanahay inaan ku caawiyo",
+        "ku":"Ez Îbrahîm im. Gelek kes bi pirsan têne ji ber ku ew pergala Avusturyayê nizanin - ez wê bi erebî şirove dikim da ku ew zelaltir bikim. Ez dizanim çawa formên tevlihev dikarin bibin. Ji ber vê yekê ez kêfxweş im ku alîkariya zimanê xwe bikim."
+       },
+      "phone": "+43 664 75557810",
+      "email": "ibrahimatma9@gmail.com"
+    },
+    {
+      "name": "Hamdi Mahamed Daahir",
+      "imagePath": "hamdi",
+      "languages": ["so", "de", "en", "ar"],
+      "subtitle": {
+        "de": "Ich bin Hamdi. Viele verstehen Arbeitsrechte erst, wenn man sie in ihrer Sprache erklärt – das macht einen großen Unterschied. Es ist schön zu sehen, wenn jemand nach einer Beratung wirklich versteht: Ich habe Rechte, ich habe Möglichkeiten.",
+        "en": "I am Hamdi. Many people only understand labor rights when they are explained in their language - that makes a big difference. It's nice to see when someone really understands after counseling: I have rights, I have options.",
+        "ru": "Я Хамди. Многие люди понимают трудовые права только тогда, когда их объясняют на их языке, и это имеет большое значение. Приятно видеть, когда после консультации кто-то действительно понимает: у меня есть права, у меня есть возможности.",
+        "ar": "انا حمدي . كثير من الناس لا يفهمون حقوق العمل إلا عندما يتم شرحها بلغتهم - وهذا يحدث فرقًا كبيرًا. من الجميل أن نرى عندما يفهم شخص ما حقًا بعد الاستشارة: لدي حقوق، ولدي خيارات.",
+        "fa": "من حمدی هستم. بسیاری از مردم تنها زمانی حقوق کار را درک می کنند که به زبانشان توضیح داده شود - این تفاوت بزرگی ایجاد می کند. خیلی خوب است که وقتی کسی واقعاً بعد از مشاوره می‌فهمد: من حقوق دارم، گزینه‌هایی دارم.",
+        "sq": "Unë jam Hamdiu. Shumë njerëz i kuptojnë të drejtat e punës vetëm kur ato shpjegohen në gjuhën e tyre - kjo bën një ndryshim të madh. Është bukur të shohësh kur dikush e kupton vërtet pas këshillimit: Unë kam të drejta, kam mundësi.",
+        "ps": "زه حمدي یم ډیری خلک یوازې د کار حقونه پوهیږي کله چې دوی د دوی په ژبه تشریح شوي - دا لوی توپیر رامینځته کوي. دا ښه ده چې وګورئ کله چې یو څوک واقعیا د مشورې وروسته پوهیږي: زه حقونه لرم، زه اختیارونه لرم.",
+        "ka": "მე ვარ ჰამდი. ბევრ ადამიანს შრომის უფლებები მხოლოდ მაშინ ესმის, როცა მათ ენაზე ხსნიან - ეს დიდ განსხვავებას ქმნის. სასიამოვნოა იმის დანახვა, როდესაც ვინმეს ნამდვილად ესმის კონსულტაციის შემდეგ: მე მაქვს უფლებები, მაქვს ვარიანტები.",
+        "so": "waxaan ahay Xamdi Dad badan ayaa kaliya fahma xuquuqda shaqada marka lagu sharaxo luuqadooda - taasi waxay keentaa farqi weyn. Way fiican tahay in la arko marka qof si dhab ah u fahmo la-talinta ka dib: Waxaan leeyahay xuquuq, waxaan haystaa doorashooyin.",
+        "ku": "Ez Hemdî me. Gelek kes tenê gava ku bi zimanê xwe têne ravekirin mafên kedê fam dikin - ev yek cûdahiyek mezin dike. Kêfxweş e ku meriv bibîne gava kesek bi rastî piştî şêwirdariyê fam dike: Mafên min hene, vebijarkên min hene."
+      },
+      "phone": "+43 688 64947016",
+      "email": "hamdimahamed97@gmail.com"
+    }
+  ]
+}

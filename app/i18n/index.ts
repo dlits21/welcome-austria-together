@@ -11,6 +11,7 @@ import deCommon from '../../assets/locales/de/common.json';
 import deEmergency from '../../assets/locales/de/emergency.json';
 import deIndex from '../../assets/locales/de/index.json';
 import deHome from '../../assets/locales/de/home.json';
+import deSupport from '../../assets/locales/de/support.json';
 
 import enCommon from '../../assets/locales/en/common.json';
 import enEmergency from '../../assets/locales/en/emergency.json';
@@ -67,6 +68,7 @@ export const resources = {
       emergency: deEmergency,
       index: deIndex,
       home: deHome,
+      support: deSupport,
       },
   en: {
       common: enCommon,

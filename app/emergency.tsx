@@ -17,6 +17,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import PageNavigation from '../components/PageNavigation';
 import LanguageModal from '../components/LanguageModal';
 import TutorialModal from '../components/TutorialModal';
+import Menu from '../components/Menu';
 
 // Import emergency data
 import emergencyData from '../data/emergency.json';
@@ -39,11 +40,12 @@ interface EmergencyCategory {
 const EmergencySupport: React.FC = () => {
   const { t } = useTranslation('emergency');
   const { currentLanguage } = useLanguage();
-  const [showLanguageModal, setShowLanguageModal] = useState(false);
+  const [showLanguage, setShowLanguage] = useState(false);
   const [showTutorial, setShowTutorial] = useState(false);
 
   const [selectedEmergency, setSelectedEmergency] = useState<EmergencyContact | null>(null);
   const [showContactModal, setShowContactModal] = useState(false);
+  const isWeb  = Platform.OS == 'web'
 
   // Load emergency categories from external data
   const emergencyCategories: EmergencyCategory[] = emergencyData.emergencyCategories;
@@ -88,7 +90,7 @@ const EmergencySupport: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <PageNavigation
-        showLanguageModal={() => setShowLanguageModal(true)}
+        showLanguage={() => setShowLanguage(true)}
         showTutorial={() => setShowTutorial(true)}
       />
 
@@ -108,7 +110,13 @@ const EmergencySupport: React.FC = () => {
                 style={styles.emergencyCard}
                 onPress={() => handleCategoryPress(category)}
               >
-                <Text style={styles.emergencyIcon}>{category.icon}</Text>
+                <View style={[styles.emergencyIcon, { backgroundColor: '#fff' }]}>
+                  <MaterialIcons
+                    name={category.icon}
+                    size={64}
+                    color={"#A60B33"}
+                  />
+                </View>
                 <Text style={styles.emergencyTitle}>
                   {t(category.titleKey)}
                 </Text>
@@ -167,17 +175,16 @@ const EmergencySupport: React.FC = () => {
       </View>
 
       <LanguageModal
-        visible={showLanguageModal}
-        onClose={() => setShowLanguageModal(false)}
-        languageCode={currentLanguage.code}
+        visible={showLanguage}
+        onClose={() => setShowLanguage(false)}
       />
 
       <TutorialModal
         visible={showTutorial}
         onClose={() => setShowTutorial(false)}
-        languageCode={currentLanguage.code}
         tutorialData="emergency"
       />
+    {!isWeb && (<Menu />)}
     </SafeAreaView>
   );
 };
@@ -212,12 +219,12 @@ const styles = StyleSheet.create({
   },
   emergencyCard: {
     width: '48%',
-    backgroundColor: '#f8fafc',
+    backgroundColor: '#fff',
     borderRadius: 16,
     padding: 20,
     marginBottom: 16,
     borderWidth: 2,
-    borderColor: '#e2e8f0',
+    borderColor: '#A60B33',
     alignItems: 'center',
     minHeight: 140,
     justifyContent: 'center',
