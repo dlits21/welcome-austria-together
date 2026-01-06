@@ -12,6 +12,7 @@ import {
   ScrollView
 } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '../contexts/LanguageContext';
 import PageNavigation from '../components/PageNavigation';
@@ -111,11 +112,18 @@ const EmergencySupport: React.FC = () => {
                 onPress={() => handleCategoryPress(category)}
               >
                 <View style={[styles.emergencyIcon, { backgroundColor: '#fff' }]}>
-                  <MaterialIcons
-                    name={category.icon}
+                  {category.icon.split(".")[0] == "material" &&
+                    <MaterialIcons
+                    name={category.icon.split(".")[1]}
                     size={64}
                     color={"#A60B33"}
-                  />
+                  />}
+                  {category.icon.split(".")[0] == "awesome6" &&
+                    <FontAwesome6
+                    name={category.icon.split(".")[1]}
+                    size={64}
+                    color={"#A60B33"}
+                  />}
                 </View>
                 <Text style={styles.emergencyTitle}>
                   {t(category.titleKey)}

@@ -2,7 +2,7 @@
   "emergencyCategories": [
     {
       "key": "general",
-      "icon": "phone",
+      "icon": "material.phone",
       "titleKey": "generalEmergency",
       "subtitleKey": "universalEmergencyNumber",
       "contacts": [
@@ -16,7 +16,7 @@
     },
     {
       "key": "fire",
-      "icon": "local-fire-department",
+      "icon": "material.local-fire-department",
       "titleKey": "fireEmergency",
       "subtitleKey": "firesExplosionsRescue",
       "contacts": [
@@ -30,7 +30,7 @@
     },
     {
       "key": "police",
-      "icon": "local-police",
+      "icon": "material.local-police",
       "titleKey": "policeEmergency",
       "subtitleKey": "crimeAccidentsSecurity",
       "contacts": [
@@ -44,7 +44,7 @@
     },
     {
       "key": "medical",
-      "icon": "medical-services",
+      "icon": "material.medical-services",
       "titleKey": "medicalEmergency",
       "subtitleKey": "healthEmergenciesAmbulance",
       "contacts": [
@@ -58,7 +58,7 @@
     },
     {
       "key": "domestic-violence",
-      "icon": "flood",
+      "icon": "material.flood",
       "titleKey": "domesticViolence",
       "subtitleKey": "domesticViolenceSupport",
       "contacts": [
@@ -72,7 +72,7 @@
     },
     {
       "key": "mental",
-      "icon": "psychology",
+      "icon": "awesome6.sad-tear",
       "titleKey": "mentalHealthCrisis",
       "subtitleKey": "psychologicalCrisisSuicidePrevention",
       "contacts": [
@@ -86,7 +86,7 @@
     },
     {
       "key": "soul-care",
-      "icon": "church",
+      "icon": "awesome6.dove",
       "titleKey": "careOfSoul",
       "subtitleKey": "spiritualEmotionalSupport",
       "contacts": [
@@ -100,7 +100,7 @@
     },
     {
       "key": "youth",
-      "icon": "family-restroom",
+      "icon": "material.family-restroom",
       "titleKey": "youthCare",
       "subtitleKey": "supportForChildrenAndYouth",
       "contacts": [

@@ -3,7 +3,6 @@ import {
   StyleSheet,
   Text,
   View,
-  ScrollView,
   SafeAreaView,
   Platform,
 } from 'react-native';
@@ -13,6 +12,7 @@ import LanguageModal from '../components/LanguageModal';
 import TutorialModal from '../components/TutorialModal';
 import CategoryCard from '../components/CategoryCard';
 import { useTranslation } from 'react-i18next';
+import Menu from '../components/Menu';
 
 const GeneralSupport: React.FC = () => {
   const { t } = useTranslation('support');
@@ -100,8 +100,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
-  },
-  scrollView: {
     flex: 1,
   },
   contentContainer: {

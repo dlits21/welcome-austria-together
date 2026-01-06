@@ -37,6 +37,7 @@ const LANGUAGES = {
 }
 
 interface LotsInnen {
+  key: string;
   name: string;
   imagePath: string;
   languages: string[];
@@ -53,6 +54,7 @@ const expertImages = {
  }
 
 const ExpertCard: React.FC<LotsInnen> = ({
+  key,
   name,
   imagePath,
   languages,

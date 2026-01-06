@@ -12,6 +12,7 @@ import LanguageModal from '../../components/LanguageModal';
 import TutorialModal from '../../components/TutorialModal';
 import CategoryCard from '../../components/CategoryCard';
 import ExpertCard from '../../components/ExpertCard';
+import Menu from '../../components/Menu';
 import { useTranslation } from 'react-i18next';
 import { handleContactClick } from '../../utils/contactUtils';
 
@@ -38,7 +39,6 @@ const IndividualSupport: React.FC = () => {
   const isWeb  = Platform.OS == 'web'
   const cardHeight = isWeb ? 250 : 350;
   const cardWidth = isWeb ? 200 : 100;
-  console.log(lotsinnenData)
   const lotsinnenArray: LotsInnen[] = lotsinnenData.lotsinnen;
 
   return (
@@ -57,6 +57,7 @@ const IndividualSupport: React.FC = () => {
         <View style={styles.lotsinnenGrid}>
           {lotsinnenArray.map((category) => (
             <ExpertCard
+              key={category.name}
               name={category.name}
               imagePath={category.imagePath}
               languages={category.languages}
@@ -111,9 +112,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
-  },
-  scrollView: {
-    flex: 1,
   },
   contentContainer: {
     padding: 16,

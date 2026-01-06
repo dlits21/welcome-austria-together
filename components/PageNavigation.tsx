@@ -27,7 +27,7 @@ const PageNavigation: React.FC<PageNavigationProps> = ({
       {/* Left: Back button */}
       {showBackButton ? (
         <TouchableOpacity onPress={handleBackPress} style={styles.backButton}>
-          <MaterialIcons name="arrow-back" size={24} color="#333" />
+          <MaterialIcons name="arrow-back" size={24} color="#fff" />
         </TouchableOpacity>
       ) : (
         <View style={styles.backButtonPlaceholder} />
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   backButton: {
     padding: 8,
     borderRadius: 20,
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#A60B33',
   },
   backButtonPlaceholder: {
     width: 40, // same width as back button for alignment when no back button

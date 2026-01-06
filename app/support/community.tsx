@@ -11,6 +11,7 @@ import PageNavigation from '../../components/PageNavigation';
 import LanguageModal from '../../components/LanguageModal';
 import TutorialModal from '../../components/TutorialModal';
 import CategoryCard from '../../components/CategoryCard';
+import Menu from '../../components/Menu';
 import { useTranslation } from 'react-i18next';
 import { handleContactClick } from '../../utils/contactUtils';
 
@@ -121,9 +122,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-around',
-  },
-  scrollView: {
-    flex: 1,
   },
   contentContainer: {
     padding: 16,

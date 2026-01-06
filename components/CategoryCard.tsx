@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions, Platform } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons'
 
 interface CategoryCardProps {
   title: string;
@@ -53,9 +54,15 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
           />}
           {parts[0] == "awesome6" && (
               <FontAwesome6
-                name={"facebook"}
+                name={parts[1]}
                 size={tutorialIconSize}
                 color={"#fff"}
+          />)}
+          {parts[0] == "community" && (
+            <MaterialCommunityIcons
+            name={parts[1]}
+            size={iconSizes}
+            color={"#fff"}
           />)}
         </View>
         <Text style={styles.title}>{title}</Text>
@@ -90,6 +97,12 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
             size={iconSizes}
             color={color}
           />)}
+          {parts[0] == "community" && (
+            <MaterialCommunityIcons
+            name={parts[1]}
+            size={iconSizes}
+            color={color}
+          />)}
         </View>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.subtitle}>{subtitle}</Text>
@@ -111,7 +124,13 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
           />}
           {parts[0] == "awesome6" && (
             <FontAwesome6
-            name={"facebook"}
+            name={parts[1]}
+            size={iconSizes}
+            color={"#fff"}
+          />)}
+          {parts[0] == "community" && (
+            <MaterialCommunityIcons
+            name={parts[1]}
             size={iconSizes}
             color={"#fff"}
           />)}

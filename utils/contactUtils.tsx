@@ -7,7 +7,8 @@ export const handleContactClick = ({
     phone_number = "+4368110768180",
     telegram_handle = "Dlits2",
     email = "dlits2111@gmail.com",
-    facebook = "your_facebook_page"}) => {
+    facebook = "your_facebook_page",
+    url = "www.und-sdg.at"}) => {
 
   const message = encodeURIComponent('Hallo, ich benötige Unterstützung und Beratung. Können Sie mir helfen?');
   console.log("phone_number", phone_number, email, method)
@@ -78,5 +79,7 @@ export const handleContactClick = ({
   } else if (method === 'community-forum') {
     const forumUrl = 'https://forum.example.com';
     Linking.openURL(forumUrl);
+  } else if (method === 'website') {
+    Linking.openURL(url).catch(() => Alert.alert("Cannot open link"))
   }
 };
