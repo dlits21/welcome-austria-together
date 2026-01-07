@@ -54,6 +54,15 @@ const CategoryGrid: React.FC<CategoryGridProps> = ({ onCategoryClick }) => {
         onPress={() => onCategoryClick('emergency')}
         height={cardHeight}
       />
+
+      <CategoryCard
+        title="Test Page"
+        subtitle="For Development & Testing"
+        icon="material.bug_report"
+        color="#666"
+        onPress={() => onCategoryClick('test')}
+        height={cardHeight}
+      />
     </View>
   );
 };
