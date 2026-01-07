@@ -16,6 +16,7 @@ import deInformation from '../../assets/locales/de/information.json';
 import deInformationAsylum from '../../assets/locales/de/information-asylum.json';
 import deInformationWork from '../../assets/locales/de/information-work.json';
 import deInformationHousing from '../../assets/locales/de/information-housing.json';
+import deInformationEducation from '../../assets/locales/de/information-education.json';
 
 import enCommon from '../../assets/locales/en/common.json';
 import enEmergency from '../../assets/locales/en/emergency.json';
@@ -74,9 +75,10 @@ export const resources = {
       home: deHome,
       support: deSupport,
       information: deInformation,
-      informationAsyl: deInformationAsylum,
+      informationAsylum: deInformationAsylum,
       informationWork: deInformationWork,
       informationHousing: deInformationHousing,
+      informationEducation: deInformationEducation,
       },
   en: {
       common: enCommon,

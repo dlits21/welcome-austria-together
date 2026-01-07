@@ -64,7 +64,7 @@ const ContactCard: React.FC<ContactData> = ({
  const isWeb  = Platform.OS == 'web'
  const circleSize = isWeb ? 30 : 20;
  const flagSize = isWeb ? 150 : 70;
- console.log(email)
+
 
   return (
     <View style={styles.contactCard}>

@@ -116,6 +116,7 @@ const InfoPage: React.FC<InfoPageProps> = ({
                 expanded={expandedSection === tile.key}
                 onPress={() => toggleSection(tile.key)}
                 content={tile.content}
+                nameSpace={translationNamespace}
               >
               </AccordionItem>
             </View>
@@ -136,11 +137,6 @@ const InfoPage: React.FC<InfoPageProps> = ({
               languages={contact.languages}
             />
           ))}
-
-          <View style={{ height: 12 }} />
-          <Pressable style={styles.contactsButton} onPress={openContact}>
-            <Text style={styles.contactsButtonText}>{t("moreContacts", { defaultValue: "More contacts" })}</Text>
-          </Pressable>
         </View>
       </ScrollView>
 

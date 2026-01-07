@@ -19,6 +19,7 @@ interface AccordionItemProps {
   expanded: boolean;
   onPress: () => void;
   content: TilesContent;
+  nameSpace: string;
 }
 
 const AccordionItem: React.FC<AccordionItemProps> = ({
@@ -29,6 +30,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
   expanded,
   onPress,
   content,
+  nameSpace='common'
 }) => {
   return (
     <View style={styles.accordionItem}>
@@ -38,7 +40,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
         activeOpacity={0.7}
       >
       <View style={styles.accordionTitleContainer}>
-        <MaterialIcons name={'gavel'} size={24} color={iconColor} />
+        <MaterialIcons name={icon} size={24} color={iconColor} />
         <View style={styles.accordionTextContainer}>
           <Text style={styles.accordionTitle}>{title}</Text>
           <Text style={styles.accordionSubtitle}>{subtitle}</Text>
@@ -59,6 +61,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
               subtitle={entry.subtitle}
               icon={entry.icon}
               iconSize={entry.iconSize}
+              nameSpace={nameSpace}
               >
             </AccordionContent>
           ))}

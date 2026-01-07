@@ -3,20 +3,33 @@
   "entities": [
     {
       "id": "requestAsylum",
-      "title": "requestAsylum",
+      "title": "request_asylum",
       "videoId": "local.asyl_process",
       "tiles": [
         {
           "key": "id1",
-          "title": "Test1",
-          "subtitle": "Longer text1",
+          "title": "id1.title",
+          "subtitle": "id1.subtitle",
           "content": [
             {
-              "key": "list1",
-              "title": "content1",
-              "subtitle": "Longer Content",
-              "icon": "awesome6.gavel",
-              "iconSize": "64"
+              "key": "id1.entry1",
+              "title": "id1.entry1.title",
+              "subtitle": "id1.entry1.subtitle"
+            },
+            {
+              "key": "id1.entry2",
+              "title": "id1.entry2.title",
+              "subtitle": "id1.entry2.subtitle"
+            },
+            {
+              "key": "id1.entry3",
+              "title": "id1.entry3.title",
+              "subtitle": "id1.entry3.subtitle"
+            },
+            {
+              "key": "id1.entry4",
+              "title": "id1.entry4.title",
+              "subtitle": "id1.entry4.subtitle"
             }
           ],
           "icon": "gavel",
@@ -25,15 +38,23 @@
         },
         {
           "key": "id2",
-          "title": "Test2",
-          "subtitle": "Longer text1",
+          "title": "id2.title",
+          "subtitle": "id2.subtitle",
           "content": [
             {
-              "key": "list1",
-              "title": "content1",
-              "subtitle": "Longer Content",
-              "icon": "awesome6.gavel",
-              "iconSize": "64"
+              "key": "id2.entry1",
+              "title": "id2.entry1.title",
+              "subtitle": "id2.entry1.subtitle"
+            },
+            {
+              "key": "id2.entry2",
+              "title": "id2.entry2.title",
+              "subtitle": "id2.entry2.subtitle"
+            },
+            {
+              "key": "id1.entry3",
+              "title": "id1.entry3.title",
+              "subtitle": "id1.entry3.subtitle"
             }
           ],
           "icon": "gavel",
@@ -42,15 +63,28 @@
         },
         {
           "key": "id3",
-          "title": "Test3",
-          "subtitle": "Longer text1",
+          "title": "id3.title",
+          "subtitle": "id3.subtitle",
           "content": [
             {
-              "key": "list1",
-              "title": "content1",
-              "subtitle": "Longer Content",
-              "icon": "awesome6.gavel",
-              "iconSize": "64"
+              "key": "id3.entry1",
+              "title": "id3.entry1.title",
+              "subtitle": "id3.entry1.subtitle"
+            },
+            {
+              "key": "id3.entry2",
+              "title": "id3.entry2.title",
+              "subtitle": "id3.entry2.subtitle"
+            },
+            {
+              "key": "id3.entry3",
+              "title": "id3.entry3.title",
+              "subtitle": "id3.entry3.subtitle"
+            },
+            {
+              "key": "id3.entry4",
+              "title": "id3.entry4.title",
+              "subtitle": "id3.entry4.subtitle"
             }
           ],
           "icon": "gavel",
@@ -59,15 +93,88 @@
         },
         {
           "key": "id4",
-          "title": "Test4",
-          "subtitle": "Longer text1",
+          "title": "id4.title",
+          "subtitle": "id4.subtitle",
           "content": [
             {
-              "key": "list1",
-              "title": "content1",
-              "subtitle": "Longer Content",
-              "icon": "awesome6.1",
-              "iconSize": "64"
+              "key": "id4.entry1",
+              "title": "id4.entry1.title",
+              "subtitle": "id4.entry1.subtitle"
+            },
+            {
+              "key": "id4.entry2",
+              "title": "id4.entry2.title",
+              "subtitle": "id4.entry2.subtitle"
+            },
+            {
+              "key": "id4.entry3",
+              "title": "id4.entry3.title",
+              "subtitle": "id4.entry3.subtitle"
+            }
+          ],
+          "icon": "gavel",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "id5",
+          "title": "id5.title",
+          "subtitle": "id5.subtitle",
+          "content": [
+            {
+              "key": "id5.entry1",
+              "title": "id5.entry1.title",
+              "subtitle": "id5.entry1.subtitle"
+            },
+            {
+              "key": "id5.entry2",
+              "title": "id5.entry2.title",
+              "subtitle": "id5.entry2.subtitle"
+            },
+            {
+              "key": "id5.entry3",
+              "title": "id5.entry3.title",
+              "subtitle": "id5.entry3.subtitle"
+            },
+            {
+              "key": "id5.entry4",
+              "title": "id5.entry4.title",
+              "subtitle": "id5.entry4.subtitle"
+            }
+          ],
+          "icon": "gavel",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "id6",
+          "title": "id6.title",
+          "subtitle": "id6.subtitle",
+          "content": [
+            {
+              "key": "id6.entry1",
+              "title": "id6.entry1.title",
+              "subtitle": "id6.entry1.subtitle"
+            },
+            {
+              "key": "id6.entry2",
+              "title": "id6.entry2.title",
+              "subtitle": "id6.entry2.subtitle"
+            },
+            {
+              "key": "id6.entry3",
+              "title": "id6.entry3.title",
+              "subtitle": "id6.entry3.subtitle"
+            },
+            {
+              "key": "id6.entry4",
+              "title": "id6.entry4.title",
+              "subtitle": "id6.entry4.subtitle"
+            },
+            {
+              "key": "id6.entry5",
+              "title": "id6.entry5.title",
+              "subtitle": "id6.entry5.subtitle"
             }
           ],
           "icon": "gavel",
@@ -77,33 +184,67 @@
       ],
       "contacts": [
         {
-          "key": "und",
-          "name": "UND",
-          "subtitle": "Unabhangiges Netzwerk Drehscheibe",
+          "key": "bfa",
+          "name": "BFA",
+          "subtitle": "Offizielle Anlaufstelle für Asyl & Aufenthalt",
           "languages": [
             "en",
             "de"
           ],
-          "phone": "+4368110768180",
-          "email": "dlits2111@gmail.com",
-          "url": "https://www.und-sdg.at/"
+          "phone": "+43 59133 98 7004",
+          "email": "BFA-Einlaufstelle@bmi.gv.at",
+          "url": "https://www.bfa.gv.at"
         },
         {
-          "key": "caritas",
-          "name": "Caritas",
-          "subtitle": "Unabhangiges Netzwerk Drehscheibe",
+          "key": "bbu",
+          "name": "BBU",
+          "subtitle": "Bundesagentur für Betreuung und Unterstützungsleistung",
           "languages": [
             "en",
-            "de",
-            "ru"
+            "de"
           ],
-          "phone": "+4368110768180",
-          "email": "dlits2111@gmail.com",
-          "url": "https://www.und-sdg.at/"
+          "phone": "+43 1 2676 8709 416",
+          "email": "rechtsberatung.linz@bbu.gv.at",
+          "url": "https://www.bbu.gv.at"
+        },
+        {
+          "key": "sos_menschenrechte",
+          "name": "SOS Menschenrechte",
+          "subtitle": "Unabhängige Rechtsberatung im Asylverfahren",
+          "languages": [
+            "en",
+            "de"
+          ],
+          "phone": "+43 732 714 274",
+          "email": "office@sos.at",
+          "url": "https://www.sos.at"
+        },
+        {
+          "key": "diakonie",
+          "name": "Diakonie",
+          "subtitle": "Unabhängige Rechtsberatung im Asylverfahren ",
+          "languages": [
+            "en",
+            "de"
+          ],
+          "phone": "+43 1 40 56 29 51",
+          "email": "beratung.ost@diakonie.at",
+          "url": "https://www.diakonie.at/unsere-themen/flucht-und-integration/rechtsberatung-und-sozialberatung-fuer-fluechtlinge"
+        },
+        {
+          "key": "migrare",
+          "name": "Migrare",
+          "subtitle": "Unabhängige Rechtsberatung im Asylverfahren",
+          "languages": [
+            "en", "de", "ru", "fa", "ar", "ps", "ch", "ku", "sq"
+          ],
+          "phone": "+43 732 667363-601",
+          "email": "termin@migrare.at,",
+          "url": "https://www.migrare.at"
         }
       ],
       "tutorialData": "home",
-      "translationNamespace": "common"
+      "translationNamespace": "informationAsylum"
     }
   ]
 }

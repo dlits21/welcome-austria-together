@@ -174,7 +174,7 @@ export default function LanguageSelectionScreen() {
           </Text>
 
           <View style={styles.ButtonContainer}>
-            <TouchableOpacity onPress={onContinue} style={styles.utton}>
+            <TouchableOpacity onPress={onContinue} style={styles.Button}>
               <CircleBorder
                 size={iconContainerSize}
                 borderWidth={2}

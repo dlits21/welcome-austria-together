@@ -1,0 +1,148 @@
+
+{
+  "entities": [
+    {
+      "id": "application",
+      "title": "application",
+      "tiles": [
+        {
+          "key": "id1",
+          "title": "id1.title",
+          "subtitle": "id1.subtitle",
+          "content": [
+            {
+              "key": "id1.entry1",
+              "title": "id1.entry1.title",
+              "subtitle": "id1.entry1.subtitle"
+            },
+            {
+              "key": "id1.entry2",
+              "title": "id1.entry2.title",
+              "subtitle": "id1.entry2.subtitle"
+            },
+            {
+              "key": "id1.entry3",
+              "title": "id1.entry3.title",
+              "subtitle": "id1.entry3.subtitle"
+            }
+          ],
+          "icon": "gavel",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "id2",
+          "title": "id2.title",
+          "subtitle": "id2.subtitle",
+          "content": [
+            {
+              "key": "id2.entry1",
+              "title": "id2.entry1.title"
+            },
+            {
+              "key": "id2.entry2",
+              "title": "id2.entry2.title"
+            },
+            {
+              "key": "id2.entry3",
+              "title": "id2.entry3.title"
+            },
+            {
+              "key": "id2.entry4",
+              "title": "id2.entry4.title"
+            },
+            {
+              "key": "id2.entry5",
+              "title": "id2.entry5.title"
+            },
+            {
+              "key": "id2.entry6",
+              "title": "id2.entry6.title"
+            }
+          ],
+          "icon": "gavel",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "id3",
+          "title": "id3.title",
+          "subtitle": "id3.subtitle",
+          "content": [
+            {
+              "key": "id3.entry3",
+              "title": "id3.entry1.title",
+              "subtitle": "id3.entry1.subtitle"
+            },
+            {
+              "key": "id3.entry3",
+              "title": "id3.entry2.title"
+            },
+            {
+              "key": "id3.entry3",
+              "title": "id3.entry3.title"
+            }
+          ],
+          "icon": "gavel",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "id4",
+          "title": "id4.title",
+          "subtitle": "id4.subtitle",
+          "content": [
+            {
+              "key": "id4.entry1",
+              "title": "id4.entry1.title"
+            },
+            {
+              "key": "id4.entry2",
+              "title": "id4.entry2.title"
+            },
+            {
+              "key": "id4.entry3",
+              "title": "id4.entry3.title"
+            },
+            {
+              "key": "id4.entry4",
+              "title": "id4.entry4.title"
+            }
+          ],
+          "icon": "gavel",
+          "color": "#000",
+          "cardHeight": 350
+        }
+      ],
+      "contacts": [
+        {
+          "key": "ams",
+          "name": "AMS",
+          "subtitle": "Arbeitsmarktservice",
+          "languages": [
+            "en",
+            "de"
+          ],
+          "url": "http://ams.at/"
+        },
+        {
+          "key": "volkshilfe",
+          "name": "Volkshilfe",
+          "subtitle": "Beratung",
+          "languages": [
+            "en",
+            "de",
+            "ar",
+            "ru",
+            "ps"
+          ],
+          "phone": "+431360644777",
+          "email": "akompano@volkshilfe-wien.at",
+          "url": "https://www.volkshilfe-wien.at/angebote-services/asyl-migration-integration/beratungszentrum-akompano/"
+        }
+      ],
+      "tutorialData": "home",
+      "translationNamespace": "informationWork"
+    }
+  ]
+}
