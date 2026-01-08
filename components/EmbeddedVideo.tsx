@@ -21,7 +21,7 @@ const EmbeddedVideo: React.FC<{videoId: string}> = ({videoId}) => {
   const isYoutube = videoIds[0] == 'youtube';
   const isLocal = videoIds[0] == 'local';
 
-  const videoSources = {
+  const videoSources: {[key: string]: {[key: string]: string}} = {
     "asyl_process": {
       "de": 'https://integrationsbox.at/GV/images/Videos/DE/asyl_recht/DE_Asylverfahren.mp4',
       "en": 'https://integrationsbox.at/GV/images/Videos/EN/asyl_recht/EN_Asylverfahren.mp4',
@@ -32,7 +32,11 @@ const EmbeddedVideo: React.FC<{videoId: string}> = ({videoId}) => {
     }
   }
 
-  const player = useVideoPlayer(videoSources[videoIds[1]][currentLanguage], (player) => {
+  const videoKey = videoIds[1]
+  const sourceEntry = videoSources[videoKey];
+  const videoSource = sourceEntry ? (sourceEntry[currentLanguage] || sourceEntry['de']) : null;
+
+  const player = useVideoPlayer(videoSource, (player) => {
     player.loop = true;
     player.play();
   });
@@ -45,7 +49,7 @@ const EmbeddedVideo: React.FC<{videoId: string}> = ({videoId}) => {
       <YoutubePlayer width={width} height={height} play={playing} videoId={videoIds[1]} />
     )}
 
-    {isLocal && (
+    {isLocal && videoSource && (
       <VideoView style={styles.video} player={player} allowsFullscreen allowsPictureInPicture />
     )}
     </View>
