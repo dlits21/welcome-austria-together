@@ -115,7 +115,11 @@ const InfoPage: React.FC<InfoPageProps> = ({
                 iconColor={tile.color}
                 expanded={expandedSection === tile.key}
                 onPress={() => toggleSection(tile.key)}
-                content={tile.content}
+                content={tile.content.map(c => ({
+                  ...c,
+                  title: t(c.title),
+                  subtitle: c.subtitle ? t(c.subtitle) : ''
+                }))}
               >
               </AccordionItem>
             </View>
