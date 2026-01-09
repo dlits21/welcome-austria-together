@@ -1,148 +1,346 @@
-
 {
   "entities": [
     {
-      "id": "application",
-      "title": "application",
+      "id": "learningLanguage",
+      "title": "learning_language",
+      "translationNamespace": "informationEducation",
       "tiles": [
         {
-          "key": "id1",
-          "title": "id1.title",
-          "subtitle": "id1.subtitle",
+          "key": "whyDeutsch",
+          "title": "learning_language_help",
+          "subtitle": "learning_language_help_desc",
           "content": [
             {
-              "key": "id1.entry1",
-              "title": "id1.entry1.title",
-              "subtitle": "id1.entry1.subtitle"
+              "key": "daily",
+              "title": "learning_language_help_daily",
+              "subtitle": "learning_language_help_daily_desc",
+              "icon": "community.calendar-text-outline",
+              "iconSize": 64
             },
             {
-              "key": "id1.entry2",
-              "title": "id1.entry2.title",
-              "subtitle": "id1.entry2.subtitle"
+              "key": "school",
+              "title": "learning_language_help_school",
+              "subtitle": "learning_language_help_school_desc",
+              "icon": "community.school-outline",
+              "iconSize": 64
             },
             {
-              "key": "id1.entry3",
-              "title": "id1.entry3.title",
-              "subtitle": "id1.entry3.subtitle"
+              "key": "work",
+              "title": "learning_language_help_work",
+              "subtitle": "learning_language_help_work_desc",
+              "icon": "community.briefcase-outline",
+              "iconSize": 64
+            },
+            {
+              "key": "authorities",
+              "title": "learning_language_help_authorities",
+              "subtitle": "learning_language_help_authorities_desc",
+              "icon": "community.office-building-outline",
+              "iconSize": 64
             }
           ],
-          "icon": "gavel",
+          "icon": "community.translate",
           "color": "#000",
           "cardHeight": 350
         },
         {
-          "key": "id2",
-          "title": "id2.title",
-          "subtitle": "id2.subtitle",
+          "key": "offers",
+          "title": "learning_language_content_title",
+          "subtitle": "learning_language_content_subtitle",
           "content": [
             {
-              "key": "id2.entry1",
-              "title": "id2.entry1.title"
+              "key": "courses",
+              "title": "learning_language_courses",
+              "subtitle": "learning_language_courses_desc",
+              "icon": "community.book-open-page-variant-outline",
+              "iconSize": 64
             },
             {
-              "key": "id2.entry2",
-              "title": "id2.entry2.title"
+              "key": "adults",
+              "title": "learning_language_adults",
+              "subtitle": "learning_language_adults_desc",
+              "icon": "community.account-group-outline",
+              "iconSize": 64
             },
             {
-              "key": "id2.entry3",
-              "title": "id2.entry3.title"
+              "key": "everyday",
+              "title": "learning_language_everyday",
+              "subtitle": "learning_language_everyday_desc",
+              "icon": "community.cart-outline",
+              "iconSize": 64
             },
             {
-              "key": "id2.entry4",
-              "title": "id2.entry4.title"
-            },
-            {
-              "key": "id2.entry5",
-              "title": "id2.entry5.title"
-            },
-            {
-              "key": "id2.entry6",
-              "title": "id2.entry6.title"
+              "key": "age",
+              "title": "learning_language_age",
+              "subtitle": "learning_language_age_desc",
+              "icon": "community.infinity",
+              "iconSize": 64
             }
           ],
-          "icon": "gavel",
+          "icon": "community.book-education-outline",
           "color": "#000",
           "cardHeight": 350
         },
         {
-          "key": "id3",
-          "title": "id3.title",
-          "subtitle": "id3.subtitle",
+          "key": "where",
+          "title": "learning_language_where_title",
+          "subtitle": "learning_language_where_subtitle",
           "content": [
             {
-              "key": "id3.entry3",
-              "title": "id3.entry1.title",
-              "subtitle": "id3.entry1.subtitle"
+              "key": "places",
+              "title": "learning_language_places",
+              "subtitle": "learning_language_places_desc",
+              "icon": "community.map-marker-outline",
+              "iconSize": 64
             },
             {
-              "key": "id3.entry3",
-              "title": "id3.entry2.title"
+              "key": "free",
+              "title": "learning_language_free",
+              "subtitle": "learning_language_free_desc",
+              "icon": "awesome6.hand-holding-heart",
+              "iconSize": 64
             },
             {
-              "key": "id3.entry3",
-              "title": "id3.entry3.title"
+              "key": "online",
+              "title": "learning_language_online",
+              "subtitle": "learning_language_online_desc",
+              "icon": "community.laptop",
+              "iconSize": 64
             }
           ],
-          "icon": "gavel",
-          "color": "#000",
-          "cardHeight": 350
-        },
-        {
-          "key": "id4",
-          "title": "id4.title",
-          "subtitle": "id4.subtitle",
-          "content": [
-            {
-              "key": "id4.entry1",
-              "title": "id4.entry1.title"
-            },
-            {
-              "key": "id4.entry2",
-              "title": "id4.entry2.title"
-            },
-            {
-              "key": "id4.entry3",
-              "title": "id4.entry3.title"
-            },
-            {
-              "key": "id4.entry4",
-              "title": "id4.entry4.title"
-            }
-          ],
-          "icon": "gavel",
+          "icon": "community.compass-outline",
           "color": "#000",
           "cardHeight": 350
         }
       ],
       "contacts": [
         {
-          "key": "ams",
-          "name": "AMS",
-          "subtitle": "Arbeitsmarktservice",
-          "languages": [
-            "en",
-            "de"
-          ],
-          "url": "http://ams.at/"
+          "key": "vhs_linz",
+          "name": "VHS Linz (Wissensturm)",
+          "subtitle": "Deutschkurse (A1–B2)",
+          "languages": ["de"],
+          "phone": "+43 732 7070",
+          "email": "wissensturm@mag.linz.at",
+          "address": "Kärntnerstraße 26, 4020 Linz",
+          "url": "https://vhskurs.linz.at/index.php?urlparameter=kathaupt%3A26%3Bsuchesetzen%3Afalse%3B&kfs_stichwort_schlagwort=Deutsch"
         },
         {
-          "key": "volkshilfe",
-          "name": "Volkshilfe",
-          "subtitle": "Beratung",
-          "languages": [
-            "en",
-            "de",
-            "ar",
-            "ru",
-            "ps"
-          ],
-          "phone": "+431360644777",
-          "email": "akompano@volkshilfe-wien.at",
-          "url": "https://www.volkshilfe-wien.at/angebote-services/asyl-migration-integration/beratungszentrum-akompano/"
+          "key": "bfi_ooe",
+          "name": "BFI Oberösterreich",
+          "subtitle": "Deutschkurse (A1–C1)",
+          "languages": ["de"],
+          "phone": "0810 007 007",
+          "email": "deutschkurse@bfi-ooe.at",
+          "address": "Bulgariplatz 12, 4020 Linz",
+          "url": "https://www.bfi-ooe.at/de/kurssuche.html?category=1"
+        },
+        {
+          "key": "wifi_ooe",
+          "name": "WIFI Oberösterreich",
+          "subtitle": "Deutsch- & Integrationskurse (A1–B2)",
+          "languages": ["de"],
+          "phone": "+43 5 7000 77",
+          "email": "kundenservice@wifi-ooe.at",
+          "address": "Wiener Straße 150, 4021 Linz",
+          "url": "https://www.wifi-ooe.at/kurssuche"
+        },
+        {
+          "key": "wienxtra",
+          "name": "WIENXTRA Jugendinfo",
+          "subtitle": "Deutsch lernen kostenlos & günstig",
+          "languages": ["de"],
+          "phone": "+43 1 909 4000 84100",
+          "email": "jugendinfowien@wienxtra.at",
+          "address": "Babenbergerstraße 1, 1010 Wien",
+          "url": "https://www.wienxtra.at/jugendinfo/infos-von-a-z/deutsch-lernen-kostenlos-und-guenstig/"
+        },
+        {
+          "key": "oif",
+          "name": "Österreichischer Integrationsfonds (ÖIF)",
+          "subtitle": "Sprachportal & Deutschkurse",
+          "languages": ["de"],
+          "phone": "05 0468 0",
+          "email": "sprache@integrationsfonds.at",
+          "address": "Landstraßer Hauptstraße 26, 1030 Wien",
+          "url": "https://sprachportal.at/"
         }
       ],
-      "tutorialData": "home",
-      "translationNamespace": "informationWork"
+      "tutorialData": "education"
+    },
+    {
+      "id": "educationSchool",
+      "title": "education_school",
+      "translationNamespace": "informationEducation",
+      "tiles": [
+        {
+          "key": "childrenSchool",
+          "title": "education_children_title",
+          "subtitle": "education_children_subtitle",
+          "content": [
+            {
+              "key": "duty",
+              "title": "education_school_duty",
+              "subtitle": "education_school_duty_desc",
+              "icon": "community.clock-outline",
+              "iconSize": 64
+            },
+            {
+              "key": "primary",
+              "title": "education_primary",
+              "subtitle": "education_primary_desc",
+              "icon": "community.book-education-outline",
+              "iconSize": 64
+            },
+            {
+              "key": "secondary",
+              "title": "education_secondary",
+              "subtitle": "education_secondary_desc",
+              "icon": "community.school",
+              "iconSize": 64
+            },
+            {
+              "key": "after14",
+              "title": "education_after14",
+              "subtitle": "education_after14_desc",
+              "icon": "community.account-hard-hat-outline",
+              "iconSize": 64
+            }
+          ],
+          "icon": "community.school-outline",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "registrationDocs",
+          "title": "education_registration",
+          "subtitle": "education_registration_desc",
+          "content": [
+            {
+              "key": "documents",
+              "title": "education_documents",
+              "subtitle": "education_documents_desc",
+              "icon": "community.file-document-outline",
+              "iconSize": 64
+            },
+            {
+              "key": "support",
+              "title": "education_support",
+              "subtitle": "education_support_desc",
+              "icon": "community.account-check-outline",
+              "iconSize": 64
+            }
+          ],
+          "icon": "community.card-account-details-outline",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "adults",
+          "title": "education_adults_title",
+          "subtitle": "education_adults_subtitle",
+          "content": [
+            {
+              "key": "adultCourses",
+              "title": "education_adults_courses",
+              "subtitle": "education_adults_courses_desc",
+              "icon": "community.chart-line",
+              "iconSize": 64
+            },
+            {
+              "key": "adultSupport",
+              "title": "education_adults_support",
+              "subtitle": "education_adults_support_desc",
+              "icon": "community.account-tie-outline",
+              "iconSize": 64
+            }
+          ],
+          "icon": "community.account-group-outline",
+          "color": "#000",
+          "cardHeight": 350
+        }
+      ],
+      "contacts": [],
+      "tutorialData": "education"
+    },
+    {
+      "id": "democracy",
+      "title": "democracy",
+      "videoId": "youtube.Q607TYRBxFU",
+      "videoTitle": "summary",
+      "translationNamespace": "informationEducation",
+      "tiles": [
+        {
+          "key": "basics",
+          "title": "democracy_definition",
+          "subtitle": "democracy_definition_desc",
+          "content": [
+            {
+              "key": "rights",
+              "title": "democracy_rights",
+              "subtitle": "democracy_rights_desc",
+              "icon": "community.account-voice",
+              "iconSize": 64
+            },
+            {
+              "key": "decisions",
+              "title": "democracy_decisions",
+              "subtitle": "democracy_decisions_desc",
+              "icon": "community.vote-outline",
+              "iconSize": 64
+            }
+          ],
+          "icon": "awesome6.landmark-dome",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "everyday",
+          "title": "democracy_daily",
+          "subtitle": "democracy_daily_desc",
+          "content": [
+            {
+              "key": "participation",
+              "title": "democracy_participation",
+              "subtitle": "democracy_participation_desc",
+              "icon": "community.handshake-outline",
+              "iconSize": 64
+            }
+          ],
+          "icon": "community.account-group",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "easyLanguage",
+          "title": "democracy_info",
+          "subtitle": "democracy_info_desc",
+          "content": [],
+          "icon": "community.text-box-outline",
+          "color": "#000",
+          "cardHeight": 350
+        }
+      ],
+      "contacts": [
+        {
+          "key": "parlament",
+          "name": "Österreichisches Parlament",
+          "subtitle": "Demokratie in Leichter Sprache",
+          "languages": ["de"],
+          "phone": "+43 1 40110 2400",
+          "email": "besucherservice@parlament.gv.at",
+          "address": "Dr.-Karl-Renner-Ring 3, 1017 Wien",
+          "url": "https://www.parlament.gv.at/services/barrierefreiheit/leichte-sprache"
+        },
+        {
+          "key": "lpb_bw",
+          "name": "Landeszentrale für politische Bildung Baden-Württemberg",
+          "subtitle": "Demokratie in Leichter Sprache",
+          "languages": ["de"],
+          "address": "Lautenschlagerstraße 20, 70173 Stuttgart",
+          "url": "https://www.lpb-bw.de/demokratie-leichte-sprache"
+        }
+      ],
+      "tutorialData": "education"
     }
   ]
 }
