@@ -12,6 +12,7 @@ import deEmergency from '../../assets/locales/de/emergency.json';
 import deIndex from '../../assets/locales/de/index.json';
 import deHome from '../../assets/locales/de/home.json';
 import deSupport from '../../assets/locales/de/support.json';
+import deAbout from '../../assets/locales/de/about.json';
 import deInformation from '../../assets/locales/de/information.json';
 import deInformationAsylum from '../../assets/locales/de/information-asylum.json';
 import deInformationWork from '../../assets/locales/de/information-work.json';
@@ -74,6 +75,7 @@ export const resources = {
       index: deIndex,
       home: deHome,
       support: deSupport,
+      about: deAbout,
       information: deInformation,
       informationAsylum: deInformationAsylum,
       informationWork: deInformationWork,

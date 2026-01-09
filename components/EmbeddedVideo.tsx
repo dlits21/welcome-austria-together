@@ -20,6 +20,7 @@ const EmbeddedVideo: React.FC<{videoId: string}> = ({videoId}) => {
   const videoIds = videoId.split('.');
   const isYoutube = videoIds[0] == 'youtube';
   const isLocal = videoIds[0] == 'local';
+  console.log("Video", videoIds, isLocal, isYoutube)
 
   const videoSources = {
     "asyl_process": {
@@ -32,12 +33,14 @@ const EmbeddedVideo: React.FC<{videoId: string}> = ({videoId}) => {
     }
   }
 
-  const player = useVideoPlayer(videoSources[videoIds[1]][currentLanguage], (player) => {
-    player.loop = true;
-    player.play();
-  });
+  if (isLocal) {
+    const player =useVideoPlayer(videoSources[videoIds[1]][currentLanguage], (player) => {
+      player.loop = true;
+      player.play();
+    });
 
-  const { isPlaying } = useEvent(player, 'playingChange', { isPlaying: player.playing });
+    const { isPlaying } = useEvent(player, 'playingChange', { isPlaying: player.playing });
+  }
 
   return (
     <View style={styles.videoWrap}>

@@ -17,7 +17,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
   title,
   subtitle,
   icon,
-  iconSize = 64,
+  iconSize = 24,
   nameSpace = "common"
 }) => {
   const parts = icon ? icon.split('.') : null;

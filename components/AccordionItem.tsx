@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons'
 import AccordionContent from './AccordionContent'
 
 interface TilesContent {
@@ -32,6 +34,8 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
   content,
   nameSpace='common'
 }) => {
+  const parts = icon ? icon.split('.') : null;
+
   return (
     <View style={styles.accordionItem}>
       <TouchableOpacity
@@ -40,7 +44,26 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
         activeOpacity={0.7}
       >
       <View style={styles.accordionTitleContainer}>
-        <MaterialIcons name={icon} size={24} color={iconColor} />
+        <View style={{marginLeft: 16}}>
+          {icon && parts[0] == "material" &&
+            <MaterialIcons
+              name={parts[1]}
+              size={24}
+              color={"#000"}
+          />}
+          {icon && parts[0] == "awesome6" && (
+            <FontAwesome6
+              name={parts[1]}
+              size={24}
+              color={"#000"}
+          />)}
+          {icon && parts[0] == "community" && (
+            <MaterialCommunityIcons
+              name={parts[1]}
+              size={24}
+              color={"#000"}
+          />)}
+          </View>
         <View style={styles.accordionTextContainer}>
           <Text style={styles.accordionTitle}>{title}</Text>
           <Text style={styles.accordionSubtitle}>{subtitle}</Text>

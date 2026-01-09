@@ -45,57 +45,29 @@ const Education: React.FC = () => {
       <ScrollView style={styles.gridContainer} showsVerticalScrollIndicator={false}>
         <View style={[styles.categoryGrid]}>
           <CategoryCard
-            title={t('registration')}
-            subtitle={t('registration_subtitle')}
-            icon="material.assignment"
+            title={t('learning_language')}
+            subtitle={t('learning_language_subtitle')}
+            icon="community.translate"
             color="rgba(221, 7, 121, 0.5)"
-            onPress={() => onContinue('registration')}
-            height={cardHeight}
-            iconSize={iconSize}
-          />
-
-          <CategoryCard
-            title={t('search')}
-            subtitle={t('search_subtitle')}
-            icon="material.search"
-            color="rgba(221, 7, 121, 0.5)"
-            onPress={() => onContinue('search')}
+            onPress={() => onContinue('learningLanguage')}
             height={cardHeight}
             iconSize={iconSize}
           />
           <CategoryCard
-            title={t('application')}
-            subtitle={t('application_subtitle')}
+            title={t('education_school')}
+            subtitle={t('education_school_subtitle')}
+            icon="community.school"
+            color="rgba(221, 7, 121, 0.5)"
+            onPress={() => onContinue('educationSchool')}
+            height={cardHeight}
+            iconSize={iconSize}
+          />
+          <CategoryCard
+            title={t('democracy')}
+            subtitle={t('democracy_subtitle')}
             icon="awesome6.file-text"
             color="rgba(221, 7, 121, 0.5)"
-            onPress={() => onContinue('application')}
-            height={cardHeight}
-            iconSize={iconSize}
-          />
-          <CategoryCard
-            title={t('rights')}
-            subtitle={t('rights_subtitle')}
-            icon="material.gavel"
-            color="rgba(221, 7, 121, 0.5)"
-            onPress={() => onContinue('rights')}
-            height={cardHeight}
-            iconSize={iconSize}
-          />
-          <CategoryCard
-            title={t('education')}
-            subtitle={t('education_subtitle')}
-            icon="material.school"
-            color="rgba(221, 7, 121, 0.5)"
-            onPress={() => onContinue('education')}
-            height={cardHeight}
-            iconSize={iconSize}
-          />
-          <CategoryCard
-            title={t('certification')}
-            subtitle={t('certification_subtitle')}
-            icon="community.certificate"
-            color="rgba(221, 7, 121, 0.5)"
-            onPress={() => onContinue('certification')}
+            onPress={() => onContinue('democracy')}
             height={cardHeight}
             iconSize={iconSize}
           />
