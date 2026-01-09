@@ -8,12 +8,12 @@ import {
   Platform,
 } from 'react-native';
 import { useRouter } from 'expo-router';
-import PageNavigation from '../../components/PageNavigation';
-import LanguageModal from '../../components/LanguageModal';
-import TutorialModal from '../../components/TutorialModal';
-import CategoryCard from '../../components/CategoryCard';
+import PageNavigation from '../../../components/PageNavigation';
+import LanguageModal from '../../../components/LanguageModal';
+import TutorialModal from '../../../components/TutorialModal';
+import CategoryCard from '../../../components/CategoryCard';
 import { useTranslation } from 'react-i18next';
-import Menu from '../../components/Menu';
+import Menu from '../../../components/Menu';
 
 const Housing: React.FC = () => {
   const { t } = useTranslation('informationHousing');
@@ -103,7 +103,6 @@ const Housing: React.FC = () => {
       </ScrollView>
 
       <LanguageModal
-        visible={showLanguage}
         visible={showLanguage}
         onClose={() => setShowLanguage(false)}
       />

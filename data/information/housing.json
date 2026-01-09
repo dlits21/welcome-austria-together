@@ -1,148 +1,461 @@
-
 {
   "entities": [
     {
-      "id": "application",
-      "title": "application",
+      "id": "findHousing",
+      "title": "find_housing",
+      "videoId": "",
+      "translationNamespace": "informationHousing",
       "tiles": [
         {
-          "key": "id1",
-          "title": "id1.title",
-          "subtitle": "id1.subtitle",
+          "key": "preparation",
+          "title": "finding_preparation_title",
+          "subtitle": "finding_preparation_subtitle",
           "content": [
             {
-              "key": "id1.entry1",
-              "title": "id1.entry1.title",
-              "subtitle": "id1.entry1.subtitle"
+              "key": "prep_ads",
+              "title": "finding_preparation_ads",
+              "subtitle": "finding_preparation_ads_desc",
+              "icon": "community.newspaper-variant-multiple",
+              "iconSize": 64
             },
             {
-              "key": "id1.entry2",
-              "title": "id1.entry2.title",
-              "subtitle": "id1.entry2.subtitle"
+              "key": "prep_budget",
+              "title": "finding_preparation_budget",
+              "subtitle": "finding_preparation_budget_desc",
+              "icon": "community.wallet-outline",
+              "iconSize": 64
             },
             {
-              "key": "id1.entry3",
-              "title": "id1.entry3.title",
-              "subtitle": "id1.entry3.subtitle"
+              "key": "prep_costs",
+              "title": "finding_preparation_costs",
+              "subtitle": "finding_preparation_costs_desc",
+              "icon": "community.cash-plus",
+              "iconSize": 64
             }
           ],
-          "icon": "gavel",
+          "icon": "community.text-box-search-outline",
           "color": "#000",
-          "cardHeight": 350
+          "cardHeight": 120
         },
         {
-          "key": "id2",
-          "title": "id2.title",
-          "subtitle": "id2.subtitle",
+          "key": "viewing",
+          "title": "finding_viewing_title",
+          "subtitle": "finding_viewing_subtitle",
           "content": [
             {
-              "key": "id2.entry1",
-              "title": "id2.entry1.title"
+              "key": "view_appt",
+              "title": "finding_viewing_appt",
+              "subtitle": "finding_viewing_appt_desc",
+              "icon": "community.calendar-check",
+              "iconSize": 64
             },
             {
-              "key": "id2.entry2",
-              "title": "id2.entry2.title"
+              "key": "view_check",
+              "title": "finding_viewing_check",
+              "subtitle": "finding_viewing_check_desc",
+              "icon": "community.home-search-outline",
+              "iconSize": 64
             },
             {
-              "key": "id2.entry3",
-              "title": "id2.entry3.title"
+              "key": "view_lift",
+              "title": "finding_viewing_lift",
+              "subtitle": "finding_viewing_lift_desc",
+              "icon": "awesome6.elevator",
+              "iconSize": 64
             },
             {
-              "key": "id2.entry4",
-              "title": "id2.entry4.title"
-            },
-            {
-              "key": "id2.entry5",
-              "title": "id2.entry5.title"
-            },
-            {
-              "key": "id2.entry6",
-              "title": "id2.entry6.title"
+              "key": "view_prep",
+              "title": "finding_viewing_prep",
+              "subtitle": "finding_viewing_prep_desc",
+              "icon": "community.account-tie",
+              "iconSize": 64
             }
           ],
-          "icon": "gavel",
+          "icon": "community.door-open",
           "color": "#000",
-          "cardHeight": 350
-        },
-        {
-          "key": "id3",
-          "title": "id3.title",
-          "subtitle": "id3.subtitle",
-          "content": [
-            {
-              "key": "id3.entry3",
-              "title": "id3.entry1.title",
-              "subtitle": "id3.entry1.subtitle"
-            },
-            {
-              "key": "id3.entry3",
-              "title": "id3.entry2.title"
-            },
-            {
-              "key": "id3.entry3",
-              "title": "id3.entry3.title"
-            }
-          ],
-          "icon": "gavel",
-          "color": "#000",
-          "cardHeight": 350
-        },
-        {
-          "key": "id4",
-          "title": "id4.title",
-          "subtitle": "id4.subtitle",
-          "content": [
-            {
-              "key": "id4.entry1",
-              "title": "id4.entry1.title"
-            },
-            {
-              "key": "id4.entry2",
-              "title": "id4.entry2.title"
-            },
-            {
-              "key": "id4.entry3",
-              "title": "id4.entry3.title"
-            },
-            {
-              "key": "id4.entry4",
-              "title": "id4.entry4.title"
-            }
-          ],
-          "icon": "gavel",
-          "color": "#000",
-          "cardHeight": 350
+          "cardHeight": 120
         }
       ],
       "contacts": [
         {
-          "key": "ams",
-          "name": "AMS",
-          "subtitle": "Arbeitsmarktservice",
-          "languages": [
-            "en",
-            "de"
-          ],
-          "url": "http://ams.at/"
+          "key": "diakonie",
+          "name": "Diakonie – Kostenlose Wohnberatung",
+          "subtitle": "Beratung für Flüchtlinge",
+          "languages": ["de"],
+          "phone": "+43 1 40 56 29 51",
+          "email": "beratung.ost@diakonie.at",
+          "url": ""
         },
         {
           "key": "volkshilfe",
-          "name": "Volkshilfe",
-          "subtitle": "Beratung",
-          "languages": [
-            "en",
-            "de",
-            "ar",
-            "ru",
-            "ps"
-          ],
-          "phone": "+431360644777",
-          "email": "akompano@volkshilfe-wien.at",
-          "url": "https://www.volkshilfe-wien.at/angebote-services/asyl-migration-integration/beratungszentrum-akompano/"
+          "name": "Volkshilfe Oberösterreich",
+          "subtitle": "Wohnen & Beratung für Migrant:innen",
+          "languages": ["de"],
+          "phone": "",
+          "email": "",
+          "url": "https://www.volkshilfe-ooe.at/was-wir-tun/fluechtlinge-migrantinnen/"
+        },
+        {
+            "key": "caritas",
+            "name": "Caritas Oberösterreich",
+            "subtitle": "Migration & Integration",
+            "languages": ["de"],
+            "url": "https://www.caritas-ooe.at/hilfe-angebote/migration-integration"
         }
       ],
-      "tutorialData": "home",
-      "translationNamespace": "informationWork"
+      "tutorialData": "housing",
+      "translationNamespace": "informationHousing"
+    },
+    {
+      "id": "registration",
+      "title": "registration",
+      "videoId": "local.housing_registration",
+      "translationNamespace": "informationHousing",
+      "tiles": [
+        {
+          "key": "meldezettel",
+          "title": "registration_meldezettel_title",
+          "subtitle": "registration_meldezettel_subtitle",
+          "content": [
+            {
+              "key": "what",
+              "title": "registration_meldezettel_what",
+              "subtitle": "registration_meldezettel_what_desc",
+              "icon": "community.file-document-outline",
+              "iconSize": 64
+            },
+            {
+              "key": "how",
+              "title": "registration_meldezettel_how",
+              "subtitle": "registration_meldezettel_how_desc",
+              "icon": "community.fountain-pen-tip",
+              "iconSize": 64
+            },
+            {
+              "key": "deadline",
+              "title": "registration_meldezettel_deadline",
+              "subtitle": "registration_meldezettel_deadline_desc",
+              "icon": "community.alarm-check",
+              "iconSize": 64
+            }
+          ],
+          "icon": "community.card-account-details-outline",
+          "color": "#000",
+          "cardHeight": 120
+        }
+      ],
+      "contacts": [
+        {
+          "key": "diakonie",
+          "name": "Diakonie – Kostenlose Wohnberatung",
+          "subtitle": "Beratung für Flüchtlinge",
+          "languages": ["de"],
+          "phone": "+43 1 40 56 29 51",
+          "email": "beratung.ost@diakonie.at",
+          "url": ""
+        },
+        {
+          "key": "volkshilfe",
+          "name": "Volkshilfe Oberösterreich",
+          "subtitle": "Wohnen & Beratung für Migrant:innen",
+          "languages": ["de"],
+          "phone": "",
+          "email": "",
+          "url": "https://www.volkshilfe-ooe.at/was-wir-tun/fluechtlinge-migrantinnen/"
+        },
+        {
+            "key": "caritas",
+            "name": "Caritas Oberösterreich",
+            "subtitle": "Migration & Integration",
+            "languages": ["de"],
+            "url": "https://www.caritas-ooe.at/hilfe-angebote/migration-integration"
+        }
+      ],
+      "tutorialData": "housing",
+      "translationNamespace": "informationHousing"
+    },
+    {
+      "id": "cost",
+      "title": "cost",
+      "videoId": "",
+      "translationNamespace": "informationHousing",
+      "tiles": [
+        {
+            "key": "cost_overview",
+            "title": "cost_overview_title",
+            "subtitle": "cost_overview_subtitle",
+            "content": [
+                {
+                    "key": "rent",
+                    "title": "cost_rent",
+                    "subtitle": "cost_rent_desc",
+                    "icon": "community.home-currency-usd",
+                    "iconSize": 64
+                },
+                {
+                    "key": "deposit",
+                    "title": "cost_deposit",
+                    "subtitle": "cost_deposit_desc",
+                    "icon": "community.safe",
+                    "iconSize": 64
+                },
+                {
+                    "key": "utilities",
+                    "title": "cost_utilities",
+                    "subtitle": "cost_utilities_desc",
+                    "icon": "community.lightning-bolt",
+                    "iconSize": 64
+                }
+            ],
+            "icon": "awesome6.euro-sign",
+            "color": "#000",
+            "cardHeight": 120
+        }
+      ],
+      "contacts": [
+        {
+          "key": "diakonie",
+          "name": "Diakonie – Kostenlose Wohnberatung",
+          "subtitle": "Beratung für Flüchtlinge",
+          "languages": ["de"],
+          "phone": "+43 1 40 56 29 51",
+          "email": "beratung.ost@diakonie.at",
+          "url": ""
+        },
+        {
+          "key": "volkshilfe",
+          "name": "Volkshilfe Oberösterreich",
+          "subtitle": "Wohnen & Beratung für Migrant:innen",
+          "languages": ["de"],
+          "phone": "",
+          "email": "",
+          "url": "https://www.volkshilfe-ooe.at/was-wir-tun/fluechtlinge-migrantinnen/"
+        },
+        {
+            "key": "caritas",
+            "name": "Caritas Oberösterreich",
+            "subtitle": "Migration & Integration",
+            "languages": ["de"],
+            "url": "https://www.caritas-ooe.at/hilfe-angebote/migration-integration"
+        }
+      ],
+       "tutorialData": "housing",
+      "translationNamespace": "informationHousing"
+    },
+    {
+        "id": "contract",
+        "title": "contract",
+        "videoId": "",
+        "translationNamespace": "informationHousing",
+        "tiles": [
+            {
+                "key": "contract_details",
+                "title": "contract_details_title",
+                "subtitle": "contract_details_subtitle",
+                "content": [
+                    {
+                        "key": "definition",
+                        "title": "contract_definition",
+                        "subtitle": "contract_definition_desc",
+                        "icon": "community.file-sign",
+                        "iconSize": 64
+                    },
+                    {
+                        "key": "important",
+                        "title": "contract_important",
+                        "subtitle": "contract_important_desc",
+                        "icon": "community.alert-circle-outline",
+                        "iconSize": 64
+                    }
+                ],
+                "icon": "community.file-sign",
+                "color": "#000",
+                "cardHeight": 120
+            },
+            {
+                "key": "rights",
+                "title": "contract_rights_title",
+                "subtitle": "contract_rights_subtitle",
+                "content": [
+                    {
+                        "key": "protection",
+                        "title": "contract_protection",
+                        "subtitle": "contract_protection_desc",
+                        "icon": "community.shield-check",
+                        "iconSize": 64
+                    },
+                    {
+                        "key": "refund",
+                        "title": "contract_refund",
+                        "subtitle": "contract_refund_desc",
+                        "icon": "community.cash-refund",
+                        "iconSize": 64
+                    }
+                ],
+                "icon": "community.scale-balance",
+                "color": "#000",
+                "cardHeight": 120
+            }
+        ],
+        "contacts": [
+            {
+                "key": "ak",
+                "name": "Arbeiterkammer Oberösterreich",
+                "subtitle": "Wohnrechtsberatung",
+                "languages": ["de"],
+                "url": "https://ooe.arbeiterkammer.at/ueberuns/kontakte/beratung/Mietrecht.html"
+            },
+            {
+              "key": "diakonie",
+              "name": "Diakonie – Kostenlose Wohnberatung",
+              "subtitle": "Beratung für Flüchtlinge",
+              "languages": ["de"],
+              "phone": "+43 1 40 56 29 51",
+              "email": "beratung.ost@diakonie.at",
+              "url": ""
+            },
+            {
+              "key": "volkshilfe",
+              "name": "Volkshilfe Oberösterreich",
+              "subtitle": "Wohnen & Beratung für Migrant:innen",
+              "languages": ["de"],
+              "phone": "",
+              "email": "",
+              "url": "https://www.volkshilfe-ooe.at/was-wir-tun/fluechtlinge-migrantinnen/"
+            },
+            {
+                "key": "caritas",
+                "name": "Caritas Oberösterreich",
+                "subtitle": "Migration & Integration",
+                "languages": ["de"],
+                "url": "https://www.caritas-ooe.at/hilfe-angebote/migration-integration"
+            }
+        ],
+         "tutorialData": "housing",
+      "translationNamespace": "informationHousing"
+    },
+    {
+        "id": "everyday",
+        "title": "everyday",
+        "videoId": "",
+        "translationNamespace": "informationHousing",
+        "tiles": [
+            {
+                "key": "rules",
+                "title": "everyday_rules_title",
+                "subtitle": "everyday_rules_subtitle",
+                "content": [
+                    {
+                        "key": "noise",
+                        "title": "everyday_rules_house",
+                        "subtitle": "everyday_rules_house_desc",
+                        "icon": "community.volume-off",
+                        "iconSize": 64
+                    }
+                ],
+                "icon": "community.bullhorn-outline",
+                "color": "#000",
+                "cardHeight": 120
+            },
+            {
+                "key": "garbage",
+                "title": "everyday_garbage_title",
+                "subtitle": "everyday_garbage_subtitle",
+                "content": [
+                    {
+                        "key": "split",
+                        "title": "everyday_garbage_split",
+                        "subtitle": "everyday_garbage_split_desc",
+                        "icon": "community.delete-variant",
+                        "iconSize": 64
+                    }
+                ],
+                "icon": "community.delete-circle-outline",
+                "color": "#000",
+                "cardHeight": 120
+            },
+            {
+                "key": "utilities",
+                "title": "everyday_utils_title",
+                "subtitle": "everyday_utils_subtitle",
+                "content": [
+                    {
+                        "key": "self_reg",
+                        "title": "everyday_utils_reg",
+                        "subtitle": "everyday_utils_reg_desc",
+                        "icon": "community.wifi",
+                        "iconSize": 64
+                    }
+                ],
+                "icon": "community.lightbulb-on-outline",
+                "color": "#000",
+                "cardHeight": 120
+            }
+        ],
+        "contacts": [
+        {
+          "key": "diakonie",
+          "name": "Diakonie – Kostenlose Wohnberatung",
+          "subtitle": "Beratung für Flüchtlinge",
+          "languages": ["de"],
+          "phone": "+43 1 40 56 29 51",
+          "email": "beratung.ost@diakonie.at",
+          "url": ""
+        },
+        {
+          "key": "volkshilfe",
+          "name": "Volkshilfe Oberösterreich",
+          "subtitle": "Wohnen & Beratung für Migrant:innen",
+          "languages": ["de"],
+          "phone": "",
+          "email": "",
+          "url": "https://www.volkshilfe-ooe.at/was-wir-tun/fluechtlinge-migrantinnen/"
+        },
+        {
+            "key": "caritas",
+            "name": "Caritas Oberösterreich",
+            "subtitle": "Migration & Integration",
+            "languages": ["de"],
+            "url": "https://www.caritas-ooe.at/hilfe-angebote/migration-integration"
+        }
+      ],
+         "tutorialData": "housing",
+      "translationNamespace": "informationHousing"
+    },
+    {
+      "id": "checklist",
+      "title": "checklist",
+      "videoId": "",
+      "translationNamespace": "informationHousing",
+      "tiles": [],
+      "contacts": [
+        {
+          "key": "diakonie",
+          "name": "Diakonie – Kostenlose Wohnberatung",
+          "subtitle": "Beratung für Flüchtlinge",
+          "languages": ["de"],
+          "phone": "+43 1 40 56 29 51",
+          "email": "beratung.ost@diakonie.at",
+          "url": ""
+        },
+        {
+          "key": "volkshilfe",
+          "name": "Volkshilfe Oberösterreich",
+          "subtitle": "Wohnen & Beratung für Migrant:innen",
+          "languages": ["de"],
+          "phone": "",
+          "email": "",
+          "url": "https://www.volkshilfe-ooe.at/was-wir-tun/fluechtlinge-migrantinnen/"
+        },
+        {
+            "key": "caritas",
+            "name": "Caritas Oberösterreich",
+            "subtitle": "Migration & Integration",
+            "languages": ["de"],
+            "url": "https://www.caritas-ooe.at/hilfe-angebote/migration-integration"
+        }
+      ],
+      "tutorialData": "housing"
     }
   ]
 }

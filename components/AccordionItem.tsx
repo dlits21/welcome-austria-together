@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import FontAwesome6 from '@expo/vector-icons/FontAwesome6'
-import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons'
+import FontAwesome6 from '@expo/vector-icons/FontAwesome6';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import AccordionContent from './AccordionContent'
 
 interface TilesContent {
@@ -34,7 +34,9 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
   content,
   nameSpace='common'
 }) => {
-  const parts = icon ? icon.split('.') : null;
+  const parts = icon ? icon.split('.') : ['material', 'help'];
+  const iconSet = parts.length > 1 ? parts[0] : 'material';
+  const iconName = parts.length > 1 ? parts[1] : icon;
 
   return (
     <View style={styles.accordionItem}>
@@ -44,26 +46,15 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
         activeOpacity={0.7}
       >
       <View style={styles.accordionTitleContainer}>
-        <View style={{marginLeft: 16}}>
-          {icon && parts[0] == "material" &&
-            <MaterialIcons
-              name={parts[1]}
-              size={24}
-              color={"#000"}
-          />}
-          {icon && parts[0] == "awesome6" && (
-            <FontAwesome6
-              name={parts[1]}
-              size={24}
-              color={"#000"}
-          />)}
-          {icon && parts[0] == "community" && (
-            <MaterialCommunityIcons
-              name={parts[1]}
-              size={24}
-              color={"#000"}
-          />)}
-          </View>
+        {iconSet === 'material' && (
+          <MaterialIcons name={iconName as any} size={24} color={iconColor} />
+        )}
+        {iconSet === 'awesome6' && (
+          <FontAwesome6 name={iconName as any} size={24} color={iconColor} />
+        )}
+        {iconSet === 'community' && (
+             <MaterialCommunityIcons name={iconName as any} size={24} color={iconColor} />
+        )}
         <View style={styles.accordionTextContainer}>
           <Text style={styles.accordionTitle}>{title}</Text>
           <Text style={styles.accordionSubtitle}>{subtitle}</Text>

@@ -1,12 +1,14 @@
 import React from 'react';
-import { useLocalSearchParams } from 'expo-router';
 import { View, Text, StyleSheet } from 'react-native';
 import InfoPage from '../../../components/InfoPage';
 import housingEntitiesData from '../../../data/information/housing.json';
 
-const DynamicHousingPage: React.FC = () => {
-  const { entityId } = useLocalSearchParams();
-  const selectedEntityId = Array.isArray(entityId) ? entityId[0] : entityId;
+interface HousingDetailsProps {
+    id: string | string[];
+}
+
+const HousingDetails: React.FC<HousingDetailsProps> = ({ id }) => {
+  const selectedEntityId = Array.isArray(id) ? id[0] : id;
 
   if (!selectedEntityId) {
     return (
@@ -42,7 +44,7 @@ const DynamicHousingPage: React.FC = () => {
   />;
 };
 
-export default DynamicHousingPage;
+export default HousingDetails;
 
 const styles = StyleSheet.create({
   centered: {

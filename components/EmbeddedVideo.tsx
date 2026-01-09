@@ -20,9 +20,8 @@ const EmbeddedVideo: React.FC<{videoId: string}> = ({videoId}) => {
   const videoIds = videoId.split('.');
   const isYoutube = videoIds[0] == 'youtube';
   const isLocal = videoIds[0] == 'local';
-  console.log("Video", videoIds, isLocal, isYoutube)
 
-  const videoSources = {
+  const videoSources: {[key: string]: {[key: string]: string}} = {
     "asyl_process": {
       "de": 'https://integrationsbox.at/GV/images/Videos/DE/asyl_recht/DE_Asylverfahren.mp4',
       "en": 'https://integrationsbox.at/GV/images/Videos/EN/asyl_recht/EN_Asylverfahren.mp4',
@@ -33,14 +32,20 @@ const EmbeddedVideo: React.FC<{videoId: string}> = ({videoId}) => {
     }
   }
 
-  if (isLocal) {
-    const player =useVideoPlayer(videoSources[videoIds[1]][currentLanguage], (player) => {
-      player.loop = true;
-      player.play();
-    });
+  const videoKey = videoIds[1]
+  const sourceEntry = videoSources[videoKey];
+  const videoSource = sourceEntry ? (sourceEntry[currentLanguage] || sourceEntry['de']) : null;
 
-    const { isPlaying } = useEvent(player, 'playingChange', { isPlaying: player.playing });
-  }
+  const videoKey = videoIds[1]
+  const sourceEntry = videoSources[videoKey];
+  const videoSource = sourceEntry ? (sourceEntry[currentLanguage] || sourceEntry['de']) : null;
+
+  const player = useVideoPlayer(videoSource, (player) => {
+    player.loop = true;
+    player.play();
+  });
+
+  const { isPlaying } = useEvent(player, 'playingChange', { isPlaying: player.playing });
 
   return (
     <View style={styles.videoWrap}>
@@ -48,7 +53,7 @@ const EmbeddedVideo: React.FC<{videoId: string}> = ({videoId}) => {
       <YoutubePlayer width={width} height={height} play={playing} videoId={videoIds[1]} />
     )}
 
-    {isLocal && (
+    {isLocal && videoSource && (
       <VideoView style={styles.video} player={player} allowsFullscreen allowsPictureInPicture />
     )}
     </View>
