@@ -7,7 +7,8 @@
     "android": "node --max-old-space-size=8192 node_modules/expo/bin/cli run:android",
     "ios": "node --max-old-space-size=8192 node_modules/expo/bin/cli run:ios",
     "web": "node --max-old-space-size=8192 node_modules/expo/bin/cli start --web",
-    "lint": "node --max-old-space-size=8192 node_modules/expo/bin/cli lint"
+    "lint": "node --max-old-space-size=8192 node_modules/expo/bin/cli lint",
+    "build": "node --max-old-space-size=8192 node_modules/expo/bin/cli export -p web"
   },
   "dependencies": {
     "@expo/ngrok": "^4.1.3",
