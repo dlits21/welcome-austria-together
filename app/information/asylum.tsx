@@ -81,24 +81,6 @@ const Asylum: React.FC = () => {
             height={cardHeight}
             iconSize={iconSize}
           />
-          <CategoryCard
-            title={t('asylum_contacts')}
-            subtitle={t('asylum_contacts_subtitle')}
-            icon="material.contact-phone"
-            color="rgba(221, 7, 121, 0.5)"
-            onPress={() => onContinue('asylumContacts')}
-            height={cardHeight}
-            iconSize={iconSize}
-          />
-          <CategoryCard
-            title={t('asylum_videos')}
-            subtitle={t('asylum_videos_subtitle')}
-            icon="material.videocam"
-            color="rgba(221, 7, 121, 0.5)"
-            onPress={() => onContinue('asylumDecision')}
-            height={cardHeight}
-            iconSize={iconSize}
-          />
         </View>
       </ScrollView>
 

@@ -25,7 +25,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
 
   return (
     <View style={styles.accordionContent}>
-        <View style={{marginLeft: 16}}>
+        <View style={{marginLeft: 16, alignItems: 'center', width: iconSize}}>
         {icon && parts[0] == "material" &&
           <MaterialIcons
             name={parts[1]}
@@ -57,7 +57,6 @@ const styles = StyleSheet.create({
   accordionContent: {
     flexDirection: 'row',
     alignItems: 'center',
-    flexWrap: "wrap"
   },
   accordionTextContainer: {
    flexDirection: 'column',

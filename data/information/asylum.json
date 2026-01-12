@@ -7,29 +7,106 @@
       "videoId": "local.asyl_process",
       "tiles": [
         {
-          "key": "id1",
-          "title": "id1.title",
-          "subtitle": "id1.subtitle",
+          "key": "entity1.id1",
+          "title": "entity1.id1.title",
+          "subtitle": "entity1.id1.subtitle",
           "content": [
             {
-              "key": "id1.entry1",
-              "title": "id1.entry1.title",
-              "subtitle": "id1.entry1.subtitle"
+              "key": "entity1.id1.entry1",
+              "title": "entity1.id1.entry1.title",
+              "subtitle": "entity1.id1.entry1.subtitle",
+              "icon": "material.language",
+              "iconSize": 64
             },
             {
-              "key": "id1.entry2",
-              "title": "id1.entry2.title",
-              "subtitle": "id1.entry2.subtitle"
+              "key": "entity1.id1.entry2",
+              "title": "entity1.id1.entry2.title",
+              "subtitle": "entity1.id1.entry2.subtitle",
+              "icon": "awesome6.map-pin",
+              "iconSize": 64
             },
             {
-              "key": "id1.entry3",
-              "title": "id1.entry3.title",
-              "subtitle": "id1.entry3.subtitle"
+              "key": "entity1.id1.entry3",
+              "title": "entity1.id1.entry3.title",
+              "subtitle": "entity1.id1.entry3.subtitle",
+              "icon": "material.checklist",
+              "iconSize": 64
             },
             {
-              "key": "id1.entry4",
-              "title": "id1.entry4.title",
-              "subtitle": "id1.entry4.subtitle"
+              "key": "entity1.id1.entry4",
+              "title": "entity1.id1.entry4.title",
+              "subtitle": "entity1.id1.entry4.subtitle",
+              "icon": "community.sign-direction",
+              "iconSize": 64
+            }
+          ],
+          "icon": "community.file-document-edit-outline",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity1.id2",
+          "title": "entity1.id2.title",
+          "subtitle": "entity1.id2.subtitle",
+          "content": [
+            {
+              "key": "entity1.id2.entry1",
+              "title": "entity1.id2.entry1.title",
+              "subtitle": "entity1.id2.entry1.subtitle",
+              "icon": "community.account-voice",
+              "iconSize": 64
+            },
+            {
+              "key": "entity1.id2.entry2",
+              "title": "entity1.id2.entry2.title",
+              "subtitle": "entity1.id2.entry2.subtitle",
+              "icon": "community.fingerprint",
+              "iconSize": 64
+            },
+            {
+              "key": "entity1.id1.entry3",
+              "title": "entity1.id1.entry3.title",
+              "subtitle": "entity1.id1.entry3.subtitle",
+              "icon": "material.checklist",
+              "iconSize": 64
+            }
+          ],
+          "icon": "awesome6.pencil",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity1.id3",
+          "title": "entity1.id3.title",
+          "subtitle": "entity1.id3.subtitle",
+          "content": [
+            {
+              "key": "entity1.id3.entry1",
+              "title": "entity1.id3.entry1.title",
+              "subtitle": "entity1.id3.entry1.subtitle",
+              "icon": "material.language",
+              "iconSize": 64
+            },
+            {
+              "key": "entity1.id3.entry2",
+              "title": "entity1.id3.entry2.title",
+              "subtitle": "entity1.id3.entry2.subtitle",
+              "icon": "material.not-interested",
+              "iconSize": 64
+            },
+            {
+              "key": "entity1.id3.entry3",
+              "title": "entity1.id3.entry3.title",
+              "subtitle": "entity1.id3.entry3.subtitle",
+              "icon": "awesome6.house",
+              "iconSize": 64
+            },
+            {
+              "key": "entity1.id3.entry4",
+              "title": "entity1.id3.entry4.title",
+              "subtitle": "entity1.id3.entry4.subtitle",
+              "icon": "community.account-voice",
+              "iconSize": 64
             }
           ],
           "icon": "gavel",
@@ -37,147 +114,116 @@
           "cardHeight": 350
         },
         {
-          "key": "id2",
-          "title": "id2.title",
-          "subtitle": "id2.subtitle",
+          "key": "entity1.id4",
+          "title": "entity1.id4.title",
+          "subtitle": "entity1.id4.subtitle",
           "content": [
             {
-              "key": "id2.entry1",
-              "title": "id2.entry1.title",
-              "subtitle": "id2.entry1.subtitle"
+              "key": "entity1.id4.entry1",
+              "title": "entity1.id4.entry1.title",
+              "subtitle": "entity1.id4.entry1.subtitle",
+              "icon": "awesome6.id-card",
+              "iconSize": 64
             },
             {
-              "key": "id2.entry2",
-              "title": "id2.entry2.title",
-              "subtitle": "id2.entry2.subtitle"
+              "key": "entity1.id4.entry2",
+              "title": "entity1.id4.entry2.title",
+              "subtitle": "entity1.id4.entry2.subtitle",
+              "icon": "awesome6.map-location-dot",
+              "iconSize": 64
             },
             {
-              "key": "id1.entry3",
-              "title": "id1.entry3.title",
-              "subtitle": "id1.entry3.subtitle"
+              "key": "entity1.id4.entry3",
+              "title": "entity1.id4.entry3.title",
+              "subtitle": "entity1.id4.entry3.subtitle",
+              "icon": "community.home-city-outline",
+              "iconSize": 64
             }
           ],
-          "icon": "gavel",
+          "icon": "community.file-document-outline",
           "color": "#000",
           "cardHeight": 350
         },
         {
-          "key": "id3",
-          "title": "id3.title",
-          "subtitle": "id3.subtitle",
+          "key": "entity1.id5",
+          "title": "entity1.id5.title",
+          "subtitle": "entity1.id5.subtitle",
           "content": [
             {
-              "key": "id3.entry1",
-              "title": "id3.entry1.title",
-              "subtitle": "id3.entry1.subtitle"
+              "key": "entity1.id5.entry1",
+              "title": "entity1.id5.entry1.title",
+              "subtitle": "entity1.id5.entry1.subtitle",
+              "icon": "community.office-building",
+              "iconSize": 64
             },
             {
-              "key": "id3.entry2",
-              "title": "id3.entry2.title",
-              "subtitle": "id3.entry2.subtitle"
+              "key": "entity1.id5.entry2",
+              "title": "entity1.id5.entry2.title",
+              "subtitle": "entity1.id5.entry2.subtitle",
+              "icon": "community.calendar",
+              "iconSize": 64
             },
             {
-              "key": "id3.entry3",
-              "title": "id3.entry3.title",
-              "subtitle": "id3.entry3.subtitle"
+              "key": "entity1.id5.entry3",
+              "title": "entity1.id5.entry3.title",
+              "subtitle": "entity1.id5.entry3.subtitle",
+              "icon": "community.email",
+              "iconSize": 64
             },
             {
-              "key": "id3.entry4",
-              "title": "id3.entry4.title",
-              "subtitle": "id3.entry4.subtitle"
+              "key": "entity1.id5.entry4",
+              "title": "entity1.id5.entry4.title",
+              "subtitle": "entity1.id5.entry4.subtitle",
+              "icon": "material.gavel",
+              "iconSize": 64
             }
           ],
-          "icon": "gavel",
+          "icon": "community.email-newsletter",
           "color": "#000",
           "cardHeight": 350
         },
         {
-          "key": "id4",
-          "title": "id4.title",
-          "subtitle": "id4.subtitle",
+          "key": "entity1.id6",
+          "title": "entity1.id6.title",
+          "subtitle": "entity1.id6.subtitle",
           "content": [
             {
-              "key": "id4.entry1",
-              "title": "id4.entry1.title",
-              "subtitle": "id4.entry1.subtitle"
+              "key": "entity1.id6.entry1",
+              "title": "entity1.id6.entry1.title",
+              "subtitle": "entity1.id6.entry1.subtitle",
+              "icon": "community.file-document-edit-outline",
+              "iconSize": 64
             },
             {
-              "key": "id4.entry2",
-              "title": "id4.entry2.title",
-              "subtitle": "id4.entry2.subtitle"
+              "key": "entity1.id6.entry2",
+              "title": "entity1.id6.entry2.title",
+              "subtitle": "entity1.id6.entry2.subtitle",
+              "icon": "material.gavel",
+              "iconSize": 64
             },
             {
-              "key": "id4.entry3",
-              "title": "id4.entry3.title",
-              "subtitle": "id4.entry3.subtitle"
+              "key": "entity1.id6.entry3",
+              "title": "entity1.id6.entry3.title",
+              "subtitle": "entity1.id6.entry3.subtitle",
+              "icon": "material.contact-support",
+              "iconSize": 64
+            },
+            {
+              "key": "entity1.id6.entry4",
+              "title": "entity1.id6.entry4.title",
+              "subtitle": "entity1.id6.entry4.subtitle",
+              "icon": "awesome6.calendar-xmark",
+              "iconSize": 64
+            },
+            {
+              "key": "entity1.id6.entry5",
+              "title": "entity1.id6.entry5.title",
+              "subtitle": "entity1.id6.entry5.subtitle",
+              "icon": "community.sign-direction",
+              "iconSize": 64
             }
           ],
-          "icon": "gavel",
-          "color": "#000",
-          "cardHeight": 350
-        },
-        {
-          "key": "id5",
-          "title": "id5.title",
-          "subtitle": "id5.subtitle",
-          "content": [
-            {
-              "key": "id5.entry1",
-              "title": "id5.entry1.title",
-              "subtitle": "id5.entry1.subtitle"
-            },
-            {
-              "key": "id5.entry2",
-              "title": "id5.entry2.title",
-              "subtitle": "id5.entry2.subtitle"
-            },
-            {
-              "key": "id5.entry3",
-              "title": "id5.entry3.title",
-              "subtitle": "id5.entry3.subtitle"
-            },
-            {
-              "key": "id5.entry4",
-              "title": "id5.entry4.title",
-              "subtitle": "id5.entry4.subtitle"
-            }
-          ],
-          "icon": "gavel",
-          "color": "#000",
-          "cardHeight": 350
-        },
-        {
-          "key": "id6",
-          "title": "id6.title",
-          "subtitle": "id6.subtitle",
-          "content": [
-            {
-              "key": "id6.entry1",
-              "title": "id6.entry1.title",
-              "subtitle": "id6.entry1.subtitle"
-            },
-            {
-              "key": "id6.entry2",
-              "title": "id6.entry2.title",
-              "subtitle": "id6.entry2.subtitle"
-            },
-            {
-              "key": "id6.entry3",
-              "title": "id6.entry3.title",
-              "subtitle": "id6.entry3.subtitle"
-            },
-            {
-              "key": "id6.entry4",
-              "title": "id6.entry4.title",
-              "subtitle": "id6.entry4.subtitle"
-            },
-            {
-              "key": "id6.entry5",
-              "title": "id6.entry5.title",
-              "subtitle": "id6.entry5.subtitle"
-            }
-          ],
-          "icon": "gavel",
+          "icon": "material.feedback",
           "color": "#000",
           "cardHeight": 350
         }
@@ -244,6 +290,1326 @@
         }
       ],
       "tutorialData": "home",
+      "translationNamespace": "informationAsylum"
+    },
+    {
+      "id": "asylumProcess",
+      "title": "asylum_process",
+      "videoId": "local.asyl_process",
+      "tiles": [
+        {
+          "key": "entity2.id1",
+          "title": "entity2.id1.title",
+          "subtitle": "entity2.id1.subtitle",
+          "content": [
+            {
+              "key": "entity2.id1.entry1",
+              "title": "entity2.id1.entry1.title",
+              "subtitle": "entity2.id1.entry1.subtitle",
+              "icon": "material.language",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id1.entry2",
+              "title": "entity2.id1.entry2.title",
+              "subtitle": "entity2.id1.entry2.subtitle",
+              "icon": "awesome6.map-pin",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id1.entry3",
+              "title": "entity2.id1.entry3.title",
+              "subtitle": "entity2.id1.entry3.subtitle",
+              "icon": "material.checklist",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id1.entry4",
+              "title": "entity2.id1.entry4.title",
+              "subtitle": "entity2.id1.entry4.subtitle",
+              "icon": "community.sign-direction",
+              "iconSize": 64
+            }
+          ],
+          "icon": "community.file-document-edit-outline",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity2.id2",
+          "title": "entity2.id2.title",
+          "subtitle": "entity2.id2.subtitle",
+          "content": [
+            {
+              "key": "entity2.id2.entry1",
+              "title": "entity2.id2.entry1.title",
+              "subtitle": "entity2.id2.entry1.subtitle",
+              "icon": "community.account-voice",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id2.entry2",
+              "title": "entity2.id2.entry2.title",
+              "subtitle": "entity2.id2.entry2.subtitle",
+              "icon": "community.fingerprint",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id2.entry3",
+              "title": "entity2.id2.entry3.title",
+              "subtitle": "entity2.id2.entry3.subtitle",
+              "icon": "material.medical-services",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id2.entry4",
+              "title": "entity2.id2.entry4.title",
+              "subtitle": "entity2.id2.entry4.subtitle",
+              "icon": "community.home-outline",
+              "iconSize": 64
+            }
+          ],
+          "icon": "awesome6.pencil",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity2.id3",
+          "title": "entity2.id3.title",
+          "subtitle": "entity2.id3.subtitle",
+          "content": [
+            {
+              "key": "entity2.id3.entry1",
+              "title": "entity2.id3.entry1.title",
+              "subtitle": "entity2.id3.entry1.subtitle",
+              "icon": "material.language",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id3.entry2",
+              "title": "entity2.id3.entry2.title",
+              "subtitle": "entity2.id3.entry2.subtitle",
+              "icon": "material.not-interested",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id3.entry3",
+              "title": "entity2.id3.entry3.title",
+              "subtitle": "entity2.id3.entry3.subtitle",
+              "icon": "awesome6.house",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id3.entry4",
+              "title": "entity2.id3.entry4.title",
+              "subtitle": "entity2.id3.entry4.subtitle",
+              "icon": "awesome6.id-card",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.gavel",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity2.id4",
+          "title": "entity2.id4.title",
+          "subtitle": "entity2.id4.subtitle",
+          "content": [
+            {
+              "key": "entity2.id4.entry1",
+              "title": "entity2.id4.entry1.title",
+              "subtitle": "entity2.id4.entry1.subtitle",
+              "icon": "community.file-document-outline",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id4.entry2",
+              "title": "entity2.id4.entry2.title",
+              "subtitle": "entity2.id4.entry2.subtitle",
+              "icon": "awesome6.id-card",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id4.entry3",
+              "title": "entity2.id4.entry3.title",
+              "subtitle": "entity2.id4.entry3.subtitle",
+              "icon": "community.account-voice",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id4.entry4",
+              "title": "entity2.id4.entry4.title",
+              "subtitle": "entity2.id4.entry4.subtitle",
+              "icon": "material.contact-support",
+              "iconSize": 64
+            }
+          ],
+          "icon": "community.file-search-outline",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity2.id5",
+          "title": "entity2.id5.title",
+          "subtitle": "entity2.id5.subtitle",
+          "content": [
+            {
+              "key": "entity2.id5.entry1",
+              "title": "entity2.id5.entry1.title",
+              "subtitle": "entity2.id5.entry1.subtitle",
+              "icon": "community.calendar-clock",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id5.entry2",
+              "title": "entity2.id5.entry2.title",
+              "subtitle": "entity2.id5.entry2.subtitle",
+              "icon": "material.check-circle",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id5.entry3",
+              "title": "entity2.id5.entry3.title",
+              "subtitle": "entity2.id5.entry3.subtitle",
+              "icon": "material.cancel",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id5.entry4",
+              "title": "entity2.id5.entry4.title",
+              "subtitle": "entity2.id5.entry4.subtitle",
+              "icon": "material.shield",
+              "iconSize": 64
+            }
+          ],
+          "icon": "community.email-newsletter",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity2.id6",
+          "title": "entity2.id6.title",
+          "subtitle": "entity2.id6.subtitle",
+          "content": [
+            {
+              "key": "entity2.id6.entry1",
+              "title": "entity2.id6.entry1.title",
+              "subtitle": "entity2.id6.entry1.subtitle",
+              "icon": "community.file-document-edit-outline",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id6.entry2",
+              "title": "entity2.id6.entry2.title",
+              "subtitle": "entity2.id6.entry2.subtitle",
+              "icon": "material.contact-support",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id6.entry3",
+              "title": "entity2.id6.entry3.title",
+              "subtitle": "entity2.id6.entry3.subtitle",
+              "icon": "awesome6.house-user",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id6.entry4",
+              "title": "entity2.id6.entry4.title",
+              "subtitle": "entity2.id6.entry4.subtitle",
+              "icon": "material.gavel",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id6.entry5",
+              "title": "entity2.id6.entry5.title",
+              "subtitle": "entity2.id6.entry5.subtitle",
+              "icon": "material.warning",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.feedback",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity2.id7",
+          "title": "entity2.id7.title",
+          "subtitle": "entity2.id7.subtitle",
+          "content": [
+            {
+              "key": "entity2.id7.entry1",
+              "title": "entity2.id7.entry1.title",
+              "subtitle": "entity2.id7.entry1.subtitle",
+              "icon": "awesome6.id-card",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id7.entry2",
+              "title": "entity2.id7.entry2.title",
+              "subtitle": "entity2.id7.entry2.subtitle",
+              "icon": "material.work",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id7.entry3",
+              "title": "entity2.id7.entry3.title",
+              "subtitle": "entity2.id7.entry3.subtitle",
+              "icon": "material.family-restroom",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id7.entry4",
+              "title": "entity2.id7.entry4.title",
+              "subtitle": "entity2.id7.entry4.subtitle",
+              "icon": "material.school",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.celebration",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity2.id8",
+          "title": "entity2.id8.title",
+          "subtitle": "entity2.id8.subtitle",
+          "content": [
+            {
+              "key": "entity2.id8.entry1",
+              "title": "entity2.id8.entry1.title",
+              "subtitle": "entity2.id8.entry1.subtitle",
+              "icon": "material.health-and-safety",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id8.entry2",
+              "title": "entity2.id8.entry2.title",
+              "subtitle": "entity2.id8.entry2.subtitle",
+              "icon": "material.description",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id8.entry3",
+              "title": "entity2.id8.entry3.title",
+              "subtitle": "entity2.id8.entry3.subtitle",
+              "icon": "material.location-on",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id8.entry4",
+              "title": "entity2.id8.entry4.title",
+              "subtitle": "entity2.id8.entry4.subtitle",
+              "icon": "awesome6.map-pin",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.balance",
+          "color": "#000",
+          "cardHeight": 350
+        }
+      ],
+      "contacts": [
+        {
+          "key": "bfa",
+          "name": "Bundesamt für Fremdenwesen und Asyl",
+          "subtitle": "Zentrale Behörde für Asylverfahren",
+          "languages": ["de", "en"],
+          "phone": "+43 59133 98 7004",
+          "email": "BFA-Einlaufstelle@bmi.gv.at",
+          "url": "https://www.bfa.gv.at"
+        },
+        {
+          "key": "bbu",
+          "name": "Bundesagentur für Betreuungs- und Unterstützungsleistungen",
+          "subtitle": "Unterstützung und Beratung für Asylwerber",
+          "languages": ["de", "en", "ar", "fa"],
+          "phone": "+43 1 2676 870 9416",
+          "email": "rechtsberatung.linz@bbu.gv.at",
+          "url": "https://www.bbu.gv.at"
+        },
+        {
+          "key": "caritas",
+          "name": "Caritas Österreich",
+          "subtitle": "Umfassende Unterstützung für Flüchtlinge",
+          "languages": ["de", "en", "ar", "fa", "ru"],
+          "phone": "+43 1 488 31 0",
+          "email": "info@caritas.at",
+          "url": "https://www.caritas.at"
+        },
+        {
+          "key": "volkshilfe",
+          "name": "Volkshilfe Österreich",
+          "subtitle": "Rechtsberatung und soziale Begleitung",
+          "languages": ["de", "en"],
+          "phone": "+43 1 402 62 19",
+          "email": "asyl@volkshilfe.at",
+          "url": "https://www.volkshilfe.at"
+        },
+        {
+          "key": "asylkoordination",
+          "name": "Asylkoordination Österreich",
+          "subtitle": "Unabhängige Rechtsberatung und Monitoring",
+          "languages": ["de", "en"],
+          "phone": "+43 1 532 12 91",
+          "email": "office@asyl.at",
+          "url": "https://www.asyl.at"
+        },
+        {
+          "key": "migration_advice",
+          "name": "Österreichischer Integrationsfonds",
+          "subtitle": "Migrationsberatung und Integration",
+          "languages": ["de", "en", "ar", "fa", "ru"],
+          "phone": "+43 1 715 10 51 261",
+          "email": "migrationsberatung@integrationsfonds.at",
+          "url": "https://www.integrationsfonds.at"
+        },
+        {
+          "key": "legal_aid",
+          "name": "Rechtsanwaltskammer Wien",
+          "subtitle": "Vermittlung von Rechtsanwälten",
+          "languages": ["de", "en"],
+          "phone": "+43 1 533 14 15",
+          "email": "auskunft@rakwien.at",
+          "url": "https://www.rechtsanwaelte.at"
+        },
+        {
+          "key": "medical_help",
+          "name": "Ärzte ohne Grenzen",
+          "subtitle": "Medizinische Hilfe für Flüchtlinge",
+          "languages": ["de", "en", "ar"],
+          "phone": "+43 1 409 72 76",
+          "email": "office@vienna.msf.org",
+          "url": "https://www.aerzte-ohne-grenzen.at"
+        }
+      ],
+      "tutorialData": "home",
+      "translationNamespace": "informationAsylum"
+    },
+    {
+      "id": "asylumRights",
+      "title": "asylum_rights",
+      "videoId": "local.rights_duties",
+      "tiles": [
+        {
+          "key": "entity3.id1",
+          "title": "entity3.id1.title",
+          "subtitle": "entity3.id1.subtitle",
+          "content": [
+            {
+              "key": "entity3.id1.entry1",
+              "title": "entity3.id1.entry1.title",
+              "subtitle": "entity3.id1.entry1.subtitle",
+              "icon": "material.gavel",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id1.entry2",
+              "title": "entity3.id1.entry2.title",
+              "subtitle": "entity3.id1.entry2.subtitle",
+              "icon": "material.description",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id1.entry3",
+              "title": "entity3.id1.entry3.title",
+              "subtitle": "entity3.id1.entry3.subtitle",
+              "icon": "community.fingerprint",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id1.entry4",
+              "title": "entity3.id1.entry4.title",
+              "subtitle": "entity3.id1.entry4.subtitle",
+              "icon": "awesome6.id-card",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.balance",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity3.id2",
+          "title": "entity3.id2.title",
+          "subtitle": "entity3.id2.subtitle",
+          "content": [
+            {
+              "key": "entity3.id2.entry1",
+              "title": "entity3.id2.entry1.title",
+              "subtitle": "entity3.id2.entry1.subtitle",
+              "icon": "material.credit-card",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id2.entry2",
+              "title": "entity3.id2.entry2.title",
+              "subtitle": "entity3.id2.entry2.subtitle",
+              "icon": "material.credit-card",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id2.entry3",
+              "title": "entity3.id2.entry3.title",
+              "subtitle": "entity3.id2.entry3.subtitle",
+              "icon": "material.gavel",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id2.entry4",
+              "title": "entity3.id2.entry4.title",
+              "subtitle": "entity3.id2.entry4.subtitle",
+              "icon": "material.medical-services",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.credit-card",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity3.id3",
+          "title": "entity3.id3.title",
+          "subtitle": "entity3.id3.subtitle",
+          "content": [
+            {
+              "key": "entity3.id3.entry1",
+              "title": "entity3.id3.entry1.title",
+              "subtitle": "entity3.id3.entry1.subtitle",
+              "icon": "material.attach-money",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id3.entry2",
+              "title": "entity3.id3.entry2.title",
+              "subtitle": "entity3.id3.entry2.subtitle",
+              "icon": "material.account-balance-wallet",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id3.entry3",
+              "title": "entity3.id3.entry3.title",
+              "subtitle": "entity3.id3.entry3.subtitle",
+              "icon": "material.smartphone",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id3.entry4",
+              "title": "entity3.id3.entry4.title",
+              "subtitle": "entity3.id3.entry4.subtitle",
+              "icon": "material.security",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.account-balance",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity3.id4",
+          "title": "entity3.id4.title",
+          "subtitle": "entity3.id4.subtitle",
+          "content": [
+            {
+              "key": "entity3.id4.entry1",
+              "title": "entity3.id4.entry1.title",
+              "subtitle": "entity3.id4.entry1.subtitle",
+              "icon": "material.calendar-today",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id4.entry2",
+              "title": "entity3.id4.entry2.title",
+              "subtitle": "entity3.id4.entry2.subtitle",
+              "icon": "material.sick",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id4.entry3",
+              "title": "entity3.id4.entry3.title",
+              "subtitle": "entity3.id4.entry3.subtitle",
+              "icon": "material.warning",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id4.entry4",
+              "title": "entity3.id4.entry4.title",
+              "subtitle": "entity3.id4.entry4.subtitle",
+              "icon": "material.house",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.schedule",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity3.id5",
+          "title": "entity3.id5.title",
+          "subtitle": "entity3.id5.subtitle",
+          "content": [
+            {
+              "key": "entity3.id5.entry1",
+              "title": "entity3.id5.entry1.title",
+              "subtitle": "entity3.id5.entry1.subtitle",
+              "icon": "material.restaurant",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id5.entry2",
+              "title": "entity3.id5.entry2.title",
+              "subtitle": "entity3.id5.entry2.subtitle",
+              "icon": "material.exit-to-app",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id5.entry3",
+              "title": "entity3.id5.entry3.title",
+              "subtitle": "entity3.id5.entry3.subtitle",
+              "icon": "material.location-on",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id5.entry4",
+              "title": "entity3.id5.entry4.title",
+              "subtitle": "entity3.id5.entry4.subtitle",
+              "icon": "material.contact-mail",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.home",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity3.id6",
+          "title": "entity3.id6.title",
+          "subtitle": "entity3.id6.subtitle",
+          "content": [
+            {
+              "key": "entity3.id6.entry1",
+              "title": "entity3.id6.entry1.title",
+              "subtitle": "entity3.id6.entry1.subtitle",
+              "icon": "material.school",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id6.entry2",
+              "title": "entity3.id6.entry2.title",
+              "subtitle": "entity3.id6.entry2.subtitle",
+              "icon": "material.child-care",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id6.entry3",
+              "title": "entity3.id6.entry3.title",
+              "subtitle": "entity3.id6.entry3.subtitle",
+              "icon": "material.warning",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id6.entry4",
+              "title": "entity3.id6.entry4.title",
+              "subtitle": "entity3.id6.entry4.subtitle",
+              "icon": "material.language",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.menu-book",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity3.id7",
+          "title": "entity3.id7.title",
+          "subtitle": "entity3.id7.subtitle",
+          "content": [
+            {
+              "key": "entity3.id7.entry1",
+              "title": "entity3.id7.entry1.title",
+              "subtitle": "entity3.id7.entry1.subtitle",
+              "icon": "material.work",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id7.entry2",
+              "title": "entity3.id7.entry2.title",
+              "subtitle": "entity3.id7.entry2.subtitle",
+              "icon": "material.cleaning-services",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id7.entry3",
+              "title": "entity3.id7.entry3.title",
+              "subtitle": "entity3.id7.entry3.subtitle",
+              "icon": "material.engineering",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id7.entry4",
+              "title": "entity3.id7.entry4.title",
+              "subtitle": "entity3.id7.entry4.subtitle",
+              "icon": "material.search",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.business-center",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity3.id8",
+          "title": "entity3.id8.title",
+          "subtitle": "entity3.id8.subtitle",
+          "content": [
+            {
+              "key": "entity3.id8.entry1",
+              "title": "entity3.id8.entry1.title",
+              "subtitle": "entity3.id8.entry1.subtitle",
+              "icon": "material.edit-location",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id8.entry2",
+              "title": "entity3.id8.entry2.title",
+              "subtitle": "entity3.id8.entry2.subtitle",
+              "icon": "material.swap-horiz",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id8.entry3",
+              "title": "entity3.id8.entry3.title",
+              "subtitle": "entity3.id8.entry3.subtitle",
+              "icon": "material.no-meeting-room",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id8.entry4",
+              "title": "entity3.id8.entry4.title",
+              "subtitle": "entity3.id8.entry4.subtitle",
+              "icon": "material.assignment",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.assignment-ind",
+          "color": "#000",
+          "cardHeight": 350
+        }
+      ],
+      "contacts": [
+        {
+          "key": "bfa_rechte",
+          "name": "BFA - Rechtsabteilung",
+          "subtitle": "Auskunft zu Rechten und Pflichten",
+          "languages": ["de", "en"],
+          "phone": "+43 59133 98 7004",
+          "email": "bfa.rechte@bmi.gv.at",
+          "url": "https://www.bfa.gv.at/rechte-pflichten",
+          "icon": "material.gavel"
+        },
+        {
+          "key": "ams_arbeit",
+          "name": "Arbeitsmarktservice (AMS)",
+          "subtitle": "Beratung zu Arbeit und Beschäftigung",
+          "languages": ["de", "en", "ar", "fa"],
+          "phone": "+43 1 501 65 0",
+          "email": "info@ams.at",
+          "url": "https://www.ams.at",
+          "icon": "material.work"
+        },
+        {
+          "key": "bildung_beratung",
+          "name": "Bildungsberatung Österreich",
+          "subtitle": "Kostenlose Beratung zu Schule und Ausbildung",
+          "languages": ["de", "en", "ar", "fa", "ru"],
+          "phone": "+43 1 532 45 45",
+          "email": "info@bildungsberatung.gv.at",
+          "url": "https://www.bildungsberatung.gv.at",
+          "icon": "material.school"
+        },
+        {
+          "key": "oif_deutsch",
+          "name": "ÖIF - Sprachberatung",
+          "subtitle": "Deutschkurse und Sprachportal",
+          "languages": ["de", "en", "ar", "fa", "ru"],
+          "phone": "+43 1 715 10 51 0",
+          "email": "info@integrationsfonds.at",
+          "url": "https://sprachportal.at",
+          "icon": "material.language"
+        },
+        {
+          "key": "unhcr_rechte",
+          "name": "UNHCR Österreich",
+          "subtitle": "Informationen zu Flüchtlingsrechten",
+          "languages": ["de", "en", "ar", "fa"],
+          "phone": "+43 1 260 60 4040",
+          "email": "autvi@unhcr.org",
+          "url": "https://www.unhcr.org/at",
+          "icon": "material.account-balance"
+        },
+        {
+          "key": "arbeiterkammer",
+          "name": "Arbeiterkammer",
+          "subtitle": "Rechtsberatung für Arbeitnehmer",
+          "languages": ["de", "en"],
+          "phone": "+43 1 501 65 0",
+          "email": "service@akwien.at",
+          "url": "https://wien.arbeiterkammer.at",
+          "icon": "material.engineering"
+        },
+        {
+          "key": "schulpsychologie",
+          "name": "Schulpsychologische Beratung",
+          "subtitle": "Hilfe bei schulischen Fragen",
+          "languages": ["de", "en", "ar"],
+          "phone": "+43 1 525 25 77001",
+          "email": "schulpsychologie@bildung-wien.gv.at",
+          "url": "https://www.schulpsychologie.at",
+          "icon": "material.psychology"
+        },
+        {
+          "key": "melderegister",
+          "name": "Meldebehörde Wien",
+          "subtitle": "An- und Abmeldung des Wohnsitzes",
+          "languages": ["de", "en"],
+          "phone": "+43 1 4000 8080",
+          "email": "post@ma62.wien.gv.at",
+          "url": "https://www.wien.gv.at/amtshelfer/aufenthalt/meldewesen/",
+          "icon": "material.assignment-ind"
+        },
+        {
+          "key": "rechtshilfe",
+          "name": "Asylanwälte Österreich",
+          "subtitle": "Kostenlose Rechtsberatung",
+          "languages": ["de", "en", "ar", "fa", "ru"],
+          "phone": "+43 1 532 12 91",
+          "email": "recht@asyl.at",
+          "url": "https://www.asylanwaelte.at",
+          "icon": "material.contact-support"
+        },
+        {
+          "key": "gesundheit",
+          "name": "Gesundheitsministerium",
+          "subtitle": "Informationen zur medizinischen Versorgung",
+          "languages": ["de", "en"],
+          "phone": "+43 1 711 00 0",
+          "email": "service@bmg.gv.at",
+          "url": "https://www.sozialministerium.at",
+          "icon": "material.medical-services"
+        }
+      ],
+      "tutorialData": "rights_duties",
+      "translationNamespace": "informationAsylum"
+    },
+    {
+      "id": "asylumDecision",
+      "title": "asylum_decision",
+      "videoId": "local.after_decision",
+      "tiles": [
+        {
+          "key": "entity4.id1",
+          "title": "entity4.id1.title",
+          "subtitle": "entity4.id1.subtitle",
+          "content": [
+            {
+              "key": "entity4.id1.entry1",
+              "title": "entity4.id1.entry1.title",
+              "subtitle": "entity4.id1.entry1.subtitle",
+              "icon": "material.credit-card",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id1.entry2",
+              "title": "entity4.id1.entry2.title",
+              "subtitle": "entity4.id1.entry2.subtitle",
+              "icon": "material.forward-to-inbox",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id1.entry3",
+              "title": "entity4.id1.entry3.title",
+              "subtitle": "entity4.id1.entry3.subtitle",
+              "icon": "material.card-travel",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id1.entry4",
+              "title": "entity4.id1.entry4.title",
+              "subtitle": "entity4.id1.entry4.subtitle",
+              "icon": "material.check-circle",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.celebration",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity4.id2",
+          "title": "entity4.id2.title",
+          "subtitle": "entity4.id2.subtitle",
+          "content": [
+            {
+              "key": "entity4.id2.entry1",
+              "title": "entity4.id2.entry1.title",
+              "subtitle": "entity4.id2.entry1.subtitle",
+              "icon": "material.assignment-ind",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id2.entry2",
+              "title": "entity4.id2.entry2.title",
+              "subtitle": "entity4.id2.entry2.subtitle",
+              "icon": "material.health-and-safety",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id2.entry3",
+              "title": "entity4.id2.entry3.title",
+              "subtitle": "entity4.id2.entry3.subtitle",
+              "icon": "material.work",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id2.entry4",
+              "title": "entity4.id2.entry4.title",
+              "subtitle": "entity4.id2.entry4.subtitle",
+              "icon": "material.exit-to-app",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.directions-run",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity4.id3",
+          "title": "entity4.id3.title",
+          "subtitle": "entity4.id3.subtitle",
+          "content": [
+            {
+              "key": "entity4.id3.entry1",
+              "title": "entity4.id3.entry1.title",
+              "subtitle": "entity4.id3.entry1.subtitle",
+              "icon": "material.assignment",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id3.entry2",
+              "title": "entity4.id3.entry2.title",
+              "subtitle": "entity4.id3.entry2.subtitle",
+              "icon": "material.language",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id3.entry3",
+              "title": "entity4.id3.entry3.title",
+              "subtitle": "entity4.id3.entry3.subtitle",
+              "icon": "material.school",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id3.entry4",
+              "title": "entity4.id3.entry4.title",
+              "subtitle": "entity4.id3.entry4.subtitle",
+              "icon": "material.timer",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.handshake",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity4.id4",
+          "title": "entity4.id4.title",
+          "subtitle": "entity4.id4.subtitle",
+          "content": [
+            {
+              "key": "entity4.id4.entry1",
+              "title": "entity4.id4.entry1.title",
+              "subtitle": "entity4.id4.entry1.subtitle",
+              "icon": "material.family-restroom",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id4.entry2",
+              "title": "entity4.id4.entry2.title",
+              "subtitle": "entity4.id4.entry2.subtitle",
+              "icon": "material.calendar-today",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id4.entry3",
+              "title": "entity4.id4.entry3.title",
+              "subtitle": "entity4.id4.entry3.subtitle",
+              "icon": "material.home-work",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id4.entry4",
+              "title": "entity4.id4.entry4.title",
+              "subtitle": "entity4.id4.entry4.subtitle",
+              "icon": "material.airplanemode-active",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.diversity-3",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity4.id5",
+          "title": "entity4.id5.title",
+          "subtitle": "entity4.id5.subtitle",
+          "content": [
+            {
+              "key": "entity4.id5.entry1",
+              "title": "entity4.id5.entry1.title",
+              "subtitle": "entity4.id5.entry1.subtitle",
+              "icon": "material.description",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id5.entry2",
+              "title": "entity4.id5.entry2.title",
+              "subtitle": "entity4.id5.entry2.subtitle",
+              "icon": "material.timer",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id5.entry3",
+              "title": "entity4.id5.entry3.title",
+              "subtitle": "entity4.id5.entry3.subtitle",
+              "icon": "material.hourglass-full",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id5.entry4",
+              "title": "entity4.id5.entry4.title",
+              "subtitle": "entity4.id5.entry4.subtitle",
+              "icon": "material.flag",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.cancel",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity4.id6",
+          "title": "entity4.id6.title",
+          "subtitle": "entity4.id6.subtitle",
+          "content": [
+            {
+              "key": "entity4.id6.entry1",
+              "title": "entity4.id6.entry1.title",
+              "subtitle": "entity4.id6.entry1.subtitle",
+              "icon": "material.edit",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id6.entry2",
+              "title": "entity4.id6.entry2.title",
+              "subtitle": "entity4.id6.entry2.subtitle",
+              "icon": "material.contact-support",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id6.entry3",
+              "title": "entity4.id6.entry3.title",
+              "subtitle": "entity4.id6.entry3.subtitle",
+              "icon": "material.fact-check",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id6.entry4",
+              "title": "entity4.id6.entry4.title",
+              "subtitle": "entity4.id6.entry4.subtitle",
+              "icon": "material.hourglass-bottom",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.gavel",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity4.id7",
+          "title": "entity4.id7.title",
+          "subtitle": "entity4.id7.subtitle",
+          "content": [
+            {
+              "key": "entity4.id7.entry1",
+              "title": "entity4.id7.entry1.title",
+              "subtitle": "entity4.id7.entry1.subtitle",
+              "icon": "material.warning",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id7.entry2",
+              "title": "entity4.id7.entry2.title",
+              "subtitle": "entity4.id7.entry2.subtitle",
+              "icon": "material.shield",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id7.entry3",
+              "title": "entity4.id7.entry3.title",
+              "subtitle": "entity4.id7.entry3.subtitle",
+              "icon": "material.autorenew",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id7.entry4",
+              "title": "entity4.id7.entry4.title",
+              "subtitle": "entity4.id7.entry4.subtitle",
+              "icon": "material.description",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.security",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity4.id8",
+          "title": "entity4.id8.title",
+          "subtitle": "entity4.id8.subtitle",
+          "content": [
+            {
+              "key": "entity4.id8.entry1",
+              "title": "entity4.id8.entry1.title",
+              "subtitle": "entity4.id8.entry1.subtitle",
+              "icon": "material.flight-takeoff",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id8.entry2",
+              "title": "entity4.id8.entry2.title",
+              "subtitle": "entity4.id8.entry2.subtitle",
+              "icon": "material.phone-in-talk",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id8.entry3",
+              "title": "entity4.id8.entry3.title",
+              "subtitle": "entity4.id8.entry3.subtitle",
+              "icon": "material.volunteer-activism",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id8.entry4",
+              "title": "entity4.id8.entry4.title",
+              "subtitle": "entity4.id8.entry4.subtitle",
+              "icon": "material.lock",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.flight",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity4.id9",
+          "title": "entity4.id9.title",
+          "subtitle": "entity4.id9.subtitle",
+          "content": [
+            {
+              "key": "entity4.id9.entry1",
+              "title": "entity4.id9.entry1.title",
+              "subtitle": "entity4.id9.entry1.subtitle",
+              "icon": "material.sick",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id9.entry2",
+              "title": "entity4.id9.entry2.title",
+              "subtitle": "entity4.id9.entry2.subtitle",
+              "icon": "material.people",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id9.entry3",
+              "title": "entity4.id9.entry3.title",
+              "subtitle": "entity4.id9.entry3.subtitle",
+              "icon": "material.handshake",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id9.entry4",
+              "title": "entity4.id9.entry4.title",
+              "subtitle": "entity4.id9.entry4.subtitle",
+              "icon": "material.description",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.favorite",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity4.id10",
+          "title": "entity4.id10.title",
+          "subtitle": "entity4.id10.subtitle",
+          "content": [
+            {
+              "key": "entity4.id10.entry1",
+              "title": "entity4.id10.entry1.title",
+              "subtitle": "entity4.id10.entry1.subtitle",
+              "icon": "material.contact-support",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id10.entry2",
+              "title": "entity4.id10.entry2.title",
+              "subtitle": "entity4.id10.entry2.subtitle",
+              "icon": "material.airplanemode-active",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id10.entry3",
+              "title": "entity4.id10.entry3.title",
+              "subtitle": "entity4.id10.entry3.subtitle",
+              "icon": "material.language",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id10.entry4",
+              "title": "entity4.id10.entry4.title",
+              "subtitle": "entity4.id10.entry4.subtitle",
+              "icon": "material.psychology",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.help",
+          "color": "#000",
+          "cardHeight": 350
+        }
+      ],
+      "contacts": [
+        {
+          "key": "bfa_bescheid",
+          "name": "BFA - Bescheide",
+          "subtitle": "Auskunft zu Bescheiden und Verfahren",
+          "languages": ["de", "en"],
+          "phone": "+43 59133 98 7004",
+          "email": "bfa.bescheid@bmi.gv.at",
+          "url": "https://www.bfa.gv.at/bescheide",
+          "icon": "material.description"
+        },
+        {
+          "key": "bvwg",
+          "name": "Bundesverwaltungsgericht",
+          "subtitle": "Beschwerdeinstanz bei negativen Bescheiden",
+          "languages": ["de"],
+          "phone": "+43 1 521 52 0",
+          "email": "post@bvwg.gv.at",
+          "url": "https://www.bvwg.gv.at",
+          "icon": "material.gavel"
+        },
+        {
+          "key": "oif_integration",
+          "name": "ÖIF - Integrationsberatung",
+          "subtitle": "Deutschkurse und Integration nach positiver Entscheidung",
+          "languages": ["de", "en", "ar", "fa", "ru"],
+          "phone": "+43 1 715 10 51 0",
+          "email": "integration@integrationsfonds.at",
+          "url": "https://www.integrationsfonds.at",
+          "icon": "material.handshake"
+        },
+        {
+          "key": "iom_rueckkehr",
+          "name": "IOM - Rückkehrberatung",
+          "subtitle": "Unterstützung bei freiwilliger Rückkehr",
+          "languages": ["de", "en", "ar", "fa", "ru"],
+          "phone": "+43 1 585 33 22",
+          "email": "info@iom.int",
+          "url": "https://austria.iom.int",
+          "icon": "material.airplanemode-active"
+        },
+        {
+          "key": "caritas_rechtsberatung",
+          "name": "Caritas Rechtsberatung",
+          "subtitle": "Kostenlose Beratung bei Beschwerden",
+          "languages": ["de", "en", "ar", "fa"],
+          "phone": "+43 1 488 31 0",
+          "email": "rechtsberatung@caritas.at",
+          "url": "https://www.caritas.at/rechtsberatung",
+          "icon": "material.contact-support"
+        },
+        {
+          "key": "ams_arbeit_positiv",
+          "name": "AMS - Arbeitsberatung",
+          "subtitle": "Beratung für anerkannte Flüchtlinge",
+          "languages": ["de", "en"],
+          "phone": "+43 1 501 65 0",
+          "email": "info@ams.at",
+          "url": "https://www.ams.at/fluechtlinge",
+          "icon": "material.work"
+        },
+        {
+          "key": "familiennachzug",
+          "name": "BMEIA - Familiennachzug",
+          "subtitle": "Informationen zum Nachzug der Familie",
+          "languages": ["de", "en"],
+          "phone": "+43 1 531 15 0",
+          "email": "post@bmeia.gv.at",
+          "url": "https://www.bmeia.gv.at/familiennachzug",
+          "icon": "material.family-restroom"
+        },
+        {
+          "key": "asylkoordination_beschwerde",
+          "name": "Asylkoordination",
+          "subtitle": "Spezialisierte Beschwerdeberatung",
+          "languages": ["de", "en"],
+          "phone": "+43 1 532 12 91",
+          "email": "beschwerde@asyl.at",
+          "url": "https://www.asyl.at/beschwerde",
+          "icon": "material.gavel"
+        },
+        {
+          "key": "bbu_rechtsmittel",
+          "name": "BBU - Rechtsmittelberatung",
+          "subtitle": "Kostenlose Hilfe bei Beschwerden",
+          "languages": ["de", "en", "ar", "fa"],
+          "phone": "+43 1 2676 870 9416",
+          "email": "rechtsmittel@bbu.gv.at",
+          "url": "https://www.bbu.gv.at/rechtsmittel",
+          "icon": "material.contact-support"
+        },
+        {
+          "key": "traumahilfe",
+          "name": "Hemayat - Traumahelp",
+          "subtitle": "Psychotherapie für traumatisierte Flüchtlinge",
+          "languages": ["de", "en", "ar", "fa"],
+          "phone": "+43 1 216 43 43",
+          "email": "office@hemayat.org",
+          "url": "https://www.hemayat.org",
+          "icon": "material.psychology"
+        },
+        {
+          "key": "vggh",
+          "name": "Verfassungsgerichtshof",
+          "subtitle": "Höchste Beschwerdeinstanz",
+          "languages": ["de"],
+          "phone": "+43 1 531 22 0",
+          "email": "vggh@vfgh.gv.at",
+          "url": "https://www.vfgh.gv.at",
+          "icon": "material.balance"
+        },
+        {
+          "key": "reiseausweis",
+          "name": "Passbehörde",
+          "subtitle": "Reiseausweis für Flüchtlinge",
+          "languages": ["de", "en"],
+          "phone": "+43 1 531 26 0",
+          "email": "pass@bmi.gv.at",
+          "url": "https://www.pass.gv.at",
+          "icon": "material.card-travel"
+        }
+      ],
+      "tutorialData": "after_decision",
       "translationNamespace": "informationAsylum"
     }
   ]

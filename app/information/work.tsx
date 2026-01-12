@@ -77,7 +77,7 @@ const Work: React.FC = () => {
             subtitle={t('rights_subtitle')}
             icon="material.gavel"
             color="rgba(221, 7, 121, 0.5)"
-            onPress={() => onContinue('rights')}
+            onPress={() => onContinue('laborRights')}
             height={cardHeight}
             iconSize={iconSize}
           />

@@ -29,12 +29,16 @@ const EmbeddedVideo: React.FC<{videoId: string}> = ({videoId}) => {
     "frauenrechte": {
       "de": 'https://integrationsbox.at/GV/images/Videos/DE/asyl_recht/DE_Frauenrechte.mp4',
       "en": 'https://integrationsbox.at/GV/images/Videos/EN/asyl_recht/EN_Frauenrechte.mp4',
+    },
+    "rights_duties": {
+      "de": 'https://integrationsbox.at/GV/images/Videos/DE/asyl_recht/DE_Gesetze.mp4',
+      "en": 'https://integrationsbox.at/GV/images/Videos/EN/asyl_recht/EN_Gesetze.mp4',
+    },
+    "education": {
+      "de": 'https://integrationsbox.at/GV/images/Videos/DE/arbeit_bildung/DE_Ausbildung.mp4',
+      "en": 'https://integrationsbox.at/GV/images/Videos/EN/arbeit_bildung/EN_Ausbildung.mp4',
     }
   }
-
-  const videoKey = videoIds[1]
-  const sourceEntry = videoSources[videoKey];
-  const videoSource = sourceEntry ? (sourceEntry[currentLanguage] || sourceEntry['de']) : null;
 
   const videoKey = videoIds[1]
   const sourceEntry = videoSources[videoKey];

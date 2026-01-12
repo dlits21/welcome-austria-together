@@ -6,110 +6,110 @@
       "title": "application",
       "tiles": [
         {
-          "key": "id1",
-          "title": "id1.title",
-          "subtitle": "id1.subtitle",
+          "key": "entity1.id1",
+          "title": "entity1.id1.title",
+          "subtitle": "entity1.id1.subtitle",
           "content": [
             {
-              "key": "id1.entry1",
-              "title": "id1.entry1.title",
-              "subtitle": "id1.entry1.subtitle"
+              "key": "entity1.id1.entry1",
+              "title": "entity1.id1.entry1.title",
+              "subtitle": "entity1.id1.entry1.subtitle"
             },
             {
-              "key": "id1.entry2",
-              "title": "id1.entry2.title",
-              "subtitle": "id1.entry2.subtitle"
+              "key": "entity1.id1.entry2",
+              "title": "entity1.id1.entry2.title",
+              "subtitle": "entity1.id1.entry2.subtitle"
             },
             {
-              "key": "id1.entry3",
-              "title": "id1.entry3.title",
-              "subtitle": "id1.entry3.subtitle"
+              "key": "entity1.id1.entry3",
+              "title": "entity1.id1.entry3.title",
+              "subtitle": "entity1.id1.entry3.subtitle"
             }
           ],
-          "icon": "gavel",
+          "icon": "awesome6.file",
           "color": "#000",
           "cardHeight": 350
         },
         {
-          "key": "id2",
-          "title": "id2.title",
-          "subtitle": "id2.subtitle",
+          "key": "entity1.id2",
+          "title": "entity1.id2.title",
+          "subtitle": "entity1.id2.subtitle",
           "content": [
             {
-              "key": "id2.entry1",
-              "title": "id2.entry1.title"
+              "key": "entity1.id2.entry1",
+              "title": "entity1.id2.entry1.title"
             },
             {
-              "key": "id2.entry2",
-              "title": "id2.entry2.title"
+              "key": "entity1.id2.entry2",
+              "title": "entity1.id2.entry2.title"
             },
             {
-              "key": "id2.entry3",
-              "title": "id2.entry3.title"
+              "key": "entity1.id2.entry3",
+              "title": "entity1.id2.entry3.title"
             },
             {
-              "key": "id2.entry4",
-              "title": "id2.entry4.title"
+              "key": "entity1.id2.entry4",
+              "title": "entity1.id2.entry4.title"
             },
             {
-              "key": "id2.entry5",
-              "title": "id2.entry5.title"
+              "key": "entity1.id2.entry5",
+              "title": "entity1.id2.entry5.title"
             },
             {
-              "key": "id2.entry6",
-              "title": "id2.entry6.title"
+              "key": "entity1.id2.entry6",
+              "title": "entity1.id2.entry6.title"
             }
           ],
-          "icon": "gavel",
+          "icon": "material.email",
           "color": "#000",
           "cardHeight": 350
         },
         {
-          "key": "id3",
-          "title": "id3.title",
-          "subtitle": "id3.subtitle",
+          "key": "entity1.id3",
+          "title": "entity1.id3.title",
+          "subtitle": "entity1.id3.subtitle",
           "content": [
             {
-              "key": "id3.entry3",
-              "title": "id3.entry1.title",
-              "subtitle": "id3.entry1.subtitle"
+              "key": "entity1.id3.entry3",
+              "title": "entity1.id3.entry1.title",
+              "subtitle": "entity1.id3.entry1.subtitle"
             },
             {
-              "key": "id3.entry3",
-              "title": "id3.entry2.title"
+              "key": "entity1.id3.entry3",
+              "title": "entity1.id3.entry2.title"
             },
             {
-              "key": "id3.entry3",
-              "title": "id3.entry3.title"
+              "key": "entity1.id3.entry3",
+              "title": "entity1.id3.entry3.title"
             }
           ],
-          "icon": "gavel",
+          "icon": "community.account-voice",
           "color": "#000",
           "cardHeight": 350
         },
         {
-          "key": "id4",
-          "title": "id4.title",
-          "subtitle": "id4.subtitle",
+          "key": "entity1.id4",
+          "title": "entity1.id4.title",
+          "subtitle": "entity1.id4.subtitle",
           "content": [
             {
-              "key": "id4.entry1",
-              "title": "id4.entry1.title"
+              "key": "entity1.id4.entry1",
+              "title": "entity1.id4.entry1.title"
             },
             {
-              "key": "id4.entry2",
-              "title": "id4.entry2.title"
+              "key": "entity1.id4.entry2",
+              "title": "entity1.id4.entry2.title"
             },
             {
-              "key": "id4.entry3",
-              "title": "id4.entry3.title"
+              "key": "entity1.id4.entry3",
+              "title": "entity1.id4.entry3.title"
             },
             {
-              "key": "id4.entry4",
-              "title": "id4.entry4.title"
+              "key": "entity1.id4.entry4",
+              "title": "entity1.id4.entry4.title"
             }
           ],
-          "icon": "gavel",
+          "icon": "material.checklist",
           "color": "#000",
           "cardHeight": 350
         }
@@ -142,6 +142,2365 @@
         }
       ],
       "tutorialData": "home",
+      "translationNamespace": "informationWork"
+    },
+    {
+      "id": "laborRights",
+      "title": "Arbeitsrechte",
+      "tiles": [
+        {
+          "key": "entity2.id1",
+          "title": "entity2.id1.title",
+          "subtitle": "entity2.id1.subtitle",
+          "content": [
+            {
+              "key": "entity2.id1.entry1",
+              "title": "entity2.id1.entry1.title",
+              "subtitle": "entity2.id1.entry1.subtitle",
+              "icon": "material.description",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id1.entry2",
+              "title": "entity2.id1.entry2.title",
+              "subtitle": "entity2.id1.entry2.subtitle",
+              "icon": "material.list",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id1.entry3",
+              "title": "entity2.id1.entry3.title",
+              "subtitle": "entity2.id1.entry3.subtitle",
+              "icon": "material.hourglass-empty",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id1.entry4",
+              "title": "entity2.id1.entry4.title",
+              "subtitle": "entity2.id1.entry4.subtitle",
+              "icon": "material.calendar-today",
+              "iconSize": 64
+            }
+          ],
+          "icon": "awesome6.file-contract",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity2.id2",
+          "title": "entity2.id2.title",
+          "subtitle": "entity2.id2.subtitle",
+          "content": [
+            {
+              "key": "entity2.id2.entry1",
+              "title": "entity2.id2.entry1.title",
+              "subtitle": "entity2.id2.entry1.subtitle",
+              "icon": "material.schedule",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id2.entry2",
+              "title": "entity2.id2.entry2.title",
+              "subtitle": "entity2.id2.entry2.subtitle",
+              "icon": "material.school",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id2.entry3",
+              "title": "entity2.id2.entry3.title",
+              "subtitle": "entity2.id2.entry3.subtitle",
+              "icon": "material.attach-money",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id2.entry4",
+              "title": "entity2.id2.entry4.title",
+              "subtitle": "entity2.id2.entry4.subtitle",
+              "icon": "material.business-center",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.business",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity2.id3",
+          "title": "entity2.id3.title",
+          "subtitle": "entity2.id3.subtitle",
+          "content": [
+            {
+              "key": "entity2.id3.entry1",
+              "title": "entity2.id3.entry1.title",
+              "subtitle": "entity2.id3.entry1.subtitle",
+              "icon": "material.money",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id3.entry2",
+              "title": "entity2.id3.entry2.title",
+              "subtitle": "entity2.id3.entry2.subtitle",
+              "icon": "material.payment",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id3.entry3",
+              "title": "entity2.id3.entry3.title",
+              "subtitle": "entity2.id3.entry3.subtitle",
+              "icon": "material.access-time",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id3.entry4",
+              "title": "entity2.id3.entry4.title",
+              "subtitle": "entity2.id3.entry4.subtitle",
+              "icon": "material.nightlight",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.attach-money",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity2.id4",
+          "title": "entity2.id4.title",
+          "subtitle": "entity2.id4.subtitle",
+          "content": [
+            {
+              "key": "entity2.id4.entry1",
+              "title": "entity2.id4.entry1.title",
+              "subtitle": "entity2.id4.entry1.subtitle",
+              "icon": "material.access-time",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id4.entry2",
+              "title": "entity2.id4.entry2.title",
+              "subtitle": "entity2.id4.entry2.subtitle",
+              "icon": "material.free-breakfast",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id4.entry3",
+              "title": "entity2.id4.entry3.title",
+              "subtitle": "entity2.id4.entry3.subtitle",
+              "icon": "material.bedtime",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id4.entry4",
+              "title": "entity2.id4.entry4.title",
+              "subtitle": "entity2.id4.entry4.subtitle",
+              "icon": "material.timer",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.schedule",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity2.id5",
+          "title": "entity2.id5.title",
+          "subtitle": "entity2.id5.subtitle",
+          "content": [
+            {
+              "key": "entity2.id5.entry1",
+              "title": "entity2.id5.entry1.title",
+              "subtitle": "entity2.id5.entry1.subtitle",
+              "icon": "material.phone",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id5.entry2",
+              "title": "entity2.id5.entry2.title",
+              "subtitle": "entity2.id5.entry2.subtitle",
+              "icon": "material.paid",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id5.entry3",
+              "title": "entity2.id5.entry3.title",
+              "subtitle": "entity2.id5.entry3.subtitle",
+              "icon": "material.timer",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id5.entry4",
+              "title": "entity2.id5.entry4.title",
+              "subtitle": "entity2.id5.entry4.subtitle",
+              "icon": "material.medical-services",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.sick",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity2.id6",
+          "title": "entity2.id6.title",
+          "subtitle": "entity2.id6.subtitle",
+          "content": [
+            {
+              "key": "entity2.id6.entry1",
+              "title": "entity2.id6.entry1.title",
+              "subtitle": "entity2.id6.entry1.subtitle",
+              "icon": "material.beach-access",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id6.entry2",
+              "title": "entity2.id6.entry2.title",
+              "subtitle": "entity2.id6.entry2.subtitle",
+              "icon": "material.money",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id6.entry3",
+              "title": "entity2.id6.entry3.title",
+              "subtitle": "entity2.id6.entry3.subtitle",
+              "icon": "material.celebration",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id6.entry4",
+              "title": "entity2.id6.entry4.title",
+              "subtitle": "entity2.id6.entry4.subtitle",
+              "icon": "material.child-care",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.airplane-ticket",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity2.id7",
+          "title": "entity2.id7.title",
+          "subtitle": "entity2.id7.subtitle",
+          "content": [
+            {
+              "key": "entity2.id7.entry1",
+              "title": "entity2.id7.entry1.title",
+              "subtitle": "entity2.id7.entry1.subtitle",
+              "icon": "material.pregnant-woman",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id7.entry2",
+              "title": "entity2.id7.entry2.title",
+              "subtitle": "entity2.id7.entry2.subtitle",
+              "icon": "material.man",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id7.entry3",
+              "title": "entity2.id7.entry3.title",
+              "subtitle": "entity2.id7.entry3.subtitle",
+              "icon": "material.schedule",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id7.entry4",
+              "title": "entity2.id7.entry4.title",
+              "subtitle": "entity2.id7.entry4.subtitle",
+              "icon": "material.family-restroom",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.family-restroom",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity2.id8",
+          "title": "entity2.id8.title",
+          "subtitle": "entity2.id8.subtitle",
+          "content": [
+            {
+              "key": "entity2.id8.entry1",
+              "title": "entity2.id8.entry1.title",
+              "subtitle": "entity2.id8.entry1.subtitle",
+              "icon": "material.group",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id8.entry2",
+              "title": "entity2.id8.entry2.title",
+              "subtitle": "entity2.id8.entry2.subtitle",
+              "icon": "material.handshake",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id8.entry3",
+              "title": "entity2.id8.entry3.title",
+              "subtitle": "entity2.id8.entry3.subtitle",
+              "icon": "material.people",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id8.entry4",
+              "title": "entity2.id8.entry4.title",
+              "subtitle": "entity2.id8.entry4.subtitle",
+              "icon": "material.gavel",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.groups",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity2.id9",
+          "title": "entity2.id9.title",
+          "subtitle": "entity2.id9.subtitle",
+          "content": [
+            {
+              "key": "entity2.id9.entry1",
+              "title": "entity2.id9.entry1.title",
+              "subtitle": "entity2.id9.entry1.subtitle",
+              "icon": "material.timer",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id9.entry2",
+              "title": "entity2.id9.entry2.title",
+              "subtitle": "entity2.id9.entry2.subtitle",
+              "icon": "material.shield",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id9.entry3",
+              "title": "entity2.id9.entry3.title",
+              "subtitle": "entity2.id9.entry3.subtitle",
+              "icon": "material.money",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id9.entry4",
+              "title": "entity2.id9.entry4.title",
+              "subtitle": "entity2.id9.entry4.subtitle",
+              "icon": "material.handshake",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.exit-to-app",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity2.id10",
+          "title": "entity2.id10.title",
+          "subtitle": "entity2.id10.subtitle",
+          "content": [
+            {
+              "key": "entity2.id10.entry1",
+              "title": "entity2.id10.entry1.title",
+              "subtitle": "entity2.id10.entry1.subtitle",
+              "icon": "material.gavel",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id10.entry2",
+              "title": "entity2.id10.entry2.title",
+              "subtitle": "entity2.id10.entry2.subtitle",
+              "icon": "material.warning",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id10.entry3",
+              "title": "entity2.id10.entry3.title",
+              "subtitle": "entity2.id10.entry3.subtitle",
+              "icon": "material.no-adult-content",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id10.entry4",
+              "title": "entity2.id10.entry4.title",
+              "subtitle": "entity2.id10.entry4.subtitle",
+              "icon": "material.contact-support",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.warning",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity2.id11",
+          "title": "entity2.id11.title",
+          "subtitle": "entity2.id11.subtitle",
+          "content": [
+            {
+              "key": "entity2.id11.entry1",
+              "title": "entity2.id11.entry1.title",
+              "subtitle": "entity2.id11.entry1.subtitle",
+              "icon": "material.health-and-safety",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id11.entry2",
+              "title": "entity2.id11.entry2.title",
+              "subtitle": "entity2.id11.entry2.subtitle",
+              "icon": "material.calculate",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id11.entry3",
+              "title": "entity2.id11.entry3.title",
+              "subtitle": "entity2.id11.entry3.subtitle",
+              "icon": "material.receipt",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id11.entry4",
+              "title": "entity2.id11.entry4.title",
+              "subtitle": "entity2.id11.entry4.subtitle",
+              "icon": "material.directions-car",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.account-balance",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity2.id12",
+          "title": "entity2.id12.title",
+          "subtitle": "entity2.id12.subtitle",
+          "content": [
+            {
+              "key": "entity2.id12.entry1",
+              "title": "entity2.id12.entry1.title",
+              "subtitle": "entity2.id12.entry1.subtitle",
+              "icon": "material.money",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id12.entry2",
+              "title": "entity2.id12.entry2.title",
+              "subtitle": "entity2.id12.entry2.subtitle",
+              "icon": "material.volunteer-activism",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id12.entry3",
+              "title": "entity2.id12.entry3.title",
+              "subtitle": "entity2.id12.entry3.subtitle",
+              "icon": "material.assignment",
+              "iconSize": 64
+            },
+            {
+              "key": "entity2.id12.entry4",
+              "title": "entity2.id12.entry4.title",
+              "subtitle": "entity2.id12.entry4.subtitle",
+              "icon": "material.gavel",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.work-off",
+          "color": "#000",
+          "cardHeight": 350
+        }
+      ],
+      "contacts": [
+        {
+          "key": "arbeiterkammer",
+          "name": "Arbeiterkammer",
+          "subtitle": "Kostenlose Rechtsberatung für Arbeitnehmer",
+          "languages": ["de", "en"],
+          "phone": "+43 1 501 65 0",
+          "email": "service@akwien.at",
+          "url": "https://wien.arbeiterkammer.at",
+          "icon": "material.gavel"
+        },
+        {
+          "key": "ams_arbeit",
+          "name": "Arbeitsmarktservice",
+          "subtitle": "Jobvermittlung und Arbeitslosengeld",
+          "languages": ["de", "en"],
+          "phone": "+43 1 501 65 0",
+          "email": "info@ams.at",
+          "url": "https://www.ams.at",
+          "icon": "material.work"
+        },
+        {
+          "key": "oegk",
+          "name": "Österreichische Gesundheitskasse",
+          "subtitle": "Krankenversicherung und Krankengeld",
+          "languages": ["de", "en"],
+          "phone": "+43 5 0766 0",
+          "email": "service@oegk.at",
+          "url": "https://www.oegk.at",
+          "icon": "material.health-and-safety"
+        },
+        {
+          "key": "finanzamt",
+          "name": "Finanzamt",
+          "subtitle": "Steuerberatung und Lohnsteuerausgleich",
+          "languages": ["de"],
+          "phone": "+43 1 795 99 0",
+          "email": "post@bmf.gv.at",
+          "url": "https://www.bmf.gv.at",
+          "icon": "material.calculate"
+        },
+        {
+          "key": "arbeitinspektorat",
+          "name": "Arbeitsinspektorat",
+          "subtitle": "Überwachung von Arbeitsbedingungen",
+          "languages": ["de", "en"],
+          "phone": "+43 5 0 776 3001",
+          "email": "service@arbeitinspektion.gv.at",
+          "url": "https://www.arbeitinspektion.gv.at",
+          "icon": "material.engineering"
+        },
+        {
+          "key": "gewerkschaft_oegb",
+          "name": "ÖGB - Österreichischer Gewerkschaftsbund",
+          "subtitle": "Gewerkschaftsorganisation",
+          "languages": ["de", "en"],
+          "phone": "+43 1 534 44 0",
+          "email": "info@oegb.at",
+          "url": "https://www.oegb.at",
+          "icon": "material.groups"
+        },
+        {
+          "key": "gleichbehandlung",
+          "name": "Gleichbehandlungsanwaltschaft",
+          "subtitle": "Diskriminierung am Arbeitsplatz",
+          "languages": ["de", "en"],
+          "phone": "+43 1 532 02 44",
+          "email": "office@gleichbehandlungsanwaltschaft.gv.at",
+          "url": "https://www.gleichbehandlungsanwaltschaft.gv.at",
+          "icon": "material.gavel"
+        },
+        {
+          "key": "betriebsrat_info",
+          "name": "Betriebsrat-Akademie",
+          "subtitle": "Informationen zu Betriebsräten",
+          "languages": ["de"],
+          "phone": "+43 1 313 16 0",
+          "email": "office@akwien.at",
+          "url": "https://betriebsrat.arbeiterkammer.at",
+          "icon": "material.people"
+        },
+        {
+          "key": "pva",
+          "name": "Pensionsversicherungsanstalt",
+          "subtitle": "Pensionsansprüche und -beratung",
+          "languages": ["de", "en"],
+          "phone": "+43 1 795 95 0",
+          "email": "service@pva.at",
+          "url": "https://www.pva.at",
+          "icon": "material.elderly"
+        },
+        {
+          "key": "migrant_arbeit",
+          "name": "Migrantinnen- und Migrantenberatung",
+          "subtitle": "Spezielle Beratung für Migranten",
+          "languages": ["de", "en", "ar", "fa", "ru"],
+          "phone": "+43 1 212 35 20",
+          "email": "beratung@migrant.at",
+          "url": "https://www.migrant.at",
+          "icon": "material.language"
+        },
+        {
+          "key": "lehrlingsstelle",
+          "name": "Lehrlingsstelle Wien",
+          "subtitle": "Beratung für Lehrlinge",
+          "languages": ["de", "en"],
+          "phone": "+43 1 525 25 77010",
+          "email": "lehrlingsstelle@ma13.wien.gv.at",
+          "url": "https://www.wien.gv.at/lehrlingsstelle",
+          "icon": "material.school"
+        },
+        {
+          "key": "kollektivvertrag_datenbank",
+          "name": "Kollektivvertrags-Datenbank",
+          "subtitle": "Alle Kollektivverträge online",
+          "languages": ["de"],
+          "phone": "+43 1 534 44 0",
+          "email": "info@oegb.at",
+          "url": "https://www.kollektivvertrag.at",
+          "icon": "material.search"
+        }
+      ],
+      "tutorialData": "labor_rights",
+      "translationNamespace": "informationWork"
+    },
+
+    {
+      "id": "search",
+      "title": "search_subtitle",
+      "videoId": "local.job_search",
+      "tiles": [
+        {
+          "key": "entity3.id1",
+          "title": "entity3.id1.title",
+          "subtitle": "entity3.id1.subtitle",
+          "content": [
+            {
+              "key": "entity3.id1.entry1",
+              "title": "entity3.id1.entry1.title",
+              "subtitle": "entity3.id1.entry1.subtitle",
+              "icon": "material.assignment",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id1.entry2",
+              "title": "entity3.id1.entry2.title",
+              "subtitle": "entity3.id1.entry2.subtitle",
+              "icon": "material.school",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id1.entry3",
+              "title": "entity3.id1.entry3.title",
+              "subtitle": "entity3.id1.entry3.subtitle",
+              "icon": "material.language",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id1.entry4",
+              "title": "entity3.id1.entry4.title",
+              "subtitle": "entity3.id1.entry4.subtitle",
+              "icon": "material.search",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.search",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity3.id2",
+          "title": "entity3.id2.title",
+          "subtitle": "entity3.id2.subtitle",
+          "content": [
+            {
+              "key": "entity3.id2.entry1",
+              "title": "entity3.id2.entry1.title",
+              "subtitle": "entity3.id2.entry1.subtitle",
+              "icon": "material.computer",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id2.entry2",
+              "title": "entity3.id2.entry2.title",
+              "subtitle": "entity3.id2.entry2.subtitle",
+              "icon": "material.web",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id2.entry3",
+              "title": "entity3.id2.entry3.title",
+              "subtitle": "entity3.id2.entry3.subtitle",
+              "icon": "material.groups",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id2.entry4",
+              "title": "entity3.id2.entry4.title",
+              "subtitle": "entity3.id2.entry4.subtitle",
+              "icon": "material.category",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.language",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity3.id3",
+          "title": "entity3.id3.title",
+          "subtitle": "entity3.id3.subtitle",
+          "content": [
+            {
+              "key": "entity3.id3.entry1",
+              "title": "entity3.id3.entry1.title",
+              "subtitle": "entity3.id3.entry1.subtitle",
+              "icon": "material.send",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id3.entry2",
+              "title": "entity3.id3.entry2.title",
+              "subtitle": "entity3.id3.entry2.subtitle",
+              "icon": "material.newspaper",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id3.entry3",
+              "title": "entity3.id3.entry3.title",
+              "subtitle": "entity3.id3.entry3.subtitle",
+              "icon": "material.business",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id3.entry4",
+              "title": "entity3.id3.entry4.title",
+              "subtitle": "entity3.id3.entry4.subtitle",
+              "icon": "material.event",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.person-search",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity3.id4",
+          "title": "entity3.id4.title",
+          "subtitle": "entity3.id4.subtitle",
+          "content": [
+            {
+              "key": "entity3.id4.entry1",
+              "title": "entity3.id4.entry1.title",
+              "subtitle": "entity3.id4.entry1.subtitle",
+              "icon": "awesome6.list-ol",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id4.entry2",
+              "title": "entity3.id4.entry2.title",
+              "subtitle": "entity3.id4.entry2.subtitle",
+              "icon": "material.info",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id4.entry3",
+              "title": "entity3.id4.entry3.title",
+              "subtitle": "entity3.id4.entry3.subtitle",
+              "icon": "material.description",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id4.entry4",
+              "title": "entity3.id4.entry4.title",
+              "subtitle": "entity3.id4.entry4.subtitle",
+              "icon": "material.translate",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.person",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity3.id5",
+          "title": "entity3.id5.title",
+          "subtitle": "entity3.id5.subtitle",
+          "content": [
+            {
+              "key": "entity3.id5.entry1",
+              "title": "entity3.id5.entry1.title",
+              "subtitle": "entity3.id5.entry1.subtitle",
+              "icon": "awesome6.list-ol",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id5.entry2",
+              "title": "entity3.id5.entry2.title",
+              "subtitle": "entity3.id5.entry2.subtitle",
+              "icon": "material.edit",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id5.entry3",
+              "title": "entity3.id5.entry3.title",
+              "subtitle": "entity3.id5.entry3.subtitle",
+              "icon": "material.assignment",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id5.entry4",
+              "title": "entity3.id5.entry4.title",
+              "subtitle": "entity3.id5.entry4.subtitle",
+              "icon": "material.email",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.mail",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity3.id6",
+          "title": "entity3.id6.title",
+          "subtitle": "entity3.id6.subtitle",
+          "content": [
+            {
+              "key": "entity3.id6.entry1",
+              "title": "entity3.id6.entry1.title",
+              "subtitle": "entity3.id6.entry1.subtitle",
+              "icon": "material.work",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id6.entry2",
+              "title": "entity3.id6.entry2.title",
+              "subtitle": "entity3.id6.entry2.subtitle",
+              "icon": "material.school",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id6.entry3",
+              "title": "entity3.id6.entry3.title",
+              "subtitle": "entity3.id6.entry3.subtitle",
+              "icon": "material.language",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id6.entry4",
+              "title": "entity3.id6.entry4.title",
+              "subtitle": "entity3.id6.entry4.subtitle",
+              "icon": "awesome6.id-badge",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.folder",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity3.id7",
+          "title": "entity3.id7.title",
+          "subtitle": "entity3.id7.subtitle",
+          "content": [
+            {
+              "key": "entity3.id7.entry1",
+              "title": "entity3.id7.entry1.title",
+              "subtitle": "entity3.id7.entry1.subtitle",
+              "icon": "material.search",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id7.entry2",
+              "title": "entity3.id7.entry2.title",
+              "subtitle": "entity3.id7.entry2.subtitle",
+              "icon": "community.chat-question",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id7.entry3",
+              "title": "entity3.id7.entry3.title",
+              "subtitle": "entity3.id7.entry3.subtitle",
+              "icon": "material.checkroom",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id7.entry4",
+              "title": "entity3.id7.entry4.title",
+              "subtitle": "entity3.id7.entry4.subtitle",
+              "icon": "material.access-time",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.checklist",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity3.id8",
+          "title": "entity3.id8.title",
+          "subtitle": "entity3.id8.subtitle",
+          "content": [
+            {
+              "key": "entity3.id8.entry1",
+              "title": "entity3.id8.entry1.title",
+              "subtitle": "entity3.id8.entry1.subtitle",
+              "icon": "material.face",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id8.entry2",
+              "title": "entity3.id8.entry2.title",
+              "subtitle": "entity3.id8.entry2.subtitle",
+              "icon": "material.chat",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id8.entry3",
+              "title": "entity3.id8.entry3.title",
+              "subtitle": "entity3.id8.entry3.subtitle",
+              "icon": "material.public",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id8.entry4",
+              "title": "entity3.id8.entry4.title",
+              "subtitle": "entity3.id8.entry4.subtitle",
+              "icon": "material.money",
+              "iconSize": 64
+            }
+          ],
+          "icon": "awesome6.list-ol",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity3.id9",
+          "title": "entity3.id9.title",
+          "subtitle": "entity3.id9.subtitle",
+          "content": [
+            {
+              "key": "entity3.id9.entry1",
+              "title": "entity3.id9.entry1.title",
+              "subtitle": "entity3.id9.entry1.subtitle",
+              "icon": "material.mail",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id9.entry2",
+              "title": "entity3.id9.entry2.title",
+              "subtitle": "entity3.id9.entry2.subtitle",
+              "icon": "material.school",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id9.entry3",
+              "title": "entity3.id9.entry3.title",
+              "subtitle": "entity3.id9.entry3.subtitle",
+              "icon": "material.book",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id9.entry4",
+              "title": "entity3.id9.entry4.title",
+              "subtitle": "entity3.id9.entry4.subtitle",
+              "icon": "material.work-history",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.business",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity3.id10",
+          "title": "entity3.id10.title",
+          "subtitle": "entity3.id10.subtitle",
+          "content": [
+            {
+              "key": "entity3.id10.entry1",
+              "title": "entity3.id10.entry1.title",
+              "subtitle": "entity3.id10.entry1.subtitle",
+              "icon": "material.people",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id10.entry2",
+              "title": "entity3.id10.entry2.title",
+              "subtitle": "entity3.id10.entry2.subtitle",
+              "icon": "material.computer",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id10.entry3",
+              "title": "entity3.id10.entry3.title",
+              "subtitle": "entity3.id10.entry3.subtitle",
+              "icon": "awesome6.building-ngo",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id10.entry4",
+              "title": "entity3.id10.entry4.title",
+              "subtitle": "entity3.id10.entry4.subtitle",
+              "icon": "material.face",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.groups",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity3.id11",
+          "title": "entity3.id11.title",
+          "subtitle": "entity3.id11.subtitle",
+          "content": [
+            {
+              "key": "entity3.id11.entry1",
+              "title": "entity3.id11.entry1.title",
+              "subtitle": "entity3.id11.entry1.subtitle",
+              "icon": "material.assignment",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id11.entry2",
+              "title": "entity3.id11.entry2.title",
+              "subtitle": "entity3.id11.entry2.subtitle",
+              "icon": "material.work",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id11.entry3",
+              "title": "entity3.id11.entry3.title",
+              "subtitle": "entity3.id11.entry3.subtitle",
+              "icon": "material.language",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id11.entry4",
+              "title": "entity3.id11.entry4.title",
+              "subtitle": "entity3.id11.entry4.subtitle",
+              "icon": "awesome6.building-ngo",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.diversity-3",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity3.id12",
+          "title": "entity3.id12.title",
+          "subtitle": "entity3.id12.subtitle",
+          "content": [
+            {
+              "key": "entity3.id12.entry1",
+              "title": "entity3.id12.entry1.title",
+              "subtitle": "entity3.id12.entry1.subtitle",
+              "icon": "material.send",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id12.entry2",
+              "title": "entity3.id12.entry2.title",
+              "subtitle": "entity3.id12.entry2.subtitle",
+              "icon": "material.search",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id12.entry3",
+              "title": "entity3.id12.entry3.title",
+              "subtitle": "entity3.id12.entry3.subtitle",
+              "icon": "material.timer",
+              "iconSize": 64
+            },
+            {
+              "key": "entity3.id12.entry4",
+              "title": "entity3.id12.entry4.title",
+              "subtitle": "entity3.id12.entry4.subtitle",
+              "icon": "material.warning",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.tips-and-updates",
+          "color": "#000",
+          "cardHeight": 350
+        }
+      ],
+      "contacts": [
+        {
+          "key": "ams_jobsearch",
+          "name": "AMS - Jobsuche",
+          "subtitle": "Arbeitsmarktservice: Stellen und Beratung",
+          "languages": ["de", "en"],
+          "phone": "+43 1 501 65 0",
+          "email": "info@ams.at",
+          "url": "https://jobs.ams.at/public/emps/",
+          "icon": "material.work"
+        },
+        {
+          "key": "karriere_at",
+          "name": "Karriere.at",
+          "subtitle": "Größtes privates Jobportal",
+          "languages": ["de", "en"],
+          "phone": "+43 1 581 18 18",
+          "email": "office@karriere.at",
+          "url": "https://www.karriere.at",
+          "icon": "material.computer"
+        },
+        {
+          "key": "linkedin_at",
+          "name": "LinkedIn Österreich",
+          "subtitle": "Professionelles Netzwerk",
+          "languages": ["de", "en"],
+          "phone": "",
+          "email": "",
+          "url": "https://www.linkedin.com",
+          "icon": "material.groups"
+        },
+        {
+          "key": "migrant_jobcoaching",
+          "name": "Migrant Jobcoaching",
+          "subtitle": "Spezielle Beratung für Migranten",
+          "languages": ["de", "en", "ar", "fa", "ru"],
+          "phone": "+43 1 712 56 04",
+          "email": "migrant@migrant.at",
+          "url": "https://www.migrant.at/einrichtungen/hoher-markt/",
+          "icon": "material.face"
+        },
+        {
+          "key": "bildungsberatung",
+          "name": "Erwachsenenbildung",
+          "subtitle": "Bildungsberatung für Menschen mit Migrations- oder Fluchthintergrund",
+          "languages": ["de", "en", "ar", "fa"],
+          "phone": "+43 517 803 100",
+          "email": "bildungsberatung@caritas-wien.at",
+          "url": "https://erwachsenenbildung.at/bildungsinfo/beratungswegweiser/bildungsfoerderungen/15861-bildungsberatung-fuer-menschen-mit-migrations-oder-fluchthintergrund.php",
+          "icon": "material.volunteer-activism"
+        },
+        {
+          "key": "oif_deutschkurse",
+          "name": "ÖIF Deutschkurse",
+          "subtitle": "Kostenlose Deutschkurse für Jobsuche",
+          "languages": ["de", "en", "ar", "fa", "ru"],
+          "phone": "+43 1 715 10 51 0",
+          "email": "deutschkurse@integrationsfonds.at",
+          "url": "https://www.integrationsfonds.at/deutschkurse",
+          "icon": "material.language"
+        },
+        {
+          "key": "berufsinfo",
+          "name": "Berufsinfo Österreich",
+          "subtitle": "Informationen zu Berufen und Qualifikationen",
+          "languages": ["de", "en"],
+          "phone": "+43 1 501 65 3371",
+          "email": "berufsinfo@ams.at",
+          "url": "https://www.berufs-info.at",
+          "icon": "material.school"
+        },
+        {
+          "key": "best_messe",
+          "name": "BeSt Messe",
+          "subtitle": "Größte Bildungs- und Jobmesse",
+          "languages": ["de", "en"],
+          "phone": "+43 1 588 04 0",
+          "email": "office@bestmesse.at",
+          "url": "https://www.best-messe.at",
+          "icon": "material.event"
+        },
+        {
+          "key": "arbeitplus",
+          "name": "Arbeit plus",
+          "subtitle": "Sozialintegrative Unternehmen",
+          "languages": ["de", "en"],
+          "phone": "+43 1 236 76 76",
+          "email": "office@arbeitplus.at",
+          "url": "https://www.arbeitplus.at",
+          "icon": "material.handshake"
+        },
+        {
+          "key": "handelskammer",
+          "name": "Wirtschaftskammer Österreich",
+          "subtitle": "Kontakte zu Unternehmen",
+          "languages": ["de", "en"],
+          "phone": "+43 5 90 900",
+          "email": "service@wko.at",
+          "url": "https://www.wko.at",
+          "icon": "material.business"
+        }
+      ],
+      "tutorialData": "job_search",
+      "translationNamespace": "informationWork"
+    },
+    {
+      "id": "registration",
+      "title": "registration_subtitle",
+      "videoId": "local.ams_intro",
+      "tiles": [
+        {
+          "key": "entity4.id1",
+          "title": "entity4.id1.title",
+          "subtitle": "entity4.id1.subtitle",
+          "content": [
+            {
+              "key": "entity4.id1.entry1",
+              "title": "entity4.id1.entry1.title",
+              "subtitle": "entity4.id1.entry1.subtitle",
+              "icon": "material.info",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id1.entry2",
+              "title": "entity4.id1.entry2.title",
+              "subtitle": "entity4.id1.entry2.subtitle",
+              "icon": "material.gavel",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id1.entry3",
+              "title": "entity4.id1.entry3.title",
+              "subtitle": "entity4.id1.entry3.subtitle",
+              "icon": "material.money-off",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id1.entry4",
+              "title": "entity4.id1.entry4.title",
+              "subtitle": "entity4.id1.entry4.subtitle",
+              "icon": "material.business",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.account-balance",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity4.id2",
+          "title": "entity4.id2.title",
+          "subtitle": "entity4.id2.subtitle",
+          "content": [
+            {
+              "key": "entity4.id2.entry1",
+              "title": "entity4.id2.entry1.title",
+              "subtitle": "entity4.id2.entry1.subtitle",
+              "icon": "material.notification-important",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id2.entry2",
+              "title": "entity4.id2.entry2.title",
+              "subtitle": "entity4.id2.entry2.subtitle",
+              "icon": "material.computer",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id2.entry3",
+              "title": "entity4.id2.entry3.title",
+              "subtitle": "entity4.id2.entry3.subtitle",
+              "icon": "material.people",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id2.entry4",
+              "title": "entity4.id2.entry4.title",
+              "subtitle": "entity4.id2.entry4.subtitle",
+              "icon": "material.location-on",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.app-registration",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity4.id3",
+          "title": "entity4.id3.title",
+          "subtitle": "entity4.id3.subtitle",
+          "content": [
+            {
+              "key": "entity4.id3.entry1",
+              "title": "entity4.id3.entry1.title",
+              "subtitle": "entity4.id3.entry1.subtitle",
+              "icon": "material.checklist",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id3.entry2",
+              "title": "entity4.id3.entry2.title",
+              "subtitle": "entity4.id3.entry2.subtitle",
+              "icon": "material.attach-money",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id3.entry3",
+              "title": "entity4.id3.entry3.title",
+              "subtitle": "entity4.id3.entry3.subtitle",
+              "icon": "material.description",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id3.entry4",
+              "title": "entity4.id3.entry4.title",
+              "subtitle": "entity4.id3.entry4.subtitle",
+              "icon": "material.warning",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.payments",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity4.id4",
+          "title": "entity4.id4.title",
+          "subtitle": "entity4.id4.subtitle",
+          "content": [
+            {
+              "key": "entity4.id4.entry1",
+              "title": "entity4.id4.entry1.title",
+              "subtitle": "entity4.id4.entry1.subtitle",
+              "icon": "material.security",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id4.entry2",
+              "title": "entity4.id4.entry2.title",
+              "subtitle": "entity4.id4.entry2.subtitle",
+              "icon": "material.assignment-turned-in",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id4.entry3",
+              "title": "entity4.id4.entry3.title",
+              "subtitle": "entity4.id4.entry3.subtitle",
+              "icon": "material.trending-down",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id4.entry4",
+              "title": "entity4.id4.entry4.title",
+              "subtitle": "entity4.id4.entry4.subtitle",
+              "icon": "material.calendar-today",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.health-and-safety",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity4.id5",
+          "title": "entity4.id5.title",
+          "subtitle": "entity4.id5.subtitle",
+          "content": [
+            {
+              "key": "entity4.id5.entry1",
+              "title": "entity4.id5.entry1.title",
+              "subtitle": "entity4.id5.entry1.subtitle",
+              "icon": "material.forward-to-inbox",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id5.entry2",
+              "title": "entity4.id5.entry2.title",
+              "subtitle": "entity4.id5.entry2.subtitle",
+              "icon": "material.search",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id5.entry3",
+              "title": "entity4.id5.entry3.title",
+              "subtitle": "entity4.id5.entry3.subtitle",
+              "icon": "material.school",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id5.entry4",
+              "title": "entity4.id5.entry4.title",
+              "subtitle": "entity4.id5.entry4.subtitle",
+              "icon": "material.meeting-room",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.account-search",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity4.id6",
+          "title": "entity4.id6.title",
+          "subtitle": "entity4.id6.subtitle",
+          "content": [
+            {
+              "key": "entity4.id6.entry1",
+              "title": "entity4.id6.entry1.title",
+              "subtitle": "entity4.id6.entry1.subtitle",
+              "icon": "material.menu-book",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id6.entry2",
+              "title": "entity4.id6.entry2.title",
+              "subtitle": "entity4.id6.entry2.subtitle",
+              "icon": "material.school",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id6.entry3",
+              "title": "entity4.id6.entry3.title",
+              "subtitle": "entity4.id6.entry3.subtitle",
+              "icon": "material.construction",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id6.entry4",
+              "title": "entity4.id6.entry4.title",
+              "subtitle": "entity4.id6.entry4.subtitle",
+              "icon": "material.assignment",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.psychology",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity4.id7",
+          "title": "entity4.id7.title",
+          "subtitle": "entity4.id7.subtitle",
+          "content": [
+            {
+              "key": "entity4.id7.entry1",
+              "title": "entity4.id7.entry1.title",
+              "subtitle": "entity4.id7.entry1.subtitle",
+              "icon": "material.event-available",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id7.entry2",
+              "title": "entity4.id7.entry2.title",
+              "subtitle": "entity4.id7.entry2.subtitle",
+              "icon": "material.description",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id7.entry3",
+              "title": "entity4.id7.entry3.title",
+              "subtitle": "entity4.id7.entry3.subtitle",
+              "icon": "material.thumb-up",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id7.entry4",
+              "title": "entity4.id7.entry4.title",
+              "subtitle": "entity4.id7.entry4.subtitle",
+              "icon": "material.gavel",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.rule",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity4.id8",
+          "title": "entity4.id8.title",
+          "subtitle": "entity4.id8.subtitle",
+          "content": [
+            {
+              "key": "entity4.id8.entry1",
+              "title": "entity4.id8.entry1.title",
+              "subtitle": "entity4.id8.entry1.subtitle",
+              "icon": "material.face",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id8.entry2",
+              "title": "entity4.id8.entry2.title",
+              "subtitle": "entity4.id8.entry2.subtitle",
+              "icon": "material.elderly",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id8.entry3",
+              "title": "entity4.id8.entry3.title",
+              "subtitle": "entity4.id8.entry3.subtitle",
+              "icon": "material.female",
+              "iconSize": 64
+            },
+            {
+              "key": "entity4.id8.entry4",
+              "title": "entity4.id8.entry4.title",
+              "subtitle": "entity4.id8.entry4.subtitle",
+              "icon": "material.language",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.diversity-3",
+          "color": "#000",
+          "cardHeight": 350
+        }
+      ],
+      "contacts": [
+        {
+          "key": "ams_hotline",
+          "name": "AMS Service-Hotline",
+          "subtitle": "Zentrale telefonische Auskunft",
+          "languages": ["de", "en"],
+          "phone": "+43 1 501 65 0",
+          "email": "",
+          "url": "https://www.ams.at",
+          "icon": "material.phone"
+        },
+        {
+          "key": "ams_eservice",
+          "name": "AMS eService Portal",
+          "subtitle": "Online-Anmeldung und Verwaltung",
+          "languages": ["de", "en"],
+          "phone": "",
+          "email": "",
+          "url": "https://eservice.ams.at",
+          "icon": "material.computer"
+        },
+        {
+          "key": "ams_ejob",
+          "name": "AMS eJob-Room",
+          "subtitle": "Öffentliche Jobbörse",
+          "languages": ["de", "en"],
+          "phone": "",
+          "email": "",
+          "url": "https://www.ams.at/ejob",
+          "icon": "material.work"
+        },
+        {
+          "key": "ams_frauenservice",
+          "name": "AMS Frauenservice",
+          "subtitle": "Beratung für Frauen",
+          "languages": ["de"],
+          "phone": "",
+          "email": "frauenservice@ams.at",
+          "url": "https://www.ams.at/frauenservice",
+          "icon": "material.female"
+        },
+        {
+          "key": "ams_jugend",
+          "name": "AMS Jugendliche",
+          "subtitle": "Beratung für unter 25-Jährige",
+          "languages": ["de"],
+          "phone": "",
+          "email": "",
+          "url": "https://www.ams.at/jugendliche",
+          "icon": "material.face"
+        },
+        {
+          "key": "ams_50plus",
+          "name": "AMS 50plus",
+          "subtitle": "Beratung für Arbeitssuchende über 50",
+          "languages": ["de"],
+          "phone": "",
+          "email": "",
+          "url": "https://www.ams.at/aeltere",
+          "icon": "material.elderly"
+        },
+        {
+          "key": "arbeiterkammer_ams",
+          "name": "Arbeiterkammer - AMS Hilfe",
+          "subtitle": "Kostenlose Rechtsberatung bei AMS-Fragen",
+          "languages": ["de", "en"],
+          "phone": "+43 1 501 65 0",
+          "email": "service@akwien.at",
+          "url": "https://wien.arbeiterkammer.at",
+          "icon": "material.gavel"
+        },
+        {
+          "key": "sozialministerium",
+          "name": "Sozialministerium (SVS)",
+          "subtitle": "Beschwerdestelle bei Sozialversicherung",
+          "languages": ["de"],
+          "phone": "+43 1 711 00 0",
+          "email": "service@sozialministerium.at",
+          "url": "https://www.sozialministerium.at",
+          "icon": "material.contact-support"
+        }
+      ],
+      "tutorialData": "ams-guide",
+      "translationNamespace": "informationWork"
+    },
+    {
+      "id": "certification",
+      "title": "certification_subtitle",
+      "videoId": "local.recognition_intro",
+      "tiles": [
+        {
+          "key": "entity5.id1",
+          "title": "entity5.id1.title",
+          "subtitle": "entity5.id1.subtitle",
+          "content": [
+            {
+              "key": "entity5.id1.entry1",
+              "title": "entity5.id1.entry1.title",
+              "subtitle": "entity5.id1.entry1.subtitle",
+              "icon": "material.category",
+              "iconSize": 64
+            },
+            {
+              "key": "entity5.id1.entry2",
+              "title": "entity5.id1.entry2.title",
+              "subtitle": "entity5.id1.entry2.subtitle",
+              "icon": "material.workspace-premium",
+              "iconSize": 64
+            },
+            {
+              "key": "entity5.id1.entry3",
+              "title": "entity5.id1.entry3.title",
+              "subtitle": "entity5.id1.entry3.subtitle",
+              "icon": "material.balance",
+              "iconSize": 64
+            },
+            {
+              "key": "entity5.id1.entry4",
+              "title": "entity5.id1.entry4.title",
+              "subtitle": "entity5.id1.entry4.subtitle",
+              "icon": "material.search",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.info",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity5.id2",
+          "title": "entity5.id2.title",
+          "subtitle": "entity5.id2.subtitle",
+          "content": [
+            {
+              "key": "entity5.id2.entry1",
+              "title": "entity5.id2.entry1.title",
+              "subtitle": "entity5.id2.entry1.subtitle",
+              "icon": "material.school",
+              "iconSize": 64
+            },
+            {
+              "key": "entity5.id2.entry2",
+              "title": "entity5.id2.entry2.title",
+              "subtitle": "entity5.id2.entry2.subtitle",
+              "icon": "material.apartment",
+              "iconSize": 64
+            },
+            {
+              "key": "entity5.id2.entry3",
+              "title": "entity5.id2.entry3.title",
+              "subtitle": "entity5.id2.entry3.subtitle",
+              "icon": "material.description",
+              "iconSize": 64
+            },
+            {
+              "key": "entity5.id2.entry4",
+              "title": "entity5.id2.entry4.title",
+              "subtitle": "entity5.id2.entry4.subtitle",
+              "icon": "material.quiz",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.school",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity5.id3",
+          "title": "entity5.id3.title",
+          "subtitle": "entity5.id3.subtitle",
+          "content": [
+            {
+              "key": "entity5.id3.entry1",
+              "title": "entity5.id3.entry1.title",
+              "subtitle": "entity5.id3.entry1.subtitle",
+              "icon": "material.import-contacts",
+              "iconSize": 64
+            },
+            {
+              "key": "entity5.id3.entry2",
+              "title": "entity5.id3.entry2.title",
+              "subtitle": "entity5.id3.entry2.subtitle",
+              "icon": "material.account-balance",
+              "iconSize": 64
+            },
+            {
+              "key": "entity5.id3.entry3",
+              "title": "entity5.id3.entry3.title",
+              "subtitle": "entity5.id3.entry3.subtitle",
+              "icon": "material.translate",
+              "iconSize": 64
+            },
+            {
+              "key": "entity5.id3.entry4",
+              "title": "entity5.id3.entry4.title",
+              "subtitle": "entity5.id3.entry4.subtitle",
+              "icon": "material.assignment-turned-in",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.science",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity5.id4",
+          "title": "entity5.id4.title",
+          "subtitle": "entity5.id4.subtitle",
+          "content": [
+            {
+              "key": "entity5.id4.entry1",
+              "title": "entity5.id4.entry1.title",
+              "subtitle": "entity5.id4.entry1.subtitle",
+              "icon": "material.medical-services",
+              "iconSize": 64
+            },
+            {
+              "key": "entity5.id4.entry2",
+              "title": "entity5.id4.entry2.title",
+              "subtitle": "entity5.id4.entry2.subtitle",
+              "icon": "material.groups",
+              "iconSize": 64
+            },
+            {
+              "key": "entity5.id4.entry3",
+              "title": "entity5.id4.entry3.title",
+              "subtitle": "entity5.id4.entry3.subtitle",
+              "icon": "material.rule",
+              "iconSize": 64
+            },
+            {
+              "key": "entity5.id4.entry4",
+              "title": "entity5.id4.entry4.title",
+              "subtitle": "entity5.id4.entry4.subtitle",
+              "icon": "material.language",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.engineering",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity5.id5",
+          "title": "entity5.id5.title",
+          "subtitle": "entity5.id5.subtitle",
+          "content": [
+            {
+              "key": "entity5.id5.entry1",
+              "title": "entity5.id5.entry1.title",
+              "subtitle": "entity5.id5.entry1.subtitle",
+              "icon": "material.thumb-up",
+              "iconSize": 64
+            },
+            {
+              "key": "entity5.id5.entry2",
+              "title": "entity5.id5.entry2.title",
+              "subtitle": "entity5.id5.entry2.subtitle",
+              "icon": "material.work-history",
+              "iconSize": 64
+            },
+            {
+              "key": "entity5.id5.entry3",
+              "title": "entity5.id5.entry3.title",
+              "subtitle": "entity5.id5.entry3.subtitle",
+              "icon": "material.psychology",
+              "iconSize": 64
+            },
+            {
+              "key": "entity5.id5.entry4",
+              "title": "entity5.id5.entry4.title",
+              "subtitle": "entity5.id5.entry4.subtitle",
+              "icon": "material.verified",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.badge",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity5.id6",
+          "title": "entity5.id6.title",
+          "subtitle": "entity5.id6.subtitle",
+          "content": [
+            {
+              "key": "entity5.id6.entry1",
+              "title": "entity5.id6.entry1.title",
+              "subtitle": "entity5.id6.entry1.subtitle",
+              "icon": "material.list-alt",
+              "iconSize": 64
+            },
+            {
+              "key": "entity5.id6.entry2",
+              "title": "entity5.id6.entry2.title",
+              "subtitle": "entity5.id6.entry2.subtitle",
+              "icon": "material.euro",
+              "iconSize": 64
+            },
+            {
+              "key": "entity5.id6.entry3",
+              "title": "entity5.id6.entry3.title",
+              "subtitle": "entity5.id6.entry3.subtitle",
+              "icon": "material.schedule",
+              "iconSize": 64
+            },
+            {
+              "key": "entity5.id6.entry4",
+              "title": "entity5.id6.entry4.title",
+              "subtitle": "entity5.id6.entry4.subtitle",
+              "icon": "material.gavel",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.assignment",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity5.id7",
+          "title": "entity5.id7.title",
+          "subtitle": "entity5.id7.subtitle",
+          "content": [
+            {
+              "key": "entity5.id7.entry1",
+              "title": "entity5.id7.entry1.title",
+              "subtitle": "entity5.id7.entry1.subtitle",
+              "icon": "material.support-agent",
+              "iconSize": 64
+            },
+            {
+              "key": "entity5.id7.entry2",
+              "title": "entity5.id7.entry2.title",
+              "subtitle": "entity5.id7.entry2.subtitle",
+              "icon": "material.diversity-3",
+              "iconSize": 64
+            },
+            {
+              "key": "entity5.id7.entry3",
+              "title": "entity5.id7.entry3.title",
+              "subtitle": "entity5.id7.entry3.subtitle",
+              "icon": "material.business-center",
+              "iconSize": 64
+            },
+            {
+              "key": "entity5.id7.entry4",
+              "title": "entity5.id7.entry4.title",
+              "subtitle": "entity5.id7.entry4.subtitle",
+              "icon": "material.savings",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.contact-support",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity5.id8",
+          "title": "entity5.id8.title",
+          "subtitle": "entity5.id8.subtitle",
+          "content": [
+            {
+              "key": "entity5.id8.entry1",
+              "title": "entity5.id8.entry1.title",
+              "subtitle": "entity5.id8.entry1.subtitle",
+              "icon": "material.auto-stories",
+              "iconSize": 64
+            },
+            {
+              "key": "entity5.id8.entry2",
+              "title": "entity5.id8.entry2.title",
+              "subtitle": "entity5.id8.entry2.subtitle",
+              "icon": "material.assistant",
+              "iconSize": 64
+            },
+            {
+              "key": "entity5.id8.entry3",
+              "title": "entity5.id8.entry3.title",
+              "subtitle": "entity5.id8.entry3.subtitle",
+              "icon": "material.pie-chart",
+              "iconSize": 64
+            },
+            {
+              "key": "entity5.id8.entry4",
+              "title": "entity5.id8.entry4.title",
+              "subtitle": "entity5.id8.entry4.subtitle",
+              "icon": "material.person-search",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.alt-route",
+          "color": "#000",
+          "cardHeight": 350
+        }
+      ],
+      "contacts": [
+        {
+          "key": "anerkennung_at",
+          "name": "Anlaufstelle Anerkennung (AST)",
+          "subtitle": "Kostenlose, zentrale Beratungsstelle des Bundes",
+          "languages": ["de", "en"],
+          "phone": "+43 1 531 20 0",
+          "email": "anerkennung@bmbwf.gv.at",
+          "url": "https://www.anerkennung.at",
+          "icon": "material.support-agent"
+        },
+        {
+          "key": "berufsanerkennung_at",
+          "name": "Berufsanerkennung Österreich",
+          "subtitle": "Offizielles Portal für reglementierte Berufe",
+          "languages": ["de", "en"],
+          "phone": "",
+          "email": "",
+          "url": "https://www.berufsanerkennung.at",
+          "icon": "material.engineering"
+        },
+        {
+          "key": "ams_anerkennung",
+          "name": "AMS - Beratung zur Anerkennung",
+          "subtitle": "Beratung und Förderung im Rahmen der Arbeitsintegration",
+          "languages": ["de", "en"],
+          "phone": "+43 1 501 65 0",
+          "email": "",
+          "url": "https://www.ams.at/themen/arbeitsuche/auslaendische-ausbildungen",
+          "icon": "material.business-center"
+        },
+        {
+          "key": "migrant_beratung",
+          "name": "Migrantinnen- und Migrantenberatung",
+          "subtitle": "Spezielle Beratung für Menschen mit Migrationshintergrund",
+          "languages": ["de", "en", "ar", "fa", "ru"],
+          "phone": "+43 1 212 35 20",
+          "email": "beratung@migrant.at",
+          "url": "https://www.migrant.at",
+          "icon": "material.diversity-3"
+        },
+        {
+          "key": "wko_auslaendische_qualifikationen",
+          "name": "Wirtschaftskammer (WKO)",
+          "subtitle": "Bewertung von ausländischen Berufsqualifikationen",
+          "languages": ["de", "en"],
+          "phone": "+43 5 90 900",
+          "email": "service@wko.at",
+          "url": "https://www.wko.at/service/auslaendische-qualifikationen.html",
+          "icon": "material.badge"
+        },
+        {
+          "key": "caritas_migrationsberatung",
+          "name": "Caritas Migrationsberatung",
+          "subtitle": "Beratung und Begleitung im Anerkennungsverfahren",
+          "languages": ["de", "en", "ar", "fa", "ru"],
+          "phone": "+43 1 488 31 0",
+          "email": "migrationsberatung@caritas.at",
+          "url": "https://www.caritas.at/migrationsberatung",
+          "icon": "material.volunteer-activism"
+        },
+        {
+          "key": "oead_nostrifikation",
+          "name": "ÖAD / Nationale Informationsstelle",
+          "subtitle": "Informationen zur Nostrifikation von Hochschulabschlüssen",
+          "languages": ["de", "en"],
+          "phone": "+43 1 534 08 0",
+          "email": "nostrifikation@oead.at",
+          "url": "https://www.oead.at/nostrifikation",
+          "icon": "material.school"
+        },
+        {
+          "key": "abif_validierung",
+          "name": "abif - Validierung von Kompetenzen",
+          "subtitle": "Spezialisierte Beratung zur Anerkennung informeller Kompetenzen",
+          "languages": ["de", "en"],
+          "phone": "+43 1 667 65 20",
+          "email": "office@abif.at",
+          "url": "https://www.abif.at/validierung",
+          "icon": "material.psychology"
+        }
+      ],
+      "tutorialData": "recognition_guide",
+      "translationNamespace": "informationWork"
+    },
+    {
+      "id": "education",
+      "title": "education_subtitle",
+      "videoId": "local.education",
+      "tiles": [
+        {
+          "key": "entity6.id1",
+          "title": "entity6.id1.title",
+          "subtitle": "entity6.id1.subtitle",
+          "content": [
+            {
+              "key": "entity6.id1.entry1",
+              "title": "entity6.id1.entry1.title",
+              "subtitle": "entity6.id1.entry1.subtitle",
+              "icon": "material.handshake",
+              "iconSize": 64
+            },
+            {
+              "key": "entity6.id1.entry2",
+              "title": "entity6.id1.entry2.title",
+              "subtitle": "entity6.id1.entry2.subtitle",
+              "icon": "material.savings",
+              "iconSize": 64
+            },
+            {
+              "key": "entity6.id1.entry3",
+              "title": "entity6.id1.entry3.title",
+              "subtitle": "entity6.id1.entry3.subtitle",
+              "icon": "material.school",
+              "iconSize": 64
+            },
+            {
+              "key": "entity6.id1.entry4",
+              "title": "entity6.id1.entry4.title",
+              "subtitle": "entity6.id1.entry4.subtitle",
+              "icon": "material.search",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.construction",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity6.id2",
+          "title": "entity6.id2.title",
+          "subtitle": "entity6.id2.subtitle",
+          "content": [
+            {
+              "key": "entity6.id2.entry1",
+              "title": "entity6.id2.entry1.title",
+              "subtitle": "entity6.id2.entry1.subtitle",
+              "icon": "material.engineering",
+              "iconSize": 64
+            },
+            {
+              "key": "entity6.id2.entry2",
+              "title": "entity6.id2.entry2.title",
+              "subtitle": "entity6.id2.entry2.subtitle",
+              "icon": "material.workspace-premium",
+              "iconSize": 64
+            },
+            {
+              "key": "entity6.id2.entry3",
+              "title": "entity6.id2.entry3.title",
+              "subtitle": "entity6.id2.entry3.subtitle",
+              "icon": "material.assignment-turned-in",
+              "iconSize": 64
+            },
+            {
+              "key": "entity6.id2.entry4",
+              "title": "entity6.id2.entry4.title",
+              "subtitle": "entity6.id2.entry4.subtitle",
+              "icon": "material.money-off",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.school",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity6.id3",
+          "title": "entity6.id3.title",
+          "subtitle": "entity6.id3.subtitle",
+          "content": [
+            {
+              "key": "entity6.id3.entry1",
+              "title": "entity6.id3.entry1.title",
+              "subtitle": "entity6.id3.entry1.subtitle",
+              "icon": "material.business",
+              "iconSize": 64
+            },
+            {
+              "key": "entity6.id3.entry2",
+              "title": "entity6.id3.entry2.title",
+              "subtitle": "entity6.id3.entry2.subtitle",
+              "icon": "material.groups",
+              "iconSize": 64
+            },
+            {
+              "key": "entity6.id3.entry3",
+              "title": "entity6.id3.entry3.title",
+              "subtitle": "entity6.id3.entry3.subtitle",
+              "icon": "material.auto-stories",
+              "iconSize": 64
+            },
+            {
+              "key": "entity6.id3.entry4",
+              "title": "entity6.id3.entry4.title",
+              "subtitle": "entity6.id3.entry4.subtitle",
+              "icon": "material.computer",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.menu-book",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity6.id4",
+          "title": "entity6.id4.title",
+          "subtitle": "entity6.id4.subtitle",
+          "content": [
+            {
+              "key": "entity6.id4.entry1",
+              "title": "entity6.id4.entry1.title",
+              "subtitle": "entity6.id4.entry1.subtitle",
+              "icon": "material.assignment-late",
+              "iconSize": 64
+            },
+            {
+              "key": "entity6.id4.entry2",
+              "title": "entity6.id4.entry2.title",
+              "subtitle": "entity6.id4.entry2.subtitle",
+              "icon": "material.emoji-events",
+              "iconSize": 64
+            },
+            {
+              "key": "entity6.id4.entry3",
+              "title": "entity6.id4.entry3.title",
+              "subtitle": "entity6.id4.entry3.subtitle",
+              "icon": "material.school",
+              "iconSize": 64
+            },
+            {
+              "key": "entity6.id4.entry4",
+              "title": "entity6.id4.entry4.title",
+              "subtitle": "entity6.id4.entry4.subtitle",
+              "icon": "material.coffee",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.auto-awesome",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity6.id5",
+          "title": "entity6.id5.title",
+          "subtitle": "entity6.id5.subtitle",
+          "content": [
+            {
+              "key": "entity6.id5.entry1",
+              "title": "entity6.id5.entry1.title",
+              "subtitle": "entity6.id5.entry1.subtitle",
+              "icon": "material.language",
+              "iconSize": 64
+            },
+            {
+              "key": "entity6.id5.entry2",
+              "title": "entity6.id5.entry2.title",
+              "subtitle": "entity6.id5.entry2.subtitle",
+              "icon": "material.contact-page",
+              "iconSize": 64
+            },
+            {
+              "key": "entity6.id5.entry3",
+              "title": "entity6.id5.entry3.title",
+              "subtitle": "entity6.id5.entry3.subtitle",
+              "icon": "material.health-and-safety",
+              "iconSize": 64
+            },
+            {
+              "key": "entity6.id5.entry4",
+              "title": "entity6.id5.entry4.title",
+              "subtitle": "entity6.id5.entry4.subtitle",
+              "icon": "material.history-edu",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.business-center",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity6.id6",
+          "title": "entity6.id6.title",
+          "subtitle": "entity6.id6.subtitle",
+          "content": [
+            {
+              "key": "entity6.id6.entry1",
+              "title": "entity6.id6.entry1.title",
+              "subtitle": "entity6.id6.entry1.subtitle",
+              "icon": "material.medical-services",
+              "iconSize": 64
+            },
+            {
+              "key": "entity6.id6.entry2",
+              "title": "entity6.id6.entry2.title",
+              "subtitle": "entity6.id6.entry2.subtitle",
+              "icon": "material.code",
+              "iconSize": 64
+            },
+            {
+              "key": "entity6.id6.entry3",
+              "title": "entity6.id6.entry3.title",
+              "subtitle": "entity6.id6.entry3.subtitle",
+              "icon": "material.handyman",
+              "iconSize": 64
+            },
+            {
+              "key": "entity6.id6.entry4",
+              "title": "entity6.id6.entry4.title",
+              "subtitle": "entity6.id6.entry4.subtitle",
+              "icon": "material.restaurant",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.work",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity6.id7",
+          "title": "entity6.id7.title",
+          "subtitle": "entity6.id7.subtitle",
+          "content": [
+            {
+              "key": "entity6.id7.entry1",
+              "title": "entity6.id7.entry1.title",
+              "subtitle": "entity6.id7.entry1.subtitle",
+              "icon": "material.attach-money",
+              "iconSize": 64
+            },
+            {
+              "key": "entity6.id7.entry2",
+              "title": "entity6.id7.entry2.title",
+              "subtitle": "entity6.id7.entry2.subtitle",
+              "icon": "material.event-available",
+              "iconSize": 64
+            },
+            {
+              "key": "entity6.id7.entry3",
+              "title": "entity6.id7.entry3.title",
+              "subtitle": "entity6.id7.entry3.subtitle",
+              "icon": "material.account-balance",
+              "iconSize": 64
+            },
+            {
+              "key": "entity6.id7.entry4",
+              "title": "entity6.id7.entry4.title",
+              "subtitle": "entity6.id7.entry4.subtitle",
+              "icon": "material.calculate",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.savings",
+          "color": "#000",
+          "cardHeight": 350
+        },
+        {
+          "key": "entity6.id8",
+          "title": "entity6.id8.title",
+          "subtitle": "entity6.id8.subtitle",
+          "content": [
+            {
+              "key": "entity6.id8.entry1",
+              "title": "entity6.id8.entry1.title",
+              "subtitle": "entity6.id8.entry1.subtitle",
+              "icon": "material.psychology",
+              "iconSize": 64
+            },
+            {
+              "key": "entity6.id8.entry2",
+              "title": "entity6.id8.entry2.title",
+              "subtitle": "entity6.id8.entry2.subtitle",
+              "icon": "material.verified",
+              "iconSize": 64
+            },
+            {
+              "key": "entity6.id8.entry3",
+              "title": "entity6.id8.entry3.title",
+              "subtitle": "entity6.id8.entry3.subtitle",
+              "icon": "material.swap-horiz",
+              "iconSize": 64
+            },
+            {
+              "key": "entity6.id8.entry4",
+              "title": "entity6.id8.entry4.title",
+              "subtitle": "entity6.id8.entry4.subtitle",
+              "icon": "material.support-agent",
+              "iconSize": 64
+            }
+          ],
+          "icon": "material.insights",
+          "color": "#000",
+          "cardHeight": 350
+        }
+      ],
+      "contacts": [
+        {
+          "key": "wko_lehrstellen",
+          "name": "WKO - Lehrstellen- & Lehrbetriebssuche",
+          "subtitle": "Offizielle Lehrstellenbörse der Wirtschaftskammer",
+          "languages": ["de"],
+          "phone": "+43 5 90 900",
+          "email": "",
+          "url": "https://www.lehrstellen.at",
+          "icon": "material.search"
+        },
+        {
+          "key": "ams_weiterbildung",
+          "name": "AMS - Weiterbildungsdatenbank",
+          "subtitle": "Suche nach AMS-geförderten Kursen",
+          "languages": ["de", "en"],
+          "phone": "+43 1 501 65 0",
+          "email": "",
+          "url": "https://kursfoerderung.ams.at",
+          "icon": "material.school"
+        },
+        {
+          "key": "wifi",
+          "name": "WIFI Österreich",
+          "subtitle": "Kurse in Technik, Wirtschaft, Handel, Dienstleistung",
+          "languages": ["de"],
+          "phone": "+43 5 90 900 4350",
+          "email": "info@wifi.at",
+          "url": "https://www.wifi.at",
+          "icon": "material.engineering"
+        },
+        {
+          "key": "bfi",
+          "name": "BFI Österreich",
+          "subtitle": "Berufsförderungsinstitut - Kurse & Ausbildungen",
+          "languages": ["de", "en"],
+          "phone": "+43 1 587 96 50",
+          "email": "info@bfi.at",
+          "url": "https://www.bfi.at",
+          "icon": "material.work"
+        },
+        {
+          "key": "vhs",
+          "name": "Verband der Volkshochschulen",
+          "subtitle": "Kostengünstige Kurse in allen Lebensbereichen",
+          "languages": ["de"],
+          "phone": "+43 1 216 42 26",
+          "email": "office@vhs.or.at",
+          "url": "https://www.vhs.at",
+          "icon": "material.groups"
+        },
+        {
+          "key": "berufsreifepruefung",
+          "name": "Servicestelle für die Berufsreifeprüfung",
+          "subtitle": "Informationen und Beratung zur BRP",
+          "languages": ["de"],
+          "phone": "+43 1 534 08 0",
+          "email": "brp@oead.at",
+          "url": "https://www.berufsreifepruefung.at",
+          "icon": "material.emoji-events"
+        },
+        {
+          "key": "bildungsberatung",
+          "name": "Bildungsberatung Österreich",
+          "subtitle": "Kostenlose, neutrale Bildungsberatung",
+          "languages": ["de", "en"],
+          "phone": "+43 1 532 45 45",
+          "email": "info@bildungsberatung.gv.at",
+          "url": "https://www.bildungsberatung.gv.at",
+          "icon": "material.support-agent"
+        },
+        {
+          "key": "best_messe_bildung",
+          "name": "BeSt³ Messe für Beruf, Studium und Weiterbildung",
+          "subtitle": "Größte Bildungsmesse Österreichs",
+          "languages": ["de"],
+          "phone": "+43 1 588 04 0",
+          "email": "office@bestmesse.at",
+          "url": "https://www.bestmesse.at",
+          "icon": "material.event"
+        },
+        {
+          "key": "bic_at",
+          "name": "BIC.at - Bildungsinfo Computer",
+          "subtitle": "Umfassende Datenbank zu Bildungsangeboten",
+          "languages": ["de"],
+          "phone": "",
+          "email": "",
+          "url": "https://www.bic.at",
+          "icon": "material.computer"
+        },
+        {
+          "key": "lehre_mittlere_schule",
+          "name": "Lehre? Respekt! / Mittlere Schule",
+          "subtitle": "Infoportale des Bildungsministeriums",
+          "languages": ["de"],
+          "phone": "",
+          "email": "",
+          "url": "https://www.lehre-respekt.at",
+          "icon": "material.info"
+        }
+      ],
+      "tutorialData": "training_guide",
       "translationNamespace": "informationWork"
     }
   ]

@@ -25,7 +25,9 @@ const AboutPage: React.FC = () => {
 
   const isWeb  = Platform.OS == 'web'
 
-  const imageSource = require("../assets/images/supporter_eu.png")
+  const imageSourceTeam = require("../assets/images/team.jpeg")
+  const imageSource1 = require("../assets/images/peva_logo.png")
+  const imageSource2 = require("../assets/images/supporter_eu.png")
 
   return (
     <SafeAreaView style={styles.container}>
@@ -46,28 +48,42 @@ const AboutPage: React.FC = () => {
 
         <View style={styles.sectionContainer}>
           <View style={styles.titleContainer}>
-            <Text style={styles.title}>{t("second_paragraph")}</Text>
+            <Text style={styles.title}>{t("second_title")}</Text>
           </View>
           <View style={styles.textContainer}>
-            <Text style={styles.text}>{t("second_paragraph_content_start")}</Text>
+            <Text style={styles.text}>{t("second_subtitle")}</Text>
+          </View>
+          <View style={styles.supportImageContainer}>
+            <Image source={imageSourceTeam} style={[styles.supportImage, {height: 450, width: 900}]}
+              contentFit="cover" />
+          </View>
+
+        </View>
+
+        <View style={styles.sectionContainer}>
+          <View style={styles.titleContainer}>
+            <Text style={styles.title}>{t("third_paragraph")}</Text>
+          </View>
+          <View style={styles.textContainer}>
+            <Text style={styles.text}>{t("third_paragraph_content_start")}</Text>
             <View style={styles.listContainer}>
               <View style={styles.listItemContainer}>
                 <FontAwesome6 name="house" size={16} color="#000" />
-                <Text style={styles.text}>{t("second_paragraph_content_1")}</Text>
+                <Text style={styles.text}>{t("third_paragraph_content_1")}</Text>
               </View>
               <View style={styles.listItemContainer}>
                 <FontAwesome6 name="briefcase" size={16} color="#000" />
-                <Text style={styles.text}>{t("second_paragraph_content_2")}</Text>
+                <Text style={styles.text}>{t("third_paragraph_content_2")}</Text>
               </View>
               <View style={styles.listItemContainer}>
                 <FontAwesome6 name="book" size={16} color="#000" />
-                <Text style={styles.text}>{t("second_paragraph_content_3")}</Text>
+                <Text style={styles.text}>{t("third_paragraph_content_3")}</Text>
               </View>
               <View style={styles.listItemContainer}>
                 <FontAwesome6 name="scale-balanced" size={16} color="#000" />
-                <Text style={styles.text}>{t("second_paragraph_content_4")}</Text>
+                <Text style={styles.text}>{t("third_paragraph_content_4")}</Text>
               </View>
-              <Text style={styles.text}>{t("second_paragraph_content_end")}</Text>
+              <Text style={styles.text}>{t("third_paragraph_content_end")}</Text>
             </View>
           </View>
         </View>
@@ -88,7 +104,13 @@ const AboutPage: React.FC = () => {
           </View>
 
           <View style={styles.supportImageContainer}>
-            <Image source={imageSource} style={styles.supportImage} contentFit="cover" />
+            <Image source={imageSource1} style={[styles.supportImage, {height: 117, width: 600}]}
+            contentFit="cover" />
+          </View>
+
+          <View style={styles.supportImageContainer}>
+            <Image source={imageSource2} style={[styles.supportImage,{height: 100, width: 600}]}
+            contentFit="cover" />
           </View>
         </View>
 
@@ -165,8 +187,6 @@ const styles = StyleSheet.create({
   },
   supportImage: {
     marginTop: 16,
-    height: 100,
-    width: 600,
   }
 });
 
