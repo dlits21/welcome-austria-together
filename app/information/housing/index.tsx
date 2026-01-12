@@ -90,15 +90,6 @@ const Housing: React.FC = () => {
             height={cardHeight}
             iconSize={iconSize}
           />
-          <CategoryCard
-            title={t('checklist')}
-            subtitle={t('checklist_subtitle')}
-            icon="awesome6.check"
-            color="rgba(221, 7, 121, 0.5)"
-            onPress={() => onContinue('checklist')}
-            height={cardHeight}
-            iconSize={iconSize}
-          />
         </View>
       </ScrollView>
 

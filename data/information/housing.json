@@ -421,41 +421,6 @@
       ],
          "tutorialData": "housing",
       "translationNamespace": "informationHousing"
-    },
-    {
-      "id": "checklist",
-      "title": "checklist",
-      "videoId": "",
-      "translationNamespace": "informationHousing",
-      "tiles": [],
-      "contacts": [
-        {
-          "key": "diakonie",
-          "name": "Diakonie – Kostenlose Wohnberatung",
-          "subtitle": "Beratung für Flüchtlinge",
-          "languages": ["de"],
-          "phone": "+43 1 40 56 29 51",
-          "email": "beratung.ost@diakonie.at",
-          "url": ""
-        },
-        {
-          "key": "volkshilfe",
-          "name": "Volkshilfe Oberösterreich",
-          "subtitle": "Wohnen & Beratung für Migrant:innen",
-          "languages": ["de"],
-          "phone": "",
-          "email": "",
-          "url": "https://www.volkshilfe-ooe.at/was-wir-tun/fluechtlinge-migrantinnen/"
-        },
-        {
-            "key": "caritas",
-            "name": "Caritas Oberösterreich",
-            "subtitle": "Migration & Integration",
-            "languages": ["de"],
-            "url": "https://www.caritas-ooe.at/hilfe-angebote/migration-integration"
-        }
-      ],
-      "tutorialData": "housing"
     }
   ]
 }
