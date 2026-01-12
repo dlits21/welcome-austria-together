@@ -75,7 +75,7 @@ const Home: React.FC = () => {
         <Text style={styles.title}>
           {t('howCanIHelp')}
         </Text>
-
+{/*
         <View style={styles.ButtonContainer}>
           <TouchableOpacity onPress={onContinue} style={styles.button}>
             <CircleBorder
@@ -96,15 +96,15 @@ const Home: React.FC = () => {
               <MaterialIcons name="volume-up" size={iconSize} color="#000" />
             </CircleBorder>
           </TouchableOpacity>
-        </View>
+        </View> */}
 
         {/* Search Bar */}
-        <SearchSection
+ {/*        <SearchSection
           searchInput={searchInput}
           onSearchInputChange={setSearchInput}
           onSearch={handleSearch}
           placeholder={t('searchPlaceholder')}
-        />
+        /> */}
 
         {/* Category Cards */}
         <CategoryGrid
@@ -143,6 +143,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: "700",
     marginTop: 24,
+    marginBottom: 24
   },
   ButtonContainer: {
     justifyContent: 'center',

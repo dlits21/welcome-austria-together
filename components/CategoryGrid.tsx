@@ -28,14 +28,14 @@ const CategoryGrid: React.FC<CategoryGridProps> = ({ onCategoryClick }) => {
         height={cardHeight}
       />
 
-      <CategoryCard
+{/*   <CategoryCard
         title={t('guide_title')}
         subtitle={t('guide_subtitle')}
         icon="material.map" // MaterialIcons "map" for journey/guide
         color="rgba(74, 118, 52, 0.5)"
         onPress={() => onCategoryClick('guide')}
         height={cardHeight}
-      />
+      />*/}
 
       <CategoryCard
         title={t('info_title')}
@@ -54,6 +54,15 @@ const CategoryGrid: React.FC<CategoryGridProps> = ({ onCategoryClick }) => {
         onPress={() => onCategoryClick('emergency')}
         height={cardHeight}
       />
+
+      <CategoryCard
+          title={t('about_title')}
+          subtitle={t('about_subtitle')}
+          icon="community.hand-back-left-outline" // MaterialIcons "map" for journey/guide
+          color="rgba(74, 118, 52, 0.5)"
+          onPress={() => onCategoryClick('about')}
+          height={cardHeight}
+        />
 
       <CategoryCard
         title="Test Page"

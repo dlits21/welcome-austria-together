@@ -173,27 +173,27 @@ export default function LanguageSelectionScreen() {
             {t("index:chooseLanguageInstruction", "Wähle deine Sprache aus")}
           </Text>
 
-          <View style={styles.ButtonContainer}>
-            <TouchableOpacity onPress={onContinue} style={styles.utton}>
-              <CircleBorder
-                size={iconContainerSize}
-                borderWidth={2}
-                borderColor={'#fff'}
-              >
-                <MaterialIcons name="record-voice-over" size={iconSize} color="#000" />
-              </CircleBorder>
-            </TouchableOpacity>
+{/*             <View style={styles.ButtonContainer}>
+             <TouchableOpacity onPress={onContinue} style={styles.Button}>
+               <CircleBorder
+                 size={iconContainerSize}
+                 borderWidth={2}
+                 borderColor={'#fff'}
+               >
+                 <MaterialIcons name="record-voice-over" size={iconSize} color="#000" />
+               </CircleBorder>
+             </TouchableOpacity>
 
-            <TouchableOpacity onPress={onContinue} style={styles.button}>
-              <CircleBorder
-                size={iconContainerSize}
-                borderWidth={2}
-                borderColor={'#fff'}
-              >
-                <MaterialIcons name="volume-up" size={iconSize} color="#000" />
-              </CircleBorder>
-            </TouchableOpacity>
-            </View>
+             <TouchableOpacity onPress={onContinue} style={styles.button}>
+               <CircleBorder
+                 size={iconContainerSize}
+                 borderWidth={2}
+                 borderColor={'#fff'}
+               >
+                 <MaterialIcons name="volume-up" size={iconSize} color="#000" />
+               </CircleBorder>
+             </TouchableOpacity>
+             </View> */}
         </View>
 
         {/* Language grid */}
@@ -380,7 +380,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     paddingHorizontal: 16,
     paddingTop: 8,
-    paddingBottom: 90,
+    paddingBottom: 60,
     backgroundColor: "#fff",
     borderTopWidth: 0,
     borderTopColor: "#e5e7eb",

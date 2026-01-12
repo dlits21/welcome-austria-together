@@ -99,7 +99,7 @@ const InfoPage: React.FC<InfoPageProps> = ({
         {/* Visual video (optional) */}
         {videoId && (
           <View style={styles.section}>
-            <Text style={styles.sectionTitle}>{t("videoTitle", { defaultValue: "Short explainer" })}</Text>
+            <Text style={styles.sectionTitle}>{t("summary")}</Text>
             <EmbeddedVideo videoId={videoId} />
           </View>
         )}
@@ -127,7 +127,7 @@ const InfoPage: React.FC<InfoPageProps> = ({
         </View>
 
         {/* Contacts block */}
-        <View style={styles.section}>
+        {contacts.length >= 1 && (<View style={styles.section}>
           <Text style={styles.sectionTitle}>{t("trustedTitle", { defaultValue: "Trusted support" })}</Text>
           {contacts.map((contact, index) => (
             <ContactCard
@@ -140,12 +140,7 @@ const InfoPage: React.FC<InfoPageProps> = ({
               languages={contact.languages}
             />
           ))}
-
-          <View style={{ height: 12 }} />
-          <Pressable style={styles.contactsButton} onPress={openContact}>
-            <Text style={styles.contactsButtonText}>{t("moreContacts", { defaultValue: "More contacts" })}</Text>
-          </Pressable>
-        </View>
+        </View>)}
       </ScrollView>
 
       <LanguageModal

@@ -21,6 +21,7 @@ interface AccordionItemProps {
   expanded: boolean;
   onPress: () => void;
   content: TilesContent;
+  nameSpace: string;
 }
 
 const AccordionItem: React.FC<AccordionItemProps> = ({
@@ -31,6 +32,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
   expanded,
   onPress,
   content,
+  nameSpace='common'
 }) => {
   const parts = icon ? icon.split('.') : ['material', 'help'];
   const iconSet = parts.length > 1 ? parts[0] : 'material';
@@ -73,6 +75,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
               subtitle={entry.subtitle}
               icon={entry.icon}
               iconSize={entry.iconSize}
+              nameSpace={nameSpace}
               >
             </AccordionContent>
           ))}

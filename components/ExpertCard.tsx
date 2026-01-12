@@ -131,6 +131,7 @@ const styles = StyleSheet.create({
   expertCard: {
     flex: 1,
     minWidth: 350,
+    maxWidth: 450,
     padding: 16,
     backgroundColor: '#f9f9f9',
     borderRadius: 12,
