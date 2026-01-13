@@ -1,0 +1,20 @@
+{
+    "whatsapp": "Whatsapp",
+    "whatsapp_subtitle": "Ku xidhnow bulshadayada WhatsApp-ka",
+    "community": "Bulshada",
+    "community_subtitle": "Su'aalo weydii oo taageero hel",
+    "signal": "calaamad",
+    "signal_subtitle": "Ma wax xasaasi ah baa?Weydii bulshadayada Signal",
+    "telegram": "Telegram",
+    "telegram_subtitle": "Waxaad sidoo kale noogu soo qori kartaa Telegram",
+    "facebook": "Facebook-ga",
+    "facebook_subtitle": "Facebook-ga kula kulan saaxiibada",
+    "emergency_title": "Gurmad",
+    "emergency_subtitle": "Helitaanka degdega ah ee adeegyada degdega ah",
+    "generalSupport": "Nala hadal",
+    "reachOutDirectly": "Su'aalo weydii oo taageero hel",
+    "talkToUs": "Na weydii!",
+    "talkToUs_subtitle": "Wax su'aalo ah ma qabtaa?Noo qor!",
+    "textMe": "WhatsApp igu soo qor",
+    "emailMe": "ii soo dir iimayl"
+}

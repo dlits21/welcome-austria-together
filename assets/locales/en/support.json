@@ -1,0 +1,20 @@
+{
+    "whatsapp": "Whatsapp",
+    "whatsapp_subtitle": "Connect in our WhatsApp community",
+    "community": "Community",
+    "community_subtitle": "Ask questions and get support",
+    "signal": "signal",
+    "signal_subtitle": "Is it something sensitive?Ask in our Signal community",
+    "telegram": "Telegram",
+    "telegram_subtitle": "You can also write to us on Telegram",
+    "facebook": "Facebook",
+    "facebook_subtitle": "Meet friends on Facebook",
+    "emergency_title": "Emergency",
+    "emergency_subtitle": "Quick access to emergency services",
+    "generalSupport": "Talk to Us",
+    "reachOutDirectly": "Ask questions and get support",
+    "talkToUs": "Ask us!",
+    "talkToUs_subtitle": "Do you have any questions?Write to us!",
+    "textMe": "Write to me on WhatsApp",
+    "emailMe": "Send me an email"
+}

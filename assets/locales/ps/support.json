@@ -1,0 +1,20 @@
+{
+    "whatsapp": "Whatsapp",
+    "whatsapp_subtitle": "زموږ د WhatsApp ټولنې سره وصل شئ",
+    "community": "ټولنه",
+    "community_subtitle": "پوښتنې وکړئ او ملاتړ ترلاسه کړئ",
+    "signal": "سیګنال",
+    "signal_subtitle": "ایا دا یو څه حساس دی؟زموږ په سیګنال ټولنه کې پوښتنه وکړئ",
+    "telegram": "ټیلیګرام",
+    "telegram_subtitle": "تاسو کولی شئ موږ ته په ټیلیګرام هم ولیکئ",
+    "facebook": "فیسبوک",
+    "facebook_subtitle": "په فیسبوک کې د ملګرو سره لیدنه وکړئ",
+    "emergency_title": "بیړنی حالت",
+    "emergency_subtitle": "بیړنیو خدماتو ته چټک لاسرسی",
+    "generalSupport": "له موږ سره خبرې وکړئ",
+    "reachOutDirectly": "پوښتنې وکړئ او ملاتړ ترلاسه کړئ",
+    "talkToUs": "زموږ څخه پوښتنه وکړئ!",
+    "talkToUs_subtitle": "ایا تاسو کومه پوښتنه لرئ؟موږ ته ولیکئ!",
+    "textMe": "ما ته په WhatsApp کې ولیکئ",
+    "emailMe": "ماته بریښنالیک واستوئ"
+}
