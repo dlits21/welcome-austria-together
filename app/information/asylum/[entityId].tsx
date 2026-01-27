@@ -41,7 +41,7 @@ const DynamicAsylumPage: React.FC = () => {
     title={entity.title}
     videoId={entity.videoId}
     // TODO: tiles gibt es nicht
-    // tiles={entity.tiles}
+    tiles={entity.tiles}
     contacts={entity.contacts}
     tutorialData={entity.tutorialData}
     translationNamespace={entity.translationNamespace}

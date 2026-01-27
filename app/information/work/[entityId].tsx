@@ -31,7 +31,7 @@ const DynamicWorkPage: React.FC = () => {
         <Text style={styles.title}>Entity not found</Text>
         <Text style={styles.subtitle}>
           {/*TODO: "{ gibt fehler*/}
-          {/*The document support entity "{selectedEntityId}" could not be found.*/}
+          The document support entity "{selectedEntityId}" could not be found.
         </Text>
       </View>
     );
@@ -41,7 +41,7 @@ const DynamicWorkPage: React.FC = () => {
     title={entity.title}
     videoId={entity.videoId}
     // TODO: tiles gibt einen fehler
-    // tiles={entity.tiles}
+    tiles={entity.tiles}
     contacts={entity.contacts}
     tutorialData={entity.tutorialData}
     translationNamespace={entity.translationNamespace}
