@@ -419,7 +419,7 @@ const styles = StyleSheet.create({
     opacity: 0.5,
   },
   ButtonContainer: {
-    justifyContent: 'between',
+    justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'row',
     paddingVertical: 4,
