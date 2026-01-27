@@ -49,7 +49,8 @@ const Home: React.FC = () => {
 
   // switch to home page
   const onContinue = () => {
-    player.pause()
+    // TODO: wo wird player angelegt oder überhaupt verwendet?
+    // player.pause()
     router.push("/home");
   };
 
