@@ -119,7 +119,7 @@ export default function LanguageSelectionScreen() {
     langCode ? i18n.getFixedT(langCode, "index") : i18n.getFixedT(i18n.language, "index");
 
   // Selecting tile => immediately switch app language
-  const onSelectLanguage = (lang: Language, selected: bool) => {
+  const onSelectLanguage = (lang: Language, selected: boolean) => {
     if (selected) {
         onContinue()
     } else {
