@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     gap: 12,
     marginLeft: 10,
-    alignItems: 'left',
+    alignItems: "flex-start",
   },
   supportImageContainer: {
      alignItems: 'center',
