@@ -9,12 +9,10 @@ import {
   Text,
   Platform,
   I18nManager,
-  Image,
   ScrollView,
   useWindowDimensions,
 } from "react-native";
 import { useRouter } from "expo-router";
-import * as Speech from "expo-speech";
 import { useTranslation } from "react-i18next";
 import i18n from "./i18n"; // adjust path if your i18n export is elsewhere
 import { useLanguage } from "../contexts/LanguageContext";
@@ -31,12 +29,9 @@ import {
   KurdishFlag,
   ChechenFlag
 } from "../components/SVG/Flags";
-import { VoiceSelection } from "../components/SVG/Icons";
 import AudioPlayerFooter from '../components/AudioPlayerFooter';
 import { CircleBorder } from '../components/CircleIcon';
 import { useAudioPlayer, useAudioPlayerStatus } from 'expo-audio';
-import { MaterialIcons } from '@expo/vector-icons';
-import { Divider } from 'react-native-paper';
 
 // Minimal Language type
 interface Language {
