@@ -80,7 +80,7 @@ const ExpertCard: React.FC<LotsInnen> = ({
         </View>
         <View style={styles.expertInfo}>
           <Text style={styles.expertName}>{name}</Text>
-          <Text style={styles.expertSpecialization}>{subtitle[currentLanguage]}</Text>
+          <Text style={styles.expertSpecialization}>{subtitle?.[currentLanguage]}</Text>
           {languages.length > 0 && (
             <View style={styles.languagesContainer}>
               <View style={styles.flagsContainer}>
