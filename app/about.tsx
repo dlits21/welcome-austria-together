@@ -159,11 +159,11 @@ const styles = StyleSheet.create({
     lineHeight: 24,
   },
   sectionContainer: {
-    alignItems: 'left',
+    alignItems: 'flex-start',
     marginVertical: 8,
   },
   textContainer: {
-    alignItems: 'left',
+    alignItems: 'flex-start',
     flexDirection: 'column',
     flexWrap: 'wrap',
     flex: 1,
