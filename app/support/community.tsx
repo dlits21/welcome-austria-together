@@ -41,6 +41,7 @@ const CommunitySupport: React.FC = () => {
           <CategoryCard
             title={t('whatsapp')}
             subtitle={t('whatsapp_subtitle')}
+            // TODO: icon fehler
             icon="awesome6.whatsapp" // changed to speaking person
             color="rgba(210, 141, 14, 0.5)"
             onPress={() => handleContactClick({method:'whatsapp', isIndividual:false})}
@@ -51,6 +52,7 @@ const CommunitySupport: React.FC = () => {
           <CategoryCard
             title={t('signal')}
             subtitle={t('signal_subtitle')}
+            // TODO: icon fehler
             icon="awesome6.signal-messenger"
             color="rgba(210, 141, 14, 0.5)"
             onPress={() => handleContactClick({method:'signal', isIndividual:false})}
@@ -61,6 +63,7 @@ const CommunitySupport: React.FC = () => {
           <CategoryCard
             title={t('telegram')}
             subtitle={t('telegram_subtitle')}
+            // TODO: icon fehler
             icon="awesome6.telegram"
             color="rgba(210, 141, 14, 0.5)"
             onPress={() =>handleContactClick({method:'telegram', isIndividual:false})}
@@ -71,6 +74,7 @@ const CommunitySupport: React.FC = () => {
           <CategoryCard
             title={t('facebook')}
             subtitle={t('facebook_subtitle')}
+            // TODO: icon fehler
             icon="awesome6.facebook"
             color="rgba(210, 141, 14, 0.5)"
             onPress={() =>handleContactClick({method:'facebook', isIndividual:false})}
