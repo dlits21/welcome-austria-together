@@ -84,9 +84,10 @@ const EmergencySupport: React.FC = () => {
     }
   };
 
-  const toggleSound = () => {
-    setSoundEnabled(!soundEnabled);
-  };
+  // TODO: wird das noch gebraucht und irgendwo verwendet?
+  // const toggleSound = () => {
+  //   setSoundEnabled(!soundEnabled);
+  // };
 
   return (
     <SafeAreaView style={styles.container}>
