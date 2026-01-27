@@ -10,7 +10,9 @@ const DynamicWorkPage: React.FC = () => {
 
   if (!selectedEntityId) {
     return (
-      <View style={styles.centered}>
+        // TODO: centered?
+      // <View style={styles.centered}>
+      <View>
         <Text style={styles.title}>Invalid entity</Text>
         <Text style={styles.subtitle}>No entity ID provided.</Text>
       </View>
@@ -23,10 +25,13 @@ const DynamicWorkPage: React.FC = () => {
 
   if (!entity) {
     return (
-      <View style={styles.centered}>
+        // TODO: centered?
+      // <View style={styles.centered}>
+      <View>
         <Text style={styles.title}>Entity not found</Text>
         <Text style={styles.subtitle}>
-          The document support entity "{selectedEntityId}" could not be found.
+          {/*TODO: "{ gibt fehler*/}
+          {/*The document support entity "{selectedEntityId}" could not be found.*/}
         </Text>
       </View>
     );
@@ -35,7 +40,8 @@ const DynamicWorkPage: React.FC = () => {
   return <InfoPage
     title={entity.title}
     videoId={entity.videoId}
-    tiles={entity.tiles}
+    // TODO: tiles gibt einen fehler
+    // tiles={entity.tiles}
     contacts={entity.contacts}
     tutorialData={entity.tutorialData}
     translationNamespace={entity.translationNamespace}
