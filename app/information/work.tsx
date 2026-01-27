@@ -47,6 +47,7 @@ const Work: React.FC = () => {
           <CategoryCard
             title={t('registration')}
             subtitle={t('registration_subtitle')}
+            // TODO: Fix icon
             icon="material.assignment"
             color="rgba(221, 7, 121, 0.5)"
             onPress={() => onContinue('registration')}
@@ -57,6 +58,7 @@ const Work: React.FC = () => {
           <CategoryCard
             title={t('search')}
             subtitle={t('search_subtitle')}
+            // TODO: Fix icon
             icon="material.search"
             color="rgba(221, 7, 121, 0.5)"
             onPress={() => onContinue('search')}
@@ -66,6 +68,7 @@ const Work: React.FC = () => {
           <CategoryCard
             title={t('application')}
             subtitle={t('application_subtitle')}
+            // TODO: Fix icon
             icon="awesome6.file-text"
             color="rgba(221, 7, 121, 0.5)"
             onPress={() => onContinue('application')}
@@ -75,6 +78,7 @@ const Work: React.FC = () => {
           <CategoryCard
             title={t('rights')}
             subtitle={t('rights_subtitle')}
+            // TODO: Fix icon
             icon="material.gavel"
             color="rgba(221, 7, 121, 0.5)"
             onPress={() => onContinue('laborRights')}
@@ -84,6 +88,7 @@ const Work: React.FC = () => {
           <CategoryCard
             title={t('education')}
             subtitle={t('education_subtitle')}
+            // TODO: Fix icon
             icon="material.school"
             color="rgba(221, 7, 121, 0.5)"
             onPress={() => onContinue('education')}
@@ -93,6 +98,7 @@ const Work: React.FC = () => {
           <CategoryCard
             title={t('certification')}
             subtitle={t('certification_subtitle')}
+            // TODO: Fix icon
             icon="community.certificate"
             color="rgba(221, 7, 121, 0.5)"
             onPress={() => onContinue('certification')}
