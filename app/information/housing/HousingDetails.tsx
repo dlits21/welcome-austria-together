@@ -28,7 +28,8 @@ const HousingDetails: React.FC<HousingDetailsProps> = ({ id }) => {
       <View style={styles.centered}>
         <Text style={styles.title}>Entity not found</Text>
         <Text style={styles.subtitle}>
-          The housing entity "{selectedEntityId}" could not be found.
+            {/*TODO: "{ gibt einen Fehler*/}
+          {/*The housing entity "{selectedEntityId}" could not be found.*/}
         </Text>
       </View>
     );
@@ -37,7 +38,8 @@ const HousingDetails: React.FC<HousingDetailsProps> = ({ id }) => {
   return <InfoPage
     title={entity.title}
     videoId={entity.videoId}
-    tiles={entity.tiles}
+    // TODO: tiles gibt es nicht
+    // tiles={entity.tiles}
     contacts={entity.contacts}
     tutorialData={entity.tutorialData}
     translationNamespace={entity.translationNamespace}
