@@ -47,6 +47,7 @@ const Housing: React.FC = () => {
           <CategoryCard
             title={t('find_housing')}
             subtitle={t('find_housing_subtitle')}
+            // TODO: Icons are not right
             icon="awesome6.house"
             color="rgba(221, 7, 121, 0.5)"
             onPress={() => onContinue('findHousing')}
@@ -57,6 +58,7 @@ const Housing: React.FC = () => {
           <CategoryCard
             title={t('registration')}
             subtitle={t('registration_subtitle')}
+              // TODO: Icons are not right
             icon="material.assignment"
             color="rgba(221, 7, 121, 0.5)"
             onPress={() => onContinue('registration')}
@@ -66,6 +68,7 @@ const Housing: React.FC = () => {
           <CategoryCard
             title={t('cost')}
             subtitle={t('cost_subtitle')}
+              // TODO: Icons are not right
             icon="awesome6.money-bill"
             color="rgba(221, 7, 121, 0.5)"
             onPress={() => onContinue('cost')}
@@ -75,6 +78,7 @@ const Housing: React.FC = () => {
           <CategoryCard
             title={t('contract')}
             subtitle={t('contract_subtitle')}
+              // TODO: Icons are not right
             icon="awesome6.signature"
             color="rgba(221, 7, 121, 0.5)"
             onPress={() => onContinue('contract')}
@@ -84,6 +88,7 @@ const Housing: React.FC = () => {
           <CategoryCard
             title={t('everyday')}
             subtitle={t('everyday_subtitle')}
+              // TODO: Icons are not right
             icon="awesome6.trash"
             color="rgba(221, 7, 121, 0.5)"
             onPress={() => onContinue('everyday')}
