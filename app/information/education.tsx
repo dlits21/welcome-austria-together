@@ -47,6 +47,7 @@ const Education: React.FC = () => {
           <CategoryCard
             title={t('learning_language')}
             subtitle={t('learning_language_subtitle')}
+            // TODO: Fix icon
             icon="community.translate"
             color="rgba(221, 7, 121, 0.5)"
             onPress={() => onContinue('learningLanguage')}
@@ -56,6 +57,7 @@ const Education: React.FC = () => {
           <CategoryCard
             title={t('education_school')}
             subtitle={t('education_school_subtitle')}
+            // TODO: Fix icon
             icon="community.school"
             color="rgba(221, 7, 121, 0.5)"
             onPress={() => onContinue('educationSchool')}
@@ -65,6 +67,7 @@ const Education: React.FC = () => {
           <CategoryCard
             title={t('democracy')}
             subtitle={t('democracy_subtitle')}
+            // TODO: Fix icon
             icon="awesome6.file-text"
             color="rgba(221, 7, 121, 0.5)"
             onPress={() => onContinue('democracy')}
