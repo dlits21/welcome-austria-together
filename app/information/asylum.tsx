@@ -47,6 +47,7 @@ const Asylum: React.FC = () => {
           <CategoryCard
             title={t('request_asylum')}
             subtitle={t('request_asylum_subtitle')}
+            // TODO: Fix icon
             icon="material.sim-card-download"
             color="rgba(221, 7, 121, 0.5)"
             onPress={() => onContinue('requestAsylum')}
@@ -57,6 +58,7 @@ const Asylum: React.FC = () => {
           <CategoryCard
             title={t('asylum_process')}
             subtitle={t('asylum_process_subtitle')}
+            // TODO: Fix icon
             icon="awesome6.house"
             color="rgba(221, 7, 121, 0.5)"
             onPress={() => onContinue('asylumProcess')}
@@ -66,6 +68,7 @@ const Asylum: React.FC = () => {
           <CategoryCard
             title={t('asylum_rights')}
             subtitle={t('asylum_rights_subtitle')}
+            // TODO: Fix icon
             icon="material.groups"
             color="rgba(221, 7, 121, 0.5)"
             onPress={() => onContinue('asylumRights')}
@@ -75,6 +78,7 @@ const Asylum: React.FC = () => {
           <CategoryCard
             title={t('asylum_decision')}
             subtitle={t('asylum_decision_subtitle')}
+            // TODO: Fix icon
             icon="material.email"
             color="rgba(221, 7, 121, 0.5)"
             onPress={() => onContinue('asylumDecision')}
