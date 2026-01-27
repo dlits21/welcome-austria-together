@@ -23,9 +23,9 @@ interface LotsInnen {
   name: string;
   imagePath: string;
   languages: any;
-  subtitle: string;
+  subtitle: {};
   phone: string;
-  whatsapp: string;
+  whatsapp?: string;
   signal?: string;
   email?: string;
   telegram?: string;
@@ -61,9 +61,9 @@ const IndividualSupport: React.FC = () => {
               name={category.name}
               imagePath={category.imagePath}
               languages={category.languages}
-              subtitle={category.subtitle}
+              subtitles={[category.subtitle]}
               whatsapp={category.phone}
-              email={category.email}
+              email={category.email!}
              />
           ))}
         </View>
