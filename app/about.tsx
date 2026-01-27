@@ -55,7 +55,9 @@ const AboutPage: React.FC = () => {
           </View>
           <View style={styles.supportImageContainer}>
             <Image source={imageSourceTeam} style={[styles.supportImage, {height: 450, width: 900}]}
-              contentFit="cover" />
+              />
+            {/*TODO how to cover?*/}
+              {/*contentFit="cover" />*/}
           </View>
 
         </View>
@@ -105,12 +107,16 @@ const AboutPage: React.FC = () => {
 
           <View style={styles.supportImageContainer}>
             <Image source={imageSource1} style={[styles.supportImage, {height: 117, width: 600}]}
-            contentFit="cover" />
+            />
+            {/*TODO how to cover?*/}
+            {/*contentFit="cover" />*/}
           </View>
 
           <View style={styles.supportImageContainer}>
             <Image source={imageSource2} style={[styles.supportImage,{height: 100, width: 600}]}
-            contentFit="cover" />
+            />
+            {/*TODO how to cover?*/}
+            {/*contentFit="cover" />*/}
           </View>
         </View>
 
