@@ -28,6 +28,7 @@ const AboutPage: React.FC = () => {
   const imageSourceTeam = require("../assets/images/team.jpeg")
   const imageSource1 = require("../assets/images/peva_logo.png")
   const imageSource2 = require("../assets/images/supporter_eu.png")
+  const imageSource3 = require("../assets/images/ffg_logo.png")
 
   return (
     <SafeAreaView style={styles.container}>
@@ -112,6 +113,11 @@ const AboutPage: React.FC = () => {
             <Image source={imageSource2} style={[styles.supportImage,{height: 100, width: 600}]}
             contentFit="cover" />
           </View>
+
+          <View style={styles.supportImageContainer}>
+           <Image source={imageSource3} style={[styles.supportImage,{width: 500, height: 160 }]}
+           contentFit="contain" />
+           </View>
         </View>
 
 
